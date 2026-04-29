@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/dhieg398/public_html/
+    - export DEPLOYPATH=/home2/dhieg398/cristofolini.site/
     - /bin/cp -R * $DEPLOYPATH
