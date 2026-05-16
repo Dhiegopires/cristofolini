@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /*.pdf$
+
+Sitemap: https://cristofolini.site/sitemap.xml

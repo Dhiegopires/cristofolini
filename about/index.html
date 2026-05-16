@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About | Dhiego Cristofolini | Senior Product Designer</title>
+  <meta name="description" content="Senior Product Designer based in Curitiba, Brazil. 9 years designing SaaS and Fintech products. Open to full-time remote roles at scale-ups and international SaaS companies.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta name="theme-color" content="#0a0908">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="About | Dhiego Cristofolini | Senior Product Designer">
+  <meta property="og:description" content="Senior Product Designer based in Curitiba, Brazil. 9 years designing SaaS and Fintech products. Open to full-time remote roles at scale-ups and international SaaS companies.">
+  <meta property="og:image" content="../assets/img/og-default.jpg">
+  <meta property="og:image:alt" content="About page preview for Dhiego Cristofolini portfolio">
+  <meta property="og:url" content="https://cristofolini.site/about/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | Dhiego Cristofolini | Senior Product Designer">
+  <meta name="twitter:description" content="Senior Product Designer based in Curitiba, Brazil. 9 years designing SaaS and Fintech products. Open to full-time remote roles at scale-ups and international SaaS companies.">
+  <meta name="twitter:image" content="../assets/img/og-default.jpg">
+  <meta name="twitter:image:alt" content="About page preview for Dhiego Cristofolini portfolio">
+  <link rel="canonical" href="https://cristofolini.site/about/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cristofolini.site/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://cristofolini.site/about/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link href="../assets/css/globals.css" rel="stylesheet">
+
+  <style>
+    .page-header {
+      position: relative;
+      z-index: 1;
+      padding-top: calc(64px + var(--sp-16));
+      padding-bottom: var(--sp-12);
+    }
+
+    .page-header__title {
+      font-family: var(--display);
+      font-size: clamp(64px, 10vw, 140px);
+      line-height: .93;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+      color: var(--t1);
+      max-width: 900px;
+    }
+
+    .page-header__sub {
+      color: var(--t2);
+      margin-top: var(--sp-4);
+      max-width: 640px;
+    }
+
+    .about-section {
+      position: relative;
+      z-index: 1;
+      padding-block: var(--sp-16);
+      border-top: 1px solid var(--b0);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: var(--sp-10);
+    }
+
+    @media (min-width: 960px) {
+      .about-grid {
+        grid-template-columns: 4fr 8fr;
+        gap: var(--sp-16);
+      }
+    }
+
+    .about-label {
+      color: var(--t3);
+    }
+
+    .about-copy {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-6);
+      max-width: 760px;
+    }
+
+    .principles {
+      display: grid;
+      gap: var(--sp-4);
+    }
+
+    .principle {
+      padding: var(--sp-6);
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+
+    .principle__num {
+      display: inline-block;
+      margin-bottom: var(--sp-3);
+      color: var(--y);
+    }
+
+    .experience-list,
+    .tools-list {
+      display: grid;
+      gap: var(--sp-4);
+    }
+
+    .experience-item {
+      padding-bottom: var(--sp-5);
+      border-bottom: 1px solid var(--b0);
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .experience-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-3);
+      margin-bottom: var(--sp-2);
+      color: var(--t3);
+    }
+
+    .exp-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border: 1px solid var(--b0);
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--t3);
+      background: rgba(255,255,255,.02);
+    }
+
+    .exp-pill--studio {
+      color: var(--y);
+      border-color: var(--accent-border);
+      background: var(--accent-dim);
+    }
+
+    .exp-pill--consulting {
+      color: #4ade80;
+      border-color: rgba(74,222,128,.25);
+      background: rgba(74,222,128,.06);
+    }
+
+    .exp-pill--inhouse {
+      color: #8ab4ff;
+      border-color: rgba(138,180,255,.28);
+      background: rgba(138,180,255,.08);
+    }
+
+    .tools-card {
+      padding: var(--sp-6);
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+
+    .tools-list {
+      grid-template-columns: 1fr;
+    }
+
+    .availability-note {
+      padding: var(--sp-6);
+      border: 1px solid var(--accent-border);
+      background: var(--accent-dim);
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <span class="nav-mark" aria-hidden="true"></span>
+    <a href="../" class="nav-name" aria-label="Cristofolini | Home">Cristofolini</a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <ul class="nav-links" role="list">
+      <li><a href="../">Home</a></li>
+      <li><a href="../work/">Work</a></li>
+      <li><a href="./">About</a></li>
+      <li><a href="../contact/">Contact</a></li>
+    </ul>
+    <span class="nav-tag">↑ Available</span>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="page-header container">
+      <h1 class="page-header__title sr">Good design earns its place in the roadmap.</h1>
+      <p class="body-lg page-header__sub sr" style="--delay: 80ms">Most design teams optimize for aesthetics. I optimize for decisions. Every screen is a hypothesis about user behavior, and the work only matters if the product performs better because of it.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="container about-grid">
+        <p class="label-sm about-label sr">Where design goes wrong</p>
+        <div class="about-copy">
+          <h2 class="heading-sm sr" style="--delay: 60ms">Products fail when design is treated like decoration.</h2>
+          <p class="body-lg sr" style="--delay: 100ms">Teams design for demos, not for retention. They ship polished onboarding screens and skip the moment users realize they do not know what to do next. A decade of work across SaaS, Fintech, and B2B has been about fixing that gap between what a product looks like and what it actually does for the business.</p>
+          <p class="body-lg sr" style="--delay: 140ms">That means starting with friction, conversion, activation, comprehension, and scale. Visual quality matters, but only after the product becomes easier to understand, easier to use, and easier to grow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container about-grid">
+        <p class="label-sm about-label sr">My approach</p>
+        <div class="principles">
+          <article class="principle sr" style="--delay: 60ms">
+            <span class="label principle__num">01</span>
+            <h2 class="heading-sm">Start with the metric, not the mockup.</h2>
+            <p class="body" style="margin-top: var(--sp-3); color: var(--t2);">The first question is never what the screen should look like. It is what needs to improve: activation, conversion, clarity, speed, trust, or retention.</p>
+          </article>
+          <article class="principle sr" style="--delay: 120ms">
+            <span class="label principle__num">02</span>
+            <h2 class="heading-sm">Design systems beat isolated screens.</h2>
+            <p class="body" style="margin-top: var(--sp-3); color: var(--t2);">Reusable structure is what keeps teams fast and products coherent. Components, tokens, and interaction rules matter because scale eventually exposes every shortcut.</p>
+          </article>
+          <article class="principle sr" style="--delay: 180ms">
+            <span class="label principle__num">03</span>
+            <h2 class="heading-sm">Specs should help engineering move faster.</h2>
+            <p class="body" style="margin-top: var(--sp-3); color: var(--t2);">Good design work reduces ambiguity. Clear flows, naming, edge cases, and interaction states save time for the whole team and make shipping less fragile.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container about-grid">
+        <p class="label-sm about-label sr">Selected roles and engagements</p>
+        <div class="experience-list">
+          <article class="experience-item sr" style="--delay: 60ms">
+            <div class="experience-meta label-sm">
+              <span>2024 to Present</span>
+              <span><span class="exp-pill exp-pill--studio">Studio</span> Vellumwire</span>
+            </div>
+            <h2 class="heading-sm">Product and UI/UX Designer</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Through Vellumwire, I lead websites, SEO architecture, information architecture, product surfaces, and design systems. It is the operating base for ongoing client delivery.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 110ms">
+            <div class="experience-meta label-sm">
+              <span>2018 to Present</span>
+              <span><span class="exp-pill exp-pill--consulting">Consulting</span> Independent</span>
+            </div>
+            <h2 class="heading-sm">Senior Product Designer and UI/UX Consultant</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Independent product design across SaaS, fintech, and B2B ecosystems, focused on conversion, retention, pricing, checkout, high fidelity UI, and scalable design systems.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 160ms">
+            <div class="experience-meta label-sm">
+              <span>Selected companies</span>
+              <span><span class="exp-pill exp-pill--inhouse">In-house</span> and contract roles</span>
+            </div>
+            <h2 class="heading-sm">MedMe, Instivo, Nineblocks, Vega I.T., Ensight, ABGI, QuaQ, Facto, Lovefit, Play9, Selo H</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Across these teams, I worked on healthcare SaaS dashboards, retail software, fan token products, hospitality tech, websites, brand systems, and conversion oriented digital products.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 210ms">
+            <div class="experience-meta label-sm">
+              <span>2019 to 2022</span>
+              <span>Ensight</span>
+            </div>
+            <h2 class="heading-sm">UX/UI Designer</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Worked in a digital agency across websites and web apps, collaborating with developers in agile sprints. Delivered components, specs, branding, UI/UX, and product design for the Meaple ecosystem, including QuaQ and Facto.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 260ms">
+            <div class="experience-meta label-sm">
+              <span>2019</span>
+              <span>CEBRAC Curitiba</span>
+            </div>
+            <h2 class="heading-sm">Computer Skills Instructor</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Taught Photoshop, Illustrator, HTML5, and CSS3, helping students build visual and front end fundamentals.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 310ms">
+            <div class="experience-meta label-sm">
+              <span>2018 to 2019</span>
+              <span>Gas Comunicacao Ltda</span>
+            </div>
+            <h2 class="heading-sm">Junior Graphic Designer</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Supported the production of print and digital assets for advertising campaigns, including flyers, posters, and social media layouts.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 360ms">
+            <div class="experience-meta label-sm">
+              <span>2017</span>
+              <span>NUTE</span>
+            </div>
+            <h2 class="heading-sm">2D Artist and Graphic Designer</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Created website pages, digital illustrations, and infographics for online learning modules.</p>
+          </article>
+          <article class="experience-item sr" style="--delay: 410ms">
+            <div class="experience-meta label-sm">
+              <span>2016 to 2017</span>
+              <span>Projeto Novos Talentos / UFSC</span>
+            </div>
+            <h2 class="heading-sm">Apprentice and Illustrator</h2>
+            <p class="body" style="margin-top: var(--sp-2); color: var(--t2);">Developed graphic materials, illustrations, and board games for educational projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container about-grid">
+        <p class="label-sm about-label sr">Tools and fit</p>
+        <div class="about-copy">
+          <div class="tools-card sr" style="--delay: 60ms">
+            <h2 class="heading-sm">Core toolkit</h2>
+            <p class="body-lg" style="margin-top: var(--sp-3);">Figma, design systems, prototyping, product thinking, user research, design tokens, and the written specs that make handoff cleaner.</p>
+          </div>
+          <div class="availability-note sr" style="--delay: 120ms">
+            <h2 class="heading-sm">Currently looking for the right product team.</h2>
+            <p class="body" style="margin-top: var(--sp-3); color: var(--t2);">Open to full-time senior product design roles at SaaS and fintech companies where design has a seat at the table. Remote-first, based in Curitiba, Brazil, and open to international teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="../contact/" class="cta-section" aria-label="Go to contact page | Let's talk">
+      <p class="cta-section__eyebrow">Let's talk</p>
+      <p class="cta-section__headline">Need product design<br><em>that earns its keep?</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../" class="footer__nav-link">Home</a>
+        <a href="../work/" class="footer__nav-link">Work</a>
+        <a href="./" class="footer__nav-link">About</a>
+        <a href="../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

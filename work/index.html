@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <title>Work | Dhiego Cristofolini</title>
+  <meta name="description" content="Product design case studies across SaaS, Fintech, and B2B. From user research and conversion optimization to scalable design systems.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta name="theme-color" content="#0a0908">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Work | Dhiego Cristofolini">
+  <meta property="og:description" content="Product design case studies across SaaS, Fintech, and B2B. From user research and conversion optimization to scalable design systems.">
+  <meta property="og:image" content="../assets/img/og-default.jpg">
+  <meta property="og:image:alt" content="Work page preview for Dhiego Cristofolini portfolio">
+  <meta property="og:url" content="https://cristofolini.site/work/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Work | Dhiego Cristofolini">
+  <meta name="twitter:description" content="Product design case studies across SaaS, Fintech, and B2B. From user research and conversion optimization to scalable design systems.">
+  <meta name="twitter:image" content="../assets/img/og-default.jpg">
+  <meta name="twitter:image:alt" content="Work page preview for Dhiego Cristofolini portfolio">
+  <link rel="canonical" href="https://cristofolini.site/work/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cristofolini.site/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Work",
+        "item": "https://cristofolini.site/work/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Work case studies",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://cristofolini.site/work/northpay/",
+        "name": "NorthPay"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://cristofolini.site/work/veriflow/",
+        "name": "Veriflow"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://cristofolini.site/work/brightflow/",
+        "name": "BrightFlow"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://cristofolini.site/work/saas-dashboard/",
+        "name": "SaaS Dashboard"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://cristofolini.site/work/collaboard/",
+        "name": "Collabboard"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="../assets/css/globals.css" rel="stylesheet">
+
+  <style>
+    .page-header {
+      position: relative;
+      z-index: 1;
+      padding-top: calc(64px + var(--sp-16));
+      padding-bottom: var(--sp-12);
+    }
+
+    .page-header__title {
+      font-family: var(--display);
+      font-size: clamp(64px, 10vw, 140px);
+      line-height: .93;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+      color: var(--t1);
+    }
+
+    .page-header__sub {
+      color: var(--t2);
+      margin-top: var(--sp-4);
+      max-width: 520px;
+    }
+
+    .filter-bar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+      padding-bottom: var(--sp-10);
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--sp-2) var(--sp-5);
+      border-radius: 0;
+      font-family: var(--mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--b2);
+      color: var(--t2);
+      background: transparent;
+      cursor: pointer;
+      min-height: 44px;
+      transition: background var(--duration-base) var(--ease-out),
+                  color var(--duration-base) var(--ease-out),
+                  border-color var(--duration-base) var(--ease-out);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--y);
+      color: var(--y);
+    }
+
+    .filter-btn.is-active {
+      background: var(--y);
+      color: #0a0908;
+      border-color: var(--y);
+    }
+
+    .filter-btn:focus-visible {
+      outline: 2px solid var(--y);
+      outline-offset: 3px;
+    }
+
+    .cases-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: var(--sp-6);
+      padding-bottom: var(--sp-16);
+    }
+
+    .cases-empty {
+      display: none;
+      margin-top: var(--sp-6);
+      padding: var(--sp-6);
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+      color: var(--t2);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .cases-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 1024px) {
+      .cases-grid { padding-bottom: var(--sp-32); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <span class="nav-mark" aria-hidden="true"></span>
+    <a href="../" class="nav-name" aria-label="Cristofolini | Home">Cristofolini</a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <ul class="nav-links" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="./">Work</a></li>
+      <li><a href="../about/">About</a></li>
+        <li><a href="../contact/">Contact</a></li>
+    </ul>
+    <span class="nav-tag">↑ Available</span>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="page-header container">
+      <h1 class="page-header__title sr">Selected work.</h1>
+      <p class="body-lg page-header__sub sr" style="--delay: 80ms">Case studies from 9 years designing SaaS and Fintech products.</p>
+    </section>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="filter-bar" role="group" aria-label="Filter work by category">
+        <button class="filter-btn is-active" data-filter="all" aria-pressed="true" aria-controls="work-cases-grid">All</button>
+        <button class="filter-btn" data-filter="ux" aria-pressed="false" aria-controls="work-cases-grid">UX</button>
+        <button class="filter-btn" data-filter="branding" aria-pressed="false" aria-controls="work-cases-grid">Branding</button>
+        <button class="filter-btn" data-filter="systems" aria-pressed="false" aria-controls="work-cases-grid">Systems</button>
+        <button class="filter-btn" data-filter="2d" aria-pressed="false" aria-controls="work-cases-grid">2D</button>
+      </div>
+      <p id="work-filter-status" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+    </div>
+
+    <div class="container">
+      <div class="cases-grid" id="work-cases-grid" aria-busy="false">
+
+        <a href="northpay/" class="work-card sr" data-categories="ux product" style="--delay: 0ms">
+          <div class="work-card__image">
+            <img src="../assets/img/project/NorthPay/thumbnail.png" alt="NorthPay fintech onboarding and verification" loading="lazy" width="600" height="338">
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Product</span><span class="tag">UI/UX</span>
+            </div>
+            <p class="work-card__title">NorthPay | Onboarding flow concept</p>
+            <p class="work-card__desc">A fintech onboarding and verification concept focused on reducing friction.</p>
+            <span class="work-card__link">View case →</span>
+          </div>
+        </a>
+
+        <a href="veriflow/" class="work-card sr" data-categories="ux branding 2d product" style="--delay: 80ms">
+          <div class="work-card__image">
+            <img src="../assets/img/project/veriflow/Thumbnail.png" alt="Veriflow pricing and plans redesign" loading="lazy" width="600" height="338">
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Product</span><span class="tag">UI/UX</span><span class="tag">Brand</span><span class="tag">2D Art</span>
+            </div>
+            <p class="work-card__title">Veriflow | Pricing flow concept</p>
+            <p class="work-card__desc">A SaaS pricing and plans concept centered on hierarchy and conversion.</p>
+            <span class="work-card__link">View case →</span>
+          </div>
+        </a>
+
+        <a href="brightflow/" class="work-card sr" data-categories="ux branding 2d product" style="--delay: 160ms">
+          <div class="work-card__image">
+            <img src="../assets/img/project/brightflow/Thumbnail-horizontal.png" alt="BrightFlow customer feedback intelligence" loading="lazy" width="600" height="338">
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Product</span><span class="tag">UI/UX</span><span class="tag">Brand</span><span class="tag">2D Art</span>
+            </div>
+            <p class="work-card__title">BrightFlow | Feedback product concept</p>
+            <p class="work-card__desc">A product concept for turning customer feedback into actionable signals.</p>
+            <span class="work-card__link">View case →</span>
+          </div>
+        </a>
+
+        <a href="saas-dashboard/" class="work-card sr" data-categories="ux branding systems product" style="--delay: 240ms">
+          <div class="work-card__image">
+            <img src="../assets/img/project/saas-dashboard/saas-dashboard.jpg" alt="SaaS dashboard and landing page" loading="lazy" width="600" height="338">
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Product</span><span class="tag">UI/UX</span><span class="tag">Systems</span>
+            </div>
+            <p class="work-card__title">SaaS Dashboard | Analytics concept</p>
+            <p class="work-card__desc">A B2B analytics concept covering dashboard, onboarding, and a companion landing page.</p>
+            <span class="work-card__link">View case →</span>
+          </div>
+        </a>
+
+        <a href="collaboard/" class="work-card sr" data-categories="ux systems product" style="--delay: 320ms">
+          <div class="work-card__image">
+            <img src="../assets/img/project/Collabboard/thumbnail.png" alt="Collabboard light mode CRM and team workspace" loading="lazy" width="600" height="338">
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="tag">Product</span><span class="tag">UI/UX</span>
+            </div>
+            <p class="work-card__title">Collabboard | CRM and team workspace</p>
+            <p class="work-card__desc">Light-mode CRM and collaboration tool designed for small product teams.</p>
+            <span class="work-card__link">View case →</span>
+          </div>
+        </a>
+
+      </div>
+      <p id="work-empty-state" class="cases-empty" role="status" aria-live="polite">No projects match this filter yet. Try another category.</p>
+    </div>
+
+    <a href="../contact/" class="cta-section" aria-label="Go to contact page | Let's work together">
+      <p class="cta-section__eyebrow">Let's talk</p>
+      <p class="cta-section__headline">Got a project?<br><em>Let's make it work.</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../" class="footer__nav-link">Home</a>
+        <a href="./" class="footer__nav-link">Work</a>
+        <a href="../about/" class="footer__nav-link">About</a>
+        <a href="../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
