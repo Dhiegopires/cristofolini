@@ -4,26 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO -->
   <title>Contact | Dhiego Cristofolini | Available for Product Design Roles</title>
   <meta name="description" content="Available for full-time senior product design roles in SaaS and Fintech. Remote-ready. Based in Curitiba, Brazil. Let's talk.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Dhiego Cristofolini">
   <meta name="theme-color" content="#0a0908">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
   <meta property="og:title" content="Contact | Dhiego Cristofolini | Available for Product Design Roles">
   <meta property="og:description" content="Available for full-time senior product design roles in SaaS and Fintech. Remote-ready. Based in Curitiba, Brazil. Let's talk.">
-  <meta property="og:image" content="../assets/img/og-default.jpg">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
   <meta property="og:image:alt" content="Contact page preview for Dhiego Cristofolini portfolio">
   <meta property="og:url" content="https://cristofolini.site/contact/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact | Dhiego Cristofolini | Available for Product Design Roles">
   <meta name="twitter:description" content="Available for full-time senior product design roles in SaaS and Fintech. Remote-ready. Based in Curitiba, Brazil. Let's talk.">
-  <meta name="twitter:image" content="../assets/img/og-default.jpg">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/og-default.jpg">
   <meta name="twitter:image:alt" content="Contact page preview for Dhiego Cristofolini portfolio">
   <link rel="canonical" href="https://cristofolini.site/contact/">
 
@@ -32,31 +30,16 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://cristofolini.site/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Contact",
-        "item": "https://cristofolini.site/contact/"
-      }
+      { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://cristofolini.site/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://cristofolini.site/contact/" }
     ]
   }
   </script>
 
-  <!-- Favicon -->
   <link rel="icon" href="../assets/img/favicon.png" type="image/png">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link href="../assets/css/globals.css" rel="stylesheet">
 
   <style>
@@ -82,21 +65,21 @@
       max-width: 560px;
     }
 
-    /* Contact layout */
-    .contact-layout {
+    /* Contact section */
+    .contact-section {
       position: relative;
       z-index: 1;
+      padding-block: var(--sp-16);
+      border-top: 1px solid var(--b0);
+    }
+
+    .contact-grid {
       display: grid;
       gap: var(--sp-16);
-      padding-bottom: var(--sp-16);
     }
 
     @media (min-width: 768px) {
-      .contact-layout {
-        grid-template-columns: 7fr 5fr;
-        gap: var(--sp-16);
-        padding-bottom: var(--sp-32);
-      }
+      .contact-grid { grid-template-columns: 7fr 5fr; }
     }
 
     /* Form */
@@ -115,20 +98,15 @@
       .form-row { grid-template-columns: 1fr 1fr; }
     }
 
-    .form-submit {
-      align-self: flex-start;
-    }
-
     #form-error-msg {
       font-family: var(--mono);
       font-size: var(--text-xs);
       color: #F87171;
-      letter-spacing: 0.04em;
+      letter-spacing: .04em;
       display: none;
       margin-top: var(--sp-2);
     }
 
-    /* Success state */
     #form-success {
       display: none;
       flex-direction: column;
@@ -136,30 +114,24 @@
       padding: var(--sp-10);
       background: var(--bg2);
       border: 1px solid var(--b0);
-      border-radius: 0;
     }
 
-    /* Contact info */
+    /* Info sidebar */
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: var(--sp-8);
-      padding-top: var(--sp-2);
+      gap: 0;
     }
 
     .contact-info__block {
       display: flex;
       flex-direction: column;
       gap: var(--sp-2);
+      padding-block: var(--sp-6);
+      border-bottom: 1px solid var(--b0);
     }
 
-    .contact-info__label {
-      color: var(--t3);
-    }
-
-    .contact-info__value {
-      color: var(--t2);
-    }
+    .contact-info__block:first-child { border-top: 1px solid var(--b0); }
 
     .contact-email-btn {
       background: none;
@@ -167,49 +139,35 @@
       padding: 0;
       cursor: pointer;
       font-family: var(--mono);
-      font-size: var(--text-sm);
+      font-size: 13px;
       color: var(--y);
-      letter-spacing: 0.04em;
+      letter-spacing: .04em;
       min-height: auto;
       text-align: left;
       transition: opacity var(--duration-base) var(--ease-out);
     }
-
-    .contact-email-btn:hover { opacity: 0.75; }
-
-    .contact-email-btn:focus-visible {
-      outline: 2px solid var(--y);
-      outline-offset: 3px;
-    }
+    .contact-email-btn:hover { opacity: .72; }
+    .contact-email-btn:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
 
     .contact-links {
       display: flex;
       gap: var(--sp-4);
       flex-wrap: wrap;
-      margin-top: var(--sp-1);
     }
 
     .contact-link {
       font-family: var(--mono);
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
+      font-size: 9px;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--t2);
-      border-bottom: 1px solid var(--b2);
+      border-bottom: 1px solid var(--b1);
       padding-bottom: 2px;
       transition: color var(--duration-base) var(--ease-out),
                   border-color var(--duration-base) var(--ease-out);
     }
-
-    .contact-link:hover {
-      color: var(--y);
-      border-color: var(--y);
-    }
-
-    .contact-link:focus-visible {
-      outline: 2px solid var(--y);
-      outline-offset: 3px;
-    }
+    .contact-link:hover { color: var(--y); border-color: var(--y); }
+    .contact-link:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
   </style>
 </head>
 
@@ -219,7 +177,6 @@
 
   <canvas id="stars" aria-hidden="true"></canvas>
 
-  <!-- Nav -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="../" class="nav-logo" aria-label="Cristofolini | Home">
       <img src="../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
@@ -233,133 +190,116 @@
 
   <main id="main-content">
 
-    <!-- Page Header -->
     <section class="page-header container">
       <h1 class="page-header__title sr">Let's talk.</h1>
       <p class="body-lg page-header__sub sr" style="--delay: 80ms">
-        I'm currently open to full-time senior product design roles. If you're building in SaaS or Fintech, I'd love to hear about it.
+        Open to full-time senior product design roles in SaaS and Fintech. Remote-ready, based in Curitiba, Brazil.
       </p>
     </section>
 
-    <!-- Contact Layout -->
-    <section class="contact-layout container" aria-label="Contact form and information">
+    <section class="contact-section" aria-label="Contact form and information">
+      <div class="container">
+        <div class="contact-grid">
 
-      <!-- Left: Form -->
-      <div>
-        <form id="contact-form" class="contact-form-wrap" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" for="field-name">Name</label>
-              <input
-                class="form-input"
-                type="text"
-                id="field-name"
-                name="name"
-                placeholder="Your name"
-                autocomplete="name"
-                aria-describedby="field-name-error"
-                aria-invalid="false"
-                required
-              >
-              <span class="form-error" id="field-name-error">Name is required.</span>
+          <div>
+            <form id="contact-form" class="contact-form-wrap" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-label" for="field-name">Name</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="field-name"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    aria-describedby="field-name-error"
+                    aria-invalid="false"
+                    required
+                  >
+                  <span class="form-error" id="field-name-error">Name is required.</span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="field-email">Email</label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="field-email"
+                    name="email"
+                    placeholder="you@company.com"
+                    autocomplete="email"
+                    aria-describedby="field-email-error"
+                    aria-invalid="false"
+                    required
+                  >
+                  <span class="form-error" id="field-email-error">Valid email is required.</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="field-message">Message</label>
+                <textarea
+                  class="form-textarea"
+                  id="field-message"
+                  name="message"
+                  placeholder="Tell me about the role, the team, and what you're building."
+                  aria-describedby="field-message-error"
+                  aria-invalid="false"
+                  required
+                ></textarea>
+                <span class="form-error" id="field-message-error">Message is required.</span>
+              </div>
+
+              <button type="submit" class="btn-solid" style="align-self: flex-start;">Send it →</button>
+              <p id="form-error-msg" role="alert" aria-live="assertive"></p>
+            </form>
+
+            <div id="form-success" aria-live="polite" tabindex="-1">
+              <p class="heading-sm">Message received.</p>
+              <p class="body-lg" style="color: var(--t2);">I'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+
+          <aside class="contact-info sr" style="--delay: 200ms" aria-label="Contact information">
+
+            <div class="contact-info__block">
+              <p class="label-sm">Availability</p>
+              <span class="tag" style="align-self: flex-start; margin-top: var(--sp-1);">Open to projects</span>
+              <p class="caption" style="color: var(--t2); margin-top: var(--sp-1);">Currently in Brazil — GMT −3</p>
             </div>
 
-            <div class="form-field">
-              <label class="form-label" for="field-email">Email</label>
-              <input
-                class="form-input"
-                type="email"
-                id="field-email"
-                name="email"
-                placeholder="you@company.com"
-                autocomplete="email"
-                aria-describedby="field-email-error"
-                aria-invalid="false"
-                required
-              >
-              <span class="form-error" id="field-email-error">Valid email is required.</span>
+            <div class="contact-info__block">
+              <p class="label-sm">Email</p>
+              <button
+                class="contact-email-btn"
+                data-user="dhiegopiresc"
+                data-domain="gmail"
+                data-tld="com"
+                aria-label="Send email"
+                data-email
+              >dhiegopiresc [at] gmail.com</button>
             </div>
-          </div>
 
-          <div class="form-field">
-            <label class="form-label" for="field-budget">
-              Budget range <span style="color: var(--t3); font-size: 0.85em;">(optional)</span>
-            </label>
-            <select class="form-select" id="field-budget" name="budget">
-              <option value="">Select a range</option>
-              <option value="under-5k">Under $5k</option>
-              <option value="5k-15k">$5k to $15k</option>
-              <option value="15k-plus">$15k+</option>
-              <option value="not-sure">Not sure yet</option>
-            </select>
-          </div>
+            <div class="contact-info__block">
+              <p class="label-sm">Also on</p>
+              <div class="contact-links" style="margin-top: var(--sp-1);">
+                <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.behance.net/dhiegopires" class="contact-link" target="_blank" rel="noopener noreferrer">Behance</a>
+              </div>
+            </div>
 
-          <div class="form-field">
-            <label class="form-label" for="field-message">Message</label>
-            <textarea
-              class="form-textarea"
-              id="field-message"
-              name="message"
-              placeholder="Tell me about your project, timeline, and what you're looking for."
-              aria-describedby="field-message-error"
-              aria-invalid="false"
-              required
-            ></textarea>
-            <span class="form-error" id="field-message-error">Message is required.</span>
-          </div>
+            <div class="contact-info__block">
+              <p class="label-sm">Response time</p>
+              <p class="caption" style="color: var(--t2);">Usually within 24 hours.</p>
+            </div>
 
-          <button type="submit" class="btn-solid form-submit">Send it →</button>
-          <p id="form-error-msg" role="alert" aria-live="assertive"></p>
-        </form>
+          </aside>
 
-        <!-- Success state -->
-        <div id="form-success" aria-live="polite" tabindex="-1">
-          <p class="heading-sm">Message received.</p>
-          <p class="body-lg" style="color: var(--t2)">I'll get back to you within 24 hours.</p>
         </div>
       </div>
-
-      <!-- Right: Contact Info -->
-      <aside class="contact-info sr" style="--delay: 200ms" aria-label="Contact information">
-
-        <div class="contact-info__block">
-          <p class="label contact-info__label">Availability</p>
-          <span class="tag" style="align-self: flex-start;">Open to projects</span>
-          <p class="caption contact-info__value" style="margin-top: var(--sp-2);">
-            Currently in Brazil, GMT minus 3
-          </p>
-        </div>
-
-        <div class="contact-info__block">
-          <p class="label contact-info__label">Email</p>
-          <button
-            class="contact-email-btn"
-            data-user="dhiegopiresc"
-            data-domain="gmail"
-            data-tld="com"
-            aria-label="Send email"
-            data-email
-          >dhiegopiresc [at] gmail.com</button>
-        </div>
-
-        <div class="contact-info__block">
-          <p class="label contact-info__label">Also on</p>
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.behance.net/dhiegopires" class="contact-link" target="_blank" rel="noopener noreferrer">Behance</a>
-          </div>
-        </div>
-
-        <div class="contact-info__block">
-          <p class="label contact-info__label">Response time</p>
-          <p class="caption contact-info__value">Usually within 24 hours.</p>
-        </div>
-
-      </aside>
-
     </section>
 
-    <!-- CTA Section -->
     <a href="../work/" class="cta-section" aria-label="View selected work">
       <p class="cta-section__eyebrow">Selected work</p>
       <p class="cta-section__headline">See what<br><em>I've built.</em></p>
@@ -368,7 +308,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer__inner container">
       <div class="footer__brand">

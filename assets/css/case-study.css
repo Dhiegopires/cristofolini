@@ -69,6 +69,33 @@
   object-fit: cover;
 }
 
+/* 2-column split hero: text left, image right */
+@media (min-width: 768px) {
+  .case-hero--split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    padding-top: 0;
+    min-height: 90vh;
+  }
+
+  .case-hero--split .case-hero__content {
+    max-width: none;
+    margin: 0;
+    padding-inline: clamp(32px, 6vw, 80px);
+    padding-top: calc(64px + var(--sp-16));
+    padding-bottom: var(--sp-16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .case-hero--split .case-hero__image {
+    aspect-ratio: unset;
+    height: 100%;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Case Body Blocks
    -------------------------------------------------------------------------- */
@@ -123,6 +150,139 @@
   width: 100%;
   height: auto;
   background: var(--bg1);
+}
+
+/* --------------------------------------------------------------------------
+   Case Section — 2-column text + image, alternating
+   -------------------------------------------------------------------------- */
+.case-section {
+  display: grid;
+  gap: var(--sp-10);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .case-section {
+    grid-template-columns: minmax(0, 380px) 1fr;
+    gap: var(--sp-12);
+    align-items: start;
+  }
+  .case-section--flip {
+    grid-template-columns: 1fr minmax(0, 380px);
+  }
+  .case-section--flip .case-section__media { order: -1; }
+}
+
+.case-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.case-section__text h2 { color: var(--t1); }
+.case-section__text p  { color: var(--t2); }
+
+.case-section__media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.case-section__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-section__media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.case-section__media-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Case Carousel
+   -------------------------------------------------------------------------- */
+.case-carousel {
+  width: 100%;
+}
+
+.case-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  border-radius: 8px;
+  overflow-y: hidden;
+}
+
+.case-carousel__track::-webkit-scrollbar { display: none; }
+
+.case-carousel__track img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  scroll-snap-align: start;
+  display: block;
+}
+
+.case-carousel__ui {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+.case-carousel__btn {
+  background: transparent;
+  border: 1px solid var(--b1);
+  color: var(--t2);
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, color .2s;
+  padding: 0;
+}
+
+.case-carousel__btn:hover { border-color: var(--y); color: var(--y); }
+.case-carousel__btn:disabled { opacity: .3; cursor: default; }
+
+.case-carousel__dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.case-carousel__dot {
+  width: 6px;
+  height: 6px;
+  min-height: 0;
+  border-radius: 50%;
+  background: var(--b2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.case-carousel__dot.is-active {
+  background: var(--y);
+  transform: scale(1.5);
 }
 
 /* BlockQuote */

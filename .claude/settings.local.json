@@ -5,7 +5,8 @@
       "Skill(audit-and-fix:*)",
       "Bash(Get-Content \"C:\\\\Users\\\\Dhiego\\\\.claude\\\\projects\\\\c--Users-Dhiego-Desktop-Github-CRISTOFOLINI\\\\026b310c-3778-43a6-8cf8-48762fd348b5\\\\tool-results\\\\toolu_01V7o17gK1Va5ZV77koDcais.txt\")",
       "Bash(Select-String -Pattern \"nav-name|nav-tag|nav-logo|nav-divider|nav-cta\" -Context 0)",
-      "Bash(rtk ls *)"
+      "Bash(rtk ls *)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }

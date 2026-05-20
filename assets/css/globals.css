@@ -293,14 +293,6 @@ main, footer { position: relative; z-index: var(--z-content); }
   border-bottom: 1px solid var(--b0);
 }
 
-.nav-mark {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--y);
-  box-shadow: 0 0 12px rgba(243,176,47,0.6);
-  flex-shrink: 0;
-  animation: ds-pulse 2.4s ease-in-out infinite;
-}
 
 .nav-logo {
   display: flex;
@@ -850,7 +842,7 @@ main, footer { position: relative; z-index: var(--z-content); }
 :focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
 :focus:not(:focus-visible) { outline: none; }
 
-a, button, [role="button"] { min-height: 44px; }
+a, button, [role="button"] { min-height: 44px; touch-action: manipulation; }
 
 /* --------------------------------------------------------------------------
    18. Reduced Motion

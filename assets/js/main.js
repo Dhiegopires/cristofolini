@@ -398,16 +398,17 @@
         }
       });
 
-      let dragStartX = 0, dragging = false;
-      track.addEventListener('pointerdown', e => { dragStartX = e.clientX; dragging = true; track.setPointerCapture(e.pointerId); });
-      track.addEventListener('pointerup',   e => {
-        if (!dragging) return;
-        dragging = false;
+      let dragStartX = 0, wasDragged = false;
+      track.addEventListener('pointerdown', e => { dragStartX = e.clientX; wasDragged = false; });
+      track.addEventListener('pointerup', e => {
         const delta = e.clientX - dragStartX;
-        if (Math.abs(delta) > 40) delta < 0 ? btnNext && btnNext.click() : btnPrev && btnPrev.click();
+        if (Math.abs(delta) > 40) {
+          wasDragged = true;
+          delta < 0 ? btnNext && btnNext.click() : btnPrev && btnPrev.click();
+        }
       });
-      track.addEventListener('pointercancel', () => { dragging = false; });
-      track.addEventListener('click', e => { if (Math.abs(e.clientX - dragStartX) > 10) e.preventDefault(); });
+      track.addEventListener('pointercancel', () => { wasDragged = false; });
+      track.addEventListener('click', e => { if (wasDragged) { e.preventDefault(); wasDragged = false; } });
       window.addEventListener('resize', () => goTo(current, false));
     } else {
       if (btnPrev) btnPrev.style.display = 'none';
@@ -762,5 +763,49 @@
       applyFilter(nextFilter, false);
     });
   }
+
+  /* --------------------------------------------------------------------------
+     10. Case study carousels
+     -------------------------------------------------------------------------- */
+  document.querySelectorAll('.case-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.case-carousel__track');
+    const dotsContainer = carousel.querySelector('.case-carousel__dots');
+    const prevBtn = carousel.querySelector('[data-dir="-1"]');
+    const nextBtn = carousel.querySelector('[data-dir="1"]');
+    const slides = Array.from(track.querySelectorAll('img'));
+    if (!slides.length) return;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'case-carousel__dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.querySelectorAll('.case-carousel__dot'));
+
+    function goTo(index) {
+      track.scrollTo({ left: track.clientWidth * index, behavior: 'smooth' });
+    }
+
+    function updateDots() {
+      const index = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      goTo(Math.max(0, Math.round(track.scrollLeft / track.clientWidth) - 1));
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      goTo(Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth) + 1));
+    });
+
+    track.addEventListener('scroll', updateDots, { passive: true });
+    updateDots();
+  });
 
 })();
