@@ -380,6 +380,12 @@ main, footer { position: relative; z-index: var(--z-content); }
   .nav-divider { display: none; }
   .nav-cta { padding: 6px 10px; }
 }
+@media (max-width: 380px) {
+  .nav { gap: 8px; }
+  .nav-logo img { height: 20px; }
+  .nav-links { gap: 10px; }
+  .nav-cta { padding: 5px 7px; letter-spacing: .06em; }
+}
 
 /* --------------------------------------------------------------------------
    9. Buttons

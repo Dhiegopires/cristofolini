@@ -701,65 +701,58 @@
       position: relative;
       z-index: 1;
     }
-    @media (min-width: 960px) {
+    @media (min-width: 1024px) {
       .services-section { padding-block: 0; }
       .services-section > .container { max-width: none; padding-inline: 0; }
     }
 
     .services-grid {
       display: grid;
-      gap: var(--sp-10);
+      gap: 64px;
     }
-    @media (min-width: 960px) {
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        align-items: stretch;
-      }
+    @media (min-width: 1024px) {
+      .services-grid { grid-template-columns: 7fr 5fr; gap: 0; }
     }
 
-    .services-left {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-8);
+    .services-sticky {
+      display: grid;
+      grid-template-areas: "panel";
+      order: -1;
+      padding: var(--sp-8) 0;
     }
-    @media (min-width: 960px) {
-      .services-left {
-        padding: 0;
-        gap: 0;
-      }
-      .services-left .services-label {
-        padding: var(--sp-8) 0 var(--sp-6) var(--sp-6);
-      }
-    }
-
-    .services-label {
-      color: var(--t3);
-    }
-
-    .services-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .services-right {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-6);
-    }
-    @media (min-width: 960px) {
-      .services-right {
-        padding-inline: clamp(48px, 6vw, 96px);
-        padding-block: var(--section-y);
+    @media (min-width: 1024px) {
+      .services-sticky {
+        position: sticky;
+        top: 80px;
+        align-self: start;
+        order: 1;
+        padding: var(--section-y) clamp(32px, 4vw, 76px) var(--section-y) clamp(48px, 5vw, 80px);
         border-left: 1px solid var(--b0);
       }
+    }
+
+    .service-panel {
+      grid-area: panel;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s var(--ease-out);
+    }
+    .service-panel.is-active { opacity: 1; pointer-events: auto; }
+    @media (max-width: 1023px) {
+      .service-panel:not([data-panel="default"]) { display: none; }
+      .service-panel[data-panel="default"] { opacity: 1; pointer-events: auto; }
     }
 
     .service-item {
       padding: 24px 0;
       border-bottom: 1px solid var(--b0);
       cursor: pointer;
+    }
+    @media (min-width: 1024px) {
+      .service-item { padding: 28px clamp(24px, 4vw, 60px); }
     }
     .service-item:first-child { border-top: 1px solid var(--b0); }
     .service-item:focus-visible {
@@ -787,131 +780,10 @@
     }
     .service-item.is-open .service-item__desc { max-height: 100px; opacity: 1; padding-top: 10px; }
     .service-item.is-open .service-item__title { color: var(--y); }
-
-      /* ── Service Tabs ── */
-      .services-tabs {
-        display: flex;
-        flex-direction: column;
-      }
-      @media (min-width: 960px) {
-        .services-tabs {
-          flex: 1;
-        }
-        .service-tab {
-          flex: 1;
-        }
-      }
-
-      .service-tab {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding: 18px 0 18px 18px;
-        border: none;
-        background: transparent;
-        border-bottom: 1px solid var(--b0);
-        border-left: 2px solid transparent;
-        cursor: pointer;
-        text-align: left;
-        font-family: inherit;
-        transition: border-color .22s var(--ease-out), background .22s var(--ease-out);
-      }
-      .service-tab:first-child { border-top: 1px solid var(--b0); }
-      .service-tab:hover { border-left-color: rgba(243,176,47,.35); background: rgba(243,176,47,.02); }
-      .service-tab:focus-visible { outline: 2px solid var(--y); outline-offset: 4px; }
-      .service-tab--active {
-        border-left-color: var(--y);
-        background: rgba(243,176,47,.04);
-      }
-
-      .service-tab__num {
-        font-family: var(--mono);
-        font-size: 9px;
-        letter-spacing: .12em;
-        color: var(--t3);
-        flex-shrink: 0;
-        transition: color .22s;
-      }
-      .service-tab--active .service-tab__num,
-      .service-tab:hover .service-tab__num { color: var(--y); }
-
-      .service-tab__title {
-        font-size: 15px;
-        font-weight: 500;
-        color: var(--t2);
-        transition: color .22s;
-      }
-      .service-tab--active .service-tab__title,
-      .service-tab:hover .service-tab__title { color: var(--t1); }
-
-      /* ── Service Panels ── */
-      .service-panel {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        pointer-events: none;
-        visibility: hidden;
-        transition: none;
-      }
-      .service-panel--active {
-        opacity: 1;
-        pointer-events: auto;
-        visibility: visible;
-        transition: opacity .35s var(--ease-out);
-      }
-      @media (min-width: 960px) {
-        .service-panel {
-          position: static;
-          grid-area: panel;
-        }
-      }
-
-      .service-panel__num {
-        font-family: var(--display);
-        font-size: clamp(72px, 9vw, 112px);
-        line-height: .9;
-        letter-spacing: .02em;
-        color: rgba(255,255,255,.05);
-        margin-bottom: var(--sp-5);
-        display: block;
-      }
-
-      .service-details {
-        list-style: none;
-        padding: 0;
-        margin: var(--sp-5) 0 0 0;
-        display: grid;
-        gap: var(--sp-3);
-      }
-      .service-details li {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        font-size: 14px;
-        color: var(--t2);
-        line-height: 1.65;
-      }
-      .service-details li::before {
-        content: "→";
-        color: var(--y);
-        flex-shrink: 0;
-        margin-top: 1px;
-      }
-
-      .services-right {
-        position: relative;
-        min-height: 340px;
-      }
-      @media (min-width: 960px) {
-        .services-right {
-          display: grid;
-          grid-template-areas: "panel";
-          position: static;
-          min-height: unset;
-        }
-      }
+    @media (min-width: 1024px) {
+      .service-item__desc { display: none; }
+      .service-item.is-active .service-item__title { color: var(--y); }
+    }
 
     /* ── Cases ── */
     .cases-section {
@@ -941,7 +813,10 @@
       justify-content: flex-end;
       gap: 12px;
       margin-top: 32px;
-      padding-right: var(--gap);
+      padding-right: clamp(0px, var(--gap), 80px);
+    }
+    @media (max-width: 640px) {
+      .carousel__controls { padding-right: 0; justify-content: center; }
     }
     .carousel__btn {
       display: flex; align-items: center; justify-content: center;
@@ -959,6 +834,11 @@
     /* Carousel card */
     .carousel-card {
       display: block;
+      background: var(--bg1);
+      border: 1px solid var(--b0);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
       transition: border-color .3s;
     }
     .carousel-card:hover { border-color: rgba(243,176,47,.2); }
@@ -973,6 +853,17 @@
     }
     .carousel-card:hover .carousel-card__image img { transform: scale(1.04); filter: grayscale(0%); }
 
+    .carousel-card__body  { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .carousel-card__tags  { display: flex; gap: 6px; flex-wrap: wrap; }
+    .carousel-card__title { font-weight: 700; font-size: 18px; color: var(--t1); line-height: 1.2; }
+    .carousel-card__desc  { font-size: 13px; color: var(--t2); line-height: 1.55; }
+    .carousel-card__cta   {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--y); margin-top: 6px;
+      transition: gap .2s;
+    }
+    .carousel-card:hover .carousel-card__cta { gap: 10px; }
     .carousel-card__body {
       padding: 20px 24px 24px;
       border: 1px solid var(--b0);
@@ -1020,14 +911,12 @@
 <canvas id="stars" aria-hidden="true"></canvas>
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
-  <span class="nav-mark" aria-hidden="true"></span>
   <a href="./" class="nav-logo" aria-label="Cristofolini | Home">
     <img src="assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
   </a>
   <ul class="nav-links" role="list">
     <li><a href="./" aria-current="page">Home</a></li>
     <li><a href="work/">Work</a></li>
-    <li><a href="about/">About</a></li>
   </ul>
   <a href="contact/" class="nav-cta">Contact</a>
 </nav>
@@ -1193,7 +1082,7 @@
           <div class="timeline-entry reveal" style="--delay: 220ms">
             <span class="tLB timeline-entry__date">2025</span>
             <div>
-              <p class="timeline-entry__role">Product Designer</p>
+              <p class="timeline-entry__role">Senior Product Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--inhouse">In-house</span><span>MedMe Saude</span></p>
               <p class="timeline-entry__desc">Built a responsive design system for a healthcare SaaS platform and designed clinical dashboards and complex medical workflows.</p>
             </div>
@@ -1275,107 +1164,91 @@
     <div class="container">
       <div class="services-grid">
 
-        <div class="services-left">
-          <p class="label-sm services-label sr">What I Do</p>
-          <div role="tablist" class="services-tabs">
-            <button role="tab" aria-selected="true" aria-controls="service-panel-1" class="service-tab service-tab--active" data-service="1">
-              <span class="service-tab__num">01</span>
-              <span class="service-tab__title">UX Research & Strategy</span>
-            </button>
-            <button role="tab" aria-selected="false" aria-controls="service-panel-2" class="service-tab" data-service="2">
-              <span class="service-tab__num">02</span>
-              <span class="service-tab__title">Interface Design</span>
-            </button>
-            <button role="tab" aria-selected="false" aria-controls="service-panel-3" class="service-tab" data-service="3">
-              <span class="service-tab__num">03</span>
-              <span class="service-tab__title">Design Systems</span>
-            </button>
-            <button role="tab" aria-selected="false" aria-controls="service-panel-4" class="service-tab" data-service="4">
-              <span class="service-tab__num">04</span>
-              <span class="service-tab__title">Brand Identity</span>
-            </button>
-            <button role="tab" aria-selected="false" aria-controls="service-panel-5" class="service-tab" data-service="5">
-              <span class="service-tab__num">05</span>
-              <span class="service-tab__title">2D / Illustration</span>
-            </button>
-            <button role="tab" aria-selected="false" aria-controls="service-panel-6" class="service-tab" data-service="6">
-              <span class="service-tab__num">06</span>
-              <span class="service-tab__title">Motion & Interaction</span>
-            </button>
-          </div>
-        </div>
+        <ul role="list">
+          <li class="service-item" tabindex="0" aria-expanded="false" aria-controls="service-desc-1">
+            <div class="service-item__header">
+              <span class="service-item__num">01</span>
+              <span class="service-item__title">UX Research & Strategy</span>
+            </div>
+            <p class="service-item__desc" id="service-desc-1" aria-hidden="true">Desk research, user interviews, journey maps, opportunity framing.</p>
+          </li>
+          <li class="service-item" tabindex="0" aria-expanded="false" aria-controls="service-desc-2">
+            <div class="service-item__header">
+              <span class="service-item__num">02</span>
+              <span class="service-item__title">Interface Design</span>
+            </div>
+            <p class="service-item__desc" id="service-desc-2" aria-hidden="true">High-fidelity screens, interactions, responsive across all surfaces.</p>
+          </li>
+          <li class="service-item" tabindex="0" aria-expanded="false" aria-controls="service-desc-3">
+            <div class="service-item__header">
+              <span class="service-item__num">03</span>
+              <span class="service-item__title">Design Systems</span>
+            </div>
+            <p class="service-item__desc" id="service-desc-3" aria-hidden="true">Tokenized, documented, team-ready. Built to scale without breaking.</p>
+          </li>
+          <li class="service-item" tabindex="0" aria-expanded="false" aria-controls="service-desc-4">
+            <div class="service-item__header">
+              <span class="service-item__num">04</span>
+              <span class="service-item__title">Brand Identity</span>
+            </div>
+            <p class="service-item__desc" id="service-desc-4" aria-hidden="true">Naming, visual identity, guidelines. From zero to shelf-ready.</p>
+          </li>
+          <li class="service-item" tabindex="0" aria-expanded="false" aria-controls="service-desc-5">
+            <div class="service-item__header">
+              <span class="service-item__num">05</span>
+              <span class="service-item__title">2D / Illustration</span>
+            </div>
+            <p class="service-item__desc" id="service-desc-5" aria-hidden="true">Custom illustration, iconography, art direction for digital and print.</p>
+          </li>
+          <li class="service-item" tabindex="0" aria-expanded="false" aria-controls="service-desc-6">
+            <div class="service-item__header">
+              <span class="service-item__num">06</span>
+              <span class="service-item__title">Motion & Interaction</span>
+            </div>
+            <p class="service-item__desc" id="service-desc-6" aria-hidden="true">Microinteractions, prototyping, animation specs for engineering handoff.</p>
+          </li>
+        </ul>
 
-        <div class="services-right">
-          <div role="tabpanel" id="service-panel-1" class="service-panel service-panel--active sr" style="--delay: 80ms;">
-            <span class="service-panel__num">01</span>
-            <h2 class="heading-lg" id="services-heading" style="color: var(--t1);">UX Research & Strategy</h2>
-            <p class="body-lg" style="--delay: 160ms; margin-top: var(--sp-4);">Desk research, user interviews, journey maps, opportunity framing.</p>
-            <ul class="service-details" style="--delay: 200ms;">
-              <li>User interviews and personas</li>
-              <li>Competitive analysis</li>
-              <li>Journey mapping</li>
-              <li>Opportunity framing</li>
-            </ul>
+        <div class="services-sticky">
+          <div class="service-panel is-active" data-panel="default">
+            <p class="tLB">What I Do</p>
+            <h2 class="heading-lg" id="services-heading" style="color: var(--t1);">
+              End to end<br>from first sketch<br>to final pixel.
+            </h2>
+            <p class="tBD">
+              I work across the full design surface: research, systems, interfaces, and identity.
+              Solo or embedded in product teams.
+            </p>
           </div>
-
-          <div role="tabpanel" id="service-panel-2" class="service-panel sr" style="--delay: 80ms;">
-            <span class="service-panel__num">02</span>
-            <h2 class="heading-lg" style="color: var(--t1);">Interface Design</h2>
-            <p class="body-lg" style="--delay: 160ms; margin-top: var(--sp-4);">High-fidelity screens, interactions, responsive across all surfaces.</p>
-            <ul class="service-details" style="--delay: 200ms;">
-              <li>High-fidelity mockups</li>
-              <li>Interaction design</li>
-              <li>Responsive layouts</li>
-              <li>Accessibility compliance</li>
-            </ul>
+          <div class="service-panel" data-panel="1">
+            <p class="tLB">01 — Research & Strategy</p>
+            <h2 class="heading-lg" style="color: var(--t1);">Find the real<br>problem before<br>solving it.</h2>
+            <p class="tBD">Desk research, user interviews, journey maps, and opportunity framing. The foundation that keeps design from being a guess.</p>
           </div>
-
-          <div role="tabpanel" id="service-panel-3" class="service-panel sr" style="--delay: 80ms;">
-            <span class="service-panel__num">03</span>
-            <h2 class="heading-lg" style="color: var(--t1);">Design Systems</h2>
-            <p class="body-lg" style="--delay: 160ms; margin-top: var(--sp-4);">Tokenized, documented, team-ready. Built to scale without breaking.</p>
-            <ul class="service-details" style="--delay: 200ms;">
-              <li>Component architecture</li>
-              <li>Design tokens</li>
-              <li>Documentation</li>
-              <li>Scalability planning</li>
-            </ul>
+          <div class="service-panel" data-panel="2">
+            <p class="tLB">02 — Interface Design</p>
+            <h2 class="heading-lg" style="color: var(--t1);">Screens that work<br>as hard as<br>they look.</h2>
+            <p class="tBD">High-fidelity screens, interaction patterns, and responsive layouts across all surfaces. From wireframe to final handoff.</p>
           </div>
-
-          <div role="tabpanel" id="service-panel-4" class="service-panel sr" style="--delay: 80ms;">
-            <span class="service-panel__num">04</span>
-            <h2 class="heading-lg" style="color: var(--t1);">Brand Identity</h2>
-            <p class="body-lg" style="--delay: 160ms; margin-top: var(--sp-4);">Naming, visual identity, guidelines. From zero to shelf-ready.</p>
-            <ul class="service-details" style="--delay: 200ms;">
-              <li>Brand strategy</li>
-              <li>Logo and wordmark design</li>
-              <li>Brand guidelines</li>
-              <li>Visual identity systems</li>
-            </ul>
+          <div class="service-panel" data-panel="3">
+            <p class="tLB">03 — Design Systems</p>
+            <h2 class="heading-lg" style="color: var(--t1);">Built to scale<br>without<br>breaking.</h2>
+            <p class="tBD">Tokenized, documented, team-ready component libraries. The structural layer that keeps products consistent as they grow.</p>
           </div>
-
-          <div role="tabpanel" id="service-panel-5" class="service-panel sr" style="--delay: 80ms;">
-            <span class="service-panel__num">05</span>
-            <h2 class="heading-lg" style="color: var(--t1);">2D / Illustration</h2>
-            <p class="body-lg" style="--delay: 160ms; margin-top: var(--sp-4);">Custom illustration, iconography, art direction for digital and print.</p>
-            <ul class="service-details" style="--delay: 200ms;">
-              <li>Custom illustrations</li>
-              <li>Icon systems</li>
-              <li>Art direction</li>
-              <li>Digital and print assets</li>
-            </ul>
+          <div class="service-panel" data-panel="4">
+            <p class="tLB">04 — Brand Identity</p>
+            <h2 class="heading-lg" style="color: var(--t1);">From zero<br>to shelf-<br>ready.</h2>
+            <p class="tBD">Naming, visual identity, brand guidelines, and the full system that holds it together across every surface.</p>
           </div>
-
-          <div role="tabpanel" id="service-panel-6" class="service-panel sr" style="--delay: 80ms;">
-            <span class="service-panel__num">06</span>
-            <h2 class="heading-lg" style="color: var(--t1);">Motion & Interaction</h2>
-            <p class="body-lg" style="--delay: 160ms; margin-top: var(--sp-4);">Microinteractions, prototyping, animation specs for engineering handoff.</p>
-            <ul class="service-details" style="--delay: 200ms;">
-              <li>Microinteractions</li>
-              <li>Interactive prototypes</li>
-              <li>Animation specifications</li>
-              <li>Motion guidelines</li>
-            </ul>
+          <div class="service-panel" data-panel="5">
+            <p class="tLB">05 — Illustration</p>
+            <h2 class="heading-lg" style="color: var(--t1);">Custom visual<br>language for<br>the product.</h2>
+            <p class="tBD">Illustration, iconography, and art direction for digital and print. Work that makes a product feel distinct.</p>
+          </div>
+          <div class="service-panel" data-panel="6">
+            <p class="tLB">06 — Motion</p>
+            <h2 class="heading-lg" style="color: var(--t1);">Details that<br>make products<br>feel alive.</h2>
+            <p class="tBD">Microinteractions, prototypes, and animation specs that reduce ambiguity in handoff and add life to the experience.</p>
           </div>
         </div>
 
@@ -1513,7 +1386,6 @@
     <nav class="footer__nav" aria-label="Footer navigation">
       <a href="index.html" class="footer__nav-link">Home</a>
       <a href="work/" class="footer__nav-link">Work</a>
-      <a href="about/" class="footer__nav-link">About</a>
       <a href="contact/" class="footer__nav-link">Contact</a>
       <div class="footer__socials">
         <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -1522,6 +1394,33 @@
     </nav>
   </div>
 </footer>
+
+<script>
+  (() => {
+    const items = document.querySelectorAll('.service-item[aria-controls]');
+    const panels = document.querySelectorAll('.service-panel');
+    const grid = document.querySelector('.services-grid');
+    if (!items.length || !panels.length) return;
+
+    const getKey = (item) => (item.getAttribute('aria-controls') || '').replace('service-desc-', '');
+    const isDesktop = () => window.innerWidth >= 1024;
+
+    const showPanel = (key) => {
+      panels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === key));
+      items.forEach(i => i.classList.toggle('is-active', getKey(i) === key));
+    };
+
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => { if (isDesktop()) showPanel(getKey(item)); });
+      item.addEventListener('click',      () => { if (isDesktop()) showPanel(getKey(item)); });
+      item.addEventListener('focus',      () => { if (isDesktop()) showPanel(getKey(item)); });
+    });
+
+    if (grid) {
+      grid.addEventListener('mouseleave', () => { if (isDesktop()) showPanel('default'); });
+    }
+  })();
+</script>
 
 <script>
   (() => {
