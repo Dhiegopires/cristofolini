@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedMe | Home Healthcare Product Design | Dhiego Cristofolini</title>
+  <meta name="description" content="Product design case study for MedMe, an on-demand home healthcare platform with scheduling, identity verification, and escrow payment built from scratch.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="MedMe | Home Healthcare Product Design | Dhiego Cristofolini">
+  <meta property="og:description" content="Product design case study for MedMe, an on-demand home healthcare platform with scheduling, identity verification, and escrow payment built from scratch.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/project/medme/thumbnail.png">
+  <meta property="og:url" content="https://cristofolini.site/work/medme/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MedMe | Home Healthcare Product Design | Dhiego Cristofolini">
+  <meta name="twitter:description" content="Product design case study for MedMe, an on-demand home healthcare platform with scheduling, identity verification, and escrow payment built from scratch.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/medme/thumbnail.png">
+  <link rel="canonical" href="https://cristofolini.site/work/medme/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "MedMe",
+    "description": "On-demand home healthcare platform with scheduling, identity verification, and payment escrow.",
+    "author": {
+      "@type": "Person",
+      "name": "Dhiego Cristofolini",
+      "url": "https://cristofolini.site/"
+    },
+    "dateCreated": "2024-01-01",
+    "url": "https://cristofolini.site/work/medme",
+    "genre": "UX Case Study",
+    "keywords": "product design, ux, healthcare, mobile, fintech, case study"
+  }
+  </script>
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../assets/css/globals.css" rel="stylesheet">
+  <link href="../../assets/css/case-study.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../" aria-current="page">Work</a></li>
+    </ul>
+    <a href="../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="cs-hero">
+      <div class="cs-hero__left">
+        <div class="case-hero__tags">
+          <span class="tag">Product</span>
+          <span class="tag">UI/UX</span>
+        </div>
+        <h1 class="cs-hero__title">Designing the trust layer for home healthcare</h1>
+        <p class="cs-lead">A patient opens their front door for a stranger. MedMe needed a full on-demand service layer built from scratch: verified identity, escrow payment held until the service closes, and a handoff protocol that documents every step from booking to completion.</p>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num"><span class="cs-accent">+</span>35<span class="cs-accent">%</span></p>
+            <p class="cs-impact-label">projected checkout conversion (form reduction + progressive disclosure)</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">0</p>
+            <p class="cs-impact-label">payments released without confirmed service</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">3</p>
+            <p class="cs-impact-label">trust tokens · chain of custody from booking to payment</p>
+          </div>
+        </div>
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Role</p>
+            <p class="cs-meta-value">Product Designer</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Platform</p>
+            <p class="cs-meta-value">iOS · Android</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Users</p>
+            <p class="cs-meta-value">3 simultaneous</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Status</p>
+            <p class="cs-meta-value">Portfolio rebuild · NDA</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-hero__right">
+        <img src="/work/medme/Mockup-hero.png" alt="MedMe app screens" loading="eager">
+      </div>
+    </section>
+
+    <!-- Current state -->
+    <section class="cs-current-state">
+      <div class="cs-container">
+        <p class="cs-eyebrow cs-eyebrow--muted">Current state · before this project</p>
+        <div class="cs-diagram" style="overflow-x:auto;">
+          <svg width="100%" viewBox="0 0 680 96" role="img" aria-label="Current state flow before MedMe">
+            <defs>
+              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+            <rect x="10"  y="14" width="110" height="56" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#f87060" x="65"  y="37" text-anchor="middle" dominant-baseline="central">Wants home visit</text>
+            <text font-family="'DM Mono',monospace" font-size="9" fill="#c06050" x="65"  y="56" text-anchor="middle" dominant-baseline="central">No platform exists</text>
+            <line x1="120" y1="42" x2="138" y2="42" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="140" y="14" width="110" height="56" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#f87060" x="195" y="37" text-anchor="middle" dominant-baseline="central">Googles or asks</text>
+            <text font-family="'DM Mono',monospace" font-size="9" fill="#c06050" x="195" y="56" text-anchor="middle" dominant-baseline="central">No filtering or trust</text>
+            <line x1="250" y1="42" x2="268" y2="42" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="270" y="14" width="110" height="56" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#f87060" x="325" y="37" text-anchor="middle" dominant-baseline="central">Calls / WhatsApp</text>
+            <text font-family="'DM Mono',monospace" font-size="9" fill="#c06050" x="325" y="56" text-anchor="middle" dominant-baseline="central">No record, no audit</text>
+            <line x1="380" y1="42" x2="398" y2="42" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="400" y="14" width="110" height="56" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#f87060" x="455" y="37" text-anchor="middle" dominant-baseline="central">Gets a quote</text>
+            <text font-family="'DM Mono',monospace" font-size="9" fill="#c06050" x="455" y="56" text-anchor="middle" dominant-baseline="central">No guarantee, no escrow</text>
+            <line x1="510" y1="42" x2="528" y2="42" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="530" y="14" width="140" height="56" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#f87060" x="600" y="37" text-anchor="middle" dominant-baseline="central">Professional arrives</text>
+            <text font-family="'DM Mono',monospace" font-size="9" fill="#c06050" x="600" y="56" text-anchor="middle" dominant-baseline="central">No verification. No recourse.</text>
+          </svg>
+        </div>
+        <p class="cs-caption">The on-demand product didn't exist. Ecommerce existed for products, but not for professional services at home.</p>
+      </div>
+    </section>
+
+    <!-- Body: TOC + content -->
+    <div class="cs-layout">
+
+      <aside class="cs-toc" aria-label="Section navigation">
+        <nav class="cs-toc__inner">
+          <a href="#s01" class="cs-toc__item">01 &nbsp;The problem</a>
+          <a href="#s02" class="cs-toc__item">02 &nbsp;Three users</a>
+          <a href="#s03" class="cs-toc__item">03 &nbsp;Scheduling</a>
+          <a href="#s04" class="cs-toc__item">04 &nbsp;Matching</a>
+          <a href="#s05" class="cs-toc__item">05 &nbsp;Time logic</a>
+          <a href="#s06" class="cs-toc__item">06 &nbsp;Token system</a>
+          <a href="#s07" class="cs-toc__item">07 &nbsp;Checkout</a>
+          <a href="#s08" class="cs-toc__item">08 &nbsp;Outcome</a>
+        </nav>
+      </aside>
+
+      <div class="cs-content">
+
+        <!-- 01 -->
+        <section id="s01" class="cs-section" aria-labelledby="s01-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">01</span>
+            <h2 class="cs-section__title" id="s01-title">The problem</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Home healthcare has a trust problem, not a demand problem. Friction is the symptom. The root cause is simpler and harder to fix.</p>
+            <blockquote class="cs-pullquote">A patient opens their front door for a stranger. This isn't a food delivery. This is someone touching your body, drawing your blood, vaccinating your child.</blockquote>
+            <p>MedMe had a working pharmaceutical ecommerce. What didn't exist was an on-demand product with verified professional identity, payment protection, and accountability covering all three sides of the transaction simultaneously: patient, professional, and clinic.</p>
+            <p>This project covers two tracks. First: UX improvements to the existing ecommerce: storefront, product page, checkout, and payment. Second: a full on-demand service layer built from scratch, with its own scheduling logic, matching system, token-based trust protocol, and operational dashboard for clinics.</p>
+            <p>The original screens stayed with the company. Everything here is a reconstruction from scratch for the portfolio.</p>
+            <div class="cs-screens cs-screens--1">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/01-overview.png" alt="On-demand service, patient view" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">On-demand service · patient view</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section id="s02" class="cs-section" aria-labelledby="s02-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">02</span>
+            <h2 class="cs-section__title" id="s02-title">Three users, three fears</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Three actors are active simultaneously during every appointment. Each has a different set of concerns. Designing for one without the others produces a system that fails at the seams.</p>
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Patient</p>
+                <p class="cs-fear-card__title">Identity &amp; money</p>
+                <p class="cs-fear-card__body">Is this person who they say they are? What if the service doesn't happen? Who holds my payment until it does?</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Professional</p>
+                <p class="cs-fear-card__title">Equipment &amp; coverage</p>
+                <p class="cs-fear-card__body">Will the gear be ready at the clinic? Am I legally covered if something goes wrong at the patient's home?</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Clinic</p>
+                <p class="cs-fear-card__title">Quality &amp; reputation</p>
+                <p class="cs-fear-card__body">Someone represents my brand at a stranger's home. I can't be there. I need documented accountability.</p>
+              </div>
+            </div>
+            <p>Every design decision in this product is a response to at least one of these fears. The token system and the matching logic each address all three simultaneously: that's where most of the complexity landed.</p>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section id="s03" class="cs-section" aria-labelledby="s03-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">03</span>
+            <h2 class="cs-section__title" id="s03-title">The scheduling decision</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Most healthcare platforms show all units upfront. You pick one based on distance or name recognition. Then you find a time and discover the slot you wanted is gone. You go back. You pick another unit. You try again.</p>
+            <p>This loop isn't just frustrating. It's the reason 60% of patients report friction in digital health scheduling. The form isn't broken. The information architecture is.</p>
+            <p>27% of patients switched providers specifically because of digital friction (McKinsey, 2025). They didn't abandon the process. They went to a competitor.</p>
+            <blockquote class="cs-pullquote">MedMe inverts this. Time first. Unit second.</blockquote>
+            <p>The patient selects when they want the service. The system only shows clinics that have confirmed availability at that specific time. Slots that can't be fulfilled don't exist in the UI. They're never offered.</p>
+            <div class="cs-diagram">
+              <svg width="100%" viewBox="0 0 680 420" role="img" aria-label="Scheduling IA comparison: standard model vs MedMe">
+                <defs>
+                  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M2 1L8 5L2 9" fill="none" stroke="#474440" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </marker>
+                </defs>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="170" y="24" text-anchor="middle">Standard model</text>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="510" y="24" text-anchor="middle">MedMe</text>
+                <line x1="340" y1="12" x2="340" y2="400" stroke="#2a2825" stroke-width="0.5" stroke-dasharray="4 4"/>
+                <!-- Standard nodes -->
+                <rect x="60"  y="40"  width="220" height="40" rx="8" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#f0ebe0" x="170" y="60" text-anchor="middle" dominant-baseline="central">Browse all units</text>
+                <line x1="170" y1="80" x2="170" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="60"  y="102" width="220" height="40" rx="8" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#f0ebe0" x="170" y="122" text-anchor="middle" dominant-baseline="central">Select unit</text>
+                <line x1="170" y1="142" x2="170" y2="162" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="60"  y="164" width="220" height="40" rx="8" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#f0ebe0" x="170" y="184" text-anchor="middle" dominant-baseline="central">Select time slot</text>
+                <line x1="170" y1="204" x2="170" y2="224" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="60"  y="226" width="220" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#f87060" x="170" y="245" text-anchor="middle" dominant-baseline="central">Slot unavailable</text>
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#c06050" x="170" y="264" text-anchor="middle" dominant-baseline="central">Go back · pick another unit</text>
+                <path d="M60 252 Q22 252 22 122 L60 122" fill="none" stroke="#f87060" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+                <rect x="90"  y="302" width="160" height="28" rx="14" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#f87060" x="170" y="316" text-anchor="middle" dominant-baseline="central">Frustration loop</text>
+                <!-- MedMe nodes -->
+                <rect x="400" y="40"  width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="60" text-anchor="middle" dominant-baseline="central">Select service type</text>
+                <line x1="510" y1="80" x2="510" y2="100" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="400" y="102" width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="122" text-anchor="middle" dominant-baseline="central">Select desired time</text>
+                <line x1="510" y1="142" x2="510" y2="162" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="400" y="164" width="220" height="52" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="181" text-anchor="middle" dominant-baseline="central">View confirmed units</text>
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#6ee7b7" x="510" y="200" text-anchor="middle" dominant-baseline="central">Only available at that slot</text>
+                <line x1="510" y1="216" x2="510" y2="236" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="400" y="238" width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="258" text-anchor="middle" dominant-baseline="central">Select unit</text>
+                <line x1="510" y1="278" x2="510" y2="298" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
+                <rect x="430" y="300" width="160" height="28" rx="14" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#4ade80" x="510" y="314" text-anchor="middle" dominant-baseline="central">Confirmed · no loop</text>
+                <!-- Annotations -->
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="170" y="370" text-anchor="middle">Unit shown regardless of availability</text>
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="510" y="370" text-anchor="middle">Units filtered to confirmed slots only</text>
+              </svg>
+            </div>
+            <p>Before selecting time, the patient chooses visit type: at-home or at-clinic. This single toggle filters everything downstream: which clinics appear, what equipment lists apply, what the professional card shows. At-home visits carry the full token protocol. At-clinic visits use a simplified check-in. The scheduling IA is the same in both cases.</p>
+            <p>The time selection itself breaks into three sub-steps: month picker, then day, then available slots. Each step narrows the choice space before the next opens. The patient never faces a grid of every open slot. They arrive at a short, filtered list for the specific day they already committed to.</p>
+            <div class="cs-rejected">
+              <span class="cs-rejected__label">Rejected approach</span>
+              We considered inverting only one step: showing all units, but filtering the time picker per unit. Rejected: this still requires the user to pick a unit before knowing availability. The frustration loop persists, just one click later.
+            </div>
+            <div class="cs-screens cs-screens--2">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/03-scheduling.png" alt="Time picker with confirmed slots only" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Time picker · confirmed slots only</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/03-units.png" alt="Clinic list filtered by selected time slot" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Clinic list · filtered by selected slot</figcaption>
+              </figure>
+            </div>
+            <div class="cs-addresses">
+              <span class="cs-addresses__label">Addresses</span>
+              <span class="cs-addresses__metric">27% switched providers due to digital friction, not clinical quality (McKinsey, 2025)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 -->
+        <section id="s04" class="cs-section" aria-labelledby="s04-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">04</span>
+            <h2 class="cs-section__title" id="s04-title">Matching with regulatory competence</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The patient doesn't choose the professional. The clinic does. This is the only model that holds given how liability actually works in healthcare.</p>
+            <p>The clinic's certification and reputation are what the patient is trusting when they book. If the clinic assigns the professional, accountability stays in one place. If the patient chooses, accountability fragments and no one owns the outcome.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">Standard model</p>
+                <p class="cs-compare__text">Patient browses a list of professionals. Chooses one. Accountability is diffuse: the platform, the professional, and the clinic all share partial responsibility with no clear chain.</p>
+              </div>
+              <div>
+                <p class="cs-compare__label">MedMe</p>
+                <p class="cs-compare__text">Clinic receives the booking. Assigns the professional internally. Patient sees credentials after assignment. The clinic owns the outcome. Liability is clear, trust is verifiable.</p>
+              </div>
+            </div>
+            <p>When a clinic has no available professional, a pre-approved pool of third-party professionals fills the gap. Same certifications: ANVISA-registered clinics, CRBM-licensed professionals. Same vetting. To the patient, the card looks identical. To the clinic, the pool assignment is flagged in the operational dashboard. The answer is never "unavailable."</p>
+            <p>After service, all three actors rate each other. The patient rates the professional. The professional rates the patient. The clinic rates the professional's execution. A three-sided rating creates accountability at every point in the chain, not just at the end where the patient leaves a review.</p>
+            <div class="cs-screens cs-screens--1">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/04-professional-card.png" alt="Professional card shown to patient after clinic assigns" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Professional card · shown to patient after clinic assigns</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 -->
+        <section id="s05" class="cs-section" aria-labelledby="s05-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">05</span>
+            <h2 class="cs-section__title" id="s05-title">The time logic</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The 1-hour buffer is invisible in the UI.</p>
+            <p>Any slot shown to the patient has at least 60 minutes of lead time before the appointment. The professional uses that window to collect equipment at the clinic. If the window collapses due to a last-minute booking or a late confirmation, the slot is removed before it's ever offered. The patient never sees unavailable time.</p>
+            <p>This is where most on-demand healthcare products fail. They optimize for showing availability. MedMe optimizes for fulfillment. Showing a slot that can't be executed is worse than showing no slot. It creates a confirmed appointment followed by a cancellation, which destroys trust faster than saying the time is unavailable.</p>
+            <div class="cs-edge-cases">
+              <span class="cs-edge-cases__label">Edge cases</span>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Professional late (&gt;10 min)</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">Patient notified. Slot extended or cancellation with full refund.</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Equipment not collected by T–45min</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">Clinic alerted. Slot flagged at risk. Pool assignment triggered.</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Last-minute booking (&lt;1h lead)</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">Slot not offered. Removed from picker before patient sees it.</span>
+              </div>
+            </div>
+            <div class="cs-screens cs-screens--1">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/05-waiting-state.png" alt="Waiting state with professional en route, credentials visible, status timeline" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Waiting state · professional en route, credentials visible, status timeline</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section id="s06" class="cs-section" aria-labelledby="s06-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">06</span>
+            <h2 class="cs-section__title" id="s06-title">The token system</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Three tokens. Three problems solved independently. Together they form an unbroken chain of custody from booking to payment release.</p>
+            <div class="cs-diagram">
+              <svg width="100%" viewBox="0 0 680 480" role="img" aria-label="Token system: three-phase chain of custody">
+                <defs>
+                  <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M2 1L8 5L2 9" fill="none" stroke="#2a2825" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </marker>
+                </defs>
+                <!-- T1 -->
+                <rect x="40" y="20" width="600" height="120" rx="8" fill="#181612" stroke="#2a2825" stroke-width="0.5"/>
+                <circle cx="82" cy="80" r="20" fill="#f3b02e"/>
+                <text font-family="'DM Mono',monospace" font-weight="500" font-size="12" fill="#0f0d0a" x="82" y="80" text-anchor="middle" dominant-baseline="central">T1</text>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="120" y="48" dominant-baseline="central">Equipment access</text>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#8a8678" x="120" y="70">Clinic issues token before appointment</text>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#8a8678" x="120" y="88">Professional presents it to collect gear at clinic</text>
+                <rect x="120" y="102" width="176" height="20" rx="10" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#4ade80" x="208" y="112" text-anchor="middle" dominant-baseline="central">Authorization + tracking</text>
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="620" y="38" text-anchor="end">Pre-service</text>
+                <!-- connector -->
+                <line x1="82" y1="140" x2="82" y2="170" stroke="#2a2825" stroke-width="1" marker-end="url(#arr2)"/>
+                <!-- T2 -->
+                <rect x="40" y="172" width="600" height="120" rx="8" fill="#181612" stroke="#2a2825" stroke-width="0.5"/>
+                <circle cx="82" cy="232" r="20" fill="#f3b02e"/>
+                <text font-family="'DM Mono',monospace" font-weight="500" font-size="12" fill="#0f0d0a" x="82" y="232" text-anchor="middle" dominant-baseline="central">T2</text>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="120" y="200" dominant-baseline="central">Bilateral check-in</text>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#8a8678" x="120" y="222">Patient holds a code · professional holds a code</text>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#8a8678" x="120" y="240">Both codes verified on arrival at the door</text>
+                <rect x="120" y="254" width="192" height="20" rx="10" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#4ade80" x="216" y="264" text-anchor="middle" dominant-baseline="central">Identity verified + consent logged</text>
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="620" y="190" text-anchor="end">On arrival</text>
+                <!-- connector -->
+                <line x1="82" y1="292" x2="82" y2="322" stroke="#2a2825" stroke-width="1" marker-end="url(#arr2)"/>
+                <!-- T3 -->
+                <rect x="40" y="324" width="600" height="120" rx="8" fill="#181612" stroke="#2a2825" stroke-width="0.5"/>
+                <circle cx="82" cy="384" r="20" fill="#f3b02e"/>
+                <text font-family="'DM Mono',monospace" font-weight="500" font-size="12" fill="#0f0d0a" x="82" y="384" text-anchor="middle" dominant-baseline="central">T3</text>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="120" y="352" dominant-baseline="central">Completion &amp; payment release</text>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#8a8678" x="120" y="374">At end of service, patient passes code to professional</text>
+                <text font-family="'DM Mono',monospace" font-size="11" fill="#8a8678" x="120" y="392">Closes service record · triggers escrow release</text>
+                <rect x="120" y="406" width="136" height="20" rx="10" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#4ade80" x="188" y="416" text-anchor="middle" dominant-baseline="central">Payment released</text>
+                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="620" y="342" text-anchor="end">After service</text>
+              </svg>
+            </div>
+            <p>The bilateral check-in references a pattern that already exists in services patients use daily: the bilateral PIN in Uber, ID verification in Airbnb. The difference is the context: this is a private home and a medical procedure.</p>
+            <div class="cs-rejected">
+              <span class="cs-rejected__label">Rejected approach</span>
+              We considered a single token passed from clinic to patient at booking, used by the professional on arrival. The question that killed it: how does the patient know the person at the door is the same person whose credentials they received? A unilateral token protects the system. It gives the patient nothing to verify with.
+            </div>
+            <div class="cs-screens cs-screens--3">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/06-token2-empty.png" alt="Token 2 empty state, waiting for both codes" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Empty · waiting for both codes</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/06-token2-error.png" alt="Token 2 error state, wrong code entered" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Error · wrong code entered</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/06-token2-complete.png" alt="Token 2 confirmed, both parties verified" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Confirmed · both parties verified</figcaption>
+              </figure>
+            </div>
+            <div class="cs-addresses">
+              <span class="cs-addresses__label">Addresses</span>
+              <span class="cs-addresses__metric">identity verification gap + payment protection (no release without service confirmation)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section id="s07" class="cs-section" aria-labelledby="s07-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">07</span>
+            <h2 class="cs-section__title" id="s07-title">Checkout and payment</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>74% of users abandon due to decision stress (Accenture, 2024). A persistent 6-step progress indicator makes the endpoint visible from the first screen. The form breaks into three sub-steps that open sequentially, each unlocking only when the current one is valid. Fewer fields visible at once, no information actually hidden. Reducing to 12–14 fields is projected to increase conversion by 35% (Baymard, 2026).</p>
+            <p>Multi-method payment lets the patient split the total between their MedMe balance and a second method: Pix or card. The coupon input sits on the same screen as payment method selection. Entering a code updates the total immediately, before committing to a method. A visual split bar shows how much each method covers. No mental arithmetic.</p>
+            <p>57% of patients say price transparency influences where they seek care (McKinsey, 2025). The escrow note at confirmation shows the patient what they're paying, to whom, and that the money is held until Token 3 is confirmed. Below that, the token protocol is restated in plain language: "Vita Clinic assigns a professional", "Credentials sent for review", "Do digital check-in on the day". Price visibility is a selection criterion before the patient even books.</p>
+            <div class="cs-screens cs-screens--2">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/07-checkout-progress.png" alt="Checkout with 6-step progress indicator" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Checkout · 6-step progress indicator</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder">
+                  <img src="../../assets/img/project/medme/07-payment.png" alt="Payment with balance split, method selector, and coupon" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Payment · balance + method + coupon</figcaption>
+              </figure>
+            </div>
+            <div class="cs-addresses">
+              <span class="cs-addresses__label">Addresses</span>
+              <span class="cs-addresses__metric">74% decision-stress abandonment · 80.2% mobile abandonment · hidden cost as #1 exit factor</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 -->
+        <section id="s08" class="cs-section" aria-labelledby="s08-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">08</span>
+            <h2 class="cs-section__title" id="s08-title">Outcome</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The on-demand product didn't exist before this project. The numbers below are projections grounded in published benchmarks, not post-launch data. The product was built for a company that couldn't share results.</p>
+            <div class="cs-benchmark-grid">
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num"><span class="cs-accent">+</span>35<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Projected checkout conversion: form reduction to 12–14 fields + progressive disclosure</p>
+                <p class="cs-benchmark-source">Baymard, 2026</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">60<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Patients reporting friction in digital scheduling, addressed by time-first IA</p>
+                <p class="cs-benchmark-source">McKinsey, 2025</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">74<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Users abandoning due to decision stress, mitigated by 6-step progress indicator</p>
+                <p class="cs-benchmark-source">Accenture, 2024</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">19<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Abandonment from forced account creation, removed from both flows</p>
+                <p class="cs-benchmark-source">Baymard, 2024</p>
+              </div>
+            </div>
+            <p>Three trust patterns from services patients already use, adapted for a medical context:</p>
+            <div class="cs-trust-pills">
+              <span class="cs-trust-pill">Airbnb · ID verification</span>
+              <span class="cs-trust-pill">Uber · bilateral PIN</span>
+              <span class="cs-trust-pill">TaskRabbit · Happiness Pledge</span>
+            </div>
+            <p>Hidden cost is the number-one exit factor in ecommerce (McKinsey, 2025). Escrow makes the cost structure transparent: the patient knows exactly what they're paying, to whom, and when it releases.</p>
+          </div>
+        </section>
+
+      </div><!-- /cs-content -->
+    </div><!-- /cs-layout -->
+
+    <nav class="case-nav" aria-label="Case navigation">
+      <a href="../" class="case-nav__back label">← All work</a>
+      <div class="case-nav__adjacent">
+        <a href="../northpay/" class="case-nav__item case-nav__item--next">
+          <span class="label case-nav__direction">Next →</span>
+          <span class="heading-sm case-nav__title">NorthPay</span>
+        </a>
+      </div>
+    </nav>
+
+    <a href="../../contact/" class="cta-section" aria-label="Go to contact page | Let's work together">
+      <p class="cta-section__eyebrow">Let's talk</p>
+      <p class="cta-section__headline">Got a project?<br><em>Let's make it work.</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../" class="footer__nav-link">Home</a>
+        <a href="../" class="footer__nav-link">Work</a>
+        <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -401,3 +401,644 @@
 
 .case-nav__direction { color: var(--t3); }
 .case-nav__title     { color: var(--t1); }
+
+/* ==========================================================================
+   MedMe cs-* components (DS v4)
+   ========================================================================== */
+
+/* Container */
+.cs-container {
+  max-width: 900px;
+  margin-inline: auto;
+  padding-inline: var(--gap);
+}
+
+@media (max-width: 1100px) { .cs-container { padding-inline: 32px; } }
+@media (max-width: 640px)  { .cs-container { padding-inline: 20px; } }
+
+/* --------------------------------------------------------------------------
+   cs-hero — 2-column split (content left, image right)
+   -------------------------------------------------------------------------- */
+.cs-hero {
+  border-bottom: 1px solid var(--b0);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .cs-hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+}
+
+.cs-hero__left {
+  padding-top: calc(64px + var(--sp-16));
+  padding-bottom: var(--sp-12);
+  padding-inline: clamp(20px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  justify-content: center;
+}
+
+.cs-hero__right {
+  background: var(--bg1);
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.cs-hero__right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+
+.cs-eyebrow--muted { opacity: .6; }
+
+.cs-hero__title {
+  font-family: var(--display);
+  font-size: clamp(36px, 4.5vw, 72px);
+  line-height: .95;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+
+.cs-lead {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--t2);
+}
+
+/* Impact grid — 3 cols hairline border */
+.cs-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--b0);
+  border: 1px solid var(--b0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .cs-impact-grid { grid-template-columns: 1fr; }
+}
+
+.cs-impact-cell {
+  background: var(--bg1);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.cs-impact-num {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: .01em;
+  color: var(--t1);
+}
+
+.cs-impact-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--t3);
+  letter-spacing: .05em;
+}
+
+.cs-accent { color: var(--y); }
+
+/* Meta grid — 4 cols hairline border */
+.cs-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--b0);
+  border: 1px solid var(--b0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .cs-meta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.cs-meta-cell {
+  background: var(--bg);
+  padding: var(--sp-5) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs-meta-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+
+.cs-meta-value {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--t1);
+}
+
+/* --------------------------------------------------------------------------
+   Current state
+   -------------------------------------------------------------------------- */
+.cs-current-state {
+  padding-block: var(--sp-12);
+  background: var(--bg1);
+  border-bottom: 1px solid var(--b0);
+}
+
+.cs-current-state .cs-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* --------------------------------------------------------------------------
+   Diagram
+   -------------------------------------------------------------------------- */
+.cs-diagram {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg1);
+  border: 1px solid var(--b0);
+  padding: var(--sp-4);
+  overflow-x: auto;
+}
+
+.cs-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 480px;
+}
+
+/* Caption */
+.cs-caption {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--t3);
+  letter-spacing: .05em;
+}
+
+figcaption.cs-caption { margin-top: var(--sp-2); }
+
+/* --------------------------------------------------------------------------
+   Layout — TOC sidebar + content
+   -------------------------------------------------------------------------- */
+.cs-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--gap);
+}
+
+@media (max-width: 1100px) { .cs-layout { padding-inline: 32px; } }
+@media (max-width: 640px)  { .cs-layout { padding-inline: 20px; } }
+
+@media (min-width: 1024px) {
+  .cs-layout {
+    grid-template-columns: 180px 1fr;
+    gap: var(--sp-16);
+    align-items: start;
+  }
+}
+
+/* TOC */
+.cs-toc { display: none; }
+
+@media (min-width: 1024px) {
+  .cs-toc {
+    display: block;
+    position: sticky;
+    top: 96px;
+  }
+}
+
+.cs-toc__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-toc__item {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--t3);
+  padding: 6px 0 6px var(--sp-3);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+
+.cs-toc__item:hover { color: var(--t2); }
+
+.cs-toc__item.is-active {
+  color: var(--y);
+  border-left-color: var(--y);
+}
+
+/* Content area */
+.cs-content {
+  padding-block: var(--sp-16);
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+.cs-section {
+  padding-block: var(--sp-12);
+  border-bottom: 1px solid var(--b0);
+}
+
+.cs-section:first-child { padding-top: 0; }
+.cs-section:last-child { border-bottom: none; }
+
+.cs-section__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.cs-section__num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--t3);
+  flex-shrink: 0;
+}
+
+.cs-section__title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--t1);
+  line-height: 1.2;
+}
+
+.cs-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.cs-section__body > p {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--t2);
+}
+
+/* Pull quote */
+.cs-pullquote {
+  border-left: 3px solid var(--y);
+  padding-left: var(--sp-6);
+  margin: 0;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--t1);
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Fear cards
+   -------------------------------------------------------------------------- */
+.cs-fear-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--b0);
+  border: 1px solid var(--b0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .cs-fear-cards { grid-template-columns: 1fr; }
+}
+
+.cs-fear-card {
+  background: var(--bg1);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.cs-fear-card__label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--y);
+}
+
+.cs-fear-card__title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--t1);
+  line-height: 1.3;
+}
+
+.cs-fear-card__body {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--t2);
+}
+
+/* --------------------------------------------------------------------------
+   Compare
+   -------------------------------------------------------------------------- */
+.cs-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--b0);
+  border: 1px solid var(--b0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .cs-compare { grid-template-columns: 1fr; }
+}
+
+.cs-compare > div {
+  background: var(--bg1);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.cs-compare__label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+
+.cs-compare__text {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--t2);
+}
+
+/* --------------------------------------------------------------------------
+   Rejected approach
+   -------------------------------------------------------------------------- */
+.cs-rejected {
+  background: rgba(127, 32, 32, .07);
+  border: 1px solid rgba(127, 32, 32, .25);
+  border-radius: 8px;
+  padding: var(--sp-5) var(--sp-6);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--t2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.cs-rejected__label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #f87060;
+  opacity: .7;
+}
+
+/* --------------------------------------------------------------------------
+   Edge cases
+   -------------------------------------------------------------------------- */
+.cs-edge-cases {
+  border: 1px solid var(--b0);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-edge-cases__label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--bg1);
+  border-bottom: 1px solid var(--b0);
+}
+
+.cs-edge-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--b0);
+  align-items: start;
+}
+
+.cs-edge-row:last-child { border-bottom: none; }
+
+.cs-edge-condition {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--t2);
+}
+
+.cs-edge-arrow {
+  color: var(--t3);
+  font-size: 14px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.cs-edge-response {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--t2);
+}
+
+@media (max-width: 560px) {
+  .cs-edge-row { grid-template-columns: 1fr; }
+  .cs-edge-arrow { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Addresses
+   -------------------------------------------------------------------------- */
+.cs-addresses {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: rgba(243, 176, 46, .04);
+  border: 1px solid rgba(243, 176, 46, .14);
+  border-radius: 8px;
+}
+
+.cs-addresses__label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--y);
+  flex-shrink: 0;
+}
+
+.cs-addresses__metric {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--t2);
+}
+
+/* --------------------------------------------------------------------------
+   Screens — mobile mockup containers
+   -------------------------------------------------------------------------- */
+.cs-screens {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.cs-screen-wrap {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.cs-screen-placeholder {
+  background: var(--bg1);
+  border: 1px solid var(--b0);
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-screen-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 560px) {
+  .cs-screens--1 {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .cs-screens--1 .cs-screen-wrap { flex: 0 0 260px; }
+
+  .cs-screens--2 {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--sp-5);
+  }
+  .cs-screens--2 .cs-screen-wrap { flex: 0 0 220px; }
+
+  .cs-screens--3 {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--sp-4);
+  }
+  .cs-screens--3 .cs-screen-wrap { flex: 0 0 180px; }
+}
+
+/* --------------------------------------------------------------------------
+   Benchmark grid
+   -------------------------------------------------------------------------- */
+.cs-benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--b0);
+  border: 1px solid var(--b0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .cs-benchmark-grid { grid-template-columns: 1fr; }
+}
+
+.cs-benchmark-card {
+  background: var(--bg1);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.cs-benchmark-num {
+  font-family: var(--display);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1;
+  color: var(--t1);
+}
+
+.cs-benchmark-desc {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--t2);
+}
+
+.cs-benchmark-source {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--t3);
+  margin-top: var(--sp-2);
+}
+
+/* --------------------------------------------------------------------------
+   Trust pills
+   -------------------------------------------------------------------------- */
+.cs-trust-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.cs-trust-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--t2);
+  background: var(--bg1);
+  border: 1px solid var(--b1);
+  border-radius: 100px;
+  padding: 6px var(--sp-4);
+}

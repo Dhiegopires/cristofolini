@@ -1,5 +1,5 @@
 /* ==========================================================================
-   main.js — Interactive behaviors · Cristofolini Portfolio (DS v4)
+   main.js: Interactive behaviors · Cristofolini Portfolio (DS v4)
    ========================================================================== */
 
 (function () {
@@ -736,5 +736,30 @@
     track.addEventListener('scroll', updateDots, { passive: true });
     updateDots();
   });
+
+  /* --------------------------------------------------------------------------
+     11. MedMe TOC — active section tracking via IntersectionObserver
+     -------------------------------------------------------------------------- */
+  const tocItems = document.querySelectorAll('.cs-toc__item');
+  if (tocItems.length) {
+    const sectionIds = Array.from(tocItems).map(a => a.getAttribute('href').replace('#', ''));
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    let activeSectionId = null;
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activeSectionId = entry.target.id;
+        }
+      });
+      tocItems.forEach(item => {
+        const href = item.getAttribute('href').replace('#', '');
+        item.classList.toggle('is-active', href === activeSectionId);
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(s => obs.observe(s));
+  }
 
 })();

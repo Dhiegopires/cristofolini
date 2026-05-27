@@ -1,0 +1,58 @@
+<style>
+.lane-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin:1rem 0}
+.lane{display:flex;flex-direction:column}
+.lane-header{padding:12px 14px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+.lane-header-label{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:3px}
+.lane-header-title{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.lane+.lane{border-left:0.5px solid var(--color-border-tertiary)}
+.step{padding:11px 14px;border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px;line-height:1.5;color:var(--color-text-secondary);position:relative;min-height:52px;display:flex;align-items:center;gap:10px}
+.step:last-child{border-bottom:none}
+.step-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--color-border-secondary)}
+.step-text{flex:1}
+.step.token{background:var(--color-background-info)}
+.step.token .step-dot{background:var(--color-text-info)}
+.step.token .step-text{color:var(--color-text-info);font-weight:500}
+.step.complete{background:var(--color-background-success)}
+.step.complete .step-dot{background:var(--color-text-success)}
+.step.complete .step-text{color:var(--color-text-success);font-weight:500}
+.token-pill{display:inline-block;font-size:10px;font-weight:600;padding:1px 7px;border-radius:10px;background:var(--color-background-info);color:var(--color-text-info);border:0.5px solid var(--color-border-info);margin-left:4px}
+</style>
+<h2 class="sr-only">Three parallel user flows for patient, healthcare professional, and clinic</h2>
+<div class="lane-wrap">
+<div class="lane">
+<div class="lane-header"><div class="lane-header-label">Actor</div><div class="lane-header-title">Patient</div></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Selects service type</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Picks desired time slot</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Views available clinics for that slot</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Selects clinic · sees assigned professional</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Pays in escrow · booking confirmed</span></div>
+<div class="step token"><span class="step-dot"></span><span class="step-text">Day of: shares <span class="token-pill">T2</span> code on arrival</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Service performed at home</span></div>
+<div class="step token"><span class="step-dot"></span><span class="step-text">Hands <span class="token-pill">T3</span> to professional · service closed</span></div>
+<div class="step complete"><span class="step-dot"></span><span class="step-text">Rates professional + clinic</span></div>
+</div>
+<div class="lane">
+<div class="lane-header"><div class="lane-header-label">Actor</div><div class="lane-header-title">Professional</div></div>
+<div class="step" style="min-height:52px"><span class="step-dot"></span><span class="step-text" style="color:var(--color-text-tertiary)">—</span></div>
+<div class="step" style="min-height:52px"><span class="step-dot"></span><span class="step-text" style="color:var(--color-text-tertiary)">—</span></div>
+<div class="step" style="min-height:52px"><span class="step-dot"></span><span class="step-text" style="color:var(--color-text-tertiary)">—</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Receives assignment from clinic</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Views schedule with 1h buffer visible</span></div>
+<div class="step token"><span class="step-dot"></span><span class="step-text">Uses <span class="token-pill">T1</span> to collect gear at clinic</span></div>
+<div class="step token"><span class="step-dot"></span><span class="step-text">Arrives · enters <span class="token-pill">T2</span> patient code</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Performs service at patient's home</span></div>
+<div class="step token"><span class="step-dot"></span><span class="step-text">Receives <span class="token-pill">T3</span> · payment unlocked</span></div>
+</div>
+<div class="lane">
+<div class="lane-header"><div class="lane-header-label">Actor</div><div class="lane-header-title">Clinic</div></div>
+<div class="step" style="min-height:52px"><span class="step-dot"></span><span class="step-text" style="color:var(--color-text-tertiary)">—</span></div>
+<div class="step" style="min-height:52px"><span class="step-dot"></span><span class="step-text" style="color:var(--color-text-tertiary)">—</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Appears only with confirmed availability</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Assigns professional (own team or pool)</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Holds escrow · booking locked</span></div>
+<div class="step token"><span class="step-dot"></span><span class="step-text">Generates <span class="token-pill">T1</span> for equipment pickup</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Monitors operation in dashboard</span></div>
+<div class="step"><span class="step-dot"></span><span class="step-text">Tracks service status in real time</span></div>
+<div class="step complete"><span class="step-dot"></span><span class="step-text"><span class="token-pill">T3</span> confirmed · payment credited</span></div>
+</div>
+</div>
