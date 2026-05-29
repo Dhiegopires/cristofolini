@@ -11,9 +11,9 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cristofolini.site/about/</loc>
+    <loc>https://cristofolini.site/work/medme/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cristofolini.site/work/brightflow/</loc>
@@ -27,11 +27,6 @@
   </url>
   <url>
     <loc>https://cristofolini.site/work/northpay/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cristofolini.site/work/saas-dashboard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
