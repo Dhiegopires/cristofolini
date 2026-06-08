@@ -395,29 +395,25 @@
         const controlsId = tab.getAttribute('aria-controls');
         const targetPanel = document.getElementById(controlsId);
 
-        // Remove active state from all tabs
         serviceTabs.forEach(t => {
           t.classList.remove('service-tab--active');
           t.setAttribute('aria-selected', 'false');
         });
 
-        // Remove active state from all panels
         servicePanels.forEach(p => {
           p.classList.remove('service-panel--active');
         });
 
-        // Add active state to clicked tab
         tab.classList.add('service-tab--active');
         tab.setAttribute('aria-selected', 'true');
 
-        // Add active state to target panel
         if (targetPanel) {
           targetPanel.classList.add('service-panel--active');
         }
       });
     });
 
-    // Keyboard navigation for tabs
+    // arrow-key roving tabindex for ARIA tablist pattern
     serviceTabs.forEach((tab, index) => {
       tab.addEventListener('keydown', (e) => {
         let nextTab;
@@ -738,7 +734,64 @@
   });
 
   /* --------------------------------------------------------------------------
-     11. MedMe TOC — active section tracking via IntersectionObserver
+     11. Image lightbox — cs-diagram and cs-screen-placeholder images
+     -------------------------------------------------------------------------- */
+  (function initLightbox() {
+    const triggers = document.querySelectorAll('.cs-diagram img, .cs-screen-placeholder img');
+    if (!triggers.length) return;
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'cs-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Image preview');
+
+    const img = document.createElement('img');
+    img.className = 'cs-lightbox__img';
+    img.setAttribute('alt', '');
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'cs-lightbox__close';
+    closeBtn.setAttribute('aria-label', 'Close image preview');
+    closeBtn.textContent = '×';
+
+    lightbox.appendChild(img);
+    lightbox.appendChild(closeBtn);
+    document.body.appendChild(lightbox);
+
+    let lastFocused = null;
+
+    function open(src, alt) {
+      img.src = src;
+      img.alt = alt || '';
+      lastFocused = document.activeElement;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function close() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      img.src = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => open(trigger.src, trigger.alt));
+    });
+
+    closeBtn.addEventListener('click', e => { e.stopPropagation(); close(); });
+    lightbox.addEventListener('click', close);
+    img.addEventListener('click', e => e.stopPropagation());
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
+    });
+  })();
+
+  /* --------------------------------------------------------------------------
+     12. MedMe TOC — active section tracking via IntersectionObserver
      -------------------------------------------------------------------------- */
   const tocItems = document.querySelectorAll('.cs-toc__item');
   if (tocItems.length) {

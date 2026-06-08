@@ -38,7 +38,7 @@
   <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../assets/css/globals.css" rel="stylesheet">
   <link href="../../assets/css/case-study.css" rel="stylesheet">
 </head>
@@ -111,31 +111,33 @@
       <div class="cs-container">
         <p class="cs-eyebrow cs-eyebrow--muted">Current state · before this project</p>
         <div class="cs-diagram" style="overflow-x:auto;">
-          <svg width="100%" viewBox="0 0 680 70" role="img" aria-label="Current state flow before MedMe">
+          <svg width="100%" viewBox="0 0 680 100" role="img" aria-label="Current state flow before MedMe">
             <defs>
               <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </marker>
             </defs>
-            <rect x="9"   y="9" width="120" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'DM Mono',monospace" font-size="9" font-weight="500" fill="#f87060" x="69"  y="28" text-anchor="middle" dominant-baseline="central">Wants home visit</text>
-            <text font-family="'DM Mono',monospace" font-size="8" fill="#c06050" x="69"  y="43" text-anchor="middle" dominant-baseline="central">No platform exists</text>
-            <line x1="130" y1="35" x2="136" y2="35" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="137" y="9" width="120" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'DM Mono',monospace" font-size="9" font-weight="500" fill="#f87060" x="197" y="28" text-anchor="middle" dominant-baseline="central">Googles or asks</text>
-            <text font-family="'DM Mono',monospace" font-size="8" fill="#c06050" x="197" y="43" text-anchor="middle" dominant-baseline="central">No filter, no trust</text>
-            <line x1="258" y1="35" x2="264" y2="35" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="265" y="9" width="120" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'DM Mono',monospace" font-size="9" font-weight="500" fill="#f87060" x="325" y="28" text-anchor="middle" dominant-baseline="central">Calls / WhatsApp</text>
-            <text font-family="'DM Mono',monospace" font-size="8" fill="#c06050" x="325" y="43" text-anchor="middle" dominant-baseline="central">No record, no audit</text>
-            <line x1="386" y1="35" x2="392" y2="35" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="393" y="9" width="120" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'DM Mono',monospace" font-size="9" font-weight="500" fill="#f87060" x="453" y="28" text-anchor="middle" dominant-baseline="central">Gets a quote</text>
-            <text font-family="'DM Mono',monospace" font-size="8" fill="#c06050" x="453" y="43" text-anchor="middle" dominant-baseline="central">No escrow guarantee</text>
-            <line x1="514" y1="35" x2="520" y2="35" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="521" y="9" width="150" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'DM Mono',monospace" font-size="9" font-weight="500" fill="#f87060" x="596" y="28" text-anchor="middle" dominant-baseline="central">Professional arrives</text>
-            <text font-family="'DM Mono',monospace" font-size="8" fill="#c06050" x="596" y="43" text-anchor="middle" dominant-baseline="central">Unverified. No recourse.</text>
+            <!-- Node 1: neutral trigger -->
+            <rect x="10"  y="14" width="118" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="69"  y="38" text-anchor="middle" dominant-baseline="central">Wants home visit</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6a6260" x="69"  y="66" text-anchor="middle" dominant-baseline="central">No platform exists</text>
+            <line x1="129" y1="50" x2="141" y2="50" stroke="#3a3530" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <!-- Nodes 2-5: problem state -->
+            <rect x="142" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="201" y="38" text-anchor="middle" dominant-baseline="central">Googles or asks</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="201" y="66" text-anchor="middle" dominant-baseline="central">No filter, no trust</text>
+            <line x1="261" y1="50" x2="273" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="274" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="333" y="38" text-anchor="middle" dominant-baseline="central">Calls / WhatsApp</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="333" y="66" text-anchor="middle" dominant-baseline="central">No record, no audit</text>
+            <line x1="393" y1="50" x2="405" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="406" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="465" y="38" text-anchor="middle" dominant-baseline="central">Gets a quote</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="465" y="66" text-anchor="middle" dominant-baseline="central">No escrow guarantee</text>
+            <line x1="525" y1="50" x2="537" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="538" y="14" width="132" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="604" y="38" text-anchor="middle" dominant-baseline="central">Arrives unverified</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="604" y="66" text-anchor="middle" dominant-baseline="central">No license check.</text>
           </svg>
         </div>
         <p class="cs-caption">The on-demand product didn't exist. Ecommerce existed for products, but not for professional services at home.</p>
@@ -212,7 +214,7 @@
             <p>Most healthcare platforms show all units upfront. You pick one based on distance or name recognition. Then you find a time and discover the slot you wanted is gone. You go back. You pick another unit. You try again.</p>
             <p>This loop isn't just frustrating. It's the structural failure behind most scheduling abandonment in digital health. The form isn't broken. The information architecture is.</p>
             <p>27% of patients switched providers specifically because of digital friction (McKinsey, 2025). They didn't abandon the process. They went to a competitor.</p>
-            <blockquote class="cs-pullquote">MedMe inverts this. Time first. Unit second.</blockquote>
+            <blockquote class="cs-pullquote">MedMe inverts this: the patient selects when, and the system surfaces only what's available at that exact time.</blockquote>
             <p>The patient selects when they want the service. The system only shows clinics that have confirmed availability at that specific time. Slots that can't be fulfilled don't exist in the UI. They're never offered.</p>
             <div class="cs-diagram">
               <svg width="100%" viewBox="0 0 680 420" role="img" aria-label="Scheduling IA comparison: standard model vs MedMe">
@@ -235,10 +237,10 @@
                 <line x1="170" y1="204" x2="170" y2="224" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
                 <rect x="60"  y="226" width="220" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
                 <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#f87060" x="170" y="245" text-anchor="middle" dominant-baseline="central">Slot unavailable</text>
-                <text font-family="'DM Mono',monospace" font-size="10" fill="#c06050" x="170" y="264" text-anchor="middle" dominant-baseline="central">Go back · pick another unit</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="170" y="264" text-anchor="middle" dominant-baseline="central">Go back · pick another unit</text>
                 <path d="M60 252 Q22 252 22 122 L60 122" fill="none" stroke="#f87060" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
                 <rect x="90"  y="302" width="160" height="28" rx="14" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-                <text font-family="'DM Mono',monospace" font-size="11" fill="#f87060" x="170" y="316" text-anchor="middle" dominant-baseline="central">Frustration loop</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#f87060" x="170" y="316" text-anchor="middle" dominant-baseline="central">Frustration loop</text>
                 <rect x="400" y="40"  width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
                 <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="60" text-anchor="middle" dominant-baseline="central">Select service type</text>
                 <line x1="510" y1="80" x2="510" y2="100" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
@@ -247,15 +249,15 @@
                 <line x1="510" y1="142" x2="510" y2="162" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
                 <rect x="400" y="164" width="220" height="52" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
                 <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="181" text-anchor="middle" dominant-baseline="central">View confirmed units</text>
-                <text font-family="'DM Mono',monospace" font-size="10" fill="#6ee7b7" x="510" y="200" text-anchor="middle" dominant-baseline="central">Only available at that slot</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6ee7b7" x="510" y="200" text-anchor="middle" dominant-baseline="central">Only available at that slot</text>
                 <line x1="510" y1="216" x2="510" y2="236" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
                 <rect x="400" y="238" width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
                 <text font-family="'Syne',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="258" text-anchor="middle" dominant-baseline="central">Select unit</text>
                 <line x1="510" y1="278" x2="510" y2="298" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
                 <rect x="430" y="300" width="160" height="28" rx="14" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'DM Mono',monospace" font-size="11" fill="#4ade80" x="510" y="314" text-anchor="middle" dominant-baseline="central">Confirmed · no loop</text>
-                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="170" y="370" text-anchor="middle">Unit shown regardless of availability</text>
-                <text font-family="'DM Mono',monospace" font-size="10" fill="#474440" x="510" y="370" text-anchor="middle">Units filtered to confirmed slots only</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#4ade80" x="510" y="314" text-anchor="middle" dominant-baseline="central">Confirmed · no loop</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="170" y="370" text-anchor="middle">Unit shown regardless of availability</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="510" y="370" text-anchor="middle">Units filtered to confirmed slots only</text>
               </svg>
             </div>
             <p>Before selecting time, the patient chooses visit type: at-home or at-clinic. This single toggle filters everything downstream: which clinics appear, what equipment lists apply, what the professional card shows. At-home visits carry the full token protocol. At-clinic visits use a simplified check-in. The scheduling IA is the same in both cases.</p>
@@ -298,7 +300,7 @@
             </div>
             <div class="cs-addresses">
               <span class="cs-addresses__label">Addresses</span>
-              <span class="cs-addresses__metric">27% switched providers due to digital friction, not clinical quality (McKinsey, 2025)</span>
+              <span class="cs-addresses__metric">provider switching driven by digital friction, not clinical quality (McKinsey, 2025)</span>
             </div>
           </div>
         </section>
@@ -337,7 +339,7 @@
           </div>
           <div class="cs-section__body">
             <p>Every slot shown to the patient already includes 60 minutes of lead time built in: the window the professional needs to collect equipment at the clinic before traveling. If that window collapses due to a last-minute booking or a late confirmation, the slot disappears from the picker before it's ever offered. The patient never sees unavailable time.</p>
-            <p>This is where most on-demand healthcare products fail. They optimize for showing availability. MedMe optimizes for fulfillment. Showing a slot that can't be executed is worse than showing no slot. It creates a confirmed appointment followed by a cancellation, which destroys trust faster than saying the time is unavailable.</p>
+            <p>This is where most on-demand healthcare products fail. Showing a slot that can't be executed is worse than showing no slot. A confirmed appointment followed by a cancellation destroys trust faster than simply showing the time as unavailable.</p>
             <div class="cs-edge-cases">
               <span class="cs-edge-cases__label">Edge cases</span>
               <div class="cs-edge-row">
@@ -455,7 +457,7 @@
             </div>
             <div class="cs-addresses">
               <span class="cs-addresses__label">Addresses</span>
-              <span class="cs-addresses__metric">74% decision-stress abandonment · 80.2% mobile abandonment · hidden cost as #1 exit factor</span>
+              <span class="cs-addresses__metric">decision-stress abandonment · mobile checkout abandonment · hidden cost as #1 exit factor (Accenture 2024 · Baymard 2024 · McKinsey 2025)</span>
             </div>
           </div>
         </section>

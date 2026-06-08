@@ -39,7 +39,7 @@
   /* Fonts */
   --display: 'Bebas Neue', sans-serif;
   --sans:    'Syne', system-ui, sans-serif;
-  --mono:    'DM Mono', 'Courier New', monospace;
+  --mono:    'IBM Plex Mono', 'Courier New', monospace;
 
   /* Layout */
   --section-y: 120px;
@@ -226,7 +226,7 @@ main, footer { position: relative; z-index: var(--z-content); }
 .tYLW { font-family:var(--display); font-size:clamp(28px,4vw,52px);  line-height:.9;  color:var(--y);  text-transform:uppercase; }
 .tBD  { font-size:15px; color:var(--t2); line-height:1.75; }
 .tSM  { font-size:13px; color:var(--t2); line-height:1.72; }
-.tLB  { font-family:var(--mono); font-size:9px; letter-spacing:.15em; text-transform:uppercase; color:var(--t3); }
+.tLB  { font-family:var(--mono); font-size:9px; letter-spacing:.15em; text-transform:uppercase; color:var(--t2); }
 
 /* Backward-compat type classes */
 .display   { font-family:var(--display); font-size:var(--text-7xl); line-height:.93; letter-spacing:.01em; text-transform:uppercase; }
@@ -815,11 +815,11 @@ main, footer { position: relative; z-index: var(--z-content); }
 }
 .footer__brand   { display:flex; flex-direction:column; gap:12px; }
 .footer__logo    { font-family:var(--sans); font-weight:800; font-size:15px; color:var(--t2); }
-.footer__copy    { font-family:var(--mono); font-size:9px; color:var(--t3); letter-spacing:.06em; }
+.footer__copy    { font-family:var(--mono); font-size:11px; color:var(--t2); letter-spacing:.06em; }
 .footer__nav     { display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
 @media (min-width: 768px) { .footer__nav { align-items:flex-end; } }
-.footer__nav-link { font-family:var(--mono); font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--t3); transition:color .2s; }
-.footer__nav-link:hover { color:var(--t2); }
+.footer__nav-link { font-family:var(--mono); font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--t2); transition:color .2s; }
+.footer__nav-link:hover { color:var(--t1); }
 .footer__nav-link:focus-visible { outline:2px solid var(--y); outline-offset:3px; }
 .footer__socials { display:flex; gap:20px; margin-top:6px; }
 

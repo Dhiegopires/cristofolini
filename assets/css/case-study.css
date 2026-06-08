@@ -475,7 +475,7 @@
   color: var(--t3);
 }
 
-.cs-eyebrow--muted { opacity: .6; }
+.cs-eyebrow--muted { color: var(--t3); }
 
 .cs-hero__title {
   font-family: var(--display);
@@ -608,8 +608,8 @@
 /* Caption */
 .cs-caption {
   font-family: var(--mono);
-  font-size: 11px;
-  color: var(--t3);
+  font-size: 12px;
+  color: var(--t2);
   letter-spacing: .05em;
 }
 
@@ -658,7 +658,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: .06em;
-  color: var(--t3);
+  color: var(--t2);
   padding: 6px 0 6px var(--sp-3);
   text-decoration: none;
   border-left: 2px solid transparent;
@@ -666,7 +666,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
   white-space: nowrap;
 }
 
-.cs-toc__item:hover { color: var(--t2); }
+.cs-toc__item:hover { color: var(--t1); }
 
 .cs-toc__item.is-active {
   color: var(--y);
@@ -1067,4 +1067,67 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
   border: 1px solid var(--b1);
   border-radius: 100px;
   padding: 6px var(--sp-4);
+}
+
+/* --------------------------------------------------------------------------
+   Lightbox
+   -------------------------------------------------------------------------- */
+.cs-diagram img,
+.cs-screen-placeholder img {
+  cursor: zoom-in;
+}
+
+.cs-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, .92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, visibility .2s;
+  cursor: zoom-out;
+}
+
+.cs-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cs-lightbox__img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  cursor: default;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .5);
+}
+
+.cs-lightbox__close {
+  position: absolute;
+  top: var(--sp-5);
+  right: var(--sp-5);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, .6);
+  width: 40px;
+  height: 40px;
+  min-height: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, color .2s;
+  padding: 0;
+}
+
+.cs-lightbox__close:hover {
+  border-color: rgba(255, 255, 255, .6);
+  color: #fff;
 }

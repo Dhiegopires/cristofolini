@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instivo | Data Workspace Governance Design | Dhiego Cristofolini</title>
+  <meta name="description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Instivo | Data Workspace Governance Design | Dhiego Cristofolini">
+  <meta property="og:description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/project/instivo/thumbnail.png">
+  <meta property="og:url" content="https://cristofolini.site/work/instivo/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instivo | Data Workspace Governance Design | Dhiego Cristofolini">
+  <meta name="twitter:description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/instivo/thumbnail.png">
+  <link rel="canonical" href="https://cristofolini.site/work/instivo/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Instivo",
+    "description": "Retail SaaS platform with a governed data workspace: hierarchy builder, rule engine, and design system powering employee, stock, supplier, and fleet management.",
+    "author": {
+      "@type": "Person",
+      "name": "Dhiego Cristofolini",
+      "url": "https://cristofolini.site/"
+    },
+    "dateCreated": "2024-01-01",
+    "url": "https://cristofolini.site/work/instivo",
+    "genre": "UX Case Study",
+    "keywords": "product design, ux, saas, governance, design system, retail, b2b, case study"
+  }
+  </script>
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../assets/css/globals.css" rel="stylesheet">
+  <link href="../../assets/css/case-study.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../" aria-current="page">Work</a></li>
+    </ul>
+    <a href="../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="cs-hero">
+      <div class="cs-hero__left">
+        <div class="case-hero__tags">
+          <span class="tag">Product</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">SaaS</span>
+        </div>
+        <h1 class="cs-hero__title">Governing what no spreadsheet can hold</h1>
+        <p class="cs-lead">Multi-unit retail operations were running on manual processes — stock thresholds watched by hand, employees onboarded across disconnected files, access policies communicated individually with no way to verify compliance. Instivo needed a governed data layer that operators could build and own without IT in the room.</p>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">0</p>
+            <p class="cs-impact-label">IT tickets required for config changes · managers act directly</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num"><span class="cs-accent">5</span>×</p>
+            <p class="cs-impact-label">projected unit onboarding speed · pre-configured hierarchy, local adjustments only</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">1</p>
+            <p class="cs-impact-label">entity record · referenced across all modules with no duplication</p>
+          </div>
+        </div>
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Role</p>
+            <p class="cs-meta-value">Product Designer</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Platform</p>
+            <p class="cs-meta-value">Web · SaaS</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Users</p>
+            <p class="cs-meta-value">3 role types</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Status</p>
+            <p class="cs-meta-value">NDA · 4 months</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-hero__right">
+        <img src="img/hero.png" alt="Instivo Data Workspace canvas with hierarchy cards and rule engine" loading="eager">
+      </div>
+    </section>
+
+    <section class="cs-current-state">
+      <div class="cs-container">
+        <p class="cs-eyebrow cs-eyebrow--muted">Current state · before this project</p>
+        <div class="cs-diagram" style="overflow-x:auto;">
+          <svg width="100%" viewBox="0 0 780 100" role="img" aria-label="Current state flow before Instivo: fragmented operations across spreadsheets and phone calls">
+            <defs>
+              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+            <!-- Node 1: neutral trigger -->
+            <rect x="10"  y="14" width="140" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="80"  y="38" text-anchor="middle" dominant-baseline="central">Config change needed</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6a6260" x="80"  y="66" text-anchor="middle" dominant-baseline="central">No self-service exists</text>
+            <line x1="151" y1="50" x2="163" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <!-- Nodes 2-5: problem state -->
+            <rect x="164" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="234" y="38" text-anchor="middle" dominant-baseline="central">Files IT ticket</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="234" y="66" text-anchor="middle" dominant-baseline="central">Days of wait time</text>
+            <line x1="305" y1="50" x2="317" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="318" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="388" y="38" text-anchor="middle" dominant-baseline="central">IT mediates change</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="388" y="66" text-anchor="middle" dominant-baseline="central">No manager control</text>
+            <line x1="459" y1="50" x2="471" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="472" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="542" y="38" text-anchor="middle" dominant-baseline="central">Manual file update</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="542" y="66" text-anchor="middle" dominant-baseline="central">No audit, no enforcement</text>
+            <line x1="613" y1="50" x2="625" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="626" y="14" width="144" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="698" y="38" text-anchor="middle" dominant-baseline="central">Rule communicated</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="698" y="66" text-anchor="middle" dominant-baseline="central">Individually. Unverified.</text>
+          </svg>
+        </div>
+        <p class="cs-caption">Retail operations were governed by whoever remembered to act. Configuration changes required IT as a middleman. Rules lived in people's heads, not in the system.</p>
+      </div>
+    </section>
+
+    <div class="cs-layout">
+
+      <aside class="cs-toc" aria-label="Section navigation">
+        <nav class="cs-toc__inner">
+          <a href="#s01" class="cs-toc__item">01 &nbsp;The problem</a>
+          <a href="#s02" class="cs-toc__item">02 &nbsp;The product</a>
+          <a href="#s03" class="cs-toc__item">03 &nbsp;Three users</a>
+          <a href="#s04" class="cs-toc__item">04 &nbsp;The hierarchy</a>
+          <a href="#s05" class="cs-toc__item">05 &nbsp;Rule engine</a>
+          <a href="#s06" class="cs-toc__item">06 &nbsp;Governance</a>
+          <a href="#s07" class="cs-toc__item">07 &nbsp;Design system</a>
+          <a href="#s08" class="cs-toc__item">08 &nbsp;Fleet &amp; Dock</a>
+          <a href="#s09" class="cs-toc__item">09 &nbsp;Outcome</a>
+        </nav>
+      </aside>
+
+      <div class="cs-content">
+
+        <section id="s01" class="cs-section" aria-labelledby="s01-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">01</span>
+            <h2 class="cs-section__title" id="s01-title">The problem</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Retail companies with multiple units had no single place to manage their own operations. Employee records lived in spreadsheets. Supplier orders happened over the phone. Stock was counted manually. A CRM handled the customer side, but nothing governed what happened internally.</p>
+            <blockquote class="cs-pullquote">A product dropping below 50 units had no automatic trigger. Someone had to notice, find the supplier contact, call, and follow up.</blockquote>
+            <p>A new employee required manual updates across multiple files with no enforcement that it had been done. An access policy change had to be communicated individually, with no mechanism to verify compliance.</p>
+            <p>Instivo was built to replace this fragmentation. But a platform where managers configure rules, stock thresholds trigger automatic restocking, and entire operational hierarchies are structured in one place needs something underneath it that most SaaS products skip: a governed data layer that the operation itself controls.</p>
+          </div>
+        </section>
+
+        <section id="s02" class="cs-section" aria-labelledby="s02-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">02</span>
+            <h2 class="cs-section__title" id="s02-title">The product</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The Data Workspace is where data is created, structured, and maintained. Everything else in Instivo depends on what lives inside it. It does not display data collected elsewhere — it is the source everything else reads from.</p>
+            <p>Every field available in a form across the platform, every category a product can belong to, every role an employee can be assigned traces back to a hierarchy built here. Scheduling a dock requires the driver's role, the truck's registration, the dock number, the warehouse it belongs to, and the management chain above it. None of that exists unless someone built it in the Data Workspace first.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">System workspaces</p>
+                <p class="cs-compare__text">Ship pre-configured and feed critical platform functions. They cannot be deleted. They are the structural foundation that everything else depends on.</p>
+              </div>
+              <div>
+                <p class="cs-compare__label">Free workspaces</p>
+                <p class="cs-compare__text">Created by users for their own organizational purposes. No downstream consequences if modified or removed. Full flexibility within the system boundary.</p>
+              </div>
+            </div>
+            <p>The distinction mattered for more than technical reasons. The same interface that gives a manager flexibility to build custom hierarchies also sits one wrong deletion away from breaking a form that every new employee depends on.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="img/workspace-ecosystem.svg" width="100%" alt="Ecosystem diagram: system workspaces and free workspaces and what each feeds downstream" style="display:block;">
+            </div>
+          </div>
+        </section>
+
+        <section id="s03" class="cs-section" aria-labelledby="s03-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">03</span>
+            <h2 class="cs-section__title" id="s03-title">Three users, one system</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Three different roles interacted with the platform, each with a different surface. A rule built for the IT Admin could silently block something a Manager depended on. Getting the permission model right required designing all three simultaneously.</p>
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Manager</p>
+                <p class="cs-fear-card__title">Hierarchy &amp; rules</p>
+                <p class="cs-fear-card__body">Builds and maintains hierarchies, configures rules, defines what each role can see and do. Needs flexibility without being able to break what IT locked down.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">IT Admin</p>
+                <p class="cs-fear-card__title">Access &amp; privileges</p>
+                <p class="cs-fear-card__body">Sets system-level access and defines privileges by user or group. Their rules sit above the manager's. Conflicts happen invisibly unless the interface surfaces them.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Operational user</p>
+                <p class="cs-fear-card__title">Forms &amp; workflows</p>
+                <p class="cs-fear-card__body">Never opens the Data Workspace. Experiences it through the fields available in a form, the categories visible in a panel, the actions their role permits.</p>
+              </div>
+            </div>
+            <p>The layering problem was specific. An IT rule could restrict what a manager sees. A manager rule could block an operational action even if IT had granted access. Both could be true simultaneously, invisibly, with no conflict surfaced to the user who hit the wall.</p>
+            <p>The interface had to make those layers legible without exposing the full permission chain to every user. A manager needed to know their rule would propagate. An operational user needed to know why an action was unavailable.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="img/user-flow-three-roles.svg" width="100%" alt="User flow: Manager, IT Admin, and Operational user across the system" style="display:block;">
+            </div>
+          </div>
+        </section>
+
+        <section id="s04" class="cs-section" aria-labelledby="s04-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">04</span>
+            <h2 class="cs-section__title" id="s04-title">The hierarchy</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The original brief called for a folder system. A folder contains files. Files belong to one folder. The hierarchy is linear and the relationship is one-directional.</p>
+            <blockquote class="cs-pullquote">A shampoo product belongs to hygiene, hair care, and personal care simultaneously. In a folder model, it can only live in one.</blockquote>
+            <p>The other two either duplicate the entry or lose the relationship entirely. I proposed a card-based system where entities are linked rather than nested.</p>
+            <div class="cs-diagram">
+              <svg width="100%" viewBox="0 0 680 400" role="img" aria-label="Hierarchy comparison: folder model vs card-linked model">
+                <defs>
+                  <marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M2 1L8 5L2 9" fill="none" stroke="#474440" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </marker>
+                </defs>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="170" y="24" text-anchor="middle">Folder model</text>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="510" y="24" text-anchor="middle">Card-linked model</text>
+                <line x1="340" y1="12" x2="340" y2="390" stroke="#2a2825" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+                <!-- Folder model -->
+                <rect x="80" y="40" width="180" height="36" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#f87060" x="170" y="58" text-anchor="middle" dominant-baseline="central">📁 Hygiene</text>
+                <line x1="130" y1="76" x2="130" y2="92" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
+                <rect x="60" y="94" width="140" height="32" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c06050" x="130" y="110" text-anchor="middle" dominant-baseline="central">Shampoo (copy 1)</text>
+                <line x1="210" y1="76" x2="210" y2="92" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
+                <rect x="150" y="94" width="100" height="32" rx="6" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#474440" x="200" y="110" text-anchor="middle" dominant-baseline="central">Conditioner</text>
+
+                <rect x="80" y="150" width="180" height="36" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#f87060" x="170" y="168" text-anchor="middle" dominant-baseline="central">📁 Hair Care</text>
+                <line x1="170" y1="186" x2="170" y2="202" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
+                <rect x="95" y="204" width="150" height="32" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c06050" x="170" y="220" text-anchor="middle" dominant-baseline="central">Shampoo (copy 2)</text>
+
+                <rect x="100" y="264" width="140" height="28" rx="14" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#f87060" x="170" y="278" text-anchor="middle" dominant-baseline="central">Duplicated. Diverged.</text>
+
+                <!-- Card model -->
+                <!-- Shampoo card (single entity) -->
+                <rect x="420" y="40" width="180" height="56" rx="8" fill="#0d1f12" stroke="#1a5025" stroke-width="1"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="510" y="58" text-anchor="middle" dominant-baseline="central">SHAMPOO · ID #0042</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="510" y="75" text-anchor="middle" dominant-baseline="central">Single entity · unique ID</text>
+
+                <!-- Links to three contexts -->
+                <line x1="460" y1="96" x2="440" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="510" y1="96" x2="510" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="560" y1="96" x2="578" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
+
+                <rect x="390" y="132" width="100" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="440" y="148" text-anchor="middle" dominant-baseline="central">Hygiene</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="440" y="163" text-anchor="middle" dominant-baseline="central">child role</text>
+
+                <rect x="460" y="132" width="100" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="510" y="148" text-anchor="middle" dominant-baseline="central">Hair Care</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="510" y="163" text-anchor="middle" dominant-baseline="central">child role</text>
+
+                <rect x="530" y="132" width="100" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="580" y="148" text-anchor="middle" dominant-baseline="central">Stock rule</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="580" y="163" text-anchor="middle" dominant-baseline="central">parent role</text>
+
+                <rect x="430" y="210" width="160" height="28" rx="14" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#4ade80" x="510" y="224" text-anchor="middle" dominant-baseline="central">One record. Three contexts.</text>
+
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="170" y="360" text-anchor="middle">Entity duplicated per folder</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="510" y="360" text-anchor="middle">Entity referenced, never copied</text>
+              </svg>
+            </div>
+            <p>Each card represents a real entity in the system with a unique ID. The same card can be referenced in multiple workspaces, playing a different structural role in each. In the product hierarchy it is a child of hygiene. In the stock workspace it is a parent to a restocking threshold. In the transport workspace it is a child of a cargo category.</p>
+            <p>The analogy I used internally was design tokens. A token is not a file in a folder. It is a value that lives in a system of references, and its meaning depends on the context in which it is used. The canvas reorganized automatically as connections multiplied, removing the responsibility for legibility from the user.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="img/canvas-hierarchy.png" width="100%" alt="Canvas with two parallel hierarchies: Hygiene and Cleaning Supplies with shared entity cards" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+            </div>
+          </div>
+        </section>
+
+        <section id="s05" class="cs-section" aria-labelledby="s05-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">05</span>
+            <h2 class="cs-section__title" id="s05-title">The rule engine</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Rules are created inside each card's modal. The structure is fixed: an operator, an entity, a condition, and an action. Each is a dropdown. A manager selects "If," then selects "product," then selects "stock below 50," then selects "trigger restocking." The rule is created without any knowledge of the underlying logic.</p>
+            <div class="cs-rejected">
+              <span class="cs-rejected__label">Rejected approach</span>
+              The first version I tested used free text fields. A manager could type anything, which meant the system had to interpret intent. The error rate made it unusable. Constrained dropdowns removed the interpretation problem entirely: the system only offers options that are valid in each position, so an invalid rule cannot be constructed.
+            </div>
+            <div class="cs-edge-cases">
+              <span class="cs-edge-cases__label">Rule structure · four-part fixed schema</span>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Operator</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">If · Unless · When — sets the conditional frame</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Entity</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">product · employee · supplier · dock — scopes the subject</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Condition</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">stock below threshold · role assigned · license expired — triggers the action</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Action</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">trigger restocking · notify manager · block access — executes automatically</span>
+              </div>
+            </div>
+            <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it in read-only mode inside the modal. The manager can see what is being enforced and where it came from, but cannot modify it at the child level.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="img/rule-engine-modal.png" width="100%" alt="Card modal with Rules tab open: inherited rule in read-only mode, dropdown selectors, scope toggle" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+            </div>
+          </div>
+        </section>
+
+        <section id="s06" class="cs-section" aria-labelledby="s06-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">06</span>
+            <h2 class="cs-section__title" id="s06-title">Governance</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>System workspaces show a lock indicator and a "system" badge on the selection screen. The delete control is visible but disabled. Hovering over it surfaces a tooltip: "This workspace is critical to the system and cannot be deleted." The action is not hidden. The reason it is unavailable is stated at the moment the user needs it.</p>
+            <blockquote class="cs-pullquote">Hidden controls create ambiguity about whether a feature exists at all. Disabled controls with inline explanations answer that question without requiring documentation.</blockquote>
+            <p>A manager who cannot find the delete option does not know if they lack permission or if deletion is simply not possible in this context. Hiding the control based on permissions was the easier path. It was not the clearer one.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">Hidden control</p>
+                <p class="cs-compare__text">User doesn't see the action. Doesn't try to take it. But also doesn't know if the feature exists, if they lack access, or if something is preventing it. Ambiguity stays open.</p>
+              </div>
+              <div>
+                <p class="cs-compare__label">Disabled + tooltip</p>
+                <p class="cs-compare__text">User sees the action. Sees it is unavailable. Sees why. The constraint is communicated at the exact moment the user needs it. No documentation required.</p>
+              </div>
+            </div>
+            <p>The same logic applied to inherited rules inside card modals. A rule propagated from a parent is visible to the child's manager but marked as read-only, with a reference to its origin. They can see the constraint and trace it back. They cannot accidentally remove it while editing something else.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="img/governance-disabled-state.png" width="100%" alt="Workspace selection screen: system badge, lock icon, disabled delete with tooltip" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+            </div>
+          </div>
+        </section>
+
+        <section id="s07" class="cs-section" aria-labelledby="s07-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">07</span>
+            <h2 class="cs-section__title" id="s07-title">Design system</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The design system I inherited had no tokens. Components that performed the same function existed in multiple versions with no shared source. The Figma file had no structure that would survive a significant change to the visual language. There was no responsive logic because the product was considered desktop-only.</p>
+            <p>I rebuilt it in four layers. Core holds design best practices: a 4px spacing grid, a defined type scale, base color values. Palette holds color ramps from 25 to 950 across every hue the system might need. Brand is where client-specific decisions live. Semantic splits into three dimensions: color with light and dark modes, size with desktop, tablet, and mobile breakpoints, and type with the same three breakpoints.</p>
+            <div class="cs-diagram">
+              <svg width="100%" viewBox="0 0 680 200" role="img" aria-label="Design token architecture: Core, Palette, Brand, Semantic layers">
+                <defs>
+                  <marker id="arr-ds" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M2 1L8 5L2 9" fill="none" stroke="#474440" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </marker>
+                </defs>
+                <!-- Core -->
+                <rect x="20" y="60" width="140" height="80" rx="8" fill="#0d1f12" stroke="#1a5025" stroke-width="1"/>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="90" y="88" text-anchor="middle" dominant-baseline="central">Core</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="90" y="108" text-anchor="middle" dominant-baseline="central">4px grid · type scale</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="90" y="122" text-anchor="middle" dominant-baseline="central">base color values</text>
+                <line x1="161" y1="100" x2="173" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr-ds)"/>
+                <!-- Palette -->
+                <rect x="175" y="60" width="140" height="80" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="245" y="88" text-anchor="middle" dominant-baseline="central">Palette</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="245" y="108" text-anchor="middle" dominant-baseline="central">ramps 25–950</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="245" y="122" text-anchor="middle" dominant-baseline="central">all system hues</text>
+                <line x1="316" y1="100" x2="328" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr-ds)"/>
+                <!-- Brand -->
+                <rect x="330" y="60" width="140" height="80" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="400" y="88" text-anchor="middle" dominant-baseline="central">Brand</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="400" y="108" text-anchor="middle" dominant-baseline="central">client primary · sizes</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="400" y="122" text-anchor="middle" dominant-baseline="central">semantic role mapping</text>
+                <line x1="471" y1="100" x2="483" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr-ds)"/>
+                <!-- Semantic -->
+                <rect x="485" y="40" width="175" height="120" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="572" y="68" text-anchor="middle" dominant-baseline="central">Semantic</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="572" y="90" text-anchor="middle" dominant-baseline="central">color · light + dark</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="572" y="107" text-anchor="middle" dominant-baseline="central">size · 3 breakpoints</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="572" y="124" text-anchor="middle" dominant-baseline="central">type · 3 breakpoints</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#474440" x="572" y="148" text-anchor="middle" dominant-baseline="central">recalculates automatically</text>
+              </svg>
+            </div>
+            <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically.</p>
+            <div class="cs-addresses">
+              <span class="cs-addresses__label">Mobile consequence</span>
+              <span class="cs-addresses__metric">The operations team needed a mobile interface for warehouse staff before launch. Because semantic tokens already resolved to mobile values at narrow breakpoints, the mobile build required no parallel system. The responsive logic had been built before anyone asked for it.</span>
+            </div>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="img/design-system-palette.png" width="100%" alt="Design system in practice: palette, type scale, and component library" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+            </div>
+          </div>
+        </section>
+
+        <section id="s08" class="cs-section" aria-labelledby="s08-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">08</span>
+            <h2 class="cs-section__title" id="s08-title">Fleet &amp; Dock</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The Data Workspace did not operate in isolation. Instivo included a second module for dock and fleet management: scheduling incoming trucks across numbered docks, tracking drivers and vehicles, logging cargo and destinations.</p>
+            <blockquote class="cs-pullquote">The driver that a manager registered in a hierarchy was the same driver that appeared in a dock booking, pulled automatically from the same record.</blockquote>
+            <p>Booking a dock slot required a driver record with a valid license category, a vehicle record with a registered plate, a dock record with its assigned bay, and a warehouse record with its management chain. All of those entities were built and maintained in the Data Workspace. The Fleet &amp; Dock module consumed them directly.</p>
+            <p>No duplication, no manual cross-entry, no integration layer between the two modules. If the driver's license category changed in the Data Workspace, the change was immediately reflected in every dock booking associated with that driver. One record. One source of truth.</p>
+            <div class="cs-screens cs-screens--2">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
+                  <img src="img/fleet-dock-schedule.png" alt="Fleet and Dock module: dock scheduling grid with upcoming bookings" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Dock scheduling · grid of bays and upcoming bookings</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
+                  <img src="img/fleet-drivers-table.png" alt="Fleet and Dock module: driver table with license categories and availability" loading="lazy">
+                </div>
+                <figcaption class="cs-caption">Driver table · license categories linked from Data Workspace</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section id="s09" class="cs-section" aria-labelledby="s09-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">09</span>
+            <h2 class="cs-section__title" id="s09-title">Outcome</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The product did not reach public launch during my engagement. I left after approximately four months of design work. What follows is projected based on enterprise SaaS benchmarks for governance platforms of comparable scope.</p>
+            <div class="cs-benchmark-grid">
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num"><span class="cs-accent">73</span><span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Projected reduction in configuration time when non-technical users act without filing IT requests</p>
+                <p class="cs-benchmark-source">Enterprise SaaS governance benchmarks</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num"><span class="cs-accent">5</span>×</p>
+                <p class="cs-benchmark-desc">Faster unit onboarding: hierarchy ships pre-configured, only local adjustments required</p>
+                <p class="cs-benchmark-source">Comparable platform deployments</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">100<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Of manual processes with a defined trigger replaced by rules that enforce the action automatically</p>
+                <p class="cs-benchmark-source">System design · rule engine coverage</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">0</p>
+                <p class="cs-benchmark-desc">Duplicate entity records across modules — one card, referenced everywhere, updated once</p>
+                <p class="cs-benchmark-source">Card-linked architecture</p>
+              </div>
+            </div>
+            <p>Before Instivo, a configuration change required IT involvement as an intermediary. A manager who needed to modify access permissions, add a product category, or change a restocking threshold could not do it directly. The Data Workspace made all of those actions self-service for the roles that owned them.</p>
+            <div class="cs-trust-pills">
+              <span class="cs-trust-pill">Design tokens · entity reference model</span>
+              <span class="cs-trust-pill">Figma · constrained dropdown UX</span>
+              <span class="cs-trust-pill">Disabled controls · inline explanations</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <nav class="case-nav" aria-label="Case navigation">
+      <a href="../" class="case-nav__back label">← All work</a>
+      <div class="case-nav__adjacent">
+        <a href="../medme/" class="case-nav__item case-nav__item--prev">
+          <span class="label case-nav__direction">← Previous</span>
+          <span class="heading-sm case-nav__title">MedMe</span>
+        </a>
+        <a href="../northpay/" class="case-nav__item case-nav__item--next">
+          <span class="label case-nav__direction">Next →</span>
+          <span class="heading-sm case-nav__title">NorthPay</span>
+        </a>
+      </div>
+    </nav>
+
+    <a href="../../contact/" class="cta-section" aria-label="Go to contact page | Let's work together">
+      <p class="cta-section__eyebrow">Let's talk</p>
+      <p class="cta-section__headline">Got a project?<br><em>Let's make it work.</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../" class="footer__nav-link">Home</a>
+        <a href="../" class="footer__nav-link">Work</a>
+        <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
