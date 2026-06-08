@@ -2,8 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/dhieg398/cristofolini.site
-    - rsync -a --delete assets/ $DEPLOYPATH/assets/
-    - rsync -a --delete work/ $DEPLOYPATH/work/
-    - rsync -a --delete contact/ $DEPLOYPATH/contact/
-    - rsync -a *.html $DEPLOYPATH/
-    - rsync -a sitemap.xml robots.txt $DEPLOYPATH/ 2>/dev/null || true
+    - /bin/cp -R assets contact work *.html *.xml *.txt $DEPLOYPATH/
