@@ -795,6 +795,7 @@
     .carousel__viewport { overflow: hidden; }
     .carousel__track {
       display: flex;
+      align-items: stretch;
       gap: 24px;
       will-change: transform;
       transition: transform var(--duration-slow) var(--ease-in-out);
@@ -802,8 +803,10 @@
     .carousel__slide {
       flex-shrink: 0;
       width: min(560px, 80vw);
+      display: flex;
       transition: opacity .3s, transform .3s;
     }
+    .carousel-card { height: 100%; }
     .carousel__controls {
       display: flex;
       justify-content: flex-end;
@@ -1043,8 +1046,7 @@
             Studio, consulting,<br>and in-house work.
           </h2>
           <p class="tBD reveal" style="--delay: 160ms;">
-            Vellumwire runs as an active studio layer, consulting work
-            continues in parallel, and in-house roles are listed directly.
+            Vellumwire is an active studio. Consulting and in-house work runs alongside it.
           </p>
           <div class="exp-stat reveal" style="--delay: 240ms">
             <span class="exp-stat__num">10+</span>
@@ -1209,38 +1211,32 @@
               Research, systems,<br>interfaces,<br>identity.
             </h2>
             <p class="tBD">
-              I work across the full design surface: research, strategy, interfaces, design systems, identity, and motion. As the sole designer or embedded in a product team.
+              From the first research session to final dev handoff — across strategy, UI, systems, brand, illustration, and motion.
             </p>
           </div>
           <div class="service-panel" data-panel="1">
             <p class="tLB">01: Research & Strategy</p>
-            <h2 class="heading-lg" style="color: var(--t1);">Find the real<br>problem before<br>solving it.</h2>
-            <p class="tBD">Desk research, user interviews, journey maps, and opportunity framing.</p>
+            <h2 class="heading-lg" style="color: var(--t1);">The brief<br>before the<br>wireframe.</h2>
           </div>
           <div class="service-panel" data-panel="2">
             <p class="tLB">02: Interface Design</p>
-            <h2 class="heading-lg" style="color: var(--t1);">Every state,<br>every surface,<br>fully spec'd.</h2>
-            <p class="tBD">High-fidelity screens, interaction patterns, and responsive layouts across all surfaces.</p>
+            <h2 class="heading-lg" style="color: var(--t1);">Designed for<br>handoff, not<br>presentations.</h2>
           </div>
           <div class="service-panel" data-panel="3">
             <p class="tLB">03: Design Systems</p>
             <h2 class="heading-lg" style="color: var(--t1);">Tokenized,<br>documented,<br>team-ready.</h2>
-            <p class="tBD">Component libraries, token systems, and documentation built for teams, not demos.</p>
           </div>
           <div class="service-panel" data-panel="4">
             <p class="tLB">04: Brand Identity</p>
             <h2 class="heading-lg" style="color: var(--t1);">Name, mark,<br>guidelines,<br>system.</h2>
-            <p class="tBD">Naming, visual identity, and brand guidelines built to hold across every surface.</p>
           </div>
           <div class="service-panel" data-panel="5">
             <p class="tLB">05: Illustration</p>
             <h2 class="heading-lg" style="color: var(--t1);">Custom visual<br>language for<br>the product.</h2>
-            <p class="tBD">Illustration, iconography, and art direction for digital and print. Work that makes a product feel distinct.</p>
           </div>
           <div class="service-panel" data-panel="6">
             <p class="tLB">06: Motion</p>
             <h2 class="heading-lg" style="color: var(--t1);">Motion that<br>clarifies,<br>not decorates.</h2>
-            <p class="tBD">Microinteractions, prototypes, and animation specs that reduce ambiguity in handoff.</p>
           </div>
         </div>
 
@@ -1254,7 +1250,7 @@
   <section class="cases-section" aria-labelledby="cases-heading">
     <div class="container cases-section__header reveal">
       <p class="tLB" style="margin-bottom: 12px;">Selected work</p>
-      <h2 class="heading-lg" id="cases-heading" style="color: var(--t1);">A few things I'm<br>allowed to show.</h2>
+      <h2 class="heading-lg" id="cases-heading" style="color: var(--t1);">Case studies.</h2>
     </div>
 
     <div class="carousel" role="region" aria-label="Case studies" aria-roledescription="carousel" tabindex="0">
@@ -1278,12 +1274,30 @@
           </div>
 
           <div class="carousel__slide">
+            <a href="work/vellumwire/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="work/vellumwire/img/hero.png" alt="Vellumwire studio site — problem-led positioning and conversion copy" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+                <p class="carousel-card__title">Vellumwire | Studio site that closes</p>
+                <p class="carousel-card__desc">~1,000 organic sessions/week with no paid ads. Designed to compress a full sales cycle into one visit.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
             <a href="work/northpay/" class="carousel-card">
               <div class="carousel-card__image">
                 <img src="assets/img/project/NorthPay/thumbnail.jpg" alt="NorthPay fintech onboarding and verification" loading="lazy" width="560" height="280">
               </div>
               <div class="carousel-card__body">
                 <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
                   <span class="tag">Product</span>
                   <span class="tag">UI/UX</span>
                 </div>
@@ -1301,9 +1315,10 @@
               </div>
               <div class="carousel-card__body">
                 <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
                   <span class="tag">Product</span>
                   <span class="tag">UI/UX</span>
-                  <span class="tag">Brand</span>
+                  <span class="tag">Branding</span>
                 </div>
                 <p class="carousel-card__title">Veriflow | Pricing and plans</p>
                 <p class="carousel-card__desc">Dark-mode SaaS pricing page redesign focused on conversion and clarity.</p>
@@ -1319,6 +1334,7 @@
               </div>
               <div class="carousel-card__body">
                 <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
                   <span class="tag">Product</span>
                   <span class="tag">UI/UX</span>
                   <span class="tag">2D Art</span>
@@ -1338,6 +1354,7 @@
               </div>
               <div class="carousel-card__body">
                 <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
                   <span class="tag">Product</span>
                   <span class="tag">UI/UX</span>
                 </div>
