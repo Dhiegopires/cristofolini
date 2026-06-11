@@ -560,7 +560,18 @@
   if (emailLink) {
     const addr = `${emailLink.dataset.user}@${emailLink.dataset.domain}.${emailLink.dataset.tld}`;
     emailLink.textContent = addr;
-    emailLink.addEventListener('click', e => { e.preventDefault(); window.location.href = `mailto:${addr}`; });
+    emailLink.addEventListener('click', e => {
+      e.preventDefault();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(addr).then(() => {
+          const orig = emailLink.textContent;
+          emailLink.textContent = 'Copied!';
+          setTimeout(() => { emailLink.textContent = orig; }, 2000);
+        });
+      } else {
+        window.location.href = `mailto:${addr}`;
+      }
+    });
   }
 
   /* --------------------------------------------------------------------------

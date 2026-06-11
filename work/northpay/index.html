@@ -51,8 +51,8 @@
       <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="../../">Home</a></li>
       <li><a href="../" aria-current="page">Work</a></li>
+      <li><a href="../../">Home</a></li>
     </ul>
     <a href="../../contact/" class="nav-cta">Contact</a>
   </nav>
@@ -156,6 +156,7 @@
           <a href="#s05" class="cs-toc__item">05 &nbsp;Wireframes</a>
           <a href="#s06" class="cs-toc__item">06 &nbsp;Interactions</a>
           <a href="#s07" class="cs-toc__item">07 &nbsp;Final screens</a>
+          <a href="#s08" class="cs-toc__item">08 &nbsp;Reflections</a>
         </nav>
       </aside>
 
@@ -384,6 +385,18 @@
               <span class="cs-trust-pill">Persistent stepper · visible from step one</span>
               <span class="cs-trust-pill">Account type first · form fields second</span>
             </div>
+          </div>
+        </section>
+
+        <section id="s08" class="cs-section" aria-labelledby="s08-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">08</span>
+            <h2 class="cs-section__title" id="s08-title">Reflections</h2>
+          </div>
+          <div class="cs-section__body">
+            <p><strong>I didn't design for multi-session completion.</strong> The persistent stepper works for a single visit. In real fintech, KYC can span days — manual document review, identity verification queues, pending business registration checks. The flow needs a save-and-resume state I didn't address.</p>
+            <p><strong>Compliance constraints were simulated.</strong> For a concept, I controlled the field sequence entirely. In a real engagement, AML and KYC regulations would dictate which fields appear together and in what order. I'd want to map the legal requirements before finalizing the one-question-per-screen pattern.</p>
+            <p><strong>The rejected approach deserved a better counterargument.</strong> My wireframe of the "account type plus form fields on one screen" was obviously bad by design. An honest validation would build that version well — not as a strawman — and compare usability scores against the one-question approach.</p>
           </div>
         </section>
 
