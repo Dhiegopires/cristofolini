@@ -1,0 +1,121 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- bg -->
+  <rect width="900" height="520" rx="10" fill="#0f0d0a"/>
+
+  <!-- ─── COLUMN HEADERS ─────────────────────────────── -->
+  <!-- Patient column bg -->
+  <rect x="24" y="24" width="380" height="472" rx="6" fill="#0d0b08"/>
+  <!-- Clinic column bg -->
+  <rect x="420" y="24" width="456" height="472" rx="6" fill="#0d0b08"/>
+
+  <!-- Patient label -->
+  <rect x="24" y="24" width="380" height="3" rx="1.5" fill="#8a8678"/>
+  <text x="44" y="50" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#8a8678">PATIENT FLOW</text>
+
+  <!-- Clinic label -->
+  <rect x="420" y="24" width="456" height="3" rx="1.5" fill="#f3b02e"/>
+  <text x="440" y="50" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#f3b02e">CLINIC / ASSIGNMENT LOGIC</text>
+
+  <!-- ─── STEP 1: Service selection ─────────────────── -->
+  <!-- Patient step box -->
+  <rect x="44" y="68" width="340" height="64" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="64" y="96" font-family="system-ui,'Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#f0ebe0">Select service type</text>
+  <text x="64" y="116" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">Blood draw, IV therapy, nursing visit…</text>
+
+  <!-- cross-column arrow -->
+  <line x1="384" y1="100" x2="416" y2="100" stroke="#2a2520" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Clinic step 1 label: no action yet -->
+  <rect x="440" y="68" width="416" height="64" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="460" y="94" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">Awaiting booking</text>
+  <text x="460" y="114" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#434038">— professional pool not yet queried —</text>
+
+  <!-- down arrow patient -->
+  <line x1="214" y1="132" x2="214" y2="156" stroke="#8a8678" stroke-width="1.5"/>
+  <polygon points="208,156 214,168 220,156" fill="#8a8678"/>
+
+  <!-- ─── STEP 2: Time slot selection ───────────────── -->
+  <rect x="44" y="168" width="340" height="64" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="64" y="196" font-family="system-ui,'Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#f0ebe0">Pick date and time</text>
+  <text x="64" y="216" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">60 min lead time built in — slot hides if window collapses</text>
+
+  <!-- cross-column arrow -->
+  <line x1="384" y1="200" x2="416" y2="200" stroke="#2a2520" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Clinic step 2 -->
+  <rect x="440" y="168" width="416" height="64" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="460" y="194" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">Availability matrix updated in real-time</text>
+  <text x="460" y="214" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#434038">Unavailable slots never reach patient view</text>
+
+  <!-- down arrow patient -->
+  <line x1="214" y1="232" x2="214" y2="256" stroke="#8a8678" stroke-width="1.5"/>
+  <polygon points="208,256 214,268 220,256" fill="#8a8678"/>
+
+  <!-- ─── STEP 3: Filtered unit cards ───────────────── -->
+  <rect x="44" y="268" width="340" height="64" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="64" y="296" font-family="system-ui,'Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#f0ebe0">Unit cards — filtered by selected slot</text>
+  <text x="64" y="316" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">Patient sees available clinics, not professionals</text>
+
+  <!-- cross-column arrow — TRIGGERS ASSIGNMENT -->
+  <line x1="384" y1="300" x2="416" y2="300" stroke="#f3b02e" stroke-width="1.5"/>
+  <polygon points="416,294 430,300 416,306" fill="#f3b02e"/>
+
+  <!-- Clinic assignment fork -->
+  <!-- fork box -->
+  <rect x="440" y="268" width="416" height="64" rx="5" fill="#1e1a0f" stroke="#f3b02e" stroke-width="1"/>
+  <text x="460" y="294" font-family="system-ui,'Segoe UI',sans-serif" font-size="12" font-weight="600" fill="#f3b02e">Clinic receives booking</text>
+  <text x="460" y="314" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">Is an internal professional available for this slot?</text>
+
+  <!-- fork arrows down-left / down-right -->
+  <!-- down arrow to internal professional -->
+  <line x1="555" y1="332" x2="520" y2="368" stroke="#8a8678" stroke-width="1.5"/>
+  <polygon points="514,364 520,378 526,365" fill="#8a8678"/>
+
+  <!-- down arrow to pool -->
+  <line x1="740" y1="332" x2="770" y2="368" stroke="#8a8678" stroke-width="1.5"/>
+  <polygon points="764,365 770,378 776,364" fill="#8a8678"/>
+
+  <!-- YES label -->
+  <text x="510" y="358" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678">YES</text>
+
+  <!-- NO label -->
+  <text x="776" y="358" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678">NO</text>
+
+  <!-- Internal professional box -->
+  <rect x="440" y="378" width="180" height="52" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="460" y="402" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#f0ebe0">Internal professional</text>
+  <text x="460" y="420" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678">Clinic staff — assigned directly</text>
+
+  <!-- Pool overflow box -->
+  <rect x="636" y="378" width="220" height="52" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="656" y="402" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#f0ebe0">Pool overflow</text>
+  <text x="656" y="420" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678">Pre-approved third-party · same vetting</text>
+
+  <!-- merge arrow from both to "professional assigned" -->
+  <line x1="530" y1="430" x2="530" y2="448" stroke="#8a8678" stroke-width="1.5"/>
+  <line x1="746" y1="430" x2="746" y2="456" stroke="#8a8678" stroke-width="1.5"/>
+  <line x1="530" y1="448" x2="746" y2="448" stroke="#8a8678" stroke-width="1"/>
+
+  <!-- merge arrow down to "professional assigned" -->
+  <line x1="638" y1="448" x2="638" y2="456" stroke="#8a8678" stroke-width="1.5"/>
+  <polygon points="632,456 638,468 644,456" fill="#8a8678"/>
+
+  <!-- down arrow patient step 3 -->
+  <line x1="214" y1="332" x2="214" y2="356" stroke="#8a8678" stroke-width="1.5"/>
+  <polygon points="208,356 214,368 220,356" fill="#8a8678"/>
+
+  <!-- ─── STEP 4: Credentials shown ─────────────────── -->
+  <rect x="44" y="368" width="340" height="52" rx="5" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="64" y="394" font-family="system-ui,'Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#f0ebe0">Credentials delivered</text>
+  <text x="64" y="412" font-family="system-ui,'Segoe UI',sans-serif" font-size="11" fill="#8a8678">Patient sees name, license, photo after assignment</text>
+
+  <!-- ─── RATING ROW ──────────────────────────────────── -->
+  <rect x="44" y="456" width="816" height="32" rx="4" fill="#181612" stroke="#2a2520" stroke-width="1"/>
+  <text x="240" y="477" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678" text-anchor="middle">Patient → Professional</text>
+  <line x1="320" y1="462" x2="320" y2="484" stroke="#2a2520" stroke-width="1"/>
+  <text x="460" y="477" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678" text-anchor="middle">Professional → Patient</text>
+  <line x1="600" y1="462" x2="600" y2="484" stroke="#2a2520" stroke-width="1"/>
+  <text x="730" y="477" font-family="system-ui,'Segoe UI',sans-serif" font-size="10" fill="#8a8678" text-anchor="middle">Clinic → Professional execution</text>
+  <!-- rating label -->
+  <text x="44" y="505" font-family="system-ui,'Segoe UI',sans-serif" font-size="9" letter-spacing="0.1em" fill="#434038">THREE-SIDED RATING · AFTER SERVICE</text>
+</svg>
