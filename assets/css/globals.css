@@ -340,25 +340,33 @@ main, footer { position: relative; z-index: var(--z-content); }
 .nav-lang {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: .1em;
+  font-size: 10px;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--t2);
-  background: transparent;
-  border: 1px solid var(--b0);
-  border-radius: 3px;
-  padding: 5px 9px;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: border-color .2s, color .2s;
 }
-.nav-lang:hover {
+.nav-lang__current {
   color: var(--y);
-  border-color: var(--accent-border);
 }
-@media (max-width: 480px) {
-  .nav-lang { padding: 4px 7px; }
+.nav-lang__sep {
+  color: var(--t2);
+  opacity: .45;
+}
+.nav-lang__opt {
+  display: inline-flex;
+  align-items: center;
+  min-height: auto;
+  color: var(--t2);
+  transition: color .2s;
+}
+.nav-lang__opt:hover {
+  color: var(--y);
+}
+@media (max-width: 380px) {
+  .nav-lang { letter-spacing: .06em; }
 }
 
 .nav-tag {

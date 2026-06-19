@@ -42,7 +42,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link href="../../assets/css/globals.css" rel="stylesheet">
+  <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../assets/css/case-study.css" rel="stylesheet">
 </head>
 <body>
@@ -57,7 +57,11 @@
       <li><a href="../" aria-current="page">Work</a></li>
       <li><a href="../../">Home</a></li>
     </ul>
-    <a href="../../pt-br/work/fiter/" class="nav-lang" hreflang="pt-BR">PT-BR</a>
+    <div class="nav-lang" aria-label="Language">
+      <span class="nav-lang__current">EN</span>
+      <span class="nav-lang__sep" aria-hidden="true">/</span>
+      <a href="../../pt-br/work/fiter/" class="nav-lang__opt" hreflang="pt-BR">PT-BR</a>
+    </div>
     <a href="../../contact/" class="nav-cta">Contact</a>
   </nav>
 

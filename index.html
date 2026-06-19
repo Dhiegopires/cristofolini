@@ -99,7 +99,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/img/Photo.jpg" as="image">
 
-  <link href="assets/css/globals.css" rel="stylesheet">
+  <link href="assets/css/globals.css?v=3" rel="stylesheet">
 
   <style>
     /* ── Hero ── */
@@ -919,7 +919,11 @@
     <li><a href="work/">Work</a></li>
     <li><a href="./" aria-current="page">Home</a></li>
   </ul>
-  <a href="pt-br/" class="nav-lang" hreflang="pt-BR">PT-BR</a>
+  <div class="nav-lang" aria-label="Language">
+    <span class="nav-lang__current">EN</span>
+    <span class="nav-lang__sep" aria-hidden="true">/</span>
+    <a href="pt-br/" class="nav-lang__opt" hreflang="pt-BR">PT-BR</a>
+  </div>
   <a href="contact/" class="nav-cta">Contact</a>
 </nav>
 
