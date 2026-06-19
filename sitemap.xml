@@ -1,43 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cristofolini.site/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/work/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/work/medme/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/medme/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/medme/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/medme/"/>
   </url>
   <url>
-    <loc>https://cristofolini.site/work/brightflow/</loc>
+    <loc>https://cristofolini.site/pt-br/work/medme/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/medme/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/medme/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/medme/"/>
   </url>
   <url>
-    <loc>https://cristofolini.site/work/collaboard/</loc>
+    <loc>https://cristofolini.site/work/vellumwire/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/vellumwire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/vellumwire/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/vellumwire/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/vellumwire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/vellumwire/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/work/fiter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/fiter/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/fiter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/fiter/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/fiter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/fiter/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/fiter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/fiter/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/work/northpay/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/northpay/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/northpay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/northpay/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/northpay/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/northpay/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/northpay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/northpay/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/work/veriflow/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/veriflow/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/veriflow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/veriflow/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/veriflow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/veriflow/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/veriflow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/veriflow/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/work/brightflow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/brightflow/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/brightflow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/brightflow/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/brightflow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/brightflow/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/brightflow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/brightflow/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/work/collaboard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/collaboard/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/collaboard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/collaboard/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/collaboard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/collaboard/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/collaboard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/collaboard/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/contact/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/contact/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/contact/"/>
   </url>
 </urlset>

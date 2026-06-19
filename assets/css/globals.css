@@ -337,6 +337,30 @@ main, footer { position: relative; z-index: var(--z-content); }
   box-shadow: 0 0 24px rgba(243,176,47,.18), inset 0 0 16px rgba(243,176,47,.06);
 }
 
+.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t2);
+  background: transparent;
+  border: 1px solid var(--b0);
+  border-radius: 3px;
+  padding: 5px 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color .2s, color .2s;
+}
+.nav-lang:hover {
+  color: var(--y);
+  border-color: var(--accent-border);
+}
+@media (max-width: 480px) {
+  .nav-lang { padding: 4px 7px; }
+}
+
 .nav-tag {
   font-family: var(--mono);
   font-size: 9px;

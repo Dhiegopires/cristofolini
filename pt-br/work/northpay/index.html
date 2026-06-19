@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NorthPay | Estudo de Caso de UX de Onboarding Fintech | Dhiego Cristofolini</title>
+  <meta name="description" content="Estudo de caso de fluxo de onboarding e KYC fintech. Configuração de conta, verificação e dashboard redesenhados para reduzir fricção e guiar a ativação.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="NorthPay | Estudo de Caso de UX de Onboarding Fintech | Dhiego Cristofolini">
+  <meta property="og:description" content="Estudo de caso de fluxo de onboarding e KYC fintech. Configuração de conta, verificação e dashboard redesenhados para reduzir fricção e guiar a ativação.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/project/NorthPay/thumbnail.jpg">
+  <meta property="og:url" content="https://cristofolini.site/pt-br/work/northpay/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NorthPay | Estudo de Caso de UX de Onboarding Fintech | Dhiego Cristofolini">
+  <meta name="twitter:description" content="Estudo de caso de fluxo de onboarding e KYC fintech. Configuração de conta, verificação e dashboard redesenhados para reduzir fricção e guiar a ativação.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/NorthPay/thumbnail.jpg">
+  <link rel="canonical" href="https://cristofolini.site/pt-br/work/northpay/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/northpay/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/northpay/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/northpay/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "NorthPay",
+    "description": "Estudo de caso de onboarding e verificação fintech focado em reduzir o abandono em fluxos de KYC.",
+    "author": {
+      "@type": "Person",
+      "name": "Dhiego Cristofolini",
+      "url": "https://cristofolini.site/"
+    },
+    "dateCreated": "2024-01-01",
+    "url": "https://cristofolini.site/pt-br/work/northpay",
+    "genre": "UX Case Study",
+    "keywords": "product design, ux, fintech, kyc, onboarding, case study"
+  }
+  </script>
+  <link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../../assets/css/globals.css" rel="stylesheet">
+  <link href="../../../assets/css/case-study.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <nav class="nav" role="navigation" aria-label="Navegação principal">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Início">
+      <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../" aria-current="page">Trabalhos</a></li>
+      <li><a href="../../">Início</a></li>
+    </ul>
+    <a href="../../../work/northpay/" class="nav-lang" hreflang="en">EN</a>
+    <a href="../../contact/" class="nav-cta">Contato</a>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="cs-hero">
+      <div class="cs-hero__left">
+        <div class="case-hero__tags">
+          <span class="tag">Product</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Fintech</span>
+        </div>
+        <h1 class="cs-hero__title">Onboarding como superfície de produto</h1>
+        <p class="cs-lead">Produtos financeiros precisam coletar informações sensíveis antes que os usuários vejam qualquer valor. Isso torna os primeiros passos da experiência a parte mais frágil do fluxo. Formulários longos, requisitos pouco claros e gates forçados de criação de conta podem matar a ativação antes mesmo do cadastro terminar.</p>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">0</p>
+            <p class="cs-impact-label">gates forçados de criação de conta · acesso como convidado com revelação progressiva</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">1</p>
+            <p class="cs-impact-label">pergunta por tela · tipo de conta definido antes de qualquer campo de formulário aparecer</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">6</p>
+            <p class="cs-impact-label">etapas visíveis desde a primeira tela · stepper persistente elimina a incerteza</p>
+          </div>
+        </div>
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Função</p>
+            <p class="cs-meta-value">Product Designer</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Plataforma</p>
+            <p class="cs-meta-value">iOS · Android</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Tipo</p>
+            <p class="cs-meta-value">Projeto conceitual</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Duração</p>
+            <p class="cs-meta-value">8 semanas</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-hero__right">
+        <img src="../../../assets/img/project/NorthPay/thumbnail.jpg" alt="Interface de onboarding da NorthPay, telas de KYC fintech e configuração de conta" loading="eager">
+      </div>
+    </section>
+
+    <section class="cs-current-state">
+      <div class="cs-container">
+        <p class="cs-eyebrow cs-eyebrow--muted">Estado atual · onboarding fintech padrão</p>
+        <div class="cs-diagram" style="overflow-x:auto;">
+          <svg width="100%" viewBox="0 0 780 100" role="img" aria-label="Fluxo padrão de onboarding fintech mostrando pontos de fricção">
+            <defs>
+              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+            <!-- Node 1: neutral trigger -->
+            <rect x="10"  y="14" width="140" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="80"  y="38" text-anchor="middle" dominant-baseline="central">Quer se cadastrar</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6a6260" x="80"  y="66" text-anchor="middle" dominant-baseline="central">Ainda não viu valor</text>
+            <line x1="151" y1="50" x2="163" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <!-- Nodes 2-5: problem state -->
+            <rect x="164" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="234" y="38" text-anchor="middle" dominant-baseline="central">Forçado a se registrar</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="234" y="66" text-anchor="middle" dominant-baseline="central">Antes de ver o produto</text>
+            <line x1="305" y1="50" x2="317" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="318" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="388" y="38" text-anchor="middle" dominant-baseline="central">Formulário longo</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="388" y="66" text-anchor="middle" dominant-baseline="central">Todos os campos de uma vez</text>
+            <line x1="459" y1="50" x2="471" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="472" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="542" y="38" text-anchor="middle" dominant-baseline="central">Barreira de verificação</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="542" y="66" text-anchor="middle" dominant-baseline="central">Nenhum progresso visível</text>
+            <line x1="613" y1="50" x2="625" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="626" y="14" width="144" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="698" y="38" text-anchor="middle" dominant-baseline="central">Usuário abandona</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="698" y="66" text-anchor="middle" dominant-baseline="central">Antes da primeira função.</text>
+          </svg>
+        </div>
+        <p class="cs-caption">A experiência de onboarding é onde requisitos regulatórios e o momentum do usuário colidem. A maioria das equipes trata isso como uma simples entrega técnica. Cada ponto de fricção nesse fluxo é uma decisão de design.</p>
+      </div>
+    </section>
+
+    <div class="cs-layout">
+
+      <aside class="cs-toc" aria-label="Section navigation">
+        <nav class="cs-toc__inner">
+          <a href="#s01" class="cs-toc__item">01 &nbsp;O conceito</a>
+          <a href="#s02" class="cs-toc__item">02 &nbsp;Problema</a>
+          <a href="#s03" class="cs-toc__item">03 &nbsp;Desafio</a>
+          <a href="#s04" class="cs-toc__item">04 &nbsp;IA &amp; fluxo</a>
+          <a href="#s05" class="cs-toc__item">05 &nbsp;Wireframes</a>
+          <a href="#s06" class="cs-toc__item">06 &nbsp;Interações</a>
+          <a href="#s07" class="cs-toc__item">07 &nbsp;Telas finais</a>
+          <a href="#s08" class="cs-toc__item">08 &nbsp;Reflexões</a>
+        </nav>
+      </aside>
+
+      <div class="cs-content">
+
+        <section id="s01" class="cs-section" aria-labelledby="s01-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">01</span>
+            <h2 class="cs-section__title" id="s01-title">O conceito</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>NorthPay é um fluxo conceitual de onboarding fintech, da seleção do tipo de conta até a verificação KYC e a configuração de primeiro uso.</p>
+            <blockquote class="cs-pullquote">Todo campo em um formulário de onboarding fica entre o usuário e o produto. A sequência em que esses campos aparecem é uma decisão de design, não um requisito de compliance.</blockquote>
+            <p>Este caso trata o onboarding como uma superfície de produto: o ponto onde primeiras impressões, restrições regulatórias e taxas de conversão convergem na mesma sequência de telas.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="../../../assets/img/project/NorthPay/mockup.jpg" width="100%" alt="Mockups de onboarding da NorthPay mostrando telas de seleção de conta e verificação" style="display:block;" loading="lazy">
+            </div>
+          </div>
+        </section>
+
+        <section id="s02" class="cs-section" aria-labelledby="s02-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">02</span>
+            <h2 class="cs-section__title" id="s02-title">Problema &amp; contexto</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Produtos financeiros precisam coletar informações sensíveis antes que os usuários vejam qualquer valor. Isso torna o onboarding a parte mais frágil do fluxo. As pessoas estão criando uma conta, compartilhando dados pessoais e esperando por verificação sem ainda saber se algo disso vale o tempo delas.</p>
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Usuário</p>
+                <p class="cs-fear-card__title">Por que isso é tão longo?</p>
+                <p class="cs-fear-card__body">Muitos campos de uma vez, nenhuma indicação de quantas etapas faltam, nenhum motivo visível para confiar no produto que está pedindo dados sensíveis.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Negócio</p>
+                <p class="cs-fear-card__title">Onde eles estão abandonando?</p>
+                <p class="cs-fear-card__body">Criar conta antes de ver qualquer valor do produto é o maior ponto de abandono no onboarding. O KYC adiciona mais uma camada em cima disso.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Compliance</p>
+                <p class="cs-fear-card__title">Precisamos de tudo isso</p>
+                <p class="cs-fear-card__body">Todo campo que parece excessivo para o usuário está ali porque a regulação exige. O problema é apresentação, não remoção.</p>
+              </div>
+            </div>
+            <p>Formulários longos, requisitos pouco claros e feedback fraco travam a ativação antes mesmo do produto ser usado. Todo campo na sequência é exigido por regulação. Como essa sequência é apresentada é uma decisão de design.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="../../../assets/img/project/NorthPay/problem-and-context.png" width="100%" alt="Diagrama de problema e contexto" style="display:block;" loading="lazy">
+            </div>
+          </div>
+        </section>
+
+        <section id="s03" class="cs-section" aria-labelledby="s03-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">03</span>
+            <h2 class="cs-section__title" id="s03-title">Desafio de design</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>O desafio era estrutural: como coletar tudo que o compliance exige mantendo os usuários orientados em cada etapa. Um ponto final visível e um padrão fixo de uma pergunta por tela resolvem os dois.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">Abordagem padrão</p>
+                <p class="cs-compare__text">Mostrar tudo de uma vez. Todos os campos em uma tela, todas as etapas implícitas. O usuário não sabe quanto tempo isso vai levar até já estar no meio disso. É aí que ele desiste.</p>
+              </div>
+              <div>
+                <p class="cs-compare__label">Abordagem NorthPay</p>
+                <p class="cs-compare__text">Uma pergunta por vez. Contagem de etapas visível desde a primeira tela. Tipo de conta selecionado antes de qualquer formulário abrir. Cada próxima etapa é conquistada ao completar a atual.</p>
+              </div>
+            </div>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="../../../assets/img/project/NorthPay/design-challenge-diagram.png" width="100%" alt="Diagrama do desafio de design, jornada completa de onboarding" style="display:block;" loading="lazy">
+            </div>
+            <div class="cs-addresses">
+              <span class="cs-addresses__label">Resolve</span>
+              <span class="cs-addresses__metric">19% de abandono por criação forçada de conta (Baymard, 2024) · estresse de decisão como principal motivo de abandono, antes da quantidade de campos</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="s04" class="cs-section" aria-labelledby="s04-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">04</span>
+            <h2 class="cs-section__title" id="s04-title">IA &amp; fluxo de usuário</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>A experiência de onboarding é dividida em um ponto de entrada público e um fluxo de produto protegido por login. Dentro do produto, uma sequência simples guia os usuários do tipo de conta até a verificação, com ramificação clara entre contas pessoais e empresariais.</p>
+            <blockquote class="cs-pullquote">Tipo de conta é a primeira decisão. Todo campo que vem depois depende dela. Colocá-la na primeira tela elimina o pior modo de falha: trocar o tipo no meio do formulário e perder todos os dados já preenchidos.</blockquote>
+            <p>O fluxo tem três fases: seleção de conta, coleta de identidade e verificação. As três são visíveis no stepper desde a primeira etapa, então nenhuma fase é uma surpresa quando se abre.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="../../../assets/img/project/NorthPay/Fluxogram.png" width="100%" alt="Fluxograma do fluxo de onboarding da NorthPay" style="display:block;" loading="lazy">
+            </div>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="../../../assets/img/project/NorthPay/Information-architecture.png" width="100%" alt="Diagrama de arquitetura da informação" style="display:block;" loading="lazy">
+            </div>
+          </div>
+        </section>
+
+        <section id="s05" class="cs-section" aria-labelledby="s05-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">05</span>
+            <h2 class="cs-section__title" id="s05-title">Wireframes &amp; decisões de UX</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Wireframes de baixa fidelidade definiram a estrutura e a sequência antes de qualquer decisão visual. Um stepper persistente mostra aos usuários onde eles estão e o que falta. Campos agrupados mantêm cada tela focada em uma única etapa.</p>
+            <div class="cs-rejected">
+              <span class="cs-rejected__label">Abordagem rejeitada</span>
+              Um layout anterior colocava o seletor de tipo de conta na mesma tela dos primeiros campos de formulário. Usuários trocavam o tipo de conta no meio do formulário e perdiam tudo que tinham preenchido. Separar a decisão da coleta de dados não é uma preferência de UX. É um padrão de prevenção de perda de dados.
+            </div>
+            <p>Uma pergunta por tela é mais lento de construir e mais rápido de completar. A complexidade percebida cai quando cada tela tem uma única função e a deixa óbvia.</p>
+            <div class="cs-diagram" style="overflow-x:auto;">
+              <img src="../../../assets/img/project/NorthPay/Wireframes.jpg" width="100%" alt="Wireframes da NorthPay mostrando a estrutura das etapas de onboarding" style="display:block;" loading="lazy">
+            </div>
+          </div>
+        </section>
+
+        <section id="s06" class="cs-section" aria-labelledby="s06-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">06</span>
+            <h2 class="cs-section__title" id="s06-title">Interações e estados-chave</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>As interações que importam nesse fluxo são as que lidam com falha: erros inline nos campos, um estado de verificação pendente e um stepper que nunca esconde as etapas restantes.</p>
+            <div class="cs-edge-cases">
+              <span class="cs-edge-cases__label">Decisões de interação</span>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Validação inline</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">Erros mostrados campo a campo conforme o usuário sai de cada input, não no envio. Corrige antecipadamente e evita frustração no final do formulário.</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Visibilidade do stepper</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">Contagem de etapas visível desde a tela 1. Os usuários sabem exatamente quanto falta antes de se comprometer com a próxima etapa.</span>
+              </div>
+              <div class="cs-edge-row">
+                <span class="cs-edge-condition">Verificação pendente</span>
+                <span class="cs-edge-arrow">→</span>
+                <span class="cs-edge-response">Tela de status com prazo estimado e o que esperar a seguir. A espera é esperada, não um estado de erro.</span>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4);">
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/interactions.jpg" width="100%" alt="Interações e estados-chave" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Interações · erro inline + stepper</figcaption>
+              </figure>
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/Choose-your-account-mockup.png" width="100%" alt="Tela de escolha do tipo de conta" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Tipo de conta · primeira decisão, sem formulário</figcaption>
+              </figure>
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/Personal-details-mockup.png" width="100%" alt="Tela de dados pessoais" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Dados pessoais · campos agrupados</figcaption>
+              </figure>
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/Personal-details-feedbacks.png" width="100%" alt="Formulário de dados pessoais com erros de validação inline" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Validação inline · erros por campo ao sair</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section id="s07" class="cs-section" aria-labelledby="s07-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">07</span>
+            <h2 class="cs-section__title" id="s07-title">Telas finais</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>A verificação confirma a conta. Os usuários chegam a um checklist de configuração que substitui um dashboard vazio por uma próxima ação clara, sem antecipar todas as opções de uma vez.</p>
+            <div class="cs-benchmark-grid">
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">19<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Taxa de abandono por criação forçada de conta. Removida dos dois fluxos: entrada como convidado, gates de conta movidos para depois da primeira entrega de valor.</p>
+                <p class="cs-benchmark-source">Baymard, 2024</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">80<span class="cs-accent">%</span></p>
+                <p class="cs-benchmark-desc">Abandono de checkout mobile resolvido com telas de pergunta única e progresso visível de 6 etapas</p>
+                <p class="cs-benchmark-source">Baymard, 2024</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">1</p>
+                <p class="cs-benchmark-desc">Decisão por tela. Tipo de conta definido antes de qualquer coleta de dados começar.</p>
+                <p class="cs-benchmark-source">Padrão de interação</p>
+              </div>
+              <div class="cs-benchmark-card">
+                <p class="cs-benchmark-num">0</p>
+                <p class="cs-benchmark-desc">Troca de tipo no meio do formulário. A escolha de conta é travada antes do formulário abrir, evitando perda de dados.</p>
+                <p class="cs-benchmark-source">Decisão de UX</p>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4);">
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/Business-details-mockup.png" width="100%" alt="Tela de dados da empresa" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Dados da empresa · formulário ramificado</figcaption>
+              </figure>
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/Verify-your-account-mockup.png" width="100%" alt="Tela de verificação de conta" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Verificação · estado pendente com prazo estimado</figcaption>
+              </figure>
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/Dashboard-mockup.png" width="100%" alt="Primeiro dashboard da NorthPay, checklist de configuração e status da conta" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Dashboard · checklist de configuração, primeira ação</figcaption>
+              </figure>
+              <figure>
+                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
+                  <img src="../../../assets/img/project/NorthPay/UI.jpg" width="100%" alt="Sistema de UI final da NorthPay" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                </div>
+                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Sistema de UI · linguagem visual final</figcaption>
+              </figure>
+            </div>
+            <div class="cs-trust-pills">
+              <span class="cs-trust-pill">Revelação progressiva · uma pergunta por tela</span>
+              <span class="cs-trust-pill">Stepper persistente · visível desde a primeira etapa</span>
+              <span class="cs-trust-pill">Tipo de conta primeiro · campos de formulário depois</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="s08" class="cs-section" aria-labelledby="s08-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">08</span>
+            <h2 class="cs-section__title" id="s08-title">Reflexões</h2>
+          </div>
+          <div class="cs-section__body">
+            <p><strong>Não desenhei para conclusão em múltiplas sessões.</strong> O stepper persistente funciona para uma única visita. No fintech real, o KYC pode se estender por dias — revisão manual de documentos, filas de verificação de identidade, checagens pendentes de registro empresarial. O fluxo precisa de um estado de salvar e retomar que eu não tratei.</p>
+            <p><strong>As restrições de compliance foram simuladas.</strong> Por ser um conceito, eu controlei a sequência de campos por completo. Em um projeto real, as regulações de AML e KYC ditariam quais campos aparecem juntos e em qual ordem. Eu gostaria de mapear os requisitos legais antes de finalizar o padrão de uma pergunta por tela.</p>
+            <p><strong>A abordagem rejeitada merecia um contra-argumento melhor.</strong> Meu wireframe do "tipo de conta mais campos de formulário em uma única tela" era obviamente ruim por design. Uma validação honesta construiria bem essa versão — não como um espantalho — e compararia os índices de usabilidade com a abordagem de uma pergunta por vez.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <nav class="case-nav" aria-label="Navegação do case">
+      <a href="../" class="case-nav__back label">← Todos os trabalhos</a>
+      <div class="case-nav__adjacent">
+        <a href="../fiter/" class="case-nav__item case-nav__item--prev">
+          <span class="label case-nav__direction">← Anterior</span>
+          <span class="heading-sm case-nav__title">Fiter</span>
+        </a>
+        <a href="../veriflow/" class="case-nav__item case-nav__item--next">
+          <span class="label case-nav__direction">Próximo →</span>
+          <span class="heading-sm case-nav__title">Veriflow</span>
+        </a>
+      </div>
+    </nav>
+
+    <a href="../../contact/" class="cta-section" aria-label="Go to contact page | Let's work together">
+      <p class="cta-section__eyebrow">Vamos conversar</p>
+      <p class="cta-section__headline">Tem um projeto?<br><em>Vamos fazer acontecer.</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Baseado no Brasil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="../../" class="footer__nav-link">Início</a>
+        <a href="../" class="footer__nav-link">Trabalhos</a>
+        <a href="../../contact/" class="footer__nav-link">Contato</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>
