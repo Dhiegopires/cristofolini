@@ -64,62 +64,221 @@
 
   <main id="main-content">
 
-    <section class="case-hero">
-      <div class="case-hero__content container">
+    <section class="cs-hero">
+      <div class="cs-hero__left">
         <div class="case-hero__tags">
+          <span class="tag">Concept</span>
           <span class="tag">Product</span>
           <span class="tag">UI/UX</span>
         </div>
-        <h1 class="case-hero__title display">Collabboard</h1>
-        <p class="case-hero__subtitle body-lg">B2B CRM workspace concept for product teams</p>
-        <p class="case-hero__meta label-sm">
-          <span>UI/UX Design</span>
-          <span class="case-hero__meta-sep" aria-hidden="true">·</span>
-          <span>2024</span>
-          <span class="case-hero__meta-sep" aria-hidden="true">·</span>
-          <span>Concept project</span>
-        </p>
+        <h1 class="cs-hero__title">A pipeline where stage and urgency aren't the same signal</h1>
+        <p class="cs-lead">Collabboard is a concept B2B CRM workspace built around daily sales decision-making. Most pipeline boards track one thing — what stage a deal is in — and expect urgency to live in someone's head. Collabboard makes urgency an explicit, separate signal, and renders the same pipeline three different ways depending on what the person looking at it needs to do.</p>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">2</p>
+            <p class="cs-impact-label">signals per deal · stage and temperature tracked independently, so urgency never hides inside a stage label</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">3</p>
+            <p class="cs-impact-label">views of one pipeline · board for flow, table for review, detail page for context — same data, different job</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">1</p>
+            <p class="cs-impact-label">page to brief a deal · timeline, people, and summary together, no separate meeting required to catch up</p>
+          </div>
+        </div>
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Role</p>
+            <p class="cs-meta-value">Product Designer</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Year</p>
+            <p class="cs-meta-value">2024</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Type</p>
+            <p class="cs-meta-value">Concept project</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Scope</p>
+            <p class="cs-meta-value">CRM workspace · Pipeline · Reporting</p>
+          </div>
+        </div>
       </div>
-      <div class="case-hero__image">
-        <img src="../../assets/img/project/Collabboard/thumbnail.jpg" alt="Collabboard light mode CRM and team workspace" loading="eager" width="1280" height="640">
+      <div class="cs-hero__right">
+        <img src="../../assets/img/project/Collabboard/thumbnail.jpg" alt="Collabboard light mode CRM and team workspace" loading="eager">
       </div>
     </section>
 
-    <div class="case-body">
-
-      <div class="case-section container reveal">
-        <div class="case-section__text">
-          <h2 class="heading-sm">Overview</h2>
-          <p class="body-lg">Collabboard is a conceptual B2B CRM workspace built around daily decision-making. The interface explores how a sales team can move from pipeline review to account context without switching tools or losing clarity.</p>
-          <p class="body-lg">The home view acts as a quick status snapshot: high-level KPIs, current priorities, and recent activity sit together in one place. The goal is to give managers and reps the same picture of what needs attention now.</p>
+    <section class="cs-current-state">
+      <div class="cs-container">
+        <p class="cs-eyebrow cs-eyebrow--muted">Standard CRM pipeline · the pattern this addresses</p>
+        <div class="cs-diagram" style="overflow-x:auto;">
+          <svg width="100%" viewBox="0 0 680 100" role="img" aria-label="Standard CRM pipeline journey showing stage-only tracking missing stalled deals">
+            <defs>
+              <marker id="arr-cb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+            <rect x="10"  y="14" width="118" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="69"  y="38" text-anchor="middle" dominant-baseline="central">Rep checks board</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6a6260" x="69"  y="66" text-anchor="middle" dominant-baseline="central">Wants to know what's urgent</text>
+            <line x1="129" y1="50" x2="141" y2="50" stroke="#3a3530" stroke-width="1" marker-end="url(#arr-cb)"/>
+            <rect x="142" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="201" y="38" text-anchor="middle" dominant-baseline="central">Sees stage only</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="201" y="66" text-anchor="middle" dominant-baseline="central">Negotiation looks fine</text>
+            <line x1="261" y1="50" x2="273" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cb)"/>
+            <rect x="274" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="333" y="38" text-anchor="middle" dominant-baseline="central">Deal sits unworked</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="333" y="66" text-anchor="middle" dominant-baseline="central">Stage hides momentum</text>
+            <line x1="393" y1="50" x2="405" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cb)"/>
+            <rect x="406" y="14" width="132" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="472" y="38" text-anchor="middle" dominant-baseline="central">Found at forecast review</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="472" y="66" text-anchor="middle" dominant-baseline="central">Too late to recover.</text>
+          </svg>
         </div>
-        <div class="case-section__media">
-          <img src="../../assets/img/project/Collabboard/Home.png" alt="Collabboard home, daily briefing with KPIs and priority tasks" loading="lazy" width="600" height="400">
-        </div>
+        <p class="cs-caption">Stage answers where a deal sits in the process. It says nothing about whether it's moving. A deal can look healthy by stage and be dead by momentum — until someone manually checks every card.</p>
       </div>
+    </section>
 
-      <div class="case-section container reveal case-section--flip">
-        <div class="case-section__text">
-          <h2 class="heading-sm">Pipeline board: stage based work view</h2>
-          <p class="body-lg">The pipeline board organizes opportunities into clear columns for each stage, from New to Negotiation. Each card surfaces the essentials at a glance so the board feels like a live workspace instead of a spreadsheet.</p>
-        </div>
-        <div class="case-section__media">
-          <img src="../../assets/img/project/Collabboard/Pipeline.png" alt="Collabboard pipeline board, kanban style deal stages with status chips" loading="lazy" width="600" height="400">
-        </div>
+    <div class="cs-layout">
+
+      <aside class="cs-toc" aria-label="Section navigation">
+        <nav class="cs-toc__inner">
+          <a href="#s01" class="cs-toc__item">01 &nbsp;The problem</a>
+          <a href="#s02" class="cs-toc__item">02 &nbsp;Stage and temperature</a>
+          <a href="#s03" class="cs-toc__item">03 &nbsp;One pipeline, three lenses</a>
+          <a href="#s04" class="cs-toc__item">04 &nbsp;Home as daily briefing</a>
+          <a href="#s05" class="cs-toc__item">05 &nbsp;The page that replaces a meeting</a>
+          <a href="#s06" class="cs-toc__item">06 &nbsp;Reflections</a>
+        </nav>
+      </aside>
+
+      <div class="cs-content">
+
+        <section id="s01" class="cs-section" aria-labelledby="s01-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">01</span>
+            <h2 class="cs-section__title" id="s01-title">The problem</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Most CRM pipelines collapse two different questions into one signal. Stage answers "where is this deal in the process." It says nothing about "does this deal need attention right now." When the interface only tracks stage, urgency has to live in a rep's memory — which works for a handful of deals and breaks down past that.</p>
+            <blockquote class="cs-pullquote">A deal stuck in Negotiation for nine weeks and a deal that just arrived both render identically if stage is the only thing the board shows.</blockquote>
+            <p>Collabboard keeps stage as the structural axis — it still decides which column a card sits in — but adds temperature as a second, independent signal a rep sets and the board displays without it changing the deal's position. Where and how urgent stop being the same question.</p>
+          </div>
+        </section>
+
+        <section id="s02" class="cs-section" aria-labelledby="s02-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">02</span>
+            <h2 class="cs-section__title" id="s02-title">Stage and temperature, decoupled</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Every card on the pipeline board carries a Hot, Warm, or Cold chip alongside its stage column. A deal in Proposal can be Hot because the buyer just asked for a contract redline, or Cold because procurement went quiet three weeks ago. Same stage, opposite urgency — and now the board shows the difference instead of hiding it.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">Stage only</p>
+                <p class="cs-compare__text">The board groups deals by where they are. A rep scanning columns sees process, not priority. Finding what needs attention today means opening cards one by one.</p>
+              </div>
+              <div>
+                <p class="cs-compare__label">Stage + temperature</p>
+                <p class="cs-compare__text">The column says where. The chip says how urgent. A rep can scan for Hot chips across every column in one pass, regardless of which stage those deals happen to be in.</p>
+              </div>
+            </div>
+            <div class="cs-rejected">
+              <span class="cs-rejected__label">Rejected approach</span>
+              Calculating temperature automatically from a days-since-last-activity threshold. Rejected: automatic flags get ignored once a few false positives appear — a deal can be legitimately quiet during a procurement freeze without being dead. A rep-set signal carries judgment a timer can't, even though it depends on reps actually updating it.
+            </div>
+            <figure>
+              <div class="cs-diagram" style="padding:0; overflow:hidden;">
+                <img src="../../assets/img/project/Collabboard/Pipeline.png" alt="Collabboard pipeline board, kanban-style deal stages with independent Hot, Warm, Cold temperature chips" loading="lazy" style="display:block; width:100%;">
+              </div>
+              <figcaption class="cs-caption" style="margin-top:8px;">Pipeline board · stage sets the column, temperature sets the chip</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="s03" class="cs-section" aria-labelledby="s03-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">03</span>
+            <h2 class="cs-section__title" id="s03-title">One pipeline, three lenses</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The same set of deals renders three ways, and none of them is the "real" view. The board shows flow — cards moving across stages, good for a rep working the pipeline day to day. The table shows everything sortable and filterable by deal, company, owner, value, and close date — what a manager needs for a forecast review across all 47 open deals at once.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">Board</p>
+                <p class="cs-compare__text">Spatial, stage-grouped, built for scanning and moving cards. Answers "what's happening across the pipeline right now."</p>
+              </div>
+              <div>
+                <p class="cs-compare__label">Table</p>
+                <p class="cs-compare__text">Dense, sortable, filterable by any column. Answers "which deals match this specific criteria" — the question a forecast review actually asks.</p>
+              </div>
+            </div>
+            <p>Forcing a manager's review into the board, or a rep's daily work into the table, both technically work and both fight the task. The data is identical; only the shape changes with the job.</p>
+            <figure>
+              <div class="cs-diagram" style="padding:0; overflow:hidden;">
+                <img src="../../assets/img/project/Collabboard/Deals.png" alt="Collabboard deals table, sortable and filterable list view for revenue forecasting" loading="lazy" style="display:block; width:100%;">
+              </div>
+              <figcaption class="cs-caption" style="margin-top:8px;">Deals table · same pipeline, shaped for review instead of flow</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="s04" class="cs-section" aria-labelledby="s04-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">04</span>
+            <h2 class="cs-section__title" id="s04-title">Home as daily briefing</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The home view deliberately inverts the board's axis. Where the pipeline groups by stage, "Today's Priorities" groups by required action — a high-priority follow-up, a demo to schedule, a proposal due today — regardless of which stage each one belongs to. A rep opens one list instead of scanning every column for what's on fire.</p>
+            <p>Four KPI cards sit above it at equal size: Pipeline Value, Open Deals, Closing This Month, Win Rate. That's a different decision than giving one metric the lead, and it's deliberate here rather than inconsistent — these four numbers answer four different questions for different moments in the day, not four competing claims on the same decision. Equal weight is correct when nothing should out-rank the others; hierarchy is for when one signal should drive the next action, which none of these four single-handedly does.</p>
+            <figure>
+              <div class="cs-diagram" style="padding:0; overflow:hidden;">
+                <img src="../../assets/img/project/Collabboard/Home.png" alt="Collabboard home view: equal-weight KPI cards, Today's Priorities grouped by action needed, recent activity feed" loading="lazy" style="display:block; width:100%;">
+              </div>
+              <figcaption class="cs-caption" style="margin-top:8px;">Home · priorities grouped by action, not by stage</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="s05" class="cs-section" aria-labelledby="s05-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">05</span>
+            <h2 class="cs-section__title" id="s05-title">The page that replaces a meeting</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Opening a single deal brings the activity timeline, a deal summary (probability, source, created date, last activity), and the people involved into one layout. Anyone — a manager covering for a rep on leave, a rep picking up a deal mid-cycle — can read the full state of a deal without a handoff call.</p>
+            <p>The timeline reads like a log, not a feed: calls, proposals sent, emails, demos, and stage changes in one chronological line. Mixing activity types in a single stream, rather than splitting them into separate tabs, keeps the sequence of what actually happened intact.</p>
+            <figure>
+              <div class="cs-diagram" style="padding:0; overflow:hidden;">
+                <img src="../../assets/img/project/Collabboard/Enterprise Platform License.png" alt="Collabboard deal details view with activity timeline, deal summary, and people involved" loading="lazy" style="display:block; width:100%;">
+              </div>
+              <figcaption class="cs-caption" style="margin-top:8px;">Deal detail · timeline, summary, and people in one page</figcaption>
+            </figure>
+            <div class="cs-addresses">
+              <span class="cs-addresses__label">Resolve</span>
+              <span class="cs-addresses__metric">fragmented deal context across tools and inboxes is a leading cause of low day-to-day CRM adoption by reps (Forrester, 2022)</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="s06" class="cs-section" aria-labelledby="s06-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">06</span>
+            <h2 class="cs-section__title" id="s06-title">Reflections</h2>
+          </div>
+          <div class="cs-section__body">
+            <p><strong>The home view's four equal KPIs look like they contradict BrightFlow's "pick one metric" principle — they don't, but I should make that explicit sooner.</strong> Hierarchy is for when one number should drive the next action. Equal weight is for when several numbers answer genuinely different questions for different roles. Both are real principles; the failure mode is applying one where the other is needed, not picking the "wrong" one in isolation.</p>
+            <p><strong>Temperature only works if reps actually keep it updated.</strong> A manually-set signal is more honest than an automatic one, but it inherits the same risk every manual CRM field has: it decays into being ignored a few weeks after launch. I'd want a lightweight nudge — surfacing temperature alongside the activity log, so updating it feels like part of logging a call rather than a separate chore.</p>
+            <p><strong>Moving between the three lenses isn't designed yet.</strong> Clicking a card opens the detail page, but does a filter applied on the table carry over if a rep switches to the board? I didn't design that continuity, and in a real product it's exactly the kind of seam that makes multiple views feel like multiple tools instead of one workspace.</p>
+          </div>
+        </section>
+
       </div>
-
-      <div class="case-section container reveal">
-        <div class="case-section__text">
-          <h2 class="heading-sm">Deals table & deal details</h2>
-          <p class="body-lg">For reviews and forecasting, leaders need a view that can be sorted and scanned line by line. The Deals screen complements the board with a table that keeps the same language and structure.</p>
-          <p class="body-lg">The Deal details view brings context into a single layout: a concise header above an activity timeline so anyone can read the state of a deal without a separate briefing.</p>
-        </div>
-        <div class="case-section__media">
-          <img src="../../assets/img/project/Collabboard/Deals.png" alt="Collabboard deals table, sortable list view for revenue forecasting" loading="lazy" width="600" height="400">
-          <img src="../../assets/img/project/Collabboard/Enterprise Platform License.png" alt="Collabboard deal details view with activity timeline" loading="lazy" width="600" height="400">
-        </div>
-      </div>
-
     </div>
 
     <nav class="case-nav" aria-label="Case navigation">
