@@ -33,6 +33,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/"/>
   </url>
   <url>
+    <loc>https://cristofolini.site/work/instivo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/instivo/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/instivo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/instivo/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/instivo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/instivo/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/instivo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/instivo/"/>
+  </url>
+  <url>
     <loc>https://cristofolini.site/work/medme/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

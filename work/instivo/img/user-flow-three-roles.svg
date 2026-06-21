@@ -1,0 +1,59 @@
+<svg width="100%" viewBox="0 0 800 460" role="img" aria-label="User flow across Manager, IT Admin, and Operational user showing how rules from each layer constrain the one below" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-uf" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#6b6358" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#1f5c37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-no" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7a2a20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- IT Admin -->
+  <text font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="600" letter-spacing="1.5" fill="#6b6358" x="120" y="32">IT ADMIN</text>
+  <rect x="120" y="40" width="240" height="56" rx="8" fill="#221f1a" stroke="#2e2b26" stroke-width="1"/>
+  <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f2ede4" x="240" y="68" text-anchor="middle" dominant-baseline="central">Sets system-level access</text>
+
+  <line x1="240" y1="96" x2="240" y2="104" stroke="#6b6358" stroke-width="1.5" marker-end="url(#arr-uf)"/>
+  <rect x="120" y="104" width="240" height="28" rx="14" fill="#2b2210" stroke="#6b531f" stroke-width="1"/>
+  <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#e0ad4a" x="240" y="118" text-anchor="middle" dominant-baseline="central">rule sits above manager</text>
+
+  <line x1="240" y1="132" x2="240" y2="164" stroke="#6b6358" stroke-width="1.5" marker-end="url(#arr-uf)"/>
+
+  <!-- Manager -->
+  <text font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="600" letter-spacing="1.5" fill="#6b6358" x="120" y="156">MANAGER</text>
+  <rect x="120" y="164" width="240" height="56" rx="8" fill="#221f1a" stroke="#2e2b26" stroke-width="1"/>
+  <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f2ede4" x="240" y="192" text-anchor="middle" dominant-baseline="central">Builds hierarchy, sets rule</text>
+
+  <line x1="240" y1="220" x2="240" y2="228" stroke="#6b6358" stroke-width="1.5" marker-end="url(#arr-uf)"/>
+  <rect x="120" y="228" width="240" height="28" rx="14" fill="#2b2210" stroke="#6b531f" stroke-width="1"/>
+  <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#e0ad4a" x="240" y="242" text-anchor="middle" dominant-baseline="central">rule sits above operational</text>
+
+  <line x1="240" y1="256" x2="240" y2="288" stroke="#6b6358" stroke-width="1.5" marker-end="url(#arr-uf)"/>
+
+  <!-- Operational user -->
+  <text font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="600" letter-spacing="1.5" fill="#6b6358" x="120" y="280">OPERATIONAL USER</text>
+  <rect x="120" y="288" width="240" height="56" rx="8" fill="#221f1a" stroke="#2e2b26" stroke-width="1"/>
+  <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f2ede4" x="240" y="316" text-anchor="middle" dominant-baseline="central">Tries an action in a form</text>
+
+  <!-- branch to outcomes -->
+  <path d="M360 316 L420 316 L420 296 L472 296" fill="none" stroke="#6b6358" stroke-width="1.5" marker-end="url(#arr-ok)"/>
+  <path d="M360 316 L420 316 L420 380 L472 380" fill="none" stroke="#6b6358" stroke-width="1.5" marker-end="url(#arr-no)"/>
+
+  <!-- Outcome: allowed -->
+  <rect x="480" y="264" width="264" height="64" rx="8" fill="#0e2417" stroke="#1f5c37" stroke-width="1"/>
+  <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#5fd98a" x="500" y="290">Action allowed</text>
+  <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#5fd98a" opacity="0.85" x="500" y="310">No conflicting rule above</text>
+
+  <!-- Outcome: blocked -->
+  <rect x="480" y="348" width="264" height="64" rx="8" fill="#2e1410" stroke="#7a2a20" stroke-width="1"/>
+  <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f37a6a" x="500" y="374">Action blocked</text>
+  <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#f37a6a" opacity="0.85" x="500" y="394">Manager or IT rule above it</text>
+
+  <!-- context note -->
+  <rect x="480" y="40" width="264" height="72" rx="8" fill="#1c1a16" stroke="#2e2b26" stroke-width="1"/>
+  <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#948c7e" x="500" y="68">Both layers can be true</text>
+  <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#948c7e" x="500" y="88">at once, invisibly to the user</text>
+</svg>

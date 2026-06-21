@@ -18,6 +18,9 @@
   <meta name="twitter:description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
   <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/instivo/thumbnail.png">
   <link rel="canonical" href="https://cristofolini.site/work/instivo/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/instivo/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/instivo/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/instivo/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,6 +57,11 @@
       <li><a href="../" aria-current="page">Work</a></li>
       <li><a href="../../">Home</a></li>
     </ul>
+    <div class="nav-lang" aria-label="Language">
+      <span class="nav-lang__current">EN</span>
+      <span class="nav-lang__sep" aria-hidden="true">/</span>
+      <a href="../../pt-br/work/instivo/" class="nav-lang__opt" hreflang="pt-BR">PT-BR</a>
+    </div>
     <a href="../../contact/" class="nav-cta">Contact</a>
   </nav>
 
@@ -110,38 +118,11 @@
 
     <section class="cs-current-state">
       <div class="cs-container">
-        <p class="cs-eyebrow cs-eyebrow--muted">Current state · before this project</p>
+        <p class="cs-eyebrow cs-eyebrow--muted">The shift · six disconnected tools → one workspace</p>
         <div class="cs-diagram" style="overflow-x:auto;">
-          <svg width="100%" viewBox="0 0 780 100" role="img" aria-label="Current state flow before Instivo: fragmented operations across spreadsheets and phone calls">
-            <defs>
-              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </marker>
-            </defs>
-            <!-- Node 1: neutral trigger -->
-            <rect x="10"  y="14" width="140" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="80"  y="38" text-anchor="middle" dominant-baseline="central">Config change needed</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6a6260" x="80"  y="66" text-anchor="middle" dominant-baseline="central">No self-service exists</text>
-            <line x1="151" y1="50" x2="163" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <!-- Nodes 2-5: problem state -->
-            <rect x="164" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="234" y="38" text-anchor="middle" dominant-baseline="central">Files IT ticket</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="234" y="66" text-anchor="middle" dominant-baseline="central">Days of wait time</text>
-            <line x1="305" y1="50" x2="317" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="318" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="388" y="38" text-anchor="middle" dominant-baseline="central">IT mediates change</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="388" y="66" text-anchor="middle" dominant-baseline="central">No manager control</text>
-            <line x1="459" y1="50" x2="471" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="472" y="14" width="140" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="542" y="38" text-anchor="middle" dominant-baseline="central">Manual file update</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="542" y="66" text-anchor="middle" dominant-baseline="central">No audit, no enforcement</text>
-            <line x1="613" y1="50" x2="625" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="626" y="14" width="144" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="698" y="38" text-anchor="middle" dominant-baseline="central">Rule communicated</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="698" y="66" text-anchor="middle" dominant-baseline="central">Individually. Unverified.</text>
-          </svg>
+          <img src="img/before-after-workspace.png" width="100%" alt="Before and after Instivo: spreadsheets, phone calls, a generic CRM, a notepad, email threads, and a manual clock collapse into one connected workspace with real-time stock visibility, unified employee hierarchy, automated restocking, configurable rules, and fleet and dock management" style="display:block;">
         </div>
-        <p class="cs-caption">Retail operations were governed by whoever remembered to act. Configuration changes required IT as a middleman. Rules lived in people's heads, not in the system.</p>
+        <p class="cs-caption">Retail operations were governed by whoever remembered to act, across six tools that never talked to each other. Instivo collapses all of it into one workspace, with no shared source of truth replaced by exactly one.</p>
       </div>
     </section>
 
@@ -196,8 +177,9 @@
             </div>
             <p>The distinction mattered for more than technical reasons. The same interface that gives a manager flexibility to build custom hierarchies also sits one wrong deletion away from breaking a form that every new employee depends on.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/workspace-ecosystem.svg" width="100%" alt="Ecosystem diagram: system workspaces and free workspaces and what each feeds downstream" style="display:block;">
+              <img src="img/workspace-ecosystem.png" width="100%" alt="Workspace list showing System workspaces with a locked, critical badge, separate from user-created Internal organization workspaces" style="display:block;">
             </div>
+            <p class="cs-caption" style="margin-top:8px;">Workspace list · System workspaces locked, Free workspaces fully editable</p>
           </div>
         </section>
 
@@ -230,6 +212,7 @@
             <div class="cs-diagram" style="overflow-x:auto;">
               <img src="img/user-flow-three-roles.svg" width="100%" alt="User flow: Manager, IT Admin, and Operational user across the system" style="display:block;">
             </div>
+            <p class="cs-caption">Conceptual model of the layering logic — not a product screen.</p>
           </div>
         </section>
 
@@ -256,12 +239,12 @@
                 <!-- Folder model -->
                 <rect x="80" y="40" width="180" height="36" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
                 <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#f87060" x="170" y="58" text-anchor="middle" dominant-baseline="central">📁 Hygiene</text>
-                <line x1="130" y1="76" x2="130" y2="92" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
-                <rect x="60" y="94" width="140" height="32" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c06050" x="130" y="110" text-anchor="middle" dominant-baseline="central">Shampoo (copy 1)</text>
-                <line x1="210" y1="76" x2="210" y2="92" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
-                <rect x="150" y="94" width="100" height="32" rx="6" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#474440" x="200" y="110" text-anchor="middle" dominant-baseline="central">Conditioner</text>
+                <line x1="115" y1="76" x2="115" y2="92" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
+                <rect x="55" y="94" width="120" height="32" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c06050" x="115" y="110" text-anchor="middle" dominant-baseline="central">Shampoo (copy 1)</text>
+                <line x1="235" y1="76" x2="235" y2="92" stroke="#474440" stroke-width="1" marker-end="url(#arr-h)"/>
+                <rect x="190" y="94" width="90" height="32" rx="6" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#474440" x="235" y="110" text-anchor="middle" dominant-baseline="central">Conditioner</text>
 
                 <rect x="80" y="150" width="180" height="36" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
                 <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#f87060" x="170" y="168" text-anchor="middle" dominant-baseline="central">📁 Hair Care</text>
@@ -279,21 +262,21 @@
                 <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="510" y="75" text-anchor="middle" dominant-baseline="central">Single entity · unique ID</text>
 
                 <!-- Links to three contexts -->
-                <line x1="460" y1="96" x2="440" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="460" y1="96" x2="407" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
                 <line x1="510" y1="96" x2="510" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
-                <line x1="560" y1="96" x2="578" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="560" y1="96" x2="613" y2="130" stroke="#1a5025" stroke-width="1" stroke-dasharray="3 3"/>
 
-                <rect x="390" y="132" width="100" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="440" y="148" text-anchor="middle" dominant-baseline="central">Hygiene</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="440" y="163" text-anchor="middle" dominant-baseline="central">child role</text>
+                <rect x="365" y="132" width="85" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="407" y="148" text-anchor="middle" dominant-baseline="central">Hygiene</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="407" y="163" text-anchor="middle" dominant-baseline="central">child role</text>
 
-                <rect x="460" y="132" width="100" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <rect x="467" y="132" width="86" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
                 <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="510" y="148" text-anchor="middle" dominant-baseline="central">Hair Care</text>
                 <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="510" y="163" text-anchor="middle" dominant-baseline="central">child role</text>
 
-                <rect x="530" y="132" width="100" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="580" y="148" text-anchor="middle" dominant-baseline="central">Stock rule</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="580" y="163" text-anchor="middle" dominant-baseline="central">parent role</text>
+                <rect x="570" y="132" width="85" height="40" rx="6" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
+                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4ade80" x="613" y="148" text-anchor="middle" dominant-baseline="central">Stock rule</text>
+                <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6ee7b7" x="613" y="163" text-anchor="middle" dominant-baseline="central">parent role</text>
 
                 <rect x="430" y="210" width="160" height="28" rx="14" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
                 <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#4ade80" x="510" y="224" text-anchor="middle" dominant-baseline="central">One record. Three contexts.</text>
@@ -302,11 +285,13 @@
                 <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="510" y="360" text-anchor="middle">Entity referenced, never copied</text>
               </svg>
             </div>
+            <p class="cs-caption" style="margin-top:8px;">Folder model vs. card-linked model · why a folder structure breaks for shared entities</p>
             <p>Each card represents a real entity in the system with a unique ID. The same card can be referenced in multiple workspaces, playing a different structural role in each. In the product hierarchy it is a child of hygiene. In the stock workspace it is a parent to a restocking threshold. In the transport workspace it is a child of a cargo category.</p>
             <p>The analogy I used internally was design tokens. A token is not a file in a folder. It is a value that lives in a system of references, and its meaning depends on the context in which it is used. The canvas reorganized automatically as connections multiplied, removing the responsibility for legibility from the user.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/canvas-hierarchy.png" width="100%" alt="Canvas with two parallel hierarchies: Hygiene and Cleaning Supplies with shared entity cards" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+              <img src="img/canvas-hierarchy.png" width="100%" alt="Pharmacy hierarchy on the canvas: linked entity cards with rule counts and inherited-rule badges" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
             </div>
+            <p class="cs-caption" style="margin-top:8px;">Pharmacy hierarchy on the canvas · linked cards with rule counts and inherited-rule badges</p>
           </div>
         </section>
 
@@ -316,10 +301,14 @@
             <h2 class="cs-section__title" id="s05-title">The rule engine</h2>
           </div>
           <div class="cs-section__body">
-            <p>Rules are created inside each card's modal. The structure is fixed: an operator, an entity, a condition, and an action. Each is a dropdown. A manager selects "If," then selects "product," then selects "stock below 50," then selects "trigger restocking." The rule is created without any knowledge of the underlying logic.</p>
+            <p>Selecting a card on the canvas surfaces edit, delete, and collapse controls right in its header, with the rule count sitting next to the title as a badge. Clicking edit opens a modal scoped to that single card — name, description, its parent and child connections, and a Rules tab. Inside Rules, the schema is fixed: an operator, an entity, a condition, and an action, each picked from a constrained list and rendered as a chip. A manager builds "If · product · stock below 50 · trigger · restock" without writing a single line of logic.</p>
+            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
+              <img src="img/canvas-edit-icons.png" width="100%" alt="Product hierarchy canvas, Pharmacy and Cleaning supplies columns: the selected Hygiene card showing edit, delete, and collapse icons in its header next to the 2 rules badge" style="display:block;">
+            </div>
+            <p class="cs-caption" style="margin-top:8px;">Selected card · edit, delete, and collapse controls plus the rule-count badge</p>
             <div class="cs-rejected">
               <span class="cs-rejected__label">Rejected approach</span>
-              The first version I tested used free text fields. A manager could type anything, which meant the system had to interpret intent. The error rate made it unusable. Constrained dropdowns removed the interpretation problem entirely: the system only offers options that are valid in each position, so an invalid rule cannot be constructed.
+              The first version I tested used free text fields. A manager could type anything, which meant the system had to interpret intent. The error rate made it unusable. Constrained selectors removed the interpretation problem entirely: each chip only offers options valid in that position, so an invalid rule cannot be constructed.
             </div>
             <div class="cs-edge-cases">
               <span class="cs-edge-cases__label">Rule structure · four-part fixed schema</span>
@@ -344,10 +333,16 @@
                 <span class="cs-edge-response">trigger restocking · notify manager · block access: executes automatically</span>
               </div>
             </div>
-            <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it in read-only mode inside the modal. The manager can see what is being enforced and where it came from, but cannot modify it at the child level.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/rule-engine-modal.png" width="100%" alt="Card modal with Rules tab open: inherited rule in read-only mode, dropdown selectors, scope toggle" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+            <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it inside the same modal, flagged with a "Read-only" badge and a note on where it came from. The manager can see what is being enforced and trace it to its source, but cannot edit it on the child — only the card that owns the rule can.</p>
+            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
+              <img src="img/rules-modal.png" width="100%" alt="Shampoo card modal with the Rules tab open: an inherited rule from Hygiene flagged read-only, plus two own rules built from if/entity/condition/action chips, each with edit and delete icons" style="display:block;">
             </div>
+            <p class="cs-caption" style="margin-top:8px;">Card modal · Rules tab with an inherited read-only rule and two own rules</p>
+            <p>The stock view is where that rule actually shows its work. Every product card carries a status — Critical, Low, OK — resolved directly from the threshold rule, not set by hand. A manager scanning this list isn't checking inventory; they're confirming the rule engine is doing its job.</p>
+            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
+              <img src="img/stock-overview.png" width="100%" alt="Stock overview: 1,284 products, 23 out of stock, 61 low stock, R$482,000 total value, with per-product status resolved from the threshold rule" style="display:block;">
+            </div>
+            <p class="cs-caption" style="margin-top:8px;">Stock overview · status resolved automatically from the threshold rule</p>
           </div>
         </section>
 
@@ -370,10 +365,11 @@
                 <p class="cs-compare__text">User sees the action. Sees it is unavailable. Sees why. The constraint is communicated at the exact moment the user needs it. No documentation required.</p>
               </div>
             </div>
-            <p>The same logic applied to inherited rules inside card modals. A rule propagated from a parent is visible to the child's manager but marked as read-only, with a reference to its origin. They can see the constraint and trace it back. They cannot accidentally remove it while editing something else.</p>
+            <p>The same logic applied to inherited rules on a card. A rule propagated from a parent is visible to the child's manager but marked as read-only, with a reference to its origin. They can see the constraint and trace it back. They cannot accidentally remove it while editing something else.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/governance-disabled-state.png" width="100%" alt="Workspace selection screen: system badge, lock icon, disabled delete with tooltip" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+              <img src="img/governance-disabled-state.png" width="100%" alt="Workspace selection screen: System workspaces marked with a critical lock badge" style="display:block;">
             </div>
+            <p class="cs-caption" style="margin-top:8px;">Workspace selection · System workspaces marked critical and locked</p>
           </div>
         </section>
 
@@ -385,47 +381,18 @@
           <div class="cs-section__body">
             <p>The design system I inherited had no tokens. Components that performed the same function existed in multiple versions with no shared source. The Figma file had no structure that would survive a significant change to the visual language. There was no responsive logic because the product was considered desktop-only.</p>
             <p>I rebuilt it in four layers. Core holds design best practices: a 4px spacing grid, a defined type scale, base color values. Palette holds color ramps from 25 to 950 across every hue the system might need. Brand is where client-specific decisions live. Semantic splits into three dimensions: color with light and dark modes, size with desktop, tablet, and mobile breakpoints, and type with the same three breakpoints.</p>
-            <div class="cs-diagram">
-              <svg width="100%" viewBox="0 0 680 200" role="img" aria-label="Design token architecture: Core, Palette, Brand, Semantic layers">
-                <defs>
-                  <marker id="arr-ds" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M2 1L8 5L2 9" fill="none" stroke="#474440" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </marker>
-                </defs>
-                <!-- Core -->
-                <rect x="20" y="60" width="140" height="80" rx="8" fill="#0d1f12" stroke="#1a5025" stroke-width="1"/>
-                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="90" y="88" text-anchor="middle" dominant-baseline="central">Core</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="90" y="108" text-anchor="middle" dominant-baseline="central">4px grid · type scale</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="90" y="122" text-anchor="middle" dominant-baseline="central">base color values</text>
-                <line x1="161" y1="100" x2="173" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr-ds)"/>
-                <!-- Palette -->
-                <rect x="175" y="60" width="140" height="80" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="245" y="88" text-anchor="middle" dominant-baseline="central">Palette</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="245" y="108" text-anchor="middle" dominant-baseline="central">ramps 25–950</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="245" y="122" text-anchor="middle" dominant-baseline="central">all system hues</text>
-                <line x1="316" y1="100" x2="328" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr-ds)"/>
-                <!-- Brand -->
-                <rect x="330" y="60" width="140" height="80" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="400" y="88" text-anchor="middle" dominant-baseline="central">Brand</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="400" y="108" text-anchor="middle" dominant-baseline="central">client primary · sizes</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="400" y="122" text-anchor="middle" dominant-baseline="central">semantic role mapping</text>
-                <line x1="471" y1="100" x2="483" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr-ds)"/>
-                <!-- Semantic -->
-                <rect x="485" y="40" width="175" height="120" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'Syne',sans-serif" font-weight="600" font-size="12" fill="#4ade80" x="572" y="68" text-anchor="middle" dominant-baseline="central">Semantic</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="572" y="90" text-anchor="middle" dominant-baseline="central">color · light + dark</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="572" y="107" text-anchor="middle" dominant-baseline="central">size · 3 breakpoints</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6ee7b7" x="572" y="124" text-anchor="middle" dominant-baseline="central">type · 3 breakpoints</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#474440" x="572" y="148" text-anchor="middle" dominant-baseline="central">recalculates automatically</text>
-              </svg>
+            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
+              <img src="img/design-system-architecture.png" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each referencing the one below" style="display:block;">
             </div>
-            <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically.</p>
+            <p class="cs-caption" style="margin-top:8px;">Token architecture · Core, Palette, Brand, and Semantic layers</p>
+            <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically. Eight full palette ramps feed the brand layer — mint for primary, zinc for neutral, plus six more for every feedback role the product needs.</p>
+            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
+              <img src="img/design-system-palette.png" width="100%" alt="Palette layer: eight color ramps from 25 to 950, covering primary, neutral, accent, and every feedback role" style="display:block;">
+            </div>
+            <p class="cs-caption" style="margin-top:8px;">Palette layer · eight color ramps from 25 to 950</p>
             <div class="cs-addresses">
               <span class="cs-addresses__label">Mobile consequence</span>
               <span class="cs-addresses__metric">The operations team needed a mobile interface for warehouse staff before launch. Because semantic tokens already resolved to mobile values at narrow breakpoints, the mobile build required no parallel system. The responsive logic had been built before anyone asked for it.</span>
-            </div>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/design-system-palette.png" width="100%" alt="Design system in practice: palette, type scale, and component library" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
             </div>
           </div>
         </section>
@@ -443,9 +410,9 @@
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
-                  <img src="img/fleet-dock-schedule.png" alt="Fleet and Dock module: dock scheduling grid with upcoming bookings" loading="lazy">
+                  <img src="img/fleet-dock-schedule.png" alt="Dock Schedule: bays as rows, hours as columns, bookings color-coded by status — completed, confirmed, pending, delayed" loading="lazy">
                 </div>
-                <figcaption class="cs-caption">Dock scheduling · grid of bays and upcoming bookings</figcaption>
+                <figcaption class="cs-caption">Dock schedule · bays by hour, status color-coded</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
@@ -505,9 +472,9 @@
           <span class="label case-nav__direction">← Previous</span>
           <span class="heading-sm case-nav__title">MedMe</span>
         </a>
-        <a href="../northpay/" class="case-nav__item case-nav__item--next">
+        <a href="../vellumwire/" class="case-nav__item case-nav__item--next">
           <span class="label case-nav__direction">Next →</span>
-          <span class="heading-sm case-nav__title">NorthPay</span>
+          <span class="heading-sm case-nav__title">Vellumwire</span>
         </a>
       </div>
     </nav>
