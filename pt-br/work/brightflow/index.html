@@ -130,19 +130,19 @@
             </defs>
             <rect x="10"  y="14" width="118" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
             <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="69"  y="38" text-anchor="middle" dominant-baseline="central">Abre o dashboard</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6a6260" x="69"  y="66" text-anchor="middle" dominant-baseline="central">Quer o sinal de hoje</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#908684" x="69"  y="66" text-anchor="middle" dominant-baseline="central">Quer o sinal de hoje</text>
             <line x1="129" y1="50" x2="141" y2="50" stroke="#3a3530" stroke-width="1" marker-end="url(#arr-bf)"/>
             <rect x="142" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
             <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="201" y="38" text-anchor="middle" dominant-baseline="central">Vê 3 cards iguais</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="201" y="66" text-anchor="middle" dominant-baseline="central">Sem prioridade visual</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="201" y="66" text-anchor="middle" dominant-baseline="central">Sem prioridade visual</text>
             <line x1="261" y1="50" x2="273" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-bf)"/>
             <rect x="274" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
             <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="333" y="38" text-anchor="middle" dominant-baseline="central">Escaneia os três</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="333" y="66" text-anchor="middle" dominant-baseline="central">Não sabe qual importa</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="333" y="66" text-anchor="middle" dominant-baseline="central">Não sabe qual importa</text>
             <line x1="393" y1="50" x2="405" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-bf)"/>
             <rect x="406" y="14" width="132" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
             <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="472" y="38" text-anchor="middle" dominant-baseline="central">Fecha a aba</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c06050" x="472" y="66" text-anchor="middle" dominant-baseline="central">Nenhuma ação tomada.</text>
+            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="472" y="66" text-anchor="middle" dominant-baseline="central">Nenhuma ação tomada.</text>
           </svg>
         </div>
         <p class="cs-caption">Quando toda métrica recebe o mesmo peso visual, nenhuma delas parece urgente. O dashboard responde "o que aconteceu" mas nunca "o que eu deveria fazer".</p>
@@ -225,7 +225,7 @@
             <blockquote class="cs-pullquote">Métricas iguais tornam tudo a mesma prioridade, o que não torna nada principal. Um dashboard que destaca um número primeiro responde "o que eu deveria olhar" antes que o usuário precise perguntar.</blockquote>
             <div class="cs-rejected">
               <span class="cs-rejected__label">Abordagem rejeitada</span>
-              Três cards de métrica do mesmo tamanho no topo, o layout padrão da maioria dos dashboards de feedback. Rejeitado: com três cards de tamanho e peso idênticos, nada diz ao usuário qual ler primeiro. O problema de hierarquia da landing page reaparece, só que renderizado em gráficos em vez de texto.
+              Três cards de métrica do mesmo tamanho no topo, o layout padrão de um dashboard de feedback. Rejeitado: com três cards de tamanho e peso idênticos, nada diz ao usuário qual ler primeiro. O problema de hierarquia da landing page reaparece, só que renderizado em gráficos em vez de texto.
             </div>
             <figure>
               <div class="cs-diagram" style="padding:0; overflow:hidden;">
@@ -316,7 +316,7 @@
           <div class="cs-section__body">
             <p><strong>Não tenho dados de uso para confirmar que a decisão de hierarquia realmente funciona.</strong> O argumento de uma métrica em vez de três é sólido no papel (a pesquisa de dashboards de Few sustenta o princípio), mas, como projeto conceitual, nunca observei um usuário real escaneando esse dashboard e agindo ou não. Eu gostaria de fazer um rastreamento de cliques nos cards de métrica antes de confiar na decisão além da etapa de revisão de design.</p>
             <p><strong>A página assume uma leitura única e linear.</strong> O sequenciamento de estrutura-antes-do-texto funciona se o visitante ler de cima a baixo, em ordem. Tráfego real rola de forma errática e pula direto para os preços. Eu testaria se os sinais de confiança da s04 ainda funcionam quando o preço é a primeira coisa vista, não a quarta.</p>
-            <p><strong>Os planos são dimensionados por time, não nomeados para quem eles servem.</strong> O case de preços do Veriflow fez a escolha contrária (rótulos voltados ao público, como "para operadores solo"), e, em retrospecto, esse é o padrão mais forte. "Starter / Pro / Enterprise" ainda pede que o visitante se encaixe em um plano; um rótulo que nomeasse o comprador diretamente removeria essa etapa.</p>
+            <p><strong>Os planos são dimensionados por tamanho de time, sem nenhum rótulo que diga para quem cada um realmente serve.</strong> O case de preços do Veriflow fez a escolha contrária (rótulos voltados ao público, como "para operadores solo"), e, em retrospecto, esse é o padrão mais forte. "Starter / Pro / Enterprise" ainda pede que o visitante se encaixe em um plano; um rótulo que nomeasse o comprador diretamente removeria essa etapa.</p>
           </div>
         </section>
 
@@ -356,7 +356,7 @@
         <a href="../" class="footer__nav-link">Trabalhos</a>
         <a href="../../contact/" class="footer__nav-link">Contato</a>
         <div class="footer__socials">
-          <a href="https://www.linkedin.com/in/dhiego-pires-cristofolini-77b964150" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
         </div>
       </nav>
