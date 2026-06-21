@@ -163,7 +163,7 @@
             <h2 class="cs-section__title" id="s02-title">The product</h2>
           </div>
           <div class="cs-section__body">
-            <p>The Data Workspace is where data is created, structured, and maintained. Everything else in Instivo depends on what lives inside it. It does not display data collected elsewhere: it is the source everything else reads from.</p>
+            <p>The Data Workspace is where data is created, structured, and maintained. Everything else in Instivo, every screen, every report, every form, reads directly from what lives inside it.</p>
             <p>Every field available in a form across the platform, every category a product can belong to, every role an employee can be assigned traces back to a hierarchy built here. Scheduling a dock requires the driver's role, the truck's registration, the dock number, the warehouse it belongs to, and the management chain above it. None of that exists unless someone built it in the Data Workspace first.</p>
             <div class="cs-compare">
               <div>
@@ -212,7 +212,7 @@
             <div class="cs-diagram" style="overflow-x:auto;">
               <img src="img/user-flow-three-roles.svg" width="100%" alt="User flow: Manager, IT Admin, and Operational user across the system" style="display:block;">
             </div>
-            <p class="cs-caption">Conceptual model of the layering logic — not a product screen.</p>
+            <p class="cs-caption">Conceptual model of the layering logic, not a product screen.</p>
           </div>
         </section>
 
@@ -287,7 +287,7 @@
             </div>
             <p class="cs-caption" style="margin-top:8px;">Folder model vs. card-linked model · why a folder structure breaks for shared entities</p>
             <p>Each card represents a real entity in the system with a unique ID. The same card can be referenced in multiple workspaces, playing a different structural role in each. In the product hierarchy it is a child of hygiene. In the stock workspace it is a parent to a restocking threshold. In the transport workspace it is a child of a cargo category.</p>
-            <p>The analogy I used internally was design tokens. A token is not a file in a folder. It is a value that lives in a system of references, and its meaning depends on the context in which it is used. The canvas reorganized automatically as connections multiplied, removing the responsibility for legibility from the user.</p>
+            <p>The analogy I used internally was design tokens. A token is a value that lives in a system of references, and its meaning depends on the context in which it is used. The canvas reorganized automatically as connections multiplied, removing the responsibility for legibility from the user.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
               <img src="img/canvas-hierarchy.png" width="100%" alt="Pharmacy hierarchy on the canvas: linked entity cards with rule counts and inherited-rule badges" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
             </div>
@@ -301,7 +301,7 @@
             <h2 class="cs-section__title" id="s05-title">The rule engine</h2>
           </div>
           <div class="cs-section__body">
-            <p>Selecting a card on the canvas surfaces edit, delete, and collapse controls right in its header, with the rule count sitting next to the title as a badge. Clicking edit opens a modal scoped to that single card — name, description, its parent and child connections, and a Rules tab. Inside Rules, the schema is fixed: an operator, an entity, a condition, and an action, each picked from a constrained list and rendered as a chip. A manager builds "If · product · stock below 50 · trigger · restock" without writing a single line of logic.</p>
+            <p>Selecting a card on the canvas surfaces edit, delete, and collapse controls right in its header, with the rule count sitting next to the title as a badge. Clicking edit opens a modal scoped to that single card: name, description, its parent and child connections, and a Rules tab. Inside Rules, the schema is fixed: an operator, an entity, a condition, and an action, each picked from a constrained list and rendered as a chip. A manager builds "If · product · stock below 50 · trigger · restock" without writing a single line of logic.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/canvas-edit-icons.png" width="100%" alt="Product hierarchy canvas, Pharmacy and Cleaning supplies columns: the selected Hygiene card showing edit, delete, and collapse icons in its header next to the 2 rules badge" style="display:block;">
             </div>
@@ -333,12 +333,12 @@
                 <span class="cs-edge-response">trigger restocking · notify manager · block access: executes automatically</span>
               </div>
             </div>
-            <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it inside the same modal, flagged with a "Read-only" badge and a note on where it came from. The manager can see what is being enforced and trace it to its source, but cannot edit it on the child — only the card that owns the rule can.</p>
+            <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it inside the same modal, flagged with a "Read-only" badge and a note on where it came from. The manager can see what is being enforced and trace it to its source, but cannot edit it on the child: only the card that owns the rule can.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/rules-modal.png" width="100%" alt="Shampoo card modal with the Rules tab open: an inherited rule from Hygiene flagged read-only, plus two own rules built from if/entity/condition/action chips, each with edit and delete icons" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Card modal · Rules tab with an inherited read-only rule and two own rules</p>
-            <p>The stock view is where that rule actually shows its work. Every product card carries a status — Critical, Low, OK — resolved directly from the threshold rule, not set by hand. A manager scanning this list isn't checking inventory; they're confirming the rule engine is doing its job.</p>
+            <p>The stock view is where that rule actually shows its work. Every product card carries a status (Critical, Low, OK) resolved directly from the threshold rule, not set by hand. A manager scanning this list isn't checking inventory; they're confirming the rule engine is doing its job.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/stock-overview.png" width="100%" alt="Stock overview: 1,284 products, 23 out of stock, 61 low stock, R$482,000 total value, with per-product status resolved from the threshold rule" style="display:block;">
             </div>
@@ -385,7 +385,7 @@
               <img src="img/design-system-architecture.png" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each referencing the one below" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Token architecture · Core, Palette, Brand, and Semantic layers</p>
-            <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically. Eight full palette ramps feed the brand layer — mint for primary, zinc for neutral, plus six more for every feedback role the product needs.</p>
+            <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically. Eight full palette ramps feed the brand layer: mint for primary, zinc for neutral, plus six more for every feedback role the product needs.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/design-system-palette.png" width="100%" alt="Palette layer: eight color ramps from 25 to 950, covering primary, neutral, accent, and every feedback role" style="display:block;">
             </div>
@@ -406,11 +406,11 @@
             <p>The Data Workspace did not operate in isolation. Instivo included a second module for dock and fleet management: scheduling incoming trucks across numbered docks, tracking drivers and vehicles, logging cargo and destinations.</p>
             <blockquote class="cs-pullquote">The driver that a manager registered in a hierarchy was the same driver that appeared in a dock booking, pulled automatically from the same record.</blockquote>
             <p>Booking a dock slot required a driver record with a valid license category, a vehicle record with a registered plate, a dock record with its assigned bay, and a warehouse record with its management chain. All of those entities were built and maintained in the Data Workspace. The Fleet &amp; Dock module consumed them directly.</p>
-            <p>No duplication, no manual cross-entry, no integration layer between the two modules. If the driver's license category changed in the Data Workspace, the change was immediately reflected in every dock booking associated with that driver. One record. One source of truth.</p>
+            <p>No duplication, no manual cross-entry, no integration layer between the two modules. If the driver's license category changed in the Data Workspace, the change was immediately reflected in every dock booking associated with that driver: one record, one source of truth.</p>
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
-                  <img src="img/fleet-dock-schedule.png" alt="Dock Schedule: bays as rows, hours as columns, bookings color-coded by status — completed, confirmed, pending, delayed" loading="lazy">
+                  <img src="img/fleet-dock-schedule.png" alt="Dock Schedule: bays as rows, hours as columns, bookings color-coded by status: completed, confirmed, pending, delayed" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Dock schedule · bays by hour, status color-coded</figcaption>
               </figure>
@@ -439,7 +439,7 @@
               </div>
               <div class="cs-benchmark-card">
                 <p class="cs-benchmark-num"><span class="cs-accent">5</span>×</p>
-                <p class="cs-benchmark-desc">Faster unit onboarding: hierarchy ships pre-configured, only local adjustments required</p>
+                <p class="cs-benchmark-desc">Faster unit onboarding: new units start from a working structure instead of mapping categories and roles from a blank canvas</p>
                 <p class="cs-benchmark-source">Comparable platform deployments</p>
               </div>
               <div class="cs-benchmark-card">

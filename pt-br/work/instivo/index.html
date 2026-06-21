@@ -163,7 +163,7 @@
             <h2 class="cs-section__title" id="s02-title">O produto</h2>
           </div>
           <div class="cs-section__body">
-            <p>O Data Workspace é onde os dados são criados, estruturados e mantidos. Tudo o mais na Instivo depende do que vive ali dentro. Ele não exibe dados coletados em outro lugar: ele é a fonte de onde tudo o mais lê.</p>
+            <p>O Data Workspace é onde os dados são criados, estruturados e mantidos. Tudo o mais na Instivo, cada tela, cada relatório, cada formulário, lê diretamente do que vive ali dentro.</p>
             <p>Todo campo disponível em um formulário na plataforma, toda categoria à qual um produto pode pertencer, todo papel que um funcionário pode receber remonta a uma hierarquia construída aqui. Agendar uma doca exige o papel do motorista, o registro do caminhão, o número da doca, o armazém ao qual ela pertence, e a cadeia de gestão acima dele. Nada disso existe a menos que alguém tenha construído no Data Workspace primeiro.</p>
             <div class="cs-compare">
               <div>
@@ -212,7 +212,7 @@
             <div class="cs-diagram" style="overflow-x:auto;">
               <img src="img/user-flow-three-roles.svg" width="100%" alt="Fluxo de usuário: Gestor, IT Admin e usuário Operacional pelo sistema" style="display:block;">
             </div>
-            <p class="cs-caption">Modelo conceitual da lógica de camadas — não é uma tela do produto.</p>
+            <p class="cs-caption">Modelo conceitual da lógica de camadas, não é uma tela do produto.</p>
           </div>
         </section>
 
@@ -287,7 +287,7 @@
             </div>
             <p class="cs-caption" style="margin-top:8px;">Modelo de pastas vs. modelo de cards linkados · por que uma estrutura de pastas quebra para entidades compartilhadas</p>
             <p>Cada card representa uma entidade real no sistema com um ID exclusivo. O mesmo card pode ser referenciado em múltiplos workspaces, desempenhando um papel estrutural diferente em cada um. Na hierarquia de produtos é um filho de higiene. No workspace de estoque é um pai de um limite de reabastecimento. No workspace de transporte é um filho de uma categoria de carga.</p>
-            <p>A analogia que usei internamente foi tokens de design. Um token não é um arquivo numa pasta. É um valor que vive num sistema de referências, e seu significado depende do contexto em que é usado. O canvas se reorganizava automaticamente conforme as conexões se multiplicavam, removendo do usuário a responsabilidade pela legibilidade.</p>
+            <p>A analogia que usei internamente foi tokens de design. Um token é um valor que vive num sistema de referências, e seu significado depende do contexto em que é usado. O canvas se reorganizava automaticamente conforme as conexões se multiplicavam, removendo do usuário a responsabilidade pela legibilidade.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
               <img src="img/canvas-hierarchy.png" width="100%" alt="Hierarquia Pharmacy no canvas: cards de entidade linkados com contagem de regras e badges de regra herdada" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
             </div>
@@ -301,7 +301,7 @@
             <h2 class="cs-section__title" id="s05-title">O motor de regras</h2>
           </div>
           <div class="cs-section__body">
-            <p>Selecionar um card no canvas revela os controles de editar, excluir e colapsar logo no cabeçalho, com a contagem de regras ao lado do título como um badge. Clicar em editar abre um modal restrito àquele card — nome, descrição, suas conexões de pai e filhos, e uma aba de Regras. Dentro de Regras, o esquema é fixo: um operador, uma entidade, uma condição e uma ação, cada um escolhido de uma lista restrita e renderizado como um chip. Um gestor monta "Se · produto · estoque abaixo de 50 · disparar · reabastecimento" sem escrever uma linha de lógica.</p>
+            <p>Selecionar um card no canvas revela os controles de editar, excluir e colapsar logo no cabeçalho, com a contagem de regras ao lado do título como um badge. Clicar em editar abre um modal restrito àquele card: nome, descrição, suas conexões de pai e filhos, e uma aba de Regras. Dentro de Regras, o esquema é fixo: um operador, uma entidade, uma condição e uma ação, cada um escolhido de uma lista restrita e renderizado como um chip. Um gestor monta "Se · produto · estoque abaixo de 50 · disparar · reabastecimento" sem escrever uma linha de lógica.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/canvas-edit-icons.png" width="100%" alt="Canvas da hierarquia de produtos, colunas Pharmacy e Cleaning supplies: o card Hygiene selecionado mostrando ícones de editar, excluir e colapsar no cabeçalho ao lado do badge 2 rules" style="display:block;">
             </div>
@@ -333,12 +333,12 @@
                 <span class="cs-edge-response">disparar reabastecimento · notificar gestor · bloquear acesso: executa automaticamente</span>
               </div>
             </div>
-            <p>Regras podem ser restritas a um único card ou propagadas para todos os filhos na hierarquia. Um card que herda uma regra de um pai a mostra dentro do mesmo modal, marcada com um badge "Somente leitura" e uma nota de onde ela veio. O gestor pode ver o que está sendo aplicado e rastrear a origem, mas não pode editá-la no filho — só o card que possui a regra pode.</p>
+            <p>Regras podem ser restritas a um único card ou propagadas para todos os filhos na hierarquia. Um card que herda uma regra de um pai a mostra dentro do mesmo modal, marcada com um badge "Somente leitura" e uma nota de onde ela veio. O gestor pode ver o que está sendo aplicado e rastrear a origem, mas não pode editá-la no filho: só o card que possui a regra pode.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/rules-modal.png" width="100%" alt="Modal do card Shampoo com a aba Regras aberta: uma regra herdada de Hygiene marcada como somente leitura, mais duas regras próprias montadas com chips de se/entidade/condição/ação, cada uma com ícones de editar e excluir" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Modal do card · aba Regras com uma regra herdada somente leitura e duas regras próprias</p>
-            <p>A visão de estoque é onde essa regra mostra seu trabalho de fato. Todo card de produto carrega um status — Crítico, Baixo, OK — resolvido diretamente da regra de limite, não definido manualmente. Um gestor escaneando essa lista não está checando estoque; está confirmando que o motor de regras está fazendo o trabalho dele.</p>
+            <p>A visão de estoque é onde essa regra mostra seu trabalho de fato. Todo card de produto carrega um status (Crítico, Baixo, OK) resolvido diretamente da regra de limite, não definido manualmente. Um gestor escaneando essa lista não está checando estoque; está confirmando que o motor de regras está fazendo o trabalho dele.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/stock-overview.png" width="100%" alt="Visão de estoque: 1.284 produtos, 23 sem estoque, 61 com estoque baixo, R$482.000 em valor total, com status por produto resolvido a partir da regra de limite" style="display:block;">
             </div>
@@ -385,7 +385,7 @@
               <img src="img/design-system-architecture.png" width="100%" alt="Arquitetura de tokens: camadas Core, Palette, Brand e Semantic, cada uma referenciando a de baixo" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Arquitetura de tokens · camadas Core, Palette, Brand e Semantic</p>
-            <p>O sistema em camadas significava que adaptar o sistema para um novo cliente exigia mudanças só na camada Brand. Core e Palette permaneciam fixas. Semantic recalculava automaticamente. Oito rampas de paleta completas alimentam a camada Brand — mint para primária, zinc para neutra, mais seis outras para cada papel de feedback que o produto precisa.</p>
+            <p>O sistema em camadas significava que adaptar o sistema para um novo cliente exigia mudanças só na camada Brand. Core e Palette permaneciam fixas. Semantic recalculava automaticamente. Oito rampas de paleta completas alimentam a camada Brand: mint para primária, zinc para neutra, mais seis outras para cada papel de feedback que o produto precisa.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
               <img src="img/design-system-palette.png" width="100%" alt="Camada Palette: oito rampas de cor de 25 a 950, cobrindo primária, neutra, acento, e cada papel de feedback" style="display:block;">
             </div>
@@ -406,11 +406,11 @@
             <p>O Data Workspace não operava isoladamente. A Instivo incluía um segundo módulo para gestão de doca e frota: agendamento de caminhões chegando em docas numeradas, rastreamento de motoristas e veículos, registro de carga e destinos.</p>
             <blockquote class="cs-pullquote">O motorista que um gestor registrou numa hierarquia era o mesmo motorista que aparecia num agendamento de doca, puxado automaticamente do mesmo registro.</blockquote>
             <p>Agendar um horário de doca exigia um registro de motorista com categoria de licença válida, um registro de veículo com placa registrada, um registro de doca com sua baia designada, e um registro de armazém com sua cadeia de gestão. Todas essas entidades eram construídas e mantidas no Data Workspace. O módulo Fleet &amp; Dock as consumia diretamente.</p>
-            <p>Sem duplicação, sem cadastro manual cruzado, sem camada de integração entre os dois módulos. Se a categoria de licença do motorista mudasse no Data Workspace, a mudança era imediatamente refletida em todo agendamento de doca associado a esse motorista. Um registro. Uma fonte de verdade.</p>
+            <p>Sem duplicação, sem cadastro manual cruzado, sem camada de integração entre os dois módulos. Se a categoria de licença do motorista mudasse no Data Workspace, a mudança era imediatamente refletida em todo agendamento de doca associado a esse motorista: um registro, uma fonte de verdade.</p>
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
-                  <img src="img/fleet-dock-schedule.png" alt="Dock Schedule: baias nas linhas, horários nas colunas, agendamentos coloridos por status — concluído, confirmado, pendente, atrasado" loading="lazy">
+                  <img src="img/fleet-dock-schedule.png" alt="Dock Schedule: baias nas linhas, horários nas colunas, agendamentos coloridos por status: concluído, confirmado, pendente, atrasado" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Agenda de doca · baias por horário, status colorido</figcaption>
               </figure>
@@ -439,7 +439,7 @@
               </div>
               <div class="cs-benchmark-card">
                 <p class="cs-benchmark-num"><span class="cs-accent">5</span>×</p>
-                <p class="cs-benchmark-desc">Onboarding de unidade mais rápido: hierarquia vem pré-configurada, só ajustes locais necessários</p>
+                <p class="cs-benchmark-desc">Onboarding de unidade mais rápido: novas unidades partem de uma estrutura funcionando em vez de mapear categorias e papéis a partir de uma tela em branco</p>
                 <p class="cs-benchmark-source">Implantações de plataformas comparáveis</p>
               </div>
               <div class="cs-benchmark-card">
