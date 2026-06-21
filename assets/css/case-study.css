@@ -712,6 +712,13 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
   line-height: 1.2;
 }
 
+.cs-section__subhead {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--t2);
+  margin-top: calc(-1 * var(--sp-3));
+}
+
 .cs-section__body {
   display: flex;
   flex-direction: column;
