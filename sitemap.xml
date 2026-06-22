@@ -85,6 +85,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire-ds/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/vellumwire-ds/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/vellumwire-ds/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/vellumwire-ds/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire-ds/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/vellumwire-ds/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/vellumwire-ds/"/>
   </url>
   <url>
