@@ -1,3 +1,6 @@
+DirectoryIndex index.html
+Options -Indexes
+
 # HTML — always revalidate (no stale cache)
 <FilesMatch "\.(html|htm)$">
   Header set Cache-Control "no-cache, must-revalidate"
