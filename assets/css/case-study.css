@@ -467,6 +467,11 @@
   display: block;
 }
 
+/* Wide screenshots whose headline text spans near the full width: cover crops it, contain keeps it readable */
+.cs-hero__right img.cs-hero__img--contain {
+  object-fit: contain;
+}
+
 .cs-eyebrow {
   font-family: var(--mono);
   font-size: 11px;

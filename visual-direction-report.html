@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual Direction: Dhiego Cristofolini</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0908; --bg1:#0f0d0a; --bg2:#181612; --bg3:#221f18;
+    --t1:#f0ebe0; --t2:#8a8678; --t3:#474440;
+    --y:#f3b02e; --y-dk:#d9941a;
+    --b0:rgba(255,255,255,.07); --b1:rgba(255,255,255,.12); --b2:rgba(255,255,255,.20);
+    --display:'Bebas Neue',sans-serif; --sans:'Syne',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--t1); font-family:var(--sans); line-height:1.6; font-size:16px;}
+  .container{max-width:1120px; margin:0 auto; padding:64px 48px;}
+  @media (max-width:768px){ .container{padding:40px 20px;} }
+  h1,h2,h3{font-family:var(--display); text-transform:uppercase; letter-spacing:.01em; line-height:1;}
+  a{color:var(--y);}
+
+  header.report-header{background:var(--bg1); border-bottom:1px solid var(--b0); padding:56px 48px;}
+  @media (max-width:768px){ header.report-header{padding:40px 20px;} }
+  .report-label{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--y); margin-bottom:16px;}
+  .report-title{font-size:clamp(32px,5vw,52px); margin-bottom:12px;}
+  .report-sub{color:var(--t2); font-size:18px; max-width:720px; margin-bottom:32px;}
+  .meta-row{display:flex; flex-wrap:wrap; gap:32px; font-family:var(--mono); font-size:13px; color:var(--t2);}
+  .meta-row strong{display:block; color:var(--t1); font-size:20px; font-family:var(--sans); font-weight:700; margin-bottom:2px;}
+
+  .toc{display:flex; flex-wrap:wrap; gap:8px 24px; padding:24px 48px; border-bottom:1px solid var(--b0); font-family:var(--mono); font-size:13px;}
+  .toc a{color:var(--t2); text-decoration:none;}
+  .toc a:hover{color:var(--y);}
+
+  section{margin-bottom:64px;}
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:8px; border-bottom:1px solid var(--b0); padding-bottom:16px;}
+  .section-num{font-family:var(--mono); color:var(--t3); font-size:14px;}
+  .section-title{font-size:32px;}
+  .section-intro{color:var(--t2); margin:16px 0 32px; max-width:760px; font-size:15px;}
+
+  .swatch-row{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px;}
+  .swatch{flex:1; min-width:140px;}
+  .swatch__block{height:80px; border:1px solid var(--b1); margin-bottom:8px;}
+  .swatch__name{font-family:var(--sans); font-weight:700; font-size:13px;}
+  .swatch__hex{font-family:var(--mono); font-size:11px; color:var(--t2);}
+  .swatch__use{font-size:12px; color:var(--t3); margin-top:4px;}
+
+  .accent-hero{display:flex; align-items:center; gap:32px; background:var(--bg1); border:1px solid var(--b0); padding:32px; margin-bottom:24px;}
+  @media (max-width:600px){ .accent-hero{flex-direction:column; align-items:flex-start;} }
+  .accent-hero__block{width:140px; height:140px; background:var(--y); flex-shrink:0; box-shadow:0 0 60px rgba(243,176,47,.25);}
+  .accent-hero__text h3{font-size:24px; margin-bottom:8px;}
+  .accent-hero__text p{color:var(--t2); font-size:14px; max-width:560px;}
+
+  .justify-block{background:var(--bg1); border:1px solid var(--b0); padding:20px 24px; margin-bottom:16px; font-size:14px; color:var(--t2);}
+  .justify-block strong{color:var(--t1);}
+
+  .specimen{background:var(--bg1); border:1px solid var(--b0); padding:32px; margin-bottom:20px;}
+  .specimen__label{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--y); margin-bottom:16px;}
+  .specimen__display{font-family:var(--display); font-size:clamp(36px,5vw,64px); text-transform:uppercase; line-height:.95; margin-bottom:12px;}
+  .specimen__body{font-family:var(--sans); font-size:16px; color:var(--t2); max-width:600px;}
+  .specimen__mono{font-family:var(--mono); font-size:13px; color:var(--t2); margin-top:12px;}
+
+  .mood-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px;}
+  @media (max-width:700px){ .mood-grid{grid-template-columns:1fr;} }
+  .mood-card{background:var(--bg1); border:1px solid var(--b0); padding:20px;}
+  .mood-card__word{font-family:var(--display); font-size:28px; text-transform:uppercase; color:var(--y); margin-bottom:8px;}
+  .mood-card p{font-size:13px; color:var(--t2);}
+
+  .metaphor{background:var(--bg1); border-left:3px solid var(--y); padding:24px 28px; margin-bottom:24px;}
+  .metaphor__line{font-family:var(--display); font-size:28px; text-transform:uppercase; color:var(--t1); margin-bottom:10px;}
+  .metaphor p{color:var(--t2); font-size:14px;}
+
+  .avoid-list{display:flex; flex-direction:column; gap:12px;}
+  .avoid-item{display:grid; grid-template-columns:28px 1fr; gap:14px; background:var(--bg1); border:1px solid var(--b0); padding:16px 18px; align-items:start;}
+  .avoid-item__x{color:#f87171; font-family:var(--mono); font-weight:700;}
+  .avoid-item p{font-size:14px; color:var(--t2);}
+  .avoid-item strong{color:var(--t1);}
+
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th{text-align:left; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--t3); padding:8px 10px; border-bottom:1px solid var(--b1);}
+  td{padding:10px 10px; border-bottom:1px solid var(--b0); color:var(--t2);}
+  td:first-child{color:var(--t1); font-family:var(--sans); font-weight:600;}
+  tr:last-child td{border-bottom:none;}
+
+  .approval{background:var(--bg1); border:1px solid var(--y); padding:28px;}
+  .approval ul{list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:20px;}
+  .approval li{font-size:14px; color:var(--t1); display:flex; gap:10px; align-items:baseline;}
+  .approval li::before{content:"\2713"; color:var(--y); font-weight:700;}
+  .approval p{font-size:13px; color:var(--t2);}
+
+  footer{border-top:1px solid var(--b0); padding:32px 48px; font-family:var(--mono); font-size:12px; color:var(--t3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <p class="report-label">Visual Direction · Dhiego Cristofolini × VellumWire</p>
+  <h1 class="report-title">Visual Identity Approval</h1>
+  <p class="report-sub">This site already exists and is live. This document does not propose a new identity, it ratifies the one already shipped, with the same justification rigor this methodology requires before any code gets written. Where a decision was made before this process started, that is stated plainly rather than dressed up as a fresh choice.</p>
+  <div class="meta-row">
+    <div><strong>2026-06-24</strong>Date</div>
+    <div><strong>6</strong>Decisions reviewed</div>
+    <div><strong>Already shipped</strong>Status</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#colors">01 Color Palette</a>
+  <a href="#type">02 Typography</a>
+  <a href="#mood">03 Visual Mood</a>
+  <a href="#avoid">04 What We Are Not</a>
+  <a href="#approval">05 Approval</a>
+</nav>
+
+<div class="container">
+
+  <section id="colors">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Color Palette</h2>
+    </div>
+    <p class="section-intro">Decision: warm dark background, single amber accent, no secondary accent. Justification below references the explicit anti-reference from Step 1 discovery and the verified competitor set from Step 1.3 market research.</p>
+
+    <div class="justify-block">
+      <strong>Background theme: warm dark.</strong> The explicit anti-reference given in discovery was "qualquer light mode como apple.com." All four independently verified competitor portfolios in the market research (Stephen Calvillo, Josh Mateo, Marcos Rezende, Francesco Fagioli) use light or neutral themes. Warm dark is not a safe default here, it is the one direction none of the four verified comparisons take.
+    </div>
+
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch__block" style="background:#0a0908;"></div><p class="swatch__name">Base</p><p class="swatch__hex">#0a0908</p><p class="swatch__use">Body background</p></div>
+      <div class="swatch"><div class="swatch__block" style="background:#0f0d0a;"></div><p class="swatch__name">Raised</p><p class="swatch__hex">#0f0d0a</p><p class="swatch__use">Cards, hero panels</p></div>
+      <div class="swatch"><div class="swatch__block" style="background:#181612;"></div><p class="swatch__name">Surface</p><p class="swatch__hex">#181612</p><p class="swatch__use">Inputs, grid cell fills</p></div>
+      <div class="swatch"><div class="swatch__block" style="background:#221f18;"></div><p class="swatch__name">Surface 2</p><p class="swatch__hex">#221f18</p><p class="swatch__use">Rare, deepest elevation</p></div>
+    </div>
+
+    <div class="accent-hero">
+      <div class="accent-hero__block"></div>
+      <div class="accent-hero__text">
+        <h3>#f3b02e, Amber</h3>
+        <p>One accent, used for every CTA, focus ring, link, and highlight on the site. Warm amber reads as confident and crafted rather than corporate. It is also distinct from the neutral, near-colorless palettes of all four verified competitor portfolios, none of which use a saturated warm accent as their signature color.</p>
+      </div>
+    </div>
+
+    <div class="justify-block">
+      <strong>Secondary accent: none.</strong> The candidate's work spans SaaS and Fintech, but these are not two audiences requiring two visual tones, they are one audience (recruiters and hiring managers) evaluating one thing (judgment and craft). A second accent would dilute the single signature color rather than serve a real segmentation need.
+    </div>
+
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch__block" style="background:#f0ebe0;"></div><p class="swatch__name">Text primary</p><p class="swatch__hex">#f0ebe0</p></div>
+      <div class="swatch"><div class="swatch__block" style="background:#8a8678;"></div><p class="swatch__name">Text secondary</p><p class="swatch__hex">#8a8678</p></div>
+      <div class="swatch"><div class="swatch__block" style="background:#474440;"></div><p class="swatch__name">Text muted</p><p class="swatch__hex">#474440</p></div>
+    </div>
+  </section>
+
+  <section id="type">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Typography</h2>
+    </div>
+    <p class="section-intro">Display plus body plus mono, three roles, no overlap. None of the three is a default SaaS choice (Inter, Space Grotesk, Plus Jakarta Sans never appear).</p>
+
+    <div class="specimen">
+      <p class="specimen__label">Display: Bebas Neue, weight 400</p>
+      <p class="specimen__display">Design that converts.</p>
+      <p class="specimen__mono">Used for: H1, section titles, CTA banner headlines. Always uppercase, always condensed, never for body copy.</p>
+    </div>
+
+    <div class="specimen">
+      <p class="specimen__label">Body and UI: Syne, weights 400 to 800</p>
+      <p class="specimen__body" style="font-size:18px; margin-bottom:10px;">9 years in SaaS with onboarding flows, CRM, KYC, pricing pages, and dashboards.</p>
+      <p class="specimen__mono">Used for: lead paragraphs, card titles, button labels, nav links. Geometric and distinctive, the opposite of a default system font.</p>
+    </div>
+
+    <div class="specimen">
+      <p class="specimen__label">Mono: IBM Plex Mono, weights 400 and 500</p>
+      <p class="specimen__mono" style="font-size:16px; color:var(--t1);">core.space.16 &rarr; 1rem &middot; brand.color.primary &rarr; lime</p>
+      <p class="specimen__mono">Used for: eyebrow labels, stat labels, token names, captions. Signals technical fluency, directly reinforcing the "codes HTML, CSS, JS" positioning from discovery.</p>
+    </div>
+
+    <table>
+      <tr><th>Token</th><th>Size</th><th>Role</th></tr>
+      <tr><td>Display, hero H1</td><td>clamp(40px, 6vw, 80px)</td><td>Home and case-study primary headline</td></tr>
+      <tr><td>Display, case H1</td><td>clamp(36px, 4.5vw, 72px)</td><td>Case study hero title</td></tr>
+      <tr><td>Body lead</td><td>15px to 18px, clamp</td><td>Hero subhead, case lead paragraph</td></tr>
+      <tr><td>Label, mono</td><td>9px to 11px</td><td>Eyebrows, stat labels, nav links</td></tr>
+    </table>
+  </section>
+
+  <section id="mood">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Visual Mood</h2>
+    </div>
+    <p class="section-intro">Three words, then the metaphor that should resolve any future design decision not explicitly covered elsewhere.</p>
+
+    <div class="mood-grid">
+      <div class="mood-card"><p class="mood-card__word">Blocked</p><p>Hard edges, hairline borders, zero border-radius on every interactive element. Nothing rounds off a decision.</p></div>
+      <div class="mood-card"><p class="mood-card__word">Bold</p><p>Display type at display size. Headlines are never apologetic or small.</p></div>
+      <div class="mood-card"><p class="mood-card__word">Technical</p><p>Mono type for data, real numbers in every hero, token-style notation where it's literally true (the design system case).</p></div>
+    </div>
+
+    <div class="metaphor">
+      <p class="metaphor__line">Infrastructure, not decoration.</p>
+      <p>This is the candidate's own language, taken directly from the Fiter case study headline ("Infrastructure first. Design second.") and from the Vellumwire Design System case's entire premise. The site should look load-bearing: square edges, visible structure, hairline grids you can see the joints of. Nothing on the page should look ornamental. If a design decision doesn't serve legibility or hierarchy, it doesn't belong, the same standard applied to the actual product work being shown.</p>
+    </div>
+  </section>
+
+  <section id="avoid">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">What We Are Not</h2>
+    </div>
+    <p class="section-intro">Specific patterns ruled out, each with a reason tied to discovery answers or research findings, not a vague style preference.</p>
+
+    <div class="avoid-list">
+      <div class="avoid-item"><span class="avoid-item__x">No</span><p><strong>Light mode in any form.</strong> Named explicitly as the anti-reference in discovery ("qualquer light mode como apple.com").</p></div>
+      <div class="avoid-item"><span class="avoid-item__x">No</span><p><strong>Rounded corners on buttons, inputs, or cards.</strong> Every interactive surface in the shipped CSS uses border-radius: 0. A rounded button would be the single most visible inconsistency on the site.</p></div>
+      <div class="avoid-item"><span class="avoid-item__x">No</span><p><strong>Stock-photo hero imagery or generic SaaS dashboard mockups.</strong> Every hero image on the site is either a real product screen or a real portrait, never a placeholder.</p></div>
+      <div class="avoid-item"><span class="avoid-item__x">No</span><p><strong>AI-pattern copy: em dashes, "not X but Y" contrast framing, unnamed "most teams" claims.</strong> Named directly in discovery ("já fizemos infinitas auditorias sobre isso") and enforced across every case study this session.</p></div>
+      <div class="avoid-item"><span class="avoid-item__x">No</span><p><strong>Generic role jargon: "user-centered," "innovative," "passionate."</strong> Flagged explicitly in discovery as language to avoid.</p></div>
+    </div>
+
+    <table style="margin-top:24px;">
+      <tr><th>Portfolio</th><th>Theme</th><th>Accent</th><th>Where this site differs</th></tr>
+      <tr><td>Stephen Calvillo</td><td>Light, neutral</td><td>None dominant</td><td>Dark, single warm accent</td></tr>
+      <tr><td>Josh Mateo</td><td>Light, visual-led</td><td>None dominant</td><td>Dark, type-led with data callouts</td></tr>
+      <tr><td>Marcos Rezende</td><td>Light, professional</td><td>None dominant</td><td>Dark, condensed display type</td></tr>
+      <tr><td>Francesco Fagioli</td><td>Light, editorial</td><td>None dominant</td><td>Dark, blocked grid, mono data labels</td></tr>
+    </table>
+  </section>
+
+  <section id="approval">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Approval</h2>
+    </div>
+    <div class="approval">
+      <ul>
+        <li>Color palette: warm dark, single amber accent</li>
+        <li>Typography: Bebas Neue, Syne, IBM Plex Mono</li>
+        <li>Visual mood: blocked, bold, technical, "infrastructure not decoration"</li>
+      </ul>
+      <p>Since this identity is already live in production, approval here means: lock it. Any future change to color, type, or the zero-radius rule is a deliberate scope decision, not a drive-by tweak during a content or copy session.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span>Prepared by VellumWire · 2026-06-24</span>
+</footer>
+
+</body>
+</html>

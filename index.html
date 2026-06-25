@@ -97,7 +97,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="preload" href="assets/img/Photo.jpg" as="image">
+  <link rel="preload" href="assets/img/Photo.webp" as="image">
 
   <link href="assets/css/globals.css?v=3" rel="stylesheet">
 
@@ -621,6 +621,7 @@
 
       .hero__content {
         max-width: none;
+        width: 100%;
         margin-inline: auto;
         text-align: center;
         display: flex;
@@ -628,10 +629,11 @@
         align-items: center;
       }
 
-      .hero__badge { align-self: center; }
-      .hero__cta { justify-content: center; }
+      .hero__badge { align-self: center; max-width: 100%; }
+      .hero__cta { justify-content: center; flex-wrap: wrap; width: 100%; }
       .hero__facts { justify-content: center; }
-      .hero__sub { margin-inline: auto; }
+      .hero__sub { margin-inline: auto; width: 100%; }
+      .hero__headline { width: 100%; }
 
       .hero__visual {
         min-height: auto;
@@ -676,7 +678,8 @@
       }
 
       .hero__headline {
-        font-size: clamp(56px, 18vw, 92px);
+        font-size: clamp(40px, 12vw, 64px);
+        overflow-wrap: break-word;
       }
 
       .hero__scroll-hint {
@@ -915,7 +918,11 @@
   <a href="./" class="nav-logo" aria-label="Cristofolini | Home">
     <img src="assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
   </a>
-  <ul class="nav-links" role="list">
+  <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
     <li><a href="work/">Work</a></li>
     <li><a href="./" aria-current="page">Home</a></li>
   </ul>
@@ -935,7 +942,7 @@
         <div class="hero__content reveal">
           <div class="hero__badge">
             <span class="badge-dot"></span>
-            Available for new projects
+            Open to full-time roles
           </div>
           <h1 class="hero__headline" id="hero-heading">
             <span class="hw-mid">Design that</span><br>
@@ -967,7 +974,7 @@
         <div class="hero__visual reveal" style="--delay: 180ms;">
           <div class="hero__portrait-wrap">
             <div class="hero__portrait">
-              <img src="assets/img/Photo.jpg" alt="Dhiego Cristofolini portrait" loading="eager" fetchpriority="high" decoding="async" width="800" height="1000">
+              <img src="assets/img/Photo.webp" alt="Dhiego Cristofolini portrait" loading="eager" fetchpriority="high" decoding="async" width="800" height="1000">
             </div>
             <div class="hero__visual-note">
               <strong>Open to</strong>
@@ -1037,6 +1044,187 @@
       <div class="mq-item"><img class="mq-logo" src="assets/img/logo/Vega%20I.T..svg" alt="Vega I.T." loading="eager"></div>
     </div>
   </div>
+
+  <section class="cases-section" aria-labelledby="cases-heading">
+    <div class="container cases-section__header reveal">
+      <p class="tLB" style="margin-bottom: 12px;">Selected work</p>
+      <h2 class="heading-lg" id="cases-heading" style="color: var(--t1);">Case studies.</h2>
+    </div>
+
+    <div class="carousel" role="region" aria-label="Case studies" aria-roledescription="carousel" tabindex="0">
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <div class="carousel__slide">
+            <a href="work/medme/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="work/medme/Mockup-hero.webp" alt="MedMe home healthcare on-demand platform" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+                <p class="carousel-card__title">MedMe | Home healthcare platform</p>
+                <p class="carousel-card__desc">On-demand home healthcare with verified identity, scheduling logic, and escrow payment built from scratch.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/instivo/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="work/instivo/img/hero.webp" alt="Instivo governed data workspace: hierarchy canvas with rule engine" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">Design System</span>
+                </div>
+                <p class="carousel-card__title">Instivo | Data workspace governance</p>
+                <p class="carousel-card__desc">A governed data layer for retail operations: card-linked hierarchies, a constrained rule engine, and a four-layer design system rebuilt from zero.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/vellumwire/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="work/vellumwire/img/hero.webp" alt="Vellumwire studio site: problem-led positioning and conversion copy" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+                <p class="carousel-card__title">Vellumwire | Studio site that closes</p>
+                <p class="carousel-card__desc">~1,000 organic sessions/week with no paid ads. Designed to compress a full sales cycle into one visit.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/vellumwire-ds/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="work/vellumwire-ds/img/hero.webp" alt="Vellumwire design system: seven full color ramps from step 25 to 950" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Product</span>
+                  <span class="tag">Design System</span>
+                </div>
+                <p class="carousel-card__title">Vellumwire Design System | Token architecture</p>
+                <p class="carousel-card__desc">Four layers, eight color ramps, and a re-theming process that touches exactly one of them. Refined under production pressure during the Instivo engagement.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/fiter/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="work/fiter/img/hero.webp" alt="Fiter website rebuild: SEO 22 to 100, two buyer journeys" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">Design System</span>
+                </div>
+                <p class="carousel-card__title">Fiter | Full-scope web rebuild</p>
+                <p class="carousel-card__desc">SEO score 22→100 in two weeks. One Joomla template rebuilt into 16 structured pages across two buyer ecosystems.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/northpay/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="assets/img/project/NorthPay/thumbnail.webp" alt="NorthPay fintech onboarding and verification" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+                <p class="carousel-card__title">NorthPay | Fintech onboarding and verification</p>
+                <p class="carousel-card__desc">Redesigning KYC flows to reduce drop-off and get users to their first payout faster.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/veriflow/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="assets/img/project/veriflow/Thumbnail.webp" alt="Veriflow pricing and plans redesign" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">Branding</span>
+                </div>
+                <p class="carousel-card__title">Veriflow | Pricing and plans</p>
+                <p class="carousel-card__desc">Dark-mode SaaS pricing page redesign focused on conversion and clarity.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel__slide">
+            <a href="work/brightflow/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="assets/img/project/brightflow/Thumbnail-horizontal.webp" alt="BrightFlow customer feedback intelligence" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">2D Art</span>
+                </div>
+                <p class="carousel-card__title">BrightFlow | Feedback product concept</p>
+                <p class="carousel-card__desc">Designing a feedback intelligence platform that helps teams act on what users say.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+
+
+          <div class="carousel__slide">
+            <a href="work/collaboard/" class="carousel-card">
+              <div class="carousel-card__image">
+                <img src="assets/img/project/Collabboard/thumbnail.webp" alt="Collabboard light mode CRM and team workspace" loading="lazy" width="560" height="280">
+              </div>
+              <div class="carousel-card__body">
+                <div class="carousel-card__tags">
+                  <span class="tag">Concept</span>
+                  <span class="tag">Product</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+                <p class="carousel-card__title">Collabboard | CRM and team workspace</p>
+                <p class="carousel-card__desc">Light-mode CRM and collaboration tool designed for small product teams.</p>
+                <span class="carousel-card__cta">View case study →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel__controls">
+        <button type="button" class="carousel__btn carousel__btn--prev" aria-label="Previous case study">←</button>
+        <button type="button" class="carousel__btn carousel__btn--next" aria-label="Next case study">→</button>
+      </div>
+      <p class="sr-only carousel__status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </section>
 
   <section class="exp-section" aria-labelledby="exp-heading">
     <div class="container">
@@ -1217,187 +1405,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <section class="cases-section" aria-labelledby="cases-heading">
-    <div class="container cases-section__header reveal">
-      <p class="tLB" style="margin-bottom: 12px;">Selected work</p>
-      <h2 class="heading-lg" id="cases-heading" style="color: var(--t1);">Case studies.</h2>
-    </div>
-
-    <div class="carousel" role="region" aria-label="Case studies" aria-roledescription="carousel" tabindex="0">
-      <div class="carousel__viewport">
-        <div class="carousel__track">
-          <div class="carousel__slide">
-            <a href="work/medme/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="work/medme/Mockup-hero.jpg" alt="MedMe home healthcare on-demand platform" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                </div>
-                <p class="carousel-card__title">MedMe | Home healthcare platform</p>
-                <p class="carousel-card__desc">On-demand home healthcare with verified identity, scheduling logic, and escrow payment built from scratch.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/instivo/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="work/instivo/img/hero.png" alt="Instivo governed data workspace: hierarchy canvas with rule engine" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                  <span class="tag">Design System</span>
-                </div>
-                <p class="carousel-card__title">Instivo | Data workspace governance</p>
-                <p class="carousel-card__desc">A governed data layer for retail operations: card-linked hierarchies, a constrained rule engine, and a four-layer design system rebuilt from zero.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/vellumwire/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="work/vellumwire/img/hero.png" alt="Vellumwire studio site: problem-led positioning and conversion copy" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                </div>
-                <p class="carousel-card__title">Vellumwire | Studio site that closes</p>
-                <p class="carousel-card__desc">~1,000 organic sessions/week with no paid ads. Designed to compress a full sales cycle into one visit.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/vellumwire-ds/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="work/vellumwire-ds/img/hero.png" alt="Vellumwire design system: seven full color ramps from step 25 to 950" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Product</span>
-                  <span class="tag">Design System</span>
-                </div>
-                <p class="carousel-card__title">Vellumwire Design System | Token architecture</p>
-                <p class="carousel-card__desc">Four layers, eight color ramps, and a re-theming process that touches exactly one of them. Refined under production pressure during the Instivo engagement.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/fiter/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="work/fiter/img/hero.png" alt="Fiter website rebuild: SEO 22 to 100, two buyer journeys" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                  <span class="tag">Design System</span>
-                </div>
-                <p class="carousel-card__title">Fiter | Full-scope web rebuild</p>
-                <p class="carousel-card__desc">SEO score 22→100 in two weeks. One Joomla template rebuilt into 16 structured pages across two buyer ecosystems.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/northpay/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="assets/img/project/NorthPay/thumbnail.jpg" alt="NorthPay fintech onboarding and verification" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Concept</span>
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                </div>
-                <p class="carousel-card__title">NorthPay | Fintech onboarding and verification</p>
-                <p class="carousel-card__desc">Redesigning KYC flows to reduce drop-off and get users to their first payout faster.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/veriflow/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="assets/img/project/veriflow/Thumbnail.png" alt="Veriflow pricing and plans redesign" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Concept</span>
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                  <span class="tag">Branding</span>
-                </div>
-                <p class="carousel-card__title">Veriflow | Pricing and plans</p>
-                <p class="carousel-card__desc">Dark-mode SaaS pricing page redesign focused on conversion and clarity.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="carousel__slide">
-            <a href="work/brightflow/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="assets/img/project/brightflow/Thumbnail-horizontal.jpg" alt="BrightFlow customer feedback intelligence" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Concept</span>
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                  <span class="tag">2D Art</span>
-                </div>
-                <p class="carousel-card__title">BrightFlow | Feedback product concept</p>
-                <p class="carousel-card__desc">Designing a feedback intelligence platform that helps teams act on what users say.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-
-
-          <div class="carousel__slide">
-            <a href="work/collaboard/" class="carousel-card">
-              <div class="carousel-card__image">
-                <img src="assets/img/project/Collabboard/thumbnail.jpg" alt="Collabboard light mode CRM and team workspace" loading="lazy" width="560" height="280">
-              </div>
-              <div class="carousel-card__body">
-                <div class="carousel-card__tags">
-                  <span class="tag">Concept</span>
-                  <span class="tag">Product</span>
-                  <span class="tag">UI/UX</span>
-                </div>
-                <p class="carousel-card__title">Collabboard | CRM and team workspace</p>
-                <p class="carousel-card__desc">Light-mode CRM and collaboration tool designed for small product teams.</p>
-                <span class="carousel-card__cta">View case study →</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel__controls">
-        <button type="button" class="carousel__btn carousel__btn--prev" aria-label="Previous case study">←</button>
-        <button type="button" class="carousel__btn carousel__btn--next" aria-label="Next case study">→</button>
-      </div>
-      <p class="sr-only carousel__status" aria-live="polite" aria-atomic="true"></p>
     </div>
   </section>
 

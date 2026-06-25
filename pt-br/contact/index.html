@@ -85,6 +85,17 @@
       .contact-grid { grid-template-columns: 7fr 5fr; }
     }
 
+    /* Booking */
+    .contact-booking {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      align-items: flex-start;
+      padding-bottom: var(--sp-8);
+      margin-bottom: var(--sp-8);
+      border-bottom: 1px solid var(--b0);
+    }
+
     /* Form */
     .contact-form-wrap {
       display: flex;
@@ -183,6 +194,10 @@
     <a href="../" class="nav-logo" aria-label="Cristofolini | Início">
       <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <ul class="nav-links" role="list">
       <li><a href="../work/">Trabalhos</a></li>
       <li><a href="../">Início</a></li>
@@ -209,6 +224,15 @@
         <div class="contact-grid">
 
           <div>
+            <div class="contact-booking">
+              <p class="label-sm">Prefere falar agora?</p>
+              <a href="https://calendly.com/dhiegopiresc/30min" class="btn-shiny" target="_blank" rel="noopener noreferrer">
+                <span class="btn-shiny-label">
+                  Agendar uma call de 30 min
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+            </div>
             <form id="contact-form" class="contact-form-wrap" novalidate>
               <div class="form-row">
                 <div class="form-field">

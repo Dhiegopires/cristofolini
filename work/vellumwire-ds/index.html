@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vellumwire Design System | Token Architecture Case Study | Dhiego Cristofolini</title>
-  <meta name="description" content="A four-layer token architecture for Vellumwire's client work: Core, Palette, Brand, and Semantic. Re-theming a project means changing one layer, nothing else.">
+  <title>Vellumwire DS | Token Architecture | Dhiego Cristofolini</title>
+  <meta name="description" content="A four-layer token architecture for Vellumwire's client work: Core, Palette, Brand, Semantic. Re-theming means changing one layer, nothing else.">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Vellumwire Design System | Token Architecture Case Study | Dhiego Cristofolini">
-  <meta property="og:description" content="A four-layer token architecture for Vellumwire's client work: Core, Palette, Brand, and Semantic. Re-theming a project means changing one layer, nothing else.">
+  <meta property="og:title" content="Vellumwire DS | Token Architecture | Dhiego Cristofolini">
+  <meta property="og:description" content="A four-layer token architecture for Vellumwire's client work: Core, Palette, Brand, Semantic. Re-theming means changing one layer, nothing else.">
   <meta property="og:image" content="https://cristofolini.site/work/vellumwire-ds/img/hero.png">
   <meta property="og:url" content="https://cristofolini.site/work/vellumwire-ds/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vellumwire Design System | Token Architecture Case Study | Dhiego Cristofolini">
-  <meta name="twitter:description" content="A four-layer token architecture for Vellumwire's client work: Core, Palette, Brand, and Semantic. Re-theming a project means changing one layer, nothing else.">
+  <meta name="twitter:title" content="Vellumwire DS | Token Architecture | Dhiego Cristofolini">
+  <meta name="twitter:description" content="A four-layer token architecture for Vellumwire's client work: Core, Palette, Brand, Semantic. Re-theming means changing one layer, nothing else.">
   <meta name="twitter:image" content="https://cristofolini.site/work/vellumwire-ds/img/hero.png">
   <link rel="canonical" href="https://cristofolini.site/work/vellumwire-ds/">
   <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire-ds/">
@@ -53,6 +53,10 @@
     <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
       <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <ul class="nav-links" role="list">
       <li><a href="../" aria-current="page">Work</a></li>
       <li><a href="../../">Home</a></li>
@@ -111,7 +115,7 @@
         </div>
       </div>
       <div class="cs-hero__right">
-        <img src="img/hero.png" alt="Vellumwire design system palette: seven full color ramps from step 25 to 950" loading="eager">
+        <img src="img/hero.webp" alt="Vellumwire design system palette: seven full color ramps from step 25 to 950" loading="eager">
       </div>
     </section>
 
@@ -142,7 +146,7 @@
             <p>Each project began the same way. A new client, a new brand, and a component library built again from a blank file. Buttons, inputs, cards, the whole set, recreated even when the underlying logic hadn't changed at all from the last project.</p>
             <p>The repetition wasn't the real cost. The real cost showed up at handoff. Every rebuild meant a new round of naming decisions for engineering to interpret, new spacing values to double-check against the last project, new edge cases nobody had documented because nobody expected to need that component again.</p>
             <p>The problem wasn't a missing component library. It was a missing layer between component and brand, something that let structure stay fixed while only the client-facing decisions moved.</p>
-            <p>By the third client, the pattern was obvious enough to design around.</p>
+            <p>By the third client, the pattern was obvious enough that I designed the system around it.</p>
           </div>
         </section>
 
@@ -153,14 +157,14 @@
           </div>
           <div class="cs-section__body">
             <p class="cs-section__subhead">Core, Palette, Brand, and Semantic, each with a single job.</p>
-            <p>The system separates what's structural from what's client-specific.</p>
+            <p>I designed the system to separate what's structural from what's client-specific.</p>
             <p><strong>Core</strong> holds the fundamentals with no theme attached: the spacing grid, the type scale, base radius values. It doesn't change between clients, and it isn't supposed to.</p>
             <p><strong>Palette</strong> holds full color ramps, built before any brand gets assigned. A ramp exists independently of what it ends up meaning to a given client.</p>
             <p><strong>Brand</strong> is where client decisions live: which ramp becomes primary, which becomes neutral, which becomes accent, and which typeface the project uses. This is the only layer that changes per client.</p>
             <p><strong>Semantic</strong> is what components actually read. A button doesn't know whether its background is mint or sand. It knows it's <code>background.primary</code>. Semantic never references palette or brand directly, and it's split into three independent dimensions: color (light and dark), size (desktop, tablet, mobile), and type (desktop, tablet, mobile).</p>
             <p>Components are built exclusively from semantic tokens. No raw hex values, no direct palette references in component code, anywhere. Re-theming a project means changing the Brand layer and nothing else.</p>
             <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/architecture.png" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each with example token names resolving to the layer below" style="display:block;">
+              <img src="img/architecture.webp" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each with example token names resolving to the layer below" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Token architecture &middot; four layers, each referencing the one below</p>
           </div>
@@ -176,7 +180,7 @@
             <p>The palette is built independently of brand decisions. Each ramp runs from its lightest step to its darkest, structured the same way regardless of hue, so that assigning a ramp to a role in the Brand layer becomes a mapping exercise instead of a design exercise.</p>
             <p>The full system currently runs eight ramps. What follows is two of them, included here only to demonstrate the pattern.</p>
             <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/palette-2-of-8.png" width="100%" alt="Two of the system's eight color ramps, Mint and Sky, each running from step 25 to 950" style="display:block;">
+              <img src="img/palette-2-of-8.webp" width="100%" alt="Two of the system's eight color ramps, Mint and Sky, each running from step 25 to 950" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Mint and Sky &middot; 2 of 8 ramps in the full palette</p>
             <p>Building ramps ahead of brand assignment means a new client rarely needs a new ramp. Most of the time, the work is choosing which existing ramp earns which role.</p>
@@ -193,13 +197,13 @@
             <p>This is the layer that proves the rest of the system earns its complexity.</p>
             <p>Primary, accent, neutral, and four feedback roles, error, warning, success, info, are the only slots that exist. Each one is a single decision: which palette ramp gets assigned to it. Make that decision once per client, and every component downstream already knows what to draw without anyone touching the component itself.</p>
             <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/brand-layer.png" width="100%" alt="Brand layer: seven semantic roles, Primary, Accent, Neutral, Error, Warning, Success, Info, each mapped to one palette ramp" style="display:block;">
+              <img src="img/brand-layer.webp" width="100%" alt="Brand layer: seven semantic roles, Primary, Accent, Neutral, Error, Warning, Success, Info, each mapped to one palette ramp" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Brand layer &middot; seven roles, each mapped to one palette ramp</p>
             <p>A live brand-swap demo, the same button, card, and input rendered under three client brands, follows this identical mechanism: three different ramps landing in the same seven roles, with zero changes to component code between them.</p>
             <div class="cs-rejected">
               <span class="cs-rejected__label">Rejected approach</span>
-              The first version of this demo used real client names and real hex values, pulled straight from production files. It got cut before the first review. A portfolio case showing a current client's actual brand tokens is a different kind of liability than a slow render, and it wasn't worth the risk for a demonstration that works exactly as well with fictional labels.
+              The first version of this demo used real client names and real hex values, pulled straight from production files. I cut it before the first review. A portfolio case showing a current client's actual brand tokens is a different kind of liability than a slow render, and it wasn't worth the risk for a demonstration that works exactly as well with fictional labels.
             </div>
           </div>
         </section>
@@ -214,7 +218,7 @@
             <p>Semantic tokens describe function. <code>border.error</code> means the same thing whether the underlying ramp is red, orange, or something a client insists is "more on-brand than red." A component referencing <code>border.error</code> doesn't need to know which ramp resolved to that role.</p>
             <p>The full semantic table covers both light and dark modes, and runs well past what's useful to show here. Below is a partial view, dark mode, six tokens out of the full set.</p>
             <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/semantic-tokens.png" width="100%" alt="Semantic color tokens, dark mode: background.page, background.surface, background.raised, background.sunken, foreground.neutral, and foreground.primary, each resolving to a brand color value" style="display:block;">
+              <img src="img/semantic-tokens.webp" width="100%" alt="Semantic color tokens, dark mode: background.page, background.surface, background.raised, background.sunken, foreground.neutral, and foreground.primary, each resolving to a brand color value" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Semantic color &middot; dark mode, 6 of the full token set</p>
             <p>Token names in production are more specific than what's shown here. The structure is accurate. The exact naming isn't reproduced in full.</p>
@@ -231,7 +235,7 @@
             <p>Buttons carry primary, secondary, and destructive variants, each pulling from semantic color and size tokens instead of fixed values. Tags use the same background and foreground role pairs as buttons, just at a different scale, which keeps status colors consistent across the product without anyone needing to remember which red is the right red.</p>
             <p>Some components have more than one structural version, beyond a simple styling variant. A button that needs to trigger a multi-step confirmation behaves differently from a button that submits a form, and that difference lives in the component itself, separate from any token override. Tokens handle appearance. They were never meant to handle behavior, and the system doesn't pretend otherwise.</p>
             <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/components.png" width="100%" alt="Components built from semantic tokens: button variants and states with resolved token annotations, text field states (default, focus, error, disabled), and status badges" style="display:block;">
+              <img src="img/components.webp" width="100%" alt="Components built from semantic tokens: button variants and states with resolved token annotations, text field states (default, focus, error, disabled), and status badges" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Buttons, text fields, and badges &middot; built from semantic tokens, not raw values</p>
           </div>
@@ -246,9 +250,9 @@
             <p class="cs-section__subhead">Semantic size and type tokens already resolve per breakpoint.</p>
             <p>Semantic size and type are split into desktop, tablet, and mobile from the start, independent of whether a given project has shipped a mobile view yet. The values exist whether or not anyone's looked at them.</p>
             <p>That decision got tested for real during the Instivo project, when warehouse staff needed a mobile stock view that hadn't been part of the original scope. No parallel system had to be built. The semantic layer already had mobile values defined, so the new view consumed the same tokens the desktop product did, just resolved against a different breakpoint.</p>
-            <p>The same layer that makes re-theming possible also makes resizing possible. One client asked recently about denser screens, switching the base grid from 8px to 4px for a product where information density mattered more than breathing room. That's a Core-layer change with no component rewrites required, which is closer to the actual test of whether the architecture holds than the brand-swap demo is.</p>
+            <p>The same layer that makes re-theming possible also makes resizing possible. One client asked recently about denser screens. I switched the base grid from 8px to 4px for a product where information density mattered more than breathing room. That's a Core-layer change with no component rewrites required, which is closer to the actual test of whether the architecture holds than the brand-swap demo is.</p>
             <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/responsive-tokens.png" width="100%" alt="Spacing and layout tokens resolved per breakpoint: desktop at 12 columns and 24px gutter, tablet at 8 columns and 16px gutter, mobile at 4 columns and 16px gutter, fluid" style="display:block;">
+              <img src="img/responsive-tokens.webp" width="100%" alt="Spacing and layout tokens resolved per breakpoint: desktop at 12 columns and 24px gutter, tablet at 8 columns and 16px gutter, mobile at 4 columns and 16px gutter, fluid" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Spacing and grid &middot; resolved per breakpoint, desktop to mobile</p>
           </div>
@@ -261,7 +265,7 @@
           </div>
           <div class="cs-section__body">
             <p class="cs-section__subhead">The Instivo case is where this system stopped being a theory.</p>
-            <p>This architecture didn't ship as a finished thing and then get used. It got refined while Instivo was being built, under the kind of pressure that catches gaps a clean slate never would.</p>
+            <p>This architecture didn't ship as a finished thing and then get used. I refined it while building Instivo, under the kind of pressure that catches gaps a clean slate never would.</p>
             <p>The full story of that project, including the mobile stock view that became the real test of the responsive layer, is documented separately.</p>
             <p><a href="../instivo/" style="color:var(--y); text-decoration:underline; text-underline-offset:3px;">Read the Instivo case study &rarr;</a></p>
           </div>

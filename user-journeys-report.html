@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Journeys: cristofolini.site</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg0:#0a0908; --bg1:#0f0d0a; --bg2:#1a1712;
+    --t1:#f0ebe0; --t2:#8a8678; --t3:#5c584c;
+    --b0:#2a261e; --b1:#3a352a;
+    --y:#f3b02e;
+    --critical:#f87171; --attention:#fbbf24; --positive:#c6f135;
+    --display:'Bebas Neue',sans-serif; --sans:'Syne',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg0); color:var(--t1); font-family:var(--sans); line-height:1.6; font-size:16px;}
+  .container{max-width:1120px; margin:0 auto; padding:64px 48px;}
+  @media (max-width:768px){ .container{padding:40px 20px;} }
+  h1,h2,h3{font-family:var(--display); text-transform:uppercase; letter-spacing:.01em; line-height:1;}
+  .mono{font-family:var(--mono);}
+  a{color:var(--y);}
+
+  header.report-header{background:var(--bg1); border-bottom:1px solid var(--b0); padding:56px 48px;}
+  @media (max-width:768px){ header.report-header{padding:40px 20px;} }
+  .report-label{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--y); margin-bottom:16px;}
+  .report-title{font-size:clamp(32px,5vw,52px); margin-bottom:12px;}
+  .report-sub{color:var(--t2); font-size:18px; max-width:720px; margin-bottom:32px;}
+  .meta-row{display:flex; flex-wrap:wrap; gap:32px; font-family:var(--mono); font-size:13px; color:var(--t2);}
+  .meta-row strong{display:block; color:var(--t1); font-size:20px; font-family:var(--sans); font-weight:700; margin-bottom:2px;}
+
+  .toc{display:flex; flex-wrap:wrap; gap:8px 24px; padding:24px 48px; border-bottom:1px solid var(--b0); font-family:var(--mono); font-size:13px;}
+  .toc a{color:var(--t2); text-decoration:none;}
+  .toc a:hover{color:var(--y);}
+
+  section{margin-bottom:72px;}
+  .persona-head{background:var(--bg1); border:1px solid var(--b0); padding:28px; margin-bottom:24px;}
+  .persona-head__name{font-size:28px; margin-bottom:10px;}
+  .persona-head__profile{color:var(--t2); font-size:15px; max-width:760px; margin-bottom:20px;}
+  .callouts{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:700px){ .callouts{grid-template-columns:1fr;} }
+  .callout{border-left:3px solid var(--y); padding:4px 16px;}
+  .callout.danger{border-left-color:var(--critical);}
+  .callout__label{font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--t3); margin-bottom:4px;}
+  .callout p{font-size:14px; color:var(--t1);}
+
+  .timeline{position:relative; padding-left:32px; border-left:1px solid var(--b0); margin-top:24px;}
+  .stage{position:relative; padding-bottom:28px;}
+  .stage:last-child{padding-bottom:0;}
+  .stage::before{content:""; position:absolute; left:-37px; top:4px; width:11px; height:11px; border-radius:50%; background:var(--bg0); border:2px solid var(--y);}
+  .stage__num{font-family:var(--mono); font-size:11px; color:var(--y); letter-spacing:.08em; text-transform:uppercase; margin-bottom:4px;}
+  .stage__title{font-family:var(--sans); font-weight:700; font-size:16px; margin-bottom:6px;}
+  .stage p{font-size:14px; color:var(--t2);}
+
+  .dropoff{background:rgba(248,113,113,.08); border:1px solid var(--critical); padding:18px 20px; margin-top:20px;}
+  .dropoff strong{color:var(--critical); font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; display:block; margin-bottom:6px;}
+  .dropoff p{font-size:14px; color:var(--t1);}
+
+  .conversion{background:rgba(198,241,53,.08); border:1px solid var(--positive); padding:18px 20px; margin-top:12px;}
+  .conversion strong{color:var(--positive); font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; display:block; margin-bottom:6px;}
+  .conversion p{font-size:14px; color:var(--t1);}
+
+  footer{border-top:1px solid var(--b0); padding:32px 48px; font-family:var(--mono); font-size:12px; color:var(--t3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <p class="report-label">VellumWire Methodology · Step 2.2</p>
+  <h1 class="report-title">User Journeys</h1>
+  <p class="report-sub">Two personas, both grounded in the locked recruitment framing from Step 1: a recruiter doing first-pass sourcing, and a hiring manager making the actual interview call. Every navigation step below uses only URLs from the approved sitemap (2.1).</p>
+  <div class="meta-row">
+    <div><strong>2026-06-24</strong>Date</div>
+    <div><strong>2</strong>Personas</div>
+    <div><strong>6</strong>Stages per journey</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#recruiter">Persona 1: Recruiter</a>
+  <a href="#hiring-manager">Persona 2: Hiring Manager</a>
+</nav>
+
+<div class="container">
+
+  <section id="recruiter">
+    <div class="persona-head">
+      <h2 class="persona-head__name">Persona 1: The Recruiter / Talent Sourcer</h2>
+      <p class="persona-head__profile">Works in-house at a remote-first SaaS or fintech company, or for an agency sourcing on their behalf. Has an open requisition for a Senior Product Designer and 20 to 50 other candidates to get through this week. Budgets 30 to 60 seconds per portfolio before deciding whether to forward it. Does not make the hiring decision, only the forward-or-pass decision.</p>
+      <div class="callouts">
+        <div class="callout">
+          <p class="callout__label">Must land in 5 seconds</p>
+          <p>Role, seniority, and current availability, stated once, consistently, with no contradiction between any two elements on the page.</p>
+        </div>
+        <div class="callout danger">
+          <p class="callout__label">Biggest mistake that loses her</p>
+          <p>Mixed signals, such as a badge reading "available for projects" next to a note reading "open to full-time roles." She will not investigate which is true. She will just pass.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="stage">
+        <p class="stage__num">Stage 1: Trigger</p>
+        <p class="stage__title">An open req, not a casual search</p>
+        <p>She has a requisition open: "Senior Product Designer, remote, SaaS, fintech exposure a plus." In LinkedIn Recruiter she runs something close to <code>("Senior Product Designer" OR "Staff Product Designer") AND (Figma OR "design systems") AND (SaaS OR fintech)</code>. Dhiego's profile surfaces. She is not emotionally invested yet, this is volume work.</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 2: First contact</p>
+        <p class="stage__title">Lands on /</p>
+        <p>Clicks the portfolio link from the LinkedIn profile. Sees the badge, headline, and portrait note in one glance. Because the badge and the visual note now say the same thing, "open to full-time roles," there is nothing to resolve before moving on. The four hero fact tags (Experience, SaaS and fintech, Remote teams, English communication) answer her unstated checklist without her having to dig.</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 3: Exploration</p>
+        <p class="stage__title">/work/, then two cards</p>
+        <p>Clicks "See selected work." Scans card titles for fintech and SaaS relevance, opens NorthPay (KYC, fintech, matches her req directly) and Vellumwire Design System (depth signal). At each, her internal question is simple: "did he own this, or was he one of several designers on it?"</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 4: Objection</p>
+        <p class="stage__title">Is this person actually open to full-time work?</p>
+        <p>Her req is for an employee, not a contractor. She checks the meta-grid labels ("Type: Own project," "Status: NDA, 4 months") to see if this reads as freelance-only. The home page badge, now corrected, already pre-answers this so she doesn't have to guess.</p>
+      </div>
+      <div class="conversion">
+        <strong>Conversion</strong>
+        <p>Her conversion is not booking a call herself. It is copying the portfolio URL into a Slack message or ATS note to the hiring manager: "Found this one, built a full token system at his last gig, worth a look."</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 6: Drop-off risk</p>
+        <p class="stage__title">The first five seconds, full stop</p>
+        <p>She does not read deeply. If anything in the first screen had been ambiguous about role or availability, or if reaching a single case study had taken more than two clicks (it did, before this session's home page reorder moved Work above the Experience section), she would have passed silently with no signal back to anyone that she'd even looked.</p>
+      </div>
+    </div>
+    <div class="dropoff">
+      <strong>What would have prevented the worst-case version of this journey</strong>
+      <p>Exactly the two fixes made earlier this session: the badge and visual-note copy now agree, and Work now appears immediately after the trust signals instead of two sections deeper.</p>
+    </div>
+  </section>
+
+  <section id="hiring-manager">
+    <div class="persona-head">
+      <h2 class="persona-head__name">Persona 2: The Hiring Manager / Founder</h2>
+      <p class="persona-head__profile">Head of Product or founder at a Series A or B SaaS or fintech company. Makes the actual interview decision. Has been burned before by candidates whose portfolios looked sharp but who could not explain their own reasoning in the room. Arrives skeptical, not curious.</p>
+      <div class="callouts">
+        <div class="callout">
+          <p class="callout__label">Must land in 5 seconds</p>
+          <p>Evidence of a decision being made, not just a deliverable being shown. A sentence with "I" and a reason in it, not a screenshot with a caption.</p>
+        </div>
+        <div class="callout danger">
+          <p class="callout__label">Biggest mistake that loses her</p>
+          <p>A case study that reads as a list of what shipped with no visible judgment behind any of it. This is named directly in the market research as the single most common reason senior candidates get passed over.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="stage">
+        <p class="stage__num">Stage 1: Trigger</p>
+        <p class="stage__title">A forwarded link, not a search</p>
+        <p>The recruiter persona above forwards the case study link directly, with a one-line note about the design system work. She opens it already primed to look for substance, already mildly skeptical because most forwarded portfolios disappoint her.</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 2: First contact</p>
+        <p class="stage__title">Lands directly on /work/vellumwire-ds/</p>
+        <p>She skips Home entirely, the link took her straight to the case. She reads the numbered decision points: "I designed the system to separate what's structural from what's client-specific," "I cut it before the first review." These are the exact sentences added during this session's authorship pass. Before that pass existed, this page had zero first-person language anywhere, and her read would have been "competent, but I can't tell who actually decided anything here."</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 3: Exploration</p>
+        <p class="stage__title">Cross-references /work/instivo/, then samples /work/</p>
+        <p>Wants proof the design system actually shipped rather than existing as a portfolio-only exercise. Clicks through to the Instivo case via the explicit in-page link, confirms the production-pressure detail (the mobile stock view built under real warehouse-staff need). Backtracks to /work/ to sample one more case outside design systems, checking for range.</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 4: Objection</p>
+        <p class="stage__title">Will this person need heavy hand-holding, or can they own ambiguity?</p>
+        <p>The "Rejected approach" callout on the Vellumwire DS page, explicitly declining to use real client brand data in a demo for risk reasons, answers this without her needing to ask it live in an interview. It is a visible judgment call under a real constraint, which is precisely what Julie Zhuo's "intentionality" screening criterion is checking for.</p>
+      </div>
+      <div class="conversion">
+        <strong>Conversion</strong>
+        <p>She clicks "Book a 30-min call," either from the case study's closing CTA or directly on /contact/, and schedules immediately rather than sending a message. She has already decided and wants to move before a competing offer takes the candidate off the market, consistent with the market research's finding that senior-level hiring is comparatively faster-moving right now.</p>
+      </div>
+      <div class="stage">
+        <p class="stage__num">Stage 6: Drop-off risk</p>
+        <p class="stage__title">The page that has no "I" in it anywhere</p>
+        <p>If she had landed on this same case study before this session's edits, with zero first-person language across the entire page, she would most likely have read it as well-executed but ownerless, filed it under "looks the part, can't confirm judgment," and closed the tab without booking. No error message, no objection raised, just a quiet pass.</p>
+      </div>
+    </div>
+    <div class="dropoff">
+      <strong>What would have prevented the worst-case version of this journey</strong>
+      <p>The exact same fix the market research independently confirmed was the right call: attributing real decisions to a real person, in the candidate's own first-person voice, at the moments where a choice was actually made.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span>Dhiego Cristofolini · User Journeys</span>
+  <span>2026-06-24</span>
+</footer>
+
+</body>
+</html>

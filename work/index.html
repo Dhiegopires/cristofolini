@@ -126,7 +126,7 @@
     }
 
     .filter-btn:hover { border-color: var(--y); color: var(--y); }
-    .filter-btn.is-active { background: var(--y); color: #0a0908; border-color: var(--y); }
+    .filter-btn.is-active { background: var(--y); color: var(--bg); border-color: var(--y); }
     .filter-btn:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
 
     .cases-grid {
@@ -159,6 +159,10 @@
     <a href="../" class="nav-logo" aria-label="Cristofolini | Home">
       <img src="../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <ul class="nav-links" role="list">
       <li><a href="./" aria-current="page">Work</a></li>
       <li><a href="../">Home</a></li>
@@ -194,7 +198,7 @@
 
           <a href="medme/" class="work-card sr" data-categories="ux systems" style="--delay: 0ms">
             <div class="work-card__image">
-              <img src="medme/Mockup-hero.jpg" alt="MedMe home healthcare on-demand platform" loading="lazy" width="600" height="338">
+              <img src="medme/Mockup-hero.webp" alt="MedMe home healthcare on-demand platform" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -210,7 +214,7 @@
 
           <a href="instivo/" class="work-card sr" data-categories="ux systems" style="--delay: 40ms">
             <div class="work-card__image">
-              <img src="instivo/img/hero.png" alt="Instivo governed data workspace: hierarchy canvas with rule engine" loading="lazy" width="600" height="338">
+              <img src="instivo/img/hero.webp" alt="Instivo governed data workspace: hierarchy canvas with rule engine" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -226,7 +230,7 @@
 
           <a href="vellumwire/" class="work-card sr" data-categories="ux" style="--delay: 80ms">
             <div class="work-card__image">
-              <img src="vellumwire/img/hero.png" alt="Vellumwire studio site: problem-led positioning and conversion copy" loading="lazy" width="600" height="338">
+              <img src="vellumwire/img/hero.webp" alt="Vellumwire studio site: problem-led positioning and conversion copy" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -241,7 +245,7 @@
 
           <a href="vellumwire-ds/" class="work-card sr" data-categories="ux systems" style="--delay: 80ms">
             <div class="work-card__image">
-              <img src="vellumwire-ds/img/hero.png" alt="Vellumwire design system: seven full color ramps from step 25 to 950" loading="lazy" width="600" height="338">
+              <img src="vellumwire-ds/img/hero.webp" alt="Vellumwire design system: seven full color ramps from step 25 to 950" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -256,7 +260,7 @@
 
           <a href="fiter/" class="work-card sr" data-categories="ux systems" style="--delay: 80ms">
             <div class="work-card__image">
-              <img src="fiter/img/hero.png" alt="Fiter website rebuild: 16 structured pages, two buyer journeys, SEO 22 to 100" loading="lazy" width="600" height="338">
+              <img src="fiter/img/hero.webp" alt="Fiter website rebuild: 16 structured pages, two buyer journeys, SEO 22 to 100" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -272,7 +276,7 @@
 
           <a href="northpay/" class="work-card sr" data-categories="ux" style="--delay: 80ms">
             <div class="work-card__image">
-              <img src="../assets/img/project/NorthPay/thumbnail.jpg" alt="NorthPay fintech onboarding and verification" loading="lazy" width="600" height="338">
+              <img src="../assets/img/project/NorthPay/thumbnail.webp" alt="NorthPay fintech onboarding and verification" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -286,7 +290,7 @@
 
           <a href="veriflow/" class="work-card sr" data-categories="ux branding 2d" style="--delay: 160ms">
             <div class="work-card__image">
-              <img src="../assets/img/project/veriflow/Thumbnail.png" alt="Veriflow pricing and plans redesign" loading="lazy" width="600" height="338">
+              <img src="../assets/img/project/veriflow/Thumbnail.webp" alt="Veriflow pricing and plans redesign" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -302,7 +306,7 @@
 
           <a href="brightflow/" class="work-card sr" data-categories="ux branding 2d" style="--delay: 240ms">
             <div class="work-card__image">
-              <img src="../assets/img/project/brightflow/Thumbnail-horizontal.jpg" alt="BrightFlow customer feedback intelligence" loading="lazy" width="600" height="338">
+              <img src="../assets/img/project/brightflow/Thumbnail-horizontal.webp" alt="BrightFlow customer feedback intelligence" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">
@@ -318,7 +322,7 @@
 
           <a href="collaboard/" class="work-card sr" data-categories="ux systems" style="--delay: 400ms">
             <div class="work-card__image">
-              <img src="../assets/img/project/Collabboard/thumbnail.jpg" alt="Collabboard light mode CRM and team workspace" loading="lazy" width="600" height="338">
+              <img src="../assets/img/project/Collabboard/thumbnail.webp" alt="Collabboard light mode CRM and team workspace" loading="lazy" width="600" height="338">
             </div>
             <div class="work-card__body">
               <div class="work-card__tags">

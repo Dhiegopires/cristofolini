@@ -399,6 +399,77 @@ main, footer { position: relative; z-index: var(--z-content); }
 }
 
 /* --------------------------------------------------------------------------
+   8b. Navigation — mobile toggle
+   -------------------------------------------------------------------------- */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--b0);
+  border-radius: 0;
+  color: var(--t1);
+  min-height: auto;
+}
+.nav-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+.nav-toggle__icon--close { display: none; }
+.nav.is-open .nav-toggle__icon--open { display: none; }
+.nav.is-open .nav-toggle__icon--close { display: block; }
+.nav.is-open .nav-toggle { border-color: var(--accent-border); }
+
+@media (max-width: 740px) {
+  .nav-toggle { display: inline-flex; margin-left: auto; }
+
+  .nav-links,
+  .nav-divider,
+  .nav-lang,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav.is-open {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .nav.is-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    order: 10;
+    width: 100%;
+    gap: 16px;
+    margin-left: 0;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--b0);
+  }
+
+  .nav.is-open .nav-links a { font-size: 13px; }
+
+  .nav.is-open .nav-divider { display: none; }
+
+  .nav.is-open .nav-lang {
+    display: flex;
+    order: 11;
+    width: 100%;
+    margin-top: 16px;
+    font-size: 13px;
+  }
+
+  .nav.is-open .nav-cta {
+    display: inline-flex;
+    order: 12;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    padding-block: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    9. Buttons
    -------------------------------------------------------------------------- */
 

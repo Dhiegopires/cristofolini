@@ -30,6 +30,31 @@
   });
 
   /* --------------------------------------------------------------------------
+     2b. Mobile nav toggle
+     -------------------------------------------------------------------------- */
+  const navEl = document.querySelector('.nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navEl && navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navEl.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navEl.querySelectorAll('.nav-links a, .nav-cta').forEach(link => {
+      link.addEventListener('click', () => {
+        navEl.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navEl.classList.contains('is-open')) {
+        navEl.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
      3. Intersection Observer — scroll reveal
         Watches both .sr (DS v4 → adds .on) and .reveal (compat → adds .is-visible)
      -------------------------------------------------------------------------- */
@@ -443,6 +468,24 @@
     const successEl    = document.getElementById('form-success');
     const errorEl      = document.getElementById('form-error-msg');
 
+    function showSendFailure(message) {
+      if (!errorEl) return;
+      errorEl.textContent = '';
+      errorEl.appendChild(document.createTextNode(message + ' Or email me directly at '));
+      const emailBtn = document.querySelector('[data-email]');
+      if (emailBtn) {
+        const addr = `${emailBtn.dataset.user}@${emailBtn.dataset.domain}.${emailBtn.dataset.tld}`;
+        const link = document.createElement('a');
+        link.href = `mailto:${addr}`;
+        link.textContent = addr;
+        link.style.color = 'var(--y)';
+        link.style.textDecoration = 'underline';
+        errorEl.appendChild(link);
+        errorEl.appendChild(document.createTextNode('.'));
+      }
+      errorEl.style.display = 'block';
+    }
+
     function validateEmail(v) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     }
@@ -539,13 +582,13 @@
             successEl.focus();
           }
         } else {
-          if (errorEl) { errorEl.textContent = json.message || 'Something went wrong. Try again.'; errorEl.style.display = 'block'; }
+          showSendFailure(json.message || 'Something went wrong.');
           submitBtn.disabled = false;
           submitBtn.removeAttribute('aria-busy');
           submitBtn.textContent = 'Send it →';
         }
       } catch {
-        if (errorEl) { errorEl.textContent = 'Network error. Please try again.'; errorEl.style.display = 'block'; }
+        showSendFailure('Network error.');
         submitBtn.disabled = false;
         submitBtn.removeAttribute('aria-busy');
         submitBtn.textContent = 'Send it →';

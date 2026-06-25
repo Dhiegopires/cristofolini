@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Instivo | Data Workspace Governance Design | Dhiego Cristofolini</title>
-  <meta name="description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
+  <title>Instivo | Data Workspace Governance | Dhiego Cristofolini</title>
+  <meta name="description" content="Product design case study for Instivo: a retail SaaS platform with a governed data workspace for employee records, stock rules, and fleet scheduling.">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Instivo | Data Workspace Governance Design | Dhiego Cristofolini">
-  <meta property="og:description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
+  <meta property="og:title" content="Instivo | Data Workspace Governance | Dhiego Cristofolini">
+  <meta property="og:description" content="Product design case study for Instivo: a retail SaaS platform with a governed data workspace for employee records, stock rules, and fleet scheduling.">
   <meta property="og:image" content="https://cristofolini.site/assets/img/project/instivo/thumbnail.png">
   <meta property="og:url" content="https://cristofolini.site/work/instivo/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Instivo | Data Workspace Governance Design | Dhiego Cristofolini">
-  <meta name="twitter:description" content="Product design case study for Instivo, a retail SaaS platform with a governed data workspace powering employee records, stock rules, supplier flows, and fleet scheduling.">
+  <meta name="twitter:title" content="Instivo | Data Workspace Governance | Dhiego Cristofolini">
+  <meta name="twitter:description" content="Product design case study for Instivo: a retail SaaS platform with a governed data workspace for employee records, stock rules, and fleet scheduling.">
   <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/instivo/thumbnail.png">
   <link rel="canonical" href="https://cristofolini.site/work/instivo/">
   <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/instivo/">
@@ -53,6 +53,10 @@
     <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
       <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <ul class="nav-links" role="list">
       <li><a href="../" aria-current="page">Work</a></li>
       <li><a href="../../">Home</a></li>
@@ -112,7 +116,7 @@
         </div>
       </div>
       <div class="cs-hero__right">
-        <img src="img/hero.png" alt="Instivo Data Workspace canvas with hierarchy cards and rule engine" loading="eager">
+        <img src="img/hero.webp" alt="Instivo Data Workspace canvas with hierarchy cards and rule engine" loading="eager">
       </div>
     </section>
 
@@ -120,7 +124,7 @@
       <div class="cs-container">
         <p class="cs-eyebrow cs-eyebrow--muted">The shift · six disconnected tools → one workspace</p>
         <div class="cs-diagram" style="overflow-x:auto;">
-          <img src="img/before-after-workspace.png" width="100%" alt="Before and after Instivo: spreadsheets, phone calls, a generic CRM, a notepad, email threads, and a manual clock collapse into one connected workspace with real-time stock visibility, unified employee hierarchy, automated restocking, configurable rules, and fleet and dock management" style="display:block;">
+          <img src="img/before-after-workspace.webp" width="100%" alt="Before and after Instivo: spreadsheets, phone calls, a generic CRM, a notepad, email threads, and a manual clock collapse into one connected workspace with real-time stock visibility, unified employee hierarchy, automated restocking, configurable rules, and fleet and dock management" style="display:block;">
         </div>
         <p class="cs-caption">Retail operations were governed by whoever remembered to act, across six tools that never talked to each other. Instivo collapses all of it into one workspace, with no shared source of truth replaced by exactly one.</p>
       </div>
@@ -177,7 +181,7 @@
             </div>
             <p>The distinction mattered for more than technical reasons. The same interface that gives a manager flexibility to build custom hierarchies also sits one wrong deletion away from breaking a form that every new employee depends on.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/workspace-ecosystem.png" width="100%" alt="Workspace list showing System workspaces with a locked, critical badge, separate from user-created Internal organization workspaces" style="display:block;">
+              <img src="img/workspace-ecosystem.webp" width="100%" alt="Workspace list showing System workspaces with a locked, critical badge, separate from user-created Internal organization workspaces" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Workspace list · System workspaces locked, Free workspaces fully editable</p>
           </div>
@@ -285,7 +289,7 @@
             <p>Each card represents a real entity in the system with a unique ID. The same card can be referenced in multiple workspaces, playing a different structural role in each. In the product hierarchy it is a child of hygiene. In the stock workspace it is a parent to a restocking threshold. In the transport workspace it is a child of a cargo category.</p>
             <p>The analogy I used internally was design tokens. A token is a value that lives in a system of references, and its meaning depends on the context in which it is used. The canvas reorganized automatically as connections multiplied, removing the responsibility for legibility from the user.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/canvas-hierarchy.png" width="100%" alt="Pharmacy hierarchy on the canvas: linked entity cards with rule counts and inherited-rule badges" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+              <img src="img/canvas-hierarchy.webp" width="100%" alt="Pharmacy hierarchy on the canvas: linked entity cards with rule counts and inherited-rule badges" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Pharmacy hierarchy on the canvas · linked cards with rule counts and inherited-rule badges</p>
           </div>
@@ -299,7 +303,7 @@
           <div class="cs-section__body">
             <p>Selecting a card on the canvas surfaces edit, delete, and collapse controls right in its header, with the rule count sitting next to the title as a badge. Clicking edit opens a modal scoped to that single card: name, description, its parent and child connections, and a Rules tab. Inside Rules, the schema is fixed: an operator, an entity, a condition, and an action, each picked from a constrained list and rendered as a chip. A manager builds "If · product · stock below 50 · trigger · restock" without writing a single line of logic.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/canvas-edit-icons.png" width="100%" alt="Product hierarchy canvas, Pharmacy and Cleaning supplies columns: the selected Hygiene card showing edit, delete, and collapse icons in its header next to the 2 rules badge" style="display:block;">
+              <img src="img/canvas-edit-icons.webp" width="100%" alt="Product hierarchy canvas, Pharmacy and Cleaning supplies columns: the selected Hygiene card showing edit, delete, and collapse icons in its header next to the 2 rules badge" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Selected card · edit, delete, and collapse controls plus the rule-count badge</p>
             <div class="cs-rejected">
@@ -331,12 +335,12 @@
             </div>
             <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it inside the same modal, flagged with a "Read-only" badge and a note on where it came from. The manager can see what is being enforced and trace it to its source, but cannot edit it on the child: only the card that owns the rule can.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/rules-modal.png" width="100%" alt="Shampoo card modal with the Rules tab open: an inherited rule from Hygiene flagged read-only, plus two own rules built from if/entity/condition/action chips, each with edit and delete icons" style="display:block;">
+              <img src="img/rules-modal.webp" width="100%" alt="Shampoo card modal with the Rules tab open: an inherited rule from Hygiene flagged read-only, plus two own rules built from if/entity/condition/action chips, each with edit and delete icons" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Card modal · Rules tab with an inherited read-only rule and two own rules</p>
             <p>The stock view is where that rule actually shows its work. Every product card carries a status (Critical, Low, OK) resolved directly from the threshold rule, not set by hand. A manager scanning this list isn't checking inventory; they're confirming the rule engine is doing its job.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/stock-overview.png" width="100%" alt="Stock overview: 1,284 products, 23 out of stock, 61 low stock, R$482,000 total value, with per-product status resolved from the threshold rule" style="display:block;">
+              <img src="img/stock-overview.webp" width="100%" alt="Stock overview: 1,284 products, 23 out of stock, 61 low stock, R$482,000 total value, with per-product status resolved from the threshold rule" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Stock overview · status resolved automatically from the threshold rule</p>
           </div>
@@ -363,7 +367,7 @@
             </div>
             <p>The same logic applied to inherited rules on a card. A rule propagated from a parent is visible to the child's manager but marked as read-only, with a reference to its origin. They can see the constraint and trace it back. They cannot accidentally remove it while editing something else.</p>
             <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/governance-disabled-state.png" width="100%" alt="Workspace selection screen: System workspaces marked with a critical lock badge" style="display:block;">
+              <img src="img/governance-disabled-state.webp" width="100%" alt="Workspace selection screen: System workspaces marked with a critical lock badge" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Workspace selection · System workspaces marked critical and locked</p>
           </div>
@@ -378,12 +382,12 @@
             <p>The design system I inherited had no tokens. Components that performed the same function existed in multiple versions with no shared source. The Figma file had no structure that would survive a significant change to the visual language. There was no responsive logic because the product was considered desktop-only.</p>
             <p>I rebuilt it in four layers. Core holds design best practices: a 4px spacing grid, a defined type scale, base color values. Palette holds color ramps from 25 to 950 across every hue the system might need. Brand is where client-specific decisions live. Semantic splits into three dimensions: color with light and dark modes, size with desktop, tablet, and mobile breakpoints, and type with the same three breakpoints.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/design-system-architecture.png" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each referencing the one below" style="display:block;">
+              <img src="img/design-system-architecture.webp" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each referencing the one below" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Token architecture · Core, Palette, Brand, and Semantic layers</p>
             <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically. Eight full palette ramps feed the brand layer: mint for primary, zinc for neutral, plus six more for every feedback role the product needs.</p>
             <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/design-system-palette.png" width="100%" alt="Palette layer: eight color ramps from 25 to 950, covering primary, neutral, accent, and every feedback role" style="display:block;">
+              <img src="img/design-system-palette.webp" width="100%" alt="Palette layer: eight color ramps from 25 to 950, covering primary, neutral, accent, and every feedback role" style="display:block;">
             </div>
             <p class="cs-caption" style="margin-top:8px;">Palette layer · eight color ramps from 25 to 950</p>
             <div class="cs-addresses">
@@ -406,13 +410,13 @@
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
-                  <img src="img/fleet-dock-schedule.png" alt="Dock Schedule: bays as rows, hours as columns, bookings color-coded by status: completed, confirmed, pending, delayed" loading="lazy">
+                  <img src="img/fleet-dock-schedule.webp" alt="Dock Schedule: bays as rows, hours as columns, bookings color-coded by status: completed, confirmed, pending, delayed" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Dock schedule · bays by hour, status color-coded</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
-                  <img src="img/fleet-drivers-table.png" alt="Fleet and Dock module: driver table with license categories and availability" loading="lazy">
+                  <img src="img/fleet-drivers-table.webp" alt="Fleet and Dock module: driver table with license categories and availability" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Driver table · license categories linked from Data Workspace</figcaption>
               </figure>
