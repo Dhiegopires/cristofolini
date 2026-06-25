@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Dhiego Cristofolini | Senior Product Designer</title>
-  <meta name="description" content="Senior Product Designer with 9 years in SaaS & Fintech. Specialized in conversion-driven UX, design systems, and complex product flows. Remote-ready.">
+  <meta name="description" content="Senior Product Designer with 9 years in SaaS & Fintech. Conversion-driven UX, design systems, complex product flows. Remote-ready. Let's talk.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Dhiego Cristofolini">
   <meta name="theme-color" content="#0a0908">
@@ -14,13 +14,13 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
   <meta property="og:title" content="Dhiego Cristofolini | Senior Product Designer | SaaS & Fintech">
-  <meta property="og:description" content="Senior Product Designer with 9 years in SaaS and Fintech. Specialized in conversion-driven UX, design systems, and complex product flows. Open to full-time remote roles.">
+  <meta property="og:description" content="Senior Product Designer with 9 years in SaaS and Fintech. Conversion-driven UX, design systems, complex product flows. Open to full-time remote roles.">
   <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
   <meta property="og:image:alt" content="Portfolio preview for Dhiego Cristofolini, Senior Product Designer">
   <meta property="og:url" content="https://cristofolini.site/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dhiego Cristofolini | Senior Product Designer | SaaS & Fintech">
-  <meta name="twitter:description" content="Senior Product Designer with 9 years in SaaS and Fintech. Specialized in conversion-driven UX, design systems, and complex product flows. Open to full-time remote roles.">
+  <meta name="twitter:description" content="Senior Product Designer with 9 years in SaaS and Fintech. Conversion-driven UX, design systems, complex product flows. Open to full-time remote roles.">
   <meta name="twitter:image" content="https://cristofolini.site/assets/img/og-default.jpg">
   <meta name="twitter:image:alt" content="Portfolio preview for Dhiego Cristofolini, Senior Product Designer">
   <link rel="canonical" href="https://cristofolini.site/">
@@ -38,7 +38,8 @@
     "url": "https://cristofolini.site/",
     "email": "dhiegopiresc@gmail.com",
     "sameAs": [
-      "https://www.linkedin.com/in/dhiego-cristofolini-77b964150/"
+      "https://www.linkedin.com/in/dhiego-cristofolini-77b964150/",
+      "https://www.behance.net/dhiegopires"
     ],
     "knowsAbout": [
       "Product Design",
@@ -64,30 +65,15 @@
     "@type": "ItemList",
     "name": "Featured product design case studies",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "url": "https://cristofolini.site/work/northpay/",
-        "name": "NorthPay"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "url": "https://cristofolini.site/work/veriflow/",
-        "name": "Veriflow"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "url": "https://cristofolini.site/work/brightflow/",
-        "name": "BrightFlow"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "url": "https://cristofolini.site/work/collaboard/",
-        "name": "Collabboard"
-      }
+      { "@type": "ListItem", "position": 1, "url": "https://cristofolini.site/work/medme/", "name": "MedMe" },
+      { "@type": "ListItem", "position": 2, "url": "https://cristofolini.site/work/instivo/", "name": "Instivo" },
+      { "@type": "ListItem", "position": 3, "url": "https://cristofolini.site/work/vellumwire/", "name": "Vellumwire" },
+      { "@type": "ListItem", "position": 4, "url": "https://cristofolini.site/work/vellumwire-ds/", "name": "Vellumwire Design System" },
+      { "@type": "ListItem", "position": 5, "url": "https://cristofolini.site/work/fiter/", "name": "Fiter" },
+      { "@type": "ListItem", "position": 6, "url": "https://cristofolini.site/work/northpay/", "name": "NorthPay" },
+      { "@type": "ListItem", "position": 7, "url": "https://cristofolini.site/work/veriflow/", "name": "Veriflow" },
+      { "@type": "ListItem", "position": 8, "url": "https://cristofolini.site/work/brightflow/", "name": "BrightFlow" },
+      { "@type": "ListItem", "position": 9, "url": "https://cristofolini.site/work/collaboard/", "name": "Collabboard" }
     ]
   }
   </script>
@@ -216,137 +202,6 @@
       font-weight: 500;
     }
 
-    .hero__cards {
-      position: absolute;
-      inset: 0;
-      width: auto;
-      display: block;
-      margin-top: 0;
-      pointer-events: none;
-      z-index: 4;
-    }
-
-    .hero-card {
-      position: absolute;
-      width: min(100%, 270px);
-      min-height: 82px;
-      padding: 12px 16px;
-      background: rgba(15,13,10,.82);
-      border: 1px solid rgba(243,176,47,.14);
-      box-shadow: 0 18px 40px rgba(0,0,0,.28);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      animation: hero-float 7s ease-in-out infinite;
-      transition: opacity .32s var(--ease-out), border-color .32s var(--ease-out), box-shadow .32s var(--ease-out), filter .32s var(--ease-out);
-      filter: saturate(1);
-    }
-
-    .hero__cards.is-filtering .hero-card {
-      opacity: .42;
-      border-color: rgba(243,176,47,.08);
-      box-shadow: 0 14px 28px rgba(0,0,0,.2);
-      filter: saturate(.7) brightness(.9);
-    }
-
-    .hero__cards.is-filtering .hero-card.is-focused {
-      opacity: 1;
-      border-color: rgba(243,176,47,.35);
-      box-shadow: 0 22px 54px rgba(0,0,0,.35), 0 0 0 1px rgba(243,176,47,.24);
-      filter: saturate(1.08) brightness(1.06);
-    }
-
-    .hero-card:nth-child(2) { animation-delay: -2.2s; }
-    .hero-card:nth-child(3) { animation-delay: -4.1s; }
-    .hero-card:nth-child(4) { animation-delay: -1.3s; }
-
-    .hero-card--top-right { top: 58px; right: 8px; }
-    .hero-card--mid-left { top: 202px; left: -94px; }
-    .hero-card--bottom-right { right: 14px; bottom: 118px; }
-    .hero-card--bottom-left { left: -104px; bottom: 96px; }
-
-    .hero-card__eyebrow {
-      display: block;
-      margin-bottom: 6px;
-      font-family: var(--mono);
-      font-size: 8px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--t3);
-    }
-
-    .hero-card__value {
-      display: block;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 1.2;
-      color: var(--t1);
-      text-wrap: balance;
-    }
-
-    .hero-card__meta {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      line-height: 1.45;
-      color: var(--t2);
-      text-wrap: pretty;
-    }
-
-    .hero__facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .hero__fact-btn {
-      cursor: pointer;
-      padding: 3px 12px;
-      line-height: 1.2;
-      transition: color .2s var(--ease-out), border-color .2s var(--ease-out), background-color .2s var(--ease-out), box-shadow .2s var(--ease-out);
-    }
-
-    .hero__fact-btn.is-active {
-      color: var(--y);
-      border-color: var(--accent-border);
-      background: var(--accent-dim);
-      box-shadow: 0 0 0 1px rgba(243,176,47,.15);
-    }
-
-    .hero__fact-btn:focus-visible {
-      outline: 2px solid var(--y);
-      outline-offset: 3px;
-    }
-
-    @keyframes hero-float {
-      0%, 100% { transform: translate3d(0, 0, 0); }
-      50% { transform: translate3d(0, -10px, 0); }
-    }
-
-    .hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--y);
-      padding: 7px 14px;
-      border: 1px solid var(--accent-border);
-      background: var(--accent-dim);
-      margin-bottom: 36px;
-      align-self: flex-start;
-    }
-
-    .badge-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--y);
-      box-shadow: 0 0 8px var(--y);
-      animation: ds-pulse 2.4s ease-in-out infinite;
-    }
-
     .hero__headline {
       font-family: var(--display);
       font-size: clamp(72px, 10vw, 130px);
@@ -388,11 +243,6 @@
     }
 
     /* ── Marquee ── */
-    .mq-wrap {
-      position: relative;
-      z-index: 1;
-    }
-
     .mq--logos {
       border-top: 0;
       padding-top: 14px;
@@ -629,9 +479,7 @@
         align-items: center;
       }
 
-      .hero__badge { align-self: center; max-width: 100%; }
       .hero__cta { justify-content: center; flex-wrap: wrap; width: 100%; }
-      .hero__facts { justify-content: center; }
       .hero__sub { margin-inline: auto; width: 100%; }
       .hero__headline { width: 100%; }
 
@@ -644,23 +492,6 @@
 
       .hero__portrait-wrap {
         width: min(100%, 500px);
-      }
-
-      .hero__cards {
-        position: relative;
-        inset: auto;
-        width: min(100%, 640px);
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .hero-card {
-        position: relative;
-        width: 100%;
-        min-height: 0;
-        animation-duration: 6.5s;
       }
     }
 
@@ -687,11 +518,6 @@
       }
 
       .hero__portrait-wrap {
-        width: 100%;
-      }
-
-      .hero__cards {
-        grid-template-columns: 1fr;
         width: 100%;
       }
     }
@@ -940,10 +766,6 @@
     <div class="container">
       <div class="hero__layout">
         <div class="hero__content reveal">
-          <div class="hero__badge">
-            <span class="badge-dot"></span>
-            Open to full-time roles
-          </div>
           <h1 class="hero__headline" id="hero-heading">
             <span class="hw-mid">Design that</span><br>
             converts<span class="hw-acc">.</span>
@@ -963,12 +785,6 @@
               <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <div class="hero__facts reveal" style="--delay: 120ms;">
-            <button type="button" class="tag tn hero__fact-btn is-active" data-focus="experience" aria-pressed="true">Experience</button>
-            <button type="button" class="tag tn hero__fact-btn" data-focus="focus" aria-pressed="false">SaaS and fintech</button>
-            <button type="button" class="tag tn hero__fact-btn" data-focus="collaboration" aria-pressed="false">Remote teams</button>
-            <button type="button" class="tag tn hero__fact-btn" data-focus="communication" aria-pressed="false">English communication</button>
-          </div>
         </div>
 
         <div class="hero__visual reveal" style="--delay: 180ms;">
@@ -977,31 +793,8 @@
               <img src="assets/img/Photo.webp" alt="Dhiego Cristofolini portrait" loading="eager" fetchpriority="high" decoding="async" width="800" height="1000">
             </div>
             <div class="hero__visual-note">
-              <strong>Open to</strong>
-              full-time product roles
-            </div>
-          </div>
-
-          <div class="hero__cards is-filtering" aria-hidden="true">
-            <div class="hero-card hero-card--top-right is-focused" data-focus-card="experience">
-              <span class="hero-card__eyebrow">Experience</span>
-              <span class="hero-card__value">9 years across product design</span>
-              <span class="hero-card__meta">Research, interface design, systems, and product thinking.</span>
-            </div>
-            <div class="hero-card hero-card--mid-left" data-focus-card="focus">
-              <span class="hero-card__eyebrow">Focus</span>
-              <span class="hero-card__value">SaaS, fintech, complex flows</span>
-              <span class="hero-card__meta">Onboarding, pricing, dashboards, and conversion-critical journeys.</span>
-            </div>
-            <div class="hero-card hero-card--bottom-right" data-focus-card="collaboration">
-              <span class="hero-card__eyebrow">Collaboration</span>
-              <span class="hero-card__value">Remote product teams</span>
-              <span class="hero-card__meta">Cross-functional work with PMs, engineers, founders, and marketing.</span>
-            </div>
-            <div class="hero-card hero-card--bottom-left" data-focus-card="communication">
-              <span class="hero-card__eyebrow">Communication</span>
-              <span class="hero-card__value">English for calls and async work</span>
-              <span class="hero-card__meta">Comfortable presenting, documenting, and collaborating in English.</span>
+              <strong>Based in</strong>
+              Brazil, remote-ready
             </div>
           </div>
         </div>
@@ -1009,21 +802,6 @@
     </div>
     <p class="hero__scroll-hint" aria-hidden="true">scroll</p>
   </section>
-
-  <div class="mq mq-wrap" aria-hidden="true" data-marquee-speed="84" data-marquee-direction="normal" data-marquee-start="0.22">
-    <div class="mq-fl l"></div>
-    <div class="mq-fl r"></div>
-    <div class="mq-tr">
-      <div class="mq-item"><span class="mq-text">UI/UX Design</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">Design Systems</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">SaaS Products</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">Fintech</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">Brand Identity</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">Motion</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">Illustration</span><span class="mq-sep"></span></div>
-      <div class="mq-item"><span class="mq-text">Prototyping</span><span class="mq-sep"></span></div>
-    </div>
-  </div>
 
   <div class="mq mq--logos" aria-label="Companies I worked with" data-marquee-speed="84" data-marquee-direction="reverse" data-marquee-start="0.05">
     <p class="mq-logos__label">Teams I've helped shape</p>
@@ -1458,39 +1236,6 @@
     if (grid) {
       grid.addEventListener('mouseleave', () => { if (isDesktop()) showPanel('default'); });
     }
-  })();
-</script>
-
-<script>
-  (() => {
-    const factButtons = Array.from(document.querySelectorAll('.hero__fact-btn'));
-    const cardContainer = document.querySelector('.hero__cards');
-    const heroCards = Array.from(document.querySelectorAll('.hero-card[data-focus-card]'));
-
-    if (!factButtons.length || !cardContainer || !heroCards.length) {
-      return;
-    }
-
-    const setFocusedCard = (focusKey) => {
-      factButtons.forEach((button) => {
-        const isActive = button.dataset.focus === focusKey;
-        button.classList.toggle('is-active', isActive);
-        button.setAttribute('aria-pressed', String(isActive));
-      });
-
-      heroCards.forEach((card) => {
-        card.classList.toggle('is-focused', card.dataset.focusCard === focusKey);
-      });
-    };
-
-    factButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        setFocusedCard(button.dataset.focus || 'experience');
-      });
-    });
-
-    const initialFocus = factButtons.find((button) => button.classList.contains('is-active'))?.dataset.focus || 'experience';
-    setFocusedCard(initialFocus);
   })();
 </script>
 
