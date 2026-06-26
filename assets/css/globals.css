@@ -433,6 +433,8 @@ main, footer { position: relative; z-index: var(--z-content); }
   .nav.is-open {
     flex-wrap: wrap;
     align-items: flex-start;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   .nav.is-open .nav-links {

@@ -330,13 +330,13 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 .cs-toc__item {
   font-family: var(--mono);
   font-size: 11px;
+  line-height: 1.4;
   letter-spacing: .06em;
   color: var(--t2);
   padding: 6px 0 6px var(--sp-3);
   text-decoration: none;
   border-left: 2px solid transparent;
   transition: color .2s, border-color .2s;
-  white-space: nowrap;
 }
 
 .cs-toc__item:hover { color: var(--t1); }

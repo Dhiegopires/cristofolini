@@ -869,4 +869,54 @@
     sections.forEach(s => obs.observe(s));
   }
 
+  /* --------------------------------------------------------------------------
+     13. Animated number counters — .cs-benchmark-num, .exp-stat__num
+         Counts up from 0 to the real value on scroll-into-view, then restores
+         the original markup (handles %, ×, ~, + and unit suffixes like k/w).
+     -------------------------------------------------------------------------- */
+  (function initCounters() {
+    const counters = document.querySelectorAll('.cs-benchmark-num, .exp-stat__num');
+    if (!counters.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateCounter(el) {
+      const finalHTML = el.innerHTML;
+      const match = el.textContent.match(/[\d.]+/);
+      const target = match ? parseFloat(match[0]) : null;
+
+      if (prefersReducedMotion || target === null || target <= 0) return;
+
+      const duration = 900;
+      const start = performance.now();
+      const isInt = Number.isInteger(target);
+
+      function step(now) {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = target * eased;
+        el.textContent = isInt ? String(Math.round(current)) : current.toFixed(1);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.innerHTML = finalHTML;
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach((el) => counterObserver.observe(el));
+  })();
+
 })();
