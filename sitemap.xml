@@ -113,6 +113,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/fiter/"/>
   </url>
   <url>
+    <loc>https://cristofolini.site/work/selo-h/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/selo-h/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/selo-h/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/selo-h/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/work/selo-h/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/selo-h/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/selo-h/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/selo-h/"/>
+  </url>
+  <url>
     <loc>https://cristofolini.site/work/northpay/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -129,22 +145,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/northpay/"/>
   </url>
   <url>
-    <loc>https://cristofolini.site/work/veriflow/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/veriflow/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/veriflow/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/veriflow/"/>
-  </url>
-  <url>
-    <loc>https://cristofolini.site/pt-br/work/veriflow/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/veriflow/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/veriflow/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/veriflow/"/>
-  </url>
-  <url>
     <loc>https://cristofolini.site/work/brightflow/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -159,22 +159,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/brightflow/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/brightflow/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/brightflow/"/>
-  </url>
-  <url>
-    <loc>https://cristofolini.site/work/collaboard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/collaboard/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/collaboard/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/collaboard/"/>
-  </url>
-  <url>
-    <loc>https://cristofolini.site/pt-br/work/collaboard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/collaboard/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/collaboard/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/collaboard/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/contact/</loc>
