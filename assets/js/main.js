@@ -919,4 +919,58 @@
     counters.forEach((el) => counterObserver.observe(el));
   })();
 
+  /* --------------------------------------------------------------------------
+     14. GA4 conversion event tracking
+     -------------------------------------------------------------------------- */
+  (function initGA4Events() {
+    if (typeof gtag !== 'function') return;
+
+    // Contact CTA sections (bottom of every page)
+    document.querySelectorAll('.cta-section').forEach(el => {
+      el.addEventListener('click', function () {
+        gtag('event', 'contact_cta_click', { event_category: 'engagement', event_label: this.href });
+      });
+    });
+
+    // Nav contact link
+    document.querySelectorAll('a.nav-cta').forEach(el => {
+      el.addEventListener('click', function () {
+        gtag('event', 'nav_contact_click', { event_category: 'engagement' });
+      });
+    });
+
+    // Social links (LinkedIn, Behance)
+    document.querySelectorAll('a[href*="linkedin.com"], a[href*="behance.net"]').forEach(el => {
+      el.addEventListener('click', function () {
+        const platform = this.href.includes('linkedin') ? 'linkedin' : 'behance';
+        gtag('event', 'social_click', { event_category: 'engagement', event_label: platform });
+      });
+    });
+
+    // Case study links from home / work index
+    document.querySelectorAll('.carousel-card, .work-card').forEach(el => {
+      el.addEventListener('click', function () {
+        const title = this.querySelector('.carousel-card__title, .work-card__title');
+        gtag('event', 'case_study_click', { event_category: 'engagement', event_label: title ? title.textContent.trim() : this.href });
+      });
+    });
+
+    // Contact form submission success
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function () {
+        const observer = new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            if (m.target.id === 'form-success' && m.target.style.display !== 'none') {
+              gtag('event', 'form_submit', { event_category: 'conversion', event_label: 'contact_form' });
+              observer.disconnect();
+            }
+          });
+        });
+        const successEl = document.getElementById('form-success');
+        if (successEl) observer.observe(successEl, { attributes: true, attributeFilter: ['style'] });
+      });
+    }
+  })();
+
 })();
