@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/dhieg398/cristofolini.site
-    - /bin/cp -R assets contact work pt-br *.html *.xml *.txt $DEPLOYPATH/
+    - /bin/cp -R assets blog contact work pt-br *.html *.xml *.txt $DEPLOYPATH/
     - /bin/cp .htaccess $DEPLOYPATH/
