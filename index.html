@@ -369,6 +369,21 @@
       max-width: 120px;
     }
 
+    .exp-about-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t2);
+      border-bottom: 1px solid var(--b1);
+      padding-bottom: 2px;
+      transition: color .2s, border-color .2s;
+    }
+    .exp-about-link:hover { color: var(--y); border-color: var(--y); }
+    .exp-about-link:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
+
     .timeline-entry {
       display: grid;
       grid-template-columns: 100px 1fr;
@@ -940,6 +955,7 @@
             <span class="exp-stat__num">10+</span>
             <span class="exp-stat__lbl">projects across multiple industries</span>
           </div>
+          <a href="about/" class="exp-about-link reveal delay-280">Why I got into this →</a>
         </div>
 
         <div class="timeline">

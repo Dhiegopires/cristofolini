@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+
+  <title>About | Dhiego Cristofolini</title>
+  <meta name="description" content="From illustration to product design: why bad interfaces still get under my skin, and what design systems changed for me.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta name="theme-color" content="#0a0908">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="About | Dhiego Cristofolini">
+  <meta property="og:description" content="From illustration to product design: why bad interfaces still get under my skin, and what design systems changed for me.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+  <meta property="og:image:alt" content="About page preview for Dhiego Cristofolini portfolio">
+  <meta property="og:url" content="https://cristofolini.site/about/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | Dhiego Cristofolini">
+  <meta name="twitter:description" content="From illustration to product design: why bad interfaces still get under my skin, and what design systems changed for me.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+  <meta name="twitter:image:alt" content="About page preview for Dhiego Cristofolini portfolio">
+  <link rel="canonical" href="https://cristofolini.site/about/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/about/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/sobre/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/about/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://cristofolini.site/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://cristofolini.site/about/" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../assets/css/globals.css?v=3" rel="stylesheet">
+
+  <style>
+    .page-header {
+      position: relative;
+      z-index: 1;
+      padding-top: calc(64px + var(--sp-16));
+      padding-bottom: var(--sp-12);
+    }
+
+    .page-header__title {
+      font-family: var(--display);
+      font-size: clamp(64px, 10vw, 140px);
+      line-height: .93;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+      color: var(--t1);
+    }
+
+    .page-header__sub {
+      color: var(--t2);
+      margin-top: var(--sp-4);
+      max-width: 560px;
+    }
+
+    .about-section {
+      position: relative;
+      z-index: 1;
+      padding-block: var(--sp-16);
+      border-top: 1px solid var(--b0);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: var(--sp-16);
+    }
+
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 7fr 5fr; }
+    }
+
+    .about-body p {
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.3vw, 17px);
+      line-height: 1.82;
+      color: var(--t2);
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+
+    .about-pull {
+      font-family: var(--display);
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: var(--t1);
+      margin: var(--sp-10) 0;
+      max-width: 640px;
+    }
+
+    .about-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .about-facts__block {
+      padding-block: var(--sp-6);
+      border-bottom: 1px solid var(--b0);
+    }
+    .about-facts__block:first-child { border-top: 1px solid var(--b0); }
+
+    .about-facts__list {
+      list-style: none;
+      margin: 8px 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .about-facts__list li {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--t2);
+    }
+
+    .contact-link {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--t2);
+      border-bottom: 1px solid var(--b1);
+      padding-bottom: 2px;
+      transition: color var(--duration-base) var(--ease-out),
+                  border-color var(--duration-base) var(--ease-out);
+    }
+    .contact-link:hover { color: var(--y); border-color: var(--y); }
+    .contact-link:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../work/">Work</a></li>
+      <li><a href="../">Home</a></li>
+      <li><a href="../blog/">Insights</a></li>
+    </ul>
+    <div class="nav-lang" aria-label="Language">
+      <span class="nav-lang__current">EN</span>
+      <span class="nav-lang__sep" aria-hidden="true">/</span>
+      <a href="../pt-br/sobre/" class="nav-lang__opt" hreflang="pt-BR">PT-BR</a>
+    </div>
+    <a href="../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="page-header container">
+      <h1 class="page-header__title sr">Why I do this.</h1>
+      <p class="body-lg page-header__sub sr delay-80">
+        The short version lives on the home page. This is the long one.
+      </p>
+    </section>
+
+    <section class="about-section" aria-label="About">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-body">
+            <p>I grew up wanting to be an illustrator. That was the plan through art school: illustration, visual work, digital art. It never fully went away. It just started walking alongside product design instead of ahead of it.</p>
+
+            <p>The shift started during an internship, illustrating for a government platform on drug prevention and harm reduction for affected families. I was not designing interfaces yet. I was using one: an institutional blog that fought me at every click. I felt the problem before I had the words for it.</p>
+
+            <p>After graduating I moved through marketing agencies and freelance clients, and the same problem kept showing up. Confusing flows. Unclear hierarchy. Contrast nobody had checked. I started studying UX and UI seriously: articles, books, masterclasses, mentorships, alongside enough front-end code to know what I was actually asking developers to build.</p>
+
+            <p>Design is not a hobby I clock out of. I use a computer and a phone all day for work, so a confusing flow or a broken hierarchy is not an abstract problem. It is friction I run into personally, and that keeps the irritation, and the interest, alive.</p>
+
+            <p class="about-pull">Build a solid foundation before the house goes up.</p>
+
+            <p>That idea stuck with me. I watched design systems start gaining traction at smaller companies and realized a well-reasoned decision, made once and made correctly, can speed up an entire team while making the product easier to use. That is still the trade I find worth making.</p>
+
+            <p>Since then the work has gotten more complex, and more accountable: real clients, real constraints, results that have to hold up outside a Figma file.</p>
+          </div>
+
+          <aside class="about-facts sr delay-200" aria-label="Quick facts">
+            <div class="about-facts__block">
+              <p class="label-sm">How I work</p>
+              <ul class="about-facts__list">
+                <li>Async, embedded in cross-functional teams</li>
+                <li>Dev-ready Figma files: variables, tokens, documented specs</li>
+                <li>7 years across SaaS, fintech, and healthtech</li>
+              </ul>
+            </div>
+
+            <div class="about-facts__block">
+              <p class="label-sm">Education</p>
+              <ul class="about-facts__list">
+                <li>Bachelor's Degree in Design</li>
+                <li>Universidade Federal de Santa Catarina (UFSC)</li>
+              </ul>
+            </div>
+
+            <div class="about-facts__block">
+              <p class="label-sm">Resume</p>
+              <a href="../assets/files/Dhiego-Cristofolini-Resume.pdf" class="contact-link mt-1" download>Download PDF</a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <a href="../work/" class="cta-section" aria-label="View selected work">
+      <p class="cta-section__eyebrow">Selected work</p>
+      <p class="cta-section__headline">See what<br><em>I've built.</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../" class="footer__nav-link">Home</a>
+        <a href="../work/" class="footer__nav-link">Work</a>
+        <a href="../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

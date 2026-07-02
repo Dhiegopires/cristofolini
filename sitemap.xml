@@ -208,4 +208,20 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/contact/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/contact/"/>
   </url>
+  <url>
+    <loc>https://cristofolini.site/about/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/about/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/sobre/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/about/"/>
+  </url>
 </urlset>
