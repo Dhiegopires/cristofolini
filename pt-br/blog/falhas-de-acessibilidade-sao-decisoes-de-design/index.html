@@ -36,6 +36,149 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../../assets/css/blog.css" rel="stylesheet">
+  <style>
+    .demo-panel {
+      margin: 32px 0;
+      padding: 28px;
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+    .article-body .demo-caption {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      text-align: center;
+      margin: 12px 0 32px;
+    }
+    .demo-toggle-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .demo-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .demo-switch__track {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+      border-radius: 10px;
+      background: var(--b1);
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+    .demo-switch__track::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--t1);
+      transition: transform .2s;
+    }
+    .demo-toggle-input:checked ~ .demo-switch .demo-switch__track { background: var(--y); }
+    .demo-toggle-input:checked ~ .demo-switch .demo-switch__track::before { transform: translateX(16px); background: #0a0908; }
+    .demo-toggle-input:focus-visible ~ .demo-switch .demo-switch__track { outline: 2px solid var(--y); outline-offset: 3px; }
+
+    .demo-contrast__label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t2);
+    }
+    .demo-contrast__sample {
+      margin-top: 24px;
+      padding: 36px;
+      background: #eeece6;
+      text-align: center;
+    }
+    .demo-panel .demo-contrast__sample-text {
+      font-family: var(--sans);
+      font-size: 18px;
+      font-weight: 600;
+      color: #999999;
+      margin: 0 0 10px;
+      transition: color .2s;
+    }
+    .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__sample-text { color: #595959; }
+    .demo-panel .demo-contrast__ratio { font-family: var(--mono); font-size: 11px; color: #767066; }
+    .demo-contrast__ratio-on { display: none; }
+    .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__ratio-off { display: none; }
+    .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__ratio-on { display: inline; }
+
+    .demo-colorblind { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .demo-colorblind__panel--sim { filter: url(#deuteranopia-filter); }
+    .demo-panel .demo-colorblind__caption {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin: 0 0 12px;
+    }
+    .demo-colorblind__state { height: 40px; margin-bottom: 10px; border: 2px solid; }
+    .demo-colorblind__state--error   { border-color: #f87171; background: rgba(248,113,113,.12); }
+    .demo-colorblind__state--success { border-color: #4ade80; background: rgba(74,222,128,.12); }
+    .demo-colorblind__state--warning { border-color: #f5c518; background: rgba(245,197,24,.12); }
+
+    .demo-focus { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: center; }
+    .demo-focus__btn {
+      width: 100%;
+      padding: 13px 20px;
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      color: var(--t1);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .demo-focus__btn--bad:focus { outline: none; }
+    .demo-focus__btn--good:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
+    .demo-panel .demo-focus__label { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--t3); }
+
+    .demo-component { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: center; }
+    .demo-component__field-label {
+      display: block;
+      margin-bottom: 10px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t2);
+    }
+    .demo-component__select {
+      width: 100%;
+      padding: 11px 36px 11px 14px;
+      background-color: var(--bg2);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8678' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      border: 1px solid var(--b1);
+      color: var(--t1);
+      font-family: var(--sans);
+      font-size: 14px;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+    .demo-panel .demo-component__stat { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--t3); }
+
+    @media (max-width: 640px) {
+      .demo-colorblind, .demo-focus, .demo-component { grid-template-columns: 1fr; }
+    }
+    .demo-svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -135,6 +278,22 @@
 
         <p>Essa é uma decisão estética, tomada por um designer que olhou para um cinza claro em fundo branco e achou refinado. Em um monitor calibrado, em ambiente controlado, com alta resolução, provavelmente estava. Para um usuário com baixa visão, lendo em uma tela barata sob a luz do sol, o texto desaparece.</p>
 
+        <div class="demo-panel">
+          <input type="checkbox" id="contrast-toggle" class="demo-toggle-input">
+          <label for="contrast-toggle" class="demo-switch demo-contrast__label">
+            <span class="demo-switch__track" aria-hidden="true"></span>
+            Alternar contraste
+          </label>
+          <div class="demo-contrast__sample">
+            <p class="demo-contrast__sample-text">Salvar alterações</p>
+            <p class="demo-contrast__ratio">
+              <span class="demo-contrast__ratio-off">2,8:1 · falha no AA (exige 4,5:1)</span>
+              <span class="demo-contrast__ratio-on">7,0:1 · passa no AAA</span>
+            </p>
+          </div>
+        </div>
+        <p class="demo-caption">Mesmo texto, mesmo fundo. Só o cinza ficou mais escuro.</p>
+
         <h3>1.2 AA e AAA: o que significam e quando cada um se aplica</h3>
 
         <p>O WCAG define requisitos de contraste em dois níveis de conformidade.</p>
@@ -172,6 +331,31 @@
 
         <p>A deuteranopia e a deuteranomalia, as formas mais comuns de daltonismo, afetam a percepção de vermelho e verde. Afetam aproximadamente 8% dos homens e 0,5% das mulheres. Em qualquer equipe de doze pessoas, estatisticamente uma tem algum grau de deficiência na visão de cores. Em qualquer produto com milhares de usuários, o número não é marginal.</p>
 
+        <svg class="demo-svg-defs" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="deuteranopia-filter">
+              <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/>
+            </filter>
+          </defs>
+        </svg>
+        <div class="demo-panel">
+          <div class="demo-colorblind">
+            <div class="demo-colorblind__panel">
+              <p class="demo-colorblind__caption">Visão normal</p>
+              <div class="demo-colorblind__state demo-colorblind__state--error" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--success" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--warning" aria-hidden="true"></div>
+            </div>
+            <div class="demo-colorblind__panel demo-colorblind__panel--sim">
+              <p class="demo-colorblind__caption">Simulação de deuteranopia</p>
+              <div class="demo-colorblind__state demo-colorblind__state--error" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--success" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--warning" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Três campos de formulário, só com cor. Na simulação, erro e sucesso ficam quase da mesma cor.</p>
+
         <h3>2.2 A solução é sempre um segundo canal</h3>
 
         <p>A cor nunca deve ser a única forma que uma interface comunica estado. Campos com erro precisam de uma borda vermelha, um ícone de erro e uma mensagem de texto explicando o que está errado. Estados de sucesso precisam da confirmação verde e de uma confirmação escrita. Estados de aviso precisam da cor e de um rótulo explícito.</p>
@@ -194,6 +378,20 @@
         <p>De acordo com a pesquisa de leitores de tela do WebAIM de 2024, 97,6% dos usuários de leitores de tela dependem da navegação por teclado. Deficiências motoras afetam aproximadamente 26 milhões de adultos somente nos Estados Unidos, muitos dos quais usam teclados ou dispositivos equivalentes como entrada primária.</p>
 
         <p>78% das páginas analisadas pelo WebAIM em 2024 tinham problemas detectáveis com indicadores de foco. O indicador de foco é o contorno visual que mostra qual elemento tem o foco do teclado no momento. É, para usuários de teclado, o equivalente ao cursor do mouse. Sem ele, o usuário não sabe onde está na interface.</p>
+
+        <div class="demo-panel">
+          <div class="demo-focus">
+            <div>
+              <button type="button" class="demo-focus__btn demo-focus__btn--bad">Salvar</button>
+              <p class="demo-focus__label">Sem indicador de foco</p>
+            </div>
+            <div>
+              <button type="button" class="demo-focus__btn demo-focus__btn--good">Salvar</button>
+              <p class="demo-focus__label">Indicador de foco visível</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Pressione Tab nesses dois botões e compare o que acontece.</p>
 
         <h3>3.2 Como testar em dois minutos</h3>
 
@@ -255,6 +453,28 @@
 
         <p>Um usuário de teclado abrindo um dropdown precisa navegar até o gatilho, abri-lo, mover entre as opções com as setas, selecionar uma e fechar. Um toggle cumpre o mesmo objetivo em uma única interação. O componente errado multiplica o trabalho para todo usuário que não consegue usar o mouse, e faz isso de forma invisível, porque ninguém testou o fluxo com o teclado.</p>
 
+        <div class="demo-panel">
+          <div class="demo-component">
+            <div>
+              <label for="demo-select" class="demo-component__field-label">Notificações</label>
+              <select id="demo-select" class="demo-component__select">
+                <option>Desativado</option>
+                <option>Ativado</option>
+              </select>
+              <p class="demo-component__stat">5 interações de teclado para alternar</p>
+            </div>
+            <div>
+              <label for="demo-toggle" class="demo-component__field-label">Notificações</label>
+              <input type="checkbox" id="demo-toggle" class="demo-toggle-input">
+              <label for="demo-toggle" class="demo-switch">
+                <span class="demo-switch__track" aria-hidden="true"></span>
+              </label>
+              <p class="demo-component__stat">1 interação de teclado para alternar</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Mesma escolha, mesmo resultado. Uma exige cinco teclas, a outra, uma.</p>
+
         <p>A escolha do componente é feita no design. As consequências de acessibilidade também.</p>
 
         <p>Outros casos comuns em que o componente errado quebra a acessibilidade antes que o desenvolvedor escreva uma linha de código:</p>
@@ -295,7 +515,7 @@
           <section class="newsletter-section" aria-labelledby="newsletter-article-title">
             <div class="newsletter-inner">
               <p class="newsletter-eyebrow">Newsletter</p>
-              <h2 class="newsletter-title" id="newsletter-article-title">Receba o próximo no seu e-mail</h2>
+              <h2 class="newsletter-title" id="newsletter-article-title">Receba o próximo no seu e‑mail</h2>
               <p class="newsletter-desc">Novos posts, notas de design e algo útil de vez em quando. Sem ruído, sem pitch de vendas.</p>
               <form action="https://app.kit.com/forms/9634397/subscriptions" method="post" class="newsletter-form">
                 <input type="email" name="email_address" class="newsletter-input" placeholder="seu@email.com" required aria-label="Endereço de e-mail">

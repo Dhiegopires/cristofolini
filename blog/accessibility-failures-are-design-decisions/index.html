@@ -36,6 +36,149 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../assets/css/blog.css" rel="stylesheet">
+  <style>
+    .demo-panel {
+      margin: 32px 0;
+      padding: 28px;
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+    .article-body .demo-caption {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      text-align: center;
+      margin: 12px 0 32px;
+    }
+    .demo-toggle-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .demo-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .demo-switch__track {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+      border-radius: 10px;
+      background: var(--b1);
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+    .demo-switch__track::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--t1);
+      transition: transform .2s;
+    }
+    .demo-toggle-input:checked ~ .demo-switch .demo-switch__track { background: var(--y); }
+    .demo-toggle-input:checked ~ .demo-switch .demo-switch__track::before { transform: translateX(16px); background: #0a0908; }
+    .demo-toggle-input:focus-visible ~ .demo-switch .demo-switch__track { outline: 2px solid var(--y); outline-offset: 3px; }
+
+    .demo-contrast__label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t2);
+    }
+    .demo-contrast__sample {
+      margin-top: 24px;
+      padding: 36px;
+      background: #eeece6;
+      text-align: center;
+    }
+    .demo-panel .demo-contrast__sample-text {
+      font-family: var(--sans);
+      font-size: 18px;
+      font-weight: 600;
+      color: #999999;
+      margin: 0 0 10px;
+      transition: color .2s;
+    }
+    .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__sample-text { color: #595959; }
+    .demo-panel .demo-contrast__ratio { font-family: var(--mono); font-size: 11px; color: #767066; }
+    .demo-contrast__ratio-on { display: none; }
+    .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__ratio-off { display: none; }
+    .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__ratio-on { display: inline; }
+
+    .demo-colorblind { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .demo-colorblind__panel--sim { filter: url(#deuteranopia-filter); }
+    .demo-panel .demo-colorblind__caption {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin: 0 0 12px;
+    }
+    .demo-colorblind__state { height: 40px; margin-bottom: 10px; border: 2px solid; }
+    .demo-colorblind__state--error   { border-color: #f87171; background: rgba(248,113,113,.12); }
+    .demo-colorblind__state--success { border-color: #4ade80; background: rgba(74,222,128,.12); }
+    .demo-colorblind__state--warning { border-color: #f5c518; background: rgba(245,197,24,.12); }
+
+    .demo-focus { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: center; }
+    .demo-focus__btn {
+      width: 100%;
+      padding: 13px 20px;
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      color: var(--t1);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .demo-focus__btn--bad:focus { outline: none; }
+    .demo-focus__btn--good:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
+    .demo-panel .demo-focus__label { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--t3); }
+
+    .demo-component { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: center; }
+    .demo-component__field-label {
+      display: block;
+      margin-bottom: 10px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t2);
+    }
+    .demo-component__select {
+      width: 100%;
+      padding: 11px 36px 11px 14px;
+      background-color: var(--bg2);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8678' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      border: 1px solid var(--b1);
+      color: var(--t1);
+      font-family: var(--sans);
+      font-size: 14px;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+    .demo-panel .demo-component__stat { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--t3); }
+
+    @media (max-width: 640px) {
+      .demo-colorblind, .demo-focus, .demo-component { grid-template-columns: 1fr; }
+    }
+    .demo-svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -135,6 +278,22 @@
 
         <p>This is an aesthetic decision, made by a designer who looked at a light gray on white background and thought it looked refined. On a calibrated monitor, in a controlled environment, at high resolution, it probably did. For a user with low vision, reading on a cheap screen under sunlight, the text disappears.</p>
 
+        <div class="demo-panel">
+          <input type="checkbox" id="contrast-toggle" class="demo-toggle-input">
+          <label for="contrast-toggle" class="demo-switch demo-contrast__label">
+            <span class="demo-switch__track" aria-hidden="true"></span>
+            Toggle contrast
+          </label>
+          <div class="demo-contrast__sample">
+            <p class="demo-contrast__sample-text">Save changes</p>
+            <p class="demo-contrast__ratio">
+              <span class="demo-contrast__ratio-off">2.8:1 · fails AA (needs 4.5:1)</span>
+              <span class="demo-contrast__ratio-on">7.0:1 · passes AAA</span>
+            </p>
+          </div>
+        </div>
+        <p class="demo-caption">Same text, same background. Only the gray got darker.</p>
+
         <h3>1.2 AA and AAA: what they mean and when each applies</h3>
 
         <p>WCAG defines contrast requirements across two compliance levels.</p>
@@ -172,6 +331,31 @@
 
         <p>Deuteranopia and deuteranomaly, the most common forms of colorblindness, affect the perception of red and green. They affect approximately 8% of men and 0.5% of women. In any team of twelve people, statistically one person has some degree of color vision deficiency. In any product with thousands of users, the number is not marginal.</p>
 
+        <svg class="demo-svg-defs" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="deuteranopia-filter">
+              <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/>
+            </filter>
+          </defs>
+        </svg>
+        <div class="demo-panel">
+          <div class="demo-colorblind">
+            <div class="demo-colorblind__panel">
+              <p class="demo-colorblind__caption">Normal vision</p>
+              <div class="demo-colorblind__state demo-colorblind__state--error" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--success" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--warning" aria-hidden="true"></div>
+            </div>
+            <div class="demo-colorblind__panel demo-colorblind__panel--sim">
+              <p class="demo-colorblind__caption">Deuteranopia simulation</p>
+              <div class="demo-colorblind__state demo-colorblind__state--error" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--success" aria-hidden="true"></div>
+              <div class="demo-colorblind__state demo-colorblind__state--warning" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Three form fields, color only. In the simulation, error and success are nearly the same color.</p>
+
         <h3>2.2 The fix is always a second channel</h3>
 
         <p>Color should never be the only way an interface communicates state. Error fields need a red border and an error icon and a text message explaining what is wrong. Success states need the green confirmation and a written confirmation. Warning states need the color and an explicit label.</p>
@@ -194,6 +378,20 @@
         <p>According to WebAIM's 2024 screen reader survey, 97.6% of screen reader users rely on keyboard navigation. Motor impairments affect roughly 26 million adults in the United States alone, many of whom use keyboards or keyboard-equivalent devices as their primary input.</p>
 
         <p>78% of pages analyzed by WebAIM in 2024 had detectable focus indicator problems. The focus indicator is the visual outline that shows which element currently has keyboard focus. It is, for keyboard users, the equivalent of the mouse cursor. Without it, the user does not know where they are in the interface.</p>
+
+        <div class="demo-panel">
+          <div class="demo-focus">
+            <div>
+              <button type="button" class="demo-focus__btn demo-focus__btn--bad">Save</button>
+              <p class="demo-focus__label">No focus indicator</p>
+            </div>
+            <div>
+              <button type="button" class="demo-focus__btn demo-focus__btn--good">Save</button>
+              <p class="demo-focus__label">Visible focus indicator</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Tab to these two buttons and compare what happens.</p>
 
         <h3>3.2 How to test it in two minutes</h3>
 
@@ -254,6 +452,28 @@
         <p>A dropdown with two options is an accessibility failure, not just a UX inefficiency.</p>
 
         <p>A keyboard user opening a dropdown must navigate to the trigger, open it, move through the options with arrow keys, select one, and close. A toggle accomplishes the same goal in a single interaction. The wrong component multiplies the work for every user who cannot use a mouse, and it does so invisibly, because nobody tested the flow with a keyboard.</p>
+
+        <div class="demo-panel">
+          <div class="demo-component">
+            <div>
+              <label for="demo-select" class="demo-component__field-label">Notifications</label>
+              <select id="demo-select" class="demo-component__select">
+                <option>Off</option>
+                <option>On</option>
+              </select>
+              <p class="demo-component__stat">5 keyboard interactions to change</p>
+            </div>
+            <div>
+              <label for="demo-toggle" class="demo-component__field-label">Notifications</label>
+              <input type="checkbox" id="demo-toggle" class="demo-toggle-input">
+              <label for="demo-toggle" class="demo-switch">
+                <span class="demo-switch__track" aria-hidden="true"></span>
+              </label>
+              <p class="demo-component__stat">1 keyboard interaction to change</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Same choice, same result. One takes five key presses, the other takes one.</p>
 
         <p>The component choice is made in design. So is the accessibility consequence.</p>
 
