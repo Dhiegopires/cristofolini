@@ -34,7 +34,6 @@
      inkscape:current-layer="svg1" />
   <path
      d="m 249.35849,70.549605 0.72511,0.008 L 249.35849,250 118.56046,249.47391 118.72775,208.6598 H 69.916395 V 70 H 249.35849 Z M 127.01161,94.469377 v 97.877513 h 97.8775 V 94.469377 Z"
-     fill="#ffffff"
      id="path1"
-     style="stroke-width:8.15646;fill:#ababab;fill-opacity:1" />
+     stroke-width="8.15646" fill="#ababab" fill-opacity="1" />
 </svg>

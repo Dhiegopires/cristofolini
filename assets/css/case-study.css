@@ -278,6 +278,47 @@
   min-width: 480px;
 }
 
+.cs-diagram img { display: block; width: 100%; }
+
+/* Flush variant — no padding, clipped to a fixed box instead of scrollable */
+.cs-diagram--flush { padding: 0; overflow: hidden; }
+.cs-diagram--flush img { height: 100%; object-fit: cover; }
+.cs-diagram--contain img { object-fit: contain; }
+.cs-diagram--top img { object-position: top; }
+
+/* Clip variant — keeps default padding, still ratio-boxed and cropped */
+.cs-diagram--clip { overflow: hidden; }
+.cs-diagram--clip img { height: 100%; object-fit: cover; }
+
+.object-cover { object-fit: cover; }
+
+.cs-link { text-decoration: underline; text-underline-offset: 3px; }
+.cs-link--t1 { color: var(--t1); }
+.cs-link--accent { color: var(--y); }
+
+/* Tall variant — scrollable, capped height, centered (long/narrow diagrams) */
+.cs-diagram--tall {
+  overflow-x: auto;
+  max-height: 480px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.cs-diagram--tall img { max-height: 480px; width: auto; max-width: 100%; }
+
+.aspect-16-9  { aspect-ratio: 16 / 9; }
+.aspect-16-10 { aspect-ratio: 16 / 10; }
+
+/* 2/3-up diagram grids */
+.cs-diagram-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+.cs-diagram-grid--3 { grid-template-columns: repeat(3, 1fr); align-items: start; }
+.cs-diagram-grid--mt { margin-top: var(--sp-6); }
+.cs-diagram-grid--mb { margin-bottom: var(--sp-4); }
+
 /* Caption */
 .cs-caption {
   font-family: var(--mono);

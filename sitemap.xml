@@ -161,6 +161,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/brightflow/"/>
   </url>
   <url>
+    <loc>https://cristofolini.site/blog/accessibility-failures-are-design-decisions/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/accessibility-failures-are-design-decisions/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/falhas-de-acessibilidade-sao-decisoes-de-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/accessibility-failures-are-design-decisions/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/blog/falhas-de-acessibilidade-sao-decisoes-de-design/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/accessibility-failures-are-design-decisions/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/falhas-de-acessibilidade-sao-decisoes-de-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/accessibility-failures-are-design-decisions/"/>
+  </url>
+  <url>
     <loc>https://cristofolini.site/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

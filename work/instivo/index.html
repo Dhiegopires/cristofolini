@@ -49,7 +49,7 @@
   <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../assets/css/case-study.css" rel="stylesheet">
 </head>
@@ -132,8 +132,8 @@
     <section class="cs-current-state">
       <div class="cs-container">
         <p class="cs-eyebrow cs-eyebrow--muted">The shift · six disconnected tools → one workspace</p>
-        <div class="cs-diagram" style="overflow-x:auto;">
-          <img src="img/before-after-workspace.webp" width="100%" alt="Before and after Instivo: spreadsheets, phone calls, a generic CRM, a notepad, email threads, and a manual clock collapse into one connected workspace with real-time stock visibility, unified employee hierarchy, automated restocking, configurable rules, and fleet and dock management" style="display:block;">
+        <div class="cs-diagram">
+          <img src="img/before-after-workspace.webp" width="100%" alt="Before and after Instivo: spreadsheets, phone calls, a generic CRM, a notepad, email threads, and a manual clock collapse into one connected workspace with real-time stock visibility, unified employee hierarchy, automated restocking, configurable rules, and fleet and dock management">
         </div>
         <p class="cs-caption">Retail operations were governed by whoever remembered to act, across six tools that never talked to each other. Instivo collapses all of it into one connected workspace.</p>
       </div>
@@ -189,10 +189,10 @@
               </div>
             </div>
             <p>The distinction mattered for more than technical reasons. The same interface that gives a manager flexibility to build custom hierarchies also sits one wrong deletion away from breaking a form that every new employee depends on.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/workspace-ecosystem.webp" width="100%" alt="Workspace list showing System workspaces with a locked, critical badge, separate from user-created Internal organization workspaces" style="display:block;">
+            <div class="cs-diagram">
+              <img src="img/workspace-ecosystem.webp" width="100%" alt="Workspace list showing System workspaces with a locked, critical badge, separate from user-created Internal organization workspaces">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Workspace list · System workspaces locked, Free workspaces fully editable</p>
+            <p class="cs-caption">Workspace list · System workspaces locked, Free workspaces fully editable</p>
           </div>
         </section>
 
@@ -222,8 +222,8 @@
             </div>
             <p>The layering problem was specific. An IT rule could restrict what a manager sees. A manager rule could block an operational action even if IT had granted access. Both could be true simultaneously, invisibly, with no conflict surfaced to the user who hit the wall.</p>
             <p>The interface had to make those layers legible without exposing the full permission chain to every user. A manager needed to know their rule would propagate. An operational user needed to know why an action was unavailable.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/user-flow-three-roles.svg" width="100%" alt="User flow: Manager, IT Admin, and Operational user across the system" style="display:block;">
+            <div class="cs-diagram">
+              <img src="img/user-flow-three-roles.svg" width="100%" alt="User flow: Manager, IT Admin, and Operational user across the system">
             </div>
             <p class="cs-caption">Conceptual model of the layering logic, not a product screen.</p>
           </div>
@@ -245,8 +245,8 @@
                     <path d="M2 1L8 5L2 9" fill="none" stroke="#474440" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </marker>
                 </defs>
-                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="170" y="24" text-anchor="middle">Folder model</text>
-                <text font-family="'Syne',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="510" y="24" text-anchor="middle">Card-linked model</text>
+                <text font-family="'DM Sans',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="170" y="24" text-anchor="middle">Folder model</text>
+                <text font-family="'DM Sans',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="510" y="24" text-anchor="middle">Card-linked model</text>
                 <line x1="340" y1="12" x2="340" y2="390" stroke="#2a2825" stroke-width="0.5" stroke-dasharray="4 4"/>
 
                 <rect x="80" y="40" width="180" height="36" rx="6" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
@@ -294,13 +294,13 @@
                 <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="510" y="360" text-anchor="middle">Entity referenced, never copied</text>
               </svg>
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Folder model vs. card-linked model · why a folder structure breaks for shared entities</p>
+            <p class="cs-caption">Folder model vs. card-linked model · why a folder structure breaks for shared entities</p>
             <p>Each card represents a real entity in the system with a unique ID. The same card can be referenced in multiple workspaces, playing a different structural role in each. In the product hierarchy it is a child of hygiene. In the stock workspace it is a parent to a restocking threshold. In the transport workspace it is a child of a cargo category.</p>
             <p>The analogy I used internally was design tokens. A token is a value that lives in a system of references, and its meaning depends on the context in which it is used. The canvas reorganized automatically as connections multiplied, removing the responsibility for legibility from the user.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/canvas-hierarchy.webp" width="100%" alt="Pharmacy hierarchy on the canvas: linked entity cards with rule counts and inherited-rule badges" style="display:block; aspect-ratio: 16/9; object-fit: cover;">
+            <div class="cs-diagram">
+              <img src="img/canvas-hierarchy.webp" width="100%" alt="Pharmacy hierarchy on the canvas: linked entity cards with rule counts and inherited-rule badges" class="aspect-16-9 object-cover">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Pharmacy hierarchy on the canvas · linked cards with rule counts and inherited-rule badges</p>
+            <p class="cs-caption">Pharmacy hierarchy on the canvas · linked cards with rule counts and inherited-rule badges</p>
           </div>
         </section>
 
@@ -311,10 +311,10 @@
           </div>
           <div class="cs-section__body">
             <p>Selecting a card on the canvas surfaces edit, delete, and collapse controls right in its header, with the rule count sitting next to the title as a badge. Clicking edit opens a modal scoped to that single card: name, description, its parent and child connections, and a Rules tab. Inside Rules, the schema is fixed: an operator, an entity, a condition, and an action, each picked from a constrained list and rendered as a chip. A manager builds "If · product · stock below 50 · trigger · restock" without writing a single line of logic.</p>
-            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/canvas-edit-icons.webp" width="100%" alt="Product hierarchy canvas, Pharmacy and Cleaning supplies columns: the selected Hygiene card showing edit, delete, and collapse icons in its header next to the 2 rules badge" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/canvas-edit-icons.webp" width="100%" alt="Product hierarchy canvas, Pharmacy and Cleaning supplies columns: the selected Hygiene card showing edit, delete, and collapse icons in its header next to the 2 rules badge">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Selected card · edit, delete, and collapse controls plus the rule-count badge</p>
+            <p class="cs-caption">Selected card · edit, delete, and collapse controls plus the rule-count badge</p>
             <div class="cs-rejected">
               <span class="cs-rejected__label">Rejected approach</span>
               The first version I tested used free text fields. A manager could type anything, which meant the system had to interpret intent. The error rate made it unusable. Constrained selectors removed the interpretation problem entirely: each chip only offers options valid in that position, so an invalid rule cannot be constructed.
@@ -343,15 +343,15 @@
               </div>
             </div>
             <p>Rules can be scoped to a single card or propagated to all children in the hierarchy. A card that inherits a rule from a parent shows it inside the same modal, flagged with a "Read-only" badge and a note on where it came from. The manager can see what is being enforced and trace it to its source, but cannot edit it on the child: only the card that owns the rule can.</p>
-            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/rules-modal.webp" width="100%" alt="Shampoo card modal with the Rules tab open: an inherited rule from Hygiene flagged read-only, plus two own rules built from if/entity/condition/action chips, each with edit and delete icons" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/rules-modal.webp" width="100%" alt="Shampoo card modal with the Rules tab open: an inherited rule from Hygiene flagged read-only, plus two own rules built from if/entity/condition/action chips, each with edit and delete icons">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Card modal · Rules tab with an inherited read-only rule and two own rules</p>
+            <p class="cs-caption">Card modal · Rules tab with an inherited read-only rule and two own rules</p>
             <p>The stock view is where that rule actually shows its work. Every product card carries a status (Critical, Low, OK) resolved directly from the threshold rule, not set by hand. A manager scanning this list isn't checking inventory; they're confirming the rule engine is doing its job.</p>
-            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/stock-overview.webp" width="100%" alt="Stock overview: 1,284 products, 23 out of stock, 61 low stock, R$482,000 total value, with per-product status resolved from the threshold rule" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/stock-overview.webp" width="100%" alt="Stock overview: 1,284 products, 23 out of stock, 61 low stock, R$482,000 total value, with per-product status resolved from the threshold rule">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Stock overview · status resolved automatically from the threshold rule</p>
+            <p class="cs-caption">Stock overview · status resolved automatically from the threshold rule</p>
           </div>
         </section>
 
@@ -374,10 +374,10 @@
               </div>
             </div>
             <p>The same logic applied to inherited rules on a card. A rule propagated from a parent is visible to the child's manager but marked as read-only, with a reference to its origin. They can see the constraint and trace it back. They cannot accidentally remove it while editing something else.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="img/governance-disabled-state.webp" width="100%" alt="Workspace selection screen: System workspaces marked with a critical lock badge" style="display:block;">
+            <div class="cs-diagram">
+              <img src="img/governance-disabled-state.webp" width="100%" alt="Workspace selection screen: System workspaces marked with a critical lock badge">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Workspace selection · System workspaces marked critical and locked</p>
+            <p class="cs-caption">Workspace selection · System workspaces marked critical and locked</p>
           </div>
         </section>
 
@@ -389,15 +389,15 @@
           <div class="cs-section__body">
             <p>The design system I inherited had no tokens. Components that performed the same function existed in multiple versions with no shared source. The Figma file had no structure that would survive a significant change to the visual language. There was no responsive logic because the product was considered desktop-only.</p>
             <p>I rebuilt it in four layers. Core holds design best practices: a 4px spacing grid, a defined type scale, base color values. Palette holds color ramps from 25 to 950 across every hue the system might need. Brand is where client-specific decisions live. Semantic splits into three dimensions: color with light and dark modes, size with desktop, tablet, and mobile breakpoints, and type with the same three breakpoints.</p>
-            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/design-system-architecture.webp" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each referencing the one below" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/design-system-architecture.webp" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each referencing the one below">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Token architecture · Core, Palette, Brand, and Semantic layers</p>
+            <p class="cs-caption">Token architecture · Core, Palette, Brand, and Semantic layers</p>
             <p>The layering meant that adapting the system to a new client required changes to the Brand layer only. Core and Palette stayed fixed. Semantic recalculated automatically. Eight full palette ramps feed the brand layer: mint for primary, zinc for neutral, plus six more for every feedback role the product needs.</p>
-            <div class="cs-diagram" style="overflow-x:auto; padding:0; overflow:hidden;">
-              <img src="img/design-system-palette.webp" width="100%" alt="Palette layer: eight color ramps from 25 to 950, covering primary, neutral, accent, and every feedback role" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/design-system-palette.webp" width="100%" alt="Palette layer: eight color ramps from 25 to 950, covering primary, neutral, accent, and every feedback role">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Palette layer · eight color ramps from 25 to 950</p>
+            <p class="cs-caption">Palette layer · eight color ramps from 25 to 950</p>
             <div class="cs-addresses">
               <span class="cs-addresses__label">Mobile consequence</span>
               <span class="cs-addresses__metric">The operations team needed a mobile interface for warehouse staff before launch. Because semantic tokens already resolved to mobile values at narrow breakpoints, the mobile build required no parallel system. The responsive logic had been built before anyone asked for it.</span>
@@ -417,13 +417,13 @@
             <p>No duplication, no manual cross-entry, no integration layer between the two modules. If the driver's license category changed in the Data Workspace, the change was immediately reflected in every dock booking associated with that driver: one record, one source of truth.</p>
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
+                <div class="cs-screen-placeholder aspect-16-10">
                   <img src="img/fleet-dock-schedule.webp" alt="Dock Schedule: bays as rows, hours as columns, bookings color-coded by status: completed, confirmed, pending, delayed" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Dock schedule · bays by hour, status color-coded</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder" style="aspect-ratio: 16/10;">
+                <div class="cs-screen-placeholder aspect-16-10">
                   <img src="img/fleet-drivers-table.webp" alt="Fleet and Dock module: driver table with license categories and availability" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Driver table · license categories linked from Data Workspace</figcaption>

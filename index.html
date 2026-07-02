@@ -89,7 +89,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/img/Photo.webp" as="image">
 
   <link href="assets/css/globals.css?v=3" rel="stylesheet">
@@ -195,8 +195,8 @@
       padding: 10px 12px;
       background: rgba(10,9,8,.82);
       border: 1px solid rgba(243,176,47,.18);
-      backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       font-family: var(--mono);
       font-size: 9px;
       letter-spacing: .12em;
@@ -393,7 +393,7 @@
     .timeline-entry__date { color: var(--t3); padding-top: 4px; }
     .timeline-entry__role { color: var(--t1); font-weight: 600; font-size: 18px; line-height: 1.2; }
     .timeline-entry__company { color: var(--t2); margin-top: 4px; font-size: 13px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-    .timeline-entry__desc    { color: var(--t3); margin-top: 8px; font-size: 13px; line-height: 1.65; }
+    .timeline-entry__desc    { color: var(--t3); font-size: 13px; line-height: 1.65; padding-left: 16px; margin: 0; list-style: disc; }
 
     .exp-pill {
       display: inline-flex;
@@ -590,7 +590,7 @@
       .service-item { padding: 28px clamp(24px, 4vw, 60px); }
     }
     .service-item:first-child { border-top: 1px solid var(--b0); }
-    .service-item:focus-visible {
+    .service-item:has(.service-item__header:focus-visible) {
       outline: 2px solid var(--y);
       outline-offset: 4px;
     }
@@ -629,6 +629,7 @@
       z-index: 1;
     }
     .cases-section__header { margin-bottom: 48px; }
+    .cases-section__header .tLB { margin-bottom: 12px; }
 
     .carousel { position: relative; }
     .carousel__viewport { overflow: hidden; }
@@ -795,7 +796,7 @@
           </div>
         </div>
 
-        <div class="hero__visual reveal" style="--delay: 180ms;">
+        <div class="hero__visual reveal delay-180">
           <div class="hero__portrait-wrap">
             <div class="hero__portrait">
               <img src="assets/img/Photo.webp" alt="Dhiego Cristofolini portrait" loading="eager" fetchpriority="high" decoding="async" width="800" height="1000">
@@ -833,8 +834,8 @@
 
   <section class="cases-section" aria-labelledby="cases-heading">
     <div class="container cases-section__header reveal">
-      <p class="tLB" style="margin-bottom: 12px;">Selected work</p>
-      <h2 class="heading-lg" id="cases-heading" style="color: var(--t1);">Case studies.</h2>
+      <p class="tLB">Selected work</p>
+      <h2 class="heading-lg" id="cases-heading">Case studies.</h2>
     </div>
 
     <div class="carousel" role="region" aria-label="Case studies" aria-roledescription="carousel" tabindex="0">
@@ -1000,82 +1001,82 @@
 
         <div class="exp-sticky">
           <p class="tLB reveal">Selected roles and engagements</p>
-          <h2 class="heading-lg reveal" id="exp-heading" style="--delay: 80ms; color: var(--t1);">
+          <h2 class="heading-lg reveal delay-80" id="exp-heading">
             Studio, consulting,<br>and in-house work.
           </h2>
-          <p class="tBD reveal" style="--delay: 160ms;">
+          <p class="tBD reveal delay-160">
             Vellumwire is an active studio. Consulting and in-house work runs alongside it.
           </p>
-          <div class="exp-stat reveal" style="--delay: 240ms">
+          <div class="exp-stat reveal delay-240">
             <span class="exp-stat__num">10+</span>
             <span class="exp-stat__lbl">projects across multiple industries</span>
           </div>
         </div>
 
         <div class="timeline">
-          <div class="timeline-entry is-current reveal" style="--delay: 100ms">
+          <div class="timeline-entry is-current reveal delay-100">
             <span class="tLB timeline-entry__date">Feb 2018 - Present</span>
             <div>
               <p class="timeline-entry__role">Senior Product Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--studio">Studio</span><span>Vellumwire · Remote</span></p>
-              <ul class="timeline-entry__desc" style="padding-left:16px; margin:0; list-style:disc;">
+              <ul class="timeline-entry__desc">
                 <li>Senior Product Designer leading SaaS and fintech work across onboarding, pricing, checkout, and design systems for international clients.</li>
                 <li>Redesigned pricing and checkout flows for a fintech client, increasing conversion rate by 6%.</li>
                 <li>Built and documented Figma-based design systems with tokens and component-ready assets for engineering handoff.</li>
               </ul>
             </div>
           </div>
-          <div class="timeline-entry reveal" style="--delay: 160ms">
+          <div class="timeline-entry reveal delay-160">
             <span class="tLB timeline-entry__date">Jan 2025 - Aug 2025</span>
             <div>
               <p class="timeline-entry__role">Senior Product Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--inhouse">In-house</span><span>MedMe Saude · Remote</span></p>
-              <ul class="timeline-entry__desc" style="padding-left:16px; margin:0; list-style:disc;">
+              <ul class="timeline-entry__desc">
                 <li>Built product design for an on-demand home healthcare platform from scratch: scheduling logic, identity verification, escrow payment, and a three-sided accountability system.</li>
                 <li>Projected 35% improvement in checkout conversion through form reduction from 20+ to 12-14 fields with progressive disclosure, based on Baymard benchmarks.</li>
                 <li>Designed a responsive design system for clinical dashboards and medical workflows across web and mobile.</li>
               </ul>
             </div>
           </div>
-          <div class="timeline-entry reveal" style="--delay: 220ms">
+          <div class="timeline-entry reveal delay-220">
             <span class="tLB timeline-entry__date">Jun 2023 - Jan 2024</span>
             <div>
               <p class="timeline-entry__role">Product Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--inhouse">In-house</span><span>Instivo · Remote</span></p>
-              <ul class="timeline-entry__desc" style="padding-left:16px; margin:0; list-style:disc;">
+              <ul class="timeline-entry__desc">
                 <li>Designed retail software and internal business tools for a large-scale retail operation.</li>
                 <li>Standardized interaction patterns and scaled the company design system working directly with engineering teams.</li>
               </ul>
             </div>
           </div>
-          <div class="timeline-entry reveal" style="--delay: 280ms">
+          <div class="timeline-entry reveal delay-280">
             <span class="tLB timeline-entry__date">Jul 2022 - Jun 2023</span>
             <div>
               <p class="timeline-entry__role">Product Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--inhouse">In-house</span><span>Nineblocks · Remote</span></p>
-              <ul class="timeline-entry__desc" style="padding-left:16px; margin:0; list-style:disc;">
+              <ul class="timeline-entry__desc">
                 <li>Designed conversion-focused landing pages and product screens for web and mobile fan token and NFT platforms.</li>
                 <li>Created 2D illustration and iconography for product identity and marketing.</li>
               </ul>
             </div>
           </div>
-          <div class="timeline-entry reveal" style="--delay: 340ms">
+          <div class="timeline-entry reveal delay-340">
             <span class="tLB timeline-entry__date">Mar 2022 - Jun 2022</span>
             <div>
               <p class="timeline-entry__role">UI/UX Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--inhouse">In-house</span><span>Vega I.T. · Remote</span></p>
-              <ul class="timeline-entry__desc" style="padding-left:16px; margin:0; list-style:disc;">
+              <ul class="timeline-entry__desc">
                 <li>Designed interfaces for hospitality tech: booking portals and internal management tools.</li>
                 <li>Delivered UI layouts, interaction states, and responsive web apps.</li>
               </ul>
             </div>
           </div>
-          <div class="timeline-entry reveal" style="--delay: 400ms">
+          <div class="timeline-entry reveal delay-400">
             <span class="tLB timeline-entry__date">Oct 2019 - Feb 2022</span>
             <div>
               <p class="timeline-entry__role">UX/UI Designer</p>
               <p class="timeline-entry__company"><span class="exp-pill exp-pill--inhouse">In-house</span><span>Ensight · On-site</span></p>
-              <ul class="timeline-entry__desc" style="padding-left:16px; margin:0; list-style:disc;">
+              <ul class="timeline-entry__desc">
                 <li>Designed SaaS platforms and digital products for B2B clients in agile sprints, from discovery and wireframing to high-fidelity handoffs.</li>
                 <li>Delivered UI components and specs for the Meaple ecosystem, including QuaQ and Facto.</li>
               </ul>
@@ -1092,43 +1093,43 @@
       <div class="services-grid">
 
         <ul role="list">
-          <li class="service-item" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-1">
-            <div class="service-item__header">
+          <li class="service-item">
+            <div class="service-item__header" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-1">
               <span class="service-item__num">01</span>
               <span class="service-item__title">UX Research & Strategy</span>
             </div>
             <p class="service-item__desc" id="service-desc-1" aria-hidden="true">Desk research, user interviews, journey maps, opportunity framing.</p>
           </li>
-          <li class="service-item" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-2">
-            <div class="service-item__header">
+          <li class="service-item">
+            <div class="service-item__header" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-2">
               <span class="service-item__num">02</span>
               <span class="service-item__title">Interface Design</span>
             </div>
             <p class="service-item__desc" id="service-desc-2" aria-hidden="true">High-fidelity screens, interactions, responsive across all surfaces.</p>
           </li>
-          <li class="service-item" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-3">
-            <div class="service-item__header">
+          <li class="service-item">
+            <div class="service-item__header" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-3">
               <span class="service-item__num">03</span>
               <span class="service-item__title">Design Systems</span>
             </div>
             <p class="service-item__desc" id="service-desc-3" aria-hidden="true">Tokenized, documented, team-ready.</p>
           </li>
-          <li class="service-item" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-4">
-            <div class="service-item__header">
+          <li class="service-item">
+            <div class="service-item__header" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-4">
               <span class="service-item__num">04</span>
               <span class="service-item__title">Brand Identity</span>
             </div>
             <p class="service-item__desc" id="service-desc-4" aria-hidden="true">Naming, visual identity, and brand guidelines.</p>
           </li>
-          <li class="service-item" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-5">
-            <div class="service-item__header">
+          <li class="service-item">
+            <div class="service-item__header" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-5">
               <span class="service-item__num">05</span>
               <span class="service-item__title">2D / Illustration</span>
             </div>
             <p class="service-item__desc" id="service-desc-5" aria-hidden="true">Custom illustration, iconography, art direction for digital and print.</p>
           </li>
-          <li class="service-item" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-6">
-            <div class="service-item__header">
+          <li class="service-item">
+            <div class="service-item__header" role="button" tabindex="0" aria-expanded="false" aria-controls="service-desc-6">
               <span class="service-item__num">06</span>
               <span class="service-item__title">Motion & Interaction</span>
             </div>
@@ -1139,7 +1140,7 @@
         <div class="services-sticky">
           <div class="service-panel is-active" data-panel="default">
             <p class="tLB">What I Do</p>
-            <h2 class="heading-lg" id="services-heading" style="color: var(--t1);">
+            <h2 class="heading-lg" id="services-heading">
               Research, systems, interfaces, identity.
             </h2>
             <p class="tBD">
@@ -1148,27 +1149,27 @@
           </div>
           <div class="service-panel" data-panel="1">
             <p class="tLB">01: Research & Strategy</p>
-            <h2 class="heading-lg" style="color: var(--t1);">The brief before the wireframe.</h2>
+            <h2 class="heading-lg">The brief before the wireframe.</h2>
           </div>
           <div class="service-panel" data-panel="2">
             <p class="tLB">02: Interface Design</p>
-            <h2 class="heading-lg" style="color: var(--t1);">Designed for engineering handoff.</h2>
+            <h2 class="heading-lg">Designed for engineering handoff.</h2>
           </div>
           <div class="service-panel" data-panel="3">
             <p class="tLB">03: Design Systems</p>
-            <h2 class="heading-lg" style="color: var(--t1);">Consistent across every screen it touches.</h2>
+            <h2 class="heading-lg">Consistent across every screen it touches.</h2>
           </div>
           <div class="service-panel" data-panel="4">
             <p class="tLB">04: Brand Identity</p>
-            <h2 class="heading-lg" style="color: var(--t1);">Name, mark, guidelines, system.</h2>
+            <h2 class="heading-lg">Name, mark, guidelines, system.</h2>
           </div>
           <div class="service-panel" data-panel="5">
             <p class="tLB">05: Illustration</p>
-            <h2 class="heading-lg" style="color: var(--t1);">A visual language built for the product.</h2>
+            <h2 class="heading-lg">A visual language built for the product.</h2>
           </div>
           <div class="service-panel" data-panel="6">
             <p class="tLB">06: Motion</p>
-            <h2 class="heading-lg" style="color: var(--t1);">Motion that clarifies what changed.</h2>
+            <h2 class="heading-lg">Motion that clarifies what changed.</h2>
           </div>
         </div>
 
@@ -1204,12 +1205,13 @@
 
 <script>
   (() => {
-    const items = document.querySelectorAll('.service-item[aria-controls]');
+    const items = document.querySelectorAll('.service-item');
     const panels = document.querySelectorAll('.service-panel');
     const grid = document.querySelector('.services-grid');
     if (!items.length || !panels.length) return;
 
-    const getKey = (item) => (item.getAttribute('aria-controls') || '').replace('service-desc-', '');
+    const getHeader = (item) => item.querySelector('.service-item__header');
+    const getKey = (item) => (getHeader(item)?.getAttribute('aria-controls') || '').replace('service-desc-', '');
     const isDesktop = () => window.innerWidth >= 1024;
 
     const showPanel = (key) => {
@@ -1220,7 +1222,7 @@
     items.forEach(item => {
       item.addEventListener('mouseenter', () => { if (isDesktop()) showPanel(getKey(item)); });
       item.addEventListener('click',      () => { if (isDesktop()) showPanel(getKey(item)); });
-      item.addEventListener('focus',      () => { if (isDesktop()) showPanel(getKey(item)); });
+      getHeader(item)?.addEventListener('focus', () => { if (isDesktop()) showPanel(getKey(item)); });
     });
 
     if (grid) {

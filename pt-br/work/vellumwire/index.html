@@ -49,7 +49,7 @@
   <link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../../assets/css/case-study.css" rel="stylesheet">
 </head>
@@ -115,7 +115,7 @@
           </div>
           <div class="cs-meta-cell">
             <p class="cs-meta-label">Site no ar</p>
-            <p class="cs-meta-value"><a href="https://vellumwire.com" target="_blank" rel="noopener noreferrer" style="color:var(--t1); text-decoration:underline; text-underline-offset:3px;">vellumwire.com →</a></p>
+            <p class="cs-meta-value"><a href="https://vellumwire.com" target="_blank" rel="noopener noreferrer" class="cs-link cs-link--t1">vellumwire.com →</a></p>
           </div>
           <div class="cs-meta-cell">
             <p class="cs-meta-label">Duração</p>
@@ -131,7 +131,7 @@
     <section class="cs-current-state">
       <div class="cs-container">
         <p class="cs-eyebrow cs-eyebrow--muted">Estado atual · padrão comum de sites de agência</p>
-        <div class="cs-diagram" style="overflow-x:auto;">
+        <div class="cs-diagram">
           <svg width="100%" viewBox="0 0 780 100" role="img" aria-label="Fluxo padrão de site de agência mostrando o padrão portfólio-primeiro que perde o prospect antes de estabelecer relevância">
             <defs>
               <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -249,11 +249,11 @@
             <blockquote class="cs-pullquote">Um prospect que pesquisou "por que meu site não gera leads" precisa ver que você entende o problema antes de olhar para o seu trabalho. Relevância conquista o direito de mostrar prova.</blockquote>
             <p>A página segue uma sequência deliberada. Cada seção responde a uma pergunta que o visitante está fazendo naquele momento, na ordem em que faria numa ligação de vendas real.</p>
             <p>A sequência reflete como um bom vendedor vende. Quando o visitante chega ao CTA final, ele já confirmou que o problema é real, entendeu a abordagem, viu a precificação e teve suas objeções respondidas. O pedido no final é o menor passo da página.</p>
-            <div class="cs-diagram" style="overflow-x:auto; max-height:480px; display:flex; align-items:flex-start; justify-content:center;">
-              <img src="img/vellumwire-decision-path.svg" alt="Diagrama de caminho de decisão da Vellumwire: como um prospect frio vai da busca até o agendamento" style="display:block; max-height:480px; width:auto; max-width:100%;">
+            <div class="cs-diagram cs-diagram--tall">
+              <img src="img/vellumwire-decision-path.svg" alt="Diagrama de caminho de decisão da Vellumwire: como um prospect frio vai da busca até o agendamento">
             </div>
-            <div class="cs-diagram" style="aspect-ratio:16/9; overflow:hidden; padding:0;">
-              <img src="img/vellumwire-hero-screen.webp" width="100%" alt="Seção hero da Vellumwire: headline guiado pelo problema, sem portfólio antes da rolagem" style="display:block; height:100%; object-fit:contain;">
+            <div class="cs-diagram cs-diagram--flush aspect-16-9 cs-diagram--contain">
+              <img src="img/vellumwire-hero-screen.webp" width="100%" alt="Seção hero da Vellumwire: headline guiado pelo problema, sem portfólio antes da rolagem">
             </div>
           </div>
         </section>
@@ -276,8 +276,8 @@
               </div>
             </div>
             <p>Ninguém quer "contratar um designer". Mas um empresário que suspeita que o site está custando leads vai aceitar uma sessão gratuita e sem compromisso para descobrir o que está errado. A oferta corresponde ao estado real do visitante no momento em que chega: consciente de um problema, incerto sobre a solução, ainda não pronto para gastar dinheiro.</p>
-            <div class="cs-diagram" style="overflow-x:auto; aspect-ratio:16/9; overflow:hidden;">
-              <img src="img/vellumwire-cta.webp" width="100%" alt="Seção de CTA da Vellumwire: diagnóstico gratuito de 15 minutos, antes da rolagem sem ações concorrentes" style="display:block; height:100%; object-fit:cover; object-position:top;">
+            <div class="cs-diagram cs-diagram--clip cs-diagram--top aspect-16-9">
+              <img src="img/vellumwire-cta.webp" width="100%" alt="Seção de CTA da Vellumwire: diagnóstico gratuito de 15 minutos, antes da rolagem sem ações concorrentes">
             </div>
           </div>
         </section>
@@ -314,8 +314,8 @@
                 <span class="cs-edge-response">Páginas de preço rankeiam. Prospects pesquisando o custo de web design caem direto na resposta.</span>
               </div>
             </div>
-            <div class="cs-diagram" style="overflow-x:auto; aspect-ratio:16/9; overflow:hidden;">
-              <img src="img/vellumwire-pricing.webp" width="100%" alt="Seção de serviços e preços da Vellumwire: três níveis com faixas de preço publicadas" style="display:block; height:100%; object-fit:cover; object-position:top;">
+            <div class="cs-diagram cs-diagram--clip cs-diagram--top aspect-16-9">
+              <img src="img/vellumwire-pricing.webp" width="100%" alt="Seção de serviços e preços da Vellumwire: três níveis com faixas de preço publicadas">
             </div>
           </div>
         </section>
@@ -333,8 +333,8 @@
               Um FAQ genérico cobrindo "nosso processo", "nossa equipe" e "nossos valores", o tipo que existe em 90% dos sites de agência. Essas entradas respondem perguntas que ninguém estava fazendo. Ocupam espaço que poderia fechar uma objeção real.
             </div>
             <p>Objeções que não são tratadas no site são levantadas na ligação. Isso atrasa a decisão e introduz dúvida no pior momento, quando o prospect já está falando com o estúdio e tem algum grau de interesse. Tratá-las por escrito antes da ligação avança a conversa.</p>
-            <div class="cs-diagram" style="overflow-x:auto; aspect-ratio:16/9; overflow:hidden;">
-              <img src="img/vellumwire-FAQ.webp" width="100%" alt="Seção de FAQ da Vellumwire: seis entradas a partir de objeções reais de venda" style="display:block; height:100%; object-fit:cover; object-position:top;">
+            <div class="cs-diagram cs-diagram--clip cs-diagram--top aspect-16-9">
+              <img src="img/vellumwire-FAQ.webp" width="100%" alt="Seção de FAQ da Vellumwire: seis entradas a partir de objeções reais de venda">
             </div>
           </div>
         </section>

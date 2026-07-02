@@ -49,7 +49,7 @@
   <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../assets/css/case-study.css" rel="stylesheet">
 </head>
@@ -132,7 +132,7 @@
     <section class="cs-current-state">
       <div class="cs-container">
         <p class="cs-eyebrow cs-eyebrow--muted">Current state · standard fintech onboarding</p>
-        <div class="cs-diagram" style="overflow-x:auto;">
+        <div class="cs-diagram">
           <svg width="100%" viewBox="0 0 780 100" role="img" aria-label="Standard fintech onboarding flow showing friction points">
             <defs>
               <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -190,8 +190,8 @@
             <p>NorthPay is a concept fintech onboarding flow, from account type selection through KYC verification and first-use setup.</p>
             <blockquote class="cs-pullquote">Every field in an onboarding form sits between the user and the product. The sequence those fields appear in is a design decision, not a compliance requirement.</blockquote>
             <p>Onboarding is the point where first impressions, regulatory constraints, and conversion rates converge on the same sequence of screens.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="../../assets/img/project/NorthPay/mockup.webp" width="100%" alt="NorthPay onboarding mockups showing account selection and verification screens" style="display:block;" loading="lazy">
+            <div class="cs-diagram">
+              <img src="../../assets/img/project/NorthPay/mockup.webp" width="100%" alt="NorthPay onboarding mockups showing account selection and verification screens" loading="lazy">
             </div>
           </div>
         </section>
@@ -221,8 +221,8 @@
               </div>
             </div>
             <p>Long forms, unclear requirements, and weak feedback stall activation before the product is even used. Every field in the sequence is required by regulation. How that sequence is presented is a design decision.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="../../assets/img/project/NorthPay/problem-and-context.webp" width="100%" alt="Problem and context diagram" style="display:block;" loading="lazy">
+            <div class="cs-diagram">
+              <img src="../../assets/img/project/NorthPay/problem-and-context.webp" width="100%" alt="Problem and context diagram" loading="lazy">
             </div>
           </div>
         </section>
@@ -244,8 +244,8 @@
                 <p class="cs-compare__text">One question at a time. Visible step count from the first screen. Account type selected before any form opens. Each next step is earned by completing the current one.</p>
               </div>
             </div>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="../../assets/img/project/NorthPay/design-challenge-diagram.webp" width="100%" alt="Design challenge diagram, end to end onboarding journey" style="display:block;" loading="lazy">
+            <div class="cs-diagram">
+              <img src="../../assets/img/project/NorthPay/design-challenge-diagram.webp" width="100%" alt="Design challenge diagram, end to end onboarding journey" loading="lazy">
             </div>
             <div class="cs-addresses">
               <span class="cs-addresses__label">Addresses</span>
@@ -263,11 +263,11 @@
             <p>The onboarding experience is split into a public entry point and a gated product flow. Within the product, a simple sequence guides users from account type to verification, with clear branching for personal vs. business accounts.</p>
             <blockquote class="cs-pullquote">Account type is the first decision. Every field that follows depends on it. Making it the first screen removes the worst failure mode: mid-form type switching that wipes all entered data.</blockquote>
             <p>The flow is three phases: account selection, identity collection, and verification. All three are visible in the stepper from step one, so no phase is a surprise when it opens.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="../../assets/img/project/NorthPay/Fluxogram.webp" width="100%" alt="Fluxogram of the NorthPay onboarding flow" style="display:block;" loading="lazy">
+            <div class="cs-diagram">
+              <img src="../../assets/img/project/NorthPay/Fluxogram.webp" width="100%" alt="Fluxogram of the NorthPay onboarding flow" loading="lazy">
             </div>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="../../assets/img/project/NorthPay/Information-architecture.webp" width="100%" alt="Information architecture diagram" style="display:block;" loading="lazy">
+            <div class="cs-diagram">
+              <img src="../../assets/img/project/NorthPay/Information-architecture.webp" width="100%" alt="Information architecture diagram" loading="lazy">
             </div>
           </div>
         </section>
@@ -284,8 +284,8 @@
               An earlier layout placed the account type toggle on the same screen as the first form fields. Users changed their account type mid-form and lost everything they'd entered. Separating the decision from the data collection isn't a UX preference. It's a data-loss prevention pattern.
             </div>
             <p>One question per screen is slower to build and faster to complete. The perceived complexity drops when each screen has one job and makes it obvious.</p>
-            <div class="cs-diagram" style="overflow-x:auto;">
-              <img src="../../assets/img/project/NorthPay/Wireframes.webp" width="100%" alt="NorthPay wireframes showing onboarding step structure" style="display:block;" loading="lazy">
+            <div class="cs-diagram">
+              <img src="../../assets/img/project/NorthPay/Wireframes.webp" width="100%" alt="NorthPay wireframes showing onboarding step structure" loading="lazy">
             </div>
           </div>
         </section>
@@ -315,30 +315,30 @@
                 <span class="cs-edge-response">Status screen with estimated timeline and what to expect next. The wait is expected, not an error state.</span>
               </div>
             </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4);">
+            <div class="cs-diagram-grid">
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/interactions.webp" width="100%" alt="Key interactions and states" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/interactions.webp" width="100%" alt="Key interactions and states" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Interactions · inline error + stepper</figcaption>
+                <figcaption class="cs-caption">Interactions · inline error + stepper</figcaption>
               </figure>
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/Choose-your-account-mockup.webp" width="100%" alt="Choose your account screen" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/Choose-your-account-mockup.webp" width="100%" alt="Choose your account screen" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Account type · first decision, no form</figcaption>
+                <figcaption class="cs-caption">Account type · first decision, no form</figcaption>
               </figure>
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/Personal-details-mockup.webp" width="100%" alt="Personal details screen" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/Personal-details-mockup.webp" width="100%" alt="Personal details screen" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Personal details · grouped fields</figcaption>
+                <figcaption class="cs-caption">Personal details · grouped fields</figcaption>
               </figure>
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/Personal-details-feedbacks.webp" width="100%" alt="Personal details form with inline validation errors" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/Personal-details-feedbacks.webp" width="100%" alt="Personal details form with inline validation errors" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Inline validation · field-level errors on exit</figcaption>
+                <figcaption class="cs-caption">Inline validation · field-level errors on exit</figcaption>
               </figure>
             </div>
           </div>
@@ -373,30 +373,30 @@
                 <p class="cs-benchmark-source">UX decision</p>
               </div>
             </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4);">
+            <div class="cs-diagram-grid">
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/Business-details-mockup.webp" width="100%" alt="Business details screen" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/Business-details-mockup.webp" width="100%" alt="Business details screen" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Business details · branched form</figcaption>
+                <figcaption class="cs-caption">Business details · branched form</figcaption>
               </figure>
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/Verify-your-account-mockup.webp" width="100%" alt="Verify your account screen" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/Verify-your-account-mockup.webp" width="100%" alt="Verify your account screen" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Verification · pending state with timeline</figcaption>
+                <figcaption class="cs-caption">Verification · pending state with timeline</figcaption>
               </figure>
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/Dashboard-mockup.webp" width="100%" alt="NorthPay first dashboard, setup checklist and account status" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/Dashboard-mockup.webp" width="100%" alt="NorthPay first dashboard, setup checklist and account status" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">Dashboard · setup checklist, first action</figcaption>
+                <figcaption class="cs-caption">Dashboard · setup checklist, first action</figcaption>
               </figure>
               <figure>
-                <div class="cs-diagram" style="padding:0; aspect-ratio:16/10; overflow:hidden;">
-                  <img src="../../assets/img/project/NorthPay/UI.webp" width="100%" alt="NorthPay final UI system" loading="lazy" style="display:block; height:100%; object-fit:cover;">
+                <div class="cs-diagram cs-diagram--flush aspect-16-10">
+                  <img src="../../assets/img/project/NorthPay/UI.webp" width="100%" alt="NorthPay final UI system" loading="lazy">
                 </div>
-                <figcaption class="cs-caption" style="margin-top:var(--sp-2);">UI system · final visual language</figcaption>
+                <figcaption class="cs-caption">UI system · final visual language</figcaption>
               </figure>
             </div>
             <div class="cs-trust-pills">

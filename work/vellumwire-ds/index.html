@@ -49,7 +49,7 @@
   <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../assets/css/case-study.css" rel="stylesheet">
 </head>
@@ -172,10 +172,10 @@
             <p><strong>Brand</strong> is where client decisions live: which ramp becomes primary, which becomes neutral, which becomes accent, and which typeface the project uses. This is the only layer that changes per client.</p>
             <p><strong>Semantic</strong> is what components actually read. A button doesn't know whether its background is mint or sand. It knows it's <code>background.primary</code>. Semantic never references palette or brand directly, and it's split into three independent dimensions: color (light and dark), size (desktop, tablet, mobile), and type (desktop, tablet, mobile).</p>
             <p>Components are built exclusively from semantic tokens. No raw hex values, no direct palette references in component code, anywhere. Re-theming a project means changing the Brand layer and nothing else.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/architecture.webp" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each with example token names resolving to the layer below" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/architecture.webp" width="100%" alt="Token architecture: Core, Palette, Brand, and Semantic layers, each with example token names resolving to the layer below">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Token architecture &middot; four layers, each referencing the one below</p>
+            <p class="cs-caption">Token architecture &middot; four layers, each referencing the one below</p>
           </div>
         </section>
 
@@ -188,10 +188,10 @@
             <p class="cs-section__subhead">Two of the system's full set, shown to illustrate the pattern.</p>
             <p>The palette is built independently of brand decisions. Each ramp runs from its lightest step to its darkest, structured the same way regardless of hue, so that assigning a ramp to a role in the Brand layer becomes a mapping exercise instead of a design exercise.</p>
             <p>The full system currently runs eight ramps. What follows is two of them, included here only to demonstrate the pattern.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/palette-2-of-8.webp" width="100%" alt="Two of the system's eight color ramps, Mint and Sky, each running from step 25 to 950" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/palette-2-of-8.webp" width="100%" alt="Two of the system's eight color ramps, Mint and Sky, each running from step 25 to 950">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Mint and Sky &middot; 2 of 8 ramps in the full palette</p>
+            <p class="cs-caption">Mint and Sky &middot; 2 of 8 ramps in the full palette</p>
             <p>Building ramps ahead of brand assignment means a new client rarely needs a new ramp. Most of the time, the work is choosing which existing ramp earns which role.</p>
           </div>
         </section>
@@ -205,10 +205,10 @@
             <p class="cs-section__subhead">Seven semantic roles. Each one decided once per project, in the Brand layer, nowhere else.</p>
             <p>This is the layer that proves the rest of the system earns its complexity.</p>
             <p>Primary, accent, neutral, and four feedback roles, error, warning, success, info, are the only slots that exist. Each one is a single decision: which palette ramp gets assigned to it. Make that decision once per client, and every component downstream already knows what to draw without anyone touching the component itself.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/brand-layer.webp" width="100%" alt="Brand layer: seven semantic roles, Primary, Accent, Neutral, Error, Warning, Success, Info, each mapped to one palette ramp" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/brand-layer.webp" width="100%" alt="Brand layer: seven semantic roles, Primary, Accent, Neutral, Error, Warning, Success, Info, each mapped to one palette ramp">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Brand layer &middot; seven roles, each mapped to one palette ramp</p>
+            <p class="cs-caption">Brand layer &middot; seven roles, each mapped to one palette ramp</p>
             <p>A live brand-swap demo, the same button, card, and input rendered under three client brands, follows this identical mechanism: three different ramps landing in the same seven roles, with zero changes to component code between them.</p>
             <div class="cs-rejected">
               <span class="cs-rejected__label">Rejected approach</span>
@@ -226,10 +226,10 @@
             <p class="cs-section__subhead">A partial look at the token layer that sits between brand and component.</p>
             <p>Semantic tokens describe function. <code>border.error</code> means the same thing whether the underlying ramp is red, orange, or something a client insists is "more on-brand than red." A component referencing <code>border.error</code> doesn't need to know which ramp resolved to that role.</p>
             <p>The full semantic table covers both light and dark modes, and runs well past what's useful to show here. Below is a partial view, dark mode, six tokens out of the full set.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/semantic-tokens.webp" width="100%" alt="Semantic color tokens, dark mode: background.page, background.surface, background.raised, background.sunken, foreground.neutral, and foreground.primary, each resolving to a brand color value" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/semantic-tokens.webp" width="100%" alt="Semantic color tokens, dark mode: background.page, background.surface, background.raised, background.sunken, foreground.neutral, and foreground.primary, each resolving to a brand color value">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Semantic color &middot; dark mode, 6 of the full token set</p>
+            <p class="cs-caption">Semantic color &middot; dark mode, 6 of the full token set</p>
             <p>Token names in production are more specific than what's shown here. The structure is accurate. The exact naming isn't reproduced in full.</p>
           </div>
         </section>
@@ -243,10 +243,10 @@
             <p class="cs-section__subhead">What the semantic layer looks like once it's actually rendering something.</p>
             <p>Buttons carry primary, secondary, and destructive variants, each pulling from semantic color and size tokens instead of fixed values. Tags use the same background and foreground role pairs as buttons, just at a different scale, which keeps status colors consistent across the product without anyone needing to remember which red is the right red.</p>
             <p>Some components have more than one structural version, beyond a simple styling variant. A button that needs to trigger a multi-step confirmation behaves differently from a button that submits a form, and that difference lives in the component itself, separate from any token override. Tokens handle appearance. They were never meant to handle behavior, and the system doesn't pretend otherwise.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/components.webp" width="100%" alt="Components built from semantic tokens: button variants and states with resolved token annotations, text field states (default, focus, error, disabled), and status badges" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/components.webp" width="100%" alt="Components built from semantic tokens: button variants and states with resolved token annotations, text field states (default, focus, error, disabled), and status badges">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Buttons, text fields, and badges &middot; built from semantic tokens, not raw values</p>
+            <p class="cs-caption">Buttons, text fields, and badges &middot; built from semantic tokens, not raw values</p>
           </div>
         </section>
 
@@ -260,10 +260,10 @@
             <p>Semantic size and type are split into desktop, tablet, and mobile from the start, independent of whether a given project has shipped a mobile view yet. The values exist whether or not anyone's looked at them.</p>
             <p>That decision got tested for real during the Instivo project, when warehouse staff needed a mobile stock view that hadn't been part of the original scope. No parallel system had to be built. The semantic layer already had mobile values defined, so the new view consumed the same tokens the desktop product did, just resolved against a different breakpoint.</p>
             <p>The same layer that makes re-theming possible also makes resizing possible. One client asked recently about denser screens. I switched the base grid from 8px to 4px for a product where information density mattered more than breathing room. That's a Core-layer change with no component rewrites required, which is closer to the actual test of whether the architecture holds than the brand-swap demo is.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/responsive-tokens.webp" width="100%" alt="Spacing and layout tokens resolved per breakpoint: desktop at 12 columns and 24px gutter, tablet at 8 columns and 16px gutter, mobile at 4 columns and 16px gutter, fluid" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/responsive-tokens.webp" width="100%" alt="Spacing and layout tokens resolved per breakpoint: desktop at 12 columns and 24px gutter, tablet at 8 columns and 16px gutter, mobile at 4 columns and 16px gutter, fluid">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Spacing and grid &middot; resolved per breakpoint, desktop to mobile</p>
+            <p class="cs-caption">Spacing and grid &middot; resolved per breakpoint, desktop to mobile</p>
           </div>
         </section>
 
@@ -276,7 +276,7 @@
             <p class="cs-section__subhead">The Instivo case is where this system stopped being a theory.</p>
             <p>This architecture didn't ship as a finished thing and then get used. I refined it while building Instivo, under the kind of pressure that catches gaps a clean slate never would.</p>
             <p>The full story of that project, including the mobile stock view that became the real test of the responsive layer, is documented separately.</p>
-            <p><a href="../instivo/" style="color:var(--y); text-decoration:underline; text-underline-offset:3px;">Read the Instivo case study &rarr;</a></p>
+            <p><a href="../instivo/" class="cs-link cs-link--accent">Read the Instivo case study &rarr;</a></p>
           </div>
         </section>
 

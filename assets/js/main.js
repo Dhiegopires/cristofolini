@@ -374,11 +374,12 @@
       6. Service items — hover reveal description
      -------------------------------------------------------------------------- */
   document.querySelectorAll('.service-item').forEach(item => {
+    const header = item.querySelector('.service-item__header');
     const description = item.querySelector('.service-item__desc');
 
     function setOpen(isOpen) {
       item.classList.toggle('is-open', isOpen);
-      item.setAttribute('aria-expanded', String(isOpen));
+      if (header) header.setAttribute('aria-expanded', String(isOpen));
       if (description) {
         description.setAttribute('aria-hidden', String(!isOpen));
       }
@@ -396,12 +397,12 @@
       }
     });
     item.addEventListener('click', () => {
-      setOpen(item.getAttribute('aria-expanded') !== 'true');
+      setOpen(header?.getAttribute('aria-expanded') !== 'true');
     });
     item.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        setOpen(item.getAttribute('aria-expanded') !== 'true');
+        setOpen(header?.getAttribute('aria-expanded') !== 'true');
       }
       if (event.key === 'Escape') {
         setOpen(false);

@@ -49,7 +49,7 @@
   <link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
   <link href="../../../assets/css/case-study.css" rel="stylesheet">
 </head>
@@ -172,10 +172,10 @@
             <p><strong>Brand</strong> é onde vivem as decisões do cliente: qual ramp se torna primary, qual se torna neutral, qual se torna accent, e qual tipografia o projeto usa. Essa é a única camada que muda por cliente.</p>
             <p><strong>Semantic</strong> é o que os componentes de fato leem. Um botão não sabe se o fundo dele é mint ou areia. Ele sabe que é <code>background.primary</code>. Semantic nunca referencia palette ou brand diretamente, e se divide em três dimensões independentes: cor (claro e escuro), tamanho (desktop, tablet, mobile) e tipografia (desktop, tablet, mobile).</p>
             <p>Componentes são construídos exclusivamente a partir de tokens semantic. Nenhum valor hex puro, nenhuma referência direta à palette no código do componente, em lugar nenhum. Re-tematizar um projeto significa mudar a camada Brand e nada mais.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/architecture.webp" width="100%" alt="Arquitetura de tokens: camadas Core, Palette, Brand e Semantic, cada uma com exemplos de nomes de token resolvendo para a camada abaixo" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/architecture.webp" width="100%" alt="Arquitetura de tokens: camadas Core, Palette, Brand e Semantic, cada uma com exemplos de nomes de token resolvendo para a camada abaixo">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Arquitetura de tokens &middot; quatro camadas, cada uma referenciando a de baixo</p>
+            <p class="cs-caption">Arquitetura de tokens &middot; quatro camadas, cada uma referenciando a de baixo</p>
           </div>
         </section>
 
@@ -188,10 +188,10 @@
             <p class="cs-section__subhead">Duas do conjunto completo do sistema, mostradas para ilustrar o padrão.</p>
             <p>A palette é construída independente das decisões de marca. Cada ramp vai do seu step mais claro ao mais escuro, estruturada do mesmo jeito independente do tom, de forma que atribuir uma ramp a um papel na camada Brand se torna um exercício de mapeamento em vez de um exercício de design.</p>
             <p>O sistema completo hoje roda oito ramps. O que segue são duas delas, incluídas aqui só para demonstrar o padrão.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/palette-2-of-8.webp" width="100%" alt="Duas das oito ramps de cor do sistema, Mint e Sky, cada uma indo do step 25 ao 950" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/palette-2-of-8.webp" width="100%" alt="Duas das oito ramps de cor do sistema, Mint e Sky, cada uma indo do step 25 ao 950">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Mint e Sky &middot; 2 de 8 ramps da paleta completa</p>
+            <p class="cs-caption">Mint e Sky &middot; 2 de 8 ramps da paleta completa</p>
             <p>Construir ramps antes da atribuição de marca significa que um novo cliente raramente precisa de uma ramp nova. Na maior parte do tempo, o trabalho é escolher qual ramp existente ganha qual papel.</p>
           </div>
         </section>
@@ -205,10 +205,10 @@
             <p class="cs-section__subhead">Sete papéis semânticos. Cada um decidido uma vez por projeto, na camada Brand, em nenhum outro lugar.</p>
             <p>Essa é a camada que prova que o resto do sistema vale a complexidade dele.</p>
             <p>Primary, accent, neutral, e quatro papéis de feedback, error, warning, success, info, são os únicos slots que existem. Cada um é uma única decisão: qual ramp da palette é atribuída a ele. Tome essa decisão uma vez por cliente, e todo componente abaixo já sabe o que desenhar sem ninguém tocar no componente em si.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/brand-layer.webp" width="100%" alt="Camada Brand: sete papéis semânticos, Primary, Accent, Neutral, Error, Warning, Success, Info, cada um mapeado para uma ramp da palette" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/brand-layer.webp" width="100%" alt="Camada Brand: sete papéis semânticos, Primary, Accent, Neutral, Error, Warning, Success, Info, cada um mapeado para uma ramp da palette">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Camada Brand &middot; sete papéis, cada um mapeado para uma ramp da palette</p>
+            <p class="cs-caption">Camada Brand &middot; sete papéis, cada um mapeado para uma ramp da palette</p>
             <p>Uma demo real de troca de marca, o mesmo botão, card e input renderizados sob três marcas de clientes diferentes, segue esse mecanismo idêntico: três ramps diferentes caindo nos mesmos sete papéis, com zero mudanças no código do componente entre elas.</p>
             <div class="cs-rejected">
               <span class="cs-rejected__label">Abordagem rejeitada</span>
@@ -226,10 +226,10 @@
             <p class="cs-section__subhead">Um olhar parcial sobre a camada de token que fica entre brand e componente.</p>
             <p>Tokens semantic descrevem função. <code>border.error</code> significa a mesma coisa se a ramp por baixo é vermelha, laranja, ou algo que um cliente insiste ser "mais on-brand que vermelho". Um componente referenciando <code>border.error</code> não precisa saber qual ramp resolveu pra esse papel.</p>
             <p>A tabela semantic completa cobre os modos claro e escuro, e vai bem além do que é útil mostrar aqui. Abaixo está uma visão parcial, modo escuro, seis tokens do conjunto completo.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/semantic-tokens.webp" width="100%" alt="Tokens de cor semantic, modo escuro: background.page, background.surface, background.raised, background.sunken, foreground.neutral e foreground.primary, cada um resolvendo para um valor de cor da marca" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/semantic-tokens.webp" width="100%" alt="Tokens de cor semantic, modo escuro: background.page, background.surface, background.raised, background.sunken, foreground.neutral e foreground.primary, cada um resolvendo para um valor de cor da marca">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Cor semantic &middot; modo escuro, 6 do conjunto completo de tokens</p>
+            <p class="cs-caption">Cor semantic &middot; modo escuro, 6 do conjunto completo de tokens</p>
             <p>Os nomes de token em produção são mais específicos do que o mostrado aqui. A estrutura é fiel. A nomenclatura exata não é reproduzida na íntegra.</p>
           </div>
         </section>
@@ -243,10 +243,10 @@
             <p class="cs-section__subhead">Como a camada semantic se parece quando de fato renderiza alguma coisa.</p>
             <p>Botões carregam variantes primary, secondary e destructive, cada uma puxando de tokens semantic de cor e tamanho em vez de valores fixos. Tags usam os mesmos pares de papel de fundo e texto que os botões, só numa escala diferente, o que mantém as cores de status consistentes pelo produto sem ninguém precisar lembrar qual vermelho é o vermelho certo.</p>
             <p>Alguns componentes têm mais de uma versão estrutural, além de uma simples variante de estilo. Um botão que precisa disparar uma confirmação em múltiplas etapas se comporta diferente de um botão que envia um formulário, e essa diferença vive no próprio componente, separada de qualquer override de token. Tokens lidam com aparência. Eles nunca foram feitos pra lidar com comportamento, e o sistema não finge o contrário.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/components.webp" width="100%" alt="Componentes construídos a partir de tokens semantic: variantes e estados de botão com anotações de token resolvido, estados de text field (default, focus, error, disabled), e badges de status" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/components.webp" width="100%" alt="Componentes construídos a partir de tokens semantic: variantes e estados de botão com anotações de token resolvido, estados de text field (default, focus, error, disabled), e badges de status">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Botões, text fields e badges &middot; construídos a partir de tokens semantic, não de valores puros</p>
+            <p class="cs-caption">Botões, text fields e badges &middot; construídos a partir de tokens semantic, não de valores puros</p>
           </div>
         </section>
 
@@ -260,10 +260,10 @@
             <p>Tamanho e tipografia semantic são divididos em desktop, tablet e mobile desde o início, independente de um projeto já ter lançado uma visão mobile ou não. Os valores existem mesmo que ninguém tenha olhado pra eles ainda.</p>
             <p>Essa decisão foi testada de verdade durante o projeto Instivo, quando a equipe do armazém precisou de uma visão mobile de estoque que não tinha sido parte do escopo original. Nenhum sistema paralelo precisou ser construído. A camada semantic já tinha valores mobile definidos, então a nova visão consumiu os mesmos tokens que o produto desktop usava, só resolvidos contra um breakpoint diferente.</p>
             <p>A mesma camada que torna a re-tematização possível também torna o redimensionamento possível. Um cliente perguntou recentemente sobre telas mais densas. Eu troquei a grade base de 8px para 4px num produto onde densidade de informação importava mais que respiro visual. Isso é uma mudança na camada Core sem nenhuma reescrita de componente necessária, o que é mais próximo do teste real de se a arquitetura se sustenta do que a demo de troca de marca é.</p>
-            <div class="cs-diagram" style="padding:0; overflow:hidden;">
-              <img src="img/responsive-tokens.webp" width="100%" alt="Tokens de espaçamento e layout resolvidos por breakpoint: desktop com 12 colunas e gutter de 24px, tablet com 8 colunas e gutter de 16px, mobile com 4 colunas e gutter de 16px, fluido" style="display:block;">
+            <div class="cs-diagram cs-diagram--flush">
+              <img src="img/responsive-tokens.webp" width="100%" alt="Tokens de espaçamento e layout resolvidos por breakpoint: desktop com 12 colunas e gutter de 24px, tablet com 8 colunas e gutter de 16px, mobile com 4 colunas e gutter de 16px, fluido">
             </div>
-            <p class="cs-caption" style="margin-top:8px;">Espaçamento e grade &middot; resolvidos por breakpoint, de desktop a mobile</p>
+            <p class="cs-caption">Espaçamento e grade &middot; resolvidos por breakpoint, de desktop a mobile</p>
           </div>
         </section>
 
@@ -276,7 +276,7 @@
             <p class="cs-section__subhead">O case do Instivo é onde esse sistema parou de ser uma teoria.</p>
             <p>Essa arquitetura não foi lançada como algo finalizado e depois usada. Eu refinei essa arquitetura enquanto construía o Instivo, sob o tipo de pressão que pega as lacunas que uma folha em branco nunca pegaria.</p>
             <p>A história completa daquele projeto, incluindo a visão mobile de estoque que se tornou o teste real da camada responsiva, está documentada separadamente.</p>
-            <p><a href="../instivo/" style="color:var(--y); text-decoration:underline; text-underline-offset:3px;">Leia o case do Instivo &rarr;</a></p>
+            <p><a href="../instivo/" class="cs-link cs-link--accent">Leia o case do Instivo &rarr;</a></p>
           </div>
         </section>
 
