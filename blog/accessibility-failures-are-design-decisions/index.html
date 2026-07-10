@@ -302,7 +302,7 @@
 
         <p><strong>Level AAA</strong> requires 7:1 for normal text and 4.5:1 for large text. This is the target for interfaces where the user depends critically on reading, such as medical systems, financial platforms, or legal tools.</p>
 
-        <p>Most product teams should be designing to AA across the entire interface. AAA is not optional when the stakes of misreading are high.</p>
+        <p>Most product teams should be designing to AA across the entire interface. AAA is not optional when the stakes of misreading are high — the full breakdown of what separates the two levels, and why disabled buttons usually fail both, lives in <a href="../contrast-aa-vs-aaa/">AA vs AAA: what these levels actually mean and why your disabled button is failing both</a>.</p>
 
         <h3>1.3 The disabled button problem</h3>
 
@@ -313,8 +313,6 @@
         <p>The fix does not require abandoning the convention. It requires adding a second communication channel: a tooltip explaining why the action is unavailable, a label below the button, an icon signaling what is missing. Opacity can stay. The text must remain readable.</p>
 
         <p>Tools like the Colour Contrast Analyser, the Able plugin for Figma, and the WebAIM Contrast Checker let you verify any color pair before it reaches the developer. This is a design decision. It should be tested at the design stage.</p>
-
-        <p class="article-teaser"><em>Next up: AA vs AAA, when each contrast level applies, and why your disabled button is probably failing both. Coming soon.</em></p>
 
         <div class="article-section__hd">
           <span class="article-section__num">02</span>
@@ -440,7 +438,7 @@
 
         <p>A practical note for anyone who is a developer reading this: if your designer did not specify focus behavior in their documentation, that is a gap, but it does not mean you cannot implement it correctly anyway. Knowledge travels in both directions.</p>
 
-        <p class="article-teaser"><em>The next post covers what ARIA is, when it is necessary, and how to document interactive behavior so developers have what they need to implement it correctly, in What is ARIA and why product designers need to understand it.</em></p>
+        <p>Roles, states, properties, the first rule of ARIA, and how to document interactive behavior so a developer implements it correctly the first time — all covered in <a href="../what-is-aria/">What is ARIA and why product designers need to understand it</a>.</p>
 
         <div class="article-section__hd">
           <span class="article-section__num">05</span>
@@ -517,7 +515,7 @@
               <p class="newsletter-eyebrow">Newsletter</p>
               <h2 class="newsletter-title" id="newsletter-article-title">Get the next one in your inbox</h2>
               <p class="newsletter-desc">New posts, design notes, and the occasional useful thing. No noise, no sales pitch.</p>
-              <form action="https://app.kit.com/forms/9634397/subscriptions" method="post" class="newsletter-form">
+              <form action="https://app.kit.com/forms/9668423/subscriptions" method="post" class="newsletter-form">
                 <input type="email" name="email_address" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
                 <button type="submit" class="newsletter-btn">Subscribe →</button>
               </form>
