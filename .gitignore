@@ -3,6 +3,7 @@ DESIGN_SYSTEM.md
 5.*.md
 6.*.md
 .claude/
+contact-config.php
 .DS_Store
 Thumbs.db
 node_modules/

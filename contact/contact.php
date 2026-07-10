@@ -1,14 +1,15 @@
 <?php
 /**
  * contact.php — Server-side contact form handler
- * Uses PHP's native mail() via the host's own mail server. No third-party
- * account or API key required.
+ * Sends via the Resend API instead of PHP's native mail(): mail() on shared
+ * hosting sends through the host's own server, which rarely matches the
+ * domain's SPF/DKIM, so it lands in spam. Resend uses its own authenticated
+ * sending domain once cristofolini.site is verified in the Resend dashboard.
  */
 
 error_reporting(0);
 header('Content-Type: application/json');
 
-// Only accept POST from the site's own JS (not direct browser/curl requests)
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['ok' => false, 'message' => 'Method not allowed.']);
@@ -18,6 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 if (($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') !== 'XMLHttpRequest') {
     http_response_code(403);
     echo json_encode(['ok' => false, 'message' => 'Forbidden.']);
+    exit;
+}
+
+$config = @include __DIR__ . '/../contact-config.php';
+if (!is_array($config) || empty($config['resend_api_key'])) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'message' => 'Server not configured.']);
     exit;
 }
 
@@ -43,20 +51,32 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $budget_line = $budget ? "\nBudget: {$budget}" : '';
 $body = "New contact form submission\n\nName: {$name}\nEmail: {$email}{$budget_line}\n\nMessage:\n{$message}";
 
-$to      = 'dhiegopiresc@gmail.com';
-$subject = "New message from {$name} — Cristofolini";
+$payload = json_encode([
+    'from'     => $config['from'] ?? 'Cristofolini <noreply@cristofolini.site>',
+    'to'       => ['dhiegopiresc@gmail.com'],
+    'reply_to' => "{$name} <{$email}>",
+    'subject'  => "New message from {$name} — Cristofolini",
+    'text'     => $body,
+]);
 
-$headers   = [];
-$headers[] = 'From: Cristofolini Contact Form <noreply@cristofolini.site>';
-$headers[] = "Reply-To: {$name} <{$email}>";
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers[] = 'MIME-Version: 1.0';
+$ch = curl_init('https://api.resend.com/emails');
+curl_setopt_array($ch, [
+    CURLOPT_POST           => true,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT        => 10,
+    CURLOPT_HTTPHEADER     => [
+        'Authorization: Bearer ' . $config['resend_api_key'],
+        'Content-Type: application/json',
+    ],
+    CURLOPT_POSTFIELDS => $payload,
+]);
+$response = curl_exec($ch);
+$status   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
-$sent = @mail($to, $subject, $body, implode("\r\n", $headers));
-
-if ($sent) {
+if ($status >= 200 && $status < 300) {
     echo json_encode(['ok' => true]);
 } else {
-    http_response_code(500);
+    http_response_code(502);
     echo json_encode(['ok' => false, 'message' => 'Failed to send message. Please try again.']);
 }
