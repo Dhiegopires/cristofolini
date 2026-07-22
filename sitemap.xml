@@ -191,6 +191,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/what-is-aria/"/>
   </url>
   <url>
+    <loc>https://cristofolini.site/blog/color-blindness/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/color-blindness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/color-blindness/"/>
+  </url>
+  <url>
     <loc>https://cristofolini.site/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

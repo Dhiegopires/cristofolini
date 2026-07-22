@@ -55,6 +55,8 @@
 </head>
 <body>
 
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -62,12 +64,11 @@
       <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
     <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <ul class="nav-links" role="list">
       <li><a href="../" aria-current="page">Work</a></li>
-      <li><a href="../../">Home</a></li>
           <li><a href="../../blog/">Insights</a></li>
     </ul>
     <div class="nav-lang" aria-label="Language">
@@ -124,7 +125,7 @@
         </div>
       </div>
       <div class="cs-hero__right">
-        <img src="/work/medme/Mockup-hero.webp" alt="MedMe app screens" loading="eager">
+        <img src="/work/medme/Mockup-hero.webp" width="1920" height="1076" alt="MedMe app screens" loading="eager">
       </div>
     </section>
 
@@ -219,7 +220,7 @@
             </div>
             <p>Every design decision in this product is a response to at least one of these fears. The token system and the matching logic each address all three simultaneously: that's where most of the complexity landed.</p>
             <div class="cs-diagram">
-              <img src="img/medme_user_flow.svg" width="100%" alt="Complete user flow: Patient, Professional, and Clinic across 8 steps from service selection to payment">
+              <img src="img/medme_user_flow.svg" width="1028" height="766" alt="Complete user flow: Patient, Professional, and Clinic across 8 steps from service selection to payment">
             </div>
           </div>
         </section>
@@ -288,31 +289,31 @@
             <div class="cs-screens cs-screens--5">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-month.webp" alt="Month picker, step 1 of 3" loading="lazy">
+                  <img src="img/schedule-month.webp" width="390" height="844" alt="Month picker, step 1 of 3" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Month picker · step 1 of 3</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-day.webp" alt="Day picker, step 2 of 3" loading="lazy">
+                  <img src="img/schedule-day.webp" width="390" height="844" alt="Day picker, step 2 of 3" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Day picker · step 2 of 3</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-time.webp" alt="Time picker with confirmed slots only" loading="lazy">
+                  <img src="img/schedule-time.webp" width="390" height="844" alt="Time picker with confirmed slots only" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Time picker · confirmed slots only</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-completed.webp" alt="Scheduling complete, time selected and continue button unlocked" loading="lazy">
+                  <img src="img/schedule-completed.webp" width="390" height="844" alt="Scheduling complete, time selected and continue button unlocked" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Time selected · continue unlocked</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/Select Unit.webp" alt="Unit list filtered by selected slot" loading="lazy">
+                  <img src="img/Select Unit.webp" width="390" height="844" alt="Unit list filtered by selected slot" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Unit list · filtered by selected slot</figcaption>
               </figure>
@@ -343,7 +344,7 @@
               </div>
             </div>
             <div class="cs-diagram">
-              <img src="img/medme_information_architecture.svg" width="100%" alt="Information architecture: service-first filter logic and pool overflow">
+              <img src="img/medme_information_architecture.svg" width="900" height="520" alt="Information architecture: service-first filter logic and pool overflow">
             </div>
             <p>When a clinic has no available professional, a pre-approved pool of third-party professionals fills the gap. Same certifications: ANVISA-registered clinics, CRBM-licensed professionals. Same vetting. To the patient, the card looks identical. To the clinic, the pool assignment is flagged in the operational dashboard. The answer is never "unavailable."</p>
             <p>After service, all three actors rate each other. The patient rates the professional. The professional rates the patient. The clinic rates the professional's execution. A three-sided rating creates accountability at every point in the chain, not just at the end where the patient leaves a review.</p>
@@ -380,13 +381,13 @@
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional.webp" alt="Waiting state with professional en route, credentials visible, status timeline" loading="lazy">
+                  <img src="img/waiting-for-professional.webp" width="780" height="1688" alt="Waiting state with professional en route, credentials visible, status timeline" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Waiting state · professional en route, credentials visible, status timeline</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-expanded.webp" alt="Credentials expanded, full professional card with license details" loading="lazy">
+                  <img src="img/waiting-for-professional-expanded.webp" width="390" height="844" alt="Credentials expanded, full professional card with license details" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Credentials expanded · full professional card</figcaption>
               </figure>
@@ -402,10 +403,10 @@
           <div class="cs-section__body">
             <p>Three tokens, each solving one problem independently, link into a chain that the patient, professional, and clinic all rely on from booking to payment release.</p>
             <div class="cs-diagram">
-              <img src="img/medme_token_system_diagram.svg" width="100%" alt="Token system: three-phase chain of custody">
+              <img src="img/medme_token_system_diagram.svg" width="880" height="300" alt="Token system: three-phase chain of custody">
             </div>
             <div class="cs-diagram">
-              <img src="img/medme_token_chain_custody.svg" width="100%" alt="Token system: chain of custody in three phases with bilateral flows">
+              <img src="img/medme_token_chain_custody.svg" width="680" height="638" alt="Token system: chain of custody in three phases with bilateral flows">
             </div>
             <p>The bilateral check-in references a pattern that already exists in services patients use daily: the bilateral PIN in Uber, ID verification in Airbnb. The difference is the context: this is a private home and a medical procedure.</p>
             <div class="cs-rejected">
@@ -415,19 +416,19 @@
             <div class="cs-screens cs-screens--3">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/token-swap-base.webp" alt="Token 2 empty state, waiting for both codes" loading="lazy">
+                  <img src="img/token-swap-base.webp" width="390" height="844" alt="Token 2 empty state, waiting for both codes" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Empty · waiting for both codes</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-error.webp" alt="Token 2 error state, wrong code entered" loading="lazy">
+                  <img src="img/waiting-for-professional-error.webp" width="390" height="844" alt="Token 2 error state, wrong code entered" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Error · wrong code entered</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-completed.webp" alt="Token 2 confirmed, both parties verified" loading="lazy">
+                  <img src="img/waiting-for-professional-completed.webp" width="390" height="844" alt="Token 2 confirmed, both parties verified" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Confirmed · both parties verified</figcaption>
               </figure>
@@ -451,25 +452,25 @@
             <div class="cs-screens cs-screens--4">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/Review.webp" alt="Checkout with 6-step progress indicator and order review" loading="lazy">
+                  <img src="img/Review.webp" width="390" height="844" alt="Checkout with 6-step progress indicator and order review" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Checkout · 6-step progress indicator</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/payment-base.webp" alt="Payment screen with MedMe balance and method selector" loading="lazy">
+                  <img src="img/payment-base.webp" width="390" height="992" alt="Payment screen with MedMe balance and method selector" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Payment · balance split + method selector</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/payment-selected.webp" alt="Payment with MedMe balance active and payment method selected for remaining amount" loading="lazy">
+                  <img src="img/payment-selected.webp" width="390" height="844" alt="Payment with MedMe balance active and payment method selected for remaining amount" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Payment · method selected, total split</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/confirm.webp" alt="Confirmation screen with escrow note and token protocol summary" loading="lazy">
+                  <img src="img/confirm.webp" width="430" height="932" alt="Confirmation screen with escrow note and token protocol summary" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Confirmation · escrow note + token protocol</figcaption>
               </figure>

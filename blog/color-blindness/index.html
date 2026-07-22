@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+  <title>Designing for color blindness: why red and green are never enough | Dhiego</title>
+  <meta name="description" content="The real taxonomy of color vision deficiency, why red/green pairs collapse first, the second-channel rule, and how to audit an existing design system for color-only failures.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Designing for color blindness: why red and green are never enough">
+  <meta property="og:description" content="The real taxonomy of color vision deficiency, why red/green pairs collapse first, the second-channel rule, and how to audit an existing design system for color-only failures.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/blog/colorblind-cover.svg">
+  <meta property="og:url" content="https://cristofolini.site/blog/color-blindness/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Designing for color blindness: why red and green are never enough">
+  <meta name="twitter:description" content="The real taxonomy of color vision deficiency, why red/green pairs collapse first, and how to audit a design system for color-only failures.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/colorblind-cover.svg">
+  <link rel="canonical" href="https://cristofolini.site/blog/color-blindness/">
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
+  <link href="../../assets/css/blog.css?v=2" rel="stylesheet">
+  <style>
+    .demo-panel {
+      margin: 32px 0;
+      padding: 28px;
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+    .article-body .demo-caption {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      text-align: center;
+      margin: 12px 0 32px;
+    }
+    .demo-svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+    /* Artifact 1: vision type comparison */
+    .demo-vision {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .demo-vision__panel--protanopia   { filter: url(#protanopia-filter); }
+    .demo-vision__panel--deuteranopia { filter: url(#deuteranopia-filter-cb); }
+    .demo-vision__panel--tritanopia   { filter: url(#tritanopia-filter); }
+    .demo-panel .demo-vision__label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--t3);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .demo-vision__state { height: 32px; margin-bottom: 8px; border: 2px solid; border-radius: 2px; }
+    .demo-vision__state--error   { border-color: #f87171; background: rgba(248,113,113,.14); }
+    .demo-vision__state--success { border-color: #4ade80; background: rgba(74,222,128,.14); }
+    .demo-vision__state--warning { border-color: #f5c518; background: rgba(245,197,24,.14); }
+
+    /* Artifact 2: form field state cards */
+    .demo-field-states {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .demo-field-states__col-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .demo-field-states__field { margin-bottom: 16px; }
+    .demo-field-states__field:last-child { margin-bottom: 0; }
+    .demo-field-states__label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-bottom: 8px;
+    }
+    .demo-field-states__input {
+      width: 100%;
+      padding: 10px 12px;
+      background: var(--bg2);
+      border: 2px solid;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--t1);
+    }
+    .demo-field-states__input--error   { border-color: #f87171; }
+    .demo-field-states__input--success { border-color: #4ade80; }
+    .demo-field-states__msg {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+    .demo-field-states__msg--error   { color: #e08585; }
+    .demo-field-states__msg--success { color: #7fbf6a; }
+    .demo-field-states__msg--hidden { visibility: hidden; }
+
+    /* Artifact 3: chart legend */
+    .demo-chart { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .demo-chart__col-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .demo-chart__plot {
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      padding: 16px;
+      height: 120px;
+      position: relative;
+    }
+    .demo-chart__line {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      height: 2px;
+    }
+    .demo-chart__line--churn  { top: 30px; background: #f87171; }
+    .demo-chart__line--growth { top: 70px; background: #4ade80; }
+    .demo-chart__line--growth-dashed {
+      top: 70px;
+      background: #4ade80;
+      background-image: linear-gradient(90deg, #4ade80 60%, transparent 60%);
+      background-size: 10px 2px;
+    }
+    .demo-chart__legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t2);
+    }
+    .demo-chart__swatch { display: inline-block; width: 10px; height: 10px; margin-right: 5px; vertical-align: -1px; border-radius: 50%; }
+    .demo-chart__legend--patterned .demo-chart__swatch { border-radius: 0; }
+    .demo-chart__swatch--churn  { background: #f87171; }
+    .demo-chart__swatch--growth { background: #4ade80; }
+
+    /* Artifact 4: testing tools checklist */
+    .demo-tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .demo-tools__card {
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      padding: 16px;
+    }
+    .demo-tools__name {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--t1);
+      margin-bottom: 4px;
+    }
+    .demo-tools__where {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--y);
+      margin-bottom: 8px;
+    }
+    .demo-tools__desc { font-size: 12px; color: var(--t2); line-height: 1.5; }
+
+    @media (max-width: 640px) {
+      .demo-vision { grid-template-columns: repeat(2, 1fr); }
+      .demo-field-states, .demo-chart, .demo-tools { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Designing for color blindness: why red and green are never enough",
+    "author": { "@type": "Person", "name": "Dhiego Cristofolini", "url": "https://cristofolini.site/" },
+    "datePublished": "2026-07-13",
+    "dateModified": "2026-07-13",
+    "image": "https://cristofolini.site/assets/img/blog/colorblind-cover.svg",
+    "description": "The real taxonomy of color vision deficiency, why red/green pairs collapse first, the second-channel rule, and how to audit an existing design system for color-only failures.",
+    "url": "https://cristofolini.site/blog/color-blindness/",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../" aria-current="page">Insights</a></li>
+    </ul>
+    <a href="../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <header class="article-hero">
+        <a href="../" class="article-hero__back">← Insights</a>
+        <span class="article-hero__tag">Accessibility</span>
+        <h1 class="article-hero__title">Designing for color blindness: why red and green are never enough</h1>
+        <div class="article-hero__meta">
+          <span>Dhiego Cristofolini</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>Jul 2026</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="article-cover">
+      <img
+        src="../../assets/img/blog/colorblind-gel-hero.webp" width="1456" height="816"
+        alt="Macro photograph of two sheets of red and green colored gel film curling over each other"
+        loading="eager"
+      >
+    </div>
+
+    <div class="article-layout">
+
+      <aside class="article-toc" aria-label="Table of contents">
+        <p class="article-toc__label">Contents</p>
+        <a href="#types" class="article-toc__link">01 The types</a>
+        <a href="#why-red-green" class="article-toc__link">02 Why red/green collapses first</a>
+        <a href="#second-channel" class="article-toc__link">03 Color is never the only channel</a>
+        <a href="#tools" class="article-toc__link">04 Testing tools</a>
+        <a href="#audit" class="article-toc__link">05 Auditing a design system</a>
+        <a href="#sources" class="article-toc__link">Sources</a>
+      </aside>
+
+      <article class="article-body">
+
+        <p><a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a> told the story of a backend developer who compensated silently for years before anyone on the team realized he was colorblind. It came out by accident, during a conversation about a football shirt, not during a design review. That piece covered the shape of the problem in a few paragraphs. This one covers the rest: the actual taxonomy of color vision deficiency, why red and green specifically collapse before any other pair, the fix that works regardless of which type someone has, and how to audit an existing design system for color-only failures.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">01</span>
+          <h2 class="article-section__title" id="types">The types, and why "colorblind" undersells it</h2>
+        </div>
+
+        <h3>1.1 Trichromacy, anomalous trichromacy, dichromacy</h3>
+
+        <p>Typical human color vision is trichromatic: three types of cone cells in the retina, each sensitive to a different range of wavelengths (roughly red, green, and blue), combine their signals to produce the full range of perceived color. Color vision deficiency is not a single condition. It is a spectrum of ways that system can differ.</p>
+
+        <p><strong>Anomalous trichromacy</strong> is the mildest and most common form: all three cone types are present, but one has a shifted sensitivity, so colors that should be distinct compress toward each other. <strong>Dichromacy</strong> is more severe: one cone type is missing entirely, and the affected part of the color spectrum collapses much further. "Colorblind" as a catch-all term flattens a real difference in severity that matters for how a design fails for different people.</p>
+
+        <h3>1.2 The four names that actually matter</h3>
+
+        <p><strong>Protanomaly</strong> (anomalous) and <strong>protanopia</strong> (dichromatic) affect the red-sensing cone. Reds appear darker and shift toward green.</p>
+
+        <p><strong>Deuteranomaly</strong> and <strong>deuteranopia</strong> affect the green-sensing cone. This is the most common category by far, and it produces the classic red-green confusion most people associate with the word "colorblind."</p>
+
+        <p><strong>Tritanomaly</strong> and <strong>tritanopia</strong> affect the blue-sensing cone. Far rarer than the red-green types, and it confuses blue with green and yellow with violet: a different failure mode that a red/green-only fix does not cover.</p>
+
+        <p><strong>Achromatopsia</strong>, total color blindness, is the rarest form: no functioning cone-based color vision at all, only shades of gray. Genuinely rare, but it is the useful worst case to test against, because an interface that survives achromatopsia simulation has, by definition, no color-only failures left.</p>
+
+        <div class="demo-panel">
+          <svg class="demo-svg-defs" aria-hidden="true" focusable="false">
+            <defs>
+              <filter id="protanopia-filter">
+                <feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"/>
+              </filter>
+              <filter id="deuteranopia-filter-cb">
+                <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/>
+              </filter>
+              <filter id="tritanopia-filter">
+                <feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/>
+              </filter>
+            </defs>
+          </svg>
+          <div class="demo-vision">
+            <div>
+              <p class="demo-vision__label">Normal vision</p>
+              <div class="demo-vision__state demo-vision__state--error" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--success" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--warning" aria-hidden="true"></div>
+            </div>
+            <div class="demo-vision__panel--protanopia">
+              <p class="demo-vision__label">Protanopia</p>
+              <div class="demo-vision__state demo-vision__state--error" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--success" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--warning" aria-hidden="true"></div>
+            </div>
+            <div class="demo-vision__panel--deuteranopia">
+              <p class="demo-vision__label">Deuteranopia</p>
+              <div class="demo-vision__state demo-vision__state--error" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--success" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--warning" aria-hidden="true"></div>
+            </div>
+            <div class="demo-vision__panel--tritanopia">
+              <p class="demo-vision__label">Tritanopia</p>
+              <div class="demo-vision__state demo-vision__state--error" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--success" aria-hidden="true"></div>
+              <div class="demo-vision__state demo-vision__state--warning" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Same three chips (error, success, warning) under four vision types. Red and green converge first and hardest.</p>
+
+        <h3>1.3 Who this actually affects</h3>
+
+        <p>Red-green color vision deficiency, taken together, affects approximately 8% of men and 0.5% of women of Northern European descent, the most commonly cited figures from the National Eye Institute. The prevalence varies somewhat by ancestry, but the order of magnitude does not: in a team of twelve, statistically about one person has some degree of it. In a product with any meaningful user base, the number of affected users is never rounding-error small.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">02</span>
+          <h2 class="article-section__title" id="why-red-green">Why red and green collapse first</h2>
+        </div>
+
+        <h3>2.1 The physiology, in one paragraph</h3>
+
+        <p>The red-sensing (L) and green-sensing (M) cones have absorption curves that already overlap heavily in people with typical color vision: they sit close together on the visible spectrum. Anomalous trichromacy shifts one curve slightly closer to the other; dichromacy removes one entirely. Either way, the gap between red and green is the smallest gap in the whole system to begin with, which is exactly why it is the first one to disappear. Blue sits far enough from both that tritan-type deficiencies are rarer and behave differently, which is also why a fix built only around "avoid red and green" does not fully cover blue-yellow confusion.</p>
+
+        <h3>2.2 Where this shows up in real interfaces</h3>
+
+        <p>Error and success states in red and green, side by side, are the single most common instance: a form field, a status badge, a build pipeline result. Heatmaps that run from green (good) to red (bad) fail the same way a traffic-light legend does. Line charts distinguishing series by hue alone, with no marker shape or direct labeling, become unreadable the moment two of the lines are a red and a green. None of these are exotic edge cases. They are default choices in most component libraries.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">03</span>
+          <h2 class="article-section__title" id="second-channel">Color is never the only channel</h2>
+        </div>
+
+        <h3>3.1 The second-channel rule</h3>
+
+        <p>The fix does not depend on knowing which type of color vision deficiency a given user has, because it does not try to pick "safer" colors. It adds a channel that does not depend on color perception at all: an icon, a text label, a position, a pattern. Error states get a red border and an error icon and a written message. Success states get the green confirmation and an explicit checkmark and a confirmation sentence. The color can stay exactly as designed. It just stops being the only thing carrying the meaning.</p>
+
+        <div class="demo-panel">
+          <div class="demo-field-states">
+            <div>
+              <p class="demo-field-states__col-title">Color only</p>
+              <div class="demo-field-states__field">
+                <label class="demo-field-states__label">Email</label>
+                <input class="demo-field-states__input demo-field-states__input--error" value="dhiego@" disabled>
+                <p class="demo-field-states__msg demo-field-states__msg--hidden">placeholder</p>
+              </div>
+              <div class="demo-field-states__field">
+                <label class="demo-field-states__label">Email</label>
+                <input class="demo-field-states__input demo-field-states__input--success" value="dhiego@cristofolini.site" disabled>
+                <p class="demo-field-states__msg demo-field-states__msg--hidden">placeholder</p>
+              </div>
+            </div>
+            <div>
+              <p class="demo-field-states__col-title">Color + icon + text</p>
+              <div class="demo-field-states__field">
+                <label class="demo-field-states__label">Email</label>
+                <input class="demo-field-states__input demo-field-states__input--error" value="dhiego@" disabled>
+                <p class="demo-field-states__msg demo-field-states__msg--error">⊗ Enter a complete email address.</p>
+              </div>
+              <div class="demo-field-states__field">
+                <label class="demo-field-states__label">Email</label>
+                <input class="demo-field-states__input demo-field-states__input--success" value="dhiego@cristofolini.site" disabled>
+                <p class="demo-field-states__msg demo-field-states__msg--success">✓ Looks good.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Same two states. Run both columns through the deuteranopia filter above: only one column still tells you which field has a problem.</p>
+
+        <h3>3.2 Data visualization needs its own version of the rule</h3>
+
+        <p>Charts and dashboards fail this in a way that plain UI states usually do not: there is often no room for an icon next to a data point, and a written label next to every line defeats the purpose of a chart. The equivalent fixes are direct labeling at the end of each line instead of a color-coded legend, distinct marker shapes or dash patterns per series in addition to color, and choosing palettes built for this. Color Brewer's qualitative and diverging sets, or Okabe-Ito, are standard, tested references, not hues picked by eye.</p>
+
+        <div class="demo-panel">
+          <div class="demo-chart">
+            <div>
+              <p class="demo-chart__col-title">Color-only legend</p>
+              <div class="demo-chart__plot">
+                <div class="demo-chart__line demo-chart__line--churn"></div>
+                <div class="demo-chart__line demo-chart__line--growth"></div>
+              </div>
+              <div class="demo-chart__legend">
+                <span><span class="demo-chart__swatch demo-chart__swatch--churn"></span>Churn</span>
+                <span><span class="demo-chart__swatch demo-chart__swatch--growth"></span>Growth</span>
+              </div>
+            </div>
+            <div>
+              <p class="demo-chart__col-title">Direct label + line style</p>
+              <div class="demo-chart__plot">
+                <div class="demo-chart__line demo-chart__line--churn"></div>
+                <div class="demo-chart__line demo-chart__line--growth-dashed"></div>
+              </div>
+              <div class="demo-chart__legend demo-chart__legend--patterned">
+                <span>▬ Churn</span>
+                <span>┄ Growth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Same two series. Solid vs. dashed plus a direct label survives a colorblind reader; a colored dot next to a word does not.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">04</span>
+          <h2 class="article-section__title" id="tools">Testing tools designers can use today</h2>
+        </div>
+
+        <h3>4.1 What is already on your machine</h3>
+
+        <p>No purchase or install required for the first check. Chrome DevTools has a built-in vision deficiency emulator: open DevTools, Command/Ctrl+Shift+P, run "Show Rendering," and use "Emulate vision deficiencies" to view the live page as protanopia, deuteranopia, tritanopia, or achromatopsia. macOS ships a similar simulator inside Accessibility settings (Display → Color Filters). Neither requires the design file to be finished. Both work on a live, running product.</p>
+
+        <div class="demo-panel">
+          <div class="demo-tools">
+            <div class="demo-tools__card">
+              <p class="demo-tools__name">Chrome DevTools</p>
+              <p class="demo-tools__where">Built in, free</p>
+              <p class="demo-tools__desc">Rendering tab → Emulate vision deficiencies. Works on any live page, no plugin.</p>
+            </div>
+            <div class="demo-tools__card">
+              <p class="demo-tools__name">Stark</p>
+              <p class="demo-tools__where">Figma / Sketch / Adobe XD plugin</p>
+              <p class="demo-tools__desc">Simulates vision types directly inside the design file, before handoff.</p>
+            </div>
+            <div class="demo-tools__card">
+              <p class="demo-tools__name">Color Oracle</p>
+              <p class="demo-tools__where">Free desktop app, Win/Mac/Linux</p>
+              <p class="demo-tools__desc">Simulates across the whole screen, not just one app (useful for reviewing a live prototype).</p>
+            </div>
+            <div class="demo-tools__card">
+              <p class="demo-tools__name">Sim Daltonism</p>
+              <p class="demo-tools__where">Free Mac app</p>
+              <p class="demo-tools__desc">A floating window that live-simulates whatever is behind it, updating as you work.</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Pick one. The point is running it before handoff, not which one.</p>
+
+        <h3>4.2 The two-minute check</h3>
+
+        <p>Turn on a simulator. Walk every state your interface communicates through color alone: form errors, success confirmations, warning banners, chart legends, status dots, availability indicators. If any of them become ambiguous or indistinguishable, that state fails, regardless of what the contrast ratio between the colors measures. Color vision deficiency and low contrast are different axes of the same underlying problem, covered in <a href="../contrast-aa-vs-aaa/">AA vs AAA: what these levels actually mean and why your disabled button is failing both</a>: a color pair can pass contrast math and still be indistinguishable to a colorblind user.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">05</span>
+          <h2 class="article-section__title" id="audit">Auditing an existing design system for color-only failures</h2>
+        </div>
+
+        <h3>5.1 The checklist</h3>
+
+        <p>Go through the component library state by state, not screen by screen. A color-only failure in a shared button or badge component repeats everywhere that component is used, so fixing it once at the source fixes every instance.</p>
+
+        <p>For every component that communicates a state: error, success, warning, info, disabled, selected, active. For each state, confirm there is a non-color signal present (an icon, a label, a position change, an underline, a border style) and that the signal is visible when the color is removed entirely (run the achromatopsia filter as the strictest test; if a state still reads correctly in grayscale, every less severe form of color vision deficiency reads it correctly too).</p>
+
+        <p>Do the same pass for data visualization components separately. Charts, graphs, and heatmaps almost always live outside the core component library and get missed by a UI-only audit, even when the UI components themselves are already fixed.</p>
+
+        <h3>5.2 Document the fix once, not per instance</h3>
+
+        <p>Once a state's non-color signal is decided at the token or component level (this error state always gets this icon, this pattern), every team building on top of that system inherits the fix automatically. Leaving it to individual screens to remember means the fix has to be rediscovered, and re-forgotten, every time someone builds a new screen.</p>
+
+        <h2 id="sources">Sources</h2>
+
+        <ul>
+          <li>National Eye Institute. <em>Color Blindness.</em> <a href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness" target="_blank" rel="noopener noreferrer">nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness</a></li>
+          <li>National Library of Medicine, MedlinePlus. <em>Color vision deficiency.</em> <a href="https://medlineplus.gov/genetics/condition/color-vision-deficiency/" target="_blank" rel="noopener noreferrer">medlineplus.gov/genetics/condition/color-vision-deficiency</a></li>
+          <li>W3C Web Accessibility Initiative. <em>Understanding SC 1.4.1: Use of Color.</em> <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color" target="_blank" rel="noopener noreferrer">w3.org/WAI/WCAG22/Understanding/use-of-color</a></li>
+          <li>Okabe, M. and Ito, K. <em>Color Universal Design (CUD): How to make figures and presentations that are friendly to Colorblind people.</em> <a href="https://jfly.uni-koeln.de/color/" target="_blank" rel="noopener noreferrer">jfly.uni-koeln.de/color</a></li>
+          <li>Colblindor. <em>Coblis: Color Blindness Simulator.</em> <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/" target="_blank" rel="noopener noreferrer">color-blindness.com/coblis-color-blindness-simulator</a></li>
+          <li>WebAIM. <em>Screen Reader User Survey #10 Results.</em> <a href="https://webaim.org/projects/screenreadersurvey10/" target="_blank" rel="noopener noreferrer">webaim.org/projects/screenreadersurvey10</a></li>
+        </ul>
+
+        <div class="article-end">
+          <section class="newsletter-section" aria-labelledby="newsletter-article-title">
+            <div class="newsletter-inner">
+              <p class="newsletter-eyebrow">Newsletter</p>
+              <h2 class="newsletter-title" id="newsletter-article-title">Get the next one in your inbox</h2>
+              <p class="newsletter-desc">New posts, design notes, and the occasional useful thing. No noise, no sales pitch.</p>
+              <script async data-uid="87cb6ee129" src="https://cristofolini.kit.com/87cb6ee129/index.js"></script>
+              <p class="newsletter-disclaimer">No spam. Unsubscribe any time.</p>
+            </div>
+          </section>
+        </div>
+
+      </article>
+    </div>
+
+  </main>
+
+  <a href="../../work/" class="cta-section" aria-label="View selected work">
+    <p class="cta-section__eyebrow">Selected work</p>
+    <p class="cta-section__headline">See what<br><em>I've built.</em></p>
+    <span class="cta-section__arrow" aria-hidden="true">→</span>
+  </a>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../" class="footer__nav-link">Home</a>
+        <a href="../../work/" class="footer__nav-link">Work</a>
+        <a href="../" class="footer__nav-link">Insights</a>
+        <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+  <script>
+    (function () {
+      var toc = document.querySelector('.article-toc');
+      if (!toc) return;
+      var links = Array.from(toc.querySelectorAll('.article-toc__link'));
+      var targets = links.map(function(l) {
+        return document.querySelector(l.getAttribute('href'));
+      }).filter(Boolean);
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) { l.classList.remove('is-active'); });
+            var active = toc.querySelector('a[href="#' + e.target.id + '"]');
+            if (active) active.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-15% 0px -75% 0px' });
+      targets.forEach(function(h) { obs.observe(h); });
+    })();
+  </script>
+
+</body>
+</html>

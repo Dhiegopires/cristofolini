@@ -12,14 +12,14 @@
     gtag('config', 'G-M378PSJ10R');
   </script>
   <title>AA vs AAA: what these levels actually mean | Dhiego</title>
-  <meta name="description" content="WCAG's three conformance levels, how the contrast ratio is really calculated, and where AAA is the true minimum — including the disabled button state most design systems get wrong.">
+  <meta name="description" content="WCAG's three conformance levels, how the contrast ratio is really calculated, and where AAA is the true minimum, including the disabled button state most design systems get wrong.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Dhiego Cristofolini">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
   <meta property="og:title" content="AA vs AAA: what these levels actually mean and why your disabled button is failing both">
-  <meta property="og:description" content="WCAG's three conformance levels, how the contrast ratio is really calculated, and where AAA is the true minimum — including the disabled button state most design systems get wrong.">
+  <meta property="og:description" content="WCAG's three conformance levels, how the contrast ratio is really calculated, and where AAA is the true minimum, including the disabled button state most design systems get wrong.">
   <meta property="og:image" content="https://cristofolini.site/assets/img/blog/contrast-cover.svg">
   <meta property="og:url" content="https://cristofolini.site/blog/contrast-aa-vs-aaa/">
   <meta name="twitter:card" content="summary_large_image">
@@ -42,14 +42,14 @@
     }
     .article-body .demo-caption {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .04em;
       color: var(--t3);
       text-align: center;
       margin: 12px 0 32px;
     }
 
-    /* Artifact 1 — contrast ratio scale */
+    /* Artifact 1: contrast ratio scale */
     .demo-scale__track {
       position: relative;
       height: 20px;
@@ -61,7 +61,7 @@
       top: -22px;
       transform: translateX(-50%);
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       color: var(--t3);
       white-space: nowrap;
     }
@@ -74,16 +74,17 @@
       height: 42px;
       background: var(--b1);
     }
-    .demo-scale__tick--aa { color: var(--t1); }
+    .demo-scale__tick--min { left: 10%; }
+    .demo-scale__tick--aa { color: var(--t1); left: 17.5%; }
     .demo-scale__tick--aa::after { background: var(--t2); }
-    .demo-scale__tick--aaa { color: var(--y); }
+    .demo-scale__tick--aaa { color: var(--y); left: 30%; }
     .demo-scale__tick--aaa::after { background: var(--y); width: 2px; }
     .demo-scale__ends {
       display: flex;
       justify-content: space-between;
       margin-top: 32px;
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       color: var(--t3);
     }
     .demo-scale__swatches {
@@ -105,14 +106,17 @@
     }
     .demo-scale__swatch-ratio {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .04em;
       color: #6b6558;
     }
     .demo-scale__swatch-ratio--aa { color: #8a6d1f; }
     .demo-scale__swatch-ratio--aaa { color: #4f7a3d; }
+    .demo-scale__swatch-sample--fail { color: #9CA3AF; }
+    .demo-scale__swatch-sample--aa   { color: #767676; }
+    .demo-scale__swatch-sample--aaa  { color: #595959; }
 
-    /* Artifact 2 — contrast check methods */
+    /* Artifact 2: contrast check methods */
     .demo-methods {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -120,7 +124,7 @@
     }
     .demo-methods__title {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--t2);
@@ -145,6 +149,7 @@
     .demo-methods__swatch {
       width: 18px;
       height: 18px;
+      background: #767676;
       border: 1px solid var(--b1);
       flex-shrink: 0;
     }
@@ -158,7 +163,7 @@
       display: flex;
       justify-content: space-between;
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 12px;
       color: var(--t2);
       padding: 8px 0;
       border-bottom: 1px solid var(--b0);
@@ -178,7 +183,7 @@
     }
     .demo-methods__badge {
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .06em;
       padding: 3px 8px;
       border: 1px solid;
@@ -186,10 +191,10 @@
     .demo-methods__badge--pass { color: #7fbf6a; border-color: rgba(127,191,106,.4); }
     .demo-methods__badge--fail { color: #e08585; border-color: rgba(224,133,133,.4); }
 
-    /* Artifact 3 — inventory cards */
+    /* Artifact 3: inventory cards */
     .demo-inventory__row-label {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--t3);
@@ -212,7 +217,7 @@
     .demo-inventory__card:nth-child(3) { border-color: #f87171; }
     .demo-inventory__icon {
       display: inline-block;
-      font-size: 11px;
+      font-size: 12px;
       margin-bottom: 8px;
       color: var(--t2);
     }
@@ -224,13 +229,13 @@
     }
     .demo-inventory__product {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       color: var(--t3);
       margin-bottom: 10px;
     }
     .demo-inventory__ratio {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
     }
     .demo-inventory--fail .demo-inventory__state,
     .demo-inventory--fail .demo-inventory__ratio { color: #5c584f; }
@@ -238,7 +243,7 @@
     .demo-inventory--pass .demo-inventory__ratio { color: var(--t1); }
     .demo-inventory--pass .demo-inventory__ratio { color: var(--y); }
 
-    /* Artifact 4 — disabled button states */
+    /* Artifact 4: disabled button states */
     .demo-disabled {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -267,7 +272,7 @@
     .demo-disabled__ratio {
       margin-top: 10px;
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .04em;
       color: var(--t3);
     }
@@ -301,6 +306,8 @@
 </head>
 <body>
 
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -308,12 +315,11 @@
       <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
     <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <ul class="nav-links" role="list">
       <li><a href="../../work/">Work</a></li>
-      <li><a href="../../">Home</a></li>
       <li><a href="../" aria-current="page">Insights</a></li>
     </ul>
     <a href="../../contact/" class="nav-cta">Contact</a>
@@ -338,7 +344,7 @@
 
     <div class="article-cover">
       <img
-        src="../../assets/img/blog/contrast-paper-hero.webp"
+        src="../../assets/img/blog/contrast-paper-hero.webp" width="1024" height="538"
         alt="Macro photograph of a curved sheet of paper transitioning from pale warm gray to near-black along a diagonal light gradient"
         loading="eager"
       >
@@ -360,7 +366,7 @@
 
         <p>WCAG runs on a three-tier conformance system: A, AA, and AAA. Most designers have heard of AA. Fewer understand where those letters come from, what separates one level from another, and why the distinction matters for decisions made daily in any design tool.</p>
 
-        <p>Contrast is one of the six most common accessibility failures on the web — covered in full in <a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a> This article goes deeper on what the levels mean, how the ratio works, and where each threshold applies in a real product.</p>
+        <p>Contrast is one of the six most common accessibility failures on the web, covered in full in <a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a> This article goes deeper on what the levels mean, how the ratio works, and where each threshold applies in a real product.</p>
 
         <div class="article-section__hd">
           <span class="article-section__num">01</span>
@@ -371,7 +377,7 @@
 
         <p>The Web Content Accessibility Guidelines were first published by the W3C in May 1999. From the beginning, the working group recognized that a binary pass/fail standard would not cover the full range of digital content, user needs, and production constraints. A three-tier system was the solution.</p>
 
-        <p>The letters are conformance levels: A is the minimum, AA is the mid-range standard accepted globally as the legal baseline, and AAA is the highest achievable level. Each level is cumulative — reaching AA requires satisfying all Level A and Level AA criteria, and AAA requires satisfying everything across all three.</p>
+        <p>The letters are conformance levels: A is the minimum, AA is the mid-range standard accepted globally as the legal baseline, and AAA is the highest achievable level. Each level is cumulative: reaching AA requires satisfying all Level A and Level AA criteria, and AAA requires satisfying everything across all three.</p>
 
         <p>AAA as a general policy for entire sites is not recommended by the W3C itself, because some content types cannot satisfy all AAA criteria by their nature. Saturated semantic colors are a concrete example, covered in section 3.2.</p>
 
@@ -397,9 +403,9 @@
 
         <div class="demo-panel">
           <div class="demo-scale__track">
-            <span class="demo-scale__tick" style="left:10%">3:1</span>
-            <span class="demo-scale__tick demo-scale__tick--aa" style="left:17.5%">4.5:1</span>
-            <span class="demo-scale__tick demo-scale__tick--aaa" style="left:30%">7:1</span>
+            <span class="demo-scale__tick demo-scale__tick--min">3:1</span>
+            <span class="demo-scale__tick demo-scale__tick--aa">4.5:1</span>
+            <span class="demo-scale__tick demo-scale__tick--aaa">7:1</span>
           </div>
           <div class="demo-scale__ends">
             <span>1:1</span>
@@ -407,20 +413,20 @@
           </div>
           <div class="demo-scale__swatches">
             <div class="demo-scale__swatch">
-              <p class="demo-scale__swatch-sample" style="color:#9CA3AF">Save changes</p>
+              <p class="demo-scale__swatch-sample demo-scale__swatch-sample--fail">Save changes</p>
               <p class="demo-scale__swatch-ratio">2.85:1 · fails</p>
             </div>
             <div class="demo-scale__swatch">
-              <p class="demo-scale__swatch-sample" style="color:#767676">Save changes</p>
+              <p class="demo-scale__swatch-sample demo-scale__swatch-sample--aa">Save changes</p>
               <p class="demo-scale__swatch-ratio demo-scale__swatch-ratio--aa">4.54:1 · AA</p>
             </div>
             <div class="demo-scale__swatch">
-              <p class="demo-scale__swatch-sample" style="color:#595959">Save changes</p>
+              <p class="demo-scale__swatch-sample demo-scale__swatch-sample--aaa">Save changes</p>
               <p class="demo-scale__swatch-ratio demo-scale__swatch-ratio--aaa">7.0:1 · AAA</p>
             </div>
           </div>
         </div>
-        <p class="demo-caption">The WCAG contrast scale, 1:1 to 21:1. Same white background throughout — only the gray gets darker.</p>
+        <p class="demo-caption">The WCAG contrast scale, 1:1 to 21:1. Same white background throughout, only the gray gets darker.</p>
 
         <div class="article-section__hd">
           <span class="article-section__num">02</span>
@@ -437,7 +443,7 @@
 
         <p>L1 is the relative luminance of the lighter color, L2 the darker. The scale runs from 1:1 (identical colors) to 21:1 (black on white).</p>
 
-        <p>A common misconception: two colors that look distinct because of their hue can still fail contrast because their luminance values are close. Vivid red and vivid green are a classic case — they look very different, but both sit in a mid-luminance range that produces a low ratio against each other and against many neutral backgrounds.</p>
+        <p>A common misconception: two colors that look distinct because of their hue can still fail contrast because their luminance values are close. Vivid red and vivid green are a classic case: they look very different, but both sit in a mid-luminance range that produces a low ratio against each other and against many neutral backgrounds.</p>
 
         <h3>2.2 Why hex codes alone are not enough</h3>
 
@@ -449,7 +455,7 @@
 
         <h3>2.3 Checking contrast without a plugin</h3>
 
-        <p>Before contrast checkers existed inside design tools, a practical workaround was to screenshot the design, open it in Photoshop, and desaturate the image. Desaturation strips hue and leaves only luminance visible — low-contrast pairs show up as near-identical grays. Imprecise, but effective enough to catch obvious failures before a spec reached engineering.</p>
+        <p>Before contrast checkers existed inside design tools, a practical workaround was to screenshot the design, open it in Photoshop, and desaturate the image. Desaturation strips hue and leaves only luminance visible. Low-contrast pairs show up as near-identical grays. Imprecise, but effective enough to catch obvious failures before a spec reached engineering.</p>
 
         <p>Today, two options require nothing installed:</p>
 
@@ -463,7 +469,7 @@
               <p class="demo-methods__title">Chrome DevTools</p>
               <div class="demo-methods__devtools">
                 <div class="demo-methods__devtools-row">
-                  <span class="demo-methods__swatch" style="background:#767676"></span>
+                  <span class="demo-methods__swatch"></span>
                   <span>#767676</span>
                 </div>
                 <div class="demo-methods__devtools-ratio">Contrast ratio: 4.54</div>
@@ -502,7 +508,7 @@
 
         <p><strong>Feedback messages.</strong> Error states, validation messages, success confirmations, warnings. If a user submits a form incorrectly and cannot read the error because the text sits at 3.1:1, they have no information about what went wrong. They try again, fail again, and leave. This is the moment the interface most needs to communicate clearly with someone already confused. AAA, without exception.</p>
 
-        <p>In a design system context, tokens like <code>foreground-on-state-strong</code> and <code>foreground-on-state-subtle</code> should be defined against their intended backgrounds at AAA from the start. If the error red achieves 4.5:1 as a background, the foreground token on top needs to compensate. White text on a dark red often achieves AAA where the reverse does not. The decision happens at the token level — if the token is wrong, every component referencing it ships with the same failure.</p>
+        <p>In a design system context, tokens like <code>foreground-on-state-strong</code> and <code>foreground-on-state-subtle</code> should be defined against their intended backgrounds at AAA from the start. If the error red achieves 4.5:1 as a background, the foreground token on top needs to compensate. White text on a dark red often achieves AAA where the reverse does not. The decision happens at the token level: if the token is wrong, every component referencing it ships with the same failure.</p>
 
         <p><strong>Available actions.</strong> The label on any interactive element the user can currently activate. AAA.</p>
 
@@ -533,7 +539,7 @@
 
         <p>During work on Instivo, an enterprise retail governance platform, the product dashboard surfaced operational inventory data in cards: products with excess stock, products with low stock, and products already out of stock. Three states, three colors, and an immediate operational consequence if any was misread.</p>
 
-        <p>The user at that dashboard is a buyer or warehouse manager making procurement decisions under time pressure. A critical alert missed because the out-of-stock label rendered at 3.2:1 means an order not placed and a shelf that stays empty. AAA was the requirement — not because the numbers were monetary, but because misreading them had direct operational cost.</p>
+        <p>The user at that dashboard is a buyer or warehouse manager making procurement decisions under time pressure. A critical alert missed because the out-of-stock label rendered at 3.2:1 means an order not placed and a shelf that stays empty. AAA was the requirement, not because the numbers were monetary, but because misreading them had direct operational cost.</p>
 
         <div class="demo-panel">
           <p class="demo-inventory__row-label">Color borders only, low contrast</p>
@@ -593,17 +599,17 @@
 
         <p>Users do not file support tickets about contrast. They experience friction, feel confused, and close the tab. The product learns nothing.</p>
 
-        <p>According to WebAIM's 2025 Million report, contrast failures appear on 79.1% of homepages analyzed — a number nearly constant since 2019. As covered in <a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions</a>, these failures are design decisions made before code exists. They produce no crash, no 404, no log entry. Just a session that ended earlier than it should have.</p>
+        <p>According to WebAIM's 2025 Million report, contrast failures appear on 79.1% of homepages analyzed, a number nearly constant since 2019. As covered in <a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions</a>, these failures are design decisions made before code exists. They produce no crash, no 404, no log entry. Just a session that ended earlier than it should have.</p>
 
         <p>Contrast failures will not surface in user feedback before they are large enough to show in retention metrics. By then the damage is already distributed across thousands of sessions. Test it before it ships.</p>
 
         <h3>5.2 The disabled button state</h3>
 
-        <p>Stakeholders see products in controlled conditions — demos, walkthroughs, review sessions where someone guides the flow. They see the happy path. Buttons enabled, forms complete.</p>
+        <p>Stakeholders see products in controlled conditions: demos, walkthroughs, review sessions where someone guides the flow. They see the happy path. Buttons enabled, forms complete.</p>
 
         <p>The disabled button state appears when the user has not yet done what the interface requires: before a date is selected in a booking flow, before required fields are filled in a multi-step form, before card details are entered at checkout. Visible to the user who is stuck. Invisible to the stakeholder in a demo.</p>
 
-        <p>The standard approach is opacity reduction. Lower the opacity, the button looks inactive. Opacity reduction also lowers contrast proportionally. A button label that passes AA at full opacity can drop to 2:1 at 40% opacity. The user with low vision cannot read what the button says. They receive one piece of information — something is unavailable — with none of the context about what that thing is or how to activate it.</p>
+        <p>The standard approach is opacity reduction. Lower the opacity, the button looks inactive. Opacity reduction also lowers contrast proportionally. A button label that passes AA at full opacity can drop to 2:1 at 40% opacity. The user with low vision cannot read what the button says. They receive one piece of information (something is unavailable) with none of the context about what that thing is or how to activate it.</p>
 
         <p>WCAG 2.2 includes a contrast exemption for disabled states, because disabled elements are intentionally de-emphasized. That exemption creates flexibility. Using that flexibility to strip the label of legibility removes information from exactly the users who need it most.</p>
 

@@ -33,7 +33,7 @@
   padding: var(--sp-8) var(--sp-8);
   border-right: 1px solid var(--b0);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .12em;
   text-transform: uppercase;
   text-decoration: none;
@@ -108,6 +108,7 @@
 @media (min-width: 768px) {
   .cs-hero {
     grid-template-columns: 1fr 1fr;
+    min-height: -webkit-fill-available;
     min-height: 100vh;
   }
 }
@@ -142,7 +143,7 @@
 
 .cs-eyebrow {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--t3);
@@ -198,7 +199,7 @@
 
 .cs-impact-label {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--t3);
   letter-spacing: .05em;
@@ -231,7 +232,7 @@
 
 .cs-meta-label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--t3);
@@ -370,7 +371,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-toc__item {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.4;
   letter-spacing: .06em;
   color: var(--t2);
@@ -413,7 +414,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-section__num {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .1em;
   color: var(--t3);
   flex-shrink: 0;
@@ -483,7 +484,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-fear-card__label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--y);
@@ -497,7 +498,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 }
 
 .cs-fear-card__body {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.6;
   color: var(--t2);
 }
@@ -529,14 +530,14 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-compare__label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--t3);
 }
 
 .cs-compare__text {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.6;
   color: var(--t2);
 }
@@ -549,7 +550,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
   border: 1px solid rgba(127, 32, 32, .25);
   border-radius: 8px;
   padding: var(--sp-5) var(--sp-6);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.65;
   color: var(--t2);
   display: flex;
@@ -559,10 +560,10 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-rejected__label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: #f87060;
+  color: var(--danger);
   opacity: .7;
 }
 
@@ -580,7 +581,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 .cs-edge-cases__label {
   display: block;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--t3);
@@ -615,7 +616,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 }
 
 .cs-edge-response {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.5;
   color: var(--t2);
 }
@@ -641,7 +642,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-addresses__label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--y);
@@ -649,7 +650,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 }
 
 .cs-addresses__metric {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.5;
   color: var(--t2);
 }
@@ -757,14 +758,14 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 }
 
 .cs-benchmark-desc {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.55;
   color: var(--t2);
 }
 
 .cs-benchmark-source {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .08em;
   color: var(--t3);
   margin-top: var(--sp-2);
@@ -781,7 +782,7 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-trust-pill {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .06em;
   color: var(--t2);
   background: var(--bg1);
@@ -850,5 +851,5 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-lightbox__close:hover {
   border-color: rgba(255, 255, 255, .6);
-  color: #fff;
+  color: var(--t1);
 }

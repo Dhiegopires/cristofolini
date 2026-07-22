@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .fd { font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif; }
+      .fm { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+    </style>
+    <filter id="og-deuteranopia">
+      <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0908"/>
+
+  <rect x="0" y="0"   width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+  <rect x="0" y="90"  width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+  <rect x="0" y="180" width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+  <rect x="0" y="270" width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+  <rect x="0" y="360" width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+  <rect x="0" y="450" width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+  <rect x="0" y="540" width="1200" height="1" fill="#f3b02e" opacity="0.04"/>
+
+  <text x="64" y="480" class="fd" font-size="320" fill="#f3b02e" opacity="0.06">8%</text>
+
+  <line x1="700" y1="72" x2="700" y2="558" stroke="#f3b02e" stroke-width="1" opacity="0.1"/>
+
+  <!-- LEFT COLUMN -->
+  <rect x="72" y="72" width="178" height="28" fill="rgba(243,176,47,0.08)" stroke="rgba(243,176,47,0.28)" stroke-width="1"/>
+  <text x="84" y="91" class="fm" font-size="10" fill="#f3b02e" letter-spacing="3">ACCESSIBILITY</text>
+
+  <rect x="72" y="120" width="220" height="2" fill="#f3b02e"/>
+
+  <text x="68" y="212" class="fd" font-size="58" fill="#f0ebe0">DESIGNING FOR</text>
+  <text x="68" y="280" class="fd" font-size="50" fill="#f3b02e">COLOR BLINDNESS</text>
+
+  <text x="72" y="328" class="fm" font-size="13" fill="#8a8678">Why red and green are never enough,</text>
+  <text x="72" y="348" class="fm" font-size="13" fill="#8a8678">and how to audit a design system for it.</text>
+
+  <text x="72" y="580" class="fm" font-size="10" fill="#3a3733" letter-spacing="2">CRISTOFOLINI.SITE — INSIGHTS — JUL 2026</text>
+
+  <!-- RIGHT COLUMN — state chips under normal vs deuteranopia -->
+  <text x="736" y="114" class="fm" font-size="9" fill="#474440" letter-spacing="3">SAME THREE STATES, TWO VISION TYPES</text>
+  <rect x="736" y="122" width="392" height="1" fill="rgba(255,255,255,0.07)"/>
+
+  <text x="736" y="156" class="fm" font-size="10" fill="#8a8678" letter-spacing="1">NORMAL VISION</text>
+  <rect x="736" y="166" width="120" height="36" rx="2" fill="rgba(248,113,113,.14)" stroke="#f87171" stroke-width="2"/>
+  <rect x="868" y="166" width="120" height="36" rx="2" fill="rgba(74,222,128,.14)" stroke="#4ade80" stroke-width="2"/>
+  <rect x="1000" y="166" width="128" height="36" rx="2" fill="rgba(245,197,24,.14)" stroke="#f5c518" stroke-width="2"/>
+
+  <text x="736" y="240" class="fm" font-size="10" fill="#f3b02e" letter-spacing="1">DEUTERANOPIA SIMULATION</text>
+  <g filter="url(#og-deuteranopia)">
+    <rect x="736" y="250" width="120" height="36" rx="2" fill="rgba(248,113,113,.14)" stroke="#f87171" stroke-width="2"/>
+    <rect x="868" y="250" width="120" height="36" rx="2" fill="rgba(74,222,128,.14)" stroke="#4ade80" stroke-width="2"/>
+    <rect x="1000" y="250" width="128" height="36" rx="2" fill="rgba(245,197,24,.14)" stroke="#f5c518" stroke-width="2"/>
+  </g>
+
+  <rect x="736" y="470" width="392" height="1" fill="rgba(255,255,255,0.07)"/>
+  <text x="736" y="488" class="fm" font-size="9" fill="#2e2c29" letter-spacing="1">ERROR AND SUCCESS BECOME THE SAME COLOR.</text>
+</svg>

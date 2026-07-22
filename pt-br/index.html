@@ -198,7 +198,7 @@
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--t2);
@@ -236,20 +236,6 @@
     }
 
 
-    .hero__scroll-hint {
-      position: absolute;
-      bottom: 40px;
-      left: var(--gap);
-      font-family: var(--mono);
-      font-size: 9px;
-      color: var(--t3);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      animation: ds-pulse 2.4s ease-in-out infinite;
-    }
-
     /* ── Marquee ── */
     .mq--logos {
       border-top: 0;
@@ -263,7 +249,7 @@
       margin: 0 0 22px;
       text-align: center;
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .16em;
       text-transform: uppercase;
       color: var(--t3);
@@ -361,7 +347,7 @@
     }
     .exp-stat__lbl {
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 12px;
       color: var(--t3);
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -373,7 +359,7 @@
       display: inline-block;
       margin-top: 24px;
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--t2);
@@ -417,7 +403,7 @@
       padding: 2px 8px;
       border: 1px solid var(--b0);
       font-family: var(--mono);
-      font-size: 8px;
+      font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
       line-height: 1.1;
@@ -453,7 +439,7 @@
       align-items: center;
       gap: 8px;
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--t3);
@@ -536,10 +522,6 @@
         overflow-wrap: break-word;
       }
 
-      .hero__scroll-hint {
-        display: none;
-      }
-
       .hero__portrait-wrap {
         width: 100%;
       }
@@ -616,7 +598,7 @@
       align-items: baseline;
       gap: 20px;
     }
-    .service-item__num   { font-family:var(--mono); font-size:9px; color:var(--y); letter-spacing:.12em; flex-shrink:0; }
+    .service-item__num   { font-family:var(--mono); font-size: 12px; color:var(--y); letter-spacing:.12em; flex-shrink:0; }
     .service-item__title { font-weight:600; font-size:18px; color:var(--t1); transition:color .2s; }
 
     .service-item__desc {
@@ -714,7 +696,7 @@
     .carousel-card__desc  { font-size: 13px; color: var(--t2); line-height: 1.55; }
     .carousel-card__cta   {
       display: inline-flex; align-items: center; gap: 6px;
-      font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
       color: var(--y); margin-top: 6px;
       transition: gap .2s;
     }
@@ -751,7 +733,7 @@
     .carousel-card__cta {
       display: inline-block;
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--y);
@@ -761,6 +743,8 @@
 
 <body>
 
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
 <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 
 
@@ -769,12 +753,11 @@
     <img src="../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
   </a>
   <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <ul class="nav-links" role="list">
     <li><a href="work/">Trabalhos</a></li>
-    <li><a href="./" aria-current="page">Início</a></li>
         <li><a href="blog/">Insights</a></li>
     </ul>
   <div class="nav-lang" aria-label="Idioma">
@@ -802,12 +785,12 @@
             <a href="work/" class="btn-shiny">
               <span class="btn-shiny-label">
                 Ver trabalhos selecionados
-                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </span>
             </a>
             <a href="contact/" class="btn-ghost-glow">
               Enviar uma mensagem
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
@@ -825,7 +808,6 @@
         </div>
       </div>
     </div>
-    <p class="hero__scroll-hint" aria-hidden="true">role</p>
   </section>
 
   <div class="mq mq--logos" aria-label="Empresas com as quais já trabalhei" data-marquee-speed="84" data-marquee-direction="reverse" data-marquee-start="0.05">
@@ -833,18 +815,18 @@
     <div class="mq-fl l"></div>
     <div class="mq-fl r"></div>
     <div class="mq-tr">
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/ABGI.svg" alt="ABGI" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/CEBRAC.svg" alt="CEBRAC" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Ensight.svg" alt="Ensight" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Facto.svg" alt="Facto" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Instivo.svg" alt="Instivo" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Lovefit.svg" alt="Lovefit" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Meaple.svg" alt="Meaple" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/MedMe.svg" alt="MedMe" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Nineblocks.svg" alt="Nineblocks" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Play9.svg" alt="Play9" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Selo%20H.svg" alt="Selo H" loading="eager"></div>
-      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Vega%20I.T..svg" alt="Vega I.T." loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/ABGI.svg" width="320" height="320" alt="ABGI" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/CEBRAC.svg" width="320" height="320" alt="CEBRAC" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Ensight.svg" width="320" height="320" alt="Ensight" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Facto.svg" width="320" height="320" alt="Facto" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Instivo.svg" width="320" height="320" alt="Instivo" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Lovefit.svg" width="320" height="320" alt="Lovefit" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Meaple.svg" width="320" height="320" alt="Meaple" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/MedMe.svg" width="320" height="320" alt="MedMe" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Nineblocks.svg" width="320" height="320" alt="Nineblocks" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Play9.svg" width="320" height="320" alt="Play9" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Selo%20H.svg" width="320" height="320" alt="Selo H" loading="eager"></div>
+      <div class="mq-item"><img class="mq-logo" src="../assets/img/logo/Vega%20I.T..svg" width="320" height="320" alt="Vega I.T." loading="eager"></div>
     </div>
   </div>
 
@@ -946,7 +928,7 @@
         <div class="exp-sticky">
           <p class="tLB reveal">Cargos e atuações selecionadas</p>
           <h2 class="heading-lg reveal delay-80" id="exp-heading">
-            Estúdio, consultoria<br>e trabalho in-house.
+            Estúdio, consultoria<br> e trabalho in-house.
           </h2>
           <p class="tBD reveal delay-160">
             Vellumwire é um estúdio ativo. Consultoria e trabalho in-house seguem em paralelo.

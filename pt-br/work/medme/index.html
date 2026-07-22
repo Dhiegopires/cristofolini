@@ -55,6 +55,8 @@
 </head>
 <body>
 
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
   <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 
   <nav class="nav" role="navigation" aria-label="Navegação principal">
@@ -62,12 +64,11 @@
       <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
     <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <ul class="nav-links" role="list">
       <li><a href="../" aria-current="page">Trabalhos</a></li>
-      <li><a href="../../">Início</a></li>
           <li><a href="../../blog/">Insights</a></li>
     </ul>
     <div class="nav-lang" aria-label="Idioma">
@@ -124,7 +125,7 @@
         </div>
       </div>
       <div class="cs-hero__right">
-        <img src="/work/medme/Mockup-hero.webp" alt="Telas do app MedMe" loading="eager">
+        <img src="/work/medme/Mockup-hero.webp" width="1920" height="1076" alt="Telas do app MedMe" loading="eager">
       </div>
     </section>
 
@@ -219,7 +220,7 @@
             </div>
             <p>Cada decisão de design neste produto responde a pelo menos um desses medos. O sistema de tokens e a lógica de pareamento endereçam os três simultaneamente: foi aí que a maior parte da complexidade pousou.</p>
             <div class="cs-diagram">
-              <img src="img/medme_user_flow.svg" width="100%" alt="Fluxo completo do usuário: paciente, profissional e clínica em 8 etapas da seleção do serviço ao pagamento">
+              <img src="img/medme_user_flow.svg" width="1028" height="766" alt="Fluxo completo do usuário: paciente, profissional e clínica em 8 etapas da seleção do serviço ao pagamento">
             </div>
           </div>
         </section>
@@ -288,31 +289,31 @@
             <div class="cs-screens cs-screens--5">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-month.webp" alt="Seletor de mês, etapa 1 de 3" loading="lazy">
+                  <img src="img/schedule-month.webp" width="390" height="844" alt="Seletor de mês, etapa 1 de 3" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Seletor de mês · etapa 1 de 3</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-day.webp" alt="Seletor de dia, etapa 2 de 3" loading="lazy">
+                  <img src="img/schedule-day.webp" width="390" height="844" alt="Seletor de dia, etapa 2 de 3" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Seletor de dia · etapa 2 de 3</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-time.webp" alt="Seletor de horário com apenas slots confirmados" loading="lazy">
+                  <img src="img/schedule-time.webp" width="390" height="844" alt="Seletor de horário com apenas slots confirmados" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Seletor de horário · apenas slots confirmados</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/schedule-completed.webp" alt="Agendamento completo, horário selecionado e botão continuar desbloqueado" loading="lazy">
+                  <img src="img/schedule-completed.webp" width="390" height="844" alt="Agendamento completo, horário selecionado e botão continuar desbloqueado" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Horário selecionado · continuar desbloqueado</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/Select Unit.webp" alt="Lista de unidades filtrada pelo horário selecionado" loading="lazy">
+                  <img src="img/Select Unit.webp" width="390" height="844" alt="Lista de unidades filtrada pelo horário selecionado" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Lista de unidades · filtrada pelo horário selecionado</figcaption>
               </figure>
@@ -343,7 +344,7 @@
               </div>
             </div>
             <div class="cs-diagram">
-              <img src="img/medme_information_architecture.svg" width="100%" alt="Arquitetura de informação: lógica de filtro orientada por serviço e overflow de pool">
+              <img src="img/medme_information_architecture.svg" width="900" height="520" alt="Arquitetura de informação: lógica de filtro orientada por serviço e overflow de pool">
             </div>
             <p>Quando uma clínica não tem profissional disponível, um pool pré-aprovado de profissionais terceirizados preenche a lacuna. Mesmas certificações: clínicas registradas na ANVISA, profissionais licenciados pelo CRBM. Mesma triagem. Para o paciente, o cartão parece idêntico. Para a clínica, a designação via pool é sinalizada no painel operacional. A resposta nunca é "indisponível".</p>
             <p>Depois do atendimento, os três atores se avaliam mutuamente. O paciente avalia o profissional. O profissional avalia o paciente. A clínica avalia a execução do profissional. Uma avaliação de três lados cria responsabilidade em cada ponto da cadeia, não só no final, onde o paciente deixa uma avaliação.</p>
@@ -380,13 +381,13 @@
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional.webp" alt="Estado de espera com profissional a caminho, credenciais visíveis, linha do tempo de status" loading="lazy">
+                  <img src="img/waiting-for-professional.webp" width="780" height="1688" alt="Estado de espera com profissional a caminho, credenciais visíveis, linha do tempo de status" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Estado de espera · profissional a caminho, credenciais visíveis, linha do tempo de status</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-expanded.webp" alt="Credenciais expandidas, cartão completo do profissional com detalhes de licença" loading="lazy">
+                  <img src="img/waiting-for-professional-expanded.webp" width="390" height="844" alt="Credenciais expandidas, cartão completo do profissional com detalhes de licença" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Credenciais expandidas · cartão completo do profissional</figcaption>
               </figure>
@@ -402,10 +403,10 @@
           <div class="cs-section__body">
             <p>Três tokens, cada um resolvendo um problema de forma independente, se conectam numa cadeia que paciente, profissional e clínica usam do agendamento até a liberação do pagamento.</p>
             <div class="cs-diagram">
-              <img src="img/medme_token_system_diagram.svg" width="100%" alt="Sistema de tokens: cadeia de custódia em três fases">
+              <img src="img/medme_token_system_diagram.svg" width="880" height="300" alt="Sistema de tokens: cadeia de custódia em três fases">
             </div>
             <div class="cs-diagram">
-              <img src="img/medme_token_chain_custody.svg" width="100%" alt="Sistema de tokens: cadeia de custódia em três fases com fluxos bilaterais">
+              <img src="img/medme_token_chain_custody.svg" width="680" height="638" alt="Sistema de tokens: cadeia de custódia em três fases com fluxos bilaterais">
             </div>
             <p>O check-in bilateral remete a um padrão que já existe em serviços que os pacientes usam diariamente: o PIN bilateral do Uber, a verificação de identidade do Airbnb. A diferença é o contexto: aqui é uma casa particular e um procedimento médico.</p>
             <div class="cs-rejected">
@@ -415,19 +416,19 @@
             <div class="cs-screens cs-screens--3">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/token-swap-base.webp" alt="Token 2 em estado vazio, aguardando os dois códigos" loading="lazy">
+                  <img src="img/token-swap-base.webp" width="390" height="844" alt="Token 2 em estado vazio, aguardando os dois códigos" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Vazio · aguardando os dois códigos</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-error.webp" alt="Token 2 em estado de erro, código incorreto inserido" loading="lazy">
+                  <img src="img/waiting-for-professional-error.webp" width="390" height="844" alt="Token 2 em estado de erro, código incorreto inserido" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Erro · código incorreto inserido</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-completed.webp" alt="Token 2 confirmado, ambas as partes verificadas" loading="lazy">
+                  <img src="img/waiting-for-professional-completed.webp" width="390" height="844" alt="Token 2 confirmado, ambas as partes verificadas" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Confirmado · ambas as partes verificadas</figcaption>
               </figure>
@@ -451,25 +452,25 @@
             <div class="cs-screens cs-screens--4">
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/Review.webp" alt="Checkout com indicador de progresso de 6 etapas e revisão do pedido" loading="lazy">
+                  <img src="img/Review.webp" width="390" height="844" alt="Checkout com indicador de progresso de 6 etapas e revisão do pedido" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Checkout · indicador de progresso de 6 etapas</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/payment-base.webp" alt="Tela de pagamento com saldo MedMe e seletor de método" loading="lazy">
+                  <img src="img/payment-base.webp" width="390" height="992" alt="Tela de pagamento com saldo MedMe e seletor de método" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Pagamento · divisão de saldo + seletor de método</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/payment-selected.webp" alt="Pagamento com saldo MedMe ativo e método de pagamento selecionado para o valor restante" loading="lazy">
+                  <img src="img/payment-selected.webp" width="390" height="844" alt="Pagamento com saldo MedMe ativo e método de pagamento selecionado para o valor restante" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Pagamento · método selecionado, total dividido</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
                 <div class="cs-screen-placeholder">
-                  <img src="img/confirm.webp" alt="Tela de confirmação com nota de garantia e resumo do protocolo de tokens" loading="lazy">
+                  <img src="img/confirm.webp" width="430" height="932" alt="Tela de confirmação com nota de garantia e resumo do protocolo de tokens" loading="lazy">
                 </div>
                 <figcaption class="cs-caption">Confirmação · nota de garantia + protocolo de tokens</figcaption>
               </figure>

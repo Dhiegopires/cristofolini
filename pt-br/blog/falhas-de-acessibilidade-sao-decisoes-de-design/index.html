@@ -45,7 +45,7 @@
     }
     .article-body .demo-caption {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .04em;
       color: var(--t3);
       text-align: center;
@@ -91,7 +91,7 @@
 
     .demo-contrast__label {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--t2);
@@ -111,7 +111,7 @@
       transition: color .2s;
     }
     .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__sample-text { color: #595959; }
-    .demo-panel .demo-contrast__ratio { font-family: var(--mono); font-size: 11px; color: #767066; }
+    .demo-panel .demo-contrast__ratio { font-family: var(--mono); font-size: 12px; color: #767066; }
     .demo-contrast__ratio-on { display: none; }
     .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__ratio-off { display: none; }
     .demo-toggle-input:checked ~ .demo-contrast__sample .demo-contrast__ratio-on { display: inline; }
@@ -120,7 +120,7 @@
     .demo-colorblind__panel--sim { filter: url(#deuteranopia-filter); }
     .demo-panel .demo-colorblind__caption {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--t3);
@@ -145,14 +145,14 @@
     }
     .demo-focus__btn--bad:focus { outline: none; }
     .demo-focus__btn--good:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
-    .demo-panel .demo-focus__label { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--t3); }
+    .demo-panel .demo-focus__label { margin-top: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--t3); }
 
     .demo-component { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: center; }
     .demo-component__field-label {
       display: block;
       margin-bottom: 10px;
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--t2);
@@ -172,7 +172,7 @@
       appearance: none;
       cursor: pointer;
     }
-    .demo-panel .demo-component__stat { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--t3); }
+    .demo-panel .demo-component__stat { margin-top: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--t3); }
 
     @media (max-width: 640px) {
       .demo-colorblind, .demo-focus, .demo-component { grid-template-columns: 1fr; }
@@ -196,6 +196,8 @@
 </head>
 <body>
 
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
   <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 
   <nav class="nav" role="navigation" aria-label="Navegação principal">
@@ -203,12 +205,11 @@
       <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
     </a>
     <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-      <svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <ul class="nav-links" role="list">
       <li><a href="../../work/">Trabalhos</a></li>
-      <li><a href="../../">Início</a></li>
       <li><a href="../" aria-current="page">Insights</a></li>
     </ul>
     <div class="nav-lang" aria-label="Idioma">
@@ -238,7 +239,7 @@
 
     <div class="article-cover">
       <img
-        src="../../../assets/img/blog/accessibility-keycap-hero.webp"
+        src="../../../assets/img/blog/accessibility-keycap-hero.webp" width="1200" height="630"
         alt="Fotografia macro de uma única tecla escura projetando uma longa sombra sobre uma superfície de concreto"
         loading="eager"
       >
