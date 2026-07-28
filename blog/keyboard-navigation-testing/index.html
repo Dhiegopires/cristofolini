@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+  <title>Keyboard navigation: how to test your product without touching the mouse | Dhiego</title>
+  <meta name="description" content="Tab order, focus indicators, focus management inside modals, and the skip link, explained with the real WCAG success criteria behind each one, plus a two-minute test any designer can run.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Keyboard navigation: how to test your product without touching the mouse">
+  <meta property="og:description" content="Tab order, focus indicators, focus management inside modals, and the skip link, explained with the real WCAG success criteria behind each one, plus a two-minute test any designer can run.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/blog/keyboard-cover.svg">
+  <meta property="og:url" content="https://cristofolini.site/blog/keyboard-navigation-testing/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Keyboard navigation: how to test your product without touching the mouse">
+  <meta name="twitter:description" content="Tab order, focus indicators, focus management inside modals, and the skip link, with the real WCAG criteria behind each and a two-minute test any designer can run.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/keyboard-cover.svg">
+  <link rel="canonical" href="https://cristofolini.site/blog/keyboard-navigation-testing/">
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
+  <link href="../../assets/css/blog.css?v=2" rel="stylesheet">
+  <style>
+    .demo-panel {
+      margin: 32px 0;
+      padding: 28px;
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+    .article-body .demo-caption {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      text-align: center;
+      margin: 12px 0 32px;
+    }
+
+    /* Artifact 1: live tab-order demo */
+    .demo-taborder__row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .demo-taborder__item {
+      padding: 16px 10px;
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      color: var(--t2);
+      font-family: var(--mono);
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .demo-taborder__item:focus-visible {
+      outline: 2px solid var(--y);
+      outline-offset: 2px;
+      color: var(--t1);
+      border-color: var(--accent-border);
+    }
+    .demo-taborder__row--broken .demo-taborder__item:nth-child(1) { order: 3; }
+    .demo-taborder__row--broken .demo-taborder__item:nth-child(2) { order: 1; }
+    .demo-taborder__row--broken .demo-taborder__item:nth-child(3) { order: 4; }
+    .demo-taborder__row--broken .demo-taborder__item:nth-child(4) { order: 2; }
+    .demo-taborder__label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin: 0 0 10px;
+    }
+    .demo-taborder__label--good { color: var(--y); }
+
+    /* Artifact 2: focus indicator three-way comparison */
+    .demo-indicator {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+    .demo-indicator__btn {
+      width: 100%;
+      padding: 13px 10px;
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      color: var(--t1);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .demo-indicator__btn--none:focus { outline: none; }
+    .demo-indicator__btn--weak:focus { outline: 1px dotted #6b6357; outline-offset: 1px; }
+    .demo-indicator__btn--strong:focus-visible { outline: 3px solid var(--y); outline-offset: 3px; }
+    .demo-indicator__badge {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      padding: 3px 7px;
+    }
+    .demo-indicator__badge--fail { color: #e08585; border: 1px solid rgba(224,133,133,.4); }
+    .demo-indicator__badge--warn { color: var(--y); border: 1px solid var(--accent-border); }
+    .demo-indicator__badge--pass { color: #7fbf6a; border: 1px solid rgba(127,191,106,.4); }
+
+    /* Artifact 3: keyboard test script */
+    .demo-keytest {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: step;
+    }
+    .demo-keytest li {
+      counter-increment: step;
+      position: relative;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 14px 0 14px 42px;
+      border-top: 1px solid var(--b1);
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--t2);
+    }
+    .demo-keytest li:first-child { border-top: none; }
+    .demo-keytest li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--accent-border);
+      color: var(--y);
+      font-family: var(--mono);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .demo-keytest__key {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t1);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      padding: 3px 8px;
+      align-self: start;
+      white-space: nowrap;
+    }
+    .demo-keytest__expect b { color: var(--t1); }
+
+    /* Artifact 4: skip link tab-count comparison */
+    .demo-skip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .demo-skip__col-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .demo-skip__stops {
+      list-style: none;
+      margin: 0 0 14px;
+      padding: 0;
+    }
+    .demo-skip__stops li {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+      padding: 5px 8px;
+      border-bottom: 1px solid var(--b1);
+    }
+    .demo-skip__stops li:last-child { border-bottom: none; }
+    .demo-skip__stops li.is-target { color: var(--y); }
+    .demo-skip__count {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .demo-taborder__row, .demo-indicator, .demo-skip { grid-template-columns: 1fr; }
+      .demo-keytest li { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Keyboard navigation: how to test your product without touching the mouse",
+    "author": { "@type": "Person", "name": "Dhiego Cristofolini", "url": "https://cristofolini.site/" },
+    "datePublished": "2026-07-28",
+    "dateModified": "2026-07-28",
+    "image": "https://cristofolini.site/assets/img/blog/keyboard-cover.svg",
+    "description": "Tab order, focus indicators, focus management inside modals, and the skip link, with the real WCAG success criteria behind each one and a two-minute test any designer can run.",
+    "url": "https://cristofolini.site/blog/keyboard-navigation-testing/",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../" aria-current="page">Insights</a></li>
+    </ul>
+    <a href="../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <header class="article-hero">
+        <a href="../" class="article-hero__back">← Insights</a>
+        <span class="article-hero__tag">Accessibility</span>
+        <h1 class="article-hero__title">Keyboard navigation: how to test your product without touching the mouse</h1>
+        <div class="article-hero__meta">
+          <span>Dhiego Cristofolini</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>Jul 2026</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="article-cover">
+      <img
+        src="../../assets/img/blog/keyboard-tab-key-hero.webp" width="1280" height="672"
+        alt="Macro photograph of a keyboard's Tab key lit in warm amber, isolated against the dark surrounding keys"
+        loading="eager"
+      >
+    </div>
+
+    <div class="article-layout">
+
+      <aside class="article-toc" aria-label="Table of contents">
+        <p class="article-toc__label">Contents</p>
+        <a href="#who" class="article-toc__link">01 Who actually needs this</a>
+        <a href="#tab-order" class="article-toc__link">02 Tab order</a>
+        <a href="#focus-indicators" class="article-toc__link">03 Focus indicators</a>
+        <a href="#focus-management" class="article-toc__link">04 Focus management</a>
+        <a href="#skip-link" class="article-toc__link">05 The skip link</a>
+        <a href="#testing" class="article-toc__link">06 The two-minute test</a>
+        <a href="#sources" class="article-toc__link">Sources</a>
+      </aside>
+
+      <article class="article-body">
+
+        <p><a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a> covered keyboard navigation in three paragraphs: who relies on it, the focus-indicator stat, and the skip link YouTube still gets wrong. That was the shape of the problem. This article is the practical guide: how tab order actually gets decided, why "just remove the ugly focus ring" breaks the product for a specific group of users every time, how to specify focus behavior for a modal so a developer implements it once instead of guessing, how to build a skip link correctly, and a two-minute test you can run on anything before it ships.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">01</span>
+          <h2 class="article-section__title" id="who">Who actually needs this</h2>
+        </div>
+
+        <p>WebAIM's Screen Reader User Survey puts keyboard reliance among screen reader users at 97.6%. That number alone undersells the audience. A mouse asks for something specific: enough fine control in the hand to land a cursor on a small target and click it. Tremor, limited or no use of one or more fingers, paralysis, arthritis, and missing digits all remove that ability without removing the ability to press a key, use a switch device, or use a switch-adapted input that the browser treats exactly like a keyboard. This is a different axis than the mobility disabilities the CDC tracks, walking and climbing stairs, which mostly have no bearing on whether someone can use a mouse at all.</p>
+
+        <p>None of that requires a screen reader to be running. It requires the product to work when the pointer never moves. That is a much larger and much easier group to test for than "does it work with a screen reader," and it is the one this article is about.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">02</span>
+          <h2 class="article-section__title" id="tab-order">Tab order is decided by the DOM, not the layout</h2>
+        </div>
+
+        <h3>2.1 What actually determines the sequence</h3>
+
+        <p>Pressing Tab moves focus to the next focusable element in DOM order, the order elements appear in the underlying HTML, not the order they appear on screen. Most of the time those two orders match, because most layouts are built the same way they read. They stop matching the moment a layout is reordered visually without anyone touching the markup underneath it, and CSS makes that trivially easy to do by accident.</p>
+
+        <h3>2.2 How a design decision breaks it without a single line of custom script</h3>
+
+        <p>A CSS grid or flexbox `order` property, used to reflow a card layout for a narrower breakpoint, changes what the user sees without changing what the DOM contains. Tab order still follows the DOM. The result is a keyboard user tabbing from what looks like card one, to what looks like card three, because that is what the markup says is next, regardless of where the card was repainted on screen.</p>
+
+        <p>The live row below has exactly that bug, and it is safe to try. Click into it and press Tab.</p>
+
+        <div class="demo-panel">
+          <p class="demo-taborder__label">Visual order 1, 2, 3, 4. Tab through it.</p>
+          <div class="demo-taborder__row demo-taborder__row--broken">
+            <div class="demo-taborder__item" tabindex="0">Step 1</div>
+            <div class="demo-taborder__item" tabindex="0">Step 2</div>
+            <div class="demo-taborder__item" tabindex="0">Step 3</div>
+            <div class="demo-taborder__item" tabindex="0">Step 4</div>
+          </div>
+          <p class="demo-taborder__label demo-taborder__label--good">Same markup order, no CSS reorder. Tab through this one too.</p>
+          <div class="demo-taborder__row">
+            <div class="demo-taborder__item" tabindex="0">Step 1</div>
+            <div class="demo-taborder__item" tabindex="0">Step 2</div>
+            <div class="demo-taborder__item" tabindex="0">Step 3</div>
+            <div class="demo-taborder__item" tabindex="0">Step 4</div>
+          </div>
+        </div>
+        <p class="demo-caption">Identical labels, identical visual position. The first row's Tab sequence is 2, 4, 1, 3. The second row's is 1, 2, 3, 4. Nothing about how either one looks tells you which is which.</p>
+
+        <h3>2.3 The other way it breaks: tabindex</h3>
+
+        <p>A positive tabindex value (`tabindex="1"`, `tabindex="2"`) forces an element to the front of the tab sequence, ahead of everything using the default order, and creates a second, competing order that has to be maintained by hand forever as the page changes. WCAG's own techniques documentation names this pattern as something to avoid. This project's own build rules ban positive tabindex outright for the same reason. `tabindex="0"` adds a naturally-unfocusable element into the default DOM-order sequence, which is safe. `tabindex="-1"` removes an element from the Tab sequence while still allowing it to receive focus programmatically, which is what makes it possible to move focus into a modal heading in section 4. Those are the only two values that belong in production markup.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">03</span>
+          <h2 class="article-section__title" id="focus-indicators">Focus indicators are not optional styling</h2>
+        </div>
+
+        <h3>3.1 Where the 78% comes from</h3>
+
+        <p>WebAIM's Million report found detectable focus-indicator issues on 78% of the home pages it analyzed. The most common root cause is `outline: none`, added to strip the browser's default focus ring off a button or link because it clashed with the visual design, with nothing added back in its place. Visually the fix looks clean. For a keyboard user, the interface stops telling them where they are.</p>
+
+        <h3>3.2 :focus-visible fixes the actual complaint</h3>
+
+        <p>The complaint behind most `outline: none` decisions was never "focus indicators are bad." It was "the focus ring showing up after a mouse click looks broken." `:focus-visible` solves that directly: it lets the browser show the indicator when focus arrives from the keyboard and suppress it when focus arrives from a pointer click, without a single line of JavaScript. There is no remaining reason to reach for `outline: none` in 2026.</p>
+
+        <div class="demo-panel">
+          <div class="demo-indicator">
+            <div>
+              <button class="demo-indicator__btn demo-indicator__btn--none">outline: none</button>
+              <span class="demo-indicator__badge demo-indicator__badge--fail">Not visible</span>
+            </div>
+            <div>
+              <button class="demo-indicator__btn demo-indicator__btn--weak">default outline, low contrast</button>
+              <span class="demo-indicator__badge demo-indicator__badge--warn">Barely visible</span>
+            </div>
+            <div>
+              <button class="demo-indicator__btn demo-indicator__btn--strong">:focus-visible, 3px, high contrast</button>
+              <span class="demo-indicator__badge demo-indicator__badge--pass">Clearly visible</span>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Tab to each button. Same component, three implementations, three completely different experiences for a keyboard user.</p>
+
+        <h3>3.3 WCAG 2.2 raised the bar on what "visible" means</h3>
+
+        <p>SC 2.4.7 Focus Visible (AA) only requires that a keyboard focus indicator exist. WCAG 2.2 added two success criteria that go further: SC 2.4.13 Focus Appearance (AAA) sets a minimum size and contrast for the indicator itself, so a 1px low-contrast outline can technically satisfy 2.4.7 while still failing 2.4.13. SC 2.4.11 Focus Not Obscured (Minimum) (AA) requires that the focused element not be entirely hidden by other content, the sticky header or cookie banner covering it up. Both point at the same failure mode: an indicator that is present but useless because it is too faint, too small, or physically hidden behind something else on the page.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">04</span>
+          <h2 class="article-section__title" id="focus-management">Focus management inside modals and dropdowns</h2>
+        </div>
+
+        <h3>4.1 Same modal, the keyboard side of the spec</h3>
+
+        <p><a href="../what-is-aria/">What is ARIA and why product designers need to understand it</a> covers the delete-project modal from the ARIA side: the role, the label, the behavior a designer has to write down for a developer to implement correctly. This is the same modal, tested. A designer can write the correct behavior notes and still ship a modal that fails, because ARIA attributes and actual keyboard behavior are two separate implementations of the same intent, built at different points in the code. The only way to know the second one exists is to run it with the keyboard yourself.</p>
+
+        <div class="demo-panel">
+          <ol class="demo-keytest">
+            <li><span class="demo-keytest__key">Click trigger</span><span class="demo-keytest__expect">Modal opens. <b>Expected:</b> focus moves to the dialog heading, not the first button inside it.</span></li>
+            <li><span class="demo-keytest__key">Tab</span><span class="demo-keytest__expect">Focus moves through the modal's own controls only. <b>Expected:</b> it never reaches the page behind it.</span></li>
+            <li><span class="demo-keytest__key">Shift+Tab</span><span class="demo-keytest__expect">from the first control inside the modal. <b>Expected:</b> focus wraps to the last control inside the modal, not out to the page.</span></li>
+            <li><span class="demo-keytest__key">Escape</span><span class="demo-keytest__expect">Modal closes. <b>Expected:</b> focus returns to the exact element that opened it, not the page body.</span></li>
+          </ol>
+        </div>
+        <p class="demo-caption">Four keys, four expected results. Any modal that fails one of these rows fails for every keyboard-only user, regardless of what the ARIA markup says.</p>
+
+        <h3>4.2 The failure in the opposite direction: a keyboard trap</h3>
+
+        <p>SC 2.1.2 No Keyboard Trap (A) exists because the opposite failure is just as disqualifying: focus enters a widget, usually a third-party embed, a rich text editor, or a custom date picker, and Tab or Escape no longer moves it back out. A modal that traps focus on purpose, inside itself, while it is open, is correct and required. A component that traps focus by accident, with no way to leave, fails outright. Both are tested with the same four keys above.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">05</span>
+          <h2 class="article-section__title" id="skip-link">The skip link</h2>
+        </div>
+
+        <h3>5.1 What it is for</h3>
+
+        <p>The previous article in this series pointed out that YouTube, built by the organization that wrote much of the standard, still does not implement its skip link correctly. Without one, a keyboard user arriving at any page with a repeated navigation has to tab through every item in it, every time, before reaching the content the page actually exists for.</p>
+
+        <h3>5.2 How to build one</h3>
+
+        <p>A skip link is the first focusable element in the page, visually hidden until it receives focus, pointing at an anchor on the main content region. On focus, it becomes visible and sits above everything else on the page. Activating it, by pressing Enter, moves focus directly to the target, skipping every navigation item in between. Every page on this site opens with exactly this pattern: a `<a href="#main-content" class="skip-link">` as the first element inside `<body>`, and a matching `<main id="main-content" tabindex="-1">` as its target. `tabindex="-1"` on the target is what allows a plain anchor link to actually move keyboard focus there, not just scroll the viewport to it.</p>
+
+        <div class="demo-panel">
+          <div class="demo-skip">
+            <div>
+              <p class="demo-skip__col-title">No skip link</p>
+              <ul class="demo-skip__stops">
+                <li>Tab 1: Logo</li>
+                <li>Tab 2–9: 8 nav links</li>
+                <li>Tab 10: Language switch</li>
+                <li>Tab 11: Search</li>
+                <li>Tab 12: Contact CTA</li>
+                <li class="is-target">Tab 13: Main content, finally</li>
+              </ul>
+              <p class="demo-skip__count">13 tab presses before the content</p>
+            </div>
+            <div>
+              <p class="demo-skip__col-title">With skip link</p>
+              <ul class="demo-skip__stops">
+                <li class="is-target">Tab 1: "Skip to main content"</li>
+                <li>Enter</li>
+              </ul>
+              <p class="demo-skip__count">1 tab press, 1 key press</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Same page, same navigation. The only difference is one anchor link at the very top of the document.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">06</span>
+          <h2 class="article-section__title" id="testing">The two-minute test any designer can run</h2>
+        </div>
+
+        <p>No screen reader, no plugin, no developer required. Put the mouse out of reach, actually, not figuratively, and use only Tab, Shift+Tab, Enter, Space, the arrow keys, and Escape to complete the product's core flow. Four things to watch while you do it: can you reach every interactive element on the page, can you always see which one currently has focus, does the order you move through them match the order you'd read them in, and can you open and fully close every modal or dropdown without the pointer touching anything. A failure on any of the four is section 2, 3, or 4 above, not a new problem, the same six sources this series keeps coming back to, decided before a developer wrote a line of code.</p>
+
+        <h2 id="sources">Sources</h2>
+
+        <ul>
+          <li>WebAIM. <em>Screen Reader User Survey #10 Results.</em> <a href="https://webaim.org/projects/screenreadersurvey10/" target="_blank" rel="noopener noreferrer">webaim.org/projects/screenreadersurvey10</a></li>
+          <li>WebAIM. <em>The WebAIM Million: The 2025 report on the accessibility of the top 1,000,000 home pages.</em> <a href="https://webaim.org/projects/million/" target="_blank" rel="noopener noreferrer">webaim.org/projects/million</a></li>
+          <li>W3C Web Accessibility Initiative. <em>WCAG 2.2, SC 2.1.1 Keyboard, 2.1.2 No Keyboard Trap, 2.4.1 Bypass Blocks, 2.4.3 Focus Order, 2.4.7 Focus Visible.</em> <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">w3.org/TR/WCAG22</a></li>
+          <li>W3C Web Accessibility Initiative. <em>Understanding SC 2.4.11 Focus Not Obscured (Minimum) and SC 2.4.13 Focus Appearance.</em> <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html" target="_blank" rel="noopener noreferrer">w3.org/WAI/WCAG22/Understanding/focus-appearance</a></li>
+          <li>MDN Web Docs. <em>:focus-visible.</em> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible" target="_blank" rel="noopener noreferrer">developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible</a></li>
+          <li>W3C Web Accessibility Initiative. <em>ARIA Authoring Practices Guide (APG), Dialog (Modal) Pattern.</em> <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" target="_blank" rel="noopener noreferrer">w3.org/WAI/ARIA/apg/patterns/dialog-modal</a></li>
+        </ul>
+
+        <div class="article-end">
+          <section class="newsletter-section" aria-labelledby="newsletter-article-title">
+            <div class="newsletter-inner">
+              <p class="newsletter-eyebrow">Newsletter</p>
+              <h2 class="newsletter-title" id="newsletter-article-title">Get the next one in your inbox</h2>
+              <p class="newsletter-desc">New posts, design notes, and the occasional useful thing. No noise, no sales pitch.</p>
+              <script async data-uid="87cb6ee129" src="https://cristofolini.kit.com/87cb6ee129/index.js"></script>
+              <p class="newsletter-disclaimer">No spam. Unsubscribe any time.</p>
+            </div>
+          </section>
+        </div>
+
+      </article>
+    </div>
+
+  </main>
+
+  <a href="../../work/" class="cta-section" aria-label="View selected work">
+    <p class="cta-section__eyebrow">Selected work</p>
+    <p class="cta-section__headline">See what<br><em>I've built.</em></p>
+    <span class="cta-section__arrow" aria-hidden="true">→</span>
+  </a>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../" class="footer__nav-link">Home</a>
+        <a href="../../work/" class="footer__nav-link">Work</a>
+        <a href="../" class="footer__nav-link">Insights</a>
+        <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+  <script>
+    (function () {
+      var toc = document.querySelector('.article-toc');
+      if (!toc) return;
+      var links = Array.from(toc.querySelectorAll('.article-toc__link'));
+      var targets = links.map(function(l) {
+        return document.querySelector(l.getAttribute('href'));
+      }).filter(Boolean);
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) { l.classList.remove('is-active'); });
+            var active = toc.querySelector('a[href="#' + e.target.id + '"]');
+            if (active) active.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-15% 0px -75% 0px' });
+      targets.forEach(function(h) { obs.observe(h); });
+    })();
+  </script>
+
+</body>
+</html>
