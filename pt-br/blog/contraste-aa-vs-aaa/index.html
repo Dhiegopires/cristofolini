@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+  <title>AA vs AAA: o que esses níveis realmente significam | Dhiego</title>
+  <meta name="description" content="Os três níveis de conformidade do WCAG, como a proporção de contraste é realmente calculada, e onde o AAA é o mínimo real, incluindo o estado de botão desabilitado que a maioria dos design systems erra.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="AA vs AAA: o que esses níveis realmente significam e por que seu botão desabilitado está falhando nos dois">
+  <meta property="og:description" content="Os três níveis de conformidade do WCAG, como a proporção de contraste é realmente calculada, e onde o AAA é o mínimo real, incluindo o estado de botão desabilitado que a maioria dos design systems erra.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/blog/contrast-cover.svg">
+  <meta property="og:url" content="https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AA vs AAA: o que esses níveis realmente significam e por que seu botão desabilitado está falhando nos dois">
+  <meta name="twitter:description" content="Os três níveis de conformidade do WCAG, como a proporção de contraste é realmente calculada, e onde o AAA é o mínimo real.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/contrast-cover.svg">
+  <link rel="canonical" href="https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/contrast-aa-vs-aaa/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/contrast-aa-vs-aaa/">
+  <link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
+  <link href="../../../assets/css/blog.css?v=2" rel="stylesheet">
+  <style>
+    .demo-panel {
+      margin: 32px 0;
+      padding: 28px;
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+    .article-body .demo-caption {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      text-align: center;
+      margin: 12px 0 32px;
+    }
+
+    /* Artifact 1: contrast ratio scale */
+    .demo-scale__track {
+      position: relative;
+      height: 20px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--b1);
+    }
+    .demo-scale__tick {
+      position: absolute;
+      top: -22px;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+      white-space: nowrap;
+    }
+    .demo-scale__tick::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 1px;
+      height: 42px;
+      background: var(--b1);
+    }
+    .demo-scale__tick--min { left: 10%; }
+    .demo-scale__tick--aa { color: var(--t1); left: 17.5%; }
+    .demo-scale__tick--aa::after { background: var(--t2); }
+    .demo-scale__tick--aaa { color: var(--y); left: 30%; }
+    .demo-scale__tick--aaa::after { background: var(--y); width: 2px; }
+    .demo-scale__ends {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+    }
+    .demo-scale__swatches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .demo-scale__swatch {
+      background: #eeece6;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .demo-scale__swatch-sample {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .demo-scale__swatch-ratio {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: #6b6558;
+    }
+    .demo-scale__swatch-ratio--aa { color: #8a6d1f; }
+    .demo-scale__swatch-ratio--aaa { color: #4f7a3d; }
+    .demo-scale__swatch-sample--fail { color: #9CA3AF; }
+    .demo-scale__swatch-sample--aa   { color: #767676; }
+    .demo-scale__swatch-sample--aaa  { color: #595959; }
+
+    /* Artifact 2: contrast check methods */
+    .demo-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .demo-methods__title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .demo-methods__devtools,
+    .demo-methods__webaim {
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      padding: 18px;
+    }
+    .demo-methods__devtools-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t1);
+      margin-bottom: 14px;
+    }
+    .demo-methods__swatch {
+      width: 18px;
+      height: 18px;
+      background: #767676;
+      border: 1px solid var(--b1);
+      flex-shrink: 0;
+    }
+    .demo-methods__devtools-ratio {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t1);
+      margin-bottom: 12px;
+    }
+    .demo-methods__field {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t2);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--b0);
+    }
+    .demo-methods__field span:last-child { color: var(--t1); }
+    .demo-methods__result {
+      font-family: var(--mono);
+      font-size: 20px;
+      color: var(--y);
+      text-align: center;
+      margin: 14px 0;
+    }
+    .demo-methods__badges {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .demo-methods__badge {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .06em;
+      padding: 3px 8px;
+      border: 1px solid;
+    }
+    .demo-methods__badge--pass { color: #7fbf6a; border-color: rgba(127,191,106,.4); }
+    .demo-methods__badge--fail { color: #e08585; border-color: rgba(224,133,133,.4); }
+
+    /* Artifact 3: inventory cards */
+    .demo-inventory__row-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin: 0 0 12px;
+    }
+    .demo-inventory {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .demo-inventory:last-child { margin-bottom: 0; }
+    .demo-inventory__card {
+      background: var(--bg2);
+      border-left: 3px solid;
+      padding: 16px;
+    }
+    .demo-inventory__card:nth-child(1) { border-color: #5b8def; }
+    .demo-inventory__card:nth-child(2) { border-color: #f3b02e; }
+    .demo-inventory__card:nth-child(3) { border-color: #f87171; }
+    .demo-inventory__icon {
+      display: inline-block;
+      font-size: 12px;
+      margin-bottom: 8px;
+      color: var(--t2);
+    }
+    .demo-inventory__state {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .demo-inventory__product {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+      margin-bottom: 10px;
+    }
+    .demo-inventory__ratio {
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+    .demo-inventory--fail .demo-inventory__state,
+    .demo-inventory--fail .demo-inventory__ratio { color: #5c584f; }
+    .demo-inventory--pass .demo-inventory__state,
+    .demo-inventory--pass .demo-inventory__ratio { color: var(--t1); }
+    .demo-inventory--pass .demo-inventory__ratio { color: var(--y); }
+
+    /* Artifact 4: disabled button states */
+    .demo-disabled {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      text-align: center;
+    }
+    .demo-disabled__btn {
+      width: 100%;
+      padding: 13px 20px;
+      border: 1px solid var(--b1);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: not-allowed;
+    }
+    .demo-disabled__btn--bad {
+      background: var(--y);
+      color: #0a0908;
+      opacity: .4;
+    }
+    .demo-disabled__btn--good {
+      background: var(--bg2);
+      color: var(--t1);
+      border-color: var(--b2);
+    }
+    .demo-disabled__ratio {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t3);
+    }
+    .demo-disabled__ratio--pass { color: var(--y); }
+    .demo-disabled__helper {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--t2);
+    }
+
+    @media (max-width: 640px) {
+      .demo-scale__swatches, .demo-methods, .demo-inventory, .demo-disabled {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AA vs AAA: o que esses níveis realmente significam e por que seu botão desabilitado está falhando nos dois",
+    "author": { "@type": "Person", "name": "Dhiego Cristofolini", "url": "https://cristofolini.site/" },
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "image": "https://cristofolini.site/assets/img/blog/contrast-cover.svg",
+    "description": "Os três níveis de conformidade do WCAG, como a proporção de contraste é realmente calculada, e onde o AAA é o mínimo real, incluindo o estado de botão desabilitado que a maioria dos design systems erra.",
+    "url": "https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+</head>
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <nav class="nav" role="navigation" aria-label="Navegação principal">
+    <a href="../../../" class="nav-logo" aria-label="Cristofolini | Início">
+      <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../../work/">Trabalhos</a></li>
+      <li><a href="../" aria-current="page">Insights</a></li>
+    </ul>
+    <a href="../../../blog/contrast-aa-vs-aaa/" class="nav-lang" hreflang="en" aria-label="Mudar para inglês">EN</a>
+    <a href="../../contact/" class="nav-cta">Contato</a>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <header class="article-hero">
+        <a href="../" class="article-hero__back">← Insights</a>
+        <span class="article-hero__tag">Acessibilidade</span>
+        <h1 class="article-hero__title">AA vs AAA: o que esses níveis realmente significam e por que seu botão desabilitado está falhando nos dois</h1>
+        <div class="article-hero__meta">
+          <span>Dhiego Cristofolini</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>Jul 2026</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>9 min de leitura</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="article-cover">
+      <img
+        src="../../../assets/img/blog/contrast-paper-hero.webp" width="1024" height="538"
+        alt="Fotografia macro de uma folha de papel curvada em transição de um cinza claro e quente para quase preto ao longo de um gradiente diagonal de luz"
+        loading="eager"
+      >
+    </div>
+
+    <div class="article-layout">
+
+      <aside class="article-toc" aria-label="Índice">
+        <p class="article-toc__label">Conteúdo</p>
+        <a href="#origem" class="article-toc__link">01 De onde vêm os níveis</a>
+        <a href="#proporcao" class="article-toc__link">02 Como a proporção é calculada</a>
+        <a href="#pratica" class="article-toc__link">03 Onde cada limite se aplica</a>
+        <a href="#dados-criticos" class="article-toc__link">04 Dados críticos além do financeiro</a>
+        <a href="#invisivel" class="article-toc__link">05 O usuário que nunca reclama</a>
+        <a href="#fontes" class="article-toc__link">Fontes</a>
+      </aside>
+
+      <article class="article-body">
+
+        <p>O WCAG opera com um sistema de conformidade em três níveis: A, AA e AAA. A maioria dos designers já ouviu falar do AA. Poucos entendem de onde vêm essas letras, o que separa um nível do outro, e por que essa distinção importa para decisões tomadas todo dia em qualquer ferramenta de design.</p>
+
+        <p>Contraste é uma das seis falhas de acessibilidade mais comuns da web, coberta em detalhes em <a href="../falhas-de-acessibilidade-sao-decisoes-de-design/">Falhas de acessibilidade são decisões de design. A prova está aqui.</a> Este artigo aprofunda o que os níveis significam, como a proporção funciona, e onde cada limite se aplica em um produto real.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">01</span>
+          <h2 class="article-section__title" id="origem">De onde vêm os níveis</h2>
+        </div>
+
+        <h3>1.1 A origem do A, AA e AAA</h3>
+
+        <p>As Web Content Accessibility Guidelines foram publicadas pela primeira vez pelo W3C em maio de 1999. Desde o início, o grupo de trabalho reconheceu que um padrão binário de aprovado/reprovado não cobriria toda a variedade de conteúdo digital, necessidades de usuário e restrições de produção. Um sistema de três níveis foi a solução.</p>
+
+        <p>As letras são níveis de conformidade: A é o mínimo, AA é o padrão intermediário aceito globalmente como referência legal, e AAA é o nível mais alto alcançável. Cada nível é cumulativo: atingir AA exige satisfazer todos os critérios de Nível A e Nível AA, e AAA exige satisfazer tudo nos três níveis.</p>
+
+        <p>O próprio W3C não recomenda o AAA como política geral para sites inteiros, porque alguns tipos de conteúdo não conseguem satisfazer todos os critérios AAA por natureza. Cores semânticas saturadas são um exemplo concreto, abordado na seção 3.2.</p>
+
+        <p><strong>A realidade legal.</strong> Conformidade com acessibilidade tem peso legal em mais jurisdições do que a maioria das equipes percebe. Nos Estados Unidos, a ADA cobre sites do setor privado desde uma decisão do DOJ em 2022, com o WCAG 2.1 Nível AA como referência consistente. A Section 508 se aplica a todas as agências federais. Vários estados americanos individuais promulgaram legislação própria com exigências mais rígidas ou explícitas, Califórnia e Nova York entre eles. Na Europa, o European Accessibility Act tornou obrigatória a conformidade com WCAG 2.2 Nível AA para produtos e serviços digitais privados a partir de junho de 2025. "Meu produto não precisa ser acessível" deixou de ser uma posição legalmente defensável na maioria dos mercados comerciais.</p>
+
+        <h3>1.2 O que cada nível exige para contraste</h3>
+
+        <p>O WCAG 2.2 define os requisitos de contraste da seguinte forma:</p>
+
+        <p><strong>Nível AA</strong></p>
+        <ul>
+          <li>Texto normal: proporção mínima de contraste de 4,5:1 contra o fundo</li>
+          <li>Texto grande (18pt regular ou 14pt negrito e acima): mínimo de 3:1</li>
+          <li>Componentes de interface e elementos gráficos que transmitem significado: mínimo de 3:1</li>
+        </ul>
+
+        <p><strong>Nível AAA</strong></p>
+        <ul>
+          <li>Texto normal: mínimo de 7:1</li>
+          <li>Texto grande: mínimo de 4,5:1</li>
+          <li>O limite de 7:1 foi calibrado para usuários com aproximadamente 20/80 de visão, que conseguem perceber conteúdo nessa proporção sem tecnologia assistiva de melhoria de contraste. Abaixo de 7:1, parte desse grupo de usuários depende de zoom do navegador, configurações de contraste do sistema operacional, ou ferramentas de terceiros para ler o mesmo conteúdo.</li>
+        </ul>
+
+        <div class="demo-panel">
+          <div class="demo-scale__track">
+            <span class="demo-scale__tick demo-scale__tick--min">3:1</span>
+            <span class="demo-scale__tick demo-scale__tick--aa">4,5:1</span>
+            <span class="demo-scale__tick demo-scale__tick--aaa">7:1</span>
+          </div>
+          <div class="demo-scale__ends">
+            <span>1:1</span>
+            <span>21:1</span>
+          </div>
+          <div class="demo-scale__swatches">
+            <div class="demo-scale__swatch">
+              <p class="demo-scale__swatch-sample demo-scale__swatch-sample--fail">Salvar alterações</p>
+              <p class="demo-scale__swatch-ratio">2,85:1 · falha</p>
+            </div>
+            <div class="demo-scale__swatch">
+              <p class="demo-scale__swatch-sample demo-scale__swatch-sample--aa">Salvar alterações</p>
+              <p class="demo-scale__swatch-ratio demo-scale__swatch-ratio--aa">4,54:1 · AA</p>
+            </div>
+            <div class="demo-scale__swatch">
+              <p class="demo-scale__swatch-sample demo-scale__swatch-sample--aaa">Salvar alterações</p>
+              <p class="demo-scale__swatch-ratio demo-scale__swatch-ratio--aaa">7,0:1 · AAA</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">A escala de contraste do WCAG, de 1:1 a 21:1. Mesmo fundo branco em todos, só o cinza fica mais escuro.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">02</span>
+          <h2 class="article-section__title" id="proporcao">Como a proporção é calculada</h2>
+        </div>
+
+        <h3>2.1 Luminância, não matiz</h3>
+
+        <p>A proporção de contraste mede a diferença de luminância entre duas cores. Luminância é o brilho relativo de uma cor conforme percebido pelo olho humano, normalizado de 0 (preto puro) a 1 (branco puro).</p>
+
+        <p>A fórmula, conforme definida pelo W3C:</p>
+
+        <p><strong>Proporção de contraste = (L1 + 0,05) / (L2 + 0,05)</strong></p>
+
+        <p>L1 é a luminância relativa da cor mais clara, L2 a mais escura. A escala vai de 1:1 (cores idênticas) a 21:1 (preto sobre branco).</p>
+
+        <p>Um equívoco comum: duas cores que parecem distintas por causa do matiz ainda podem falhar em contraste porque seus valores de luminância são próximos. Vermelho vivo e verde vivo são um caso clássico: parecem muito diferentes, mas ambos ficam numa faixa de luminância média, o que produz uma proporção baixa entre si e contra muitos fundos neutros.</p>
+
+        <h3>2.2 Por que só o código hexadecimal não basta</h3>
+
+        <p>Valores RGB no espaço de cor sRGB são codificados com gamma. Um valor de 128 numa escala de 0 a 255 não representa metade do brilho de 255. Os valores precisam ser linearizados antes de calcular a luminância. Depois da linearização, a fórmula pondera os três canais de forma diferente:</p>
+
+        <p><strong>L = 0,2126 × R + 0,7152 × G + 0,0722 × B</strong></p>
+
+        <p>O verde carrega o peso mais alto porque o olho humano percebe comprimentos de onda verdes como mais brilhantes que vermelho ou azul na mesma intensidade. Um verde vibrante e um azul vibrante que parecem igualmente saturados podem produzir proporções de contraste completamente diferentes contra o mesmo fundo.</p>
+
+        <h3>2.3 Verificando contraste sem plugin</h3>
+
+        <p>Antes de existirem verificadores de contraste dentro das ferramentas de design, uma solução prática era tirar um screenshot do design, abrir no Photoshop e dessaturar a imagem. A dessaturação remove o matiz e deixa só a luminância visível. Pares de baixo contraste aparecem como cinzas quase idênticos. Impreciso, mas eficaz o suficiente para pegar falhas óbvias antes de a especificação chegar à engenharia.</p>
+
+        <p>Hoje, duas opções não exigem nada instalado:</p>
+
+        <p>O Chrome DevTools tem um indicador de proporção de contraste dentro do seletor de cores. Inspecione qualquer elemento de texto, clique na amostra de cor nos estilos computados, e a proporção aparece com marcadores de aprovado/reprovado para AA e AAA. Funciona em qualquer página ao vivo.</p>
+
+        <p>O WebAIM Contrast Checker, em webaim.org/resources/contrastchecker, recebe dois valores hexadecimais e retorna a proporção imediatamente. Sem necessidade de conta.</p>
+
+        <div class="demo-panel">
+          <div class="demo-methods">
+            <div class="demo-methods__col">
+              <p class="demo-methods__title">Chrome DevTools</p>
+              <div class="demo-methods__devtools">
+                <div class="demo-methods__devtools-row">
+                  <span class="demo-methods__swatch"></span>
+                  <span>#767676</span>
+                </div>
+                <div class="demo-methods__devtools-ratio">Proporção de contraste: 4,54</div>
+                <div class="demo-methods__badges">
+                  <span class="demo-methods__badge demo-methods__badge--pass">Aprova AA</span>
+                  <span class="demo-methods__badge demo-methods__badge--fail">Falha AAA</span>
+                </div>
+              </div>
+            </div>
+            <div class="demo-methods__col">
+              <p class="demo-methods__title">WebAIM Contrast Checker</p>
+              <div class="demo-methods__webaim">
+                <div class="demo-methods__field"><span>Primeiro plano</span><span>#767676</span></div>
+                <div class="demo-methods__field"><span>Fundo</span><span>#FFFFFF</span></div>
+                <div class="demo-methods__result">4,54:1</div>
+                <div class="demo-methods__badges">
+                  <span class="demo-methods__badge demo-methods__badge--pass">Aprova AA</span>
+                  <span class="demo-methods__badge demo-methods__badge--fail">Falha AAA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Mesmo par, duas ferramentas, mesma resposta: #767676 sobre branco passa no AA e falha no AAA.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">03</span>
+          <h2 class="article-section__title" id="pratica">Onde cada limite se aplica na prática</h2>
+        </div>
+
+        <h3>3.1 A hierarquia por consequência</h3>
+
+        <p>Textos diferentes numa interface carregam consequências diferentes quando o contraste falha. Uma legenda decorativa e uma mensagem de erro podem falhar na mesma proporção. A auditoria parece idêntica. O impacto no usuário é completamente diferente.</p>
+
+        <p>Uma hierarquia prática de onde o AAA é o mínimo aceitável:</p>
+
+        <p><strong>Mensagens de feedback.</strong> Estados de erro, mensagens de validação, confirmações de sucesso, avisos. Se um usuário envia um formulário incorretamente e não consegue ler o erro porque o texto está em 3,1:1, ele não tem nenhuma informação sobre o que deu errado. Tenta de novo, falha de novo, e sai. Esse é o momento em que a interface mais precisa se comunicar com clareza com alguém que já está confuso. AAA, sem exceção.</p>
+
+        <p>No contexto de um design system, tokens como <code>foreground-on-state-strong</code> e <code>foreground-on-state-subtle</code> deveriam ser definidos contra seus fundos pretendidos em AAA desde o início. Se o vermelho de erro atinge 4,5:1 como fundo, o token de primeiro plano em cima precisa compensar. Texto branco sobre vermelho escuro costuma atingir AAA onde o inverso não atinge. A decisão acontece no nível do token: se o token está errado, todo componente que o referencia é lançado com a mesma falha.</p>
+
+        <p><strong>Ações disponíveis.</strong> O rótulo de qualquer elemento interativo que o usuário pode ativar no momento. AAA.</p>
+
+        <p><strong>Rótulos de formulário.</strong> O que um campo está pedindo. Um rótulo que falha em contraste desaparece para usuários com baixa visão exatamente no momento em que precisam saber o que digitar. AAA.</p>
+
+        <p><strong>Títulos e corpo de texto.</strong> A superfície de leitura principal. Mire AAA como padrão. A perda de conforto de leitura abaixo de 7:1 é mensurável para usuários com baixa visão, para usuários mais velhos cuja sensibilidade a contraste diminui com a idade, e para qualquer pessoa numa tela de baixa qualidade ou sob luz ambiente forte.</p>
+
+        <p><strong>Texto secundário e decorativo.</strong> Legendas, timestamps, metadados que complementam em vez de substituir outra informação. AA é aceitável com bom senso.</p>
+
+        <h3>3.2 Onde o AAA esbarra em limites físicos reais</h3>
+
+        <p>Certas cores saturadas ficam numa faixa de luminância que torna 7:1 matematicamente inalcançável sem mudar fundamentalmente a cor. Um vermelho a 7:1 contra branco vira bordô escuro. Um amarelo a 7:1 contra branco vira oliva escuro. A cor perde a função comunicativa pela qual foi escolhida.</p>
+
+        <p>Um vermelho de erro forte, em muitas configurações de rampa de design system, vai falhar no AAA como fundo com texto branco em cima. Ajustar o token de primeiro plano recupera contraste em algumas configurações, mas a restrição física é real em outras.</p>
+
+        <p>A resposta correta: documentar a exceção explicitamente. Este token atinge AA neste contexto por este motivo. Uma exceção não documentada se propaga silenciosamente por todo componente que a referencia. Uma exceção documentada é uma decisão de design.</p>
+
+        <p>Na prática, um design system construído com contraste como preocupação de primeira classe atinge AAA em aproximadamente 70 a 80% dos contextos de texto. O percentual restante envolve cores semânticas saturadas, com exceções deliberadas e registradas.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">04</span>
+          <h2 class="article-section__title" id="dados-criticos">Dados críticos além de valores financeiros</h2>
+        </div>
+
+        <h3>4.1 Um exemplo real da Instivo</h3>
+
+        <p>Qualquer dado que habilita uma decisão com consequências reais exige o mesmo tratamento de contraste que dados financeiros.</p>
+
+        <p>Durante o trabalho na Instivo, uma plataforma enterprise de governança de varejo, o dashboard do produto exibia dados operacionais de estoque em cards: produtos com excesso de estoque, produtos com estoque baixo, e produtos já esgotados. Três estados, três cores, e uma consequência operacional imediata se algum fosse mal interpretado.</p>
+
+        <p>O usuário nesse dashboard é um comprador ou gerente de armazém tomando decisões de compra sob pressão de tempo. Um alerta crítico perdido porque o rótulo de esgotado renderizou a 3,2:1 significa um pedido não feito e uma prateleira que continua vazia. AAA era o requisito, não porque os números fossem monetários, mas porque interpretar mal tinha custo operacional direto.</p>
+
+        <div class="demo-panel">
+          <p class="demo-inventory__row-label">Só borda de cor, contraste baixo</p>
+          <div class="demo-inventory demo-inventory--fail">
+            <div class="demo-inventory__card">
+              <p class="demo-inventory__state">Excesso de estoque</p>
+              <p class="demo-inventory__product">SKU 40213</p>
+              <p class="demo-inventory__ratio">2,6:1 · falha</p>
+            </div>
+            <div class="demo-inventory__card">
+              <p class="demo-inventory__state">Estoque baixo</p>
+              <p class="demo-inventory__product">SKU 18820</p>
+              <p class="demo-inventory__ratio">2,9:1 · falha</p>
+            </div>
+            <div class="demo-inventory__card">
+              <p class="demo-inventory__state">Esgotado</p>
+              <p class="demo-inventory__product">SKU 55107</p>
+              <p class="demo-inventory__ratio">3,2:1 · falha</p>
+            </div>
+          </div>
+          <p class="demo-inventory__row-label">Ícone, rótulo e contraste AAA</p>
+          <div class="demo-inventory demo-inventory--pass">
+            <div class="demo-inventory__card">
+              <span class="demo-inventory__icon" aria-hidden="true">▲ EXCESSO</span>
+              <p class="demo-inventory__state">Excesso de estoque</p>
+              <p class="demo-inventory__product">SKU 40213</p>
+              <p class="demo-inventory__ratio">7,2:1 · AAA</p>
+            </div>
+            <div class="demo-inventory__card">
+              <span class="demo-inventory__icon" aria-hidden="true">● BAIXO</span>
+              <p class="demo-inventory__state">Estoque baixo</p>
+              <p class="demo-inventory__product">SKU 18820</p>
+              <p class="demo-inventory__ratio">7,4:1 · AAA</p>
+            </div>
+            <div class="demo-inventory__card">
+              <span class="demo-inventory__icon" aria-hidden="true">■ FIM</span>
+              <p class="demo-inventory__state">Esgotado</p>
+              <p class="demo-inventory__product">SKU 55107</p>
+              <p class="demo-inventory__ratio">7,1:1 · AAA</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Os mesmos três estados de estoque. Só cor versus cor, ícone, rótulo e texto AAA juntos.</p>
+
+        <h3>4.2 Outros contextos onde a mesma lógica se aplica</h3>
+
+        <p>Dosagem de medicamento em interfaces de saúde, indicadores de prazo em ferramentas de gestão de projeto, dados de capacidade em sistemas de logística, status de bateria ou conexão em fluxos dependentes de dispositivo, contagem de erros e níveis de severidade em dashboards de monitoramento.</p>
+
+        <p>A pergunta que determina tudo: o que acontece operacionalmente se o usuário interpretar errado.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">05</span>
+          <h2 class="article-section__title" id="invisivel">O usuário que nunca reclama</h2>
+        </div>
+
+        <h3>5.1 Por que falhas de contraste continuam invisíveis nos dados do produto</h3>
+
+        <p>Usuários não abrem chamados de suporte por causa de contraste. Sentem atrito, ficam confusos, e fecham a aba. O produto não aprende nada.</p>
+
+        <p>De acordo com o relatório WebAIM Million de 2025, falhas de contraste aparecem em 79,1% das homepages analisadas, um número quase constante desde 2019. Como coberto em <a href="../falhas-de-acessibilidade-sao-decisoes-de-design/">Falhas de acessibilidade são decisões de design</a>, essas falhas são decisões de design tomadas antes de o código existir. Não produzem crash, nem 404, nem entrada de log. Só uma sessão que terminou mais cedo do que deveria.</p>
+
+        <p>Falhas de contraste não vão aparecer no feedback do usuário antes de serem grandes o suficiente para aparecer nas métricas de retenção. Nesse ponto o dano já está distribuído por milhares de sessões. Teste antes de lançar.</p>
+
+        <h3>5.2 O estado do botão desabilitado</h3>
+
+        <p>Stakeholders veem produtos em condições controladas: demos, walkthroughs, sessões de revisão onde alguém guia o fluxo. Veem o caminho feliz. Botões habilitados, formulários completos.</p>
+
+        <p>O estado de botão desabilitado aparece quando o usuário ainda não fez o que a interface exige: antes de uma data ser selecionada num fluxo de reserva, antes de campos obrigatórios serem preenchidos num formulário de várias etapas, antes de dados do cartão serem inseridos no checkout. Visível para o usuário que está travado. Invisível para o stakeholder numa demo.</p>
+
+        <p>A abordagem padrão é reduzir a opacidade. Diminui a opacidade, o botão parece inativo. Reduzir a opacidade também reduz o contraste proporcionalmente. Um rótulo de botão que passa no AA em opacidade total pode cair para 2:1 a 40% de opacidade. O usuário com baixa visão não consegue ler o que o botão diz. Recebe uma única informação (algo está indisponível) sem nenhum contexto sobre o que é ou como ativar.</p>
+
+        <p>O WCAG 2.2 inclui uma isenção de contraste para estados desabilitados, porque elementos desabilitados são intencionalmente desenfatizados. Essa isenção cria flexibilidade. Usar essa flexibilidade para remover a legibilidade do rótulo tira informação exatamente dos usuários que mais precisam dela.</p>
+
+        <p>Correção: manter contraste legível no rótulo do botão independente do que a superfície faz. Adicionar um tooltip ou texto de apoio em fluxos de várias etapas. Deixar a superfície comunicar inatividade. Deixar o rótulo comunicar a ação e o que ela exige.</p>
+
+        <div class="demo-panel">
+          <div class="demo-disabled">
+            <div class="demo-disabled__col">
+              <button type="button" class="demo-disabled__btn demo-disabled__btn--bad" disabled>Continuar</button>
+              <p class="demo-disabled__ratio">≈2:1 a 40% de opacidade</p>
+            </div>
+            <div class="demo-disabled__col">
+              <button type="button" class="demo-disabled__btn demo-disabled__btn--good" disabled>Continuar</button>
+              <p class="demo-disabled__helper">Selecione uma data para continuar.</p>
+              <p class="demo-disabled__ratio demo-disabled__ratio--pass">7,1:1 no rótulo · AAA</p>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Mesmo estado desabilitado. Um remove a legibilidade do rótulo, o outro mantém legível e adiciona o contexto que faltava.</p>
+
+        <h2 id="fontes">Fontes</h2>
+
+        <ul>
+          <li>W3C Web Accessibility Initiative. <em>Web Content Accessibility Guidelines (WCAG) 2.2, Success Criteria 1.4.3 e 1.4.6.</em> <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">w3.org/TR/WCAG22</a></li>
+          <li>W3C Web Accessibility Initiative. <em>Understanding Conformance.</em> <a href="https://www.w3.org/WAI/WCAG22/Understanding/conformance" target="_blank" rel="noopener noreferrer">w3.org/WAI/WCAG22/Understanding/conformance</a></li>
+          <li>W3C Web Accessibility Initiative. <em>Understanding SC 1.4.3: Contrast (Minimum).</em> <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum" target="_blank" rel="noopener noreferrer">w3.org/WAI/WCAG22/Understanding/contrast-minimum</a></li>
+          <li>W3C Web Accessibility Initiative. <em>Understanding SC 1.4.6: Contrast (Enhanced).</em> <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced" target="_blank" rel="noopener noreferrer">w3.org/WAI/WCAG22/Understanding/contrast-enhanced</a></li>
+          <li>W3C Web Accessibility Initiative. <em>Web Content Accessibility Guidelines (WCAG) 2.1.</em> <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">w3.org/TR/WCAG21</a></li>
+          <li>WebAIM. <em>The WebAIM Million: The 2025 report on the accessibility of the top 1,000,000 home pages.</em> <a href="https://webaim.org/projects/million/" target="_blank" rel="noopener noreferrer">webaim.org/projects/million</a></li>
+          <li>WebAIM. <em>Contrast Checker.</em> <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">webaim.org/resources/contrastchecker</a></li>
+          <li>AudioEye. <em>A vs AA vs AAA: WCAG Conformance Levels Explained.</em> <a href="https://www.audioeye.com/post/wcag-conformance-levels" target="_blank" rel="noopener noreferrer">audioeye.com/post/wcag-conformance-levels</a></li>
+          <li>Level Access. <em>WCAG Levels Explained: Understanding A, AA, and AAA Compliance.</em> <a href="https://www.levelaccess.com/blog/ada-compliance-levels/" target="_blank" rel="noopener noreferrer">levelaccess.com/blog/ada-compliance-levels</a></li>
+          <li>Eye-Able. <em>WCAG compliance levels: A, AA and AAA explained.</em> <a href="https://eye-able.com/blog/wcag-a-aa-aaa/" target="_blank" rel="noopener noreferrer">eye-able.com/blog/wcag-a-aa-aaa</a></li>
+          <li>AllAccessible. <em>Color Contrast Accessibility: Complete WCAG 2025 Guide.</em> <a href="https://www.allaccessible.org/blog/color-contrast-accessibility-wcag-guide-2025/" target="_blank" rel="noopener noreferrer">allaccessible.org/blog/color-contrast-accessibility-wcag-guide-2025</a></li>
+          <li>National Eye Institute. <em>Color Blindness.</em> <a href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness" target="_blank" rel="noopener noreferrer">nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness</a></li>
+          <li>U.S. Department of Justice. <em>Guidance on Web Accessibility and the ADA.</em> <a href="https://www.ada.gov/resources/web-guidance/" target="_blank" rel="noopener noreferrer">ada.gov/resources/web-guidance</a></li>
+        </ul>
+
+        <div class="article-end">
+          <section class="newsletter-section" aria-labelledby="newsletter-article-title">
+            <div class="newsletter-inner">
+              <p class="newsletter-eyebrow">Newsletter</p>
+              <h2 class="newsletter-title" id="newsletter-article-title">Receba o próximo no seu e‑mail</h2>
+              <p class="newsletter-desc">Novos posts, notas de design e algo útil de vez em quando. Sem ruído, sem pitch de vendas.</p>
+              <script async data-uid="87cb6ee129" src="https://cristofolini.kit.com/87cb6ee129/index.js"></script>
+              <p class="newsletter-disclaimer">Sem spam. Cancele quando quiser.</p>
+            </div>
+          </section>
+        </div>
+
+      </article>
+    </div>
+
+  </main>
+
+  <a href="../../work/" class="cta-section" aria-label="Ver trabalhos selecionados">
+    <p class="cta-section__eyebrow">Trabalhos selecionados</p>
+    <p class="cta-section__headline">Veja o que<br><em>eu construí.</em></p>
+    <span class="cta-section__arrow" aria-hidden="true">→</span>
+  </a>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="../../" class="footer__nav-link">Início</a>
+        <a href="../../work/" class="footer__nav-link">Trabalhos</a>
+        <a href="../" class="footer__nav-link">Insights</a>
+        <a href="../../contact/" class="footer__nav-link">Contato</a>
+        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js" defer></script>
+  <script>
+    (function () {
+      var toc = document.querySelector('.article-toc');
+      if (!toc) return;
+      var links = Array.from(toc.querySelectorAll('.article-toc__link'));
+      var targets = links.map(function(l) {
+        return document.querySelector(l.getAttribute('href'));
+      }).filter(Boolean);
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) { l.classList.remove('is-active'); });
+            var active = toc.querySelector('a[href="#' + e.target.id + '"]');
+            if (active) active.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-15% 0px -75% 0px' });
+      targets.forEach(function(h) { obs.observe(h); });
+    })();
+  </script>
+
+</body>
+</html>

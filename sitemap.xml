@@ -181,6 +181,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/contrast-aa-vs-aaa/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/contrast-aa-vs-aaa/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/contrast-aa-vs-aaa/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/contraste-aa-vs-aaa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/contrast-aa-vs-aaa/"/>
   </url>
   <url>
@@ -188,6 +197,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/what-is-aria/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/o-que-e-aria/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/what-is-aria/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/blog/o-que-e-aria/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/what-is-aria/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/o-que-e-aria/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/what-is-aria/"/>
   </url>
   <url>
@@ -195,6 +213,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/color-blindness/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/daltonismo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/color-blindness/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/blog/daltonismo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/color-blindness/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/daltonismo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/color-blindness/"/>
   </url>
   <url>
@@ -202,6 +229,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/keyboard-navigation-testing/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/navegacao-por-teclado/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/keyboard-navigation-testing/"/>
+  </url>
+  <url>
+    <loc>https://cristofolini.site/pt-br/blog/navegacao-por-teclado/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/keyboard-navigation-testing/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/navegacao-por-teclado/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/keyboard-navigation-testing/"/>
   </url>
   <url>
