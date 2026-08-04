@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+  <title>Design tokens vs. hardcoded values: the audit that actually finds what's leaking through | Dhiego</title>
+  <meta name="description" content="Where hardcoded hex and pixel values actually hide in a codebase with a token file, five grep commands that find them, and how to turn the audit into a permanent gate instead of a one-time cleanup.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Design tokens vs. hardcoded values: the audit that actually finds what's leaking through">
+  <meta property="og:description" content="Where hardcoded hex and pixel values actually hide in a codebase with a token file, five grep commands that find them, and how to turn the audit into a permanent gate instead of a one-time cleanup.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/blog/tokens-cover.svg">
+  <meta property="og:url" content="https://cristofolini.site/blog/design-tokens-vs-hardcoded-values/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Design tokens vs. hardcoded values: the audit that actually finds what's leaking through">
+  <meta name="twitter:description" content="Five grep commands that find hardcoded hex and pixel values hiding in a codebase with a token file, and how to turn the audit into a permanent gate.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/tokens-cover.svg">
+  <link rel="canonical" href="https://cristofolini.site/blog/design-tokens-vs-hardcoded-values/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/design-tokens-vs-hardcoded-values/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/tokens-de-design-vs-valores-hardcoded/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/design-tokens-vs-hardcoded-values/">
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
+  <link href="../../assets/css/blog.css?v=2" rel="stylesheet">
+  <style>
+    .demo-panel {
+      margin: 32px 0;
+      padding: 28px;
+      border: 1px solid var(--b0);
+      background: var(--bg1);
+    }
+    .article-body .demo-caption {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      text-align: center;
+      margin: 12px 0 32px;
+    }
+
+    /* Artifact 1: live token vs hardcoded swatch */
+    .demo-swatch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: center;
+    }
+    .demo-swatch__box {
+      height: 88px;
+      border: 1px solid var(--b1);
+      margin-bottom: 12px;
+    }
+    .demo-swatch__box--token { background: var(--demo-accent, var(--y)); }
+    .demo-swatch__box--literal { background: #f3b02e; }
+    .demo-swatch__label {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--t1);
+      margin-bottom: 4px;
+    }
+    .demo-swatch__value {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+    }
+    .demo-swatch__controls {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .demo-swatch__btn {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t2);
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    .demo-swatch__btn:hover { color: var(--t1); border-color: var(--b2); }
+    .demo-swatch__btn:focus-visible { outline: 2px solid var(--y); outline-offset: 2px; }
+    .demo-swatch__btn.is-active { color: var(--y); border-color: var(--accent-border); background: var(--accent-dim); }
+
+    /* Artifact 2: the five-command audit */
+    .demo-grep {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: step;
+    }
+    .demo-grep li {
+      counter-increment: step;
+      position: relative;
+      padding: 16px 0 16px 42px;
+      border-top: 1px solid var(--b1);
+    }
+    .demo-grep li:first-child { border-top: none; }
+    .demo-grep li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--accent-border);
+      color: var(--y);
+      font-family: var(--mono);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .demo-grep__cmd {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--t1);
+      background: var(--bg2);
+      border: 1px solid var(--accent-border);
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .demo-grep__catches {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--t2);
+    }
+    .demo-grep__catches b { color: var(--t1); }
+
+    /* Artifact 3: primitive -> semantic -> component chain */
+    .demo-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .demo-chain__box {
+      background: var(--bg2);
+      border: 1px solid var(--b1);
+      padding: 14px 16px;
+    }
+    .demo-chain__box--semantic { border-color: var(--accent-border); background: var(--accent-dim); }
+    .demo-chain__tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-bottom: 8px;
+    }
+    .demo-chain__box--semantic .demo-chain__tag { color: var(--y); }
+    .demo-chain__code {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t1);
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+    .demo-chain__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--t3);
+      font-family: var(--mono);
+      font-size: 13px;
+      padding: 2px 0;
+    }
+    @media (max-width: 640px) {
+      .demo-swatch { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Design tokens vs. hardcoded values: the audit that actually finds what's leaking through",
+    "author": { "@type": "Person", "name": "Dhiego Cristofolini", "url": "https://cristofolini.site/" },
+    "datePublished": "2026-08-04",
+    "dateModified": "2026-08-04",
+    "image": "https://cristofolini.site/assets/img/blog/tokens-cover.svg",
+    "description": "Where hardcoded hex and pixel values actually hide in a codebase with a token file, five grep commands that find them, and how to turn the audit into a permanent gate instead of a one-time cleanup.",
+    "url": "https://cristofolini.site/blog/design-tokens-vs-hardcoded-values/",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../../work/">Work</a></li>
+      <li><a href="../" aria-current="page">Insights</a></li>
+    </ul>
+    <a href="../../pt-br/blog/tokens-de-design-vs-valores-hardcoded/" class="nav-lang" hreflang="pt-BR" aria-label="Switch to Portuguese">PT-BR</a>
+    <a href="../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <header class="article-hero">
+        <a href="../" class="article-hero__back">← Insights</a>
+        <span class="article-hero__tag">Design Systems</span>
+        <h1 class="article-hero__title">Design tokens vs. hardcoded values: the audit that actually finds what's leaking through</h1>
+        <div class="article-hero__meta">
+          <span>Dhiego Cristofolini</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>Aug 2026</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="article-cover">
+      <img
+        src="../../assets/img/blog/tokens-bead-hero.webp" width="1024" height="538"
+        alt="Macro photograph of a single amber glass bead threaded on a wire, with a blurred row of identical beads receding behind it"
+        loading="eager"
+      >
+    </div>
+
+    <div class="article-layout">
+
+      <aside class="article-toc" aria-label="Table of contents">
+        <p class="article-toc__label">Contents</p>
+        <a href="#what-is-a-token" class="article-toc__link">01 What a design token actually is</a>
+        <a href="#where-it-hides" class="article-toc__link">02 Where hardcoded values hide</a>
+        <a href="#the-audit" class="article-toc__link">03 The five-command audit</a>
+        <a href="#the-gate" class="article-toc__link">04 Making it a gate, not a cleanup</a>
+        <a href="#hierarchy" class="article-toc__link">05 Tokens without a hierarchy</a>
+        <a href="#testing" class="article-toc__link">06 The two-minute check</a>
+        <a href="#sources" class="article-toc__link">Sources</a>
+      </aside>
+
+      <article class="article-body">
+
+        <p><a href="../contrast-aa-vs-aaa/">AA vs AAA: what these levels actually mean and why your disabled button is failing both</a> ended on a specific instruction: when a color fails AAA in one context, document the exception on the token itself, not around it. That instruction assumes the color reaching the screen is a token to begin with, something like <code>var(--color-accent)</code> a browser can resolve, not a hex string typed once into a stylesheet and copied everywhere it was needed after. Most design systems don't reach that assumption safely. A token file gets created, a handful of components get built against it, and the rest of the codebase keeps shipping literals that happen to match the tokens by coincidence, not by reference. This is the audit for finding exactly where that gap is, and the setup that keeps it from reopening.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">01</span>
+          <h2 class="article-section__title" id="what-is-a-token">What a design token actually is</h2>
+        </div>
+
+        <p>A design token is a named variable that stores one design decision once, so every platform that needs that decision reads it from a single source instead of re-implementing it. The term has a specific origin: Jina Anne coined it in 2014 while building the Salesforce Lightning Design System, where the same color, spacing, and type values had to reach CSS, iOS, and Android, each with its own syntax for a variable. In a 2019 interview she made a point worth keeping in front of any team adopting the pattern: design tokens are a methodology, not a file format. Calling them "just variables" is like calling responsive design "just media queries," and it misses the actual discipline underneath both.</p>
+
+        <p>That discipline now has a shared exchange format behind it. The W3C's Design Tokens Community Group published the first stable version of its Design Tokens Format Module in October 2025, giving tools that previously spoke their own proprietary token formats a common file shape to read and write. None of that infrastructure does anything on its own if the values it produces never make it into the stylesheet a browser actually loads. That gap, between a token existing and a token being used everywhere the design decision it represents shows up, is what the rest of this article is about.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">02</span>
+          <h2 class="article-section__title" id="where-it-hides">Where hardcoded values hide, even with a token file</h2>
+        </div>
+
+        <h3>2.1 Copied straight from the inspector panel</h3>
+
+        <p>The most common source has nothing to do with engineering discipline. Someone opens the inspect panel on a component, copies a hex string, and it goes into the stylesheet exactly as copied: <code>#f3b02e</code> instead of <code>var(--y)</code>. It renders identically to the token-driven version. Nothing about the visual output tells anyone it isn't the token, which is exactly why it survives review.</p>
+
+        <h3>2.2 Inline styles and third-party embeds</h3>
+
+        <p>A hand-written <code>style=""</code> attribute skips the token layer entirely, and so does one written by JavaScript at runtime, which is what most third-party widgets do: a newsletter form, a chat bubble, a calendar embed. These render on brand-colored pages while reading zero of that brand's tokens, because the script that built them has no access to the host page's CSS custom properties unless someone explicitly wires it up.</p>
+
+        <h3>2.3 Ported legacy CSS</h3>
+
+        <p>A redesign rarely starts from zero. Old rules get carried into the new stylesheet wholesale during migration, hex values included, because rewriting every declaration by hand the same week as a rebrand isn't realistic. The intention is always to come back and replace them later. The audit in section 3 is what makes that intention checkable instead of aspirational.</p>
+
+        <h3>2.4 SVG source files</h3>
+
+        <p>An icon exported with <code>fill="#f3b02e"</code> baked into the path itself carries a hardcoded value that lives outside the CSS file the rest of the audit checks. <code>fill="currentColor"</code>, or a CSS custom property set on the <code>&lt;svg&gt;</code> tag, lets the icon inherit whatever color context surrounds it. A hardcoded fill doesn't, and it stays invisible to anyone scanning only <code>.css</code> files for the problem.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">03</span>
+          <h2 class="article-section__title" id="the-audit">The five-command audit</h2>
+        </div>
+
+        <p>None of the four sources above show up by inspecting a rendered component, they all look correct in the browser. They show up by searching the source directly. The five commands below are the same audit this project runs on every codebase before anything ships, adapted to any project with a <code>:root</code> token block and a <code>.css</code> / <code>.html</code> / <code>.svg</code> split.</p>
+
+        <div class="demo-panel">
+          <ol class="demo-grep">
+            <li>
+              <code class="demo-grep__cmd">grep -rn 'style="' --include=*.html .</code>
+              <p class="demo-grep__catches"><b>Catches:</b> every inline style attribute, including the ones added to "just get it done" during a deadline.</p>
+            </li>
+            <li>
+              <code class="demo-grep__cmd">grep -rnE '#[0-9a-fA-F]{3,8}\b' --include=*.css assets/css/ | grep -v ':root'</code>
+              <p class="demo-grep__catches"><b>Catches:</b> raw hex values living outside the token definition block, the ones a browser resolves directly instead of through a custom property.</p>
+            </li>
+            <li>
+              <code class="demo-grep__cmd">grep -rnE 'fill="#|stroke="#' --include=*.svg assets/img/</code>
+              <p class="demo-grep__catches"><b>Catches:</b> hardcoded color baked into icon source files, the blind spot from section 2.4.</p>
+            </li>
+            <li>
+              <code class="demo-grep__cmd">grep -rn 'rgba(' assets/css/ | grep -v 'var(--'</code>
+              <p class="demo-grep__catches"><b>Catches:</b> one-off transparency values invented on the spot instead of referencing an existing token like <code>--accent-dim</code>.</p>
+            </li>
+            <li>
+              <code class="demo-grep__cmd">grep -rnE '\b[0-9]{2,}px\b' assets/css/ | grep -v 'var(--'</code>
+              <p class="demo-grep__catches"><b>Catches:</b> pixel values outside the spacing and radius scale. This one needs a human pass, not every hit is wrong (a 1-2px border is legitimate CSS), so treat it as a shortlist for review, not an automatic fail.</p>
+            </li>
+          </ol>
+        </div>
+        <p class="demo-caption">Five commands, five different places the same problem hides. No linter, build step, or plugin required. All five run in a terminal in under thirty seconds.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">04</span>
+          <h2 class="article-section__title" id="the-gate">Making it a gate, not a cleanup</h2>
+        </div>
+
+        <p>A grep audit run once fixes today's debt and says nothing about tomorrow's pull request. Two tools turn the same patterns above into something that fails a build instead of waiting to be remembered.</p>
+
+        <p>Stylelint's <code>color-no-hex</code> rule rejects any hex color value at lint time, the same values command 2 above finds by hand. <code>declaration-property-value-disallowed-list</code> goes further and lets a team disallow specific property and value patterns project-wide, for example blocking any <code>color</code> or <code>background</code> declaration matching <code>/^#/</code> outside the token file itself. Wired into CI, either rule turns a hardcoded value into a failed pull request instead of a missed review comment.</p>
+
+        <p>The other half of the problem, the same value needing to reach CSS, iOS, and Android from one definition, is what Style Dictionary was built for. Amazon open-sourced it in 2017 as a build system that takes a single token source file and outputs it in whatever format each platform's stylesheet actually needs. A token that only exists in a design tool's export panel isn't distributed, it's documented. A build step like Style Dictionary is what makes "one value, everywhere" true past the website, not just true in principle.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">05</span>
+          <h2 class="article-section__title" id="hierarchy">Tokens without a hierarchy are renamed hex</h2>
+        </div>
+
+        <p>Passing the audit in section 3 answers whether a value is a token. It doesn't answer whether the token system is built correctly. Nathan Curtis's 2016 breakdown of token architecture at EightShapes set out the tiering most systems still reach for today: a primitive token stores a raw value, a semantic token names the job that value does, and a component only ever reads the semantic layer, never the primitive directly.</p>
+
+        <div class="demo-panel">
+          <div class="demo-chain">
+            <div class="demo-chain__box">
+              <p class="demo-chain__tag">Raw value</p>
+              <code class="demo-chain__code">#f3b02e</code>
+            </div>
+            <div class="demo-chain__arrow" aria-hidden="true">↓</div>
+            <div class="demo-chain__box">
+              <p class="demo-chain__tag">Primitive token</p>
+              <code class="demo-chain__code">--y: #f3b02e;</code>
+            </div>
+            <div class="demo-chain__arrow" aria-hidden="true">↓</div>
+            <div class="demo-chain__box demo-chain__box--semantic">
+              <p class="demo-chain__tag">Semantic token</p>
+              <code class="demo-chain__code">--accent: var(--y);</code>
+            </div>
+            <div class="demo-chain__arrow" aria-hidden="true">↓</div>
+            <div class="demo-chain__box">
+              <p class="demo-chain__tag">Component</p>
+              <code class="demo-chain__code">.btn-primary { background: var(--accent); }</code>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Four layers, one value. A component only ever reads the semantic layer. It never needs to know the raw value underneath it exists.</p>
+
+        <p>Skip that tier and a token system becomes a find-and-replace tool wearing a design system's name. A flat list of tokens named after their own value, a raw hex renamed into a variable but still describing color instead of role, means a rebrand is still a manual pass through every file that used it. Nothing about the naming tells anyone which of forty color tokens is safe to repoint and which one something else quietly depends on.</p>
+
+        <p>This site's own token file has that seam visible on purpose. <code>globals.css</code> defines primitives like <code>--y: #f3b02e</code> and a block of semantic aliases underneath them, <code>--accent: var(--y)</code>, <code>--text-primary: var(--t1)</code>, so a component styled against <code>.btn-primary { background: var(--accent) }</code> never has to know or care that the raw value is amber. That indirection is the entire point: change what <code>--accent</code> points to once, and every component reading it changes with it, without a single component file being touched.</p>
+
+        <p>The swatch below is the same idea, live. One box reads a token, the other reads the literal it currently matches. Click a button and only one of them moves.</p>
+
+        <div class="demo-panel">
+          <div class="demo-swatch">
+            <div>
+              <div class="demo-swatch__box demo-swatch__box--token"></div>
+              <p class="demo-swatch__label">Reads <code>var(--demo-accent)</code></p>
+              <p class="demo-swatch__value">token</p>
+            </div>
+            <div>
+              <div class="demo-swatch__box demo-swatch__box--literal"></div>
+              <p class="demo-swatch__label">Reads <code>#f3b02e</code></p>
+              <p class="demo-swatch__value">hardcoded literal</p>
+            </div>
+            <div class="demo-swatch__controls">
+              <button type="button" class="demo-swatch__btn is-active" data-accent="#f3b02e">Amber (default)</button>
+              <button type="button" class="demo-swatch__btn" data-accent="#8ab4ff">Switch brand accent to blue</button>
+              <button type="button" class="demo-swatch__btn" data-accent="#4ade80">Switch brand accent to green</button>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Both boxes render the identical color right now. That similarity is exactly what makes a hardcoded value invisible in review, until the brand accent changes and only one box responds.</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">06</span>
+          <h2 class="article-section__title" id="testing">The two-minute check</h2>
+        </div>
+
+        <p>No linter required, no build step, just a text editor and a browser before a component ships.</p>
+
+        <ol class="demo-grep">
+          <li>
+            <p class="demo-grep__catches">Search the file for <code>#</code>. Anything outside the <code>:root</code> block is not a token, regardless of what color it happens to match.</p>
+          </li>
+          <li>
+            <p class="demo-grep__catches">Open dev tools, select the element, and check the computed value's source. A value traced back to a CSS custom property is a token. A value that's just there, with no custom property attached, isn't.</p>
+          </li>
+          <li>
+            <p class="demo-grep__catches">Check every <code>&lt;svg&gt;</code> in the file. <code>fill</code> and <code>stroke</code> should read <code>currentColor</code> or a <code>var(--...)</code>, never a literal hex.</p>
+          </li>
+          <li>
+            <p class="demo-grep__catches">If the same raw value shows up three times in one file with nothing tying the instances together, that's the signal it should have been a token from the first line, not the third copy-paste.</p>
+          </li>
+        </ol>
+
+        <h2 id="sources">Sources</h2>
+
+        <ul>
+          <li>Design Tokens Community Group, W3C. <em>Design Tokens Specification Reaches First Stable Version.</em> <a href="https://www.w3.org/community/design-tokens/2025/10/28/design-tokens-specification-reaches-first-stable-version/" target="_blank" rel="noopener noreferrer">w3.org/community/design-tokens</a></li>
+          <li>Smashing Magazine. <em>Smashing Podcast Episode 3 With Jina Anne: What Are Design Tokens?</em> <a href="https://www.smashingmagazine.com/2019/11/smashing-podcast-episode-3/" target="_blank" rel="noopener noreferrer">smashingmagazine.com/2019/11/smashing-podcast-episode-3</a></li>
+          <li>Curtis, Nathan. EightShapes. <em>Tokens in Design Systems.</em> <a href="https://eightshapes.com/articles/tokens-in-design-systems/" target="_blank" rel="noopener noreferrer">eightshapes.com/articles/tokens-in-design-systems</a></li>
+          <li>Stylelint. <em>color-no-hex.</em> <a href="https://stylelint.io/user-guide/rules/color-no-hex/" target="_blank" rel="noopener noreferrer">stylelint.io/user-guide/rules/color-no-hex</a></li>
+          <li>Stylelint. <em>declaration-property-value-disallowed-list.</em> <a href="https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/" target="_blank" rel="noopener noreferrer">stylelint.io/user-guide/rules/declaration-property-value-disallowed-list</a></li>
+          <li>Style Dictionary. <em>Open-source build system for design tokens.</em> <a href="https://github.com/style-dictionary/style-dictionary" target="_blank" rel="noopener noreferrer">github.com/style-dictionary/style-dictionary</a></li>
+        </ul>
+
+        <div class="article-end">
+          <section class="newsletter-section" aria-labelledby="newsletter-article-title">
+            <div class="newsletter-inner">
+              <p class="newsletter-eyebrow">Newsletter</p>
+              <h2 class="newsletter-title" id="newsletter-article-title">Get the next one in your inbox</h2>
+              <p class="newsletter-desc">New posts, design notes, and the occasional useful thing. No noise, no sales pitch.</p>
+              <script async data-uid="87cb6ee129" src="https://cristofolini.kit.com/87cb6ee129/index.js"></script>
+              <p class="newsletter-disclaimer">No spam. Unsubscribe any time.</p>
+            </div>
+          </section>
+        </div>
+
+      </article>
+    </div>
+
+  </main>
+
+  <a href="../../work/" class="cta-section" aria-label="View selected work">
+    <p class="cta-section__eyebrow">Selected work</p>
+    <p class="cta-section__headline">See what<br><em>I've built.</em></p>
+    <span class="cta-section__arrow" aria-hidden="true">→</span>
+  </a>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../" class="footer__nav-link">Home</a>
+        <a href="../../work/" class="footer__nav-link">Work</a>
+        <a href="../" class="footer__nav-link">Insights</a>
+        <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+  <script>
+    (function () {
+      var toc = document.querySelector('.article-toc');
+      if (toc) {
+        var links = Array.from(toc.querySelectorAll('.article-toc__link'));
+        var targets = links.map(function(l) {
+          return document.querySelector(l.getAttribute('href'));
+        }).filter(Boolean);
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              links.forEach(function(l) { l.classList.remove('is-active'); });
+              var active = toc.querySelector('a[href="#' + e.target.id + '"]');
+              if (active) active.classList.add('is-active');
+            }
+          });
+        }, { rootMargin: '-15% 0px -75% 0px' });
+        targets.forEach(function(h) { obs.observe(h); });
+      }
+
+      var swatchButtons = document.querySelectorAll('.demo-swatch__btn');
+      var article = document.querySelector('.article-body');
+      swatchButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          swatchButtons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          article.style.setProperty('--demo-accent', btn.getAttribute('data-accent'));
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

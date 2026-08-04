@@ -65,7 +65,7 @@
         revealObserver.unobserve(e.target);
       }
     }),
-    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.15, rootMargin: '0px 0px -120px 0px' }
   );
 
   document.querySelectorAll('.sr, .reveal').forEach(el => revealObserver.observe(el));
@@ -221,17 +221,27 @@
     const btnNext = carousel.querySelector('.carousel__btn--next');
     const statusEl = carousel.querySelector('.carousel__status');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const N = slides.length;
 
-    if (slides.length >= 2) {
-      const firstClone = slides[0].cloneNode(true);
-      const lastClone  = slides[slides.length - 1].cloneNode(true);
-      firstClone.setAttribute('aria-hidden', 'true');
-      lastClone.setAttribute('aria-hidden', 'true');
-      track.appendChild(firstClone);
-      track.insertBefore(lastClone, slides[0]);
+    if (N >= 2) {
+      // [full clone of all N, real N, full clone of all N]. A single
+      // edge-slide clone (the old approach) only ever gave one peek slide
+      // per side, so on a wide/full-bleed viewport there was nothing left
+      // to show once the current slide was centered near either end.
+      // Cloning the whole set guarantees N peek slides on both sides,
+      // enough for any realistic viewport width.
+      const leftClones  = slides.map(s => { const c = s.cloneNode(true); c.setAttribute('aria-hidden', 'true'); return c; });
+      const rightClones = slides.map(s => { const c = s.cloneNode(true); c.setAttribute('aria-hidden', 'true'); return c; });
+      // insertBefore against a fixed reference (not track.firstChild, which
+      // moves after every insertion) — using the moving reference reversed
+      // the clone order, so the clone of the first real slide ended up
+      // sitting right next to that same real slide.
+      const firstRealSlide = track.firstChild;
+      leftClones.forEach(c => track.insertBefore(c, firstRealSlide));
+      rightClones.forEach(c => track.appendChild(c));
 
       const allSlides = Array.from(track.querySelectorAll('.carousel__slide'));
-      let current = 1;
+      let current = N; // first real slide
       let isTransitioning = false;
       let loopTimer = null;
 
@@ -241,14 +251,27 @@
 
       function getSlideWidth() {
         const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-        return allSlides[0].getBoundingClientRect().width + gap;
+        // offsetWidth ignores CSS transform (unlike getBoundingClientRect),
+        // which matters here because updateOpacity() scales non-current
+        // slides to 0.96 — measuring a scaled slide corrupted this value
+        // after the first navigation and threw off every translateX after it.
+        return allSlides[0].offsetWidth + gap;
+      }
+
+      // Centers the target slide in the carousel's own width instead of
+      // pinning it to the left edge, so there's peek content on both sides.
+      function centerOffset(index) {
+        const cardWidth = allSlides[0].offsetWidth;
+        const pitch = getSlideWidth();
+        const viewportWidth = carousel.getBoundingClientRect().width;
+        return (viewportWidth - cardWidth) / 2 - index * pitch;
       }
 
       function jumpTo(index) {
         track.style.transition = 'none';
         track.getBoundingClientRect(); // flush
-        track.style.transform = `translateX(${-index * getSlideWidth()}px)`;
         current = index;
+        track.style.transform = `translateX(${centerOffset(index)}px)`;
         allSlides.forEach(s => { s.style.transition = 'none'; });
         updateOpacity();
         track.getBoundingClientRect(); // flush
@@ -263,14 +286,14 @@
         track.style.transition = reduceMotion
           ? 'none'
           : 'transform var(--duration-slow) var(--ease-in-out)';
-        track.style.transform = `translateX(${-index * getSlideWidth()}px)`;
         current = index;
+        track.style.transform = `translateX(${centerOffset(index)}px)`;
         updateOpacity();
 
         const delay = reduceMotion ? 0 : TRANSITION_MS + 32;
         loopTimer = setTimeout(() => {
-          if (current === 0)                         jumpTo(allSlides.length - 2);
-          else if (current === allSlides.length - 1) jumpTo(1);
+          if (current < N)            jumpTo(current + N);
+          else if (current >= 2 * N)  jumpTo(current - N);
           isTransitioning = false;
         }, delay);
       }
@@ -301,14 +324,12 @@
           s.style.transform = i === current ? 'scale(1)' : 'scale(0.96)';
         });
 
-        const visibleIndex = current === 0
-          ? slides.length
-          : (current === allSlides.length - 1 ? 1 : current);
+        // Every index maps back to a real slide 1..N regardless of which
+        // of the three cloned sets it physically sits in.
+        const visibleIndex = (((current % N) + N) % N) + 1;
 
         allSlides.forEach((slide, i) => {
-          const logicalIndex = i === 0
-            ? slides.length
-            : (i === allSlides.length - 1 ? 1 : i);
+          const logicalIndex = (((i % N) + N) % N) + 1;
           const isVisible = i === current;
           slide.setAttribute('aria-hidden', String(!isVisible));
           setSlideInteractivity(slide, isVisible);
@@ -317,18 +338,18 @@
           const titleEl = slide.querySelector('.carousel-card__title');
           if (cardLink) {
             const title = titleEl ? titleEl.textContent.trim() : 'Project';
-            cardLink.setAttribute('aria-label', `Case study ${logicalIndex} of ${slides.length}: ${title}`);
+            cardLink.setAttribute('aria-label', `Case study ${logicalIndex} of ${N}: ${title}`);
             if (isVisible) cardLink.setAttribute('aria-current', 'true');
             else cardLink.removeAttribute('aria-current');
           }
         });
 
         if (statusEl) {
-          statusEl.textContent = `Case study ${visibleIndex} of ${slides.length}`;
+          statusEl.textContent = `Case study ${visibleIndex} of ${N}`;
         }
       }
 
-      jumpTo(1);
+      jumpTo(N);
 
       if (btnNext) btnNext.addEventListener('click', () => goTo(current + 1));
       if (btnPrev) btnPrev.addEventListener('click', () => goTo(current - 1));
@@ -344,11 +365,11 @@
         }
         if (e.key === 'Home') {
           e.preventDefault();
-          goTo(1);
+          goTo(N);
         }
         if (e.key === 'End') {
           e.preventDefault();
-          goTo(slides.length);
+          goTo(2 * N - 1);
         }
       });
 
@@ -363,7 +384,7 @@
       });
       track.addEventListener('pointercancel', () => { wasDragged = false; });
       track.addEventListener('click', e => { if (wasDragged) { e.preventDefault(); wasDragged = false; } });
-      window.addEventListener('resize', () => goTo(current, false));
+      window.addEventListener('resize', () => jumpTo(current));
     } else {
       if (btnPrev) btnPrev.style.display = 'none';
       if (btnNext) btnNext.style.display = 'none';

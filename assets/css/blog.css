@@ -581,7 +581,7 @@
   text-underline-offset: 3px;
 }
 
-.article-body a:hover { opacity: .8; }
+.article-body a:hover { color: var(--y-hi); }
 
 .article-body code {
   font-family: var(--mono);
