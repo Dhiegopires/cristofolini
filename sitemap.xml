@@ -145,20 +145,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/northpay/"/>
   </url>
   <url>
-    <loc>https://cristofolini.site/work/brightflow/</loc>
+    <loc>https://cristofolini.site/work/meaple/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/brightflow/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/brightflow/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/brightflow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/meaple/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/meaple/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/meaple/"/>
   </url>
   <url>
-    <loc>https://cristofolini.site/pt-br/work/brightflow/</loc>
+    <loc>https://cristofolini.site/pt-br/work/meaple/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/brightflow/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/brightflow/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/brightflow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cristofolini.site/work/meaple/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/meaple/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/meaple/"/>
   </url>
   <url>
     <loc>https://cristofolini.site/blog/accessibility-failures-are-design-decisions/</loc>

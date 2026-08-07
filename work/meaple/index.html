@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+  <title>Meaple | Events Super-App, End-to-End | Dhiego Cristofolini</title>
+  <meta name="description" content="End-to-end marketplace for Brazil's fragmented event economy: discovery, social coordination, ticketing and in-event payment built into one product, plus the account architecture and Momentum ranking engine behind it.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Meaple | Events Super-App, End-to-End | Dhiego Cristofolini">
+  <meta property="og:description" content="End-to-end marketplace for Brazil's fragmented event economy: discovery, social coordination, ticketing and in-event payment built into one product, plus the account architecture and Momentum ranking engine behind it.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/project/meaple/og-image.webp">
+  <meta property="og:url" content="https://cristofolini.site/work/meaple/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meaple | Events Super-App, End-to-End | Dhiego Cristofolini">
+  <meta name="twitter:description" content="End-to-end marketplace for Brazil's fragmented event economy: discovery, social coordination, ticketing and in-event payment built into one product, plus the account architecture and Momentum ranking engine behind it.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/meaple/og-image.webp">
+  <link rel="canonical" href="https://cristofolini.site/work/meaple/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/meaple/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/meaple/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/meaple/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Meaple",
+    "description": "Marketplace super-app unifying event discovery, social coordination, ticketing and in-event payment for Brazil's nightlife and events economy.",
+    "author": {
+      "@type": "Person",
+      "name": "Dhiego Cristofolini",
+      "url": "https://cristofolini.site/"
+    },
+    "dateCreated": "2020-01-01",
+    "url": "https://cristofolini.site/work/meaple",
+    "genre": "UX Case Study",
+    "keywords": "product design, ux, marketplace, mobile, fintech, events, branding, case study"
+  }
+  </script>
+  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
+  <link href="../../assets/css/case-study.css" rel="stylesheet">
+
+  <style>
+    /* Meaple-only artifacts: site tokens, one-off layouts not reused elsewhere yet. */
+
+    .cs-note {
+      border: 1px solid var(--b1);
+      border-radius: 8px;
+      padding: var(--sp-5) var(--sp-6);
+      background: var(--bg1);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .cs-note__label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--y);
+    }
+    .cs-note p { font-size: var(--text-base); line-height: 1.65; color: var(--t2); }
+
+    /* Personas / tiers / say-need-dont reuse cs-fear-cards, so nothing new needed there. */
+    .persona-timeline { list-style: none; display: grid; gap: 6px; margin: var(--sp-3) 0; }
+    .persona-timeline li { font-size: 13px; color: var(--t3); padding-left: 14px; position: relative; line-height: 1.4; }
+    .persona-timeline li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--b1); }
+
+    /* Competitive matrix */
+    .cmatrix { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .cmatrix th, .cmatrix td { text-align: center; padding: 0; }
+    .cmatrix thead th {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--t3); padding: 0 6px 14px; vertical-align: bottom; line-height: 1.25;
+    }
+    .cmatrix thead th:first-child { text-align: left; }
+    .cmatrix tbody th {
+      text-align: left; font-family: var(--sans); font-weight: 520; color: var(--t1); white-space: nowrap;
+      padding: 9px 16px 9px 4px; border-top: 1px solid var(--b0);
+    }
+    .cmatrix tbody td { border-top: 1px solid var(--b0); height: 44px; }
+    .cmatrix .dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; background: var(--bg2); box-shadow: inset 0 0 0 1px var(--b1); }
+    .cmatrix .dot.on { background: var(--y); box-shadow: 0 0 0 1px var(--y); }
+    .cmatrix tr.meaple th, .cmatrix tr.meaple td { border-top: 1.5px solid var(--y); background: rgba(243,176,46,.06); }
+    .cmatrix tr.meaple th { color: var(--y); font-weight: 700; font-family: var(--display); text-transform: uppercase; letter-spacing: .01em; }
+    @media (max-width: 560px) {
+      .cmatrix { font-size: 11.5px; }
+      .cmatrix thead th { font-size: 9px; padding: 0 2px 10px; }
+      .cmatrix tbody th { white-space: normal; font-size: 11.5px; padding: 8px 6px 8px 2px; line-height: 1.15; }
+      .cmatrix tbody td { height: 36px; }
+    }
+
+    /* Priority scatter */
+    .scatter { position: relative; width: 100%; aspect-ratio: 1.35/1; max-width: 620px; margin-inline: auto; }
+    .scatter svg { width: 100%; height: 100%; overflow: visible; }
+    .sc-lab { font-family: var(--mono); font-size: 9px; fill: var(--t2); letter-spacing: .02em; }
+    .sc-axis { font-family: var(--mono); font-size: 10px; fill: var(--t3); letter-spacing: .1em; text-transform: uppercase; }
+    .scatter-legend { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-5); font-family: var(--mono); font-size: 11px; color: var(--t2); }
+    .scatter-legend span { display: flex; align-items: center; gap: 8px; }
+    .scatter-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .scatter-legend i.imp { background: var(--y); }
+    .scatter-legend i.override { background: #f87171; }
+    .scatter-legend i.base { background: var(--t2); }
+    .sc-lab { font-weight: 700; }
+
+    /* Business targets: 5-cell stat rail, same cell language as cs-impact-cell */
+    .targets-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--b0); border: 1px solid var(--b0); border-radius: 8px; overflow: hidden; }
+    @media (max-width: 760px) { .targets-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* Account tiers relations note */
+    .tier-relations { border: 1px dashed var(--b1); border-radius: 8px; padding: var(--sp-5); margin-top: var(--sp-5); }
+    .tier-relations__label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-bottom: var(--sp-3); }
+    .tier-relations ul { list-style: none; display: grid; gap: 8px; }
+    .tier-relations li { font-size: 13.5px; color: var(--t2); padding-left: 20px; position: relative; }
+    .tier-relations li::before { content: "→"; position: absolute; left: 0; color: var(--y); }
+    .tier-relations b { color: var(--t1); }
+
+    /* Momentum diagram */
+    .momentum { display: grid; grid-template-columns: 1.3fr auto .9fr; gap: var(--sp-6); align-items: center; }
+    @media (max-width: 760px) { .momentum { grid-template-columns: 1fr; gap: var(--sp-4); } }
+    .mo-inputs { display: grid; gap: 8px; }
+    .mo-in { border: 1px solid var(--b0); border-radius: 8px; padding: 12px 16px; background: var(--bg1); font-size: 13.5px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .mo-in .sub { font-family: var(--mono); font-size: 10.5px; color: var(--t3); text-align: right; }
+    .mo-in.key { border-color: var(--y); background: rgba(243,176,46,.08); }
+    .mo-in.key .nm { color: var(--y); font-weight: 600; }
+    .mo-arrow { font-family: var(--mono); color: var(--y); font-size: 20px; text-align: center; }
+    @media (max-width: 760px) { .mo-arrow { transform: rotate(90deg); } }
+    .mo-out { border: 1px solid var(--y); border-radius: 8px; padding: var(--sp-6); background: rgba(243,176,46,.06); text-align: center; }
+    .mo-out .ot { font-family: var(--display); font-size: 20px; text-transform: uppercase; color: var(--t1); }
+    .mo-out .os { font-size: 12.5px; color: var(--t2); margin-top: 10px; line-height: 1.45; }
+
+    /* Scope map (ship / deferred) reuses cs-compare + cs-trust-pill */
+    .scope-group { margin-bottom: var(--sp-4); }
+    .scope-group__label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--t3); margin-bottom: 8px; }
+    .scope-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .scope-chip { font-size: 12px; border: 1px solid var(--b1); border-radius: 100px; padding: 4px 11px; color: var(--t2); background: var(--bg); }
+    .scope-chip.against { border-color: var(--y); color: var(--y); background: rgba(243,176,46,.08); }
+    .scope-chip .why { font-family: var(--mono); font-size: 9.5px; opacity: .7; margin-left: 6px; }
+
+    /* Roadmap */
+    .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
+    @media (max-width: 700px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
+    .roadmap-month { border: 1px solid var(--b0); border-radius: 8px; background: var(--bg1); overflow: hidden; }
+    .roadmap-month__head { font-family: var(--display); font-size: 15px; text-transform: uppercase; padding: 12px 14px; border-bottom: 1px solid var(--b0); display: flex; justify-content: space-between; align-items: center; color: var(--t1); }
+    .roadmap-month__head span { font-family: var(--mono); font-size: 10px; color: var(--y); text-transform: none; }
+    .roadmap-month ul { list-style: none; padding: 10px 14px; display: grid; gap: 6px; }
+    .roadmap-month li { font-size: 12px; color: var(--t3); line-height: 1.3; padding-left: 12px; position: relative; }
+    .roadmap-month li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
+
+    /* Context states */
+    .ctx-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-3); }
+    @media (max-width: 900px) { .ctx-grid { grid-template-columns: repeat(2, 1fr); } }
+    .ctx-card { border: 1px solid var(--b0); border-radius: 8px; padding: var(--sp-4); background: var(--bg1); }
+    .ctx-card .ci { margin-bottom: 12px; height: 24px; }
+    .ctx-card .ci svg { width: 22px; height: 22px; stroke: var(--y); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .ctx-card h4 { font-family: var(--display); font-size: 15px; text-transform: uppercase; margin-bottom: 6px; color: var(--t1); }
+    .ctx-card p { font-size: 12.5px; color: var(--t2); line-height: 1.45; margin: 0; }
+
+    /* Hierarchy ladder */
+    .ladder { display: grid; gap: 6px; max-width: 560px; }
+    .rung { display: flex; align-items: center; gap: 14px; border: 1px solid var(--b0); border-radius: 8px; padding: 11px 16px; background: var(--bg1); }
+    .rung .rk { font-family: var(--mono); font-size: 12px; color: var(--y); width: 20px; }
+    .rung .rn { font-family: var(--display); font-size: 15px; text-transform: uppercase; color: var(--t1); }
+    .rung .rv { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--t3); }
+    .rung:first-child { border-color: var(--y); background: rgba(243,176,46,.06); }
+    .chain { margin-top: var(--sp-5); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px; color: var(--t2); }
+    .chain .step { border: 1px solid var(--b1); border-radius: 100px; padding: 6px 13px; }
+    .chain .arr { color: var(--y); }
+
+    /* Brand board */
+    .brand-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin-bottom: var(--sp-6); }
+    @media (max-width: 620px) { .brand-logos { grid-template-columns: 1fr; } }
+    .brand-logo-cell { border-radius: 8px; padding: 32px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .brand-logo-cell img { height: 46px; width: auto; }
+    .brand-logo-cell.light { background: #ededf1; }
+    .brand-logo-cell.dark { background: #1C1C38; }
+    .brand-logo-cell .lname { font-family: var(--sans); font-weight: 700; font-size: 20px; }
+    .brand-logo-cell.light .lname { color: #1C1C38; }
+    .brand-logo-cell.dark .lname { color: #fff; }
+    .brand-pal { display: flex; flex-wrap: wrap; gap: var(--sp-8); }
+    .brand-pal-group__label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-bottom: var(--sp-3); }
+    .brand-swatches { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+    .brand-swatches span { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .brand-swatches i { width: 42px; height: 42px; border-radius: 50%; display: block; box-shadow: 0 0 0 1px var(--b1); }
+    .brand-swatches em { font-family: var(--mono); font-size: 10px; color: var(--t2); font-style: normal; }
+    .brand-swatches i.c-cyan   { background: #00C0FD; }
+    .brand-swatches i.c-blue   { background: #007CFF; }
+    .brand-swatches i.c-violet { background: #5500FA; }
+    .brand-swatches i.c-deep   { background: #310097; }
+    .brand-swatches i.c-white  { background: #FFFFFF; }
+    .brand-swatches i.c-navy   { background: #1C1C38; }
+
+    /* utility spacing (this page only) */
+    .u-mt-lead { margin-bottom: var(--sp-8); }
+    .u-title-tight { margin: .3em 0 .6em; }
+    .outcome-section { border-top: 1px solid var(--b0); padding-block: var(--sp-16); }
+    .outcome-title { margin: .2em 0 .5em; }
+    .outcome-trust { margin: var(--sp-6) 0; }
+    .outcome-quote { margin-bottom: var(--sp-8); }
+    .outcome-sources { max-width: 70ch; }
+    .outcome-body { max-width: 64ch; }
+    .hero-doc-link { display: inline-block; margin-top: var(--sp-6); }
+
+    /* Full-app gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--sp-5); }
+    .gallery-thumb { border: none; background: none; padding: 0; cursor: pointer; display: flex; flex-direction: column; gap: 10px; text-align: center; font: inherit; }
+    .gallery-thumb img { width: 100%; height: auto; border-radius: 16px; background: #0d0d18; box-shadow: 0 0 0 1px var(--b1); transition: transform .2s; }
+    .gallery-thumb:hover img, .gallery-thumb:focus-visible img { transform: translateY(-4px); }
+    .gallery-thumb span { font-family: var(--mono); font-size: 11px; color: var(--t3); }
+    .cs-lightbox--gallery img { border-radius: 24px; }
+
+    .cs-section__body ul.plain { list-style: none; display: grid; gap: 6px; margin: 0; }
+    .cs-section__body ul.plain li { font-size: var(--text-base); line-height: 1.6; color: var(--t2); padding-left: 16px; position: relative; }
+    .cs-section__body ul.plain li::before { content: ""; position: absolute; left: 0; top: 10px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
+  </style>
+</head>
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../" aria-current="page">Work</a></li>
+      <li><a href="../../blog/">Insights</a></li>
+    </ul>
+    <a href="../../pt-br/work/meaple/" class="nav-lang" hreflang="pt-BR" aria-label="Switch to Portuguese">PT-BR</a>
+    <a href="../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="cs-hero">
+      <div class="cs-hero__left">
+        <div class="case-hero__tags">
+          <span class="tag">Product</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Branding</span>
+          <span class="tag">End-to-end</span>
+        </div>
+        <h1 class="cs-hero__title">Five apps for one Friday night</h1>
+        <p class="cs-lead">Meaple set out to own the full journey of a Brazilian night out (before, during, and after) in a single product: discovery, social coordination, ticketing, and in-event payment. The problem nobody had solved, in Brazil, in 2020.</p>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">13</p>
+            <p class="cs-impact-label">competitors mapped · none owned more than two layers</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">3</p>
+            <p class="cs-impact-label">account tiers with hard permission boundaries</p>
+          </div>
+          <div class="cs-impact-cell">
+            <p class="cs-impact-num">5</p>
+            <p class="cs-impact-label">variables in the Momentum ranking algorithm</p>
+          </div>
+        </div>
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Role</p>
+            <p class="cs-meta-value">Design Lead</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Team</p>
+            <p class="cs-meta-value">Solo design + 2 devs</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Platform</p>
+            <p class="cs-meta-value">iOS 10+ · Android 4.4+</p>
+          </div>
+          <div class="cs-meta-cell">
+            <p class="cs-meta-label">Status</p>
+            <p class="cs-meta-value">Live · MVP paused 2020</p>
+          </div>
+        </div>
+
+        <a href="documentation/" class="cs-link cs-link--accent hero-doc-link">Read the full product definition &amp; UX documentation →</a>
+      </div>
+      <div class="cs-hero__right">
+        <img src="/assets/img/project/meaple/hero-cover.webp" width="1600" height="900" alt="Meaple brand mark, an M rendered as a butterfly, on a cyan-to-violet gradient" loading="eager">
+      </div>
+    </section>
+
+    <section class="cs-current-state">
+      <div class="cs-container">
+        <p class="cs-eyebrow cs-eyebrow--muted">Current state · before this project, Brazil 2020</p>
+        <div class="cs-diagram">
+          <svg width="100%" viewBox="0 0 680 100" role="img" aria-label="Planning one night out required five disconnected apps">
+            <defs>
+              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="var(--b1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+            <rect x="6"   y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
+            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="69"  y="38" text-anchor="middle" dominant-baseline="central">Sympla</text>
+            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="69"  y="66" text-anchor="middle" dominant-baseline="central">Ticket sales only</text>
+            <line x1="132" y1="50" x2="144" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="145" y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
+            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="208" y="38" text-anchor="middle" dominant-baseline="central">WhatsApp</text>
+            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="208" y="66" text-anchor="middle" dominant-baseline="central">Logistics only</text>
+            <line x1="271" y1="50" x2="283" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="284" y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
+            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="347" y="38" text-anchor="middle" dominant-baseline="central">Facebook</text>
+            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="347" y="66" text-anchor="middle" dominant-baseline="central">Social graph, no events</text>
+            <line x1="410" y1="50" x2="422" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="423" y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
+            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="486" y="38" text-anchor="middle" dominant-baseline="central">Instagram</text>
+            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="486" y="66" text-anchor="middle" dominant-baseline="central">Discovery, no action</text>
+            <line x1="549" y1="50" x2="561" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
+            <rect x="562" y="14" width="112" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
+            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="618" y="38" text-anchor="middle" dominant-baseline="central">PicPay</text>
+            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="618" y="66" text-anchor="middle" dominant-baseline="central">Money, no context</text>
+          </svg>
+        </div>
+        <p class="cs-caption">Nobody owned the full journey of an event. Six platforms to run one Halloween party, per one of the producers interviewed.</p>
+      </div>
+    </section>
+
+    <div class="cs-layout">
+
+      <aside class="cs-toc" aria-label="Section navigation">
+        <nav class="cs-toc__inner">
+          <a href="#s01" class="cs-toc__item">01 &nbsp;The problem</a>
+          <a href="#s02" class="cs-toc__item">02 &nbsp;Research</a>
+          <a href="#s03" class="cs-toc__item">03 &nbsp;Business reality</a>
+          <a href="#s04" class="cs-toc__item">04 &nbsp;The decision</a>
+          <a href="#s05" class="cs-toc__item">05 &nbsp;Architecture</a>
+          <a href="#s06" class="cs-toc__item">06 &nbsp;Momentum</a>
+          <a href="#s07" class="cs-toc__item">07 &nbsp;Prioritization</a>
+          <a href="#s08" class="cs-toc__item">08 &nbsp;Constraints</a>
+          <a href="#s09" class="cs-toc__item">09 &nbsp;In hindsight</a>
+          <a href="#s10" class="cs-toc__item">10 &nbsp;Product &amp; identity</a>
+          <a href="#gallery" class="cs-toc__item">Gallery</a>
+          <a href="#s11" class="cs-toc__item">11 &nbsp;Outcome</a>
+        </nav>
+      </aside>
+
+      <div class="cs-content">
+
+        <section id="s01" class="cs-section" aria-labelledby="s01-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">01</span>
+            <h2 class="cs-section__title" id="s01-title">The problem nobody had solved</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Pedro, 21, spent an entire Friday trying to find something to do: messaging during class, calling two friends after dinner, scrolling WhatsApp groups. He ended the night at home, gaming. Letícia, 26, knew there was a party that weekend, a friend had mentioned it days earlier, but the details never arrived: no location, no time, no way to find out. Fernanda, 28, organized events for a living and rebuilt the same machine every single time: a Facebook event, a Sympla listing, payment via bank deposit or PicPay, and promotion across Instagram, WhatsApp, Facebook, Snapchat, Twitter and Tumblr.</p>
+            <p>The founding team at Ensight saw the gap. <strong>Nobody owned the full journey of an event</strong> (before, during, and after) in one product. Sympla sold tickets. WhatsApp moved logistics. Facebook had the social graph but had abandoned events. Instagram had discovery but no way to act on it. PicPay moved money with no connection to what the money was for.</p>
+            <p>I joined with a blank slate: no brief, no wireframes, no prior research. My job was to define what the product should be before anyone touched a screen.</p>
+
+            <blockquote class="cs-pullquote">Three personas from primary research, each with a documented day-in-the-life. Different users, the same fragmentation beating all of them.</blockquote>
+
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Pedro, 21</p>
+                <p class="cs-fear-card__title">PUC student · extroverted</p>
+                <ul class="persona-timeline">
+                  <li>Phone through class trying to plan Friday</li>
+                  <li>Calls two friends after dinner</li>
+                  <li>Ends the night home, gaming</li>
+                </ul>
+                <p class="cs-fear-card__body"><strong>Pain:</strong> an entire day of coordination, zero results.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Letícia, 26</p>
+                <p class="cs-fear-card__title">Civil engineering, UFPR · introverted</p>
+                <ul class="persona-timeline">
+                  <li>6:30 bus, full study day</li>
+                  <li>Boyfriend asks about weekend plans</li>
+                  <li>The friend who mentioned the party never sent details</li>
+                </ul>
+                <p class="cs-fear-card__body"><strong>Pain:</strong> the information exists, it just never reaches her.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">Fernanda, 28</p>
+                <p class="cs-fear-card__title">Instagram influencer · event organizer</p>
+                <ul class="persona-timeline">
+                  <li>Facebook event + Sympla listing</li>
+                  <li>Payment by deposit / PicPay</li>
+                  <li>Promo across six separate platforms</li>
+                </ul>
+                <p class="cs-fear-card__body"><strong>Pain:</strong> six platforms, one party.</p>
+              </div>
+            </div>
+
+            <p>13 products mapped across four functional layers: event discovery, social coordination, payment, and location. No single product owned more than two.</p>
+
+            <table class="cmatrix">
+              <thead><tr><th>Product</th><th>Event<br>discovery</th><th>Social<br>coordination</th><th>Payment</th><th>Location</th></tr></thead>
+              <tbody id="cmx"><!-- filled by script below --></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="s02" class="cs-section" aria-labelledby="s02-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">02</span>
+            <h2 class="cs-section__title" id="s02-title">What the research revealed</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>I interviewed users between 19 and 30 (students and young professionals, the product's target) along with event creators and venue owners on the supply side. Three personas came out of that work, each with a documented day-in-the-life journey.</p>
+            <p>A distinction shaped everything after it: what users said, what they actually needed, and what they didn't know they needed.</p>
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">What they said</p>
+                <ul class="persona-timeline"><li>Easier event search</li><li>More privacy filters</li></ul>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">What they actually needed</p>
+                <ul class="persona-timeline"><li>More precise interactions</li><li>Better categorization</li><li>Less friction between events, meetups, groups</li></ul>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">What they didn't know they needed</p>
+                <ul class="persona-timeline"><li>Event + social + chat, unified</li><li>In-app payment</li><li>Sub-minute small-event creation</li><li>Precise event updates</li></ul>
+              </div>
+            </div>
+            <p>That third column became the product thesis. Nobody asked for unification because nobody imagined it as possible. Every user had built a personal workaround system across three to six apps and accepted the friction as the cost of having a social life.</p>
+            <p>The second finding shaped the supply side: event creators had a trust and logistics problem, and discovery had little to do with it. Fernanda's six-platform routine existed because no single platform was accountable for the whole event, and an attendee buying a ticket from an unknown producer was making a blind bet: no history, no ratings, no accountability anywhere.</p>
+          </div>
+        </section>
+
+        <section id="s03" class="cs-section" aria-labelledby="s03-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">03</span>
+            <h2 class="cs-section__title" id="s03-title">The business reality</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Before the pandemic, the Brazilian events sector moved roughly <strong>R$250 billion/year in corporate events</strong> and R$17 billion in social events, employed about 6 million people, and represented around 4.3% of national GDP, growing about 6.5% per year <span class="dim">(Abrafesta via G1; Abeoc/Sebrae)</span>.</p>
+            <p>Ensight set concrete targets before design started. Those numbers meant the product could not be a slow-burn social network that monetizes years later. It needed transaction revenue (ticket sales and in-event consumption) from early on. This constraint decided the central strategic question before it was even asked: which side of the marketplace to build first.</p>
+            <div class="targets-grid">
+              <div class="cs-impact-cell"><p class="cs-impact-num">150k</p><p class="cs-impact-label">Monthly active users</p></div>
+              <div class="cs-impact-cell"><p class="cs-impact-num">1.5M</p><p class="cs-impact-label">Downloads</p></div>
+              <div class="cs-impact-cell"><p class="cs-impact-num">R$2.00</p><p class="cs-impact-label">CAC per user</p></div>
+              <div class="cs-impact-cell"><p class="cs-impact-num">R$2.70</p><p class="cs-impact-label">Revenue / user / month</p></div>
+              <div class="cs-impact-cell"><p class="cs-impact-num">17</p><p class="cs-impact-label">Month horizon</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="s04" class="cs-section" aria-labelledby="s04-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">04</span>
+            <h2 class="cs-section__title" id="s04-title">The decision I almost got wrong</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>My first instinct was to build the consumer side first: get users in, make discovery good, then bring producers to the audience. That's wrong for a marketplace, and the business targets made it obviously wrong. A producer with no audience on a new platform has no reason to create events there. The product would die waiting for an audience that never came, all while burning acquisition budget against a R$2.00 CAC ceiling.</p>
+            <blockquote class="cs-pullquote">One producer brings their entire existing audience. One consumer brings only themselves.</blockquote>
+            <p>The only way through was giving producers something worth migrating for <em>before</em> the audience existed: ticket sales, event analytics, page infrastructure, professional visibility. Revenue for producers from day one, even with a small crowd.</p>
+            <div class="cs-note">
+              <p class="cs-note__label">The research agreed after the fact</p>
+              <p>In November 2019, Lenny Rachitsky (who had led supply growth at Airbnb) published his study of the largest marketplace companies: roughly 80% grew by activating supply first (Lyft, Eventbrite, OpenTable, Thumbtack). We didn't have that study in hand when the call was made; the producer interviews took us to the same place.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="s05" class="cs-section" aria-labelledby="s05-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">05</span>
+            <h2 class="cs-section__title" id="s05-title">The three-tier account system</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Private events between friends, individual professionals, and the companies that run events: three fundamentally different cases.</p>
+            <div class="cs-rejected">
+              <span class="cs-rejected__label">What I abandoned</span>
+              A two-tier system (personal / professional) that put DJs, speakers, trainers, and production companies under one umbrella. It confused permissions and made verification feel arbitrary: a DJ and a concert promoter need almost nothing in common from the platform.
+            </div>
+            <p>What shipped: three account types with hard boundaries. The partnership model connected the tiers: a football club hosting a concert partners with the production company running the show and lists performers as professional partners. Each entity keeps its own accountability and visibility.</p>
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">followers only</p>
+                <p class="cs-fear-card__title">Personal</p>
+                <ul class="persona-timeline">
+                  <li>Events visible only to followers</li>
+                  <li>No Explore / Momentum presence</li>
+                  <li>Transaction cap on money movement</li>
+                  <li>Creatable in under a minute</li>
+                </ul>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">verified individual</p>
+                <p class="cs-fear-card__title">Professional</p>
+                <ul class="persona-timeline">
+                  <li>DJs, speakers, coaches</li>
+                  <li>Participate without owning events</li>
+                  <li>Listed as partners on company events</li>
+                  <li>Visibility without company overhead</li>
+                </ul>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__label">verified organization</p>
+                <p class="cs-fear-card__title">Company</p>
+                <ul class="persona-timeline">
+                  <li>Unlimited ticket sales, categories, tags</li>
+                  <li>Momentum + Explore visibility</li>
+                  <li>Role management, page statistics</li>
+                  <li>Legal accountability at verification</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tier-relations">
+              <p class="tier-relations__label">Relations</p>
+              <ul>
+                <li><b>Personal</b> creates <b>Company</b> (Facebook Pages model)</li>
+                <li><b>Professional</b> partners on <b>Company</b> events</li>
+                <li><b>Company ↔ Company</b> partnership, verification-gated both sides</li>
+                <li>Only <b>Company</b> reaches Momentum</li>
+              </ul>
+            </div>
+            <p class="cs-caption">The same structure served webinars: one company, multiple professional speakers listed as contributors.</p>
+          </div>
+        </section>
+
+        <section id="s06" class="cs-section" aria-labelledby="s06-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">06</span>
+            <h2 class="cs-section__title" id="s06-title">Momentum: the discovery engine</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>In 2020, distance was the only ranking signal most event apps used. A rave and a classical concert at the same distance looked equally relevant to everyone. Momentum ranked the Explore feed on five inputs instead.</p>
+            <p><strong>Producer credibility was the variable that mattered most and cost the most to design.</strong> It combined verification status, event history, ratings on past events, and recency of activity. The goal: make bad production expensive. A new account, even verified, ranked below a producer with ten well-rated events.</p>
+            <div class="momentum">
+              <div class="mo-inputs">
+                <div class="mo-in"><span class="nm">Preference match</span><span class="sub">categories + tags</span></div>
+                <div class="mo-in"><span class="nm">Distance</span><span class="sub">spatial</span></div>
+                <div class="mo-in"><span class="nm">Engagement velocity</span><span class="sub">on event page</span></div>
+                <div class="mo-in key"><span class="nm">Producer credibility</span><span class="sub">verified · history · ratings · recency</span></div>
+                <div class="mo-in"><span class="nm">Social graph</span><span class="sub">who you follow, confirmed</span></div>
+              </div>
+              <div class="mo-arrow">→</div>
+              <div class="mo-out">
+                <div class="ot">Explore ranking</div>
+                <div class="os">Map layer: pin size = interaction volume · a friend nearby who activated real-time presence surfaces as a distinct pin color</div>
+              </div>
+            </div>
+            <div class="cs-note">
+              <p class="cs-note__label">What I'd do differently</p>
+              <p>The weighting between the five variables was never formally defined. The inputs were designed; their relative importance wasn't. That specification reached engineering as an open question. Today the weighting would be documented with reasoning before a developer ever saw it.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="s07" class="cs-section" aria-labelledby="s07-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">07</span>
+            <h2 class="cs-section__title" id="s07-title">The score said cut it. We shipped it anyway.</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>The priority matrix scored 14 problems on importance and viability. Most decisions followed the scores: the top of the table shipped in the core MVP, and anything that needed user volume to matter (chat, video feed, real-time location) was deferred regardless of quality.</p>
+            <p>In-event consumption, the <em>comanda</em> (attendees order and pay inside the app), scored <strong>1/1: lowest importance and lowest viability of all 14 rows.</strong> By the framework's logic it should never have been built. It shipped as a late MVP feature anyway, because the business model outweighed the user score. Users didn't care, and the matrix was right about that. But producers did, and the R$2.70 revenue target needed more than ticket fees. <strong>The comanda was never a user feature. It was a supply-side acquisition tool wearing a user feature's clothes.</strong></p>
+
+            <div class="cs-diagram">
+              <div class="scatter"><svg id="scatter" viewBox="0 0 620 460"></svg></div>
+              <div class="scatter-legend">
+                <span><i class="imp"></i> Highest importance (5)</span>
+                <span><i class="override"></i> Scored 1/1: shipped anyway (comanda)</span>
+                <span><i class="base"></i> Shipped in core MVP</span>
+              </div>
+            </div>
+            <p class="cs-caption">The matrix was a tool, not a rulebook. In-event consumption scored lowest on both axes and shipped anyway: the business model overrode the score.</p>
+
+            <div class="cs-note">
+              <p class="cs-note__label">What this taught me</p>
+              <p>A prioritization framework measures what you tell it to measure. Ours measured user importance and build viability, with no axis for strategic value to the business model. We compensated with an undocumented override. Today I'd build the business dimension into the scoring model itself: an undocumented override looks like inconsistency to the team even when it's the right call.</p>
+            </div>
+
+            <p>Anything that needed users to work was deferred. Anything that made producers money shipped, even, once, against the matrix.</p>
+            <div class="cs-compare">
+              <div>
+                <p class="cs-compare__label">Shipped</p>
+                <div class="scope-group">
+                  <p class="scope-group__label">Onboarding &amp; account</p>
+                  <div class="scope-chips">
+                    <span class="scope-chip">splash</span><span class="scope-chip">login</span><span class="scope-chip">account creation</span><span class="scope-chip">password recovery</span><span class="scope-chip">signup helper</span><span class="scope-chip">profile config</span><span class="scope-chip">business activation</span>
+                  </div>
+                </div>
+                <div class="scope-group">
+                  <p class="scope-group__label">Core</p>
+                  <div class="scope-chips">
+                    <span class="scope-chip">event system + page</span><span class="scope-chip">business page</span><span class="scope-chip">social feed</span><span class="scope-chip">categories + tags</span><span class="scope-chip">search: 5 scopes</span><span class="scope-chip">Momentum</span><span class="scope-chip">map + geolocation</span><span class="scope-chip">invites: 7 types</span><span class="scope-chip">notifications</span><span class="scope-chip">fintech / tickets</span>
+                    <span class="scope-chip against">comanda <span class="why">against the matrix ↑</span></span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="cs-compare__label">Deferred</p>
+                <div class="scope-group">
+                  <p class="scope-group__label">Needs user / content volume</p>
+                  <div class="scope-chips">
+                    <span class="scope-chip">Chega aí <span class="why">geo infra cost</span></span>
+                    <span class="scope-chip">chat + relationship filters <span class="why">empty without volume</span></span>
+                    <span class="scope-chip">video feed <span class="why">needs content scale</span></span>
+                    <span class="scope-chip">gamification</span>
+                    <span class="scope-chip">streaming</span>
+                    <span class="scope-chip">web events</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>Four months from zero to MVP scope, documented before the first screen.</p>
+            <div class="roadmap">
+              <div class="roadmap-month"><div class="roadmap-month__head">Dec<span>01</span></div><ul><li>splash</li><li>login</li><li>account creation</li><li>password recovery</li><li>profile config</li></ul></div>
+              <div class="roadmap-month"><div class="roadmap-month__head">Jan<span>02</span></div><ul><li>categories + tags</li><li>signup helper</li><li>profile page</li><li>business activation</li><li>business page</li></ul></div>
+              <div class="roadmap-month"><div class="roadmap-month__head">Feb<span>03</span></div><ul><li>social feed</li><li>event history</li><li>notifications</li><li>branding</li><li>Rolê</li></ul></div>
+              <div class="roadmap-month"><div class="roadmap-month__head">Mar<span>04</span></div><ul><li>Vaquinha (group pool)</li><li>payment definition</li><li>Chega aí</li><li>auto events</li><li>interaction methods</li></ul></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="s08" class="cs-section" aria-labelledby="s08-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">08</span>
+            <h2 class="cs-section__title" id="s08-title">Designing for the worst moment</h2>
+          </div>
+          <div class="cs-section__body">
+            <p>Someone in a loud venue, holding a drink, one hand, getting interrupted: possibly stressed, possibly not fully literate in the moment, possibly with a physical impairment. Discovery mapped five context states, and they all pointed at the same user.</p>
+            <div class="ctx-grid">
+              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M9 11.5V6a1.8 1.8 0 0 1 3.6 0v5"/><path d="M12.6 8.5a1.8 1.8 0 0 1 3.6 0v5a5.5 5.5 0 0 1-5.5 5.5h-.6a5.5 5.5 0 0 1-4.6-2.7l-1.8-2.9a1.4 1.4 0 0 1 2.3-1.5l1 1.3"/></svg></div><h4>Physical</h4><p>One hand, possibly left, in motion, doing something else simultaneously.</p></div>
+              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M4 9v6h3.5L13 19V5L7.5 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg></div><h4>Environmental</h4><p>Loud venues, frequent interruption, walking.</p></div>
+              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></svg></div><h4>Preferential</h4><p>Visual over text, no audio dependency, minimal steps.</p></div>
+              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8z"/></svg></div><h4>Emotional</h4><p>High stress possible, payment or friend-finding urgency, low tolerance for friction.</p></div>
+              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M12 3.5a3.5 3.5 0 0 0-3.5 3.5v.4A3 3 0 0 0 7 13.4V16a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-2.6a3 3 0 0 0-1.5-5.9V7A3.5 3.5 0 0 0 12 3.5z"/><path d="M12 3.5V19"/></svg></div><h4>Cognitive</h4><p>Digitally native but distracted; clarity for all education levels.</p></div>
+            </div>
+            <p>The constraints that came out of that: content visual over textual (the target won't read paragraphs in a nightclub), audio banned as an information channel entirely, every primary action within one-hand reach, interfaces recoverable from any wrong tap in one action.</p>
+
+            <div class="cs-note">
+              <p class="cs-note__label">What I'd do differently</p>
+              <p>The ergonomics held up: one-handed use, visual-first content, interruption recovery. Formal accessibility didn't. The design answered "may have physical impairments" with good instincts instead of a standard: no WCAG audit, no contrast verification, no screen reader consideration. An event app lives in dark rooms with flashing lights on mid-range screens, which makes accessibility more critical there, not less. Today every core screen would pass WCAG 2.1 AA before handoff.</p>
+            </div>
+
+            <p>Navigation weight followed documented priority, not opinion, mapped onto the business value chain.</p>
+            <div class="ladder">
+              <div class="rung"><span class="rk">01</span><span class="rn">Events</span><span class="rv">content creation</span></div>
+              <div class="rung"><span class="rk">02</span><span class="rn">Feed</span></div>
+              <div class="rung"><span class="rk">03</span><span class="rn">Sharing</span><span class="rv">→ transactions</span></div>
+              <div class="rung"><span class="rk">04</span><span class="rn">Chat</span></div>
+              <div class="rung"><span class="rk">05</span><span class="rn">Payments</span></div>
+              <div class="rung"><span class="rk">06</span><span class="rn">Professional page</span></div>
+              <div class="rung"><span class="rk">07</span><span class="rn">FAQ</span></div>
+              <div class="rung"><span class="rk">08</span><span class="rn">Profile customization</span></div>
+            </div>
+            <div class="chain">
+              <span class="step">content creation</span><span class="arr">→</span>
+              <span class="step">sharing</span><span class="arr">→</span>
+              <span class="step">transactions</span><span class="arr">→</span>
+              <span class="step">engagement</span><span class="arr">→</span>
+              <span class="step">basic signup</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="s09" class="cs-section" aria-labelledby="s09-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">09</span>
+            <h2 class="cs-section__title" id="s09-title">What I'd build differently</h2>
+          </div>
+          <div class="cs-section__body">
+            <div class="cs-fear-cards">
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__title">Connect targets to decisions, explicitly</p>
+                <p class="cs-fear-card__body">The targets shaped the big calls (supply-first, the comanda override), but the connection lived in conversation, not documents. No decision record traced "we're building X because target Y demands it." When scope pressure came, the reasoning existed only in memory.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__title">Design the partnership failure states</p>
+                <p class="cs-fear-card__body">The happy path was designed. Nobody designed the disagreement: one partner cancels, the other refuses, then what? Revenue split when both sell tickets? Partnership status when one entity loses verification? These are the moments that decide whether users trust the platform.</p>
+              </div>
+              <div class="cs-fear-card">
+                <p class="cs-fear-card__title">Make the matrix a signed team artifact</p>
+                <p class="cs-fear-card__body">The cuts were correct; the process lived in my head. The team never treated the matrix as the shared contract for scope, so "should we add chat back?" was always one persuasive argument away from reopening. A signed artifact answers with criteria instead.</p>
+              </div>
+            </div>
+            <p>This was also the project where I worked as the only designer, reporting directly to the two co-founders and working daily with two engineers translating specs into product. That ratio, one designer to a small founding team, is what pushed me toward handoffs detailed enough to build from without a follow-up conversation.</p>
+          </div>
+        </section>
+
+        <section id="s10" class="cs-section" aria-labelledby="s10-title">
+          <div class="cs-section__header">
+            <span class="cs-section__num">10</span>
+            <h2 class="cs-section__title" id="s10-title">Product &amp; identity, built in Curitiba</h2>
+          </div>
+          <div class="cs-section__body">
+            <p class="cs-section__subhead">Identity built alongside the product, not applied after: <em>"uma plataforma social completa focada em eventos de todos os tipos e tamanhos."</em></p>
+
+            <p><strong>Event page, the flagship.</strong> Every field from the spec in one scroll: producer identity and event history (the trust chain from §05), date and location with a spatial mini-map (the same layer Momentum ranks on), tags plus going/interested counts feeding producer credibility back into Momentum, a comment thread for social proof, and an in-app buy bar pinned to one-hand reach, the supply-side revenue that justified building producers first.</p>
+            <div class="cs-screens cs-screens--2">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page.webp" width="780" height="1696" alt="Event page, light theme: Lofia Rooftop Party, verified producer, tags, going/interested, buy bar" loading="lazy"></div>
+                <figcaption class="cs-caption">Event page · light theme</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page-dark.webp" width="780" height="1696" alt="Event page, dark theme, same layout" loading="lazy"></div>
+                <figcaption class="cs-caption">Event page · dark theme</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Explore / Momentum.</strong> The featured Momentum card surfaces producer credibility and engagement velocity as one glanceable unit; friend presence rides above it as avatars; the ranked feed sits below. On the map, pin size renders interaction volume in space, and a tap-to-preview card opens the full event page without leaving the map.</p>
+            <div class="cs-screens cs-screens--3">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-light.webp" width="780" height="1696" alt="Explore feed, light theme: friend avatars, Momentum card, made-for-you row" loading="lazy"></div>
+                <figcaption class="cs-caption">Explore · light theme</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-dark.webp" width="780" height="1696" alt="Explore feed, dark theme" loading="lazy"></div>
+                <figcaption class="cs-caption">Explore · dark theme</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-map.webp" width="780" height="1696" alt="Explore by map: pins sized by interaction volume, tap-to-preview event card" loading="lazy"></div>
+                <figcaption class="cs-caption">Explore · map</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Onboarding fork.</strong> Two doors, two commitments. Basic signup gets a live product in seconds; verification unlocks the commercial stack: pages, unlimited sales, categories, analytics. No one is blocked at the door, and the people who bring events have a clear reason to verify: the supply-first bet, encoded in a screen.</p>
+            <div class="cs-screens cs-screens--1">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/onboarding-fork.webp" width="780" height="1696" alt="Onboarding fork: Basic account vs Verified professional account" loading="lazy"></div>
+                <figcaption class="cs-caption">Basic account vs. verified account</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Comanda: order and pay inside the event.</strong> Every item is a one-tap add, no forms, no card entry mid-event. Consumption accrues to an open tab the producer can capture instead of losing it to cash and card machines. This is the 1/1 feature from §07: scored lowest on the matrix by users who didn't care, shipped anyway because producers did.</p>
+            <div class="cs-screens cs-screens--3">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-menu.webp" width="780" height="1696" alt="Bar menu: drinks, beers, shots, food, tap to add to the order" loading="lazy"></div>
+                <figcaption class="cs-caption">Bar menu · tap to add</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-item.webp" width="780" height="1696" alt="Item detail: caipirinha, base spirit and add-ons" loading="lazy"></div>
+                <figcaption class="cs-caption">Item customization</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-tab.webp" width="780" height="1696" alt="Open tab review: items, tip, split with the crew, pay now" loading="lazy"></div>
+                <figcaption class="cs-caption">Open tab · tip &amp; split</figcaption>
+              </figure>
+            </div>
+
+            <figure class="cs-diagram cs-diagram--flush">
+              <div class="brand-logos">
+                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-gradient.webp" width="184" height="162" alt="Meaple mark, gradient version"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell dark"><img src="/assets/img/project/meaple/brand-mark-white.webp" width="184" height="163" alt="Meaple mark, white version"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-dark.webp" width="184" height="163" alt="Meaple mark, dark version"><span class="lname">meaple</span></div>
+              </div>
+              <div class="brand-pal">
+                <div class="brand-pal-group">
+                  <p class="brand-pal-group__label">Primary</p>
+                  <div class="brand-swatches">
+                    <span><i class="c-cyan"></i><em>#00C0FD</em></span>
+                    <span><i class="c-blue"></i><em>#007CFF</em></span>
+                    <span><i class="c-violet"></i><em>#5500FA</em></span>
+                    <span><i class="c-deep"></i><em>#310097</em></span>
+                  </div>
+                </div>
+                <div class="brand-pal-group">
+                  <p class="brand-pal-group__label">Secondary</p>
+                  <div class="brand-swatches">
+                    <span><i class="c-white"></i><em>#FFFFFF</em></span>
+                    <span><i class="c-navy"></i><em>#1C1C38</em></span>
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <p class="cs-caption">The mark reads as an <strong>"M"</strong> and a butterfly at once. The gradient runs cyan → blue → violet → deep purple: a blue-forward system, not the "violet/purple" the old brand doc called it.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="blk" id="gallery">
+      <div class="cs-container">
+        <p class="cs-eyebrow cs-eyebrow--muted">The full app</p>
+        <h2 class="cs-section__title u-title-tight">25 screens, one design system</h2>
+        <p class="cs-lead u-mt-lead">Every core flow, designed end-to-end: discovery, the social graph, transactions and the comanda, plus the producer side. Tap any screen to enlarge.</p>
+
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section id="s11" class="blk outcome-section">
+      <div class="cs-container">
+        <span class="cs-section__num">11</span>
+        <h2 class="cs-section__title outcome-title">The product paused because of a global pandemic. The design was working.</h2>
+        <p class="tBD outcome-body">Meaple shipped its MVP and was in active use when COVID-19 made public gatherings illegal and the market it was built for stopped existing: <strong>350,000 events canceled in Brazil in 2020</strong>, 98% of the sector hit, R$230 billion lost across 2020–2021 <span class="dim">(Sebrae; Abrape)</span>. Development paused. Meaple is live today at <a class="cs-link cs-link--accent" href="https://meaple.com.br" target="_blank" rel="noopener noreferrer">meaple.com.br</a>, running real events from real producers, including national acts.</p>
+
+        <div class="cs-trust-pills outcome-trust">
+          <span class="cs-trust-pill">3 personas w/ journeys</span><span class="cs-trust-pill">13-product competitive analysis</span><span class="cs-trust-pill">14-problem priority matrix</span><span class="cs-trust-pill">say/need/don't-know framework</span><span class="cs-trust-pill">3-tier account architecture</span><span class="cs-trust-pill">Momentum spec</span><span class="cs-trust-pill">full IA</span><span class="cs-trust-pill">4-month roadmap</span><span class="cs-trust-pill">~30 features designed</span><span class="cs-trust-pill">Android 4.4+ / iOS 10+</span><span class="cs-trust-pill">branding</span><span class="cs-trust-pill">clickable prototype</span>
+        </div>
+
+        <p class="cs-pullquote outcome-quote">The product paused because of a global pandemic. <strong>The design was working.</strong></p>
+
+        <p class="cs-caption outcome-sources"><strong>Sources:</strong> Abrafesta via G1 (2020): pre-pandemic sector size and employment · Abeoc/Sebrae (2019): GDP share and growth rate · Lenny Rachitsky, "How to Kickstart and Scale a Marketplace Business" (Nov 2019): supply-first finding · Sebrae/Abrape (2020–2021): pandemic impact · Primary research: user and producer interviews, Ensight (2020).</p>
+      </div>
+    </section>
+
+    <nav class="case-nav" aria-label="Case navigation">
+      <a href="../" class="case-nav__back label">← All work</a>
+      <div class="case-nav__adjacent">
+        <a href="../northpay/" class="case-nav__item case-nav__item--prev">
+          <span class="label case-nav__direction">← Previous</span>
+          <span class="heading-sm case-nav__title">NorthPay</span>
+        </a>
+        <a href="../medme/" class="case-nav__item case-nav__item--next">
+          <span class="label case-nav__direction">Next →</span>
+          <span class="heading-sm case-nav__title">MedMe</span>
+        </a>
+      </div>
+    </nav>
+
+    <a href="../../contact/" class="cta-section" aria-label="Go to contact page | Let's work together">
+      <p class="cta-section__eyebrow">Let's talk</p>
+      <p class="cta-section__headline">Got a project?<br><em>Let's make it work.</em></p>
+      <span class="cta-section__arrow" aria-hidden="true">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../" class="footer__nav-link">Home</a>
+        <a href="../" class="footer__nav-link">Work</a>
+        <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="cs-lightbox cs-lightbox--gallery" id="lbox">
+    <button type="button" class="cs-lightbox__close" id="lbox-close" aria-label="Close screen preview">✕</button>
+    <img class="cs-lightbox__img" id="lbox-img" src="" alt="">
+  </div>
+
+  <script>
+  /* A01: competitive matrix data */
+  (function(){
+    var CMX=[
+      ["Sympla",["D"]],["Eventbrite",["D"]],["Facebook",["D","S"]],["WhatsApp",["S"]],
+      ["Yelp",["D","L"]],["Snapchat",["S","L"]],["PicPay",["P"]],["Venmo",["P"]],
+      ["Play Party",["D","S"]],["Hellofriend",["S"]],["Google Maps",["D","L"]],["Apple Maps",["L"]],
+      ["Promoters",["D"]]
+    ];
+    var COLS=["D","S","P","L"];
+    var tb=document.getElementById("cmx");
+    CMX.forEach(function(row){
+      var name=row[0], fills=row[1];
+      var tr=document.createElement("tr");
+      tr.innerHTML="<th>"+name+"</th>"+COLS.map(function(c){return '<td><span class="dot '+(fills.indexOf(c)>-1?"on":"")+'"></span></td>';}).join("");
+      tb.appendChild(tr);
+    });
+    var mr=document.createElement("tr"); mr.className="meaple";
+    mr.innerHTML="<th>Meaple</th>"+COLS.map(function(){return '<td><span class="dot on"></span></td>';}).join("");
+    tb.appendChild(mr);
+  })();
+
+  /* A02: priority scatter */
+  (function(){
+    var PTS=[
+      ["Creating small events fast",5,3,"max"],
+      ["Finding events",4,4,""],["Sharing events",4,4,""],["Management + security",4,4,""],
+      ["Personal communication",4,3,""],["Event creation difficulty",3,4,""],
+      ["Ticket purchase",3,3,""],["Account customization",3,3,""],["Professional organization",3,3,""],
+      ["Connecting w/ professionals",3,2,""],["Info sharing during events",2,3,""],
+      ["Personal organization",2,3,""],["Finding event memories",1,3,""],
+      ["In-event consumption",1,1,"override"]
+    ];
+    var svg=document.getElementById("scatter");
+    var W=620,H=460,pad={l:60,r:26,t:22,b:52};
+    var x=function(v){return pad.l+((v-0.5)/5)*(W-pad.l-pad.r);};
+    var y=function(v){return H-pad.b-((v-0.5)/5)*(H-pad.t-pad.b);};
+    var s="";
+    for(var i=1;i<=5;i++){
+      s+='<line x1="'+x(i)+'" y1="'+pad.t+'" x2="'+x(i)+'" y2="'+(H-pad.b)+'" stroke="var(--b0)" stroke-width="1"/>';
+      s+='<line x1="'+pad.l+'" y1="'+y(i)+'" x2="'+(W-pad.r)+'" y2="'+y(i)+'" stroke="var(--b0)" stroke-width="1"/>';
+      s+='<text class="sc-axis" x="'+x(i)+'" y="'+(H-pad.b+20)+'" text-anchor="middle">'+i+'</text>';
+      s+='<text class="sc-axis" x="'+(pad.l-14)+'" y="'+(y(i)+4)+'" text-anchor="end">'+i+'</text>';
+    }
+    s+='<text class="sc-axis" x="'+(pad.l+(W-pad.l-pad.r)/2)+'" y="'+(H-6)+'" text-anchor="middle">viability →</text>';
+    s+='<text class="sc-axis" transform="translate(16,'+(pad.t+(H-pad.t-pad.b)/2)+') rotate(-90)" text-anchor="middle">importance →</text>';
+    var groups={};
+    PTS.forEach(function(p,i){var k=p[1]+"-"+p[2];(groups[k]=groups[k]||[]).push(i);});
+    PTS.forEach(function(p,i){
+      var n=p[0],imp=p[1],via=p[2],flag=p[3];
+      var grp=groups[imp+"-"+via], idx=grp.indexOf(i), kn=grp.length;
+      var off=(idx-(kn-1)/2)*16;
+      var cx=x(via)+off, cy=y(imp);
+      var fill="var(--t2)", r=6, glow="";
+      if(flag==="override"){fill="#f87171";r=9;glow='<circle cx="'+cx+'" cy="'+cy+'" r="20" fill="none" stroke="#f87171" stroke-width="1" opacity=".5"/>';}
+      if(flag==="max"){fill="var(--y)";r=9;glow='<circle cx="'+cx+'" cy="'+cy+'" r="18" fill="none" stroke="var(--y)" stroke-width="1" opacity=".55"/>';}
+      s+='<g>'+glow+'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+fill+'"/>';
+      if(flag){
+        var anchor = via>=4?"end":"start";
+        var dx = via>=4? -14 : 14;
+        s+='<text class="sc-lab" x="'+(cx+dx)+'" y="'+(cy+3)+'" text-anchor="'+anchor+'" fill="'+fill+'">'+n+'</text>';
+      }
+      s+='</g>';
+    });
+    svg.innerHTML=s;
+  })();
+
+  /* Full-app gallery + lightbox */
+  (function(){
+    var SCREENS=[
+      ["event-page","Event page · light"],["event-page-dark","Event page · dark"],
+      ["explore-feed-light","Explore · light"],["explore-feed-dark","Explore · dark"],["explore-map","Explore · map"],
+      ["whos-going","Who's going"],["story-pullup","Story · pull up"],
+      ["onboarding-fork","Onboarding fork"],["create-event","Create event"],
+      ["comanda-menu","Comanda · menu"],["comanda-item","Comanda · item"],["comanda-tab","Comanda · tab"],
+      ["checkout-review","Checkout"],["checkout-success","Ticket confirmed"],["wallet-ticket","Wallet"],
+      ["calendar","Calendar"],["chat","Chat"],["social-feed","Social feed"],["people-discover","People · discover"],
+      ["follow-requests","Requests"],["notifications","Notifications"],
+      ["profile-user","Profile · attendee"],["profile-founder","Profile · founder"],
+      ["event-stream","Live stream event"],["producer-dashboard","Producer dashboard"]
+    ];
+    var grid=document.getElementById("gallery-grid");
+    var frag=document.createDocumentFragment();
+    SCREENS.forEach(function(item){
+      var slug=item[0], label=item[1];
+      var btn=document.createElement("button");
+      btn.type="button";
+      btn.className="gallery-thumb";
+      btn.innerHTML='<img src="/assets/img/project/meaple/'+slug+'.webp" width="780" height="1696" alt="'+label+'" loading="lazy"><span>'+label+'</span>';
+      frag.appendChild(btn);
+    });
+    grid.appendChild(frag);
+
+    var lb=document.getElementById("lbox"), im=document.getElementById("lbox-img");
+    grid.querySelectorAll(".gallery-thumb").forEach(function(b){
+      b.addEventListener("click", function(){
+        var img=b.querySelector("img");
+        im.src=img.src; im.alt=img.alt;
+        lb.classList.add("is-open");
+      });
+    });
+    document.getElementById("lbox-close").addEventListener("click", function(){ lb.classList.remove("is-open"); im.src=""; });
+    lb.addEventListener("click", function(e){ if(e.target===lb){ lb.classList.remove("is-open"); im.src=""; } });
+    document.addEventListener("keydown", function(e){ if(e.key==="Escape"){ lb.classList.remove("is-open"); im.src=""; } });
+  })();
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

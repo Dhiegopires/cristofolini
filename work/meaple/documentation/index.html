@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+  <title>Meaple | Product Definition &amp; UX Process Documentation | Dhiego Cristofolini</title>
+  <meta name="description" content="The original discovery, architecture, and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, requirements, information architecture, and the primary user interview, translated from Portuguese.">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Meaple | Product Definition &amp; UX Process Documentation">
+  <meta property="og:description" content="The original discovery, architecture, and research documentation from the Meaple engagement at Ensight (2020), translated from Portuguese.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/project/meaple/og-image.webp">
+  <meta property="og:url" content="https://cristofolini.site/work/meaple/documentation/">
+  <link rel="canonical" href="https://cristofolini.site/work/meaple/documentation/">
+  <link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
+  <link href="../../../assets/css/blog.css?v=2" rel="stylesheet">
+
+  <style>
+    /* Meaple documentation — page-specific, reuses article-* typography from blog.css */
+    .article-body h4 {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--t1);
+      margin: 28px 0 10px;
+    }
+    .article-body h4 + h4 { margin-top: 20px; }
+
+    .doc-note {
+      border-left: 3px solid var(--y);
+      padding: 4px 0 4px 18px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: var(--t2);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .doc-open {
+      border: 1px dashed var(--b1);
+      padding: 12px 16px;
+      margin: 16px 0 28px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--t3);
+      letter-spacing: .02em;
+    }
+
+    .doc-related {
+      border-left: none;
+      padding-left: 0;
+      font-style: normal;
+      margin-top: 48px;
+    }
+
+    .doc-table-wrap {
+      overflow-x: auto;
+      margin: 8px 0 32px;
+    }
+    .doc-table {
+      width: 100%;
+      min-width: 480px;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .doc-table th, .doc-table td {
+      border: 1px solid var(--b0);
+      padding: 9px 12px;
+      text-align: left;
+      color: var(--t2);
+    }
+    .doc-table th {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--t3);
+      background: var(--bg1);
+    }
+    .doc-table td.num { text-align: center; color: var(--t1); font-family: var(--mono); }
+    .doc-table tr.hi td { color: var(--t1); font-weight: 600; }
+
+    .doc-qa { margin: 0 0 28px; padding: 0 0 24px; border-bottom: 1px solid var(--b0); }
+    .doc-qa:last-child { border-bottom: none; padding-bottom: 0; }
+    .doc-qa__q {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--y);
+      margin-bottom: 8px;
+    }
+    .doc-qa__a { font-size: 15px; line-height: 1.75; color: var(--t1); }
+    .doc-qa__a p { margin: 0 0 10px; font-size: inherit; line-height: inherit; }
+    .doc-qa__a p:last-child { margin-bottom: 0; }
+
+    .doc-personas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 28px; }
+    @media (max-width: 780px) { .doc-personas { grid-template-columns: 1fr; } }
+    .doc-persona { border: 1px solid var(--b0); background: var(--bg1); padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+    .doc-persona__name { font-family: var(--display); font-size: 22px; letter-spacing: .01em; color: var(--t1); text-transform: uppercase; }
+    .doc-persona__role { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--t3); }
+    .doc-persona__traits { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+    .doc-persona__traits li { font-size: 12.5px; line-height: 1.45; color: var(--t2); padding-left: 12px; position: relative; }
+    .doc-persona__traits li::before { content: ""; position: absolute; left: 0; top: 7px; width: 3px; height: 3px; border-radius: 50%; background: var(--y); }
+    .doc-persona__block-label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--t3); margin: 6px 0 2px; }
+    .doc-persona__day { font-size: 12.5px; line-height: 1.55; color: var(--t2); }
+    .doc-persona__pain { font-size: 12.5px; line-height: 1.5; color: var(--t1); border-top: 1px solid var(--b0); padding-top: 10px; margin-top: auto; }
+    .doc-persona__pain b { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--y); margin-bottom: 4px; }
+
+    .doc-checklist { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--b0); border: 1px solid var(--b0); margin: 8px 0 28px; }
+    @media (max-width: 700px) { .doc-checklist { grid-template-columns: repeat(2, 1fr); } }
+    .doc-checklist span { background: var(--bg1); padding: 12px 14px; font-family: var(--mono); font-size: 12px; color: var(--t2); }
+
+    .doc-stakeholders { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; gap: 10px; }
+    .doc-stakeholders li { display: grid; grid-template-columns: minmax(180px, 260px) 1fr; gap: 16px; font-size: 14px; line-height: 1.5; padding: 10px 0; border-bottom: 1px solid var(--b0); }
+    .doc-stakeholders li:last-child { border-bottom: none; }
+    .doc-stakeholders b { color: var(--t3); font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+    .doc-stakeholders span { color: var(--t1); }
+    @media (max-width: 520px) {
+      .doc-stakeholders li { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* Priority scatter chart */
+    .doc-scatter { position: relative; width: 100%; aspect-ratio: 1.35/1; max-width: 620px; margin: 16px auto 8px; }
+    .doc-scatter svg { width: 100%; height: 100%; overflow: visible; }
+    .doc-sc-lab { font-family: var(--mono); font-size: 9px; fill: var(--t2); letter-spacing: .02em; font-weight: 700; }
+    .doc-sc-axis { font-family: var(--mono); font-size: 10px; fill: var(--t3); letter-spacing: .1em; text-transform: uppercase; }
+    .doc-scatter-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 12px 0 32px; font-family: var(--mono); font-size: 11px; color: var(--t2); }
+    .doc-scatter-legend span { display: flex; align-items: center; gap: 8px; }
+    .doc-scatter-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .doc-scatter-legend i.imp { background: var(--y); }
+    .doc-scatter-legend i.override { background: #f87171; }
+    .doc-scatter-legend i.base { background: var(--t2); }
+
+    /* Competitive dot matrix */
+    .doc-cmatrix-wrap { overflow-x: auto; margin: 8px 0 32px; }
+    .doc-cmatrix { border-collapse: collapse; font-size: 13px; min-width: 480px; width: 100%; }
+    .doc-cmatrix th, .doc-cmatrix td { text-align: center; padding: 0; }
+    .doc-cmatrix thead th { font-family: var(--mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase; color: var(--t3); padding: 0 6px 12px; vertical-align: bottom; }
+    .doc-cmatrix thead th:first-child { text-align: left; }
+    .doc-cmatrix tbody th { text-align: left; font-family: var(--sans); font-weight: 500; color: var(--t1); white-space: nowrap; padding: 8px 14px 8px 4px; border-top: 1px solid var(--b0); }
+    .doc-cmatrix tbody td { border-top: 1px solid var(--b0); height: 38px; }
+    .doc-dot { width: 13px; height: 13px; border-radius: 50%; display: inline-block; background: var(--bg2); box-shadow: inset 0 0 0 1px var(--b1); }
+    .doc-dot.on { background: var(--y); box-shadow: 0 0 0 1px var(--y); }
+    .doc-cmatrix tr.meaple th, .doc-cmatrix tr.meaple td { border-top: 1.5px solid var(--y); background: rgba(243,176,46,.06); }
+    .doc-cmatrix tr.meaple th { color: var(--y); font-weight: 700; }
+
+    /* Hierarchy ladder */
+    .doc-ladder { display: grid; gap: 6px; max-width: 520px; margin: 8px 0 28px; }
+    .doc-rung { display: flex; align-items: center; gap: 14px; border: 1px solid var(--b0); border-radius: 2px; padding: 10px 16px; background: var(--bg1); }
+    .doc-rung .rk { font-family: var(--mono); font-size: 12px; color: var(--y); width: 18px; }
+    .doc-rung .rn { font-family: var(--sans); font-weight: 700; font-size: 14px; color: var(--t1); }
+    .doc-rung:first-child { border-color: var(--y); background: rgba(243,176,46,.06); }
+
+    /* Roadmap cards */
+    .doc-roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 8px 0 28px; }
+    @media (max-width: 700px) { .doc-roadmap { grid-template-columns: repeat(2, 1fr); } }
+    .doc-roadmap-month { border: 1px solid var(--b0); background: var(--bg1); }
+    .doc-roadmap-month__head { font-family: var(--sans); font-weight: 700; font-size: 14px; color: var(--t1); padding: 10px 14px; border-bottom: 1px solid var(--b0); display: flex; justify-content: space-between; }
+    .doc-roadmap-month__head span { font-family: var(--mono); font-size: 10px; color: var(--y); }
+    .doc-roadmap-month ul { list-style: none; margin: 0; padding: 10px 14px; display: grid; gap: 6px; }
+    .doc-roadmap-month li { font-size: 11.5px; color: var(--t2); line-height: 1.3; padding-left: 12px; position: relative; }
+    .doc-roadmap-month li::before { content: ""; position: absolute; left: 0; top: 6px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
+
+    /* Real screens */
+    .doc-screens { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 24px 0 28px; }
+    .doc-screen { flex: 0 0 150px; display: flex; flex-direction: column; gap: 8px; text-align: center; }
+    .doc-screen img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 0 0 1px var(--b1); display: block; }
+    .doc-screen span { font-family: var(--mono); font-size: 11px; color: var(--t3); }
+  </style>
+</head>
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../../../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../../">Work</a></li>
+      <li><a href="../../../blog/">Insights</a></li>
+    </ul>
+    <a href="../../../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <header class="article-hero">
+        <a href="../" class="article-hero__back">← Back to the Meaple case study</a>
+        <span class="article-hero__tag">Process documentation</span>
+        <h1 class="article-hero__title">Meaple: product definition &amp; UX documentation</h1>
+        <div class="article-hero__meta">
+          <span>Dhiego Cristofolini</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>Ensight, 2020</span>
+          <span class="article-hero__meta-sep">·</span>
+          <span>Definition, architecture &amp; research</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="article-layout">
+
+      <aside class="article-toc" aria-label="Table of contents">
+        <p class="article-toc__label">Contents</p>
+        <a href="#definition" class="article-toc__link">01 Definition</a>
+        <a href="#architecture" class="article-toc__link">02 Architecture</a>
+        <a href="#research" class="article-toc__link">03 Primary user research</a>
+        <a href="#branding" class="article-toc__link">04 Branding process</a>
+      </aside>
+
+      <article class="article-body">
+
+        <p>This is the original discovery, architecture and research documentation written during the Meaple engagement at Ensight in 2020, translated from Portuguese and lightly reorganized for readability. It's the working document behind the <a href="../">Meaple case study</a>: the raw definition, requirements, personas and interview data the design decisions were built on, not the narrative write-up. Sections the original document left open are marked as such rather than filled in after the fact.</p>
+
+        <div class="doc-note">Team attribution in §1.4.1 reflects the actual project structure: design was solo, with two engineers and two co-founders. The original template's stakeholder line used placeholder initials for some roles; those have been resolved to accurate roles here.</div>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">01</span>
+          <h2 class="article-section__title" id="definition">Definition</h2>
+        </div>
+
+        <h3>1.1 Why are we doing this?</h3>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: What's the reason for this product to exist? What problem does it solve for the client, and for the user?</p>
+          <div class="doc-qa__a"><p>Solving the lack of a platform that unifies ease of event creation, event tracking, and socialization in a personalized, interactive way.</p></div>
+        </div>
+
+        <h3>1.2 Three main questions</h3>
+
+        <h4>1.2.1 What's worth doing?</h4>
+        <p>Everything with high importance and viability should be done.</p>
+
+        <h4>1.2.2 What are we building?</h4>
+        <p>A mobile app spanning five core flows: discovery (an Explore feed ranked by the Momentum algorithm, plus a map view), the social graph (follow-based, with a group chat layer), event creation and ticketing, in-app payment (ticket purchase and in-event consumption via the comanda), and a producer-facing dashboard for sales and event management.</p>
+
+        <h4>1.2.3 What's the value of the product?</h4>
+        <p>Unifying and simplifying the creation and maintenance of a social network through an interaction model that covers the full lifecycle of an event — from its creation through the experience during and after.</p>
+
+        <h4>1.2.3.a Who is our target audience?</h4>
+        <p>Three personas came out of primary research, each with a documented day-in-the-life.</p>
+
+        <div class="doc-personas">
+          <div class="doc-persona">
+            <div>
+              <p class="doc-persona__name">Pedro, 21</p>
+              <p class="doc-persona__role">PUC student</p>
+            </div>
+            <ul class="doc-persona__traits">
+              <li>Extroverted, well known on campus</li>
+              <li>Uses Facebook, Tinder, WhatsApp and Instagram</li>
+              <li>A bit scattered; loves going out</li>
+              <li>Not into new tech, but likes his iPhone 12</li>
+              <li>His father pushes him toward a job in his field of study</li>
+              <li>Long single, spends heavily going out; his mother can no longer keep covering it</li>
+            </ul>
+            <p class="doc-persona__block-label">Day-in-the-life</p>
+            <p class="doc-persona__day">Wakes at 8am, late to class in his father's Audi, no parking near PUC. On his phone through the whole class trying to plan Friday. Can't find anywhere to eat after class (restaurants full, can't move the Audi), grabs whatever's available. Goes to his internship, messes around on WhatsApp and pretends he worked. Heads home trying to set up a hangout. Has dinner, calls two friends trying to find something happening. Ends up home, gaming.</p>
+            <p class="doc-persona__pain"><b>Pain</b>An entire day of coordination, zero results.</p>
+          </div>
+          <div class="doc-persona">
+            <div>
+              <p class="doc-persona__name">Letícia, 26</p>
+              <p class="doc-persona__role">Civil Engineering, UFPR</p>
+            </div>
+            <ul class="doc-persona__traits">
+              <li>On scholarship, shy, few friends</li>
+              <li>Likes small hangouts, dinners, a bar or barbecue</li>
+              <li>Uses WhatsApp, Instagram and Twitter</li>
+              <li>Studious, engaged with everything at university</li>
+              <li>Lives with an aunt she finds difficult</li>
+              <li>Travels often to visit family and the beach (favors Guaratuba)</li>
+              <li>Dating Fernando, 32, who runs a digital innovation company</li>
+            </ul>
+            <p class="doc-persona__block-label">Day-in-the-life</p>
+            <p class="doc-persona__day">Wakes at 6:30, bus to class, arrives on time, studies. A professor mentions a topic she wants to research further. Gets home tired, has dinner, talks to her aunt, watches TV. Her boyfriend calls asking if she's doing anything — she mentions a party but doesn't know where; a friend brought it up the week before and never sent details.</p>
+            <p class="doc-persona__pain"><b>Pain</b>The information exists, it just never reaches her.</p>
+          </div>
+          <div class="doc-persona">
+            <div>
+              <p class="doc-persona__name">Fernanda, 28</p>
+              <p class="doc-persona__role">Instagram influencer</p>
+            </div>
+            <ul class="doc-persona__traits">
+              <li>Extroverted, enjoys visibility, well known</li>
+              <li>Uses Facebook, WhatsApp and Instagram</li>
+              <li>Lives on social media, always looking for content</li>
+              <li>Into new tech; travels often and posts about it</li>
+              <li>Works largely through brand trades and gifted products</li>
+              <li>Lives alone with two dogs</li>
+              <li>Active in the LGBTQ+ community, unofficially in charge of booking its events</li>
+            </ul>
+            <p class="doc-persona__block-label">Day-in-the-life</p>
+            <p class="doc-persona__day">Wakes at 9am, posts a good-morning story. Gym at 11:30, another story. Films a story with her trainer, tags her. Posts lunch. Starts organizing Saturday's event — her own Halloween party, at her house — creating it on Facebook and Sympla, asking guests to pay by transfer or PicPay. Promotes it across Instagram, WhatsApp, Facebook, Snapchat, Twitter and Tumblr, separately announces she'll be at an anime event in Belo Horizonte and tells fans to meet her at the mall at 2pm. Later goes out, calling friends across her 20 WhatsApp and Facebook groups.</p>
+            <p class="doc-persona__pain"><b>Pain</b>Six platforms, one party.</p>
+          </div>
+        </div>
+
+        <h4>1.2.3.b What experiences will be valuable or interesting to them?</h4>
+        <ul>
+          <li>Making plans with friends</li>
+          <li>Finding people with similar tastes to go out with</li>
+          <li>Meeting new people</li>
+          <li>Not waiting in line</li>
+          <li>No payment friction</li>
+          <li>Professional events</li>
+          <li>Creating their own events</li>
+          <li>Promoting their own image</li>
+          <li>Promoting their event</li>
+          <li>Reaching close friends quickly</li>
+          <li>Knowing event details</li>
+        </ul>
+
+        <h4>1.2.3.c How will our product differ from competitors and substitutes?</h4>
+        <div class="doc-qa">
+          <div class="doc-qa__a">
+            <p>Meaple will provide social tracking and interaction between friends and events end-to-end across event participation, connecting people to moments and moments to easily accessible memories. Meaple offers tools for the full event journey:</p>
+            <ul>
+              <li>A chat for groups filtered by taste, event, or friendship, making social interaction easier.</li>
+              <li>Because it's a follow-based app, users can filter who receives their information — supporting influencer-style visibility while still protecting more private users.</li>
+              <li>Payment handled inside the app, easy and efficient.</li>
+              <li>Because it covers every layer of events plus geolocation, finding small, nearby, social events is easier.</li>
+              <li>More precise information through profile personalization.</li>
+              <li>Search based on multiple factors, for a more personalized experience.</li>
+              <li>A single interaction layer for event creation and ticket sales, extending reach and efficiency.</li>
+              <li>Focus on a genuinely positive experience — not just finding the event, but before, during, and after.</li>
+              <li>For business users, the social layer makes information easier to reach.</li>
+            </ul>
+            <p>Its platform covers events of low or high complexity, a social network with followers and data filtering, all backed by an improved, effective messaging system where every experience the user has in the app is continuously shaped for them.</p>
+          </div>
+        </div>
+
+        <h3>1.3 Competitive analysis</h3>
+        <p>Points to spend = number of problems × average score. Example: 3 × 14 = 42.</p>
+        <div class="doc-table-wrap">
+        <table class="doc-table">
+          <thead><tr><th>Problem / opportunity</th><th>Importance</th><th>Viability</th></tr></thead>
+          <tbody>
+            <tr><td>Finding events</td><td class="num">4</td><td class="num">4</td></tr>
+            <tr><td>Sharing events</td><td class="num">4</td><td class="num">4</td></tr>
+            <tr><td>Ticket purchase</td><td class="num">3</td><td class="num">3</td></tr>
+            <tr><td>In-event consumption</td><td class="num">1</td><td class="num">1</td></tr>
+            <tr><td>Management and security</td><td class="num">4</td><td class="num">4</td></tr>
+            <tr><td>Personal communication method</td><td class="num">4</td><td class="num">3</td></tr>
+            <tr><td>Account customization</td><td class="num">3</td><td class="num">3</td></tr>
+            <tr><td>Difficulty finding event memories</td><td class="num">1</td><td class="num">3</td></tr>
+            <tr><td>Sharing information during events</td><td class="num">2</td><td class="num">3</td></tr>
+            <tr><td>Difficulty creating events</td><td class="num">3</td><td class="num">4</td></tr>
+            <tr><td>Personal organization issues</td><td class="num">2</td><td class="num">3</td></tr>
+            <tr><td>Connecting with events or professionals</td><td class="num">3</td><td class="num">2</td></tr>
+            <tr><td>Professional organization issues</td><td class="num">3</td><td class="num">3</td></tr>
+            <tr class="hi"><td>Speed to create small events</td><td class="num">5</td><td class="num">3</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="doc-scatter"><svg id="doc-scatter" viewBox="0 0 620 460"></svg></div>
+        <div class="doc-scatter-legend">
+          <span><i class="imp"></i> Highest importance (5)</span>
+          <span><i class="override"></i> Lowest score on both axes (in-event consumption)</span>
+          <span><i class="base"></i> Everything else</span>
+        </div>
+
+        <h3>1.4 Identifying business objectives</h3>
+
+        <h4>1.4.1 Who are the project's stakeholders?</h4>
+        <ul class="doc-stakeholders">
+          <li><b>Influences the outcome</b><span>Users, Ensight</span></li>
+          <li><b>Funds the project</b><span>Ensight</span></li>
+          <li><b>Designs the product</b><span>Dhiego Cristofolini (solo)</span></li>
+          <li><b>Manages the project</b><span>Felipe and Bruno Vencato, co-founders</span></li>
+          <li><b>Engineering</b><span>2 developers</span></li>
+          <li><b>Supports the app</b><span>Influencers, physical venues, users</span></li>
+          <li><b>Sells the product</b><span>Ensight</span></li>
+          <li><b>Delivers the final product</b><span>Ensight</span></li>
+          <li><b>Assists users</b><span>Ensight</span></li>
+        </ul>
+
+        <h4>1.4.2 What are the business objectives and desired outcomes, and how will they be measured?</h4>
+        <p>Targets set for a 17-month horizon:</p>
+        <div class="doc-checklist">
+          <span>150k monthly active users</span>
+          <span>1.5M downloads</span>
+          <span>R$2.00 CAC per user</span>
+          <span>R$2.70 revenue / user / month</span>
+        </div>
+
+        <h4>1.4.4 Who is the user, and why will they use the product?</h4>
+        <div class="doc-qa">
+          <div class="doc-qa__a">
+            <p>People with an average level of tech literacy, smartphone users, engaged with (or at least using) social and events apps, aged 19–30, with their own income (classes A and B).</p>
+            <p>"Gen Z is known for being digitally native, deeply familiar with the internet, file sharing, and mobile phones — not just connecting from home but staying constantly connected through their phones. Their defining traits: technological fluency and social openness to new technology."</p>
+            <p>Being digitally native makes it easier for this audience to adopt an innovative UI. Their high social/political engagement and need to find a place or "tribe" where they belong tends to involve discovery, nightlife, and lower conformity to social norms. Meaple offers this audience a rich social interaction experience — a social network tied to events, chat, moment-sharing, event discovery matched to personal taste, easier meetups, easier event payment, finding people with shared interests, event promotions, fast small and large event creation, payment security, and — above all — unifying all of it in a single app.</p>
+          </div>
+        </div>
+
+        <h4>1.4.5 What industry regulations will influence what we build?</h4>
+        <p>Three areas flagged for legal review before launch: LGPD compliance for personal data collected through profiles, location, and payment (Brazil's data protection law took effect in 2020, the same year as this engagement); payment intermediation rules for holding user funds between ticket purchase and event completion; and consumer protection requirements around ticket refunds and event cancellation.</p>
+
+        <h4>1.4.6 Who will we compete with, directly or indirectly?</h4>
+        <p>Direct competitors span social, events, and chat: Sympla, Eventbrite, Facebook, WhatsApp, Yelp, Snapchat, PicPay, Venmo, Play Party, Hellofriend, Google Maps, Apple Maps, Promoters — mapped across the four functional layers Meaple set out to own at once.</p>
+
+        <div class="doc-cmatrix-wrap">
+        <table class="doc-cmatrix">
+          <thead><tr><th>Product</th><th>Event<br>discovery</th><th>Social<br>coordination</th><th>Payment</th><th>Location</th></tr></thead>
+          <tbody id="doc-cmx"><!-- filled by script below --></tbody>
+        </table>
+        </div>
+
+        <h3>1.5 Identifying user needs</h3>
+
+        <h4>1.5.1 Is the product B2B or B2C?</h4>
+        <p>B2B2C.</p>
+
+        <h4>1.5.2 What do users expect to be able to do with the product?</h4>
+        <ul>
+          <li>Find interesting events</li>
+          <li>Create events quickly and intuitively</li>
+          <li>Build and manage groups or events in a single app</li>
+          <li>Keep up with friends' activity</li>
+          <li>Discover new experiences they'd never have found otherwise</li>
+        </ul>
+
+        <h4>1.5.3 Why do these things matter to them?</h4>
+        <p>They save time and money, reduce frustration, and make transactions and event logistics safer.</p>
+
+        <h4>1.5.4 What are users doing right now to solve these problems?</h4>
+        <p>Sympla, Eventbrite, Google Maps, Apple Maps, Facebook, WhatsApp, Yelp, Snapchat, PicPay, Venmo, Play Party, Hellofriend.</p>
+
+        <h4>1.5.5 What solutions deliver value to them?</h4>
+        <p>Information and communication that's easy to access and generated from the user's own in-app activity — avoiding red tape and creating a dynamic, fluid interaction that reduces frustration and organizational friction.</p>
+
+        <h3>1.6 Creating a decision path</h3>
+        <p>Mapped separately for each side of the marketplace:</p>
+        <div class="doc-table-wrap">
+        <table class="doc-table">
+          <thead><tr><th>Proposal</th><th>Context</th><th>Convince</th><th>Convert</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Consumer: find and join events with friends, without juggling five apps</td>
+              <td>Explore feed ranked by relevance and proximity; friends' activity visible</td>
+              <td>Producer verification badge, going/interested counts, social proof in comments</td>
+              <td>Buy ticket in-app</td>
+            </tr>
+            <tr>
+              <td>Producer: sell tickets and grow an audience without giving up control</td>
+              <td>Event history, ratings, and analytics visible on their own dashboard</td>
+              <td>Revenue from ticket fees and in-event consumption, page infrastructure at no upfront cost</td>
+              <td>Create first event, verify account</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>1.7 Generating requirements</h3>
+
+        <h4>1.7.1 What do users or the client say they need?</h4>
+        <ul>
+          <li>Easier event search</li>
+          <li>Stronger privacy filters</li>
+        </ul>
+
+        <h4>1.7.2 What do we believe they actually need, based on research and interviews?</h4>
+        <ul>
+          <li>More precise interactions</li>
+          <li>Easier, better categorization</li>
+          <li>Less friction across events, meetups, and groups</li>
+        </ul>
+
+        <h4>1.7.3 What do we believe our audience and stakeholders don't know they need?</h4>
+        <ul>
+          <li>A platform with more precise event updates</li>
+          <li>Unification of events, social network, and chat</li>
+          <li>Easier payment</li>
+          <li>Faster creation of small events</li>
+        </ul>
+
+        <h3>1.8 User testing plan</h3>
+
+        <h4>1.8.1 Who are we testing with?</h4>
+        <p>19–30 years old, students or working in the field.</p>
+
+        <h4>1.8.2 What are the most popular devices among our users?</h4>
+        <p>Android 4.4+, Apple iOS 10.0+.</p>
+
+        <h4>1.8.3 Which OS / browser combination is most common?</h4>
+        <p>Android, Apple iOS and Windows: Safari, Chrome, Firefox, Opera, Edge.</p>
+
+        <h4>1.8.4 What connection speed or type do they use?</h4>
+        <p>3G, 4G, Wi-Fi.</p>
+
+        <h4>1.8.5 How tech-familiar are our users?</h4>
+        <p>Most use a smartphone and social apps.</p>
+
+        <p>Browser and device support was prioritized into three tiers:</p>
+        <div class="doc-table-wrap">
+        <table class="doc-table">
+          <thead><tr><th>Full support</th><th>Partial support</th><th>No support</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Readable content · all functions work · layout matches the approved UI as closely as possible · navigation fully functional</td>
+              <td>Readable content · navigation fully functional · login flows stay smooth · UI degradation must never obscure content</td>
+              <td>No support or testing</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>Every feature planned for Meaple: splash screen, account creation, login, password recovery, data confirmation, signup helper, terms of use, profile configuration, feed, categories, tags, business account activation, page system, event system, event feed, social feed, chat, geolocation, map, invite system, fintech, browser, notifications, profile page, preferences system, Momentum, event page, business page, calendar, gamification, streaming, web events.</p>
+
+        <div class="doc-roadmap">
+          <div class="doc-roadmap-month">
+            <div class="doc-roadmap-month__head">Dec<span>01</span></div>
+            <ul><li>Splash screen</li><li>Login</li><li>Account creation</li><li>Data confirmation</li><li>Password recovery</li><li>Profile config</li></ul>
+          </div>
+          <div class="doc-roadmap-month">
+            <div class="doc-roadmap-month__head">Jan<span>02</span></div>
+            <ul><li>Categories</li><li>Tags</li><li>Signup helper</li><li>Profile page</li><li>Business activation</li><li>Business page</li></ul>
+          </div>
+          <div class="doc-roadmap-month">
+            <div class="doc-roadmap-month__head">Feb<span>03</span></div>
+            <ul><li>Social</li><li>Profile config iteration</li><li>Business page iteration</li><li>Event history</li><li>Notifications</li></ul>
+          </div>
+          <div class="doc-roadmap-month">
+            <div class="doc-roadmap-month__head">Mar<span>04</span></div>
+            <ul><li>Vaquinha (group pool)</li><li>Payment (definition)</li><li>Chega aí</li><li>Rolê</li><li>Branding layout</li><li>Auto events (definition)</li><li>Interaction methods</li></ul>
+          </div>
+        </div>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">02</span>
+          <h2 class="article-section__title" id="architecture">Architecture</h2>
+        </div>
+
+        <h3>2.1 Identifying the content workflow</h3>
+        <p>Roles and responsibilities across the content pipeline:</p>
+        <ul class="doc-stakeholders">
+          <li><b>Add text, photo, video, feed, forms, etc.</b><span>Designer, User</span></li>
+          <li><b>Create new pages</b><span>Designer, User</span></li>
+          <li><b>Delete pages and functions</b><span>Developer</span></li>
+          <li><b>Add or update the database</b><span>Developer</span></li>
+          <li><b>Publish content to the test server</b><span>Designer</span></li>
+          <li><b>Return new/edited content with comments</b><span>Designer</span></li>
+          <li><b>Schedule content for publication</b><span>Designer</span></li>
+          <li><b>Format headers, tables, captions, links, etc.</b><span>Designer</span></li>
+        </ul>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Can authors create new pages, or only edit existing ones?</p>
+          <div class="doc-qa__a"><p>All authors can create and edit their own page, post, and content.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Who's authorized to create subcategories and subfolders?</p>
+          <div class="doc-qa__a"><p>All authors can create and edit tags, personal pages, IDs, and feed.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Can authors delete pages and digital content (photos, videos, etc.)?</p>
+          <div class="doc-qa__a"><p>Only the content's owner. Exceptions are kept for reports of inappropriate pages, events, accounts, or tags.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Can editors approve content site-wide, or only in sections they're responsible for?</p>
+          <div class="doc-qa__a"><p>The design editor can approve all content across the app.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Is multi-step approval needed? Are approval requests delegated to another editor when the responsible person is unavailable?</p>
+          <div class="doc-qa__a"><p>No — with a single design editor, approval is a single step. If unavailable, publication waits rather than routing to a second approver, given the team's size.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: How is the workflow handled when multiple authors work on the same page?</p>
+          <div class="doc-qa__a"><p>Direct coordination rather than a formal locking system — the team was small enough that conflicts were resolved by talking before either side started work.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Are content managers informed of publish updates, and are changes documented?</p>
+          <div class="doc-qa__a"><p>Yes — the co-founders were kept current through the roadmap in §1.8, updated as each milestone shipped rather than through a separate change log.</p></div>
+        </div>
+
+        <h3>2.2 The five states that affect context</h3>
+
+        <h4>2.2.1 Physical</h4>
+        <ul>
+          <li>Using a phone; possibly holding it in the left hand</li>
+          <li>Probably navigating with one hand only</li>
+          <li>Low chance of consuming content in a fixed location</li>
+          <li>Likely doing something else at the same time</li>
+        </ul>
+
+        <h4>2.2.2 Environmental</h4>
+        <ul>
+          <li>Could be in a silent room or an extremely loud one, like a club</li>
+          <li>Frequently interrupted while using the app</li>
+          <li>Probably using the app while walking down the street</li>
+        </ul>
+
+        <h4>2.2.3 Preferential</h4>
+        <ul>
+          <li>Prefers fast, intuitive access with few steps</li>
+          <li>Will be consumed on phones and possibly tablets</li>
+          <li>Young audience: content must be far more visual than textual</li>
+          <li>Can't depend on audio — the app will often be used in loud places</li>
+          <li>Audience skews mid-to-high education, but includes users with little or no formal schooling — language must stay approachable</li>
+          <li>Some users may have physical impairments</li>
+        </ul>
+
+        <h4>2.2.4 Emotional</h4>
+        <ul>
+          <li>May be under high stress — the app needs to stay as intuitive as possible</li>
+          <li>Motivated by paying quickly at an event or finding a friend fast; also used to plan events with friends or family</li>
+          <li>Wants speed and ease, both for arranging plans and for reaching out to people</li>
+          <li>This generation rarely goes without a phone, which helps distribution</li>
+          <li>If the app doesn't deliver on why they downloaded it, adoption drops sharply — losing potential users for both data collection and monetization</li>
+        </ul>
+
+        <h4>2.2.5 Cognitive</h4>
+        <ul>
+          <li>A digitally engaged audience means real competition — the app must feel innovative without straying too far from current usability norms</li>
+          <li>Visual-first consumption means the layout has to be genuinely attractive</li>
+          <li>This age group is also the most receptive to learning, which allows room for one or two genuinely novel UI patterns</li>
+          <li>Because the app spans events and socializing broadly, it reaches nearly every age group — content must stay clear enough for users with little schooling or limited digital fluency</li>
+        </ul>
+
+        <h3>2.3 Determining information priority</h3>
+        <div class="doc-ladder">
+          <div class="doc-rung"><span class="rk">01</span><span class="rn">Events</span></div>
+          <div class="doc-rung"><span class="rk">02</span><span class="rn">Feed</span></div>
+          <div class="doc-rung"><span class="rk">03</span><span class="rn">Sharing</span></div>
+          <div class="doc-rung"><span class="rk">04</span><span class="rn">Chat</span></div>
+          <div class="doc-rung"><span class="rk">05</span><span class="rn">Payments</span></div>
+          <div class="doc-rung"><span class="rk">06</span><span class="rn">Professional page</span></div>
+          <div class="doc-rung"><span class="rk">07</span><span class="rn">FAQ</span></div>
+          <div class="doc-rung"><span class="rk">08</span><span class="rn">Profile customization</span></div>
+        </div>
+
+        <h3>2.4 Information architecture</h3>
+        <p>A five-tab bottom navigation carries the whole app: Explore (feed + map, the default landing tab), People (social feed, discover, requests), Calendar (upcoming and saved events, tickets), Wallet (tickets, orders, order history), and Profile. Event and business pages, chat, and checkout are reached from within those tabs rather than surfaced as their own top-level destinations — matching the priority order set above.</p>
+
+        <div class="doc-screens">
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/explore-feed-light.webp" width="780" height="1696" alt="Explore tab: ranked feed and friend activity" loading="lazy">
+            <span>Explore</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/social-feed.webp" width="780" height="1696" alt="People tab: social feed" loading="lazy">
+            <span>People</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/calendar.webp" width="780" height="1696" alt="Calendar tab: upcoming and saved events" loading="lazy">
+            <span>Calendar</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/wallet-ticket.webp" width="780" height="1696" alt="Wallet tab: tickets and orders" loading="lazy">
+            <span>Wallet</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/profile-founder.webp" width="780" height="1696" alt="Profile tab" loading="lazy">
+            <span>Profile</span>
+          </figure>
+        </div>
+
+        <h3>2.5 Determining key navigation paths</h3>
+
+        <h4>2.5.1 What's the value proposition?</h4>
+        <p>Signing up with basic information gives the user a live feed of updated events, the ability to create small events and group pools (vaquinhas), in-app ticket purchase, and sharing/interaction with events and profiles. Completing advanced signup and confirming their data unlocks page creation — professional profiles, larger events, and more tag and promotion options.</p>
+
+        <div class="doc-screens">
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/onboarding-fork.webp" width="780" height="1696" alt="Onboarding fork: basic account vs. verified professional account" loading="lazy">
+            <span>Onboarding fork</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/event-page.webp" width="780" height="1696" alt="Event page reached after signup" loading="lazy">
+            <span>Event page</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/producer-dashboard.webp" width="780" height="1696" alt="Producer dashboard, unlocked by advanced signup" loading="lazy">
+            <span>Producer dashboard</span>
+          </figure>
+        </div>
+
+        <h4>2.5.2 What does the user want to happen, and what do we want to happen?</h4>
+        <p>The user wants speed and efficiency finding and creating events, wants to know what their friends are doing, and wants easier interaction with the event itself (delivered through chat and feed). Our objective is verified users with monetizable app usage — in exchange for the value we deliver by signing up and staying active, we receive information and, potentially, monetization.</p>
+
+        <h4>2.5.3 What other events are valuable to our product, in hierarchical order?</h4>
+        <ol>
+          <li>Content creation (events)</li>
+          <li>Content sharing</li>
+          <li>In-app monetary transactions</li>
+          <li>Engagement</li>
+          <li>Basic signup</li>
+        </ol>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Is the path to these outcomes obvious?</p>
+          <div class="doc-qa__a"><p>Yes for the consumer side — browse the feed, tap an event, buy a ticket is two taps deep from the app's default screen. Less so for producers, whose path runs through account verification first; that trade-off is the subject of §04 in the case study.</p></div>
+        </div>
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Does this path also answer other open questions?</p>
+          <div class="doc-qa__a"><p>Yes — it's the same two-tier structure documented as the answer to §2.5.1, applied here to the value hierarchy instead of the account model.</p></div>
+        </div>
+
+        <h3>Interactions</h3>
+        <p>The interaction model will keep adapting and being built over time. Planned interaction types: quizzes, votes, choices, preference-matching, and filters (Snapchat-style).</p>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">03</span>
+          <h2 class="article-section__title" id="research">Primary user research</h2>
+        </div>
+
+        <p>One-on-one B2C interview, conducted under a fixed methodology: no specific product questions, no problem-solving on the interviewer's part, no suggested solutions or directions, and enough patience for a slow, sometimes hesitant answer to fully form. Every session opened with a fixed context statement:</p>
+        <blockquote class="article-pullquote">"We're building an app focused on events and social networking, where you can make payments, create events, and socialize."</blockquote>
+
+        <h4>Respondent profile</h4>
+        <ul class="doc-stakeholders">
+          <li><b>Age / gender / occupation</b><span>23, female, bartender</span></li>
+          <li><b>Devices</b><span>iPhone 8 Plus, Windows desktop, Windows notebook</span></li>
+          <li><b>OS / browser</b><span>Windows 10 / Google Chrome</span></li>
+          <li><b>Connection</b><span>4G / Ethernet</span></li>
+          <li><b>Tech familiarity</b><span>Owns a smartphone; uses Twitter, Instagram, Facebook, WhatsApp, Telegram</span></li>
+        </ul>
+
+        <h4>Interview transcript</h4>
+
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: What task would you most like to postpone or avoid in an app like this?</p>
+          <div class="doc-qa__a"><p>Facebook — reduce the time it takes to find an event, it's very hit-or-miss. Instagram — depends on other people's posts and reactions.</p></div>
+        </div>
+
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: What frustrates you most in an app?</p>
+          <div class="doc-qa__a"><p>Facebook — wrong categorization; the app doesn't respect the search filters you select. WhatsApp — group issues, doesn't notify her when she's added to a group, and she hates having to constantly reply to people.</p></div>
+        </div>
+
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: How often do you use apps like this?</p>
+          <div class="doc-qa__a"><p>Every day, every hour — mostly Twitter.</p></div>
+        </div>
+
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: What do you use them for most often?</p>
+          <div class="doc-qa__a"><p>Facebook: rarely, to check events and pages. WhatsApp: quick conversations, planning more intimate things — friends, family, small get-togethers. Instagram: the social network with the most friends right now; loves seeing photos. Twitter: staying in touch with friends.</p></div>
+        </div>
+
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: Can you walk me through your process inside the app? What else do you do before, during, and after using it?</p>
+          <div class="doc-qa__a"><p>It's a leisure-time thing. Rarely used for anything urgent.</p></div>
+        </div>
+
+        <div class="doc-qa">
+          <p class="doc-qa__q">Q: What do you like about these apps, and what would you want improved?</p>
+          <div class="doc-qa__a"><p>Facebook: ease of finding what you're looking for. Instagram: promotions and announcements.</p></div>
+        </div>
+
+        <div class="article-section__hd">
+          <span class="article-section__num">04</span>
+          <h2 class="article-section__title" id="branding">Branding process</h2>
+        </div>
+
+        <h3>First meeting</h3>
+        <ul>
+          <li>Define the working group and who owns it</li>
+          <li>Initial discussion of the brief: project goals, why it became necessary, why now, expected results, available timeline and budget, evaluation criteria, milestone breakdown</li>
+        </ul>
+
+        <h3>Second meeting</h3>
+        <ul>
+          <li>Resolve open questions left over from the first briefing meeting</li>
+          <li>Share document copies with everyone responsible for review</li>
+          <li>Most important: check whether competitors are using design as a competitive advantage — which design elements are working well for them, how they're pulling it off, and where the weaknesses are</li>
+          <li>Identify what can differentiate the proposed product from the competition</li>
+        </ul>
+
+        <h3>Briefing checklist</h3>
+        <div class="doc-checklist">
+          <span>1. Company</span>
+          <span>2. Product</span>
+          <span>3. Market</span>
+          <span>4. Consumer</span>
+          <span>5. Distribution</span>
+          <span>6. Price</span>
+          <span>7. Competition</span>
+          <span>8. Prior communication actions and research</span>
+        </div>
+
+        <h3>Strategy formulation</h3>
+        <div class="doc-checklist">
+          <span>1. Marketing objectives</span>
+          <span>2. Communication objectives</span>
+          <span>3. Core communication content</span>
+          <span>4. Budget</span>
+          <span>5. Timeline</span>
+          <span>6. Media</span>
+          <span>7. Other resources</span>
+        </div>
+
+        <p class="doc-note doc-related">Related: <a href="../">read the Meaple case study</a> for how this documentation turned into product decisions, or <a href="../../">browse the rest of the work</a>.</p>
+
+      </article>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../../../" class="footer__nav-link">Home</a>
+        <a href="../../" class="footer__nav-link">Work</a>
+        <a href="../../../contact/" class="footer__nav-link">Contact</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  /* Competitive dot matrix (§1.4.6) */
+  (function(){
+    var CMX=[
+      ["Sympla",["D"]],["Eventbrite",["D"]],["Facebook",["D","S"]],["WhatsApp",["S"]],
+      ["Yelp",["D","L"]],["Snapchat",["S","L"]],["PicPay",["P"]],["Venmo",["P"]],
+      ["Play Party",["D","S"]],["Hellofriend",["S"]],["Google Maps",["D","L"]],["Apple Maps",["L"]],
+      ["Promoters",["D"]]
+    ];
+    var COLS=["D","S","P","L"];
+    var tb=document.getElementById("doc-cmx");
+    if(!tb) return;
+    CMX.forEach(function(row){
+      var name=row[0], fills=row[1];
+      var tr=document.createElement("tr");
+      tr.innerHTML="<th>"+name+"</th>"+COLS.map(function(c){return '<td><span class="doc-dot '+(fills.indexOf(c)>-1?"on":"")+'"></span></td>';}).join("");
+      tb.appendChild(tr);
+    });
+    var mr=document.createElement("tr"); mr.className="meaple";
+    mr.innerHTML="<th>Meaple</th>"+COLS.map(function(){return '<td><span class="doc-dot on"></span></td>';}).join("");
+    tb.appendChild(mr);
+  })();
+
+  /* Priority scatter (§1.3) */
+  (function(){
+    var PTS=[
+      ["Speed to create small events",5,3,"max"],
+      ["Finding events",4,4,""],["Sharing events",4,4,""],["Management + security",4,4,""],
+      ["Personal communication",4,3,""],["Event creation difficulty",3,4,""],
+      ["Ticket purchase",3,3,""],["Account customization",3,3,""],["Professional organization",3,3,""],
+      ["Connecting w/ professionals",3,2,""],["Info sharing during events",2,3,""],
+      ["Personal organization",2,3,""],["Finding event memories",1,3,""],
+      ["In-event consumption",1,1,"override"]
+    ];
+    var svg=document.getElementById("doc-scatter");
+    if(!svg) return;
+    var W=620,H=460,pad={l:60,r:26,t:22,b:52};
+    var x=function(v){return pad.l+((v-0.5)/5)*(W-pad.l-pad.r);};
+    var y=function(v){return H-pad.b-((v-0.5)/5)*(H-pad.t-pad.b);};
+    var s="";
+    for(var i=1;i<=5;i++){
+      s+='<line x1="'+x(i)+'" y1="'+pad.t+'" x2="'+x(i)+'" y2="'+(H-pad.b)+'" stroke="var(--b0)" stroke-width="1"/>';
+      s+='<line x1="'+pad.l+'" y1="'+y(i)+'" x2="'+(W-pad.r)+'" y2="'+y(i)+'" stroke="var(--b0)" stroke-width="1"/>';
+      s+='<text class="doc-sc-axis" x="'+x(i)+'" y="'+(H-pad.b+20)+'" text-anchor="middle">'+i+'</text>';
+      s+='<text class="doc-sc-axis" x="'+(pad.l-14)+'" y="'+(y(i)+4)+'" text-anchor="end">'+i+'</text>';
+    }
+    s+='<text class="doc-sc-axis" x="'+(pad.l+(W-pad.l-pad.r)/2)+'" y="'+(H-6)+'" text-anchor="middle">viability →</text>';
+    s+='<text class="doc-sc-axis" transform="translate(16,'+(pad.t+(H-pad.t-pad.b)/2)+') rotate(-90)" text-anchor="middle">importance →</text>';
+    var groups={};
+    PTS.forEach(function(p,i){var k=p[1]+"-"+p[2];(groups[k]=groups[k]||[]).push(i);});
+    PTS.forEach(function(p,i){
+      var n=p[0],imp=p[1],via=p[2],flag=p[3];
+      var grp=groups[imp+"-"+via], idx=grp.indexOf(i), kn=grp.length;
+      var off=(idx-(kn-1)/2)*16;
+      var cx=x(via)+off, cy=y(imp);
+      var fill="var(--t2)", r=6, glow="";
+      if(flag==="override"){fill="#f87171";r=9;glow='<circle cx="'+cx+'" cy="'+cy+'" r="20" fill="none" stroke="#f87171" stroke-width="1" opacity=".5"/>';}
+      if(flag==="max"){fill="var(--y)";r=9;glow='<circle cx="'+cx+'" cy="'+cy+'" r="18" fill="none" stroke="var(--y)" stroke-width="1" opacity=".55"/>';}
+      s+='<g>'+glow+'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+fill+'"/>';
+      if(flag){
+        var anchor = via>=4?"end":"start";
+        var dx = via>=4? -14 : 14;
+        s+='<text class="doc-sc-lab" x="'+(cx+dx)+'" y="'+(cy+3)+'" text-anchor="'+anchor+'" fill="'+fill+'">'+n+'</text>';
+      }
+      s+='</g>';
+    });
+    svg.innerHTML=s;
+  })();
+  </script>
+
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>
