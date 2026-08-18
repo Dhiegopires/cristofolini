@@ -107,8 +107,7 @@
     .doc-qa__a p { margin: 0 0 10px; font-size: inherit; line-height: inherit; }
     .doc-qa__a p:last-child { margin-bottom: 0; }
 
-    .doc-personas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 28px; }
-    @media (max-width: 780px) { .doc-personas { grid-template-columns: 1fr; } }
+    .doc-personas { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 8px 0 28px; }
     .doc-persona { border: 1px solid var(--b0); background: var(--bg1); padding: 22px; display: flex; flex-direction: column; gap: 12px; }
     .doc-persona__name { font-family: var(--display); font-size: 22px; letter-spacing: .01em; color: var(--t1); text-transform: uppercase; }
     .doc-persona__role { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--t3); }
@@ -120,8 +119,8 @@
     .doc-persona__pain { font-size: 12.5px; line-height: 1.5; color: var(--t1); border-top: 1px solid var(--b0); padding-top: 10px; margin-top: auto; }
     .doc-persona__pain b { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--y); margin-bottom: 4px; }
 
-    .doc-checklist { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--b0); border: 1px solid var(--b0); margin: 8px 0 28px; }
-    @media (max-width: 700px) { .doc-checklist { grid-template-columns: repeat(2, 1fr); } }
+    .doc-checklist { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--b0); border: 1px solid var(--b0); margin: 8px 0 28px; }
+    @media (min-width: 480px) { .doc-checklist { grid-template-columns: repeat(2, 1fr); } }
     .doc-checklist span { background: var(--bg1); padding: 12px 14px; font-family: var(--mono); font-size: 12px; color: var(--t2); }
 
     .doc-stakeholders { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; gap: 10px; }
@@ -166,8 +165,8 @@
     .doc-rung:first-child { border-color: var(--y); background: rgba(243,176,46,.06); }
 
     /* Roadmap cards */
-    .doc-roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 8px 0 28px; }
-    @media (max-width: 700px) { .doc-roadmap { grid-template-columns: repeat(2, 1fr); } }
+    .doc-roadmap { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 8px 0 28px; }
+    @media (min-width: 560px) { .doc-roadmap { grid-template-columns: repeat(2, 1fr); } }
     .doc-roadmap-month { border: 1px solid var(--b0); background: var(--bg1); }
     .doc-roadmap-month__head { font-family: var(--sans); font-weight: 700; font-size: 14px; color: var(--t1); padding: 10px 14px; border-bottom: 1px solid var(--b0); display: flex; justify-content: space-between; }
     .doc-roadmap-month__head span { font-family: var(--mono); font-size: 10px; color: var(--y); }
@@ -651,27 +650,27 @@
         </div>
 
         <h3>2.4 Information architecture</h3>
-        <p>A five-tab bottom navigation carries the whole app: Explore (feed + map, the default landing tab), People (social feed, discover, requests), Calendar (upcoming and saved events, tickets), Wallet (tickets, orders, order history), and Profile. Event and business pages, chat, and checkout are reached from within those tabs rather than surfaced as their own top-level destinations — matching the priority order set above.</p>
+        <p>A five-tab bottom navigation carries the whole app: Social (feed, discover, requests), Calendar (upcoming and saved events), Explore (feed + map, the default landing tab), Events (renamed from an earlier Wallet label — a ticket now opens into its own Ticket / Orders / Tab / Feed sub-navigation instead of a flat list), and Profile. Event and business pages, chat, and checkout are reached from within those tabs rather than surfaced as their own top-level destinations — matching the priority order set above.</p>
 
         <div class="doc-screens">
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/explore-feed-light.webp" width="780" height="1696" alt="Explore tab: ranked feed and friend activity" loading="lazy">
-            <span>Explore</span>
+            <img src="/assets/img/project/meaple/social-feed.webp" width="402" height="874" alt="Social tab: social feed" loading="lazy">
+            <span>Social</span>
           </figure>
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/social-feed.webp" width="780" height="1696" alt="People tab: social feed" loading="lazy">
-            <span>People</span>
-          </figure>
-          <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/calendar.webp" width="780" height="1696" alt="Calendar tab: upcoming and saved events" loading="lazy">
+            <img src="/assets/img/project/meaple/calendar.webp" width="402" height="874" alt="Calendar tab: upcoming and saved events" loading="lazy">
             <span>Calendar</span>
           </figure>
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/wallet-ticket.webp" width="780" height="1696" alt="Wallet tab: tickets and orders" loading="lazy">
-            <span>Wallet</span>
+            <img src="/assets/img/project/meaple/explore-feed-light.webp" width="402" height="874" alt="Explore tab: ranked feed and friend activity" loading="lazy">
+            <span>Explore</span>
           </figure>
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/profile-founder.webp" width="780" height="1696" alt="Profile tab" loading="lazy">
+            <img src="/assets/img/project/meaple/wallet-ticket.webp" width="402" height="874" alt="Events tab: ticket, orders, tab and feed sub-navigation" loading="lazy">
+            <span>Events</span>
+          </figure>
+          <figure class="doc-screen">
+            <img src="/assets/img/project/meaple/profile-founder.webp" width="402" height="874" alt="Profile tab" loading="lazy">
             <span>Profile</span>
           </figure>
         </div>
@@ -683,15 +682,15 @@
 
         <div class="doc-screens">
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/onboarding-fork.webp" width="780" height="1696" alt="Onboarding fork: basic account vs. verified professional account" loading="lazy">
+            <img src="/assets/img/project/meaple/onboarding-fork.webp" width="402" height="874" alt="Onboarding fork: basic account vs. verified professional account" loading="lazy">
             <span>Onboarding fork</span>
           </figure>
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/event-page.webp" width="780" height="1696" alt="Event page reached after signup" loading="lazy">
+            <img src="/assets/img/project/meaple/event-page.webp" width="402" height="874" alt="Event page reached after signup" loading="lazy">
             <span>Event page</span>
           </figure>
           <figure class="doc-screen">
-            <img src="/assets/img/project/meaple/producer-dashboard.webp" width="780" height="1696" alt="Producer dashboard, unlocked by advanced signup" loading="lazy">
+            <img src="/assets/img/project/meaple/producer-dashboard.webp" width="402" height="874" alt="Producer dashboard, unlocked by advanced signup" loading="lazy">
             <span>Producer dashboard</span>
           </figure>
         </div>

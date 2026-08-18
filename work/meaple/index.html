@@ -117,8 +117,8 @@
     .sc-lab { font-weight: 700; }
 
     /* Business targets: 5-cell stat rail, same cell language as cs-impact-cell */
-    .targets-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--b0); border: 1px solid var(--b0); border-radius: 8px; overflow: hidden; }
-    @media (max-width: 760px) { .targets-grid { grid-template-columns: repeat(2, 1fr); } }
+    .targets-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--b0); border: 1px solid var(--b0); border-radius: 8px; overflow: hidden; }
+    @media (min-width: 480px) { .targets-grid { grid-template-columns: repeat(2, 1fr); } }
 
     /* Account tiers relations note */
     .tier-relations { border: 1px dashed var(--b1); border-radius: 8px; padding: var(--sp-5); margin-top: var(--sp-5); }
@@ -151,8 +151,8 @@
     .scope-chip .why { font-family: var(--mono); font-size: 9.5px; opacity: .7; margin-left: 6px; }
 
     /* Roadmap */
-    .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
-    @media (max-width: 700px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
+    .roadmap { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
+    @media (min-width: 560px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
     .roadmap-month { border: 1px solid var(--b0); border-radius: 8px; background: var(--bg1); overflow: hidden; }
     .roadmap-month__head { font-family: var(--display); font-size: 15px; text-transform: uppercase; padding: 12px 14px; border-bottom: 1px solid var(--b0); display: flex; justify-content: space-between; align-items: center; color: var(--t1); }
     .roadmap-month__head span { font-family: var(--mono); font-size: 10px; color: var(--y); text-transform: none; }
@@ -161,8 +161,8 @@
     .roadmap-month li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
 
     /* Context states */
-    .ctx-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-3); }
-    @media (max-width: 900px) { .ctx-grid { grid-template-columns: repeat(2, 1fr); } }
+    .ctx-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
+    @media (min-width: 560px) { .ctx-grid { grid-template-columns: repeat(2, 1fr); } }
     .ctx-card { border: 1px solid var(--b0); border-radius: 8px; padding: var(--sp-4); background: var(--bg1); }
     .ctx-card .ci { margin-bottom: 12px; height: 24px; }
     .ctx-card .ci svg { width: 22px; height: 22px; stroke: var(--y); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -702,30 +702,30 @@
           <div class="cs-section__body">
             <p class="cs-section__subhead">Identity built alongside the product, not applied after: <em>"uma plataforma social completa focada em eventos de todos os tipos e tamanhos."</em></p>
 
-            <p><strong>Event page, the flagship.</strong> Every field from the spec in one scroll: producer identity and event history (the trust chain from §05), date and location with a spatial mini-map (the same layer Momentum ranks on), tags plus going/interested counts feeding producer credibility back into Momentum, a comment thread for social proof, and an in-app buy bar pinned to one-hand reach, the supply-side revenue that justified building producers first.</p>
+            <p><strong>Event page, the flagship.</strong> Every field from the spec in one scroll: producer identity and event history with a one-tap Follow (the trust chain from §05), date and location with a spatial mini-map (the same layer Momentum ranks on), tags plus a going/interested count and a recent-turnout photo strip feeding producer credibility back into Momentum, and an in-app buy bar pinned to one-hand reach, the supply-side revenue that justified building producers first.</p>
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page.webp" width="780" height="1696" alt="Event page, light theme: Lofia Rooftop Party, verified producer, tags, going/interested, buy bar" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page.webp" width="402" height="874" alt="Event page, light theme: Lofia Rooftop Party, verified producer with follow button, mini-map, tags, going/interested, buy bar" loading="lazy"></div>
                 <figcaption class="cs-caption">Event page · light theme</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page-dark.webp" width="780" height="1696" alt="Event page, dark theme, same layout" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page-dark.webp" width="402" height="874" alt="Event page, dark theme, same layout" loading="lazy"></div>
                 <figcaption class="cs-caption">Event page · dark theme</figcaption>
               </figure>
             </div>
 
-            <p><strong>Explore / Momentum.</strong> The featured Momentum card surfaces producer credibility and engagement velocity as one glanceable unit; friend presence rides above it as avatars; the ranked feed sits below. On the map, pin size renders interaction volume in space, and a tap-to-preview card opens the full event page without leaving the map.</p>
+            <p><strong>Explore / Momentum.</strong> A "pulling up" story row surfaces friends already heading out; mood filters (Tonight, Funk, Rooftop, Live) narrow the ranked feed underneath; the featured Momentum card carries a live headcount, "15 pulling up," as social proof stacked on top of the algorithm. On the map, pin size still renders interaction volume in space, a trending event gets its own badge, and a friend converging on the same pin surfaces a one-tap Meet up, closing the loop between discovery and the group actually going.</p>
             <div class="cs-screens cs-screens--3">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-light.webp" width="780" height="1696" alt="Explore feed, light theme: friend avatars, Momentum card, made-for-you row" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-light.webp" width="402" height="874" alt="Explore feed, light theme: pulling-up story row, mood filter chips, Momentum card with live headcount" loading="lazy"></div>
                 <figcaption class="cs-caption">Explore · light theme</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-dark.webp" width="780" height="1696" alt="Explore feed, dark theme" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-dark.webp" width="402" height="874" alt="Explore feed, dark theme" loading="lazy"></div>
                 <figcaption class="cs-caption">Explore · dark theme</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-map.webp" width="780" height="1696" alt="Explore by map: pins sized by interaction volume, tap-to-preview event card" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-map.webp" width="402" height="874" alt="Explore by map: search bar, mood filters, trending badge, friends pulling up, tap-to-meet-up card" loading="lazy"></div>
                 <figcaption class="cs-caption">Explore · map</figcaption>
               </figure>
             </div>
@@ -733,32 +733,60 @@
             <p><strong>Onboarding fork.</strong> Two doors, two commitments. Basic signup gets a live product in seconds; verification unlocks the commercial stack: pages, unlimited sales, categories, analytics. No one is blocked at the door, and the people who bring events have a clear reason to verify: the supply-first bet, encoded in a screen.</p>
             <div class="cs-screens cs-screens--1">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/onboarding-fork.webp" width="780" height="1696" alt="Onboarding fork: Basic account vs Verified professional account" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/onboarding-fork.webp" width="402" height="874" alt="Onboarding fork: Basic account vs Verified professional account" loading="lazy"></div>
                 <figcaption class="cs-caption">Basic account vs. verified account</figcaption>
               </figure>
             </div>
 
-            <p><strong>Comanda: order and pay inside the event.</strong> Every item is a one-tap add, no forms, no card entry mid-event. Consumption accrues to an open tab the producer can capture instead of losing it to cash and card machines. This is the 1/1 feature from §07: scored lowest on the matrix by users who didn't care, shipped anyway because producers did.</p>
+            <p><strong>Checkout, then a QR code you can already use.</strong> Pix, card, or split with the crew; loyalty points tick up before the tap; confirmation hands back a scannable ticket in the same screen instead of sending users to go find it. That ticket is one of four tabs in a single event hub, Ticket, Orders, Tab, and Feed for the event's live photo stream, which replaced a flat "Wallet" destination in the main nav; the tab bar itself is now labeled Events. The bar tab named on the confirmation screen opens automatically at check-in, so the comanda below is already running before the QR gets scanned at the door.</p>
             <div class="cs-screens cs-screens--3">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-menu.webp" width="780" height="1696" alt="Bar menu: drinks, beers, shots, food, tap to add to the order" loading="lazy"></div>
-                <figcaption class="cs-caption">Bar menu · tap to add</figcaption>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/checkout-review.webp" width="402" height="874" alt="Checkout: quantity, promo code, Pix / card / digital wallet / split payment, loyalty points" loading="lazy"></div>
+                <figcaption class="cs-caption">Checkout · pick a method</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-item.webp" width="780" height="1696" alt="Item detail: caipirinha, base spirit and add-ons" loading="lazy"></div>
-                <figcaption class="cs-caption">Item customization</figcaption>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/checkout-success.webp" width="402" height="874" alt="Payment successful: QR ticket, ticket code, friends already going, bar tab opens automatically" loading="lazy"></div>
+                <figcaption class="cs-caption">Payment successful</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-tab.webp" width="780" height="1696" alt="Open tab review: items, tip, split with the crew, pay now" loading="lazy"></div>
-                <figcaption class="cs-caption">Open tab · tip &amp; split</figcaption>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/wallet-ticket.webp" width="402" height="874" alt="Events tab, Ticket screen: QR code, event details, Ticket / Orders / Tab / Feed sub-navigation" loading="lazy"></div>
+                <figcaption class="cs-caption">Ticket · QR at the door</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Comanda: order and pay inside the event.</strong> Orders and Tab are two more tabs in that same event hub. The menu adds a search bar, category counts, and a "most ordered tonight" list for social proof on top of the one-tap add; picking an item opens base-spirit and add-on choices before it lands on the bill. The open tab itself shows a running total against a spending limit, a tip selector, a one-tap split with the crew, and a timeline of what got ordered when. Consumption accrues to a bill the producer can capture instead of losing it to cash and card machines. This is the 1/1 feature from §07: scored lowest on the matrix by users who didn't care, shipped anyway because producers did.</p>
+            <div class="cs-screens cs-screens--3">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-menu.webp" width="402" height="874" alt="Orders tab: search the menu, category counts, most ordered tonight, tap to add" loading="lazy"></div>
+                <figcaption class="cs-caption">Orders · menu</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-item.webp" width="402" height="874" alt="Item detail: caipirinha, base spirit and add-ons, add to tab" loading="lazy"></div>
+                <figcaption class="cs-caption">Orders · item detail</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-tab.webp" width="402" height="874" alt="Tab: running total against a spending limit, tip selector, split with the crew, order timeline, pay now" loading="lazy"></div>
+                <figcaption class="cs-caption">Tab · tip, split &amp; pay</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Who's going, and the chat that gets you there.</strong> Search plus three tabs, Friends, Followers, Everyone, turn a static guest list into a way to find people already confirmed instead of scrolling past a thousand strangers: a direct answer to Letícia's problem from §01, the information existed, it just never reached her. Chat carries that further into the thread itself: voice notes, a live poll for "what time are we meeting," and a shared event card with a buy button, so the group can go from "should we go?" to holding a ticket without leaving the conversation.</p>
+            <div class="cs-screens cs-screens--2">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/whos-going.webp" width="402" height="874" alt="Who's going: search bar, Friends / Followers / Everyone tabs, message and follow actions" loading="lazy"></div>
+                <figcaption class="cs-caption">Who's going · search &amp; tabs</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/chat.webp" width="402" height="874" alt="Crew chat: voice note, a live poll for meeting time, and a shared event card with a buy button" loading="lazy"></div>
+                <figcaption class="cs-caption">Chat · poll &amp; shared event</figcaption>
               </figure>
             </div>
 
             <figure class="cs-diagram cs-diagram--flush">
               <div class="brand-logos">
-                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-gradient.webp" width="184" height="162" alt="Meaple mark, gradient version"><span class="lname">meaple</span></div>
-                <div class="brand-logo-cell dark"><img src="/assets/img/project/meaple/brand-mark-white.webp" width="184" height="163" alt="Meaple mark, white version"><span class="lname">meaple</span></div>
-                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-dark.webp" width="184" height="163" alt="Meaple mark, dark version"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-gradient.webp" width="184" height="177" alt="Meaple mark, gradient version"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell dark"><img src="/assets/img/project/meaple/brand-mark-white.webp" width="184" height="177" alt="Meaple mark, white version"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-dark.webp" width="184" height="177" alt="Meaple mark, dark version"><span class="lname">meaple</span></div>
               </div>
               <div class="brand-pal">
                 <div class="brand-pal-group">
@@ -931,8 +959,8 @@
       ["explore-feed-light","Explore · light"],["explore-feed-dark","Explore · dark"],["explore-map","Explore · map"],
       ["whos-going","Who's going"],["story-pullup","Story · pull up"],
       ["onboarding-fork","Onboarding fork"],["create-event","Create event"],
-      ["comanda-menu","Comanda · menu"],["comanda-item","Comanda · item"],["comanda-tab","Comanda · tab"],
-      ["checkout-review","Checkout"],["checkout-success","Ticket confirmed"],["wallet-ticket","Wallet"],
+      ["comanda-menu","Orders · menu"],["comanda-item","Orders · item"],["comanda-tab","Tab · pay"],
+      ["checkout-review","Checkout"],["checkout-success","Payment success"],["wallet-ticket","Events · ticket"],
       ["calendar","Calendar"],["chat","Chat"],["social-feed","Social feed"],["people-discover","People · discover"],
       ["follow-requests","Requests"],["notifications","Notifications"],
       ["profile-user","Profile · attendee"],["profile-founder","Profile · founder"],

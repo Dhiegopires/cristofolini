@@ -113,8 +113,8 @@
     .scatter-legend i.base { background: var(--t2); }
     .sc-lab { font-weight: 700; }
 
-    .targets-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--b0); border: 1px solid var(--b0); border-radius: 8px; overflow: hidden; }
-    @media (max-width: 760px) { .targets-grid { grid-template-columns: repeat(2, 1fr); } }
+    .targets-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--b0); border: 1px solid var(--b0); border-radius: 8px; overflow: hidden; }
+    @media (min-width: 480px) { .targets-grid { grid-template-columns: repeat(2, 1fr); } }
 
     .tier-relations { border: 1px dashed var(--b1); border-radius: 8px; padding: var(--sp-5); margin-top: var(--sp-5); }
     .tier-relations__label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-bottom: var(--sp-3); }
@@ -143,8 +143,8 @@
     .scope-chip.against { border-color: var(--y); color: var(--y); background: rgba(243,176,46,.08); }
     .scope-chip .why { font-family: var(--mono); font-size: 9.5px; opacity: .7; margin-left: 6px; }
 
-    .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
-    @media (max-width: 700px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
+    .roadmap { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
+    @media (min-width: 560px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
     .roadmap-month { border: 1px solid var(--b0); border-radius: 8px; background: var(--bg1); overflow: hidden; }
     .roadmap-month__head { font-family: var(--display); font-size: 15px; text-transform: uppercase; padding: 12px 14px; border-bottom: 1px solid var(--b0); display: flex; justify-content: space-between; align-items: center; color: var(--t1); }
     .roadmap-month__head span { font-family: var(--mono); font-size: 10px; color: var(--y); text-transform: none; }
@@ -152,8 +152,8 @@
     .roadmap-month li { font-size: 12px; color: var(--t3); line-height: 1.3; padding-left: 12px; position: relative; }
     .roadmap-month li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
 
-    .ctx-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-3); }
-    @media (max-width: 900px) { .ctx-grid { grid-template-columns: repeat(2, 1fr); } }
+    .ctx-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
+    @media (min-width: 560px) { .ctx-grid { grid-template-columns: repeat(2, 1fr); } }
     .ctx-card { border: 1px solid var(--b0); border-radius: 8px; padding: var(--sp-4); background: var(--bg1); }
     .ctx-card .ci { margin-bottom: 12px; height: 24px; }
     .ctx-card .ci svg { width: 22px; height: 22px; stroke: var(--y); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -686,30 +686,30 @@
           <div class="cs-section__body">
             <p class="cs-section__subhead">Identidade construída junto com o produto, não aplicada depois: <em>"uma plataforma social completa focada em eventos de todos os tipos e tamanhos."</em></p>
 
-            <p><strong>Página de evento, o carro-chefe.</strong> Todos os campos da especificação em uma única rolagem: identidade e histórico do produtor (a cadeia de confiança do §05), data e local com um minimapa espacial (a mesma camada que o Momentum ranqueia), tags mais contagem de confirmados/interessados alimentando a credibilidade do produtor de volta no Momentum, uma seção de comentários como prova social, e uma barra de compra dentro do app fixada ao alcance de uma mão, a receita do lado da oferta que justificou construir produtores primeiro.</p>
+            <p><strong>Página de evento, o carro-chefe.</strong> Todos os campos da especificação em uma única rolagem: identidade e histórico do produtor com um botão de Seguir de um toque (a cadeia de confiança do §05), data e local com um minimapa espacial (a mesma camada que o Momentum ranqueia), tags mais contagem de confirmados/interessados e uma faixa de fotos de eventos recentes alimentando a credibilidade do produtor de volta no Momentum, e uma barra de compra dentro do app fixada ao alcance de uma mão, a receita do lado da oferta que justificou construir produtores primeiro.</p>
             <div class="cs-screens cs-screens--2">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page.webp" width="780" height="1696" alt="Página de evento, tema claro: Lofia Rooftop Party, produtor verificado, tags, confirmados/interessados, barra de compra" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page.webp" width="402" height="874" alt="Página de evento, tema claro: Lofia Rooftop Party, produtor verificado com botão de seguir, minimapa, tags, confirmados/interessados, barra de compra" loading="lazy"></div>
                 <figcaption class="cs-caption">Página de evento · tema claro</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page-dark.webp" width="780" height="1696" alt="Página de evento, tema escuro, mesmo layout" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page-dark.webp" width="402" height="874" alt="Página de evento, tema escuro, mesmo layout" loading="lazy"></div>
                 <figcaption class="cs-caption">Página de evento · tema escuro</figcaption>
               </figure>
             </div>
 
-            <p><strong>Explorar / Momentum.</strong> O card em destaque do Momentum mostra credibilidade do produtor e velocidade de engajamento como uma única unidade visual; presença de amigos aparece acima em avatares; o feed ranqueado fica abaixo. No mapa, o tamanho do pino traduz volume de interação no espaço, e um card de pré-visualização com um toque abre a página completa do evento sem sair do mapa.</p>
+            <p><strong>Explorar / Momentum.</strong> Uma linha de stories "chegando" mostra amigos já a caminho; filtros de clima (Hoje, Funk, Rooftop, Ao vivo) refinam o feed ranqueado abaixo; o card em destaque do Momentum carrega uma contagem ao vivo, "15 chegando", como prova social empilhada sobre o algoritmo. No mapa, o tamanho do pino ainda traduz volume de interação no espaço, um evento em alta ganha seu próprio selo, e um amigo convergindo para o mesmo pino mostra um "Encontrar" de um toque, fechando o ciclo entre descoberta e a turma realmente indo.</p>
             <div class="cs-screens cs-screens--3">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-light.webp" width="780" height="1696" alt="Feed de Explorar, tema claro: avatares de amigos, card do Momentum, linha feito para você" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-light.webp" width="402" height="874" alt="Feed de Explorar, tema claro: linha de stories chegando, filtros de clima, card do Momentum com contagem ao vivo" loading="lazy"></div>
                 <figcaption class="cs-caption">Explorar · tema claro</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-dark.webp" width="780" height="1696" alt="Feed de Explorar, tema escuro" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-dark.webp" width="402" height="874" alt="Feed de Explorar, tema escuro" loading="lazy"></div>
                 <figcaption class="cs-caption">Explorar · tema escuro</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-map.webp" width="780" height="1696" alt="Explorar por mapa: pinos dimensionados pelo volume de interação, card de pré-visualização com um toque" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-map.webp" width="402" height="874" alt="Explorar por mapa: barra de busca, filtros de clima, selo de em alta, amigos chegando, card de encontrar com um toque" loading="lazy"></div>
                 <figcaption class="cs-caption">Explorar · mapa</figcaption>
               </figure>
             </div>
@@ -717,32 +717,60 @@
             <p><strong>Bifurcação do onboarding.</strong> Duas portas, dois níveis de compromisso. O cadastro básico entrega um produto funcionando em segundos; a verificação libera a pilha comercial: páginas, venda ilimitada, categorias, analytics. Ninguém fica travado na porta, e quem traz eventos tem um motivo claro para se verificar: a aposta de oferta primeiro, codificada em uma tela.</p>
             <div class="cs-screens cs-screens--1">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/onboarding-fork.webp" width="780" height="1696" alt="Bifurcação de onboarding: conta básica vs. conta profissional verificada" loading="lazy"></div>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/onboarding-fork.webp" width="402" height="874" alt="Bifurcação de onboarding: conta básica vs. conta profissional verificada" loading="lazy"></div>
                 <figcaption class="cs-caption">Conta básica vs. conta verificada</figcaption>
               </figure>
             </div>
 
-            <p><strong>Comanda: pedir e pagar dentro do evento.</strong> Cada item é um toque só, sem formulário, sem digitar cartão no meio do evento. O consumo se acumula em uma comanda aberta que o produtor consegue capturar em vez de perder para dinheiro e maquininha. Esse é o recurso 1/1 do §07: pontuou o mais baixo na matriz por usuários que não se importavam, lançado mesmo assim porque produtores se importavam.</p>
+            <p><strong>Checkout, e um QR code que já pode ser usado.</strong> Pix, cartão ou rateio com o grupo; pontos de fidelidade somam antes do toque; a confirmação já entrega um ingresso escaneável na mesma tela, sem mandar o usuário procurar por ele depois. Esse ingresso é uma de quatro abas em um único hub de evento, Ingresso, Pedidos, Comanda e Feed para a transmissão de fotos ao vivo do evento, que substituiu uma antiga aba "Carteira" no menu principal; a aba em si agora se chama Eventos. A comanda citada na tela de confirmação abre automaticamente no check-in, então os pedidos abaixo já estão rodando quando o QR é escaneado na porta.</p>
             <div class="cs-screens cs-screens--3">
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-menu.webp" width="780" height="1696" alt="Cardápio do bar: drinks, cervejas, doses, comida, toque para adicionar ao pedido" loading="lazy"></div>
-                <figcaption class="cs-caption">Cardápio do bar · toque para adicionar</figcaption>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/checkout-review.webp" width="402" height="874" alt="Checkout: quantidade, cupom promocional, Pix / cartão / carteira digital / rateio, pontos de fidelidade" loading="lazy"></div>
+                <figcaption class="cs-caption">Checkout · escolher método</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-item.webp" width="780" height="1696" alt="Detalhe do item: caipirinha, base e adicionais" loading="lazy"></div>
-                <figcaption class="cs-caption">Personalização do item</figcaption>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/checkout-success.webp" width="402" height="874" alt="Pagamento aprovado: ingresso em QR code, código do ingresso, amigos já confirmados, comanda abre automaticamente" loading="lazy"></div>
+                <figcaption class="cs-caption">Pagamento aprovado</figcaption>
               </figure>
               <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-tab.webp" width="780" height="1696" alt="Revisão da comanda aberta: itens, gorjeta, rateio com o grupo, pagar agora" loading="lazy"></div>
-                <figcaption class="cs-caption">Comanda aberta · gorjeta e rateio</figcaption>
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/wallet-ticket.webp" width="402" height="874" alt="Aba Eventos, tela de Ingresso: QR code, detalhes do evento, sub-navegação Ingresso / Pedidos / Comanda / Feed" loading="lazy"></div>
+                <figcaption class="cs-caption">Ingresso · QR na porta</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Comanda: pedir e pagar dentro do evento.</strong> Pedidos e Comanda são mais duas abas nesse mesmo hub de evento. O cardápio ganha barra de busca, contagem por categoria e uma lista de "mais pedidos hoje" como prova social por cima do toque único para adicionar; escolher um item abre a base e os adicionais antes de cair na comanda. A comanda aberta mostra um total corrente contra um limite de gasto, seletor de gorjeta, rateio com o grupo em um toque, e uma linha do tempo do que foi pedido e quando. O consumo se acumula em uma comanda que o produtor consegue capturar em vez de perder para dinheiro e maquininha. Esse é o recurso 1/1 do §07: pontuou o mais baixo na matriz por usuários que não se importavam, lançado mesmo assim porque produtores se importavam.</p>
+            <div class="cs-screens cs-screens--3">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-menu.webp" width="402" height="874" alt="Aba Pedidos: busca no cardápio, contagem por categoria, mais pedidos hoje, toque para adicionar" loading="lazy"></div>
+                <figcaption class="cs-caption">Pedidos · cardápio</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-item.webp" width="402" height="874" alt="Detalhe do item: caipirinha, base e adicionais, adicionar à comanda" loading="lazy"></div>
+                <figcaption class="cs-caption">Pedidos · detalhe do item</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-tab.webp" width="402" height="874" alt="Comanda: total corrente contra um limite de gasto, seletor de gorjeta, rateio com o grupo, linha do tempo do pedido, pagar agora" loading="lazy"></div>
+                <figcaption class="cs-caption">Comanda · gorjeta, rateio e pagamento</figcaption>
+              </figure>
+            </div>
+
+            <p><strong>Quem vai, e o chat que leva você até lá.</strong> Busca mais três abas, Amigos, Seguidores, Todos, transformam uma lista estática de convidados em um jeito de encontrar gente já confirmada em vez de rolar por mil desconhecidos: uma resposta direta ao problema da Letícia no §01, a informação existia, só nunca chegava até ela. O chat leva isso adiante, direto na conversa: áudios, uma enquete ao vivo para "que horas a gente se encontra", e um card de evento compartilhado com botão de compra, para o grupo ir de "vamos?" a estar com ingresso na mão sem sair da conversa.</p>
+            <div class="cs-screens cs-screens--2">
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/whos-going.webp" width="402" height="874" alt="Quem vai: barra de busca, abas Amigos / Seguidores / Todos, ações de mensagem e seguir" loading="lazy"></div>
+                <figcaption class="cs-caption">Quem vai · busca e abas</figcaption>
+              </figure>
+              <figure class="cs-screen-wrap">
+                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/chat.webp" width="402" height="874" alt="Chat do grupo: áudio, enquete ao vivo para horário de encontro, e card de evento compartilhado com botão de compra" loading="lazy"></div>
+                <figcaption class="cs-caption">Chat · enquete e evento compartilhado</figcaption>
               </figure>
             </div>
 
             <figure class="cs-diagram cs-diagram--flush">
               <div class="brand-logos">
-                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-gradient.webp" width="184" height="162" alt="Marca do Meaple, versão em gradiente"><span class="lname">meaple</span></div>
-                <div class="brand-logo-cell dark"><img src="/assets/img/project/meaple/brand-mark-white.webp" width="184" height="163" alt="Marca do Meaple, versão branca"><span class="lname">meaple</span></div>
-                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-dark.webp" width="184" height="163" alt="Marca do Meaple, versão escura"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-gradient.webp" width="184" height="177" alt="Marca do Meaple, versão em gradiente"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell dark"><img src="/assets/img/project/meaple/brand-mark-white.webp" width="184" height="177" alt="Marca do Meaple, versão branca"><span class="lname">meaple</span></div>
+                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-dark.webp" width="184" height="177" alt="Marca do Meaple, versão escura"><span class="lname">meaple</span></div>
               </div>
               <div class="brand-pal">
                 <div class="brand-pal-group">
@@ -915,8 +943,8 @@
       ["explore-feed-light","Explorar · claro"],["explore-feed-dark","Explorar · escuro"],["explore-map","Explorar · mapa"],
       ["whos-going","Quem vai"],["story-pullup","Story · chegando"],
       ["onboarding-fork","Bifurcação de onboarding"],["create-event","Criar evento"],
-      ["comanda-menu","Comanda · cardápio"],["comanda-item","Comanda · item"],["comanda-tab","Comanda · fechamento"],
-      ["checkout-review","Checkout"],["checkout-success","Ingresso confirmado"],["wallet-ticket","Carteira"],
+      ["comanda-menu","Pedidos · cardápio"],["comanda-item","Pedidos · item"],["comanda-tab","Comanda · pagar"],
+      ["checkout-review","Checkout"],["checkout-success","Pagamento aprovado"],["wallet-ticket","Eventos · ingresso"],
       ["calendar","Calendário"],["chat","Chat"],["social-feed","Feed social"],["people-discover","Pessoas · descobrir"],
       ["follow-requests","Solicitações"],["notifications","Notificações"],
       ["profile-user","Perfil · participante"],["profile-founder","Perfil · fundador"],
