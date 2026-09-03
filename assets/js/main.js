@@ -993,6 +993,64 @@
         if (successEl) observer.observe(successEl, { attributes: true, attributeFilter: ['style'] });
       });
     }
+
+  /* --------------------------------------------------------------------------
+     15. Cookie consent banner — gates GA4 (analytics_storage) behind consent
+     -------------------------------------------------------------------------- */
+  (function () {
+    const STORAGE_KEY = 'cookie-consent';
+    const isPt = document.documentElement.lang.toLowerCase().startsWith('pt');
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    function updateConsent(granted) {
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          analytics_storage: granted ? 'granted' : 'denied',
+          ad_storage: 'denied'
+        });
+      }
+    }
+
+    if (saved === 'granted') {
+      updateConsent(true);
+      return;
+    }
+    if (saved === 'denied') {
+      return;
+    }
+
+    const text = isPt
+      ? 'Este site usa cookies de analytics pra entender como os visitantes usam ele. Veja a'
+      : 'This site uses analytics cookies to understand how visitors use it. See the';
+    const linkLabel = isPt ? 'Política de Privacidade' : 'Privacy Policy';
+    const linkHref = isPt ? 'https://cristofolini.site/pt-br/politica-de-privacidade/' : 'https://cristofolini.site/privacy-policy/';
+    const acceptLabel = isPt ? 'Aceitar' : 'Accept';
+    const declineLabel = isPt ? 'Recusar' : 'Decline';
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', isPt ? 'Aviso de cookies' : 'Cookie notice');
+    banner.innerHTML =
+      '<p class="cookie-banner__text">' + text + ' <a href="' + linkHref + '">' + linkLabel + '</a>.</p>' +
+      '<div class="cookie-banner__actions">' +
+      '<button type="button" class="btn-ghost-glow cookie-banner__decline">' + declineLabel + '</button>' +
+      '<button type="button" class="btn-shiny cookie-banner__accept"><span class="btn-shiny-label">' + acceptLabel + '</span></button>' +
+      '</div>';
+
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add('is-visible'));
+
+    function dismiss(granted) {
+      localStorage.setItem(STORAGE_KEY, granted ? 'granted' : 'denied');
+      updateConsent(granted);
+      banner.classList.remove('is-visible');
+      setTimeout(() => banner.remove(), 300);
+    }
+
+    banner.querySelector('.cookie-banner__accept').addEventListener('click', () => dismiss(true));
+    banner.querySelector('.cookie-banner__decline').addEventListener('click', () => dismiss(false));
+  })();
   })();
 
 })();

@@ -8,29 +8,32 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-M378PSJ10R');
   </script>
-  <title>What is ARIA and why product designers need to understand it | Dhiego</title>
-  <meta name="description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll actually touch, and how to document interactive behavior so developers implement it right.">
+  <title>What is ARIA and why product designers need it | Dhiego</title>
+  <meta name="description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Dhiego Cristofolini">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="What is ARIA and why product designers need to understand it">
-  <meta property="og:description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll actually touch, and how to document interactive behavior so developers implement it right.">
+  <meta property="og:title" content="What is ARIA and why product designers need it">
+  <meta property="og:description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.">
   <meta property="og:image" content="https://cristofolini.site/assets/img/blog/aria-cover.svg">
   <meta property="og:url" content="https://cristofolini.site/blog/what-is-aria/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What is ARIA and why product designers need to understand it">
+  <meta name="twitter:title" content="What is ARIA and why product designers need it">
   <meta name="twitter:description" content="ARIA roles, states, and properties explained for product designers, and how to document interactive behavior so developers implement it right.">
   <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/aria-cover.svg">
   <link rel="canonical" href="https://cristofolini.site/blog/what-is-aria/">
   <link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/what-is-aria/">
   <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/o-que-e-aria/">
   <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/what-is-aria/">
-  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -287,7 +290,7 @@
     <a href="../../contact/" class="nav-cta">Contact</a>
   </nav>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
 
     <div class="container">
       <header class="article-hero">
@@ -556,6 +559,7 @@
         <a href="../../work/" class="footer__nav-link">Work</a>
         <a href="../" class="footer__nav-link">Insights</a>
         <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <a href="../../privacy-policy/" class="footer__nav-link">Privacy</a>
         <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
       </nav>

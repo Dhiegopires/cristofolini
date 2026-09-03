@@ -513,7 +513,10 @@ main, footer { position: relative; z-index: var(--z-content); }
    9. Buttons
    -------------------------------------------------------------------------- */
 
-/* Primary: spinning conic border */
+/* Primary: spinning conic border. Outer wrapper's 4px padding + inner
+   label's padding must sum to the same box as .btn-ghost-glow's padding
+   (16px 32px) on every side, so the two variants render at an identical
+   height/width when placed side by side. */
 .btn-shiny {
   position: relative;
   display: inline-flex;
@@ -544,6 +547,7 @@ main, footer { position: relative; z-index: var(--z-content); }
 }
 .btn-shiny:hover { box-shadow: 0 4px 28px rgba(243,176,47,.45), 0 0 60px rgba(243,176,47,.15); }
 .btn-shiny:hover::after { background: var(--y-dk); }
+.btn-shiny:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
 
 .btn-shiny-label {
   position: relative;
@@ -551,12 +555,11 @@ main, footer { position: relative; z-index: var(--z-content); }
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 32px;
+  padding: 13px 29px;
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+  letter-spacing: .02em;
   color: var(--accent-text);
   white-space: nowrap;
 }
@@ -568,7 +571,8 @@ main, footer { position: relative; z-index: var(--z-content); }
 }
 .btn-shiny:hover .btn-shiny-label svg { transform: translateX(4px); }
 
-/* Ghost glow */
+/* Secondary: ghost glow. Same font-size, padding, and letter-spacing as
+   .btn-shiny-label above so the two variants line up exactly. */
 .btn-ghost-glow {
   display: inline-flex;
   align-items: center;
@@ -576,8 +580,7 @@ main, footer { position: relative; z-index: var(--z-content); }
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+  letter-spacing: .02em;
   padding: 16px 32px;
   background: transparent;
   border: 1px solid rgba(243,176,47,.22);
@@ -594,6 +597,7 @@ main, footer { position: relative; z-index: var(--z-content); }
   color: var(--y);
   box-shadow: 0 0 28px rgba(243,176,47,.2), 0 0 60px rgba(243,176,47,.06), inset 0 0 18px rgba(243,176,47,.06);
 }
+.btn-ghost-glow:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
 .btn-ghost-glow svg {
   width: 14px; height: 14px;
   stroke: currentColor; fill: none;
@@ -601,137 +605,6 @@ main, footer { position: relative; z-index: var(--z-content); }
   transition: transform .25s;
 }
 .btn-ghost-glow:hover svg { transform: translateX(3px); }
-
-/* Solid yellow */
-.btn-solid {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  padding: 16px 32px;
-  background: var(--y);
-  border: none;
-  border-radius: 0;
-  color: var(--accent-text);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: background .25s;
-}
-.btn-solid::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
-  transition: left .5s;
-}
-.btn-solid:hover { background: var(--y-dk); }
-.btn-solid:hover::after { left: 160%; }
-.btn-solid svg { width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round; }
-
-/* Ghost utility */
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: transparent;
-  border: 1px solid var(--b0);
-  border-radius: 0;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--t2);
-  transition: border-color .2s, color .2s;
-}
-.btn-ghost:hover { color: var(--t1); border-color: var(--b1); }
-.btn-ghost svg { width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round; }
-
-/* Icon */
-.btn-ico {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px; height: 38px;
-  background: transparent;
-  border: 1px solid var(--b0);
-  border-radius: 0;
-  color: var(--t2);
-  transition: border-color .2s, color .2s;
-}
-.btn-ico:hover { color: var(--y); border-color: var(--accent-border); }
-.btn-ico svg { width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round; }
-
-/* Link */
-.btn-lk {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--y);
-  transition: gap .2s;
-}
-.btn-lk:hover { gap: 12px; }
-.btn-lk svg { width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round; }
-
-/* Backward-compat .btn system */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 28px;
-  border-radius: 0;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all .3s var(--ease-out);
-}
-.btn:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
-
-.btn.btn-primary {
-  background: var(--y);
-  color: var(--accent-text);
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-.btn.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
-  transition: left .5s;
-}
-.btn.btn-primary:hover { background: var(--y-dk); }
-.btn.btn-primary:hover::after { left: 160%; }
-
-.btn.btn-secondary {
-  background: transparent;
-  color: var(--t1);
-  border: 1px solid rgba(243,176,47,.22);
-  box-shadow: 0 0 14px rgba(243,176,47,.06);
-  transition: border-color .3s, box-shadow .3s, color .3s;
-}
-.btn.btn-secondary:hover { border-color: var(--y); color: var(--y); box-shadow: 0 0 28px rgba(243,176,47,.2); }
 
 /* --------------------------------------------------------------------------
    10. Tags
@@ -997,3 +870,54 @@ a, button, [role="button"] { min-height: 44px; touch-action: manipulation; }
    20. Selection
    -------------------------------------------------------------------------- */
 ::selection { background: var(--y); color: var(--accent-text); }
+
+/* --------------------------------------------------------------------------
+   21. Cookie consent banner
+   -------------------------------------------------------------------------- */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: calc(var(--z-nav) + 10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-5);
+  background: rgba(10, 9, 8, 0.97);
+  border-top: 1px solid var(--b0);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transform: translateY(100%);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.cookie-banner.is-visible { transform: translateY(0); }
+
+.cookie-banner__text {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--t2);
+  max-width: 640px;
+}
+.cookie-banner__text a { color: var(--y); border-bottom: 1px solid rgba(243,176,47,.4); }
+.cookie-banner__text a:hover { color: var(--y-hi); border-color: var(--y-hi); }
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cookie-banner__actions .btn-shiny,
+.cookie-banner__actions .btn-ghost-glow {
+  min-height: 44px;
+}
+
+@media (min-width: 700px) {
+  .cookie-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--sp-4) var(--sp-8);
+  }
+}

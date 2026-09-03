@@ -8,29 +8,32 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-M378PSJ10R');
   </script>
-  <title>Keyboard navigation: how to test your product without touching the mouse | Dhiego</title>
-  <meta name="description" content="Tab order, focus indicators, focus management inside modals, and the skip link, explained with the real WCAG success criteria behind each one, plus a two-minute test any designer can run.">
+  <title>Testing keyboard navigation without a mouse | Dhiego</title>
+  <meta name="description" content="Tab order, focus indicators, focus inside modals, and the skip link, explained with the real WCAG criteria, plus a two-minute test any designer can run.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Dhiego Cristofolini">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Keyboard navigation: how to test your product without touching the mouse">
-  <meta property="og:description" content="Tab order, focus indicators, focus management inside modals, and the skip link, explained with the real WCAG success criteria behind each one, plus a two-minute test any designer can run.">
+  <meta property="og:title" content="Testing keyboard navigation without a mouse">
+  <meta property="og:description" content="Tab order, focus indicators, focus inside modals, and the skip link, explained with the real WCAG criteria, plus a two-minute test any designer can run.">
   <meta property="og:image" content="https://cristofolini.site/assets/img/blog/keyboard-cover.svg">
   <meta property="og:url" content="https://cristofolini.site/blog/keyboard-navigation-testing/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Keyboard navigation: how to test your product without touching the mouse">
+  <meta name="twitter:title" content="Testing keyboard navigation without a mouse">
   <meta name="twitter:description" content="Tab order, focus indicators, focus management inside modals, and the skip link, with the real WCAG criteria behind each and a two-minute test any designer can run.">
   <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/keyboard-cover.svg">
   <link rel="canonical" href="https://cristofolini.site/blog/keyboard-navigation-testing/">
   <link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/keyboard-navigation-testing/">
   <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/navegacao-por-teclado/">
   <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/keyboard-navigation-testing/">
-  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -247,7 +250,7 @@
     <a href="../../contact/" class="nav-cta">Contact</a>
   </nav>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
 
     <div class="container">
       <header class="article-hero">
@@ -484,6 +487,7 @@
         <a href="../../work/" class="footer__nav-link">Work</a>
         <a href="../" class="footer__nav-link">Insights</a>
         <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <a href="../../privacy-policy/" class="footer__nav-link">Privacy</a>
         <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
       </nav>

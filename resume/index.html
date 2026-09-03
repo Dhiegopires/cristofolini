@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
+  </script>
+
+  <title>Resume | Dhiego Cristofolini</title>
+  <meta name="description" content="Dhiego Cristofolini's resume: Senior Product Designer, 7 years in SaaS, B2B, and B2B2C. Experience, skills, and education. Read online or download as PDF.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Dhiego Cristofolini">
+  <meta name="theme-color" content="#0a0908">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="Resume | Dhiego Cristofolini">
+  <meta property="og:description" content="Senior Product Designer resume: 7 years in SaaS, B2B, and B2B2C. Experience, skills, and education.">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+  <meta property="og:image:alt" content="Resume page preview for Dhiego Cristofolini portfolio">
+  <meta property="og:url" content="https://cristofolini.site/resume/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resume | Dhiego Cristofolini">
+  <meta name="twitter:description" content="Senior Product Designer resume: 7 years in SaaS, B2B, and B2B2C. Experience, skills, and education.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+  <meta name="twitter:image:alt" content="Resume page preview for Dhiego Cristofolini portfolio">
+  <link rel="canonical" href="https://cristofolini.site/resume/">
+  <link rel="alternate" hreflang="en" href="https://cristofolini.site/resume/">
+  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/curriculo/">
+  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/resume/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",   "item": "https://cristofolini.site/" },
+      { "@type": "ListItem", "position": 2, "name": "Resume", "item": "https://cristofolini.site/resume/" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="../assets/css/globals.css?v=3" rel="stylesheet">
+
+  <style>
+    .resume-header {
+      position: relative;
+      z-index: 1;
+      background: var(--bg1);
+      border-bottom: 1px solid var(--b0);
+      padding-top: calc(64px + var(--sp-16));
+      padding-bottom: var(--sp-12);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .resume-header__name {
+      font-family: var(--display);
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: .96;
+      letter-spacing: .01em;
+      color: var(--t1);
+    }
+
+    .resume-header__tagline {
+      font-family: var(--sans);
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: var(--t2);
+      margin-top: var(--sp-3);
+      max-width: 680px;
+    }
+
+    .resume-header__meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--t3);
+      margin-top: var(--sp-4);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+    }
+
+    .resume-header__actions {
+      margin-top: var(--sp-8);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .resume-print-btn {
+      border: none;
+      font: inherit;
+    }
+
+    .resume-header__hint {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      color: var(--t3);
+    }
+
+    .resume-section {
+      position: relative;
+      z-index: 1;
+      padding-block: var(--sp-12);
+      border-bottom: 1px solid var(--b0);
+    }
+
+    .resume-section__label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--y);
+      margin-bottom: var(--sp-5);
+    }
+
+    .resume-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .resume-links a {
+      color: var(--t2);
+      border-bottom: 1px solid var(--b1);
+      padding-bottom: 1px;
+      transition: color var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
+    }
+    .resume-links a:hover { color: var(--y); border-color: var(--y); }
+    .resume-links a:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
+
+    .resume-summary {
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.3vw, 17px);
+      line-height: 1.82;
+      color: var(--t2);
+      max-width: 820px;
+    }
+
+    .resume-skills-grid {
+      display: grid;
+      gap: var(--sp-8);
+    }
+    @media (min-width: 760px) {
+      .resume-skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .resume-skill-group__label {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--t1);
+      margin-bottom: 8px;
+    }
+    .resume-skill-group__list {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--t3);
+    }
+
+    .resume-edu__degree {
+      color: var(--t1);
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .resume-edu__school {
+      color: var(--t2);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding-block: 32px;
+      border-bottom: 1px solid var(--b0);
+      position: relative;
+      padding-left: 16px;
+    }
+    .timeline-entry:first-child { border-top: 1px solid var(--b0); }
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 32px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--b1);
+      transform: translateX(-50%);
+      border: 1px solid var(--bg);
+    }
+    .timeline-entry.is-current::before { background: var(--y); box-shadow: 0 0 10px rgba(243,176,47,.5); }
+
+    .timeline-entry__date { color: var(--t3); padding-top: 8px; }
+    .timeline-entry__role { color: var(--t1); font-weight: 600; font-size: 18px; line-height: 1.2; }
+    .timeline-entry__company { color: var(--t2); margin-top: 8px; font-size: 13px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .timeline-entry__desc    { color: var(--t3); font-size: 13px; line-height: 1.65; padding-left: 16px; margin-top: 16px; margin-bottom: 0; list-style: disc; }
+    .timeline-entry__desc li { margin-bottom: 8px; }
+    .timeline-entry__desc li:last-child { margin-bottom: 0; }
+
+    .exp-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border: 1px solid var(--b0);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--t3);
+      background: rgba(255,255,255,.02);
+    }
+    .exp-pill--studio {
+      color: var(--y);
+      border-color: var(--accent-border);
+      background: var(--accent-dim);
+    }
+    .exp-pill--consulting {
+      color: var(--success);
+      border-color: var(--success-border);
+      background: var(--success-dim);
+    }
+    .exp-pill--contractor {
+      color: var(--info);
+      border-color: var(--info-border);
+      background: var(--info-dim);
+    }
+
+    @media (min-width: 640px) {
+      .timeline-entry { grid-template-columns: 100px 1fr; gap: 24px; padding-left: 24px; }
+    }
+
+    @page {
+      margin: 14mm 16mm;
+    }
+
+    @media print {
+      .nav, .footer, .resume-header__actions, .skip-link { display: none !important; }
+      body { background: #fff; }
+      .resume-header {
+        background: #14141f;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding-top: 16px;
+        padding-bottom: 12px;
+      }
+      .resume-header__name { font-size: 34px; }
+      .resume-header__name,
+      .resume-header__tagline,
+      .resume-header__meta { color: #fff; }
+      .resume-header__tagline { font-size: 12px; margin-top: 4px; }
+      .resume-header__meta { margin-top: 6px; font-size: 11px; }
+      .resume-section {
+        background: #fff;
+        border-bottom-color: #ddd;
+        padding-block: 10px;
+        break-inside: auto;
+      }
+      .resume-section__label {
+        color: #b8791f;
+        margin-bottom: 6px;
+        break-after: avoid;
+      }
+      .resume-summary { color: #222; font-size: 12px; line-height: 1.45; }
+      .resume-links { color: #222; gap: 2px; font-size: 12px; }
+      .timeline-entry__role { color: #111; font-size: 13.5px; break-after: avoid; }
+      .timeline-entry__company,
+      .timeline-entry__date { color: #444; break-after: avoid; font-size: 11px; }
+      .timeline-entry__desc { color: #333; font-size: 11.5px; line-height: 1.4; margin-top: 5px; }
+      .timeline-entry__desc li { margin-bottom: 2px; break-inside: avoid; }
+      .timeline-entry {
+        border-bottom-color: #ddd;
+        padding-block: 8px;
+        gap: 16px;
+        break-inside: auto;
+      }
+      .timeline-entry:first-child { border-top: none; }
+      .resume-skills-grid { gap: 10px; }
+      .resume-skill-group__label { color: #111; margin-bottom: 4px; break-after: avoid; }
+      .resume-skill-group__list { color: #333; font-size: 12px; line-height: 1.5; }
+      .resume-edu__degree { color: #111; }
+      .resume-edu__school { color: #333; }
+      .resume-links a { color: #333; }
+      .exp-pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 2px 6px; }
+      a[href]::after { content: ""; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../" class="nav-logo" aria-label="Cristofolini | Home">
+      <img src="../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../work/">Work</a></li>
+      <li><a href="../blog/">Insights</a></li>
+    </ul>
+    <a href="../pt-br/curriculo/" class="nav-lang" hreflang="pt-BR" aria-label="Switch to Portuguese">PT-BR</a>
+    <a href="../contact/" class="nav-cta">Contact</a>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+
+    <header class="resume-header">
+      <div class="container">
+        <h1 class="resume-header__name">DHIEGO PIRES CRISTOFOLINI</h1>
+        <p class="resume-header__tagline">Senior Product Designer | SaaS, B2B &amp; B2B2C | Visual &amp; Interaction Design | Design Systems | Conversion-Driven UX</p>
+        <p class="resume-header__meta">
+          <span>dhiegopiresc@gmail.com</span>
+          <span>·</span>
+          <span>+55 41 99628 9002</span>
+          <span>·</span>
+          <span>Curitiba, Brazil</span>
+          <span>·</span>
+          <span>Remote</span>
+          <span>·</span>
+          <span>Contract / B2B / EOR</span>
+        </p>
+        <div class="resume-header__actions">
+          <button type="button" class="btn-shiny resume-print-btn" onclick="window.print()">
+            <span class="btn-shiny-label">
+              Download CV
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </span>
+          </button>
+          <span class="resume-header__hint">Opens your browser's print dialog. Choose "Save as PDF."</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="resume-section" aria-label="Portfolio and social">
+      <div class="container">
+        <p class="resume-section__label">Portfolio &amp; Social</p>
+        <ul class="resume-links">
+          <li>Portfolio: <a href="https://cristofolini.site/">https://cristofolini.site/</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/dhiego-cristofolini" target="_blank" rel="noopener noreferrer">https://linkedin.com/in/dhiego-cristofolini</a></li>
+          <li>Behance: <a href="https://behance.net/dhiegopires" target="_blank" rel="noopener noreferrer">https://behance.net/dhiegopires</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section" aria-label="Summary">
+      <div class="container">
+        <p class="resume-section__label">Summary</p>
+        <p class="resume-summary">Senior Product Designer with 7 years building SaaS, B2B, B2C, and B2B2C products from discovery to production-ready UI, with hands-on front-end work (HTML, CSS, JavaScript) and CMS (WordPress, Webflow) beyond the design tool. Specialized in advanced design token architecture for scalable design systems, in translating business rules and regulated flows into simple, secure experiences, and in conversion-driven UX. Experienced coordinating cross-functional teams of 5-10 people (engineering, product, QA, scrum) inside larger organizations, including mentoring junior designers. I maintain a documented performance and SEO playbook (inline CSS removal, CDN configuration, media optimization) applied on real client sites. Real results: 5x more leads in 30 days and -40% bounce rate (Selo H), +6% measured checkout lift in month one trending toward +35% (MedMe), site rebuilt from SEO 22 to 100 (Fiter). Experienced leading remote sprints with international stakeholders, from concept through implementation follow-through.</p>
+      </div>
+    </section>
+
+    <section class="resume-section" aria-label="Experience">
+      <div class="container">
+        <p class="resume-section__label">Experience</p>
+        <div class="timeline">
+          <div class="timeline-entry is-current">
+            <span class="tLB timeline-entry__date">Aug 2025 - Present</span>
+            <div>
+              <p class="timeline-entry__role">Senior Product Designer &amp; Founder</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--studio">Studio</span><span>Vellumwire · Remote</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Lead product design across onboarding, pricing, checkout, and design systems for international SaaS clients.</li>
+                <li>Redesigned the landing page and form flow for Selo H, increasing conversion rate by 50%.</li>
+                <li>Built a four-layer token architecture (Core, Palette, Brand, Semantic) that reduces client re-theming to a single-layer change with no component rewrites required.</li>
+                <li>Applied WCAG 2.1 AA across all design system components, documented and validated through accessibility audits.</li>
+                <li>Rebuilt Fiter's site from an SEO score of 22 to 100 in two weeks, resolving 9 critical issues before opening Figma.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="tLB timeline-entry__date">Jan 2025 - Aug 2025</span>
+            <div>
+              <p class="timeline-entry__role">Senior Product Designer</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--contractor">Contractor</span><span>MedMe Saude · Remote</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Built product design for an on-demand home healthcare platform from scratch: scheduling logic, identity verification, escrow payment, and a three-sided accountability system between patient, professional, and clinic.</li>
+                <li>Conducted user research and usability testing with patients and healthcare professionals to validate scheduling logic and trust architecture decisions.</li>
+                <li>Measured a +6% checkout conversion lift in month one after progressive disclosure and field reduction from 20+ to 12-14 fields, informed by Baymard benchmarks; the trend projected +35% if sustained.</li>
+                <li>Designed a responsive design system for clinical dashboards and medical workflows across web and mobile.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="tLB timeline-entry__date">Jan 2024 - Dec 2024</span>
+            <div>
+              <p class="timeline-entry__role">Product Designer</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--consulting">Freelance</span><span>Independent · Remote</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Built and launched WordPress sites end to end for clients including Catalise Capital and ABGI: theming, content structure, and on-page performance.</li>
+                <li>Delivered web design and brand identity for small businesses and startups, centered on conversion-focused landing pages.</li>
+                <li>Improved responsive layouts and UI for early-stage digital products.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="tLB timeline-entry__date">Jun 2023 - Dec 2023</span>
+            <div>
+              <p class="timeline-entry__role">Product Designer</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--contractor">Contractor</span><span>Instivo · Remote</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Translated complex business rules for a multi-unit retail SaaS (~50 people) into a four-part rule engine and card-linked entity architecture, replacing six disconnected tools; usability testing with real users measured a ~70% reduction in configuration time and 5x faster new-unit onboarding.</li>
+                <li>Worked within cross-functional teams of 5-10 per task (engineers, PO, PM, scrum master, QA), including tasks where I mentored junior designers.</li>
+                <li>Rebuilt the design system into a four-layer token architecture; when mobile scope expanded mid-project, the responsive layer was already in place, with no parallel system required.</li>
+                <li>Led discovery and interviews with retail managers, partnering with the PM, translating governance logic into intuitive operator flows.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="tLB timeline-entry__date">Jun 2022 - Jun 2023</span>
+            <div>
+              <p class="timeline-entry__role">Product Designer</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--contractor">Contractor</span><span>Nineblocks · Remote</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Designed conversion-focused landing pages and product screens for web and mobile fan-token and NFT platforms.</li>
+                <li>Created 2D illustration and iconography for product identity and marketing.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="tLB timeline-entry__date">Jan 2022 - Jun 2022</span>
+            <div>
+              <p class="timeline-entry__role">UI/UX Designer</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--contractor">Contractor</span><span>Vega I.T. · Remote</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Designed booking portals and internal management tools for hospitality tech, within a pool of ~20 developers organized into teams of 5 per task; delivered UI layouts, interaction states, and responsive web apps.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="tLB timeline-entry__date">Jun 2019 - Dec 2021</span>
+            <div>
+              <p class="timeline-entry__role">Product Designer</p>
+              <p class="timeline-entry__company"><span class="exp-pill exp-pill--contractor">Contractor</span><span>Ensight · On-site</span></p>
+              <ul class="timeline-entry__desc">
+                <li>Led end-to-end product design from research to MVP for Meaple and Facto, on a team of 5, including competitive analysis (13 competitors mapped on Meaple), A/B testing, and cross-functional collaboration.</li>
+                <li>Designed B2B SaaS platforms in agile sprints, from discovery and wireframing to high-fidelity handoff.</li>
+                <li>Delivered UI components and specs across the Meaple ecosystem, including QuaQ and Facto.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section" aria-label="Skills">
+      <div class="container">
+        <p class="resume-section__label">Skills</p>
+        <div class="resume-skills-grid">
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Front-End &amp; Performance</p>
+            <p class="resume-skill-group__list">Production HTML, CSS, JavaScript (not just prototyping) · Documented performance and SEO playbook: inline CSS removal, CDN configuration, media optimization · CMS and web publishing: WordPress and Webflow, end to end (theming, content structure, on-page performance)</p>
+          </div>
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Design Systems &amp; Governance</p>
+            <p class="resume-skill-group__list">Design tokens and advanced token architecture (Core, Palette, Brand, Semantic) · Atomic design · Style guides and Storybook-style documentation · Scalable design systems and component libraries · Component governance · WCAG 2.1 AA, accessibility, and inclusive design · Design QA and implementation audits</p>
+          </div>
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Research &amp; Strategy</p>
+            <p class="resume-skill-group__list">Product discovery, desk research, and UX research · Market research, personas, and empathy mapping · Contextual inquiry / field studies · Structured surveys and questionnaires · User interviews · Journey mapping, opportunity framing, and competitive analysis · Jobs-to-be-done (JTBD) · UX writing (PT-BR)</p>
+          </div>
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Ideation &amp; Validation</p>
+            <p class="resume-skill-group__list">Design thinking · Design sprints · Card sorting and tree testing · Heuristic evaluation · First-click testing · Usability testing · User flows, information architecture, visual design, and interaction design · Rapid prototyping, mockups, and microinteractions · A/B testing</p>
+          </div>
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Business Rules &amp; Regulated Flows</p>
+            <p class="resume-skill-group__list">Translating business rules into customer-centered journeys · Service blueprints and end-to-end flows · Regulated, sensitive flows (identity verification, escrow payment) · Requirements gathering and functional specifications · Implementation follow-through and adherence validation</p>
+          </div>
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Collaboration &amp; Leadership</p>
+            <p class="resume-skill-group__list">Coordinating cross-functional teams of 5-10 (engineering, product, QA, scrum) · Mentoring junior designers · Product OKR/KPI definition · Design-to-development handoff and spec documentation · Agile / Scrum · Stakeholder management (business, product, and technology)</p>
+          </div>
+          <div class="resume-skill-group">
+            <p class="resume-skill-group__label">Tools</p>
+            <p class="resume-skill-group__list">Figma, FigJam, Miro, Framer, ProtoPie, Penpot · Adobe Creative Cloud · Hotjar, Google Analytics, Maze · Jira, Trello, Notion · AI-assisted workflows (Claude, Claude Code, Cursor, Antigravity, Lovable, Gemini, ChatGPT)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section" aria-label="Languages">
+      <div class="container">
+        <p class="resume-section__label">Languages</p>
+        <p class="resume-skill-group__list">Portuguese (native) · English (C1-C2)</p>
+      </div>
+    </section>
+
+    <section class="resume-section" aria-label="Education">
+      <div class="container">
+        <p class="resume-section__label">Education</p>
+        <p class="resume-edu__degree">2013 - 2017 · Bachelor's Degree in Design</p>
+        <p class="resume-edu__school">Universidade Federal de Santa Catarina (UFSC), Florianópolis, Brazil</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <span class="footer__logo">Cristofolini</span>
+        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="../" class="footer__nav-link">Home</a>
+        <a href="../work/" class="footer__nav-link">Work</a>
+        <a href="../contact/" class="footer__nav-link">Contact</a>
+        <a href="../privacy-policy/" class="footer__nav-link">Privacy</a>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

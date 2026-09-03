@@ -1,6 +1,8 @@
 DirectoryIndex index.html
 Options -Indexes
 
+ErrorDocument 404 /404.html
+
 # HTML — always revalidate (no stale cache)
 <FilesMatch "\.(html|htm)$">
   Header set Cache-Control "no-cache, must-revalidate"

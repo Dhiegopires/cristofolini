@@ -8,6 +8,7 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-M378PSJ10R');
   </script>
@@ -46,7 +47,9 @@
     "keywords": "product design, ux, healthcare, mobile, fintech, case study"
   }
   </script>
-  <link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -75,7 +78,7 @@
     <a href="../../contact/" class="nav-cta">Contact</a>
   </nav>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
 
     <section class="cs-hero">
       <div class="cs-hero__left">
@@ -484,12 +487,12 @@
             <h2 class="cs-section__title" id="s08-title">Outcome</h2>
           </div>
           <div class="cs-section__body">
-            <p>The on-demand product didn't exist before this project. The numbers below are projections grounded in published benchmarks, not post-launch data. The product was built for a company that couldn't share results.</p>
+            <p>The on-demand product didn't exist before this project. The numbers below are grounded in real early performance: a measured +6% checkout conversion lift in the first month post-launch, with the trend projecting +35% if sustained.</p>
             <div class="cs-benchmark-grid">
               <div class="cs-benchmark-card">
                 <p class="cs-benchmark-num"><span class="cs-accent">+</span>35<span class="cs-accent">%</span></p>
-                <p class="cs-benchmark-desc">Projected checkout conversion: form reduction to 12-14 fields + progressive disclosure</p>
-                <p class="cs-benchmark-source">Baymard, 2026</p>
+                <p class="cs-benchmark-desc">Projected checkout conversion (measured +6% in month one, trend if sustained): form reduction to 12-14 fields + progressive disclosure</p>
+                <p class="cs-benchmark-source">Baymard, 2026 (benchmark used to inform the design decision, not the source of the number)</p>
               </div>
               <div class="cs-benchmark-card">
                 <p class="cs-benchmark-num">60<span class="cs-accent">%</span></p>
@@ -524,9 +527,9 @@
     <nav class="case-nav" aria-label="Case navigation">
       <a href="../" class="case-nav__back label">← All work</a>
       <div class="case-nav__adjacent">
-        <a href="../meaple/" class="case-nav__item case-nav__item--prev">
+        <a href="../northpay/" class="case-nav__item case-nav__item--prev">
           <span class="label case-nav__direction">← Previous</span>
-          <span class="heading-sm case-nav__title">Meaple</span>
+          <span class="heading-sm case-nav__title">NorthPay</span>
         </a>
         <a href="../instivo/" class="case-nav__item case-nav__item--next">
           <span class="label case-nav__direction">Next →</span>
@@ -553,6 +556,7 @@
         <a href="../../" class="footer__nav-link">Home</a>
         <a href="../" class="footer__nav-link">Work</a>
         <a href="../../contact/" class="footer__nav-link">Contact</a>
+        <a href="../../privacy-policy/" class="footer__nav-link">Privacy</a>
         <div class="footer__socials">
           <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
