@@ -1,4 +1,4 @@
-// Case page = SITE/template/dark/project-9.html, filled from a case spec in
+// Case page = src/tpl/html/project-9.html, filled from a case spec in
 // src/content/cases-v2. Template pieces kept: headefr-fexid hero,
 // intro-project (intro + giant outline word), next-project, shared footer,
 // data-dsn-* animations.
@@ -26,7 +26,7 @@ export const casePageV2 = (spec, lang) => {
     return `<img${cls ? ` class="${cls}"` : ''}${dims} src="${base}${name}.webp" srcset="${base}${name}-${small}.webp ${small}w, ${base}${name}.webp 2000w" sizes="${sizes}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
   };
 
-  const idx = loadTemplate('index.html');
+  const idx = loadTemplate('home.html');
   $('#dsn-scrollbar > footer, main footer').first().replaceWith(idx.html(idx('footer.footer').first()));
 
   fillChrome($, {
@@ -35,6 +35,7 @@ export const casePageV2 = (spec, lang) => {
     description: c.description,
     path: r.case(spec.slug),
     alt: ROUTES[pt ? 'en' : 'pt'].case(spec.slug),
+    image: `/assets/img/og/${spec.slug}.jpg`,
   });
   $('body').addClass('case-v2');
 

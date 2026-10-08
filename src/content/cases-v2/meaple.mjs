@@ -9,9 +9,9 @@ export default {
   slug: 'meaple',
   hero: { src: '/assets/img/case/meaple/hero.webp' },
   en: {
-    seoTitle: 'Meaple | Events, social and payments in one app | Dhiego Cristofolini',
+    seoTitle: 'Meaple | Events, social, payments | Dhiego Cristofolini',
     description:
-      'Product design case: Meaple unified event discovery, social coordination, tickets and in-event payment for nights out in Brazil, then pivoted to web during the pandemic.',
+      'Product design case: Meaple unified event discovery, social plans, tickets and in-event payment in Brazil, then pivoted to web in the pandemic.',
     cat: 'Social · Events · Product design',
     title: 'Meaple',
     sub: 'Five apps for one Friday night',
@@ -104,9 +104,9 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'Meaple | Eventos, social e pagamento num só app | Dhiego Cristofolini',
+    seoTitle: 'Meaple | Eventos, social e pagamento | Dhiego Cristofolini',
     description:
-      'Case de product design: o Meaple unificou descoberta de eventos, coordenação social, ingressos e pagamento dentro do evento no Brasil, e pivotou para web na pandemia.',
+      'Case de product design: o Meaple unificou descoberta de eventos, rolês com amigos, ingressos e pagamento no evento, e pivotou para web na pandemia.',
     cat: 'Social · Eventos · Product design',
     title: 'Meaple',
     sub: 'Cinco apps para uma sexta à noite',

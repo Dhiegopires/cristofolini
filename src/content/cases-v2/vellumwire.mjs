@@ -5,7 +5,7 @@ export default {
   slug: 'vellumwire',
   hero: { src: '/assets/img/case/vellumwire/hero.webp' },
   en: {
-    seoTitle: 'Vellumwire | A studio site that closes before the call | Dhiego Cristofolini',
+    seoTitle: 'Vellumwire | Studio site that converts | Dhiego Cristofolini',
     description:
       'Product design case: Vellumwire’s own site, built to take a skeptical small-business owner from search to a booked diagnosis without a sales call.',
     cat: 'Own studio · Positioning · Website',
@@ -57,9 +57,9 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'Vellumwire | Um site de estúdio que fecha antes da ligação | Dhiego Cristofolini',
+    seoTitle: 'Vellumwire | Site de estúdio que vende | Dhiego Cristofolini',
     description:
-      'Case de product design: o site da própria Vellumwire, feito para levar um dono de negócio desconfiado da busca a um diagnóstico agendado, sem ligação de vendas.',
+      'Case de product design: o site da Vellumwire, feito para levar um dono de negócio desconfiado da busca a um diagnóstico agendado, sem ligação de vendas.',
     cat: 'Estúdio próprio · Posicionamento · Site',
     title: 'Vellumwire',
     sub: 'Um site de estúdio que fecha antes da ligação',

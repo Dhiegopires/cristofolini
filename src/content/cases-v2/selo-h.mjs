@@ -5,7 +5,7 @@ export default {
   slug: 'selo-h',
   hero: { src: '/assets/img/case/selo-h/hero.webp' },
   en: {
-    seoTitle: 'Selo H | Workplace mental health certification site | Dhiego Cristofolini',
+    seoTitle: 'Selo H | Mental health certification | Dhiego Cristofolini',
     description:
       'Product design case: Selo H’s site rebuilt in one week so a compliance buyer sees legal grounding, proof and one clear action, in that order.',
     cat: 'Website · Conversion',
@@ -63,7 +63,7 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'Selo H | Site de certificação em saúde mental | Dhiego Cristofolini',
+    seoTitle: 'Selo H | Certificação em saúde mental | Dhiego Cristofolini',
     description:
       'Case de product design: o site do Selo H refeito em uma semana para quem compra por conformidade ver base legal, prova e uma ação clara, nessa ordem.',
     cat: 'Site · Conversão',

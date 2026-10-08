@@ -1,125 +1,136 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Meaple | Product &amp; UX Process Documentation | Dhiego</title>
+    <meta name="description" content="Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.">
+    <meta name="author" content="Dhiego Cristofolini">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://cristofolini.site/work/meaple/documentation/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Meaple | Product &amp; UX Process Documentation | Dhiego">
+    <meta property="og:description" content="Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.">
+    <meta property="og:url" content="https://cristofolini.site/work/meaple/documentation/">
+    <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+    <meta property="og:site_name" content="Dhiego Cristofolini">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin="">
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Meaple | Product &amp; UX Process Documentation | Dhiego</title>
-  <meta name="description" content="Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="Dhiego Cristofolini">
-  <meta name="theme-color" content="#040404">
-  <link rel="canonical" href="https://cristofolini.site/work/meaple/documentation/">
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Meaple | Product &amp; UX Process Documentation | Dhiego">
-  <meta property="og:description" content="Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.">
-  <meta property="og:url" content="https://cristofolini.site/work/meaple/documentation/">
-  <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
-  <meta property="og:image:alt" content="Meaple | Product &amp; UX Process Documentation | Dhiego">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Meaple | Product &amp; UX Process Documentation | Dhiego">
-  <meta name="twitter:description" content="Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.">
-  <meta name="twitter:image" content="https://cristofolini.site/assets/img/og-default.jpg">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.min.css?v=75d11cbc85">
-  <script>
-    document.documentElement.classList.add('js');
-    try {
-      if (!sessionStorage.getItem('seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-preload');
-    } catch (e) {}
-    setTimeout(function () { if (!window.__siteReady) document.documentElement.classList.remove('js', 'js-preload'); }, 3000);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script src="/assets/vendor/gsap.min.js" defer></script>
-  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="/assets/js/main.min.js?v=75d11cbc85" defer></script>
-</head>
-<body data-lang="en" data-privacy="/privacy-policy/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
 
-<a href="#main-content" class="skip-link">Skip to content</a>
-<div class="loader" aria-hidden="true">
-  <div class="loader__panel"></div>
-  <div class="loader__panel loader__panel--front">
-    <span class="loader__count" data-loader-count>0</span>
-    <div class="loader__bar"><span data-loader-bar></span></div>
-  </div>
-</div>
-<header class="site-header" data-header>
-  <div class="site-header__inner">
-    <a class="site-header__logo" href="/" aria-label="Dhiego Cristofolini, home" data-cta="en_nav_logo">
-      <img src="/assets/img/site/logo.svg" width="51" height="32" alt="">
-    </a>
-    <div class="site-header__actions">
-      <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English" title="Language" data-lang-toggle>
-        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13.33"/><path d="M10.67 16A21.33 21.33 0 0 1 16 2.67 21.33 21.33 0 0 1 21.33 16 21.33 21.33 0 0 1 16 29.33 21.33 21.33 0 0 1 10.67 16ZM2.67 16h26.66"/></g></svg>
-      </button>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-        <span class="menu-toggle__icons" aria-hidden="true"><svg class="menu-toggle__icon menu-toggle__icon--open" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 6.67h21.34M5.33 16h21.34M5.33 25.33h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--minus" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 16h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--close" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 28 27.63 5.37M5 5l22.63 22.63" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></span>
-        <span class="menu-toggle__label"><span class="menu-toggle__text menu-toggle__text--menu">Menu</span><span class="menu-toggle__text menu-toggle__text--open" aria-hidden="true">Open</span><span class="menu-toggle__text menu-toggle__text--close" aria-hidden="true">Close</span></span>
-      </button>
+  <!--  Title -->
+  
+
+  <!-- Font Google -->
+  
+  
+
+  
+  
+
+  <!-- custom styles (optional) -->
+  
+  <link href="/assets/tpl/css/site.min.css?v=5006926d" rel="stylesheet"><link href="/assets/tpl/css/content.min.css?v=f4792c0f" rel="stylesheet">
+
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','G-M378PSJ10R');</script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script></head>
+
+<body class="hamburger-menu dsn-effect-scroll page-content" data-dsn-mousemove="true" data-lang="en"><a href="#main-content" class="skip-link">Skip to content</a>
+
+
+  <div class="preloader">
+    <div class="preloader-after"></div>
+    <div class="preloader-before"></div>
+    <div class="preloader-block">
+      <div class="title">Dhiego Cristofolini</div>
+      <div class="percent">0</div>
+      <div class="loading">loading...</div>
+    </div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
     </div>
   </div>
-</header>
-<div class="lang-menu" id="lang-menu" hidden data-lang-menu>
-  <ul class="lang-menu__list">
-    <li><a class="lang-menu__item" href="/work/meaple/documentation/" hreflang="en" lang="en" aria-current="true"><span class="lang-menu__code" aria-hidden="true">EN</span>English</a></li>
-    <li><a class="lang-menu__item" href="/pt-br/" hreflang="pt-BR" lang="pt-BR"><span class="lang-menu__code" aria-hidden="true">PT</span>Português (Brasil)</a></li>
-  </ul>
-</div>
-<div class="menu" id="site-menu" data-menu>
-  <div class="menu__panel menu__panel--back"></div>
-  <div class="menu__panel"></div>
-  <nav class="menu__inner" aria-label="Main menu">
-    <span></span>
-    <ul class="menu__list">
-      <li><a class="menu__link" href="/"><span class="menu__num" aria-hidden="true">01</span><span class="menu__word">Home</span></a></li>
-      <li><a class="menu__link" href="/work/" aria-current="page"><span class="menu__num" aria-hidden="true">02</span><span class="menu__word">Work</span></a></li>
-      <li><a class="menu__link" href="/blog/"><span class="menu__num" aria-hidden="true">03</span><span class="menu__word">Insights</span></a></li>
-      <li><a class="menu__link" href="/about/"><span class="menu__num" aria-hidden="true">04</span><span class="menu__word">About</span></a></li>
-      <li><a class="menu__link" href="/resume/"><span class="menu__num" aria-hidden="true">05</span><span class="menu__word">Curriculum</span></a></li>
-    </ul>
-    <div class="menu__foot">
-      <div class="menu__row">
-        <span>Get in touch:</span>
-        <a href="mailto:dhiegopiresc@gmail.com" data-cta="en_menu_email">dhiegopiresc@gmail.com</a>
-      </div>
-      <div class="menu__row">
-        <a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank">Instagram</a>
-        <a href="https://github.com/Dhiegopires" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank">LinkedIn</a>
-        <a href="https://behance.net/dhiegopires" rel="noopener" target="_blank">Behance</a>
-      </div>
-      <div class="menu__row">
-        <span>Language:</span>
-        <a href="/work/meaple/documentation/" hreflang="en" lang="en" aria-current="true">English</a>
-        <a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+
+  <!-- Nav Bar -->
+  <div class="dsn-nav-bar">
+    <div class="site-header">
+      <div class="extend-container">
+        <div class="inner-header">
+          <div class="main-logo">
+            <a href="/">
+              <img class="dark-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+              <img class="light-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+            </a>
+          </div>
+        </div>
+        <nav class=" accent-menu main-navigation" aria-label="Main menu"><ul><li><a href="/">Home</a></li><li><a href="/work/">Work</a></li><li><a href="/blog/">Insights</a></li><li><a href="/about/">About</a></li><li><a href="/resume/">Curriculum</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
       </div>
     </div>
-  </nav>
-</div>
-<main id="main-content" tabindex="-1">
+    <div class="header-top header-top-hamburger">
+      <div class="header-container">
+        <div class="logo main-logo">
+          <a href="/">
+            <img class="dark-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+            <img class="light-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+          </a>
+        </div>
 
-<article class="article doc">
+        <div class="menu-icon" data-dsn="parallax" data-dsn-move="5" role="button" tabindex="0" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+          <div class="icon-m">
+            <i class="menu-icon-close fas fa-times"></i>
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
 
-<header class="page-hero doc-hero">
-  <div class="container doc-hero__inner">
-    <p class="eyebrow">Dhiego Cristofolini · Ensight, 2020 · Definition, architecture & research</p>
-    <h1 class="h-xl h-xl--case" data-reveal="words">Meaple: product definition &amp; UX documentation</h1>
-    <p class="doc-hero__sub" data-reveal="up">Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.</p>
+          <div class="text-menu">
+            <div class="text-button">Menu</div>
+            <div class="text-open">Open</div>
+            <div class="text-close">Close</div>
+          </div>
+        </div>
+
+        <div class="nav" id="site-nav">
+          <div class="inner">
+            <div class="nav__content">
+
+            </div>
+          </div>
+        </div>
+        <div class="nav-content">
+          <div class="inner-content">
+            <address class="v-middle"><span>Curitiba, Brazil · Remote</span><span><a href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></span><span><a href="/pt-br/" hreflang="pt-BR">Ler em português</a></span></address>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-</header>
-  <div class="container container--read section section--flush-top">
-    <div class="article-body doc-body prose">
-<p>This is the original discovery, architecture and research documentation written during the Meaple engagement at Ensight in 2020, translated from Portuguese and lightly reorganized for readability. It's the working document behind the <a href="/work/meaple/">Meaple case study</a>: the raw definition, requirements, personas and interview data the design decisions were built on, not the narrative write-up. Sections the original document left open are marked as such rather than filled in after the fact.</p>
+  <!-- End Nav Bar -->
+
+  <main class="main-root" id="main-content" tabindex="-1">
+    <div id="dsn-scrollbar">
+      <header>
+        <div class="container header-hero">
+          <div class="row">
+            <div class="col-lg-9">
+              <div class="contenet-hero">
+                <h5>Dhiego Cristofolini · Ensight, 2020 · Definition, architecture &amp; research</h5>
+                <h1>Meaple: product definition &amp; UX documentation</h1>
+              <p>Discovery and research documentation from the Meaple engagement at Ensight (2020): personas, competitive analysis, and information architecture.</p></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="wrapper">
+        <div class="root-content container section-margin"><div class="content-body"><div class="prose-read article-body doc-body"><p>This is the original discovery, architecture and research documentation written during the Meaple engagement at Ensight in 2020, translated from Portuguese and lightly reorganized for readability. It's the working document behind the <a href="/work/meaple/">Meaple case study</a>: the raw definition, requirements, personas and interview data the design decisions were built on, not the narrative write-up. Sections the original document left open are marked as such rather than filled in after the fact.</p>
 <div class="doc-note">Team attribution in §1.4.1 reflects the actual project structure: design was solo, with two engineers and two co-founders. The original template's stakeholder line used placeholder initials for some roles; those have been resolved to accurate roles here.</div>
 <div class="article-section__hd">
 <span class="article-section__num">01</span>
@@ -249,7 +260,7 @@
 </tbody>
 </table></div>
 </div>
-<div class="doc-scatter"><svg id="doc-scatter" viewBox="0 0 620 460"><line x1="113.4" y1="22" x2="113.4" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="369.4" x2="594" y2="369.4" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="113.4" y="428" text-anchor="middle">1</text><text class="doc-sc-axis" x="46" y="373.4" text-anchor="end">1</text><line x1="220.2" y1="22" x2="220.2" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="292.2" x2="594" y2="292.2" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="220.2" y="428" text-anchor="middle">2</text><text class="doc-sc-axis" x="46" y="296.2" text-anchor="end">2</text><line x1="327" y1="22" x2="327" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="215" x2="594" y2="215" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="327" y="428" text-anchor="middle">3</text><text class="doc-sc-axis" x="46" y="219" text-anchor="end">3</text><line x1="433.79999999999995" y1="22" x2="433.79999999999995" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="137.8" x2="594" y2="137.8" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="433.79999999999995" y="428" text-anchor="middle">4</text><text class="doc-sc-axis" x="46" y="141.8" text-anchor="end">4</text><line x1="540.6" y1="22" x2="540.6" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="60.599999999999966" x2="594" y2="60.599999999999966" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="540.6" y="428" text-anchor="middle">5</text><text class="doc-sc-axis" x="46" y="64.59999999999997" text-anchor="end">5</text><text class="doc-sc-axis" x="327" y="454" text-anchor="middle">viability →</text><text class="doc-sc-axis" transform="translate(16,215) rotate(-90)" text-anchor="middle">importance →</text><g><circle cx="327" cy="60.599999999999966" r="18" fill="none" stroke="var(--y)" stroke-width="1" opacity=".55"></circle><circle cx="327" cy="60.599999999999966" r="9" fill="var(--y)"></circle><text class="doc-sc-lab" x="341" y="63.599999999999966" text-anchor="start" fill="var(--y)">Speed to create small events</text></g><g><circle cx="417.79999999999995" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="433.79999999999995" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="449.79999999999995" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="327" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="433.79999999999995" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="311" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="327" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="343" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="220.2" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="319" cy="292.2" r="6" fill="var(--t2)"></circle></g><g><circle cx="335" cy="292.2" r="6" fill="var(--t2)"></circle></g><g><circle cx="327" cy="369.4" r="6" fill="var(--t2)"></circle></g><g><circle cx="113.4" cy="369.4" r="20" fill="none" stroke="#f87171" stroke-width="1" opacity=".5"></circle><circle cx="113.4" cy="369.4" r="9" fill="#f87171"></circle><text class="doc-sc-lab" x="127.4" y="372.4" text-anchor="start" fill="#f87171">In-event consumption</text></g></svg></div>
+<div class="doc-scatter"><svg id="doc-scatter" viewBox="0 0 620 460" role="img" aria-label="Scatter plot of the problems in the table above, importance against viability"><line x1="113.4" y1="22" x2="113.4" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="369.4" x2="594" y2="369.4" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="113.4" y="428" text-anchor="middle">1</text><text class="doc-sc-axis" x="46" y="373.4" text-anchor="end">1</text><line x1="220.2" y1="22" x2="220.2" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="292.2" x2="594" y2="292.2" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="220.2" y="428" text-anchor="middle">2</text><text class="doc-sc-axis" x="46" y="296.2" text-anchor="end">2</text><line x1="327" y1="22" x2="327" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="215" x2="594" y2="215" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="327" y="428" text-anchor="middle">3</text><text class="doc-sc-axis" x="46" y="219" text-anchor="end">3</text><line x1="433.79999999999995" y1="22" x2="433.79999999999995" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="137.8" x2="594" y2="137.8" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="433.79999999999995" y="428" text-anchor="middle">4</text><text class="doc-sc-axis" x="46" y="141.8" text-anchor="end">4</text><line x1="540.6" y1="22" x2="540.6" y2="408" stroke="var(--b0)" stroke-width="1"></line><line x1="60" y1="60.599999999999966" x2="594" y2="60.599999999999966" stroke="var(--b0)" stroke-width="1"></line><text class="doc-sc-axis" x="540.6" y="428" text-anchor="middle">5</text><text class="doc-sc-axis" x="46" y="64.59999999999997" text-anchor="end">5</text><text class="doc-sc-axis" x="327" y="454" text-anchor="middle">viability →</text><text class="doc-sc-axis" transform="translate(16,215) rotate(-90)" text-anchor="middle">importance →</text><g><circle cx="327" cy="60.599999999999966" r="18" fill="none" stroke="var(--y)" stroke-width="1" opacity=".55"></circle><circle cx="327" cy="60.599999999999966" r="9" fill="var(--y)"></circle><text class="doc-sc-lab" x="341" y="63.599999999999966" text-anchor="start" fill="var(--y)">Speed to create small events</text></g><g><circle cx="417.79999999999995" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="433.79999999999995" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="449.79999999999995" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="327" cy="137.8" r="6" fill="var(--t2)"></circle></g><g><circle cx="433.79999999999995" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="311" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="327" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="343" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="220.2" cy="215" r="6" fill="var(--t2)"></circle></g><g><circle cx="319" cy="292.2" r="6" fill="var(--t2)"></circle></g><g><circle cx="335" cy="292.2" r="6" fill="var(--t2)"></circle></g><g><circle cx="327" cy="369.4" r="6" fill="var(--t2)"></circle></g><g><circle cx="113.4" cy="369.4" r="20" fill="none" stroke="#f87171" stroke-width="1" opacity=".5"></circle><circle cx="113.4" cy="369.4" r="9" fill="#f87171"></circle><text class="doc-sc-lab" x="127.4" y="372.4" text-anchor="start" fill="#f87171">In-event consumption</text></g></svg></div>
 <div class="doc-scatter-legend">
 <span><i class="imp"></i> Highest importance (5)</span>
 <span><i class="override"></i> Lowest score on both axes (in-event consumption)</span>
@@ -624,53 +635,111 @@
 <span>6. Media</span>
 <span>7. Other resources</span>
 </div>
-<p class="doc-note doc-related">Related: <a href="/work/meaple/">read the Meaple case study</a> for how this documentation turned into product decisions, or <a href="/">browse the rest of the work</a>.</p>
-    </div>
-  </div>
-</article>
-<nav class="next-post" aria-label="Back to the case study">
-  <a class="next-post__link" href="/work/meaple/">
-    <span class="container next-post__inner">
-      <span class="next-post__title">Meaple: five apps for one Friday night</span>
-      <span class="next-post__label">Read the case</span>
-    </span>
-  </a>
-</nav>
-</main>
+<p class="doc-note doc-related">Related: <a href="/work/meaple/">read the Meaple case study</a> for how this documentation turned into product decisions, or <a href="/">browse the rest of the work</a>.</p></div></div></div>
 
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div class="site-footer__top">
-      <nav aria-label="Footer">
-        <ul class="footer-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/work/">Work</a></li>
-          <li><a href="/blog/">Insights</a></li>
-          <li><a href="/resume/">Curriculum</a></li>
-        </ul>
-      </nav>
-      <ul class="socials" aria-label="Social profiles">
-        <li><a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.25" fill="currentColor"/></svg></a></li>
-        <li><a href="https://github.com/Dhiegopires" rel="noopener" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.53.1.72-.23.72-.5v-1.85c-2.92.63-3.54-1.24-3.54-1.24-.48-1.22-1.17-1.54-1.17-1.54-.95-.65.08-.64.08-.64 1.05.08 1.6 1.08 1.6 1.08.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.66-1.4-2.33-.27-4.78-1.17-4.78-5.18 0-1.15.41-2.08 1.08-2.82-.1-.27-.47-1.34.1-2.79 0 0 .89-.28 2.9 1.08a10 10 0 0 1 5.27 0c2.01-1.36 2.9-1.08 2.9-1.08.57 1.45.21 2.52.1 2.79.68.74 1.08 1.67 1.08 2.82 0 4.02-2.45 4.9-4.79 5.17.38.32.71.96.71 1.94v2.87c0 .28.19.61.73.5A10.5 10.5 0 0 0 12 1.5Z"/></svg></a></li>
-        <li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M6.2 9.6h2.4V18H6.2zM7.4 5.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM10.4 9.6h2.3v1.15h.03c.32-.6 1.1-1.25 2.27-1.25 2.43 0 2.88 1.6 2.88 3.68V18h-2.4v-4.27c0-1.02-.02-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.26V18h-2.4z"/></svg></a></li>
-      </ul>
+        <section class="contact-up section-margin section-padding">
+          <div class="container">
+            <div class="c-wapp">
+              <a href="/work/meaple/" class="">
+                <span class="hiring">Back to the case</span>
+                <span class="career">Meaple: five apps for one Friday night</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+                <div class="container">
+                    <div class="footer-links p-relative">
+                        <div class="row">
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block">
+                                    <div class="footer-logo">
+                                        <a href="/"><img src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32"></a>
+                                    </div>
+
+                                    <div class="footer-social">
+
+                                        <ul><li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li><li><a href="https://behance.net/dhiegopires" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a></li><li><a href="https://www.instagram.com/dhiegopires/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="https://github.com/Dhiegopires" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li></ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-menu">
+                                    <h4 class="footer-title">Navigation</h4>
+                                    <nav>
+                                        <ul><li><a href="/work/">Work</a></li><li><a href="/blog/">Insights</a></li><li><a href="/about/">About</a></li><li><a href="/resume/">Curriculum</a></li><li><a href="/contact/">Contact</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-contact">
+                                    <h4 class="footer-title">Contact</h4>
+                                    
+                                    
+                                    
+                                <p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="dhiegopiresc@gmail.com" href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></p><p><strong>Lang</strong> <span>:</span> <a href="/pt-br/">Português</a></p></div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="col-address">
+                                    <h4 class="footer-title">Based in</h4>
+
+                                    <p>Curitiba, Brazil<br>Remote, any time zone</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 2026 Cristofolini. All rights reserved.</p>
+                            <div class="copright-text over-hidden"><a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+      </div>
     </div>
-    <a class="wordmark" href="/" aria-label="Dhiego Cristofolini, home" data-reveal="mask">
-      <img src="/assets/img/site/wordmark.svg" width="1748" height="201" alt="" loading="lazy">
-    </a>
-    <div class="site-footer__bottom">
-      <p>© 2026 Cristofolini. All rights reserved.</p>
-      <ul class="footer-legal">
-        <li><a href="/privacy-policy/">Privacy Policy</a></li>
-        <li><a href="/terms-of-use/">Terms of Use</a></li>
-      </ul>
+  </main>
+
+  <!-- Wait Loader -->
+  <div class="wait-loader">
+    <div class="loader-inner">
+      <div class="loader-circle">
+        <div class="loader-layer"></div>
+      </div>
     </div>
   </div>
-</footer>
-<div class="cursor" aria-hidden="true" data-cursor-el><span class="cursor__label">View</span></div>
-<button class="to-top" type="button" aria-label="Back to top" data-to-top>
-  <svg class="to-top__progress" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="to-top__ring" cx="32" cy="32" r="30" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" data-to-top-ring/></svg>
-  <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-</body>
-</html>
+  <!-- // Wait Loader -->
+
+
+  <!-- cursor -->
+  <div class="cursor">
+
+    <div class="cursor-helper cursor-view">
+      <span>VIEW</span>
+    </div>
+
+    <div class="cursor-helper cursor-close">
+      <span>Close</span>
+    </div>
+
+    <div class="cursor-helper cursor-link"></div>
+  </div>
+  <!-- End cursor -->
+
+  <!-- Optional JavaScript -->
+  <script src="/assets/tpl/js/jquery-3.1.1.min.js?v=042dd055"></script>
+  <script src="/assets/tpl/js/plugins.js?v=790b3aee"></script>
+  <script src="/assets/tpl/js/dsn-grid.js?v=0b65055c"></script>
+
+  <script src="/assets/tpl/js/custom.min.js?v=fe1375b4"></script><script src="/assets/tpl/js/addons.min.js?v=8865b96d"></script>
+
+
+
+</body></html>

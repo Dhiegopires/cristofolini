@@ -19,10 +19,4 @@ export const postMeta = (slug, lang) => {
   return d;
 };
 
-export const caseContent = (slug, lang) => {
-  const d = load(`cases/${slug}.${lang}.json`);
-  if (!d) throw new Error(`Missing case content: ${slug}.${lang}`);
-  return d;
-};
-
 export const pageContent = (name, lang) => load(`pages/${name}.${lang}.json`);

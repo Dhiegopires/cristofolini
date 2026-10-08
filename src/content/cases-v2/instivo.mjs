@@ -10,7 +10,7 @@ export default {
   slug: 'instivo',
   hero: { src: '/assets/img/case/instivo/hero.webp' },
   en: {
-    seoTitle: 'Instivo | Data workspace for multi-unit retail | Dhiego Cristofolini',
+    seoTitle: 'Instivo | Retail data workspace | Dhiego Cristofolini',
     description:
       'Product design case: a governed data workspace, rule engine and card-linked entity model that let retail managers run operations without IT.',
     cat: 'B2B SaaS · Retail operations',
@@ -85,7 +85,7 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'Instivo | Workspace de dados para varejo multiunidade | Dhiego Cristofolini',
+    seoTitle: 'Instivo | Workspace de dados de varejo | Dhiego Cristofolini',
     description:
       'Case de product design: um workspace de dados governado, motor de regras e modelo de entidades em cards que deixam gestores de varejo operar sem a TI.',
     cat: 'SaaS B2B · Operações de varejo',

@@ -1,5 +1,6 @@
-/* Small additions to the Droow template scripts: menu state for assistive
-   tech, keyboard access to the menu button, and the analytics consent note. */
+/* Additions to the Droow template scripts: menu state for assistive tech,
+   keyboard access, in-page scrolling, slider controls, forms, CTA tracking,
+   article demos and the analytics consent note. */
 (function () {
   'use strict';
   var body = document.body;
@@ -58,13 +59,14 @@
     if (slider.length) slider.slick(nav.getAttribute('data-slick-dir') === 'prev' ? 'slickPrev' : 'slickNext');
   });
 
-  // Contact form: inline validation, then POST to /contact.php (which
-  // requires the XHR header and answers {ok, message}).
-  var form = document.getElementById('site-contact');
-  if (form) {
+  // Forms (contact, newsletter): inline validation of required fields, then
+  // POST to /contact.php, which requires the XHR header and answers {ok}.
+  // A confirmed send fires form_submit + generate_lead (methodology 5.1 #23).
+  var track = function (name, params) { if (typeof window.gtag === 'function') window.gtag('event', name, params); };
+  Array.prototype.forEach.call(document.querySelectorAll('#site-contact, form[data-site-form]'), function (form) {
     var status = form.querySelector('.messages');
     var submit = form.querySelector('button[type="submit"]');
-    var fields = ['name', 'email', 'message'];
+    var fields = Array.prototype.filter.call(form.elements, function (el) { return el.required; });
     var say = function (text, kind) {
       status.textContent = text;
       status.className = 'messages' + (kind ? ' is-' + kind : '');
@@ -74,20 +76,20 @@
       var bad = !el.value.trim() || (el.type === 'email' && !el.validity.valid);
       el.setAttribute('aria-invalid', String(bad));
       el.closest('.form-group').classList.toggle('has-error', bad);
-      err.textContent = bad ? form.getAttribute('data-err-' + el.name) : '';
+      if (err) err.textContent = bad ? form.getAttribute('data-err-' + el.name) : '';
       return !bad;
     };
-    fields.forEach(function (n) {
-      var el = form.elements[n];
+    fields.forEach(function (el) {
       el.addEventListener('blur', function () { if (el.value) check(el); });
       el.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') check(el); });
     });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var firstBad = null;
-      fields.forEach(function (n) { if (!check(form.elements[n]) && !firstBad) firstBad = form.elements[n]; });
+      fields.forEach(function (el) { if (!check(el) && !firstBad) firstBad = el; });
       if (firstBad) { firstBad.focus(); return; }
       var label = submit.textContent;
+      var kind = (form.elements.type && form.elements.type.value) || 'contact';
       submit.disabled = true;
       submit.textContent = form.getAttribute('data-sending');
       say('');
@@ -101,11 +103,41 @@
           if (!data.ok) throw new Error(data.message || 'fail');
           form.reset();
           say(form.getAttribute('data-ok'), 'ok');
+          track('form_submit', { event_category: 'form', event_label: kind });
+          if (kind === 'contact') track('generate_lead', { event_category: 'cta', event_label: 'contact_form_send' });
         })
         .catch(function () { say(form.getAttribute('data-fail'), 'error'); })
         .then(function () { submit.disabled = false; submit.textContent = label; });
     });
-  }
+  });
+
+  // CTA clicks: any element with data-cta reports cta_click with its label.
+  document.addEventListener('click', function (e) {
+    var cta = e.target.closest && e.target.closest('[data-cta]');
+    if (cta) track('cta_click', { event_category: cta.getAttribute('data-cta-cat') || 'cta', event_label: cta.getAttribute('data-cta') });
+  });
+
+  // Article demo: accent picker (carried over from the previous site)
+  Array.prototype.forEach.call(document.querySelectorAll('.demo-swatch'), function (demo) {
+    var value = demo.querySelector('.demo-swatch__value');
+    var btns = demo.querySelectorAll('.demo-swatch__btn');
+    Array.prototype.forEach.call(btns, function (b) {
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(btns, function (x) {
+          x.classList.toggle('is-active', x === b);
+          x.setAttribute('aria-pressed', String(x === b));
+        });
+        var host = demo.closest('.article-body') || demo;
+        host.style.setProperty('--demo-accent', b.getAttribute('data-accent'));
+        if (value) value.textContent = b.getAttribute('data-accent');
+      });
+    });
+  });
+
+  // Résumé: print button
+  Array.prototype.forEach.call(document.querySelectorAll('[data-print]'), function (b) {
+    b.addEventListener('click', function () { window.print(); });
+  });
 
   var KEY = 'cookie-consent';
   var stored = null;

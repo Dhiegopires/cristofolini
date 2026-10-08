@@ -69,9 +69,9 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'MedMe | Consultas e exames domiciliares | Dhiego Cristofolini',
+    seoTitle: 'MedMe | Consultas e exames em casa | Dhiego Cristofolini',
     description:
-      'Case de product design: agendamento de consultas e exames em casa ou na clínica, com visitas verificadas por token e pagamento retido pela MedMe até o fim do serviço.',
+      'Case de product design: consultas e exames em casa ou na clínica, com visitas verificadas por token e pagamento retido pela MedMe até o fim do serviço.',
     cat: 'Healthtech · Product design',
     title: 'MedMe',
     sub: 'Consultas e exames domiciliares',

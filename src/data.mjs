@@ -108,7 +108,7 @@ export const CASES = [
       pt: '13 concorrentes mapeados, nenhum cobria mais de duas camadas da jornada. Descoberta, ingressos e pagamento no evento como um produto só.',
     },
     img: card('meaple', 1600, 1200),
-    cover: { src: '/assets/img/cards/meaple-cover.webp', srcset: '/assets/img/cards/meaple-cover-800.webp 800w, /assets/img/cards/meaple-cover.webp 1376w', w: 1376, h: 768 },
+    cover: { src: '/assets/img/cards/meaple-cover.webp', w: 1376, h: 768 },
     alt: { en: 'Meaple app on a phone resting on dark fabric', pt: 'App Meaple em um celular sobre tecido escuro' },
   },
   {
@@ -147,7 +147,7 @@ export const CASES = [
       en: 'A fintech onboarding and verification concept focused on reducing friction.',
       pt: 'Um conceito de onboarding e verificação fintech focado em reduzir atrito.',
     },
-    img: card('northpay', 1600, 884),
+    img: card('northpay', 1600, 1200),
     alt: { en: 'NorthPay dashboard on laptop and tablet', pt: 'Painel NorthPay em notebook e tablet' },
   },
   {

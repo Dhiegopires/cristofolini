@@ -1,4 +1,4 @@
-// Pages are built FROM the Droow template files (SITE/template/dark/*.html):
+// Pages are built FROM the Droow template files (src/tpl/html/*.html, copied from the Droow template):
 // the template markup, classes and scripts stay as shipped; only content,
 // links and images are swapped. Shared chrome (head, header, nav, footer)
 // is filled here so every page matches.
@@ -11,7 +11,7 @@ import { SITE, ROUTES } from '../data.mjs';
 import { T } from '../i18n.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-export const TPL_DIR = join(root, 'SITE', 'template', 'dark');
+export const TPL_DIR = join(root, 'src', 'tpl', 'html');
 
 export const loadTemplate = (file) => cheerio.load(readFileSync(join(TPL_DIR, file), 'utf8'), { decodeEntities: false });
 
@@ -31,7 +31,7 @@ const navItems = (lang) => {
 };
 
 // Head, preloader, header/nav, footer, scripts: template structure, our content.
-export const fillChrome = ($, { lang, title, description, path, alt }) => {
+export const fillChrome = ($, { lang, title, description, path, alt, image = '/assets/img/og-default.jpg' }) => {
   const t = T[lang];
   const r = ROUTES[lang];
   const other = lang === 'en' ? 'pt' : 'en';
@@ -52,12 +52,18 @@ export const fillChrome = ($, { lang, title, description, path, alt }) => {
     <meta property="og:title" content="${esc(title)}">
     <meta property="og:description" content="${esc(description)}">
     <meta property="og:url" content="${abs(path)}">
-    <meta property="og:image" content="${abs('/assets/img/og-default.jpg')}">
+    <meta property="og:image" content="${abs(image)}">
+    <meta property="og:site_name" content="Dhiego Cristofolini">
+    <meta property="og:locale" content="${lang === 'pt' ? 'pt_BR' : 'en_US'}">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>`);
-  head.find('link[href="assets/css/plugins.css"]').attr('href', '/assets/tpl/css/plugins.css');
-  head.find('link[href="assets/css/style.css"]').attr('href', '/assets/tpl/css/style.css').after('<link href="/assets/tpl/css/brand.css" rel="stylesheet">');
+  // One bundle: template plugins + template style + our brand layer
+  // (scripts/assets.mjs builds it).
+  head.find('link[href="assets/css/plugins.css"]').remove();
+  head.find('link[href="assets/css/style.css"]').attr('href', '/assets/tpl/css/site.min.css');
   head.append(`
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','${SITE.gaId}');</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}"></script>`);
@@ -70,9 +76,9 @@ export const fillChrome = ($, { lang, title, description, path, alt }) => {
   $('.preloader .title').text('Dhiego Cristofolini');
 
   // Header: logo, links (template copies .site-header nav > ul into the menu)
-  $('.main-logo a, .logo a').attr('href', r.home).attr('aria-label', t.logoLabel);
+  $('.main-logo a, .logo a').attr('href', r.home).removeAttr('aria-label');
   $('.main-logo img, .logo img').each((_, el) => {
-    $(el).attr('src', '/assets/img/site/logo.svg').attr('alt', '').attr('width', '51').attr('height', '32');
+    $(el).attr('src', '/assets/img/site/logo.svg').attr('alt', t.logoLabel).attr('width', '51').attr('height', '32');
   });
   const ul = navItems(lang)
     .map(([href, label]) => `<li${href === path ? ' class="active"' : ''}><a href="${href}">${label}</a></li>`)
@@ -87,8 +93,8 @@ export const fillChrome = ($, { lang, title, description, path, alt }) => {
 
   // Footer: template columns, our info
   const footer = $('footer.footer');
-  footer.find('.footer-logo a').attr('href', r.home).attr('aria-label', t.logoLabel);
-  footer.find('.footer-logo img').attr('src', '/assets/img/site/logo.svg').attr('alt', '').attr('width', '51').attr('height', '32');
+  footer.find('.footer-logo a').attr('href', r.home).removeAttr('aria-label');
+  footer.find('.footer-logo img').attr('src', '/assets/img/site/logo.svg').attr('alt', t.logoLabel).attr('width', '51').attr('height', '32');
   footer.find('.footer-social ul').html(
     [
       ['https://www.linkedin.com/in/dhiego-cristofolini-77b964150/', 'fa-linkedin-in', 'LinkedIn'],
@@ -109,14 +115,15 @@ export const fillChrome = ($, { lang, title, description, path, alt }) => {
   footer.find('.copyright p').first().text(t.rights);
   footer.find('.copright-text').html(`<a href="${r.privacy}">${t.privacy}</a> · <a href="${r.terms}">${t.terms}</a>`);
 
-  // Scripts from /assets/tpl; our small add-on after the template's.
-  $('script[src^="assets/js/"]').each((_, el) => $(el).attr('src', '/assets/tpl/js/' + $(el).attr('src').split('/').pop()));
-  $('script[src$="custom.js"]').after('<script src="/assets/tpl/js/addons.js"></script>');
+  // Scripts from /assets/tpl (minified copies of the unminified ones); our
+  // small add-on after the template's.
+  $('script[src^="assets/js/"]').each((_, el) => $(el).attr('src', '/assets/tpl/js/' + $(el).attr('src').split('/').pop().replace(/^custom.js$/, 'custom.min.js')));
+  $('script[src$="custom.min.js"]').after('<script src="/assets/tpl/js/addons.min.js"></script>');
 
   // Remaining relative template asset paths
   $('[src^="assets/"]').each((_, el) => $(el).attr('src', '/assets/tpl/' + $(el).attr('src').slice(7)));
   $('[data-image-src^="assets/"]').each((_, el) => $(el).attr('data-image-src', '/assets/tpl/' + $(el).attr('data-image-src').slice(7)));
-  $('main.main-root').attr('id', 'main-content');
+  $('main.main-root').attr('id', 'main-content').attr('tabindex', '-1');
 };
 
 // .htaccess caches CSS/JS for a week, so template assets carry a content

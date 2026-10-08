@@ -1,7 +1,7 @@
 {
  "title": "I over-built a design system once. Five token layers, and my product needed four.",
  "seoTitle": "Five token layers, and my product needed four | Dhiego",
- "description": "The five-layer token architecture I use, why the component layer is usually one layer too many, and the two rules that decide where a design system should stop.",
+ "description": "The five-layer token architecture I use, why the component layer is usually one too many, and the two rules that decide where a design system should stop.",
  "tag": "Design Systems",
  "hero": {
   "src": "/assets/img/blog/token-layers-hero.webp",

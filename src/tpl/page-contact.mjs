@@ -1,4 +1,4 @@
-// Contact = SITE/template/dark/contact.html with Dhiego's content.
+// Contact = src/tpl/html/contact.html with Dhiego's content.
 // The template's map is dropped (no studio to visit) and its short footer is
 // swapped for the index footer so every page shares one footer. The form
 // keeps the template markup but is submitted by addons.js to /contact.php
@@ -65,7 +65,7 @@ export const contactPage = (lang) => {
   const pt = lang === 'pt';
 
   // Shared footer: take index.html's, which fillChrome knows how to fill.
-  const idx = loadTemplate('index.html');
+  const idx = loadTemplate('home.html');
   $('main footer').replaceWith(idx.html(idx('footer.footer').first()));
 
   fillChrome($, {
@@ -133,6 +133,7 @@ export const contactPage = (lang) => {
         <div class="image-zoom" data-dsn="parallax">
           <button type="submit">${c.send}</button>
         </div>
+        <p class="form-legal">${pt ? 'Seus dados são usados só para responder esta mensagem. Veja a' : 'Your details are only used to reply to this message. See the'} <a href="${r.privacy}">${pt ? 'Política de Privacidade' : 'Privacy Policy'}</a>.</p>
       </div>
     </form>`);
 

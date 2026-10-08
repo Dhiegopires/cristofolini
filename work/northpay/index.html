@@ -1,551 +1,401 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>NorthPay | Fintech Onboarding UX | Dhiego Cristofolini</title>
-  <meta name="description" content="Fintech onboarding &amp; KYC flow case study. Redesigned account setup, verification, and dashboard to reduce friction and guide activation.">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="Dhiego Cristofolini">
-  <meta name="theme-color" content="#040404">
-  <link rel="canonical" href="https://cristofolini.site/work/northpay/">
-  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/northpay/">
-  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/northpay/">
-  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/northpay/">
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="NorthPay | Fintech Onboarding UX | Dhiego Cristofolini">
-  <meta property="og:description" content="Fintech onboarding &amp; KYC flow case study. Redesigned account setup, verification, and dashboard to reduce friction and guide activation.">
-  <meta property="og:url" content="https://cristofolini.site/work/northpay/">
-  <meta property="og:image" content="https://cristofolini.site/assets/img/cards/northpay.webp">
-  <meta property="og:image:alt" content="NorthPay onboarding interface, fintech KYC and account setup screens">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NorthPay | Fintech Onboarding UX | Dhiego Cristofolini">
-  <meta name="twitter:description" content="Fintech onboarding &amp; KYC flow case study. Redesigned account setup, verification, and dashboard to reduce friction and guide activation.">
-  <meta name="twitter:image" content="https://cristofolini.site/assets/img/cards/northpay.webp">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.min.css?v=75d11cbc85">
-  <script>
-    document.documentElement.classList.add('js');
-    try {
-      if (!sessionStorage.getItem('seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-preload');
-    } catch (e) {}
-    setTimeout(function () { if (!window.__siteReady) document.documentElement.classList.remove('js', 'js-preload'); }, 3000);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script src="/assets/vendor/gsap.min.js" defer></script>
-  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="/assets/js/main.min.js?v=75d11cbc85" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"NorthPay: Onboarding as a product surface","description":"Fintech onboarding & KYC flow case study. Redesigned account setup, verification, and dashboard to reduce friction and guide activation.","url":"https://cristofolini.site/work/northpay/","image":"https://cristofolini.site/assets/img/cards/northpay.webp","inLanguage":"en","author":{"@type":"Person","name":"Dhiego Cristofolini","url":"https://cristofolini.site/"}}</script>
-</head>
-<body class="page-case" data-lang="en" data-privacy="/privacy-policy/">
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>NorthPay | Fintech onboarding concept | Dhiego Cristofolini</title>
+    <meta name="description" content="Fintech onboarding and KYC concept: account type first, one question per screen and a stepper visible from step one.">
+    <meta name="author" content="Dhiego Cristofolini">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://cristofolini.site/work/northpay/">
+    <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/northpay/"><link rel="alternate" hreflang="en" href="https://cristofolini.site/work/northpay/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NorthPay | Fintech onboarding concept | Dhiego Cristofolini">
+    <meta property="og:description" content="Fintech onboarding and KYC concept: account type first, one question per screen and a stepper visible from step one.">
+    <meta property="og:url" content="https://cristofolini.site/work/northpay/">
+    <meta property="og:image" content="https://cristofolini.site/assets/img/og/northpay.jpg">
+    <meta property="og:site_name" content="Dhiego Cristofolini">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
 
-<a href="#main-content" class="skip-link">Skip to content</a>
-<div class="loader" aria-hidden="true">
-  <div class="loader__panel"></div>
-  <div class="loader__panel loader__panel--front">
-    <span class="loader__count" data-loader-count>0</span>
-    <div class="loader__bar"><span data-loader-bar></span></div>
-  </div>
-</div>
-<header class="site-header" data-header>
-  <div class="site-header__inner">
-    <a class="site-header__logo" href="/" aria-label="Dhiego Cristofolini, home" data-cta="en_nav_logo">
-      <img src="/assets/img/site/logo.svg" width="51" height="32" alt="">
-    </a>
-    <div class="site-header__actions">
-      <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English" title="Language" data-lang-toggle>
-        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13.33"/><path d="M10.67 16A21.33 21.33 0 0 1 16 2.67 21.33 21.33 0 0 1 21.33 16 21.33 21.33 0 0 1 16 29.33 21.33 21.33 0 0 1 10.67 16ZM2.67 16h26.66"/></g></svg>
-      </button>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-        <span class="menu-toggle__icons" aria-hidden="true"><svg class="menu-toggle__icon menu-toggle__icon--open" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 6.67h21.34M5.33 16h21.34M5.33 25.33h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--minus" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 16h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--close" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 28 27.63 5.37M5 5l22.63 22.63" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></span>
-        <span class="menu-toggle__label"><span class="menu-toggle__text menu-toggle__text--menu">Menu</span><span class="menu-toggle__text menu-toggle__text--open" aria-hidden="true">Open</span><span class="menu-toggle__text menu-toggle__text--close" aria-hidden="true">Close</span></span>
-      </button>
+    <!--  Title -->
+    
+
+    <!-- Font Google -->
+    
+    
+
+    
+    
+
+    <!-- custom styles (optional) -->
+    
+    <link href="/assets/tpl/css/site.min.css?v=5006926d" rel="stylesheet">
+
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','G-M378PSJ10R');</script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script></head>
+
+
+<body class="hamburger-menu dsn-effect-scroll case-v2" data-dsn-mousemove="true" data-lang="en"><a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="preloader">
+        <div class="preloader-after"></div>
+        <div class="preloader-before"></div>
+        <div class="preloader-block">
+            <div class="title">Dhiego Cristofolini</div>
+            <div class="percent">0</div>
+            <div class="loading">loading...</div>
+        </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
     </div>
-  </div>
-</header>
-<div class="lang-menu" id="lang-menu" hidden data-lang-menu>
-  <ul class="lang-menu__list">
-    <li><a class="lang-menu__item" href="/work/northpay/" hreflang="en" lang="en" aria-current="true"><span class="lang-menu__code" aria-hidden="true">EN</span>English</a></li>
-    <li><a class="lang-menu__item" href="/pt-br/work/northpay/" hreflang="pt-BR" lang="pt-BR"><span class="lang-menu__code" aria-hidden="true">PT</span>Português (Brasil)</a></li>
-  </ul>
-</div>
-<div class="menu" id="site-menu" data-menu>
-  <div class="menu__panel menu__panel--back"></div>
-  <div class="menu__panel"></div>
-  <nav class="menu__inner" aria-label="Main menu">
-    <span></span>
-    <ul class="menu__list">
-      <li><a class="menu__link" href="/"><span class="menu__num" aria-hidden="true">01</span><span class="menu__word">Home</span></a></li>
-      <li><a class="menu__link" href="/work/" aria-current="page"><span class="menu__num" aria-hidden="true">02</span><span class="menu__word">Work</span></a></li>
-      <li><a class="menu__link" href="/blog/"><span class="menu__num" aria-hidden="true">03</span><span class="menu__word">Insights</span></a></li>
-      <li><a class="menu__link" href="/about/"><span class="menu__num" aria-hidden="true">04</span><span class="menu__word">About</span></a></li>
-      <li><a class="menu__link" href="/resume/"><span class="menu__num" aria-hidden="true">05</span><span class="menu__word">Curriculum</span></a></li>
-    </ul>
-    <div class="menu__foot">
-      <div class="menu__row">
-        <span>Get in touch:</span>
-        <a href="mailto:dhiegopiresc@gmail.com" data-cta="en_menu_email">dhiegopiresc@gmail.com</a>
-      </div>
-      <div class="menu__row">
-        <a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank">Instagram</a>
-        <a href="https://github.com/Dhiegopires" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank">LinkedIn</a>
-        <a href="https://behance.net/dhiegopires" rel="noopener" target="_blank">Behance</a>
-      </div>
-      <div class="menu__row">
-        <span>Language:</span>
-        <a href="/work/northpay/" hreflang="en" lang="en" aria-current="true">English</a>
-        <a href="/pt-br/work/northpay/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-      </div>
-    </div>
-  </nav>
-</div>
-<main id="main-content" tabindex="-1">
 
-<article class="case" data-case="northpay">
-  <header class="case-hero">
-    <div class="case-hero__media" data-hero-parallax>
-      <img src="/assets/img/project/NorthPay/thumbnail.webp" sizes="(min-width: 64em) 60vw, 100vw" width="1920" height="1061" alt="NorthPay onboarding interface, fintech KYC and account setup screens" decoding="async" fetchpriority="high">
-    </div>
-    <div class="case-hero__copy">
-      <h1 class="case-hero__title">
-        <span class="h-xl h-xl--case case-hero__name" data-reveal="words">NorthPay</span>
-        <span class="h-md case-hero__headline" data-reveal="up">Onboarding as a product surface</span>
-      </h1>
-      <p class="case-hero__dek" data-reveal="up">Financial products need to collect sensitive information before users see any value. That makes the first steps of the experience the most fragile part of the flow. Long forms, unclear requirements, and forced account creation gates can kill activation before signup completes.</p>
-      <div class="tags"><span class="tag">Product</span><span class="tag">UI/UX</span><span class="tag">Fintech</span></div>
-    </div>
-  </header>
-
-  <section class="case-stats container" aria-label="Project outcomes">
-    <ul class="case-stats__list case-stats__list--3">
-      <li class="case-stat" data-reveal="up"><span class="case-stat__num">0</span><span class="case-stat__label">forced account creation gates · guest-first with progressive disclosure</span></li>
-      <li class="case-stat" data-reveal="up"><span class="case-stat__num">1</span><span class="case-stat__label">question per screen · account type committed before any form field appears</span></li>
-      <li class="case-stat" data-reveal="up"><span class="case-stat__num">6</span><span class="case-stat__label">steps visible from screen one · persistent stepper eliminates uncertainty</span></li>
-    </ul>
-  </section>
-
-  <section class="case-meta container" aria-label="Project details">
-    <dl class="case-meta__list" data-reveal="up">
-      <div class="case-meta__item"><dt>Role</dt><dd>Product Designer</dd></div>
-      <div class="case-meta__item"><dt>Platform</dt><dd>iOS · Android</dd></div>
-      <div class="case-meta__item"><dt>Type</dt><dd>Concept project</dd></div>
-      <div class="case-meta__item"><dt>Duration</dt><dd>8 weeks</dd></div>
-    </dl>
-  </section>
-
-  <section class="case-section case-context" aria-label="Context">
-      <div class="case-row case-row--text"><div class="case-row__text"><p class="eyebrow">Current state · standard fintech onboarding</p></div></div>
-      <div class="case-row case-row--media case-row--media-1">
-        <div class="case-row__cell" data-reveal="fade"><div class="cs-diagram">
-<svg aria-label="Standard fintech onboarding flow showing friction points" role="img" viewbox="0 0 780 100" width="100%">
-<defs>
-<marker id="arr-cs" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10">
-<path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</marker>
-</defs>
-<rect fill="#1d1c1a" height="72" rx="8" stroke="#3a3530" stroke-width="0.5" width="140" x="10" y="14"></rect>
-<text dominant-baseline="central" fill="#d0c8bc" font-family="'Geist Mono', monospace" font-size="11" font-weight="500" text-anchor="middle" x="80" y="38">Wants to sign up</text>
-<text dominant-baseline="central" fill="#908684" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle" x="80" y="66">No value seen yet</text>
-<line marker-end="url(#arr-cs)" stroke="#7f2020" stroke-width="1" x1="151" x2="163" y1="50" y2="50"></line>
-<rect fill="#2a1008" height="72" rx="8" stroke="#7f2020" stroke-width="0.5" width="140" x="164" y="14"></rect>
-<text dominant-baseline="central" fill="#f87060" font-family="'Geist Mono', monospace" font-size="11" font-weight="500" text-anchor="middle" x="234" y="38">Forced to register</text>
-<text dominant-baseline="central" fill="#c56c5d" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle" x="234" y="66">Before seeing product</text>
-<line marker-end="url(#arr-cs)" stroke="#7f2020" stroke-width="1" x1="305" x2="317" y1="50" y2="50"></line>
-<rect fill="#2a1008" height="72" rx="8" stroke="#7f2020" stroke-width="0.5" width="140" x="318" y="14"></rect>
-<text dominant-baseline="central" fill="#f87060" font-family="'Geist Mono', monospace" font-size="11" font-weight="500" text-anchor="middle" x="388" y="38">Long multi-field form</text>
-<text dominant-baseline="central" fill="#c56c5d" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle" x="388" y="66">All fields at once</text>
-<line marker-end="url(#arr-cs)" stroke="#7f2020" stroke-width="1" x1="459" x2="471" y1="50" y2="50"></line>
-<rect fill="#2a1008" height="72" rx="8" stroke="#7f2020" stroke-width="0.5" width="140" x="472" y="14"></rect>
-<text dominant-baseline="central" fill="#f87060" font-family="'Geist Mono', monospace" font-size="11" font-weight="500" text-anchor="middle" x="542" y="38">Verification wall</text>
-<text dominant-baseline="central" fill="#c56c5d" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle" x="542" y="66">No progress visible</text>
-<line marker-end="url(#arr-cs)" stroke="#7f2020" stroke-width="1" x1="613" x2="625" y1="50" y2="50"></line>
-<rect fill="#2a1008" height="72" rx="8" stroke="#7f2020" stroke-width="0.5" width="144" x="626" y="14"></rect>
-<text dominant-baseline="central" fill="#f87060" font-family="'Geist Mono', monospace" font-size="11" font-weight="500" text-anchor="middle" x="698" y="38">User abandons</text>
-<text dominant-baseline="central" fill="#c56c5d" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle" x="698" y="66">Before first feature.</text>
-</svg>
-</div><p class="caption">The onboarding experience is where regulatory requirements and user momentum collide. Treating it as a technical handoff misses that every friction point in this flow is a design decision.</p></div>
-      </div>
-  </section>
-  <div class="case-body">
-
-    <section class="case-section" id="s01" aria-labelledby="s01-title">
-      <div class="case-row case-row--split">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-diagram">
-<img alt="NorthPay onboarding mockups showing account selection and verification screens" decoding="async" height="1277" loading="lazy" src="/assets/img/project/NorthPay/mockup.webp" width="1920"/>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">01</span>
-            
-            <h2 class="h-lg case-row__title" id="s01-title" data-reveal="words">The concept</h2>
-          </header>
-          <div class="prose"><p>NorthPay is a concept fintech onboarding flow, from account type selection through KYC verification and first-use setup.</p>
-<blockquote class="cs-pullquote">Every field in an onboarding form sits between the user and the product. The sequence those fields appear in is a design decision, not a compliance requirement.</blockquote>
-<p>Onboarding is the point where first impressions, regulatory constraints, and conversion rates converge on the same sequence of screens.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="case-section" id="s02" aria-labelledby="s02-title">
-      <div class="case-row case-row--split case-row--flip">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-fear-cards">
-<div class="cs-fear-card">
-<p class="cs-fear-card__label">User</p>
-<p class="cs-fear-card__title">Why is this so long?</p>
-<p class="cs-fear-card__body">Too many fields at once, no indication of how many steps remain, no visible reason to trust the product asking for sensitive data.</p>
-</div>
-<div class="cs-fear-card">
-<p class="cs-fear-card__label">Business</p>
-<p class="cs-fear-card__title">Where are they dropping?</p>
-<p class="cs-fear-card__body">Account creation before any product value is seen is the single highest drop-off point in onboarding. KYC adds another layer on top of that.</p>
-</div>
-<div class="cs-fear-card">
-<p class="cs-fear-card__label">Compliance</p>
-<p class="cs-fear-card__title">We need all of it</p>
-<p class="cs-fear-card__body">Every field that feels excessive to the user is there because regulation requires it; the fix is in how it's presented.</p>
-</div>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">02</span>
-            
-            <h2 class="h-lg case-row__title" id="s02-title" data-reveal="words">Problem &amp; context</h2>
-          </header>
-          <div class="prose"><p>Financial products must collect sensitive information before users see any value. That makes onboarding the most fragile part of the flow. People are creating an account, sharing personal details, and waiting on verification without knowing yet whether any of it is worth their time.</p></div>
-        </div>
-      </div>
-      <div class="case-row case-row--split">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-diagram">
-<img alt="Problem and context diagram" decoding="async" height="591" loading="lazy" src="/assets/img/project/NorthPay/problem-and-context.webp" width="708"/>
-</div></div></div>
-        <div class="case-row__text">
-          <div class="prose"><p>Long forms, unclear requirements, and weak feedback stall activation before the product is even used. Every field in the sequence is required by regulation. How that sequence is presented is a design decision.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="case-section" id="s03" aria-labelledby="s03-title">
-      <div class="case-row case-row--split case-row--flip">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-compare">
-<div>
-<p class="cs-compare__label">Standard approach</p>
-<p class="cs-compare__text">Show everything upfront. All fields on one screen, all steps implied. The user doesn't know how long this takes until they're already deep in it. That's when they quit.</p>
-</div>
-<div>
-<p class="cs-compare__label">NorthPay approach</p>
-<p class="cs-compare__text">One question at a time. Visible step count from the first screen. Account type selected before any form opens. Each next step is earned by completing the current one.</p>
-</div>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">03</span>
-            
-            <h2 class="h-lg case-row__title" id="s03-title" data-reveal="words">Design challenge</h2>
-          </header>
-          <div class="prose"><p>The challenge was structural: how to collect everything compliance requires while keeping users oriented at every step. A visible endpoint and a fixed question-per-screen pattern address both.</p></div>
-        </div>
-      </div>
-      <div class="case-row case-row--media case-row--media-1">
-        <div class="case-row__cell" data-reveal="fade"><div class="cs-diagram">
-<img alt="Design challenge diagram, end to end onboarding journey" decoding="async" height="661" loading="lazy" src="/assets/img/project/NorthPay/design-challenge-diagram.webp" width="708"/>
-</div></div>
-      </div>
-      <div class="case-row case-row--text">
-        <div class="case-row__text">
-          <div class="prose"><div class="cs-addresses">
-<span class="cs-addresses__label">Addresses</span>
-<span class="cs-addresses__metric">19% abandonment from forced account creation (Baymard, 2024) · decision stress as primary drop-off driver before field count</span>
-</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="case-section" id="s04" aria-labelledby="s04-title">
-      <div class="case-row case-row--split">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-diagram">
-<img alt="Fluxogram of the NorthPay onboarding flow" decoding="async" height="574" loading="lazy" src="/assets/img/project/NorthPay/Fluxogram.webp" width="1900"/>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">04</span>
-            
-            <h2 class="h-lg case-row__title" id="s04-title" data-reveal="words">IA &amp; user flow</h2>
-          </header>
-          <div class="prose"><p>The onboarding experience is split into a public entry point and a gated product flow. Within the product, a simple sequence guides users from account type to verification, with clear branching for personal vs. business accounts.</p>
-<blockquote class="cs-pullquote">Account type is the first decision. Every field that follows depends on it. Making it the first screen removes the worst failure mode: mid-form type switching that wipes all entered data.</blockquote>
-<p>The flow is three phases: account selection, identity collection, and verification. All three are visible in the stepper from step one, so no phase is a surprise when it opens.</p></div>
-        </div>
-      </div>
-      <div class="case-row case-row--media case-row--media-1">
-        <div class="case-row__cell" data-reveal="fade"><div class="cs-diagram">
-<img alt="Information architecture diagram" decoding="async" height="621" loading="lazy" src="/assets/img/project/NorthPay/Information-architecture.webp" width="1906"/>
-</div></div>
-      </div>
-    </section>
-
-    <section class="case-section" id="s05" aria-labelledby="s05-title">
-      <div class="case-row case-row--split case-row--flip">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-diagram">
-<img alt="NorthPay wireframes showing onboarding step structure" decoding="async" height="1500" loading="lazy" src="/assets/img/project/NorthPay/Wireframes.webp" width="1500"/>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">05</span>
-            
-            <h2 class="h-lg case-row__title" id="s05-title" data-reveal="words">Wireframes &amp; UX decisions</h2>
-          </header>
-          <div class="prose"><p>Low-fidelity wireframes locked in structure and sequence before visual decisions were made. A persistent stepper shows users where they are and what remains. Grouped fields keep each screen focused on a single step.</p>
-<div class="cs-rejected">
-<span class="cs-rejected__label">Rejected approach</span>
-              An earlier layout placed the account type toggle on the same screen as the first form fields. Users changed their account type mid-form and lost everything they'd entered. Separating the decision from the data collection isn't a UX preference. It's a data-loss prevention pattern.
+    <!-- Nav Bar -->
+    <div class="dsn-nav-bar">
+        <div class="site-header">
+            <div class="extend-container">
+                <div class="inner-header">
+                    <div class="main-logo">
+                        <a href="/">
+                            <img class="dark-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                            <img class="light-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                        </a>
+                    </div>
+                </div>
+                <nav class=" accent-menu main-navigation" aria-label="Main menu"><ul><li><a href="/">Home</a></li><li><a href="/work/">Work</a></li><li><a href="/blog/">Insights</a></li><li><a href="/about/">About</a></li><li><a href="/resume/">Curriculum</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
             </div>
-<p>One question per screen is slower to build and faster to complete. The perceived complexity drops when each screen has one job and makes it obvious.</p></div>
         </div>
-      </div>
-    </section>
+        <div class="header-top header-top-hamburger">
+            <div class="header-container">
+                <div class="logo main-logo">
+                    <a href="/">
+                        <img class="dark-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                        <img class="light-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                    </a>
+                </div>
 
-    <section class="case-section" id="s06" aria-labelledby="s06-title">
-      <div class="case-row case-row--split">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-edge-cases">
-<span class="cs-edge-cases__label">Interaction decisions</span>
-<div class="cs-edge-row">
-<span class="cs-edge-condition">Inline validation</span>
-<span class="cs-edge-arrow">→</span>
-<span class="cs-edge-response">Errors shown field-by-field as the user exits each input, not on submit. Corrects early, prevents end-of-form frustration.</span>
-</div>
-<div class="cs-edge-row">
-<span class="cs-edge-condition">Stepper visibility</span>
-<span class="cs-edge-arrow">→</span>
-<span class="cs-edge-response">Step count visible from screen 1. Users know exactly how much is left before committing to the next step.</span>
-</div>
-<div class="cs-edge-row">
-<span class="cs-edge-condition">Verification pending</span>
-<span class="cs-edge-arrow">→</span>
-<span class="cs-edge-response">Status screen with estimated timeline and what to expect next. The wait is expected, not an error state.</span>
-</div>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">06</span>
-            
-            <h2 class="h-lg case-row__title" id="s06-title" data-reveal="words">Key interactions &amp; states</h2>
-          </header>
-          <div class="prose"><p>The interactions that matter in this flow are the ones that handle failure: inline field errors, a pending verification state, and a stepper that never hides the remaining steps.</p></div>
+                <div class="menu-icon" data-dsn="parallax" data-dsn-move="5" role="button" tabindex="0" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                    <div class="icon-m">
+                        <i class="menu-icon-close fas fa-times"></i>
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
+
+                    <div class="text-menu">
+                        <div class="text-button">Menu</div>
+                        <div class="text-open">Open</div>
+                        <div class="text-close">Close</div>
+                    </div>
+                </div>
+
+                <div class="nav" id="site-nav">
+                    <div class="inner">
+                        <div class="nav__content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="inner-content">
+                        <address class="v-middle"><span>Curitiba, Brazil · Remote</span><span><a href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></span><span><a href="/pt-br/work/northpay/" hreflang="pt-BR">Ler em português</a></span></address>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="case-row case-row--media case-row--media-1">
-        <div class="case-row__cell" data-reveal="fade"><div class="cs-diagram-grid">
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="Key interactions and states" decoding="async" height="1500" loading="lazy" src="/assets/img/project/NorthPay/interactions.webp" width="1500"/>
-</div>
-<figcaption class="cs-caption">Interactions · inline error + stepper</figcaption>
-</figure>
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="Choose your account screen" decoding="async" height="1138" loading="lazy" src="/assets/img/project/NorthPay/Choose-your-account-mockup.webp" width="1920"/>
-</div>
-<figcaption class="cs-caption">Account type · first decision, no form</figcaption>
-</figure>
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="Personal details screen" decoding="async" height="1407" loading="lazy" src="/assets/img/project/NorthPay/Personal-details-mockup.webp" width="1920"/>
-</div>
-<figcaption class="cs-caption">Personal details · grouped fields</figcaption>
-</figure>
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="Personal details form with inline validation errors" decoding="async" height="1151" loading="lazy" src="/assets/img/project/NorthPay/Personal-details-feedbacks.webp" width="1440"/>
-</div>
-<figcaption class="cs-caption">Inline validation · field-level errors on exit</figcaption>
-</figure>
-</div></div>
-      </div>
-    </section>
-
-    <section class="case-section" id="s07" aria-labelledby="s07-title">
-      <div class="case-row case-row--split case-row--flip">
-        <div class="case-row__media" data-reveal="fade"><div class="case-row__figure"><div class="cs-benchmark-grid">
-<div class="cs-benchmark-card">
-<p class="cs-benchmark-num">19<span class="cs-accent">%</span></p>
-<p class="cs-benchmark-desc">Abandonment rate from forced account creation. Removed from both flows: guest-first entry, account gates moved past first value.</p>
-<p class="cs-benchmark-source">Baymard, 2024</p>
-</div>
-<div class="cs-benchmark-card">
-<p class="cs-benchmark-num">80<span class="cs-accent">%</span></p>
-<p class="cs-benchmark-desc">Mobile checkout abandonment addressed by single-question screens and visible 6-step progress</p>
-<p class="cs-benchmark-source">Baymard, 2024</p>
-</div>
-<div class="cs-benchmark-card">
-<p class="cs-benchmark-num">1</p>
-<p class="cs-benchmark-desc">Decision per screen. Account type committed before any data collection begins.</p>
-<p class="cs-benchmark-source">Interaction pattern</p>
-</div>
-<div class="cs-benchmark-card">
-<p class="cs-benchmark-num">0</p>
-<p class="cs-benchmark-desc">Mid-form type switching. Account choice is locked before the form opens, preventing data loss.</p>
-<p class="cs-benchmark-source">UX decision</p>
-</div>
-</div></div></div>
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">07</span>
-            
-            <h2 class="h-lg case-row__title" id="s07-title" data-reveal="words">Final screens</h2>
-          </header>
-          <div class="prose"><p>Verification confirms the account. Users land on a setup checklist that replaces an empty dashboard with a clear next action, without front-loading every option.</p></div>
-        </div>
-      </div>
-      <div class="case-row case-row--media case-row--media-1">
-        <div class="case-row__cell" data-reveal="fade"><div class="cs-diagram-grid">
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="Business details screen" decoding="async" height="1741" loading="lazy" src="/assets/img/project/NorthPay/Business-details-mockup.webp" width="1920"/>
-</div>
-<figcaption class="cs-caption">Business details · branched form</figcaption>
-</figure>
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="Verify your account screen" decoding="async" height="1783" loading="lazy" src="/assets/img/project/NorthPay/Verify-your-account-mockup.webp" width="1920"/>
-</div>
-<figcaption class="cs-caption">Verification · pending state with timeline</figcaption>
-</figure>
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="NorthPay first dashboard, setup checklist and account status" decoding="async" height="1920" loading="lazy" src="/assets/img/project/NorthPay/Dashboard-mockup.webp" width="1814"/>
-</div>
-<figcaption class="cs-caption">Dashboard · setup checklist, first action</figcaption>
-</figure>
-<figure>
-<div class="cs-diagram cs-diagram--flush aspect-16-10">
-<img alt="NorthPay final UI system" decoding="async" height="1500" loading="lazy" src="/assets/img/project/NorthPay/UI.webp" width="1500"/>
-</div>
-<figcaption class="cs-caption">UI system · final visual language</figcaption>
-</figure>
-</div></div>
-      </div>
-      <div class="case-row case-row--text">
-        <div class="case-row__text">
-          <div class="prose"><div class="cs-trust-pills">
-<span class="cs-trust-pill">Progressive disclosure · one question per screen</span>
-<span class="cs-trust-pill">Persistent stepper · visible from step one</span>
-<span class="cs-trust-pill">Account type first · form fields second</span>
-</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="case-section" id="s08" aria-labelledby="s08-title">
-      <div class="case-row case-row--text">
-        <div class="case-row__text">
-          <header class="case-row__head">
-            <span class="case-row__num" aria-hidden="true">08</span>
-            
-            <h2 class="h-lg case-row__title" id="s08-title" data-reveal="words">Reflections</h2>
-          </header>
-          <div class="prose"><p><strong>I didn't design for multi-session completion.</strong> The persistent stepper works for a single visit. In real fintech, KYC can span days: manual document review, identity verification queues, pending business registration checks. The flow needs a save-and-resume state I didn't address.</p>
-<p><strong>Compliance constraints were simulated.</strong> For a concept, I controlled the field sequence entirely. In a real engagement, AML and KYC regulations would dictate which fields appear together and in what order. I'd want to map the legal requirements before finalizing the one-question-per-screen pattern.</p>
-<p><strong>The rejected approach deserved a better counterargument.</strong> My wireframe of the "account type plus form fields on one screen" was obviously bad by design. An honest validation would build that version well, not as a strawman, and compare usability scores against the one-question approach.</p></div>
-        </div>
-      </div>
-    </section>
-  </div>
-</article>
-
-<section class="section cta" aria-labelledby="northpay-contact-title">
-  <div class="container">
-    <h2 class="h-xl cta__title" id="northpay-contact-title" data-reveal="words">Tell me what’s on your mind</h2>
-    <form class="form form--contact" action="/contact.php" method="post" novalidate data-form="contact" data-cta-label="en_northpay_contact"
-      data-msg-ok="Thanks, your message is on its way." data-msg-error="Something went wrong. Try again in a moment, or email me directly." data-msg-sending="Sending…" data-msg-required="This field is required." data-msg-email="Enter a valid email address, like name@company.com.">
-      <input type="hidden" name="type" value="contact">
-      <div class="hp-field" aria-hidden="true"><label for="northpay-contact-company">Company</label><input id="northpay-contact-company" name="company" tabindex="-1" autocomplete="off"></div>
-
-        <div class="field-wrap">
-          <div class="field">
-            <input class="field__input" id="northpay-contact-name" name="name" type="text" placeholder=" " autocomplete="name" required aria-describedby="northpay-contact-name-error">
-            <label class="field__label" for="northpay-contact-name">Name</label>
-          </div>
-          <span class="field__error" id="northpay-contact-name-error" hidden></span>
-        </div>
-
-        <div class="field-wrap">
-          <div class="field">
-            <input class="field__input" id="northpay-contact-email" name="email" type="email" placeholder=" " autocomplete="email" required aria-describedby="northpay-contact-email-error">
-            <label class="field__label" for="northpay-contact-email">Email</label>
-          </div>
-          <span class="field__error" id="northpay-contact-email-error" hidden></span>
-        </div>
-
-        <div class="field-wrap">
-          <div class="field">
-            <input class="field__input" id="northpay-contact-message" name="message" type="text" placeholder=" " autocomplete="off" required aria-describedby="northpay-contact-message-error">
-            <label class="field__label" for="northpay-contact-message">Message</label>
-          </div>
-          <span class="field__error" id="northpay-contact-message-error" hidden></span>
-        </div>
-      <button class="btn btn--split" type="submit">Send a Hello<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3v18h-4V7H4V3h17Z" fill="currentColor"/><path d="M20.414 6.414 6.414 20.414H3.586v-2.828l14-14 2.828 2.828Z" fill="currentColor"/></svg></button>
-      <p class="form__consent">By sending, you agree to the <a href="/privacy-policy/">Privacy Policy</a>.</p>
-      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
-    </form>
-  </div>
-</section>
-
-  <nav class="next-project" aria-label="Next project">
-    <a class="next-project__link" href="/work/selo-h/" data-cursor="view">
-      <span class="next-project__text">
-        <span class="next-project__title">Selo H</span>
-        <span class="next-project__label">Next project</span>
-      </span>
-      <span class="next-project__media media-parallax" data-parallax><img src="/assets/img/cards/selo-h.webp" srcset="/assets/img/cards/selo-h-900.webp 900w, /assets/img/cards/selo-h.webp 1600w" sizes="(min-width: 48em) 75vw, 100vw" width="1600" height="1200" alt="" loading="lazy" decoding="async"></span>
-    </a>
-  </nav>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div class="site-footer__top">
-      <nav aria-label="Footer">
-        <ul class="footer-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/work/">Work</a></li>
-          <li><a href="/blog/">Insights</a></li>
-          <li><a href="/resume/">Curriculum</a></li>
-        </ul>
-      </nav>
-      <ul class="socials" aria-label="Social profiles">
-        <li><a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.25" fill="currentColor"/></svg></a></li>
-        <li><a href="https://github.com/Dhiegopires" rel="noopener" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.53.1.72-.23.72-.5v-1.85c-2.92.63-3.54-1.24-3.54-1.24-.48-1.22-1.17-1.54-1.17-1.54-.95-.65.08-.64.08-.64 1.05.08 1.6 1.08 1.6 1.08.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.66-1.4-2.33-.27-4.78-1.17-4.78-5.18 0-1.15.41-2.08 1.08-2.82-.1-.27-.47-1.34.1-2.79 0 0 .89-.28 2.9 1.08a10 10 0 0 1 5.27 0c2.01-1.36 2.9-1.08 2.9-1.08.57 1.45.21 2.52.1 2.79.68.74 1.08 1.67 1.08 2.82 0 4.02-2.45 4.9-4.79 5.17.38.32.71.96.71 1.94v2.87c0 .28.19.61.73.5A10.5 10.5 0 0 0 12 1.5Z"/></svg></a></li>
-        <li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M6.2 9.6h2.4V18H6.2zM7.4 5.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM10.4 9.6h2.3v1.15h.03c.32-.6 1.1-1.25 2.27-1.25 2.43 0 2.88 1.6 2.88 3.68V18h-2.4v-4.27c0-1.02-.02-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.26V18h-2.4z"/></svg></a></li>
-      </ul>
     </div>
-    <a class="wordmark" href="/" aria-label="Dhiego Cristofolini, home" data-reveal="mask">
-      <img src="/assets/img/site/wordmark.svg" width="1748" height="201" alt="" loading="lazy">
-    </a>
-    <div class="site-footer__bottom">
-      <p>© 2026 Cristofolini. All rights reserved.</p>
-      <ul class="footer-legal">
-        <li><a href="/privacy-policy/">Privacy Policy</a></li>
-        <li><a href="/terms-of-use/">Terms of Use</a></li>
-      </ul>
+    <!-- End Nav Bar -->
+
+    <main class="main-root" id="main-content" tabindex="-1">
+        <div id="dsn-scrollbar">
+            <header>
+                <div class="headefr-fexid" data-dsn-header="project">
+                    <div class="bg" id="dsn-hero-parallax-img" data-dsn-ajax="img">
+                        <div class="bg-image  cover-bg" data-overlay="2" data-image-src="/assets/img/case/northpay/hero.webp"></div>
+                    </div>
+
+                    <div class="scroll" data-dsn-animate="ajax">
+                        <span class="background"></span>
+                        <span class="triangle"></span>
+                    </div>
+                    <div class="project-title" id="dsn-hero-parallax-title">
+
+                        <div class="title-text-header">
+                            <div class="cat">
+                                <span>Product concept · Fintech</span>
+                            </div>
+                            <h1 class="title-text-header-inner"><span>NorthPay</span></h1>
+                        </div>
+                        <div class="sub-text-header" data-dsn-animate="ajax"><h5>Onboarding as a product surface.</h5></div>
+                    </div>
+
+                    
+                </div>
+            </header>
+
+            <div class="wrapper">
+                <div class="root-project">
+
+                    <div class="container intro-project section-margin">
+                        <div class="intro-text text-center">
+                            <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1" data-dsn-duration="170%" data-dsn-move="0%">Onboard</div>
+                            <div class="inner">
+                                <h2 data-dsn-animate="text">Every field sits between the user and the product.</h2>
+                                <p data-dsn-animate="up">Financial products have to collect sensitive data before anyone sees value, which makes onboarding the most fragile part of the flow. Every field is there because regulation requires it. The order those fields appear in is a design decision.</p>
+
+                                
+    <dl class="case-meta" data-dsn-animate="up">
+      <div><dt>Role</dt><dd>Product Designer</dd></div><div><dt>Type</dt><dd>Concept project</dd></div><div><dt>Scope</dt><dd>Account setup, KYC, first use</dd></div><div><dt>Duration</dt><dd>8 weeks</dd></div>
+    </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+
+                    
+
+                <section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">01</span>
+      <p class="cs-eyebrow">Problem</p>
+      <h2 class="cs-title" data-dsn-animate="up">Three parties, one fragile sequence.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Users ask why it takes so long. The business asks where people drop. Compliance needs every field. The fix is not fewer fields, it is how they are presented.</p></div>
+      <div class="container"><ul class="cs-stats " data-dsn-animate="up"><li><strong>19%</strong><span>abandon when forced to create an account before seeing value (Baymard, 2024)</span></li><li><strong>3</strong><span>phases: account type, identity, verification</span></li><li><strong>6</strong><span>steps, all visible from the first screen</span></li></ul></div>
+      
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">02</span>
+      <p class="cs-eyebrow">Flow &amp; IA</p>
+      <h2 class="cs-title" data-dsn-animate="up">Account type first. Every field after depends on it.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Choosing the account type before any form opens removes the worst failure: switching type mid-form and losing everything already typed.</p></div>
+      
+      
+      
+      
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="1900" height="574" src="/assets/img/case/northpay/flow.webp" srcset="/assets/img/case/northpay/flow-1000.webp 1000w, /assets/img/case/northpay/flow.webp 2000w" sizes="100vw" alt="Onboarding flowchart with personal and business branches" loading="lazy" decoding="async"></div>
+      <figcaption class="container">User flow: one entry, two branches, one verification step.</figcaption>
+    </figure>
+      
+      
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="1906" height="621" src="/assets/img/case/northpay/ia.webp" srcset="/assets/img/case/northpay/ia-1000.webp 1000w, /assets/img/case/northpay/ia.webp 2000w" sizes="100vw" alt="Information architecture of the onboarding and dashboard" loading="lazy" decoding="async"></div>
+      <figcaption class="container">Information architecture: public entry, gated product flow.</figcaption>
+    </figure>
+    </section>
+<section class="cs cs--split">
+        <div class="container cs-split">
+          <div class="cs-split__copy">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">03</span>
+      <p class="cs-eyebrow">Wireframes</p>
+      <h2 class="cs-title" data-dsn-animate="up">One job per screen.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Low fidelity locked structure and order first. A rejected version put the account toggle next to the first fields; people switched type and lost their data. Separating the decision from the data is a data-loss prevention pattern, not a preference.</p></div>
+          <div class="cs-split__media"><figure class="cs-fig"><img width="1500" height="1500" src="/assets/img/case/northpay/wireframes.webp" srcset="/assets/img/case/northpay/wireframes-1000.webp 1000w, /assets/img/case/northpay/wireframes.webp 2000w" sizes="(min-width: 992px) 50vw, 100vw" alt="Low-fidelity wireframes of the onboarding steps" loading="lazy" decoding="async"></figure></div>
+        </div>
+        
+        
+      </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">04</span>
+      <p class="cs-eyebrow">Key screens</p>
+      <h2 class="cs-title" data-dsn-animate="up">A decision, then a form.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">The first screen asks one thing. Personal details come grouped, with the stepper always showing what is left.</p></div>
+      
+      
+      
+      
+      <div class="cs-pair cs-pair--even container"><figure class="cs-fig"><img width="1920" height="1138" src="/assets/img/case/northpay/choose.webp" srcset="/assets/img/case/northpay/choose-1000.webp 1000w, /assets/img/case/northpay/choose.webp 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="Choose your account screen with business and freelancer options" loading="lazy" decoding="async"></figure><figure class="cs-fig"><img width="1920" height="1407" src="/assets/img/case/northpay/personal.webp" srcset="/assets/img/case/northpay/personal-1000.webp 1000w, /assets/img/case/northpay/personal.webp 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="Personal details form with the persistent stepper" loading="lazy" decoding="async"></figure></div>
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">05</span>
+      <p class="cs-eyebrow">States</p>
+      <h2 class="cs-title" data-dsn-animate="up">Designed for the moments that fail.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Errors appear field by field as people leave each input, not on submit. Verification has a pending state with a timeline, so waiting reads as expected, not broken.</p></div>
+      
+      
+      
+      
+      <div class="cs-pair cs-pair--even container"><figure class="cs-fig"><img width="1440" height="1151" src="/assets/img/case/northpay/errors.webp" srcset="/assets/img/case/northpay/errors-1000.webp 1000w, /assets/img/case/northpay/errors.webp 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="Personal details form showing inline validation errors" loading="lazy" decoding="async"></figure><figure class="cs-fig"><img width="1920" height="1783" src="/assets/img/case/northpay/verify.webp" srcset="/assets/img/case/northpay/verify-1000.webp 1000w, /assets/img/case/northpay/verify.webp 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="Verify your account screen with pending document review" loading="lazy" decoding="async"></figure></div>
+      
+    </section>
+<section class="cs cs--split cs--reverse">
+        <div class="container cs-split">
+          <div class="cs-split__copy">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">06</span>
+      <p class="cs-eyebrow">First use</p>
+      <h2 class="cs-title" data-dsn-animate="up">A checklist instead of an empty dashboard.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">After verification, people land on a setup checklist with one clear next action instead of every option at once.</p></div>
+          <div class="cs-split__media"><figure class="cs-fig"><img width="1814" height="1920" src="/assets/img/case/northpay/dashboard.webp" srcset="/assets/img/case/northpay/dashboard-1000.webp 1000w, /assets/img/case/northpay/dashboard.webp 2000w" sizes="(min-width: 992px) 50vw, 100vw" alt="Dashboard with a setup checklist and progress" loading="lazy" decoding="async"></figure></div>
+        </div>
+        
+        
+      </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">07</span>
+      <p class="cs-eyebrow">Reflections</p>
+      <h2 class="cs-title" data-dsn-animate="up">What a real engagement would change.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">KYC can span days, so the flow needs save and resume. Compliance was simulated here; with real AML rules I would map legal requirements before locking one question per screen. And the rejected layout deserved a fair build to test against, not a strawman.</p></div>
+      
+      
+      
+      
+      
+      
+    </section>
+<section class="cs cs--results">
+      <div class="container">
+        <div class="cs-head">
+    <div class="cs-head__main">
+      
+      <p class="cs-eyebrow">Outcome</p>
+      <h2 class="cs-title" data-dsn-animate="up">Designed against the known drop-off points.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">A concept, not a shipped product: no live metrics. What it does measure is structure, each decision mapped to a documented cause of abandonment.</p></div>
+        <ul class="cs-stats cs-stats--results" data-dsn-animate="up"><li><strong>0</strong><span>account gates before first value</span></li><li><strong>1</strong><span>question per screen</span></li><li><strong>6</strong><span>steps visible from screen one</span></li></ul>
+        <p class="cs-source">Benchmarks: Baymard Institute, 2024.</p>
+        
+      </div>
+    </section></div>
+
+                <div class="next-project" data-dsn-footer="project">
+                    <div id="dsn-next-parallax-img" class="bg">
+                        <div class="bg-image cover-bg" data-overlay="4" data-image-src="/assets/img/cards/medme.webp"></div>
+                    </div>
+
+                    <div id="dsn-next-parallax-title" class="project-title">
+                        <a href="/work/medme/" class="">
+                            <div class="title-text-header">
+                                <div class="title-text-header-inner">
+                                    <span>MedMe</span>
+                                </div>
+                            </div>
+                            <div class="sub-text-header">
+                                <h5>Next project</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                <div class="container">
+                    <div class="footer-links p-relative">
+                        <div class="row">
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block">
+                                    <div class="footer-logo">
+                                        <a href="/"><img src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32"></a>
+                                    </div>
+
+                                    <div class="footer-social">
+
+                                        <ul><li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li><li><a href="https://behance.net/dhiegopires" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a></li><li><a href="https://www.instagram.com/dhiegopires/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="https://github.com/Dhiegopires" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li></ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-menu">
+                                    <h4 class="footer-title">Navigation</h4>
+                                    <nav>
+                                        <ul><li><a href="/work/">Work</a></li><li><a href="/blog/">Insights</a></li><li><a href="/about/">About</a></li><li><a href="/resume/">Curriculum</a></li><li><a href="/contact/">Contact</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-contact">
+                                    <h4 class="footer-title">Contact</h4>
+                                    
+                                    
+                                    
+                                <p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="dhiegopiresc@gmail.com" href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></p><p><strong>Lang</strong> <span>:</span> <a href="/pt-br/work/northpay/">Português</a></p></div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="col-address">
+                                    <h4 class="footer-title">Based in</h4>
+
+                                    <p>Curitiba, Brazil<br>Remote, any time zone</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 2026 Cristofolini. All rights reserved.</p>
+                            <div class="copright-text over-hidden"><a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- Wait Loader -->
+    <div class="wait-loader">
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <div class="loader-layer"></div>
+            </div>
+        </div>
     </div>
-  </div>
-</footer>
-<div class="cursor" aria-hidden="true" data-cursor-el><span class="cursor__label">View</span></div>
-<button class="to-top" type="button" aria-label="Back to top" data-to-top>
-  <svg class="to-top__progress" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="to-top__ring" cx="32" cy="32" r="30" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" data-to-top-ring/></svg>
-  <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-</body>
-</html>
+    <!-- // Wait Loader -->
+
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+    <!-- End cursor -->
+
+    <!-- Optional JavaScript -->
+    <script src="/assets/tpl/js/jquery-3.1.1.min.js?v=042dd055"></script>
+    <script src="/assets/tpl/js/plugins.js?v=790b3aee"></script>
+    <script src="/assets/tpl/js/dsn-grid.js?v=0b65055c"></script>
+    <script src="/assets/tpl/js/custom.min.js?v=fe1375b4"></script><script src="/assets/tpl/js/addons.min.js?v=8865b96d"></script>
+
+
+</body></html>

@@ -1,277 +1,364 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Insights | Dhiego Cristofolini, Senior Product Designer</title>
-  <meta name="description" content="Articles on accessibility, design systems and design tokens, written from real product work.">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="Dhiego Cristofolini">
-  <meta name="theme-color" content="#040404">
-  <link rel="canonical" href="https://cristofolini.site/blog/">
-  <link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/">
-  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/">
-  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Insights | Dhiego Cristofolini, Senior Product Designer">
-  <meta property="og:description" content="Articles on accessibility, design systems and design tokens, written from real product work.">
-  <meta property="og:url" content="https://cristofolini.site/blog/">
-  <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
-  <meta property="og:image:alt" content="Insights | Dhiego Cristofolini, Senior Product Designer">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Insights | Dhiego Cristofolini, Senior Product Designer">
-  <meta name="twitter:description" content="Articles on accessibility, design systems and design tokens, written from real product work.">
-  <meta name="twitter:image" content="https://cristofolini.site/assets/img/og-default.jpg">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.min.css?v=75d11cbc85">
-  <script>
-    document.documentElement.classList.add('js');
-    try {
-      if (!sessionStorage.getItem('seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-preload');
-    } catch (e) {}
-    setTimeout(function () { if (!window.__siteReady) document.documentElement.classList.remove('js', 'js-preload'); }, 3000);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script src="/assets/vendor/gsap.min.js" defer></script>
-  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="/assets/js/main.min.js?v=75d11cbc85" defer></script>
-</head>
-<body data-lang="en" data-privacy="/privacy-policy/">
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Articles on design and accessibility | Dhiego Cristofolini</title>
+    <meta name="description" content="Articles on accessibility, design systems and product decisions, with interactive demos and the reasoning behind each call.">
+    <meta name="author" content="Dhiego Cristofolini">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://cristofolini.site/blog/">
+    <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/"><link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Articles on design and accessibility | Dhiego Cristofolini">
+    <meta property="og:description" content="Articles on accessibility, design systems and product decisions, with interactive demos and the reasoning behind each call.">
+    <meta property="og:url" content="https://cristofolini.site/blog/">
+    <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+    <meta property="og:site_name" content="Dhiego Cristofolini">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
 
-<a href="#main-content" class="skip-link">Skip to content</a>
-<div class="loader" aria-hidden="true">
-  <div class="loader__panel"></div>
-  <div class="loader__panel loader__panel--front">
-    <span class="loader__count" data-loader-count>0</span>
-    <div class="loader__bar"><span data-loader-bar></span></div>
-  </div>
-</div>
-<header class="site-header" data-header>
-  <div class="site-header__inner">
-    <a class="site-header__logo" href="/" aria-label="Dhiego Cristofolini, home" data-cta="en_nav_logo">
-      <img src="/assets/img/site/logo.svg" width="51" height="32" alt="">
-    </a>
-    <div class="site-header__actions">
-      <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English" title="Language" data-lang-toggle>
-        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13.33"/><path d="M10.67 16A21.33 21.33 0 0 1 16 2.67 21.33 21.33 0 0 1 21.33 16 21.33 21.33 0 0 1 16 29.33 21.33 21.33 0 0 1 10.67 16ZM2.67 16h26.66"/></g></svg>
-      </button>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-        <span class="menu-toggle__icons" aria-hidden="true"><svg class="menu-toggle__icon menu-toggle__icon--open" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 6.67h21.34M5.33 16h21.34M5.33 25.33h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--minus" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 16h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--close" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 28 27.63 5.37M5 5l22.63 22.63" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></span>
-        <span class="menu-toggle__label"><span class="menu-toggle__text menu-toggle__text--menu">Menu</span><span class="menu-toggle__text menu-toggle__text--open" aria-hidden="true">Open</span><span class="menu-toggle__text menu-toggle__text--close" aria-hidden="true">Close</span></span>
-      </button>
+    <!--  Title -->
+    
+
+    <!-- Font Google -->
+    
+    
+
+    
+    
+
+    <!-- custom styles (optional) -->
+    
+    <link href="/assets/tpl/css/site.min.css?v=5006926d" rel="stylesheet">
+
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','G-M378PSJ10R');</script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script></head>
+
+<body class="hamburger-menu dsn-effect-scroll" data-dsn-mousemove="true" data-lang="en"><a href="#main-content" class="skip-link">Skip to content</a>
+
+    <div class="preloader">
+        <div class="preloader-after"></div>
+        <div class="preloader-before"></div>
+        <div class="preloader-block">
+            <div class="title">Dhiego Cristofolini</div>
+            <div class="percent">0</div>
+            <div class="loading">loading...</div>
+        </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
     </div>
-  </div>
-</header>
-<div class="lang-menu" id="lang-menu" hidden data-lang-menu>
-  <ul class="lang-menu__list">
-    <li><a class="lang-menu__item" href="/blog/" hreflang="en" lang="en" aria-current="true"><span class="lang-menu__code" aria-hidden="true">EN</span>English</a></li>
-    <li><a class="lang-menu__item" href="/pt-br/blog/" hreflang="pt-BR" lang="pt-BR"><span class="lang-menu__code" aria-hidden="true">PT</span>Português (Brasil)</a></li>
-  </ul>
-</div>
-<div class="menu" id="site-menu" data-menu>
-  <div class="menu__panel menu__panel--back"></div>
-  <div class="menu__panel"></div>
-  <nav class="menu__inner" aria-label="Main menu">
-    <span></span>
-    <ul class="menu__list">
-      <li><a class="menu__link" href="/"><span class="menu__num" aria-hidden="true">01</span><span class="menu__word">Home</span></a></li>
-      <li><a class="menu__link" href="/work/"><span class="menu__num" aria-hidden="true">02</span><span class="menu__word">Work</span></a></li>
-      <li><a class="menu__link" href="/blog/" aria-current="page"><span class="menu__num" aria-hidden="true">03</span><span class="menu__word">Insights</span></a></li>
-      <li><a class="menu__link" href="/about/"><span class="menu__num" aria-hidden="true">04</span><span class="menu__word">About</span></a></li>
-      <li><a class="menu__link" href="/resume/"><span class="menu__num" aria-hidden="true">05</span><span class="menu__word">Curriculum</span></a></li>
-    </ul>
-    <div class="menu__foot">
-      <div class="menu__row">
-        <span>Get in touch:</span>
-        <a href="mailto:dhiegopiresc@gmail.com" data-cta="en_menu_email">dhiegopiresc@gmail.com</a>
-      </div>
-      <div class="menu__row">
-        <a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank">Instagram</a>
-        <a href="https://github.com/Dhiegopires" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank">LinkedIn</a>
-        <a href="https://behance.net/dhiegopires" rel="noopener" target="_blank">Behance</a>
-      </div>
-      <div class="menu__row">
-        <span>Language:</span>
-        <a href="/blog/" hreflang="en" lang="en" aria-current="true">English</a>
-        <a href="/pt-br/blog/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-      </div>
+
+    <!-- Nav Bar -->
+    <div class="dsn-nav-bar">
+        <div class="site-header">
+            <div class="extend-container">
+                <div class="inner-header">
+                    <div class="main-logo">
+                        <a href="/">
+                            <img class="dark-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                            <img class="light-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                        </a>
+                    </div>
+                </div>
+                <nav class=" accent-menu main-navigation" aria-label="Main menu"><ul><li><a href="/">Home</a></li><li><a href="/work/">Work</a></li><li class="active"><a href="/blog/">Insights</a></li><li><a href="/about/">About</a></li><li><a href="/resume/">Curriculum</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+            </div>
+        </div>
+        <div class="header-top header-top-hamburger">
+            <div class="header-container">
+                <div class="logo main-logo">
+                    <a href="/">
+                        <img class="dark-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                        <img class="light-logo" src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32">
+                    </a>
+                </div>
+
+                <div class="menu-icon" data-dsn="parallax" data-dsn-move="5" role="button" tabindex="0" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                    <div class="icon-m">
+                        <i class="menu-icon-close fas fa-times"></i>
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
+
+                    <div class="text-menu">
+                        <div class="text-button">Menu</div>
+                        <div class="text-open">Open</div>
+                        <div class="text-close">Close</div>
+                    </div>
+                </div>
+
+                <div class="nav" id="site-nav">
+                    <div class="inner">
+                        <div class="nav__content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="inner-content">
+                        <address class="v-middle"><span>Curitiba, Brazil · Remote</span><span><a href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></span><span><a href="/pt-br/blog/" hreflang="pt-BR">Ler em português</a></span></address>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
-</div>
-<main id="main-content" tabindex="-1">
+    <!-- End Nav Bar -->
 
-<section class="page-hero" aria-labelledby="blog-title" data-filter-root>
-  <div class="container page-hero__inner">
+    <main class="main-root" id="main-content" tabindex="-1">
+        <div id="dsn-scrollbar">
+            <header>
+                <div class="container header-hero">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="contenet-hero">
+                                <h5>Insights</h5>
+                                <h1>Articles</h1>
+                            <p>Accessibility, design systems and product decisions, with demos you can try.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-  <div class="ghost-title">
-    <span class="ghost-title__word" aria-hidden="true" data-reveal="fade">Insights</span>
-    <h1 class="h-xl ghost-title__text" id="blog-title" data-reveal="words">Just some <span class="accent">insights</span> and<br> stories I want to share</h1>
-  </div>
-
-    <div class="filter-bar">
-      <div class="chips" role="group" aria-label="Filter by category">
-        <button class="chip" type="button" aria-pressed="true" data-filter="all">All</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter="accessibility">Accessibility</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter="design-systems">Design Systems</button>
-      </div>
-      <form class="search" role="search">
-        <label class="sr-only" for="blog-search">Search articles</label>
-        <input class="search__input" id="blog-search" type="search" placeholder="Looking for something specific?" autocomplete="off" data-search>
-        <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21 21-4.34-4.34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-      </form>
-    </div>
-  </div>
-  <div class="container section">
-    <p class="sr-only" aria-live="polite" data-filter-live data-template="{n} articles shown"></p>
-    <ul class="post-index" aria-label="Articles" data-filter-list data-page-size="4" data-page-label="Page {n}">
-      <li class="post-index__item" data-filter-item data-cats="design-systems" data-reveal="up">
-        <a class="post-card" href="/blog/design-system-where-to-stop/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/token-layers-hero.webp" sizes="(min-width: 64em) 45vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Design Systems</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-09-05">Sep 5, 2026</time> · 4 min read</span>
-            <span class="post-card__title">I over-built a design system once. Five token layers, and my product needed four.</span>
-            <span class="post-card__excerpt">The five-layer token architecture I use, why the component layer is usually one layer too many, and the two rules that decide where a design system should stop.</span>
-          </span>
-        </a>
-      </li>
-      <li class="post-index__item" data-filter-item data-cats="design-systems" data-reveal="up">
-        <a class="post-card" href="/blog/design-tokens-vs-hardcoded-values/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/tokens-bead-hero.webp" sizes="(min-width: 64em) 30vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Design Systems</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-08-04">Aug 4, 2026</time> · 9 min read</span>
-            <span class="post-card__title">Design tokens vs. hardcoded values: the audit that actually finds what's leaking through</span>
-            <span class="post-card__excerpt">Where hardcoded hex and pixel values hide in a codebase with a token file, the grep commands that find them, and how to make the audit a permanent gate.</span>
-          </span>
-        </a>
-      </li>
-      <li class="post-index__item" data-filter-item data-cats="accessibility" data-reveal="up">
-        <a class="post-card" href="/blog/keyboard-navigation-testing/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/keyboard-tab-key-hero.webp" sizes="(min-width: 64em) 30vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Accessibility</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-07-28">Jul 28, 2026</time> · 9 min read</span>
-            <span class="post-card__title">Keyboard navigation: how to test your product without touching the mouse</span>
-            <span class="post-card__excerpt">Tab order, focus indicators, focus inside modals, and the skip link, explained with the real WCAG criteria, plus a two-minute test any designer can run.</span>
-          </span>
-        </a>
-      </li>
-      <li class="post-index__item" data-filter-item data-cats="accessibility" data-reveal="up">
-        <a class="post-card" href="/blog/color-blindness/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/colorblind-gel-hero.webp" sizes="(min-width: 64em) 30vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Accessibility</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-07-13">Jul 13, 2026</time> · 8 min read</span>
-            <span class="post-card__title">Designing for color blindness: why red and green are never enough</span>
-            <span class="post-card__excerpt">The real taxonomy of color vision deficiency, why red/green pairs collapse first, the second-channel rule, and how to audit for color-only failures.</span>
-          </span>
-        </a>
-      </li>
-      <li class="post-index__item" data-filter-item data-cats="accessibility" data-reveal="up">
-        <a class="post-card" href="/blog/what-is-aria/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/aria-braille-hero.webp" sizes="(min-width: 64em) 30vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Accessibility</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-07-10">Jul 10, 2026</time> · 8 min read</span>
-            <span class="post-card__title">What is ARIA and why product designers need to understand it</span>
-            <span class="post-card__excerpt">ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.</span>
-          </span>
-        </a>
-      </li>
-      <li class="post-index__item" data-filter-item data-cats="accessibility" data-reveal="up">
-        <a class="post-card" href="/blog/contrast-aa-vs-aaa/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/contrast-paper-hero.webp" sizes="(min-width: 64em) 30vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Accessibility</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-07-04">Jul 4, 2026</time> · 9 min read</span>
-            <span class="post-card__title">AA vs AAA: what these levels actually mean and why your disabled button is failing both</span>
-            <span class="post-card__excerpt">WCAG's three conformance levels, how contrast ratio is calculated, and where AAA is the true minimum, including the disabled button state most get wrong.</span>
-          </span>
-        </a>
-      </li>
-      <li class="post-index__item" data-filter-item data-cats="accessibility" data-reveal="up">
-        <a class="post-card" href="/blog/accessibility-failures-are-design-decisions/" data-cursor="view">
-          <span class="post-card__media"><img src="/assets/img/blog/accessibility-keycap-hero.webp" sizes="(min-width: 64em) 30vw, 92vw" width="1024" height="538" alt="" loading="lazy" decoding="async"><div class="tags"><span class="tag">Accessibility</span></div></span>
-          <span class="post-card__info">
-            <span class="meta"><time datetime="2026-07-01">Jul 1, 2026</time> · 10 min read</span>
-            <span class="post-card__title">Accessibility failures are design decisions. Here is the proof.</span>
-            <span class="post-card__excerpt">94.8% of homepages fail accessibility checks every year. Six error categories cause 96% of failures, all decided before a line of code is written.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
-    <p class="empty-state" data-filter-empty hidden>No articles match this filter or search. Try another topic or clear the search.</p>
-    <nav class="pagination" aria-label="Article pages" data-pagination hidden>
-      <button class="icon-btn" type="button" data-page-prev aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18 9 12l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <ol class="pagination__pages" data-page-list></ol>
-      <button class="icon-btn" type="button" data-page-next aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    </nav>
-  </div>
-</section>
-
-<section class="section cta" aria-labelledby="blog-newsletter-title">
-  <div class="container">
-    <h2 class="h-xl cta__title" id="blog-newsletter-title" data-reveal="words">Be the first to receive new articles</h2>
-    <form class="form form--newsletter" action="/contact.php" method="post" novalidate data-form="newsletter" data-cta-label="en_blog_newsletter"
-      data-msg-ok="You’re on the list. New articles land in your inbox." data-msg-error="Something went wrong. Try again in a moment, or email me directly." data-msg-sending="Sending…" data-msg-required="This field is required." data-msg-email="Enter a valid email address, like name@company.com.">
+            <div class="wrapper">
+                <div class="root-blog">
+                    <div class="container">
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/design-system-where-to-stop/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/token-layers-hero.webp" width="1024" height="538" alt="Five amber glass slabs stacked square, with a sixth lying apart on the same surface" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-09-05">September 5, 2026</time> · 4 min read</span></div>
+            <div class="post-info-category"><span>Design Systems</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/design-system-where-to-stop/">I over-built a design system once. Five token layers, and my product needed four.</a></h2>
+          <p class="post-list-desc">The five-layer token architecture I use, why the component layer is usually one too many, and the two rules that decide where a design system should stop.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/design-system-where-to-stop/" data-dsn="parallax" aria-label="Read: I over-built a design system once. Five token layers, and my product needed four."><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/design-tokens-vs-hardcoded-values/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/tokens-bead-hero.webp" width="1024" height="538" alt="Macro photograph of a single amber glass bead threaded on a wire, with a blurred row of identical beads receding behind it" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-08-04">August 4, 2026</time> · 9 min read</span></div>
+            <div class="post-info-category"><span>Design Systems</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/design-tokens-vs-hardcoded-values/">Design tokens vs. hardcoded values: the audit that actually finds what's leaking through</a></h2>
+          <p class="post-list-desc">Where hardcoded hex and pixel values hide in a codebase with a token file, the grep commands that find them, and how to make the audit a permanent gate.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/design-tokens-vs-hardcoded-values/" data-dsn="parallax" aria-label="Read: Design tokens vs. hardcoded values: the audit that actually finds what's leaking through"><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/keyboard-navigation-testing/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/keyboard-tab-key-hero.webp" width="1024" height="538" alt="Macro photograph of a keyboard's Tab key lit in warm amber, isolated against the dark surrounding keys" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-07-28">July 28, 2026</time> · 9 min read</span></div>
+            <div class="post-info-category"><span>Accessibility</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/keyboard-navigation-testing/">Keyboard navigation: how to test your product without touching the mouse</a></h2>
+          <p class="post-list-desc">Tab order, focus indicators, focus inside modals, and the skip link, explained with the real WCAG criteria, plus a two-minute test any designer can run.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/keyboard-navigation-testing/" data-dsn="parallax" aria-label="Read: Keyboard navigation: how to test your product without touching the mouse"><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/color-blindness/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/colorblind-gel-hero.webp" width="1456" height="816" alt="Macro photograph of two sheets of red and green colored gel film curling over each other" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-07-13">July 13, 2026</time> · 8 min read</span></div>
+            <div class="post-info-category"><span>Accessibility</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/color-blindness/">Designing for color blindness: why red and green are never enough</a></h2>
+          <p class="post-list-desc">The real taxonomy of color vision deficiency, why red/green pairs collapse first, the second-channel rule, and how to audit for color-only failures.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/color-blindness/" data-dsn="parallax" aria-label="Read: Designing for color blindness: why red and green are never enough"><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/what-is-aria/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/aria-braille-hero.webp" width="1280" height="672" alt="Macro photograph of raised braille-like dots embossed on a dark surface, each catching a warm amber highlight" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-07-10">July 10, 2026</time> · 8 min read</span></div>
+            <div class="post-info-category"><span>Accessibility</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/what-is-aria/">What is ARIA and why product designers need to understand it</a></h2>
+          <p class="post-list-desc">ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/what-is-aria/" data-dsn="parallax" aria-label="Read: What is ARIA and why product designers need to understand it"><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/contrast-aa-vs-aaa/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/contrast-paper-hero.webp" width="1024" height="538" alt="Macro photograph of a curved sheet of paper transitioning from pale warm gray to near-black along a diagonal light gradient" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-07-04">July 4, 2026</time> · 9 min read</span></div>
+            <div class="post-info-category"><span>Accessibility</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/contrast-aa-vs-aaa/">AA vs AAA: what these levels actually mean and why your disabled button is failing both</a></h2>
+          <p class="post-list-desc">WCAG's three conformance levels, how contrast ratio is calculated, and where AAA is the true minimum, including the disabled button state most get wrong.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/contrast-aa-vs-aaa/" data-dsn="parallax" aria-label="Read: AA vs AAA: what these levels actually mean and why your disabled button is failing both"><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="post-list-item">
+        <figure>
+          <a class="image-zoom" href="/blog/accessibility-failures-are-design-decisions/" tabindex="-1" aria-hidden="true" data-dsn-animate="up">
+            <img src="/assets/img/blog/accessibility-keycap-hero.webp" width="1200" height="630" alt="Macro photograph of a single dark keycap casting a long shadow across a concrete surface" loading="lazy" decoding="async">
+          </a>
+        </figure>
+        <div class="post-list-item-content">
+          <div class="post-info-top">
+            <div class="post-info-date"><span><time datetime="2026-07-01">July 1, 2026</time> · 10 min read</span></div>
+            <div class="post-info-category"><span>Accessibility</span></div>
+          </div>
+          <h2 class="post-list-title"><a href="/blog/accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a></h2>
+          <p class="post-list-desc">94.8% of homepages fail accessibility checks every year. Six error categories cause 96% of failures, all decided before a line of code is written.</p>
+          <div class="link-custom" data-dsn-animate="up">
+            <a class="image-zoom" href="/blog/accessibility-failures-are-design-decisions/" data-dsn="parallax" aria-label="Read: Accessibility failures are design decisions. Here is the proof."><span>Read article</span></a>
+          </div>
+        </div>
+      </article>
+  <section class="newsletter" aria-labelledby="nl-title">
+    <h2 id="nl-title" class="newsletter__title">Get the next article</h2>
+    <p class="newsletter__text">One email when a new article is out. No spam, leave anytime.</p>
+    <form class="form newsletter__form" method="post" action="/contact.php" data-site-form="" novalidate="" data-sending="Sending…" data-ok="Done. You’ll get the next article by email." data-fail="Couldn’t do it right now. Email dhiegopiresc@gmail.com." data-err-email="Please enter a valid email.">
       <input type="hidden" name="type" value="newsletter">
       <input type="hidden" name="lang" value="en">
-      <div class="hp-field" aria-hidden="true"><label for="blog-newsletter-company">Company</label><input id="blog-newsletter-company" name="company" tabindex="-1" autocomplete="off"></div>
-
-        <div class="field-wrap">
-          <div class="field">
-            <input class="field__input" id="blog-newsletter-email" name="email" type="email" placeholder=" " autocomplete="email" required aria-describedby="blog-newsletter-email-error">
-            <label class="field__label" for="blog-newsletter-email">Email</label>
-          </div>
-          <span class="field__error" id="blog-newsletter-email-error" hidden></span>
+      <div class="hp-field" aria-hidden="true"><label for="nl_company">Company</label><input id="nl_company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
+      <div class="newsletter__row">
+        <div class="form-group">
+          <label for="nl_email">Email</label>
+          <input id="nl_email" type="email" name="email" autocomplete="email" required="" placeholder="you@company.com" aria-describedby="nl_email_err">
+          <div class="help-block with-errors" id="nl_email_err"></div>
         </div>
-      <button class="btn btn--split" type="submit">Receive Newsletter<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3v18h-4V7H4V3h17Z" fill="currentColor"/><path d="M20.414 6.414 6.414 20.414H3.586v-2.828l14-14 2.828 2.828Z" fill="currentColor"/></svg></button>
-      <p class="form__consent">One email per new article. Unsubscribe anytime. See the <a href="/privacy-policy/">Privacy Policy</a>.</p>
-      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+        <button type="submit">Subscribe</button>
+      </div>
+      <p class="newsletter__legal">By subscribing you agree to the <a href="/privacy-policy/">Privacy Policy</a>.</p>
+      <div class="messages" role="status" aria-live="polite"></div>
     </form>
-  </div>
-</section>
-</main>
+  </section></div>
+                </div>
 
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div class="site-footer__top">
-      <nav aria-label="Footer">
-        <ul class="footer-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/work/">Work</a></li>
-          <li><a href="/blog/">Insights</a></li>
-          <li><a href="/resume/">Curriculum</a></li>
-        </ul>
-      </nav>
-      <ul class="socials" aria-label="Social profiles">
-        <li><a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.25" fill="currentColor"/></svg></a></li>
-        <li><a href="https://github.com/Dhiegopires" rel="noopener" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.53.1.72-.23.72-.5v-1.85c-2.92.63-3.54-1.24-3.54-1.24-.48-1.22-1.17-1.54-1.17-1.54-.95-.65.08-.64.08-.64 1.05.08 1.6 1.08 1.6 1.08.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.66-1.4-2.33-.27-4.78-1.17-4.78-5.18 0-1.15.41-2.08 1.08-2.82-.1-.27-.47-1.34.1-2.79 0 0 .89-.28 2.9 1.08a10 10 0 0 1 5.27 0c2.01-1.36 2.9-1.08 2.9-1.08.57 1.45.21 2.52.1 2.79.68.74 1.08 1.67 1.08 2.82 0 4.02-2.45 4.9-4.79 5.17.38.32.71.96.71 1.94v2.87c0 .28.19.61.73.5A10.5 10.5 0 0 0 12 1.5Z"/></svg></a></li>
-        <li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M6.2 9.6h2.4V18H6.2zM7.4 5.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM10.4 9.6h2.3v1.15h.03c.32-.6 1.1-1.25 2.27-1.25 2.43 0 2.88 1.6 2.88 3.68V18h-2.4v-4.27c0-1.02-.02-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.26V18h-2.4z"/></svg></a></li>
-      </ul>
+                <footer class="footer">
+                <div class="container">
+                    <div class="footer-links p-relative">
+                        <div class="row">
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block">
+                                    <div class="footer-logo">
+                                        <a href="/"><img src="/assets/img/site/logo.svg" alt="Dhiego Cristofolini, home" width="51" height="32"></a>
+                                    </div>
+
+                                    <div class="footer-social">
+
+                                        <ul><li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li><li><a href="https://behance.net/dhiegopires" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a></li><li><a href="https://www.instagram.com/dhiegopires/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="https://github.com/Dhiegopires" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li></ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-menu">
+                                    <h4 class="footer-title">Navigation</h4>
+                                    <nav>
+                                        <ul><li><a href="/work/">Work</a></li><li><a href="/blog/">Insights</a></li><li><a href="/about/">About</a></li><li><a href="/resume/">Curriculum</a></li><li><a href="/contact/">Contact</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-contact">
+                                    <h4 class="footer-title">Contact</h4>
+                                    
+                                    
+                                    
+                                <p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="dhiegopiresc@gmail.com" href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></p><p><strong>Lang</strong> <span>:</span> <a href="/pt-br/blog/">Português</a></p></div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="col-address">
+                                    <h4 class="footer-title">Based in</h4>
+
+                                    <p>Curitiba, Brazil<br>Remote, any time zone</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 2026 Cristofolini. All rights reserved.</p>
+                            <div class="copright-text over-hidden"><a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-of-use/">Terms of Use</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
     </div>
-    <a class="wordmark" href="/" aria-label="Dhiego Cristofolini, home" data-reveal="mask">
-      <img src="/assets/img/site/wordmark.svg" width="1748" height="201" alt="" loading="lazy">
-    </a>
-    <div class="site-footer__bottom">
-      <p>© 2026 Cristofolini. All rights reserved.</p>
-      <ul class="footer-legal">
-        <li><a href="/privacy-policy/">Privacy Policy</a></li>
-        <li><a href="/terms-of-use/">Terms of Use</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-<div class="cursor" aria-hidden="true" data-cursor-el><span class="cursor__label">View</span></div>
-<button class="to-top" type="button" aria-label="Back to top" data-to-top>
-  <svg class="to-top__progress" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="to-top__ring" cx="32" cy="32" r="30" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" data-to-top-ring/></svg>
-  <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-</body>
-</html>
+    <!-- End cursor -->
+
+
+    <!-- Optional JavaScript -->
+    <script src="/assets/tpl/js/jquery-3.1.1.min.js?v=042dd055"></script>
+    <script src="/assets/tpl/js/plugins.js?v=790b3aee"></script>
+    <script src="/assets/tpl/js/dsn-grid.js?v=0b65055c"></script>
+    <script src="/assets/tpl/js/custom.min.js?v=fe1375b4"></script><script src="/assets/tpl/js/addons.min.js?v=8865b96d"></script>
+
+
+</body></html>

@@ -1,22 +1,25 @@
-// Home = SITE/template/dark/index.html with Dhiego's content.
+// Home = src/tpl/html/index.html with Dhiego's content.
 import { ROUTES, CASES, POSTS, TESTIMONIALS, COMPANIES, postUrl } from '../data.mjs';
 import { T } from '../i18n.mjs';
-import { postMeta, caseContent } from '../content.mjs';
+import { postMeta } from '../content.mjs';
 import { loadTemplate, fillChrome, html, esc } from './from-template.mjs';
+import { imgSize } from './img-size.mjs';
 
-const plain = (s = '') => String(s).replace(/<[^>]+>/g, '');
+const dims = (url) => {
+  const d = imgSize(url);
+  return d ? { width: d.w, height: d.h } : {};
+};
 
 export const homePage = (lang) => {
-  const $ = loadTemplate('index.html');
+  const $ = loadTemplate('home.html');
   const t = T[lang];
   const r = ROUTES[lang];
   const pt = lang === 'pt';
   const cases = [...CASES].sort((a, b) => a.home - b.home);
-  const coverOf = (c) => (c.cover ? c.cover.src : c.img.src);
 
   fillChrome($, {
     lang,
-    title: 'Dhiego Cristofolini | Senior Product Designer',
+    title: pt ? 'Dhiego Cristofolini | Product Designer Sênior' : 'Dhiego Cristofolini | Senior Product Designer',
     description: pt
       ? 'Senior Product Designer com mais de 7 anos em SaaS, B2B e B2B2C. UX orientado a conversão, design systems e fluxos complexos de produto.'
       : 'Senior Product Designer with 7+ years in SaaS, B2B and B2B2C. Conversion-driven UX, design systems, complex product flows.',
@@ -34,7 +37,7 @@ export const homePage = (lang) => {
   hero.find('#dsn-hero-parallax-img').html('<canvas class="hero-gl" data-hero-gl aria-hidden="true"></canvas>');
   hero.find('.sub-text-header h5').text('Dhiego Cristofolini');
   hero.find('.title-text-header').replaceWith(`
-    <h1 class="title-text-header"><span class="title-text-header-inner"><span>Senior Product Designer</span></span></h1>
+    <h1 class="title-text-header"><span class="title-text-header-inner"><span>${pt ? 'Product Designer Sênior' : 'Senior Product Designer'}</span></span></h1>
     <p class="hero-lead">${esc(pt
       ? 'Mais de 7 anos desenhando SaaS B2B e B2B2C. UX orientado a conversão, design systems e fluxos complexos, da pesquisa à interface pronta para produção.'
       : '7+ years designing B2B and B2B2C SaaS. Conversion-driven UX, design systems and complex product flows, from research to production-ready UI.')}</p>
@@ -54,7 +57,7 @@ export const homePage = (lang) => {
   intro.find('small').text('Senior Product Designer');
   intro.find('.numb-ex .word').text('7');
   intro.find('.exper h4').html(pt ? 'ANOS DE <br> DESIGN DE PRODUTO' : 'YEARS OF <br> PRODUCT DESIGN');
-  intro.find('.background-mask img').attr('src', '/assets/img/site/hello.webp').attr('alt', t.hello.alt);
+  intro.find('.background-mask img').attr({ src: '/assets/img/site/hello.webp', alt: t.hello.alt, width: 640, height: 640, loading: 'lazy', decoding: 'async' });
 
   /* Services: about.html's text grid (rule, title, copy). No icons, so
      every service stands on its own words instead of repeated artwork. */
@@ -71,7 +74,6 @@ export const homePage = (lang) => {
     sRow.append(col);
   });
   $('.our-services-2').replaceWith(ab.html(svc));
-
 
   // Prev/next for the template sliders (they ship with arrows: false);
   // addons.js drives them through the slick API.
@@ -91,7 +93,7 @@ export const homePage = (lang) => {
   const slider = work.find('.slick-slider').empty();
   cases.forEach((c) => {
     const it = itemTpl.clone();
-    it.find('img').attr('src', c.img.src).attr('alt', '');
+    it.find('img').attr({ src: c.img.src, srcset: c.img.srcset, sizes: '(min-width: 992px) 40vw, 85vw', width: c.img.w, height: c.img.h, alt: c.alt ? c.alt[lang] : c.title, loading: 'lazy', decoding: 'async' });
     it.find('.item-info a').attr('href', r.case(c.slug)).removeClass('effect-ajax');
     it.find('.cat').text(c.cat[lang]);
     it.find('h4').text(c.title);
@@ -110,7 +112,7 @@ export const homePage = (lang) => {
   TESTIMONIALS.forEach((q) => {
     const it = qTpl.clone();
     it.find('.quote p').text(`“${q.quote[lang]}”`);
-    it.find('.avatar img').attr('src', q.avatar).attr('alt', '');
+    it.find('.avatar img').attr({ src: q.avatar, alt: q.name, ...dims(q.avatar) });
     it.find('.label .cell').text(`- ${q.name}, ${q.role[lang]}`);
     qs.append(it);
   });
@@ -131,7 +133,7 @@ export const homePage = (lang) => {
   [...POSTS].sort((a, b) => b.date.localeCompare(a.date)).forEach((p) => {
     const m = postMeta(p.slug, lang);
     const it = nTpl.clone();
-    it.find('.image img').attr('src', `/assets/img/blog/${p.hero}`).attr('alt', '').attr('loading', 'lazy');
+    it.find('.image img').attr('src', `/assets/img/blog/${p.hero}`).attr('alt', m.hero && m.hero.alt ? m.hero.alt : '').attr({ loading: 'lazy', decoding: 'async', ...dims(`/assets/img/blog/${p.hero}`) });
     it.find('h5').replaceWith(
       `<p class="news-meta"><span class="news-tag">${esc(m.tag)}</span><span><time datetime="${p.date}">${fmtDate(p.date)}</time> · ${p.read} min</span></p>`,
     );
@@ -150,7 +152,7 @@ export const homePage = (lang) => {
   const lw = bc.find('.wapper-client').empty();
   COMPANIES.forEach((c) => {
     const it = lTpl.clone();
-    it.find('img').attr('src', `/assets/img/logos/${c.logo}.svg`).attr('alt', c.name);
+    it.find('img').attr({ src: `/assets/img/logos/${c.logo}.svg`, alt: c.name, ...dims(`/assets/img/logos/${c.logo}.svg`) });
     it.find('.entry h5').text(c.name);
     it.find('.info .icon').attr('tabindex', '0').attr('role', 'button').attr('aria-label', `${c.name}: ${pt ? 'mais informações' : 'more info'}`);
     it.find('.info .icon i').attr('aria-hidden', 'true');
@@ -172,6 +174,6 @@ export const homePage = (lang) => {
   const wrapper = $('.wrapper');
   order.forEach((sel) => wrapper.append($(sel).first()));
   wrapper.append(wrapper.children('footer'));
-  $('script[src$="addons.js"]').after('<script src="/assets/tpl/js/hero-gl.js"></script>');
+  $('script[src$="addons.min.js"]').after('<script src="/assets/tpl/js/hero-gl.min.js"></script>');
   return html($);
 };

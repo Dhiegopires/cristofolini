@@ -5,7 +5,7 @@ export default {
   slug: 'fiter',
   hero: { src: '/assets/img/case/fiter/hero.webp' },
   en: {
-    seoTitle: 'Fiter | HR and EdTech site rebuilt for search | Dhiego Cristofolini',
+    seoTitle: 'Fiter | HR site rebuilt for search | Dhiego Cristofolini',
     description:
       'Product design case: Fiter’s site rebuilt from a one-page template into 16 structured pages, two buyer paths and an SEO score from 22 to 100 in two weeks.',
     cat: 'Website · SEO · Information architecture',
@@ -67,9 +67,9 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'Fiter | Site de RH e EdTech refeito para busca | Dhiego Cristofolini',
+    seoTitle: 'Fiter | Site de RH feito para busca | Dhiego Cristofolini',
     description:
-      'Case de product design: o site da Fiter saiu de um template de uma página para 16 páginas estruturadas, dois caminhos de compra e SEO de 22 para 100 em duas semanas.',
+      'Case de product design: o site da Fiter saiu de um template de uma página para 16 páginas, dois caminhos de compra e SEO de 22 para 100 em duas semanas.',
     cat: 'Site · SEO · Arquitetura de informação',
     title: 'Fiter',
     sub: 'Infraestrutura primeiro. Design depois.',

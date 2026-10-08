@@ -24,3 +24,24 @@ export const webpSize = (url) => {
   cache.set(url, size);
   return size;
 };
+
+// SVG: width/height attributes, else the viewBox.
+export const svgSize = (url) => {
+  if (cache.has(url)) return cache.get(url);
+  let size = null;
+  try {
+    const tag = readFileSync(join(root, url), 'utf8').match(/<svg[^>]*>/)[0];
+    const num = (a) => {
+      const m = tag.match(new RegExp(`\s${a}="([\d.]+)(px)?"`));
+      return m ? Math.round(+m[1]) : 0;
+    };
+    const vb = tag.match(/viewBox="[\d.-]+[ ,]+[\d.-]+[ ,]+([\d.]+)[ ,]+([\d.]+)"/);
+    const w = num('width') || (vb && Math.round(+vb[1]));
+    const h = num('height') || (vb && Math.round(+vb[2]));
+    if (w && h) size = { w, h };
+  } catch {}
+  cache.set(url, size);
+  return size;
+};
+
+export const imgSize = (url) => (/\.svg$/.test(url) ? svgSize(url) : webpSize(url));

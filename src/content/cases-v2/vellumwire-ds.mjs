@@ -5,7 +5,7 @@ export default {
   slug: 'vellumwire-ds',
   hero: { src: '/assets/img/case/vellumwire-ds/hero.webp' },
   en: {
-    seoTitle: 'Vellumwire Design System | Four token layers | Dhiego Cristofolini',
+    seoTitle: 'Vellumwire DS | Four token layers | Dhiego Cristofolini',
     description:
       'Design system case: a four-layer token architecture where re-theming a client touches one layer, tested in production on Instivo.',
     cat: 'Design system · Tokens',
@@ -71,7 +71,7 @@ export default {
     },
   },
   pt: {
-    seoTitle: 'Vellumwire Design System | Quatro camadas de tokens | Dhiego Cristofolini',
+    seoTitle: 'Vellumwire DS | Tokens em 4 camadas | Dhiego Cristofolini',
     description:
       'Case de design system: uma arquitetura de tokens em quatro camadas em que mudar de cliente mexe numa camada só, testada em produção na Instivo.',
     cat: 'Design system · Tokens',
