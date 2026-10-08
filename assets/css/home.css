@@ -1,0 +1,1230 @@
+/* Home from Figma Portfolio → UI → Home (54:2), 1920 artboard.
+   Columns at 86 / 523 / 960 / 1393 / 1834. First screen is 1080 tall. */
+
+.page-home {
+  position: relative;
+  /* Same 88@1920 ratio as Figma site padding — no 5.5rem cap (that broke ultrawide). */
+  --hp-inset: max(1.25rem, 4.583333vw);
+  --hp-gutter: clamp(1rem, 2.5vw, 3rem);
+  --hp-band: clamp(20.5rem, 34.7vw, 41.6rem);
+  --hp-marquee: clamp(5.5rem, 7.71vw, 9.25rem);
+  --hp-hazard: clamp(3.5rem, 6.5625vw, 7.875rem);
+  /* Title-row outbound arrow: L bars + diagonal, same geometry as State Hover, tight box. */
+  --hp-go: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Cpath d='M0 2.5h48' stroke='black' stroke-width='5'/%3E%3Cpath d='M45.5 0v48' stroke='black' stroke-width='5'/%3E%3Cpath d='M4 45 40 8' stroke='black' stroke-width='7' stroke-linecap='square'/%3E%3C/svg%3E");
+  --hp-go-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='white'%3E%3Cpath d='M0 2.5h48' stroke-width='5'/%3E%3Cpath d='M45.5 0v48' stroke-width='5'/%3E%3Cpath d='M4 45 40 8' stroke-width='7' stroke-linecap='square'/%3E%3C/svg%3E");
+  /* State Hover: square 106 and arrow 48 on a 600-wide card crop. */
+  --hp-card-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 106 106' fill='none'%3E%3Crect x='2.5' y='2.5' width='101' height='101' stroke='white' stroke-width='5'/%3E%3Cg transform='translate(29 29)' stroke='white'%3E%3Cpath d='M0 2.5h48' stroke-width='5'/%3E%3Cpath d='M45.5 0v48' stroke-width='5'/%3E%3Cpath d='M4 45 40 8' stroke-width='7' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (max-width: 1279px) and (min-width: 900px) {
+  .page-home { --hp-inset: 3rem; }
+}
+
+.page-home .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-inline: max(var(--hp-inset), env(safe-area-inset-left)) max(var(--hp-inset), env(safe-area-inset-right));
+  animation: nav-slide-down .6s var(--ease-out) both;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+@media (max-width: 899px) {
+  .page-home .nav.is-open {
+    position: fixed;
+    inset: 0;
+  }
+}
+@media (max-width: 767px) {
+  .page-home { --hp-inset: 1.25rem; }
+}
+
+/* Kill the old page-level star/canvas pseudos — not the body edge grid.
+   Home grid lives on .hp-grid / .hp-hero only (both behind content). */
+.page-home::before {
+  content: none;
+}
+
+.hp-grid {
+  position: relative;
+  z-index: 0;
+  isolation: isolate; /* keep z-index:-1 rules inside this box, never over UI */
+  background: var(--bg);
+  container-type: inline-size;
+}
+/* Every section sits above the painted rules. Grid is decoration only. */
+.hp-grid > * {
+  position: relative;
+  z-index: 1;
+}
+.hp-grid::before,
+.hp-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* ALWAYS behind content — never over arrows, type, or cards */
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: var(--hp-inset) 0;
+  background-size: calc(100% - var(--hp-inset) * 2) 100%;
+}
+/* Figma 86 / 523 / 960 / 1393 / 1834 — all five lines, always behind content. */
+.hp-grid::before {
+  background-image:
+    linear-gradient(
+      to right,
+      var(--rule-grid) 0 var(--rule-w),
+      transparent var(--rule-w),
+      transparent calc(25% - var(--rule-w)),
+      var(--rule-grid) calc(25% - var(--rule-w)),
+      var(--rule-grid) 25%,
+      transparent 25%,
+      transparent calc(50% - var(--rule-w)),
+      var(--rule-grid) calc(50% - var(--rule-w)),
+      var(--rule-grid) 50%,
+      transparent 50%,
+      transparent calc(75% - var(--rule-w)),
+      var(--rule-grid) calc(75% - var(--rule-w)),
+      var(--rule-grid) 75%,
+      transparent 75%,
+      transparent calc(100% - var(--rule-w)),
+      var(--rule-grid) calc(100% - var(--rule-w)),
+      var(--rule-grid) 100%
+    );
+}
+.hp-grid::after {
+  content: none;
+}
+
+/* Hero grid: same board + same columns, BEHIND stage. */
+.page-home .hp-hero {
+  isolation: isolate;
+}
+.page-home .hp-hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  width: 1920px;
+  height: 1080px;
+  pointer-events: none;
+  transform: translateX(-50%) scale(var(--hp-s));
+  transform-origin: top center;
+  background-repeat: no-repeat;
+  background-position: 86px 0;
+  background-size: 1748px 100%;
+  background-image:
+    linear-gradient(
+      to right,
+      var(--rule-grid) 0 var(--rule-w),
+      transparent var(--rule-w),
+      transparent calc(25% - var(--rule-w)),
+      var(--rule-grid) calc(25% - var(--rule-w)),
+      var(--rule-grid) 25%,
+      transparent 25%,
+      transparent calc(50% - var(--rule-w)),
+      var(--rule-grid) calc(50% - var(--rule-w)),
+      var(--rule-grid) 50%,
+      transparent 50%,
+      transparent calc(75% - var(--rule-w)),
+      var(--rule-grid) calc(75% - var(--rule-w)),
+      var(--rule-grid) 75%,
+      transparent 75%,
+      transparent calc(100% - var(--rule-w)),
+      var(--rule-grid) calc(100% - var(--rule-w)),
+      var(--rule-grid) 100%
+    );
+}
+
+/* ── 1. Hero = Figma Frame 10 (193:342), 1920×1080.
+   Nav 106.364 + Main pt 120 + stage 705.636 + marquee 148 = 1080.
+   Scale the whole board to the viewport — one mechanism for every width
+   above mobile. Do NOT swap to unscaled rem layouts mid-range (that
+   clipped CRISTOFOLINI / nav CTA between 768 and 1279). */
+.hp-hero {
+  /* vw first (reliable). cqi when the grid is a sized container. */
+  --hp-s: calc(100vw / 1920);
+  --hp-tick: 148px;
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: calc(1080px * var(--hp-s));
+  overflow: hidden;
+}
+@supports (width: 1cqi) {
+  .hp-hero {
+    --hp-s: calc(100cqi / 1920px);
+  }
+}
+
+.hp-hero__main {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 1;
+  width: 1920px;
+  height: 1080px;
+  margin: 0;
+  /* 106.364 nav + 120 Main Section pt; px 88 = site padding */
+  padding: 226.364px 88px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  transform: translateX(-50%) scale(var(--hp-s));
+  transform-origin: top center;
+}
+
+.hp-hero__stage {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 705.636px;
+  padding: 0;
+  flex: 1 1 705.636px;
+  min-height: 0;
+  overflow: visible;
+}
+
+.hp-hero__copy {
+  position: relative;
+  z-index: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 48px;
+  padding-top: 100px;
+  width: auto;
+  height: 100%;
+  min-width: 0;
+  flex: 1 1 0;
+  max-width: none;
+}
+
+.hp-hero__role {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  font-family: var(--display);
+  font-size: 86px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--y);
+  width: max-content;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.hp-hero__arrows {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 595.69px;
+  height: 584px;
+  max-width: none;
+  flex-shrink: 0;
+  object-fit: fill;
+}
+
+.hp-hero__portrait {
+  position: absolute;
+  /* Figma 74:201 — left 50% of stage, 1096×948, top -231.82. No translate (GSAP). */
+  left: calc(50% - 548px);
+  top: -231.82px;
+  z-index: 2;
+  width: 1096px;
+  height: 948px;
+  max-width: none;
+  object-fit: cover;
+  object-position: bottom;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hp-hero__wordmark {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 24px;
+  flex: 1 1 0;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  min-width: 0;
+}
+.hp-hero__name {
+  display: block;
+  height: auto;
+  max-width: none;
+  flex-shrink: 0;
+}
+.hp-hero__name--given {
+  width: 454.771px;
+}
+.hp-hero__name--family {
+  width: 882.292px;
+}
+
+.hp-hero__ticker,
+.hp-hero__ticker.mq {
+  position: relative;
+  isolation: isolate;
+  z-index: 8;
+  flex: 0 0 148px;
+  width: 100%;
+  height: 148px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: var(--nav-chip);
+  background-image: linear-gradient(var(--nav-chip), var(--nav-chip));
+  border: var(--rule-w) solid var(--rule);
+  padding: 0;
+  box-sizing: border-box;
+}
+.hp-hero__ticker .mq-tr {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: max-content;
+  height: 100%;
+  white-space: nowrap;
+  will-change: transform;
+}
+.hp-hero__ticker::before,
+.hp-hero__ticker::after,
+.hp-hero__ticker.mq::before,
+.hp-hero__ticker.mq::after {
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100%;
+}
+.hp-hero__ticker.mq::before {
+  background: linear-gradient(to right, var(--nav-chip) 0%, transparent 100%);
+}
+.hp-hero__ticker.mq::after {
+  background: linear-gradient(to left, var(--nav-chip) 0%, transparent 100%);
+}
+.hp-hero__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 45px;
+  padding-right: 45px;
+  font-family: var(--display);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.96px;
+  color: var(--t1);
+  opacity: .7;
+}
+.hp-hero__item::after {
+  content: "#";
+  line-height: 1.1;
+}
+
+/* Mid widths keep the scaled 1920 board — only the ticker type softens. */
+@media (max-width: 1279px) {
+  .hp-hero__item { font-size: 40px; letter-spacing: 0.8px; }
+}
+
+@media (max-width: 899px) {
+  .hp-hero__item { font-size: var(--fs-24); gap: var(--space-16); padding-right: var(--space-24); }
+}
+
+/* ── 2. Work (Home.html dump): 120/88 inset, title 128 League Gothic,
+   chips 48, two 1.75 cards / 48 gutter, See All Work 500×64. */
+.hp-work {
+  position: relative;
+  z-index: 1;
+  padding: clamp(4.5rem, 6.25vw, 7.5rem) var(--hp-inset);
+}
+
+.hp-work__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: var(--fs-display);
+  font-weight: 400;
+  line-height: 0.987;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+
+.hp-work__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  margin-top: var(--space-48);
+  margin-bottom: var(--space-80);
+}
+.hp-work__bar .filter-bar { padding-bottom: 0; margin: 0; gap: var(--space-8); }
+
+.hp-work__pager { display: flex; gap: var(--space-8); }
+.hp-work__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: var(--filter-chip);
+  color: var(--t1);
+  cursor: pointer;
+}
+.hp-work__arrow:hover:not(:disabled) { color: var(--y); }
+.hp-work__arrow:disabled { opacity: .35; cursor: default; }
+.hp-work__arrow:focus-visible { outline: 2px solid var(--y); outline-offset: 3px; }
+
+.hp-work__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+}
+.hp-work__grid.is-sliding {
+  overflow: hidden;
+  pointer-events: none;
+}
+.hp-work__grid > * { min-width: 0; }
+@media (min-width: 768px) {
+  .hp-work__grid { grid-template-columns: 1fr 1fr; }
+}
+
+.page-home .work-card__tags { display: none; }
+
+.hp-work__cta {
+  margin-top: var(--space-80);
+  min-width: clamp(16rem, 26vw, 31.25rem);
+  min-height: 4rem;
+  clip-path: none;
+}
+
+/* ── 3. Logos: 342 tall, 130 marks, full bleed ── */
+.hp-teams {
+  position: relative;
+  z-index: 7;
+  border-block: var(--rule-w) solid var(--rule);
+  background: var(--nav-chip);
+  padding-block: var(--space-64);
+  overflow: hidden;
+}
+.hp-teams__label {
+  margin: 0 0 var(--space-48);
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: var(--fs-32);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+.hp-teams .mq-item { padding: 0 clamp(14px, 2.08vw, 40px); }
+.hp-teams img {
+  display: block;
+  height: clamp(4rem, 6.77vw, 8.125rem);
+  width: auto;
+  opacity: .62;
+  filter: grayscale(1);
+}
+.hp-teams .mq-item:hover img {
+  opacity: 1;
+  filter: none;
+}
+
+/* ── 4. Intro: split headline + yellow-capped panel ── */
+.hp-intro {
+  position: relative;
+  z-index: 1;
+  padding: clamp(4.5rem, 6.25vw, 7.5rem) var(--hp-inset);
+}
+
+.hp-intro__headline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-16);
+  margin: 0 0 5.5rem;
+  font-family: var(--display);
+  font-size: var(--fs-128);
+  line-height: calc(100 / 128);
+  letter-spacing: -2.56px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+.hp-intro__headline .hl-accent { color: var(--y); }
+.hp-intro__line {
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path .45s var(--ease-out);
+}
+.hp-intro__line--b {
+  margin-left: auto;
+  text-align: right;
+}
+.hp-intro__headline.is-fading .hp-intro__line { clip-path: inset(100% 0 0 0); }
+@media (min-width: 1100px) {
+  .hp-intro__line { white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-intro__line { transition: none; }
+}
+
+.hp-intro__panel {
+  border: var(--rule-w) solid var(--rule);
+  background: var(--bg1);
+  overflow: hidden;
+}
+/* Hazard cap: 102 tall, `/` stripes, 178 horizontal pitch (126 along 135deg).
+   50/50 yellow/black. Top-left of the cap is --bg, yellow hits the left edge
+   ~26px down — start the repeat on --bg, not --y. */
+.hp-intro__cap {
+  height: clamp(3.5rem, 5.31vw, 6.375rem);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--bg) 0 calc(var(--hp-hazard) * .5),
+    var(--y) calc(var(--hp-hazard) * .5) var(--hp-hazard)
+  );
+}
+
+.hp-intro__body {
+  display: grid;
+  gap: var(--space-48);
+  padding: var(--space-48);
+}
+@media (min-width: 900px) {
+  .hp-intro__body {
+    /* Figma 153:205 — two equal cols, pad 48. */
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+    min-height: clamp(22rem, 34vw, 36.9375rem);
+    padding: var(--space-48);
+  }
+}
+
+.hp-intro__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-48);
+  /* Figma 62:5 — 480 tall content stack. */
+  min-height: clamp(18rem, 25vw, 30rem);
+}
+.hp-intro__facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Figma 61:445 — League Gothic Regular 24 / lh 1.5 / tracking 2.4 / 80% white. */
+.hp-intro__facts li {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: var(--fs-24);
+  line-height: 1.5;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--t1) 80%, transparent);
+}
+.hp-intro__actions { display: flex; flex-wrap: wrap; gap: var(--space-16); }
+
+/* Figma 62:3 body-lg — Inter Regular 32 / 400 / lh 1.4 / tracking 1.6px. */
+.hp-intro__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-32);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 1.6px;
+  color: var(--t1);
+}
+.hp-intro__copy p {
+  margin: 0;
+  font-weight: 400;
+}
+@media (min-width: 900px) {
+  .hp-intro__copy {
+    align-self: center;
+    max-width: 62.5rem;
+  }
+}
+
+/* ── 5. Stats: 300 tall, four cells on the column grid ── */
+/* Band is full bleed; cells sit on the 86-inset 4-col grid.
+   Rules at 523 / 960 / 1393, 2px, ~8% --accent-text into --y.
+   Numbers Lato 900 / 107. Labels Lato 700 / 32 / .02em / lh 1. */
+.hp-stats {
+  position: relative;
+  z-index: 7;
+  padding-inline: var(--hp-inset);
+  background: var(--y);
+}
+.hp-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hp-stats__cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+  text-align: center;
+  min-height: clamp(10rem, 15.625vw, 18.75rem);
+  padding: 0;
+}
+.hp-stats__cell + .hp-stats__cell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--rule-w);
+  background: color-mix(in srgb, var(--accent-text) 8%, var(--y));
+}
+@media (max-width: 767px) {
+  .hp-stats__cell:nth-child(odd)::before { content: none; }
+  .hp-stats__cell:nth-child(n + 3)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--rule-w);
+    background: color-mix(in srgb, var(--accent-text) 8%, var(--y));
+  }
+}
+@media (min-width: 768px) {
+  .hp-stats__grid { grid-template-columns: repeat(4, 1fr); }
+}
+.hp-stats__num {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  line-height: 1.215;
+  letter-spacing: 0.05em;
+  color: var(--accent-text);
+}
+.hp-stats__label {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(0.8125rem, 1.667vw, var(--fs-32));
+  line-height: 1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+/* ── 6. Services accordion. Figma Client Section 1920×1660.
+   Arcs stay INSIDE this section — never spill into the contact form. */
+.hp-services {
+  position: relative;
+  z-index: 0;
+  overflow: clip;
+  padding: clamp(4.5rem, 6.25vw, 7.5rem) var(--hp-inset);
+  background: transparent;
+}
+
+.hp-services__stage {
+  position: relative;
+}
+
+.hp-services__arc {
+  position: absolute;
+  z-index: 0;
+  width: min(39.6875vw, 23.8125rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: url("../img/home/ellipse-decoration.svg") no-repeat center / 100% 100%;
+}
+.hp-services__arc img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  visibility: hidden;
+}
+/* Figma 159:370 — top-right of Client Section */
+.hp-services__arc--tr {
+  top: 0;
+  right: calc(-1 * var(--hp-inset));
+}
+/* Figma 159:366 — bottom-left, clipped to section (was top:100% into the form) */
+.hp-services__arc--bl {
+  left: calc(-1 * var(--hp-inset));
+  bottom: 0;
+  top: auto;
+  transform: rotate(180deg);
+}
+@media (max-width: 1023px) {
+  .hp-services__arc { display: none; }
+}
+
+.hp-services__title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 66vw;
+  margin: 0 0 var(--space-96);
+  /* Home.html dump: League Gothic 128 / 400 / lh 119 / tracking 3.8 — not Lato. */
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.125rem, 6.667vw, 8rem);
+  line-height: 0.93;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+.hp-services__line { display: block; }
+.hp-services__title .hl-accent { color: var(--y); }
+
+.hp-acc {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--bg);
+  border: var(--rule-w) solid var(--rule);
+}
+.hp-acc__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 9.75rem;
+  border-top: var(--rule-w) solid var(--rule);
+}
+.hp-acc__item:first-child { border-top: 0; }
+.hp-acc__item:nth-child(1) { --acc-img: url("../img/home/accordions-image-1.png"); }
+.hp-acc__item:nth-child(2) { --acc-img: url("../img/home/accordions-image-2.png"); }
+.hp-acc__item:nth-child(3) { --acc-img: url("../img/home/accordions-image-3.png"); }
+.hp-acc__item:nth-child(4) { --acc-img: url("../img/home/accordions-image-4.png"); }
+.hp-acc__item:nth-child(5) { --acc-img: url("../img/home/accordions-image-5.png"); }
+.hp-acc__item:nth-child(6) { --acc-img: url("../img/home/accordions-image-6.png"); }
+
+.hp-acc__head {
+  margin: 0;
+  font-weight: 400;
+  grid-column: 1;
+  grid-row: 1;
+}
+.hp-acc__btn {
+  display: grid;
+  grid-template-columns: clamp(4.5rem, 8.02vw, 9.625rem) minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  min-height: 9.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--t1);
+  text-align: left;
+  cursor: pointer;
+}
+.hp-acc__item.is-open .hp-acc__btn {
+  min-height: 0;
+  align-items: start;
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-40);
+}
+.hp-acc__btn:hover .hp-acc__name { color: var(--y); }
+.hp-acc__btn:focus-visible { outline: 2px solid var(--y); outline-offset: -2px; }
+.hp-acc__num {
+  padding-inline-start: var(--space-48);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: var(--fs-24);
+  color: var(--t2);
+}
+.hp-acc__name {
+  font-family: var(--display);
+  font-size: var(--fs-48);
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+
+.hp-acc__panel {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .38s var(--ease-out);
+}
+.hp-acc__item.is-open .hp-acc__panel { grid-template-rows: 1fr; }
+.hp-acc__panel-in {
+  overflow: hidden;
+  visibility: hidden;
+}
+.hp-acc__item.is-open .hp-acc__panel-in { visibility: visible; }
+.hp-acc__desc {
+  margin: 0;
+  margin-left: clamp(4.5rem, 8.02vw, 9.625rem);
+  padding: 0 var(--space-48) var(--space-32) 0;
+  max-width: 42rem;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: var(--fs-24);
+  line-height: 1.45;
+  color: var(--t2);
+}
+
+.hp-acc__media {
+  display: none;
+  overflow: hidden;
+  background-color: var(--bg);
+  background-image: var(--acc-img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hp-acc__media img {
+  display: none;
+}
+
+.hp-acc__item.is-open .hp-acc__media {
+  display: block;
+  grid-column: 1;
+  grid-row: 3;
+  width: 100%;
+  height: clamp(11rem, 16.77vw, 20.125rem);
+  margin: 0 0 var(--space-24);
+}
+
+@media (min-width: 861px) {
+  .hp-acc__item.is-open {
+    grid-template-columns: minmax(0, 1fr) clamp(16rem, 40.94vw, 49.125rem);
+    grid-template-rows: auto 1fr;
+    min-height: clamp(14rem, 16.98vw, 20.375rem);
+  }
+  .hp-acc__item.is-open .hp-acc__media {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    width: auto;
+    height: auto;
+    min-height: clamp(14rem, 16.77vw, 20.125rem);
+    margin: 0;
+    padding: 0 var(--space-24) 0 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .hp-acc__btn { grid-template-columns: 2.5rem 1fr; }
+  .hp-acc__num { padding-inline-start: var(--space-16); }
+  .hp-acc__desc { margin-left: 2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-acc__panel { transition: none; }
+}
+
+/* ── 7. Contact ── */
+.page-home .lead-cta-section {
+  position: relative;
+  z-index: 2;
+  padding-block: var(--space-120);
+  background: var(--bg);
+  isolation: isolate;
+  overflow: clip;
+}
+.page-home .lead-cta-section .container {
+  padding-inline: var(--hp-inset);
+  max-width: none;
+}
+/* Figma CTA 146:844 — title centered, 82 gap to fields, 4×401 / 48 gutter */
+.page-home .lead-cta-section__title {
+  margin-bottom: 5.125rem; /* 82 */
+  text-align: center;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.page-home .lead-form {
+  gap: var(--space-48);
+}
+.page-home .lead-field,
+.page-home .lead-form__submit {
+  min-height: 4.875rem; /* 78 */
+}
+
+@media (max-width: 899px) {
+  .hp-grid::before {
+    background-image:
+      linear-gradient(
+        to right,
+        var(--rule-grid) 0 var(--rule-w),
+        transparent var(--rule-w),
+        transparent calc(50% - var(--rule-w)),
+        var(--rule-grid) calc(50% - var(--rule-w)),
+        var(--rule-grid) 50%,
+        transparent 50%,
+        transparent calc(100% - var(--rule-w)),
+        var(--rule-grid) calc(100% - var(--rule-w)),
+        var(--rule-grid) 100%
+      );
+  }
+
+  .hp-work {
+    padding-block: var(--space-64);
+  }
+  .hp-work__bar {
+    margin-top: var(--space-24);
+    margin-bottom: var(--space-48);
+  }
+  .hp-work__pager { margin-left: auto; flex-shrink: 0; }
+  .hp-work__cta {
+    min-width: 0;
+    width: 100%;
+    margin-top: var(--space-48);
+  }
+  .page-home .work-card__title { font-size: var(--fs-24); }
+  .page-home .work-card__desc { font-size: var(--fs-16); }
+
+  .hp-intro {
+    padding-block: var(--space-64);
+  }
+  .hp-intro__headline {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    margin-bottom: var(--space-48);
+  }
+  .hp-intro__line--b {
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .hp-intro__body {
+    padding: var(--space-32) var(--space-20) var(--space-48);
+    gap: var(--space-32);
+  }
+  .hp-intro__copy { font-size: var(--fs-20); line-height: 1.45; }
+  .hp-intro__actions { flex-direction: column; align-items: stretch; }
+  .hp-intro__actions .btn-shiny,
+  .hp-intro__actions .btn-ghost-glow { width: 100%; justify-content: center; }
+
+  .hp-stats__cell { min-height: 8.5rem; padding: var(--space-24) var(--space-8); }
+  .hp-stats__label { font-size: var(--fs-12); }
+
+  .hp-services { padding-block: var(--space-64); }
+  .hp-services__title {
+    max-width: none;
+    margin-bottom: var(--space-48);
+    font-size: clamp(2rem, 11vw, 3.25rem);
+  }
+  .hp-acc__name { font-size: clamp(1.25rem, 6vw, 2rem); padding-right: var(--space-16); }
+  .hp-acc__btn { min-height: 4.5rem; }
+  .hp-acc__item { min-height: 4.5rem; }
+
+  .page-home .lead-cta-section { padding-top: var(--space-64); }
+  .page-home .lead-cta-section__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: var(--space-48);
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Drop the 1920 board — stacked mobile hero (Figma Home Mobile). */
+  .page-home .hp-hero {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .page-home .hp-hero::before {
+    content: none;
+  }
+  .hp-hero { --hp-tick: 3rem; --hp-s: 1; }
+  .hp-hero__main {
+    display: contents;
+    width: auto;
+    height: auto;
+    transform: none;
+    position: static;
+    left: auto;
+    padding: 0;
+  }
+  .hp-hero__stage {
+    position: relative;
+    display: block;
+    margin-top: var(--nav-h);
+    height: 15.9375rem;
+    width: 100%;
+    padding: 0;
+    flex: none;
+    overflow: hidden;
+  }
+  .hp-hero__copy {
+    max-width: none;
+    padding: 0;
+    gap: 0;
+  }
+  .hp-hero__role {
+    position: absolute;
+    top: 4rem;
+    left: var(--space-24);
+    right: auto;
+    width: 8.3125rem;
+    font-size: 1.1875rem;
+    line-height: 1;
+    z-index: 6;
+  }
+  .hp-hero__arrows {
+    display: block;
+    position: absolute;
+    left: var(--space-24);
+    top: 5.75rem;
+    width: 12.5rem;
+    height: 11.1875rem;
+    max-width: none;
+    z-index: 0;
+  }
+  .hp-hero__portrait {
+    position: absolute;
+    top: -3.5rem;
+    left: 1rem;
+    transform: none;
+    width: calc(100% - 2rem);
+    height: 19.375rem;
+    max-width: none;
+    aspect-ratio: auto;
+    object-position: bottom;
+    z-index: 2;
+  }
+  .hp-hero__wordmark {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    flex: none;
+    display: block;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .hp-hero__name {
+    position: absolute;
+  }
+  .hp-hero__name--given {
+    left: 13.5625rem;
+    top: 8.125rem;
+    width: min(10rem, 42vw);
+    height: auto;
+  }
+  .hp-hero__name--family {
+    left: 5.875rem;
+    top: 12.3125rem;
+    width: min(17.67875rem, 72vw);
+    height: auto;
+  }
+  .hp-hero__ticker,
+  .hp-hero__ticker.mq {
+    margin-inline: 1rem;
+    width: auto;
+    flex: none;
+    height: var(--hp-tick);
+  }
+  .hp-hero__item { font-size: var(--fs-16); }
+
+  .hp-work {
+    padding: var(--space-32) var(--hp-inset);
+  }
+  .hp-work__title { font-size: 1.8125rem; }
+  .hp-work__bar {
+    margin-top: var(--space-24);
+    margin-bottom: var(--space-24);
+  }
+  .hp-work .filter-btn {
+    min-height: 2rem;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+  .hp-work__grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20rem;
+    grid-auto-columns: 20rem;
+    overflow: hidden;
+    gap: 1.5rem;
+  }
+  .hp-work__pager { display: none; }
+  .page-home .work-card__image {
+    aspect-ratio: 320 / 183;
+    height: 11.4375rem;
+  }
+  .page-home .work-card__body {
+    min-height: 5.625rem;
+    padding-top: 0.75rem;
+    gap: 0.25rem;
+  }
+  .page-home .work-card__title { font-size: var(--fs-16); }
+  .page-home .work-card__desc { font-size: var(--fs-16); line-height: 1.5; }
+  .hp-work__cta {
+    width: 100%;
+    min-width: 0;
+    margin-top: var(--space-24);
+    --btn-min: 40px;
+    --btn-py: 0;
+    --btn-fs: 12px;
+    min-height: 2.5rem;
+  }
+
+  .hp-teams { padding-block: 1.25rem; }
+  .hp-teams__label {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1;
+    min-height: 1rem;
+  }
+  .hp-teams img { height: 5rem; }
+
+  .hp-intro { padding: 2rem var(--hp-inset) 2.25rem; }
+  .hp-intro__headline {
+    font-size: 1.875rem;
+    line-height: 1;
+    margin-bottom: 1.125rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .hp-intro__line--b {
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .hp-intro__cap { height: 2.375rem; }
+  .hp-intro__body {
+    display: flex;
+    flex-direction: column;
+    min-height: 29.75rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .hp-intro__copy {
+    order: -1;
+    font-size: var(--fs-16);
+    line-height: 1.4;
+    letter-spacing: 0.8px;
+    gap: 1.4em;
+  }
+  .hp-intro__facts li {
+    font-size: var(--fs-16);
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+  }
+  .hp-intro__actions { gap: 1rem; }
+  .hp-intro__actions .btn-shiny,
+  .hp-intro__actions .btn-ghost-glow {
+    width: 100%;
+    --btn-min: 40px;
+    --btn-py: 0;
+    --btn-fs: 12px;
+    min-height: 2.5rem;
+    justify-content: center;
+  }
+
+  .hp-stats__cell {
+    min-height: 4.5rem;
+    padding: 0.75rem 0.5rem;
+    gap: 0.5rem;
+  }
+  .hp-stats__num { font-size: 1.8125rem; }
+  .hp-stats__label { font-size: 0.6875rem; }
+
+  .hp-services { padding: 1.5rem var(--hp-inset); }
+  .hp-services__title {
+    font-size: 1.6875rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    max-width: none;
+  }
+  .hp-acc__item,
+  .hp-acc__btn {
+    min-height: 3.375rem;
+  }
+  .hp-acc__btn { grid-template-columns: 3rem 1fr; }
+  .hp-acc__name { font-size: 1.375rem; line-height: 1; }
+  .hp-acc__num { padding-inline-start: 1rem; font-size: 0.8125rem; }
+  .hp-acc__item.is-open .hp-acc__btn {
+    min-height: 0;
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+  .hp-acc__item.is-open .hp-acc__media {
+    grid-column: 1;
+    grid-row: 1;
+    height: 7.75rem;
+    margin: 0;
+  }
+  .hp-acc__item.is-open .hp-acc__head { grid-row: 2; }
+  .hp-acc__item.is-open .hp-acc__panel { grid-row: 3; }
+  .hp-acc__desc {
+    margin-left: 3rem;
+    padding: 0 1rem 1rem 0;
+    max-width: none;
+    font-size: 0.75rem;
+    line-height: 1.17;
+  }
+
+  .page-home .lead-cta-section { padding: 1.5rem var(--hp-inset); }
+  .page-home .lead-cta-section .container { padding-inline: 0; }
+  .page-home .lead-cta-section__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8125rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .page-home .lead-cta-section__title span { display: block; }
+  .page-home .lead-form { gap: 0.75rem; }
+  .page-home .lead-field,
+  .page-work .lead-field,
+  .page-blog .lead-field {
+    min-height: 3rem;
+    padding: 1rem 2rem;
+  }
+  .page-home .lead-field__label,
+  .page-work .lead-field__label,
+  .page-blog .lead-field__label { font-size: 0.875rem; }
+  .page-home .lead-field__input,
+  .page-work .lead-field__input,
+  .page-blog .lead-field__input {
+    min-height: 0;
+    padding: 1.5rem 2rem 0.5rem;
+  }
+  .page-home .lead-form__submit {
+    --btn-min: 48px;
+    --btn-py: 0;
+    --btn-fs: 16px;
+    min-height: 3rem;
+    width: 100%;
+  }
+}
+
+/* Tablet widths use the same scaled 1920 board as desktop (--hp-s).
+   Mobile (<768) is the only alternate hero layout. */

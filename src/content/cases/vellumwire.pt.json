@@ -1,0 +1,116 @@
+{
+ "seoTitle": "Vellumwire | Site de Estúdio que Fecha Sem Ligação",
+ "description": "Como o próprio site da Vellumwire alcançou 1.000 visitas orgânicas por semana sem anúncios pagos: todas as decisões de conversão por trás disso.",
+ "meta": [
+  {
+   "label": "Função",
+   "value": "Estratégia · Copy · IA · Design System"
+  },
+  {
+   "label": "Tipo",
+   "value": "Projeto próprio"
+  },
+  {
+   "label": "Site no ar",
+   "value": "<a class=\"cs-link cs-link--t1\" href=\"https://vellumwire.com\" rel=\"noopener noreferrer\" target=\"_blank\">vellumwire.com →</a>"
+  },
+  {
+   "label": "Duração",
+   "value": "2025 · 4 semanas"
+  },
+  {
+   "label": "Time",
+   "value": "Afonso, front-end e hospedagem"
+  }
+ ],
+ "stats": [
+  {
+   "num": "~1k",
+   "label": "sessões orgânicas por semana · sem anúncios pagos · sem presença social"
+  },
+  {
+   "num": "0",
+   "label": "investimento em anúncios · tráfego gerado inteiramente por intenção de busca e copy escrito para como os prospects realmente pesquisam"
+  },
+  {
+   "num": "6",
+   "label": "objeções reais de venda endereçadas no FAQ · cada entrada extraída de conversas reais com clientes"
+  }
+ ],
+ "sections": [
+  {
+   "id": "s01",
+   "num": "01",
+   "title": "A situação",
+   "layout": "editorial",
+   "html": "<p>A Vellumwire é um estúdio de web design focado em um único resultado: fazer com que negócios de serviço que dependem de leads inbound consigam mais deles. Antes de o site existir, não havia presença web, posicionamento ou prova. O próprio estúdio foi o primeiro cliente.</p>\n<blockquote class=\"cs-pullquote\">O desafio não era só design. Era construir um site capaz de fechar leads sem uma ligação de vendas, para um público que já foi queimado por agências antes.</blockquote>\n<p>O cliente-alvo é um pequeno empresário com um site existente que parece aceitável, mas não gera ligações. Fazer com que confiasse em um estúdio novo do qual nunca tinha ouvido falar exigia estabelecer credibilidade antes de pedir qualquer coisa, sem um portfólio para mostrar no início.</p>\n<p>O briefing que escrevi a partir disso: construir um site que vende como um bom vendedor venderia. Nomear o problema que o prospect já tem. Provar que você o entende melhor do que ele mesmo. Remover todo motivo para não dar o próximo passo, e fazer esse próximo passo parecer insignificante.</p>"
+  },
+  {
+   "id": "s02",
+   "num": "02",
+   "title": "O diagnóstico",
+   "layout": "editorial",
+   "html": "<p>Antes de escrever uma única linha de copy, auditei o cenário competitivo e mapeei o processo real de decisão de um prospect frio avaliando um redesign.</p>\n<div class=\"cs-fear-cards\">\n<div class=\"cs-fear-card\">\n<p class=\"cs-fear-card__label\">Mercado</p>\n<p class=\"cs-fear-card__title\">Portfólio primeiro, sempre</p>\n<p class=\"cs-fear-card__body\">Todo concorrente começava com trabalho visual. Nenhum começava com o problema de negócio que o prospect já tinha. A relevância nunca era estabelecida antes de pedir uma avaliação.</p>\n</div>\n<div class=\"cs-fear-card\">\n<p class=\"cs-fear-card__label\">CTA</p>\n<p class=\"cs-fear-card__title\">Pedidos de alto compromisso</p>\n<p class=\"cs-fear-card__body\">\"Peça um orçamento\" exige compromisso antes de o prospect decidir que tem interesse. A maioria dos visitantes sai sem converter. O estúdio nunca chega a saber que eles existiram.</p>\n</div>\n<div class=\"cs-fear-card\">\n<p class=\"cs-fear-card__label\">Precificação</p>\n<p class=\"cs-fear-card__title\">Ninguém publica</p>\n<p class=\"cs-fear-card__body\">Todo contrato começa com uma etapa de \"fale conosco para o preço\" que filtra pequenos negócios antes mesmo de começarem. Isso também sinaliza que o preço é negociado na hora, o que corrói a confiança antes da primeira ligação.</p>\n</div>\n</div>\n<p>As mesmas seis objeções apareciam em toda conversa de vendas anterior: prazo, custo, dependência de plataforma, se reconstruir ou ajustar, como é o processo, e se copy está incluído. Nenhuma delas era endereçada em nenhum site concorrente. Tratá-las por escrito antes da ligação era uma vantagem estrutural direta.</p>\n<div class=\"cs-rejected\">\n<span class=\"cs-rejected__label\">Descoberta de intenção de busca</span>\n              O tráfego orgânico para \"web design para pequenas empresas\" e termos adjacentes estava sistematicamente inexplorado. Os concorrentes pagavam por anúncios nesses termos, mas não escreviam para eles. O copy da maioria dos sites era escrito para outros designers, não para um empresário avaliando se vale gastar dinheiro.\n            </div>\n<div class=\"cs-screens cs-screens--2\">\n<figure class=\"cs-screen-wrap\">\n<div class=\"cs-screen-placeholder\">\n<img alt=\"Seção do site Vellumwire: onde negócios de serviço perdem leads\" decoding=\"async\" height=\"788\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-where-lose-leads-mobile.webp\" width=\"369\"/>\n</div>\n<figcaption class=\"cs-caption\">Onde você está perdendo leads · nomeia o problema específico</figcaption>\n</figure>\n<figure class=\"cs-screen-wrap\">\n<div class=\"cs-screen-placeholder\">\n<img alt=\"Seção do site Vellumwire: por onde começar, guiando o próximo passo do prospect\" decoding=\"async\" height=\"790\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-where-to-start-mobile.webp\" width=\"372\"/>\n</div>\n<figcaption class=\"cs-caption\">Por onde começar · próximo passo de menor atrito</figcaption>\n</figure>\n</div>"
+  },
+  {
+   "id": "s03",
+   "num": "03",
+   "title": "Posicionamento guiado pelo problema",
+   "layout": "editorial",
+   "html": "<p>O hero não mostra uma única tela. Abre com um headline de contraste e nomeia o resultado: os visitantes certos tomando ação. O portfólio vem depois de o visitante já ter decidido que o problema é real.</p>\n<blockquote class=\"cs-pullquote\">Um prospect que pesquisou \"por que meu site não gera leads\" precisa ver que você entende o problema antes de olhar para o seu trabalho. Relevância conquista o direito de mostrar prova.</blockquote>\n<p>A página segue uma sequência deliberada. Cada seção responde a uma pergunta que o visitante está fazendo naquele momento, na ordem em que faria numa ligação de vendas real.</p>\n<p>A sequência reflete como um bom vendedor vende. Quando o visitante chega ao CTA final, ele já confirmou que o problema é real, entendeu a abordagem, viu a precificação e teve suas objeções respondidas. O pedido no final é o menor passo da página.</p>\n<div class=\"cs-diagram cs-diagram--tall\">\n<img alt=\"Diagrama de caminho de decisão da Vellumwire: como um prospect frio vai da busca até o agendamento\" decoding=\"async\" height=\"1192\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-decision-path.svg\" width=\"507\"/>\n</div>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-9 cs-diagram--contain\">\n<img alt=\"Seção hero da Vellumwire: headline guiado pelo problema, sem portfólio antes da rolagem\" decoding=\"async\" height=\"925\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-hero-screen.webp\" width=\"1905\"/>\n</div>"
+  },
+  {
+   "id": "s04",
+   "num": "04",
+   "title": "A oferta",
+   "layout": "editorial",
+   "html": "<p>O CTA principal em todo o site é um diagnóstico gratuito de 15 minutos do site: uma chamada de tela em tempo real onde eu identifico bloqueios de conversão na hora. Sem pitch, sem apresentação, sem armadilha de contrato fixo. O prospect fica com a lista de correções, contrate o estúdio ou não.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">CTA padrão: \"Contrate-nos\" ou \"Peça um orçamento\"</p>\n<p class=\"cs-compare__text\">Pede um grande compromisso de alguém que acabou de chegar e ainda não decidiu que tem interesse. A maioria dos visitantes sai sem converter. O estúdio nunca chega a saber que eles existiram.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">CTA Vellumwire: diagnóstico gratuito de 15 min</p>\n<p class=\"cs-compare__text\">Qualquer pessoa com um site que não converte vai aceitar 15 minutos gratuitos para descobrir por quê. O CTA reduz o compromisso percebido a quase zero enquanto cria valor genuíno. Também funciona como uma ligação de vendas: o diagnóstico demonstra expertise antes de qualquer proposta ser feita.</p>\n</div>\n</div>\n<p>Ninguém quer \"contratar um designer\". Mas um empresário que suspeita que o site está custando leads vai aceitar uma sessão gratuita e sem compromisso para descobrir o que está errado. A oferta corresponde ao estado real do visitante no momento em que chega: consciente de um problema, incerto sobre a solução, ainda não pronto para gastar dinheiro.</p>\n<div class=\"cs-diagram cs-diagram--clip cs-diagram--top aspect-16-9\">\n<img alt=\"Seção de CTA da Vellumwire: diagnóstico gratuito de 15 minutos, antes da rolagem sem ações concorrentes\" decoding=\"async\" height=\"916\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-cta.webp\" width=\"1908\"/>\n</div>"
+  },
+  {
+   "id": "s05",
+   "num": "05",
+   "title": "Transparência de preço",
+   "layout": "editorial",
+   "html": "<p>O preço completo é publicado no site: de uma revisão de site por $350 a um pacote completo de marca e web por $8.000. Faixas exatas, sem \"fale conosco para saber o preço\".</p>\n<blockquote class=\"cs-pullquote\">Estúdios que escondem preço normalmente estão negociando contra si mesmos. Para um pequeno empresário que já foi queimado antes, um estúdio que mostra as cartas transmite confiança antes mesmo de falar com alguém.</blockquote>\n<p>Publicar preços filtra leads por orçamento antes da primeira conversa. Os clientes que entram em contato já sabendo o preço são mais fáceis de fechar e mais rápidos para começar. Os que desperdiçariam uma ligação de descoberta por estarem fora do orçamento são filtrados antes de agendar.</p>\n<div class=\"cs-edge-cases\">\n<span class=\"cs-edge-cases__label\">O que a transparência de preço resolveu</span>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Incompatibilidade de orçamento</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Filtrada antes da primeira ligação. Economiza tempo dos dois lados.</span>\n</div>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Déficit de confiança</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Mostrar o preço sinaliza confiança. Esconder sinaliza que o preço depende do que o mercado aceitar pagar.</span>\n</div>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Duração do ciclo de vendas</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Prospects que agendam uma ligação já conhecem a faixa de preço. A primeira conversa começa em outro ponto.</span>\n</div>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Intenção de busca</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Páginas de preço rankeiam. Prospects pesquisando o custo de web design caem direto na resposta.</span>\n</div>\n</div>\n<div class=\"cs-diagram cs-diagram--clip cs-diagram--top aspect-16-9\">\n<img alt=\"Seção de serviços e preços da Vellumwire: três níveis com faixas de preço publicadas\" decoding=\"async\" height=\"908\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-pricing.webp\" width=\"1901\"/>\n</div>"
+  },
+  {
+   "id": "s06",
+   "num": "06",
+   "title": "FAQ a partir de objeções reais",
+   "layout": "split",
+   "html": "<p>Cada entrada do FAQ veio de uma objeção real que apareceu em múltiplas conversas de vendas. Os seis temas que sempre voltavam: prazo, dependência de plataforma, propriedade do copy, se reconstruir ou ajustar, o que o diagnóstico de 15 minutos realmente cobre, e o que acontece se o cliente pagou recentemente por um redesign em outro lugar.</p>\n<p>Um FAQ construído a partir de objeções reais lê de forma diferente de um construído a partir do que o estúdio quer dizer. Prospects reconhecem as próprias perguntas. Quando isso acontece, sinaliza que o estúdio já lidou com a situação específica deles antes, que é exatamente o que um comprador desconfiado precisa ver antes de se comprometer com uma ligação.</p>\n<div class=\"cs-rejected\">\n<span class=\"cs-rejected__label\">O que não fiz</span>\n              Um FAQ genérico cobrindo \"nosso processo\", \"nossa equipe\" e \"nossos valores\", o tipo que existe em 90% dos sites de agência. Essas entradas respondem perguntas que ninguém estava fazendo. Ocupam espaço que poderia fechar uma objeção real.\n            </div>\n<p>Objeções que não são tratadas no site são levantadas na ligação. Isso atrasa a decisão e introduz dúvida no pior momento, quando o prospect já está falando com o estúdio e tem algum grau de interesse. Tratá-las por escrito antes da ligação avança a conversa.</p>\n<div class=\"cs-diagram cs-diagram--clip cs-diagram--top aspect-16-9\">\n<img alt=\"Seção de FAQ da Vellumwire: seis entradas a partir de objeções reais de venda\" decoding=\"async\" height=\"915\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-FAQ.webp\" width=\"1907\"/>\n</div>"
+  },
+  {
+   "id": "s07",
+   "num": "07",
+   "title": "Resultado",
+   "layout": "editorial",
+   "html": "<p>Aproximadamente 1.000 sessões orgânicas por semana. Sem anúncios pagos. Sem presença no LinkedIn. Sem marketing de conteúdo no lançamento. Tráfego gerado inteiramente por intenção de busca: estrutura, meta tags, schema markup e copy escrito para como os prospects realmente pesquisam.</p>\n<div class=\"cs-benchmark-grid\">\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">~1k</p>\n<p class=\"cs-benchmark-desc\">Sessões orgânicas por semana em regime estável. Zero aquisição paga, zero distribuição social.</p>\n<p class=\"cs-benchmark-source\">Analytics de busca</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">0</p>\n<p class=\"cs-benchmark-desc\">Saída a partir da página de preços. Visitantes que veem o preço permanecem e exploram mais.</p>\n<p class=\"cs-benchmark-source\">Observação comportamental</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">6</p>\n<p class=\"cs-benchmark-desc\">Objeções de venda tratadas por escrito antes de qualquer ligação. A descoberta começa em outro ponto.</p>\n<p class=\"cs-benchmark-source\">Processo de vendas</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">4sem</p>\n<p class=\"cs-benchmark-desc\">Tempo do arquivo em branco ao site indexado e convertendo. Estratégia, copy, design e front-end em um único contrato.</p>\n<p class=\"cs-benchmark-source\">Duração do projeto</p>\n</div>\n</div>\n<div class=\"cs-screens cs-screens--1\">\n<figure class=\"cs-screen-wrap\">\n<div class=\"cs-screen-placeholder\">\n<img alt=\"Seção de trabalhos recentes da Vellumwire no mobile\" decoding=\"async\" height=\"792\" loading=\"lazy\" src=\"/pt-br/work/vellumwire/img/vellumwire-recent-work-mobile.webp\" width=\"357\"/>\n</div>\n<figcaption class=\"cs-caption\">Trabalhos recentes · portfólio exibido depois de a credibilidade estar estabelecida</figcaption>\n</figure>\n</div>\n<p>O que o site faz que não é capturado em um número: um prospect frio que o encontra via busca pode ir da descoberta até agendar um diagnóstico sem um único ponto de contato com o estúdio, exatamente o objetivo que o briefing definiu.</p>\n<p>O que eu faria a seguir: conteúdo de estudo de caso direcionado a verticais específicas (escritórios de advocacia, prestadores de serviço, clínicas) para capturar tráfego de cauda longa com intenção mais alta; um heatmap na seção de preços para entender onde os prospects desistem antes de converter; uma seção de Insights com conteúdo original para acumular autoridade orgânica ao longo do tempo.</p>\n<div class=\"cs-trust-pills\">\n<span class=\"cs-trust-pill\">Hero guiado pelo problema · relevância antes da prova</span>\n<span class=\"cs-trust-pill\">Preço publicado · sinal de confiança + filtro de leads</span>\n<span class=\"cs-trust-pill\">Diagnóstico gratuito · compromisso quase zero</span>\n</div>"
+  },
+  {
+   "id": "s08",
+   "num": "08",
+   "title": "Reflexões",
+   "layout": "editorial",
+   "html": "<p><strong>Escrever levou mais tempo do que desenhar.</strong> Posicionamento guiado pelo problema exige saber quais problemas os clientes sentem como urgentes o suficiente para agir, não apenas reconhecer. O copy passou por mais iterações do que o layout. Na próxima, eu escreveria o posicionamento antes de abrir o Figma e deixaria que ele guiasse a estrutura, em vez do contrário.</p>\n<p><strong>A clareza foi a verdadeira alavanca de crescimento.</strong> Sem construção de backlinks, sem calendário de conteúdo, sem presença social no lançamento. O crescimento orgânico veio de ser o único estúdio nesse espaço cujo site descrevia o problema que o prospect já estava sentindo. Posicionamento é uma estratégia de distribuição.</p>\n<p><strong>Uma janela de 48 a 72 horas ainda separa o interesse de uma resposta qualificada.</strong> Um formulário de contato mais uma descoberta assíncrona deixa essa janela aberta. Um fluxo de entrada curto que pré-qualifica leads e reduz o tempo até a proposta fecharia essa janela sem adicionar uma ligação de vendas.</p>\n<p><strong>Esse site também é a descrição mais clara de como a Vellumwire funciona.</strong> Eu cuido das conversas com o cliente, pesquisa, posicionamento, UX e design em todo projeto deste portfólio. O Afonso cuida de implementação, hospedagem e performance. Duas pessoas, não uma agência fingindo ser uma.</p>"
+  }
+ ],
+ "headline": "Um site de estúdio que fecha antes da ligação",
+ "dek": "A Vellumwire é um estúdio de web design focado em negócios de serviço que precisam de mais leads inbound. O primeiro projeto foi o próprio estúdio: construir um site capaz de comprimir um ciclo de vendas completo em uma única visita, para um público que já foi queimado por agências antes e é desconfiado por padrão.",
+ "tags": [
+  "Produto",
+  "UI/UX"
+ ],
+ "heroImg": {
+  "src": "/pt-br/work/vellumwire/img/hero.webp",
+  "w": 1920,
+  "h": 1440,
+  "alt": "Hero e seção de serviços do site do estúdio Vellumwire",
+  "contain": false
+ },
+ "context": {
+  "eyebrow": "Estado atual · padrão comum de sites de agência",
+  "media": "<div class=\"cs-diagram\">\n<svg aria-label=\"Fluxo padrão de site de agência mostrando o padrão portfólio-primeiro que perde o prospect antes de estabelecer relevância\" role=\"img\" viewbox=\"0 0 780 100\" width=\"100%\">\n<defs>\n<marker id=\"arr-cs\" markerheight=\"6\" markerwidth=\"6\" orient=\"auto-start-reverse\" refx=\"8\" refy=\"5\" viewbox=\"0 0 10 10\">\n<path d=\"M2 1L8 5L2 9\" fill=\"none\" stroke=\"#7f2020\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"></path>\n</marker>\n</defs>\n<rect fill=\"#1d1c1a\" height=\"72\" rx=\"8\" stroke=\"#3a3530\" stroke-width=\"0.5\" width=\"140\" x=\"10\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#d0c8bc\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"80\" y=\"38\">Busca por ajuda</text>\n<text dominant-baseline=\"central\" fill=\"#908684\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"80\" y=\"66\">Tem um problema específico</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#3a3530\" stroke-width=\"1\" x1=\"151\" x2=\"163\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#1d1c1a\" height=\"72\" rx=\"8\" stroke=\"#3a3530\" stroke-width=\"0.5\" width=\"140\" x=\"164\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#d0c8bc\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"234\" y=\"38\">Chega no site da agência</text>\n<text dominant-baseline=\"central\" fill=\"#908684\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"234\" y=\"66\">Portfólio exibido primeiro</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"305\" x2=\"317\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"140\" x=\"318\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"388\" y=\"38\">Avalia estética</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"388\" y=\"66\">Relevância nunca estabelecida</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"459\" x2=\"471\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"140\" x=\"472\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"542\" y=\"38\">\"Peça um orçamento\"</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"542\" y=\"66\">Pedido de alto compromisso</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"613\" x2=\"625\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"144\" x=\"626\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"698\" y=\"38\">Prospect sai</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"698\" y=\"66\">Nunca converteu.</text>\n</svg>\n</div>",
+  "caption": "Sites de agência costumam abrir com uma grade de portfólio. Um prospect que chega pela busca ainda não decidiu se o estúdio resolve o problema dele. Mostrar trabalho antes de estabelecer relevância pede avaliação antes de confiança."
+ }
+}

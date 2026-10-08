@@ -1,0 +1,247 @@
+/* ==========================================================================
+   work.css · Work listing. Nav, footer, form, grid lines come from
+   globals + home hp-grid. Measurements: Work Page 67:1135 (1920),
+   Work Tablet 255:372 (1024), Work Mobile 255:624 (390).
+   ========================================================================== */
+
+.page-work {
+  --nav-h: 104px;
+  --hp-go-light: var(--card-go-light);
+}
+@media (max-width: 1279px) and (min-width: 900px) {
+  .page-work { --hp-inset: 3rem; --nav-h: 96px; }
+}
+@media (max-width: 767px) {
+  .page-work { --hp-inset: 1.25rem; --nav-h: 64px; }
+}
+
+/* Work Page Vertical Dividers — always behind section content. */
+.page-work .hp-grid {
+  isolation: isolate;
+}
+.page-work .hp-grid > * {
+  position: relative;
+  z-index: 1;
+}
+.page-work .hp-grid::before,
+.page-work .hp-grid::after {
+  z-index: -1;
+}
+.page-work .hp-grid::after {
+  content: none;
+}
+.page-work .hp-grid::before {
+  background-image:
+    linear-gradient(
+      to right,
+      transparent calc(50% - var(--rule-w)),
+      var(--rule-grid) calc(50% - var(--rule-w)),
+      var(--rule-grid) 50%,
+      transparent 50%
+    );
+}
+.page-work .work-hero,
+.page-work .work-toolbar,
+.page-work .work-projects,
+.page-work .lead-cta-section {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  isolation: isolate;
+  overflow: clip;
+}
+
+/* Kill page-local nav padding — one nav from c-nav + globals everywhere. */
+.page-work .nav {
+  padding-inline: max(var(--hp-inset, 5.5rem), env(safe-area-inset-left)) max(var(--hp-inset, 5.5rem), env(safe-area-inset-right));
+}
+
+.page-work .work-card {
+  isolation: isolate;
+}
+
+/* Hero Content 67:1142: pt 160, px 86, gap 100. */
+.work-hero {
+  position: relative;
+  display: block;
+  padding: var(--nav-h) var(--hp-inset) 0;
+  overflow: visible;
+}
+.work-hero__watermark {
+  position: absolute;
+  left: var(--hp-inset);
+  /* Hero Content 67:1142 starts under the bar. Vector 165:642 is top:0 of that. */
+  top: var(--nav-h);
+  width: min(26.633vw, 31.96rem);
+  height: min(13.021vw, 15.625rem);
+  object-fit: contain;
+  object-position: left top;
+  pointer-events: none;
+  z-index: 0;
+}
+.work-hero__mark {
+  position: absolute;
+  /* Figma 181:405 — right side of the hero, same board presence as Insights. */
+  left: calc(1234 / 1920 * 100vw);
+  top: calc(var(--nav-h) - 9.21875vw);
+  z-index: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 58.6757vw;
+  height: 58.6757vw;
+  pointer-events: none;
+  overflow: visible;
+}
+.work-hero__mark img {
+  width: 41.4893vw;
+  height: 41.4893vw;
+  transform: rotate(-45deg);
+  transform-origin: center center;
+  object-fit: contain;
+}
+.work-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+  padding-top: var(--space-160);
+}
+.work-hero__title {
+  font-family: var(--display);
+  font-size: var(--fs-display);
+  line-height: 0.987;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--t1);
+}
+.work-hero__desc {
+  margin: 0;
+  font-size: var(--fs-24);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--t2);
+  max-width: min(45.625vw, 54.75rem);
+  line-height: 1.25;
+}
+
+/* Category Filter Bar — same chips as Home (globals .filter-btn). */
+.work-toolbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6.25rem;
+  padding: 0;
+}
+.page-work .work-toolbar .filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+/* Projects Section 67:1226. Rows: 160 pad desktop, 48 gutter, 1148 / rest. */
+.work-projects {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-160) var(--hp-inset) 0;
+}
+.page-work .work-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: var(--space-48);
+  row-gap: var(--space-160);
+}
+.page-work .work-card {
+  flex: 1 1 calc((100% - var(--space-48)) * 0.316);
+  min-width: 0;
+}
+.page-work .work-card--lg {
+  flex: 1 1 calc((100% - var(--space-48)) * 0.657);
+}
+.page-work .work-card__tags,
+.page-work .work-card__link {
+  display: none;
+}
+
+.page-work .cases-empty {
+  margin-top: var(--space-48);
+}
+
+.page-work .lead-cta-section .container {
+  padding-inline: var(--hp-inset);
+  max-width: none;
+}
+
+/* Tablet 255:372 — 1024. Title 68, inset 48, equal cards, chips 14. */
+@media (max-width: 1279px) and (min-width: 768px) {
+  .page-work { --hp-inset: 3rem; }
+  .work-hero__copy { padding-top: var(--space-80); }
+  .work-hero__title { font-size: 4.25rem; letter-spacing: 0.03em; }
+  .work-hero__desc {
+    font-size: var(--fs-16);
+    letter-spacing: 0.03em;
+    max-width: none;
+  }
+  .work-hero__watermark {
+    width: min(34.18vw, 21.875rem);
+    height: min(16.7vw, 10.6875rem);
+  }
+  .work-hero__mark { display: none; }
+  .work-projects { padding-top: var(--space-80); }
+  .page-work .work-grid { row-gap: var(--space-80); }
+  .page-work .work-card,
+  .page-work .work-card--lg {
+    flex: 1 1 calc((100% - var(--space-48)) / 2);
+  }
+}
+
+/* Mobile 255:624 — 390. One column. Title keeps the same clamp as
+   Insights (40px floor) — Figma's 26px reads as a collapsed page. */
+@media (max-width: 767px) {
+  .work-hero { padding-top: var(--nav-h); }
+  .work-hero__copy { padding-top: var(--space-40); gap: var(--space-24); }
+  .work-hero__title { letter-spacing: 0.03em; }
+  .work-hero__desc {
+    font-size: var(--fs-16);
+    max-width: none;
+  }
+  .work-hero__watermark {
+    width: min(60vw, 12.5rem);
+    height: auto;
+    max-height: 4.5rem;
+  }
+  .work-hero__mark { display: none; }
+  .work-toolbar { margin-top: var(--space-48); }
+  .page-work .work-toolbar .filter-bar {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .work-projects { padding-top: var(--space-40); }
+  .page-work .work-grid {
+    flex-direction: column;
+    row-gap: var(--space-32);
+  }
+  .page-work .work-card,
+  .page-work .work-card--lg {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .page-work .lead-cta-section { padding-block: var(--space-40); }
+  .page-work .lead-cta-section__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: var(--space-48);
+    text-align: center;
+  }
+}

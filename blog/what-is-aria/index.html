@@ -1,592 +1,336 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>What is ARIA and why product designers need it | Dhiego</title>
   <meta name="description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Dhiego Cristofolini">
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="What is ARIA and why product designers need it">
-  <meta property="og:description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.">
-  <meta property="og:image" content="https://cristofolini.site/assets/img/blog/aria-cover.svg">
-  <meta property="og:url" content="https://cristofolini.site/blog/what-is-aria/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What is ARIA and why product designers need it">
-  <meta name="twitter:description" content="ARIA roles, states, and properties explained for product designers, and how to document interactive behavior so developers implement it right.">
-  <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/aria-cover.svg">
+  <meta name="theme-color" content="#040404">
   <link rel="canonical" href="https://cristofolini.site/blog/what-is-aria/">
   <link rel="alternate" hreflang="en" href="https://cristofolini.site/blog/what-is-aria/">
   <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/blog/o-que-e-aria/">
   <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/blog/what-is-aria/">
-  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link href="../../assets/css/globals.css?v=3" rel="stylesheet">
-  <link href="../../assets/css/blog.css?v=2" rel="stylesheet">
-  <style>
-    .demo-panel {
-      margin: 32px 0;
-      padding: 28px;
-      border: 1px solid var(--b0);
-      background: var(--bg1);
-    }
-    .article-body .demo-caption {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .04em;
-      color: var(--t3);
-      text-align: center;
-      margin: 12px 0 32px;
-    }
-
-    /* Artifact 1: roles / states / properties matrix */
-    .demo-matrix {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .demo-matrix__card {
-      background: var(--bg2);
-      border: 1px solid var(--b1);
-      border-top: 3px solid var(--y);
-      padding: 18px;
-    }
-    .demo-matrix__card:nth-child(2) { border-top-color: var(--t1); }
-    .demo-matrix__card:nth-child(3) { border-top-color: var(--t2); }
-    .demo-matrix__label {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--t1);
-      margin-bottom: 12px;
-    }
-    .demo-matrix__attr {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--y);
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      padding: 2px 6px;
-      margin: 0 4px 6px 0;
-    }
-    .demo-matrix__desc {
-      font-size: 12px;
-      color: var(--t2);
-      line-height: 1.5;
-      margin-top: 8px;
-    }
-
-    /* Artifact 2: modal annotated spec */
-    .demo-modal-spec {
-      display: grid;
-      grid-template-columns: minmax(0, 240px) 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-    .demo-modal-spec__mock {
-      background: var(--bg2);
-      border: 1px solid var(--b2);
-      padding: 20px;
-      position: relative;
-    }
-    .demo-modal-spec__mock-title {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--t1);
-      margin-bottom: 10px;
-    }
-    .demo-modal-spec__mock-body {
-      font-size: 12px;
-      color: var(--t2);
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .demo-modal-spec__mock-btn {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: #0a0908;
-      background: var(--y);
-      padding: 6px 12px;
-      display: inline-block;
-    }
-    .demo-modal-spec__notes {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      counter-reset: spec;
-    }
-    .demo-modal-spec__notes li {
-      counter-increment: spec;
-      position: relative;
-      padding: 0 0 16px 30px;
-      font-size: 13px;
-      line-height: 1.55;
-      color: var(--t1);
-    }
-    .demo-modal-spec__notes li:last-child { padding-bottom: 0; }
-    .demo-modal-spec__notes li::before {
-      content: counter(spec);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      border: 1px solid var(--accent-border);
-      color: var(--y);
-      font-family: var(--mono);
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .demo-modal-spec__notes b { color: var(--t1); }
-
-    /* Artifact 3: native select vs custom combobox */
-    .demo-select-compare {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .demo-select-compare__col-title {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--t2);
-      margin-bottom: 14px;
-      text-align: center;
-    }
-    .demo-select-compare__mock {
-      background: var(--bg2);
-      border: 1px solid var(--b1);
-      padding: 12px 14px;
-      font-family: var(--sans);
-      font-size: 13px;
-      color: var(--t1);
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .demo-select-compare__mock::after { content: '⌄'; color: var(--t3); }
-    .demo-select-compare__attrs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .demo-select-compare__attr {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 3px 7px;
-      border: 1px solid var(--b1);
-      color: var(--t3);
-    }
-    .demo-select-compare__attr--needed {
-      color: var(--y);
-      border-color: var(--accent-border);
-      background: var(--accent-dim);
-    }
-    .demo-select-compare__count {
-      margin-top: 14px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--t3);
-      text-align: center;
-    }
-
-    /* Artifact 4: live region toasts */
-    .demo-live {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .demo-live__col-title {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--t2);
-      margin-bottom: 14px;
-      text-align: center;
-    }
-    .demo-live__toast {
-      background: var(--bg2);
-      border: 1px solid var(--b1);
-      border-left: 3px solid var(--t3);
-      padding: 14px 16px;
-      font-size: 13px;
-      color: var(--t1);
-      margin-bottom: 12px;
-    }
-    .demo-live__toast--announced { border-left-color: var(--y); }
-    .demo-live__badge {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .04em;
-      padding: 3px 7px;
-      margin-top: 10px;
-    }
-    .demo-live__badge--silent { color: #e08585; border: 1px solid rgba(224,133,133,.4); }
-    .demo-live__badge--live { color: #7fbf6a; border: 1px solid rgba(127,191,106,.4); }
-
-    @media (max-width: 640px) {
-      .demo-matrix, .demo-select-compare, .demo-live { grid-template-columns: 1fr; }
-      .demo-modal-spec { grid-template-columns: 1fr; }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "What is ARIA and why product designers need to understand it",
-    "author": { "@type": "Person", "name": "Dhiego Cristofolini", "url": "https://cristofolini.site/" },
-    "datePublished": "2026-07-10",
-    "dateModified": "2026-07-10",
-    "image": "https://cristofolini.site/assets/img/blog/aria-cover.svg",
-    "description": "ARIA roles, states, and properties explained for product designers, the first rule of ARIA, the patterns you'll actually touch, and how to document interactive behavior so developers implement it right.",
-    "url": "https://cristofolini.site/blog/what-is-aria/",
-    "inLanguage": "en-US"
-  }
-  </script>
-</head>
-<body>
-
-  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
-
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="../../" class="nav-logo" aria-label="Cristofolini | Home">
-      <img src="../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
-    </a>
-    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <ul class="nav-links" role="list">
-      <li><a href="../../work/">Work</a></li>
-      <li><a href="../" aria-current="page">Insights</a></li>
-    </ul>
-    <a href="../../pt-br/blog/o-que-e-aria/" class="nav-lang" hreflang="pt-BR" aria-label="Switch to Portuguese">PT-BR</a>
-    <a href="../../contact/" class="nav-cta">Contact</a>
-  </nav>
-
-  <main id="main-content" tabindex="-1">
-
-    <div class="container">
-      <header class="article-hero">
-        <a href="../" class="article-hero__back">← Insights</a>
-        <span class="article-hero__tag">Accessibility</span>
-        <h1 class="article-hero__title">What is ARIA and why product designers need to understand it</h1>
-        <div class="article-hero__meta">
-          <span>Dhiego Cristofolini</span>
-          <span class="article-hero__meta-sep">·</span>
-          <span>Jul 2026</span>
-          <span class="article-hero__meta-sep">·</span>
-          <span>8 min read</span>
-        </div>
-      </header>
-    </div>
-
-    <div class="article-cover">
-      <img
-        src="../../assets/img/blog/aria-braille-hero.webp" width="1280" height="672"
-        alt="Macro photograph of raised braille-like dots embossed on a dark surface, each catching a warm amber highlight"
-        loading="eager"
-      >
-    </div>
-
-    <div class="article-layout">
-
-      <aside class="article-toc" aria-label="Table of contents">
-        <p class="article-toc__label">Contents</p>
-        <a href="#what-it-is" class="article-toc__link">01 What ARIA actually is</a>
-        <a href="#patterns" class="article-toc__link">02 Patterns designers touch</a>
-        <a href="#misuse" class="article-toc__link">03 Why misuse is worse than nothing</a>
-        <a href="#documenting" class="article-toc__link">04 Documenting behavior</a>
-        <a href="#testing" class="article-toc__link">05 Testing what you shipped</a>
-        <a href="#sources" class="article-toc__link">Sources</a>
-      </aside>
-
-      <article class="article-body">
-
-        <p><a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a> opened with a stat that should stop anyone building interfaces: pages that use ARIA average 34% more accessibility errors than pages that do not touch it at all. That piece covered why in one paragraph: nobody specified the behavior, so the attribute got implemented as a guess. This article covers the rest: what ARIA actually is, the one rule that prevents most of that damage, the handful of patterns a product designer will actually run into, and how to document interactive behavior so a developer implements it once, correctly, instead of guessing.</p>
-
-        <div class="article-section__hd">
-          <span class="article-section__num">01</span>
-          <h2 class="article-section__title" id="what-it-is">What ARIA actually is</h2>
-        </div>
-
-        <h3>1.1 Roles, states, and properties</h3>
-
-        <p>ARIA attributes fall into three categories, and confusing them is where most misuse starts.</p>
-
-        <p><strong>Roles</strong> tell assistive technology what an element is. <code>role="dialog"</code>, <code>role="tablist"</code>, <code>role="alert"</code>. A role replaces or adds to an element's default semantics: a <code>&lt;div&gt;</code> with <code>role="button"</code> is announced as a button, even though it has none of a button's actual behavior.</p>
-
-        <p><strong>States</strong> describe a condition that changes during use. <code>aria-expanded="true"</code>, <code>aria-checked="false"</code>, <code>aria-disabled="true"</code>. States are meant to change (that is the entire point of them), and a state that never updates after the interface changes is worse than no state at all, because it tells the user something false.</p>
-
-        <p><strong>Properties</strong> describe a relationship or a characteristic that mostly stays fixed. <code>aria-label</code>, <code>aria-labelledby</code>, <code>aria-describedby</code>, <code>aria-controls</code>. Properties tell assistive technology what an element is connected to, or what to call it when it has no visible text.</p>
-
-        <div class="demo-panel">
-          <div class="demo-matrix">
-            <div class="demo-matrix__card">
-              <p class="demo-matrix__label">Roles</p>
-              <span class="demo-matrix__attr">role="dialog"</span>
-              <span class="demo-matrix__attr">role="tablist"</span>
-              <span class="demo-matrix__attr">role="alert"</span>
-              <p class="demo-matrix__desc">What the element is.</p>
-            </div>
-            <div class="demo-matrix__card">
-              <p class="demo-matrix__label">States</p>
-              <span class="demo-matrix__attr">aria-expanded</span>
-              <span class="demo-matrix__attr">aria-checked</span>
-              <span class="demo-matrix__attr">aria-disabled</span>
-              <p class="demo-matrix__desc">What changes during use.</p>
-            </div>
-            <div class="demo-matrix__card">
-              <p class="demo-matrix__label">Properties</p>
-              <span class="demo-matrix__attr">aria-label</span>
-              <span class="demo-matrix__attr">aria-describedby</span>
-              <span class="demo-matrix__attr">aria-controls</span>
-              <p class="demo-matrix__desc">What it's connected to.</p>
-            </div>
-          </div>
-        </div>
-        <p class="demo-caption">Three categories. Most confusion about ARIA is a confusion between these three.</p>
-
-        <h3>1.2 The first rule of ARIA</h3>
-
-        <p>The W3C's own authoring guidance opens with what practitioners call the first rule of ARIA: if a native HTML element already has the semantics and behavior you need, use it instead of rebuilding it from a styled <code>&lt;div&gt;</code> plus a role attribute.</p>
-
-        <p>The reason is not stylistic. A native <code>&lt;button&gt;</code> comes with keyboard activation on Enter and Space, a visible focus state, the correct role announced automatically, and correct form-submission behavior when it sits inside a <code>&lt;form&gt;</code>. <code>role="button"</code> on a <code>&lt;div&gt;</code> gives you exactly one of those things: the announced role. Nothing else follows automatically. Keyboard handling and focus management all have to be built and maintained by hand, and it is trivially easy to forget one of them. This is the same story as the div-vs-button example from the previous piece in this series: ARIA is frequently reached for to patch a component-choice problem that a native element would have solved for free.</p>
-
-        <h3>1.3 What ARIA cannot do</h3>
-
-        <p>This is the point most designers miss: ARIA changes what is announced. It does not change what happens. Adding <code>aria-expanded="true"</code> to a div does not make Enter or Space open anything. A developer still has to wire that behavior up separately, in JavaScript, regardless of what the markup says. ARIA is a labeling layer sitting on top of behavior that has to exist independently of it. That is exactly why documenting the behavior, covered in section 4, matters as much as knowing the attribute name.</p>
-
-        <div class="article-section__hd">
-          <span class="article-section__num">02</span>
-          <h2 class="article-section__title" id="patterns">The patterns designers actually touch</h2>
-        </div>
-
-        <h3>2.1 Modals and dialogs</h3>
-
-        <p>A modal needs <code>role="dialog"</code>, <code>aria-modal="true"</code>, and <code>aria-labelledby</code> pointing at whatever text serves as its heading. That part is quick. The part that determines whether it actually works is the behavior around it, and that is where the designer's decisions live: what triggers it, where focus lands when it opens, whether Tab and Shift+Tab loop inside it or leak out to the page behind it, what closes it, and where focus goes when it does.</p>
-
-        <div class="demo-panel">
-          <div class="demo-modal-spec">
-            <div class="demo-modal-spec__mock">
-              <p class="demo-modal-spec__mock-title">Delete project?</p>
-              <p class="demo-modal-spec__mock-body">This cannot be undone. All data will be permanently removed.</p>
-              <span class="demo-modal-spec__mock-btn">Delete</span>
-            </div>
-            <ol class="demo-modal-spec__notes">
-              <li><b>Trigger:</b> click on "Delete project" in the project menu</li>
-              <li><b>On open:</b> focus moves to the dialog heading, not the first button</li>
-              <li><b>While open:</b> Tab and Shift+Tab loop within the dialog only</li>
-              <li><b>Closes on:</b> Escape key, backdrop click, or either button</li>
-              <li><b>On close:</b> focus returns to the menu item that opened it, not the page body</li>
-            </ol>
-          </div>
-        </div>
-        <p class="demo-caption">This is what a designer specifies. A developer turns this directly into the correct ARIA and focus-management code.</p>
-
-        <h3>2.2 Custom dropdowns and comboboxes</h3>
-
-        <p>A native <code>&lt;select&gt;</code> needs zero ARIA. It has a role, full keyboard support, and screen reader announcement built into every browser, for free. The moment a dropdown is restyled beyond what <code>&lt;select&gt;</code> allows and rebuilt from <code>&lt;div&gt;</code>s, it needs a working set of six or more attributes just to reach parity: <code>role="combobox"</code> on the trigger, <code>aria-expanded</code> reflecting open state, <code>aria-controls</code> pointing at the listbox, <code>role="listbox"</code> on the options container, <code>role="option"</code> on each item, and <code>aria-activedescendant</code> tracking which option currently has virtual focus as arrow keys move through the list. None of that is required by the native element. Every one of those attributes has to stay perfectly in sync with the actual keyboard behavior, or the mismatch is worse than doing nothing.</p>
-
-        <div class="demo-panel">
-          <div class="demo-select-compare">
-            <div>
-              <p class="demo-select-compare__col-title">Native &lt;select&gt;</p>
-              <div class="demo-select-compare__mock">Notifications</div>
-              <div class="demo-select-compare__attrs">
-                <span class="demo-select-compare__attr">role: automatic</span>
-                <span class="demo-select-compare__attr">keyboard: automatic</span>
-                <span class="demo-select-compare__attr">announcement: automatic</span>
-              </div>
-              <p class="demo-select-compare__count">0 ARIA attributes needed</p>
-            </div>
-            <div>
-              <p class="demo-select-compare__col-title">Custom dropdown</p>
-              <div class="demo-select-compare__mock">Notifications</div>
-              <div class="demo-select-compare__attrs">
-                <span class="demo-select-compare__attr demo-select-compare__attr--needed">role="combobox"</span>
-                <span class="demo-select-compare__attr demo-select-compare__attr--needed">aria-expanded</span>
-                <span class="demo-select-compare__attr demo-select-compare__attr--needed">aria-controls</span>
-                <span class="demo-select-compare__attr demo-select-compare__attr--needed">role="listbox"</span>
-                <span class="demo-select-compare__attr demo-select-compare__attr--needed">role="option"</span>
-                <span class="demo-select-compare__attr demo-select-compare__attr--needed">aria-activedescendant</span>
-              </div>
-              <p class="demo-select-compare__count">6 ARIA attributes needed, all kept in sync by hand</p>
-            </div>
-          </div>
-        </div>
-        <p class="demo-caption">Same interaction, same visual result achievable either way. Only one of them requires ongoing maintenance to stay correct.</p>
-
-        <h3>2.3 Live regions</h3>
-
-        <p>Some interface changes need to be announced without moving the user's focus: a toast confirming a save, a validation summary appearing above a form, a loading state resolving. <code>aria-live="polite"</code> on the container that receives that content tells screen readers to announce it once the user's current action finishes, without interrupting and without stealing focus. <code>aria-live="assertive"</code> interrupts immediately: reserve it for things that block the task, like a session-timeout warning, not for routine confirmations.</p>
-
-        <p>The mistake I see most often: a toast that renders with a CSS animation and reads perfectly to a sighted user, wired to nothing. No live region, no <code>role="status"</code>. Visually it works exactly as designed. For a screen reader user, the confirmation never happened. The save may as well have failed silently.</p>
-
-        <div class="demo-panel">
-          <div class="demo-live">
-            <div>
-              <p class="demo-live__col-title">Visual only</p>
-              <div class="demo-live__toast">✓ Changes saved</div>
-              <span class="demo-live__badge demo-live__badge--silent">Not announced</span>
-            </div>
-            <div>
-              <p class="demo-live__col-title">aria-live="polite"</p>
-              <div class="demo-live__toast demo-live__toast--announced">✓ Changes saved</div>
-              <span class="demo-live__badge demo-live__badge--live">Announced on save</span>
-            </div>
-          </div>
-        </div>
-        <p class="demo-caption">Identical toast. One exists for screen reader users, the other only exists on screen.</p>
-
-        <h3>2.4 Disclosure and accordions</h3>
-
-        <p><code>aria-expanded</code> on the trigger button, <code>aria-controls</code> pointing at the panel's id. Simple, cheap, and one of the most commonly skipped attributes on the web: the visual expand and collapse works perfectly, the announcement of that state to a screen reader is the part that gets left out under deadline.</p>
-
-        <div class="article-section__hd">
-          <span class="article-section__num">03</span>
-          <h2 class="article-section__title" id="misuse">Why ARIA misuse is worse than no ARIA at all</h2>
-        </div>
-
-        <h3>3.1 The 34% stat, unpacked</h3>
-
-        <p>WebAIM's Million report has tracked this for years: home pages with ARIA present carry meaningfully more detected accessibility errors, on average, than home pages with none. The reason is structural, not a coincidence of who happens to use ARIA. ARIA overrides native semantics unconditionally. Once <code>role="button"</code> sits on an element, screen readers trust it completely, even if the underlying element is a link, an image, or plain text with a click handler taped on. A wrong or stale ARIA attribute does not just fail to help. It actively misinforms the one channel of information a screen reader user has for that element. That is structurally different from a missing <code>alt</code> attribute, which is merely silent. Silence prompts a screen reader to fall back to something else. A false statement does not.</p>
-
-        <h3>3.2 The three failure patterns worth knowing by sight</h3>
-
-        <p><strong>Redundant roles.</strong> <code>role="button"</code> on an actual <code>&lt;button&gt;</code>. Harmless on its own, but a reliable signal that nobody checked the fundamentals before adding ARIA on top of them.</p>
-
-        <p><strong>Conflicting or stale state.</strong> <code>aria-expanded="false"</code> hardcoded in the markup and never updated by JavaScript when the panel actually opens. The user hears "collapsed" while looking at, or unable to see, a panel that is fully open.</p>
-
-        <p><strong>aria-hidden on the wrong branch.</strong> <code>aria-hidden="true"</code> applied to a container that still holds focusable children inside it. The content disappears from the accessibility tree, but a keyboard user can still tab into elements a screen reader user is told do not exist, an inconsistency between two ways of navigating the same page.</p>
-
-        <div class="article-section__hd">
-          <span class="article-section__num">04</span>
-          <h2 class="article-section__title" id="documenting">Documenting behavior so developers implement it right</h2>
-        </div>
-
-        <h3>4.1 What to specify</h3>
-
-        <p>Not attribute names. Behavior. For every interactive component, five questions cover almost every case: what triggers the state change, what the initial state is, where focus goes on open and on close, what the keyboard is expected to do (Escape, arrow keys, Tab boundaries), and what should be announced when the state changes, described in plain language rather than markup.</p>
-
-        <p>A developer who receives "opens on click, focus moves to the dialog heading, Escape and a backdrop click both close it, focus returns to the trigger" can implement the correct ARIA without the designer ever writing an attribute name. A developer who receives only the visual mockup has to guess. Guessing under a deadline is where the 34% comes from.</p>
-
-        <h3>4.2 Keep the notes attached to the component, not in a separate document</h3>
-
-        <p>Behavior notes that live in a shared "interactions" document get skipped, because nobody opens a second file mid-build. Attach them directly to the frame or component in whatever tool the handoff happens through: a sticky note, a dev-mode annotation, a comment thread pinned to the component itself. The closer the documentation sits to the artifact a developer is already looking at, the higher the odds it survives the handoff intact.</p>
-
-        <div class="article-section__hd">
-          <span class="article-section__num">05</span>
-          <h2 class="article-section__title" id="testing">Testing what you shipped</h2>
-        </div>
-
-        <h3>5.1 A two-minute check any designer can run</h3>
-
-        <p>No screen reader license required. Chrome DevTools → Elements → the Accessibility pane shows the computed role, name, and state of any selected element in real time. Open a modal, select it in DevTools, confirm the role reads "dialog" and the name matches the heading you expect. On Mac, VoiceOver ships free with the OS (Cmd+F5 toggles it); walk your own component with it once before it ships. On Windows, NVDA is free to install. None of this replaces a full audit. All of it catches the failures in section 3 before a developer has to.</p>
-
-        <h3>5.2 ARIA cannot fix a decision made upstream</h3>
-
-        <p>The correct amount of ARIA on a well-chosen component is often close to zero: a native element already carries most of it. The ARIA required to patch a badly-chosen one keeps growing, and every attribute added is one more place for the implementation to drift from the design over time. <a href="../accessibility-failures-are-design-decisions/">Accessibility failures are design decisions</a> covers the component-choice failures this compounds with: the wrong element chosen at the design stage, multiplied by every developer who has to work around it afterward. The fix in both cases is the same: the decision that matters happens before a single attribute gets written, in the file the designer controls.</p>
-
-        <h2 id="sources">Sources</h2>
-
-        <ul>
-          <li>W3C Web Accessibility Initiative. <em>Accessible Rich Internet Applications (WAI-ARIA) 1.2.</em> <a href="https://www.w3.org/TR/wai-aria-1.2/" target="_blank" rel="noopener noreferrer">w3.org/TR/wai-aria-1.2</a></li>
-          <li>W3C Web Accessibility Initiative. <em>ARIA Authoring Practices Guide (APG).</em> <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener noreferrer">w3.org/WAI/ARIA/apg</a></li>
-          <li>W3C Web Accessibility Initiative. <em>Using ARIA: the first rule of ARIA use.</em> <a href="https://www.w3.org/TR/using-aria/" target="_blank" rel="noopener noreferrer">w3.org/TR/using-aria</a></li>
-          <li>WebAIM. <em>The WebAIM Million: The 2025 report on the accessibility of the top 1,000,000 home pages.</em> <a href="https://webaim.org/projects/million/" target="_blank" rel="noopener noreferrer">webaim.org/projects/million</a></li>
-          <li>WebAIM. <em>Screen Reader User Survey #10 Results.</em> <a href="https://webaim.org/projects/screenreadersurvey10/" target="_blank" rel="noopener noreferrer">webaim.org/projects/screenreadersurvey10</a></li>
-          <li>MDN Web Docs. <em>ARIA.</em> <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" target="_blank" rel="noopener noreferrer">developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA</a></li>
-        </ul>
-
-        <div class="article-end">
-          <section class="newsletter-section" aria-labelledby="newsletter-article-title">
-            <div class="newsletter-inner">
-              <p class="newsletter-eyebrow">Newsletter</p>
-              <h2 class="newsletter-title" id="newsletter-article-title">Get the next one in your inbox</h2>
-              <p class="newsletter-desc">New posts, design notes, and the occasional useful thing. No noise, no sales pitch.</p>
-              <script async data-uid="87cb6ee129" src="https://cristofolini.kit.com/87cb6ee129/index.js"></script>
-              <p class="newsletter-disclaimer">No spam. Unsubscribe any time.</p>
-            </div>
-          </section>
-        </div>
-
-      </article>
-    </div>
-
-  </main>
-
-  <a href="../../work/" class="cta-section" aria-label="View selected work">
-    <p class="cta-section__eyebrow">Selected work</p>
-    <p class="cta-section__headline">See what<br><em>I've built.</em></p>
-    <span class="cta-section__arrow" aria-hidden="true">→</span>
-  </a>
-
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner container">
-      <div class="footer__brand">
-        <span class="footer__logo">Cristofolini</span>
-        <p class="footer__copy">© 2026 Dhiego Cristofolini. Based in Brazil.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="../../" class="footer__nav-link">Home</a>
-        <a href="../../work/" class="footer__nav-link">Work</a>
-        <a href="../" class="footer__nav-link">Insights</a>
-        <a href="../../contact/" class="footer__nav-link">Contact</a>
-        <a href="../../privacy-policy/" class="footer__nav-link">Privacy</a>
-        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script src="../../assets/js/main.js" defer></script>
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dhiego Cristofolini">
+  <meta property="og:title" content="What is ARIA and why product designers need it | Dhiego">
+  <meta property="og:description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.">
+  <meta property="og:url" content="https://cristofolini.site/blog/what-is-aria/">
+  <meta property="og:image" content="https://cristofolini.site/assets/img/blog/aria-braille-hero.webp">
+  <meta property="og:image:alt" content="Macro photograph of raised braille-like dots embossed on a dark surface, each catching a warm amber highlight">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What is ARIA and why product designers need it | Dhiego">
+  <meta name="twitter:description" content="ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.">
+  <meta name="twitter:image" content="https://cristofolini.site/assets/img/blog/aria-braille-hero.webp">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.min.css?v=75d11cbc85">
   <script>
-    (function () {
-      var toc = document.querySelector('.article-toc');
-      if (!toc) return;
-      var links = Array.from(toc.querySelectorAll('.article-toc__link'));
-      var targets = links.map(function(l) {
-        return document.querySelector(l.getAttribute('href'));
-      }).filter(Boolean);
-      var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            links.forEach(function(l) { l.classList.remove('is-active'); });
-            var active = toc.querySelector('a[href="#' + e.target.id + '"]');
-            if (active) active.classList.add('is-active');
-          }
-        });
-      }, { rootMargin: '-15% 0px -75% 0px' });
-      targets.forEach(function(h) { obs.observe(h); });
-    })();
+    document.documentElement.classList.add('js');
+    try {
+      if (!sessionStorage.getItem('seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-preload');
+    } catch (e) {}
+    setTimeout(function () { if (!window.__siteReady) document.documentElement.classList.remove('js', 'js-preload'); }, 3000);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
+    gtag('js', new Date());
+    gtag('config', 'G-M378PSJ10R');
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/js/main.min.js?v=75d11cbc85" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is ARIA and why product designers need to understand it","description":"ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.","datePublished":"2026-07-10","dateModified":"2026-07-10","image":"https://cristofolini.site/assets/img/blog/aria-braille-hero.webp","url":"https://cristofolini.site/blog/what-is-aria/","inLanguage":"en","author":{"@type":"Person","name":"Dhiego Cristofolini","url":"https://cristofolini.site/"}}</script>
+</head>
+<body class="page-post" data-lang="en" data-privacy="/privacy-policy/">
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="loader" aria-hidden="true">
+  <div class="loader__panel"></div>
+  <div class="loader__panel loader__panel--front">
+    <span class="loader__count" data-loader-count>0</span>
+    <div class="loader__bar"><span data-loader-bar></span></div>
+  </div>
+</div>
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="/" aria-label="Dhiego Cristofolini, home" data-cta="en_nav_logo">
+      <img src="/assets/img/site/logo.svg" width="51" height="32" alt="">
+    </a>
+    <div class="site-header__actions">
+      <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English" title="Language" data-lang-toggle>
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13.33"/><path d="M10.67 16A21.33 21.33 0 0 1 16 2.67 21.33 21.33 0 0 1 21.33 16 21.33 21.33 0 0 1 16 29.33 21.33 21.33 0 0 1 10.67 16ZM2.67 16h26.66"/></g></svg>
+      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="menu-toggle__icons" aria-hidden="true"><svg class="menu-toggle__icon menu-toggle__icon--open" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 6.67h21.34M5.33 16h21.34M5.33 25.33h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--minus" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5.33 16h21.34" stroke="currentColor" stroke-width="3"/></svg><svg class="menu-toggle__icon menu-toggle__icon--close" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 28 27.63 5.37M5 5l22.63 22.63" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></span>
+        <span class="menu-toggle__label"><span class="menu-toggle__text menu-toggle__text--menu">Menu</span><span class="menu-toggle__text menu-toggle__text--open" aria-hidden="true">Open</span><span class="menu-toggle__text menu-toggle__text--close" aria-hidden="true">Close</span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="lang-menu" id="lang-menu" hidden data-lang-menu>
+  <ul class="lang-menu__list">
+    <li><a class="lang-menu__item" href="/blog/what-is-aria/" hreflang="en" lang="en" aria-current="true"><span class="lang-menu__code" aria-hidden="true">EN</span>English</a></li>
+    <li><a class="lang-menu__item" href="/pt-br/blog/o-que-e-aria/" hreflang="pt-BR" lang="pt-BR"><span class="lang-menu__code" aria-hidden="true">PT</span>Português (Brasil)</a></li>
+  </ul>
+</div>
+<div class="menu" id="site-menu" data-menu>
+  <div class="menu__panel menu__panel--back"></div>
+  <div class="menu__panel"></div>
+  <nav class="menu__inner" aria-label="Main menu">
+    <span></span>
+    <ul class="menu__list">
+      <li><a class="menu__link" href="/"><span class="menu__num" aria-hidden="true">01</span><span class="menu__word">Home</span></a></li>
+      <li><a class="menu__link" href="/work/"><span class="menu__num" aria-hidden="true">02</span><span class="menu__word">Work</span></a></li>
+      <li><a class="menu__link" href="/blog/" aria-current="page"><span class="menu__num" aria-hidden="true">03</span><span class="menu__word">Insights</span></a></li>
+      <li><a class="menu__link" href="/about/"><span class="menu__num" aria-hidden="true">04</span><span class="menu__word">About</span></a></li>
+      <li><a class="menu__link" href="/resume/"><span class="menu__num" aria-hidden="true">05</span><span class="menu__word">Curriculum</span></a></li>
+    </ul>
+    <div class="menu__foot">
+      <div class="menu__row">
+        <span>Get in touch:</span>
+        <a href="mailto:dhiegopiresc@gmail.com" data-cta="en_menu_email">dhiegopiresc@gmail.com</a>
+      </div>
+      <div class="menu__row">
+        <a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank">Instagram</a>
+        <a href="https://github.com/Dhiegopires" rel="noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://behance.net/dhiegopires" rel="noopener" target="_blank">Behance</a>
+      </div>
+      <div class="menu__row">
+        <span>Language:</span>
+        <a href="/blog/what-is-aria/" hreflang="en" lang="en" aria-current="true">English</a>
+        <a href="/pt-br/blog/o-que-e-aria/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+      </div>
+    </div>
+  </nav>
+</div>
+<main id="main-content" tabindex="-1">
+
+<div class="read-progress" aria-hidden="true"><span data-progress></span></div>
+<article class="article" data-progress-target>
+  <header class="article-hero">
+    <div class="article-hero__media" data-hero-parallax>
+      <img src="/assets/img/blog/aria-braille-hero.webp" sizes="100vw" width="1280" height="672" alt="Macro photograph of raised braille-like dots embossed on a dark surface, each catching a warm amber highlight" decoding="async" fetchpriority="high">
+    </div>
+    <div class="container article-hero__copy">
+      <p class="meta"><a class="article-hero__crumb" href="/blog/">Insights</a> · <time datetime="2026-07-10">Jul 2026</time> · 8 min read</p>
+      <h1 class="h-xl h-xl--case article-hero__title" data-reveal="words">What is ARIA and why product designers need to understand it</h1>
+      <p class="article-hero__dek" data-reveal="up">ARIA roles, states, and properties explained for product designers: the first rule of ARIA, the patterns you'll touch, and how to document it for devs.</p>
+      <div class="tags"><span class="tag">Accessibility</span></div>
+    </div>
+  </header>
+  <div class="container container--read">
+    <div class="article-body prose">
+<p><a href="/blog/accessibility-failures-are-design-decisions/">Accessibility failures are design decisions. Here is the proof.</a> opened with a stat that should stop anyone building interfaces: pages that use ARIA average 34% more accessibility errors than pages that do not touch it at all. That piece covered why in one paragraph: nobody specified the behavior, so the attribute got implemented as a guess. This article covers the rest: what ARIA actually is, the one rule that prevents most of that damage, the handful of patterns a product designer will actually run into, and how to document interactive behavior so a developer implements it once, correctly, instead of guessing.</p>
+<hr/><h2 id="what-it-is">What ARIA actually is</h2>
+<h3>1.1 Roles, states, and properties</h3>
+<p>ARIA attributes fall into three categories, and confusing them is where most misuse starts.</p>
+<p><strong>Roles</strong> tell assistive technology what an element is. <code>role=&quot;dialog&quot;</code>, <code>role=&quot;tablist&quot;</code>, <code>role=&quot;alert&quot;</code>. A role replaces or adds to an element's default semantics: a <code>&lt;div&gt;</code> with <code>role=&quot;button&quot;</code> is announced as a button, even though it has none of a button's actual behavior.</p>
+<p><strong>States</strong> describe a condition that changes during use. <code>aria-expanded=&quot;true&quot;</code>, <code>aria-checked=&quot;false&quot;</code>, <code>aria-disabled=&quot;true&quot;</code>. States are meant to change (that is the entire point of them), and a state that never updates after the interface changes is worse than no state at all, because it tells the user something false.</p>
+<p><strong>Properties</strong> describe a relationship or a characteristic that mostly stays fixed. <code>aria-label</code>, <code>aria-labelledby</code>, <code>aria-describedby</code>, <code>aria-controls</code>. Properties tell assistive technology what an element is connected to, or what to call it when it has no visible text.</p>
+<div class="demo-panel">
+<div class="demo-matrix">
+<div class="demo-matrix__card">
+<p class="demo-matrix__label">Roles</p>
+<span class="demo-matrix__attr">role="dialog"</span>
+<span class="demo-matrix__attr">role="tablist"</span>
+<span class="demo-matrix__attr">role="alert"</span>
+<p class="demo-matrix__desc">What the element is.</p>
+</div>
+<div class="demo-matrix__card">
+<p class="demo-matrix__label">States</p>
+<span class="demo-matrix__attr">aria-expanded</span>
+<span class="demo-matrix__attr">aria-checked</span>
+<span class="demo-matrix__attr">aria-disabled</span>
+<p class="demo-matrix__desc">What changes during use.</p>
+</div>
+<div class="demo-matrix__card">
+<p class="demo-matrix__label">Properties</p>
+<span class="demo-matrix__attr">aria-label</span>
+<span class="demo-matrix__attr">aria-describedby</span>
+<span class="demo-matrix__attr">aria-controls</span>
+<p class="demo-matrix__desc">What it's connected to.</p>
+</div>
+</div>
+</div>
+<p class="demo-caption">Three categories. Most confusion about ARIA is a confusion between these three.</p>
+<h3>1.2 The first rule of ARIA</h3>
+<p>The W3C's own authoring guidance opens with what practitioners call the first rule of ARIA: if a native HTML element already has the semantics and behavior you need, use it instead of rebuilding it from a styled <code>&lt;div&gt;</code> plus a role attribute.</p>
+<p>The reason is not stylistic. A native <code>&lt;button&gt;</code> comes with keyboard activation on Enter and Space, a visible focus state, the correct role announced automatically, and correct form-submission behavior when it sits inside a <code>&lt;form&gt;</code>. <code>role=&quot;button&quot;</code> on a <code>&lt;div&gt;</code> gives you exactly one of those things: the announced role. Nothing else follows automatically. Keyboard handling and focus management all have to be built and maintained by hand, and it is trivially easy to forget one of them. This is the same story as the div-vs-button example from the previous piece in this series: ARIA is frequently reached for to patch a component-choice problem that a native element would have solved for free.</p>
+<h3>1.3 What ARIA cannot do</h3>
+<p>This is the point most designers miss: ARIA changes what is announced. It does not change what happens. Adding <code>aria-expanded=&quot;true&quot;</code> to a div does not make Enter or Space open anything. A developer still has to wire that behavior up separately, in JavaScript, regardless of what the markup says. ARIA is a labeling layer sitting on top of behavior that has to exist independently of it. That is exactly why documenting the behavior, covered in section 4, matters as much as knowing the attribute name.</p>
+<hr/><h2 id="patterns">The patterns designers actually touch</h2>
+<h3>2.1 Modals and dialogs</h3>
+<p>A modal needs <code>role=&quot;dialog&quot;</code>, <code>aria-modal=&quot;true&quot;</code>, and <code>aria-labelledby</code> pointing at whatever text serves as its heading. That part is quick. The part that determines whether it actually works is the behavior around it, and that is where the designer's decisions live: what triggers it, where focus lands when it opens, whether Tab and Shift+Tab loop inside it or leak out to the page behind it, what closes it, and where focus goes when it does.</p>
+<div class="demo-panel">
+<div class="demo-modal-spec">
+<div class="demo-modal-spec__mock">
+<p class="demo-modal-spec__mock-title">Delete project?</p>
+<p class="demo-modal-spec__mock-body">This cannot be undone. All data will be permanently removed.</p>
+<span class="demo-modal-spec__mock-btn">Delete</span>
+</div>
+<ol class="demo-modal-spec__notes">
+<li><b>Trigger:</b> click on "Delete project" in the project menu</li>
+<li><b>On open:</b> focus moves to the dialog heading, not the first button</li>
+<li><b>While open:</b> Tab and Shift+Tab loop within the dialog only</li>
+<li><b>Closes on:</b> Escape key, backdrop click, or either button</li>
+<li><b>On close:</b> focus returns to the menu item that opened it, not the page body</li>
+</ol>
+</div>
+</div>
+<p class="demo-caption">This is what a designer specifies. A developer turns this directly into the correct ARIA and focus-management code.</p>
+<h3>2.2 Custom dropdowns and comboboxes</h3>
+<p>A native <code>&lt;select&gt;</code> needs zero ARIA. It has a role, full keyboard support, and screen reader announcement built into every browser, for free. The moment a dropdown is restyled beyond what <code>&lt;select&gt;</code> allows and rebuilt from <code>&lt;div&gt;</code>s, it needs a working set of six or more attributes just to reach parity: <code>role=&quot;combobox&quot;</code> on the trigger, <code>aria-expanded</code> reflecting open state, <code>aria-controls</code> pointing at the listbox, <code>role=&quot;listbox&quot;</code> on the options container, <code>role=&quot;option&quot;</code> on each item, and <code>aria-activedescendant</code> tracking which option currently has virtual focus as arrow keys move through the list. None of that is required by the native element. Every one of those attributes has to stay perfectly in sync with the actual keyboard behavior, or the mismatch is worse than doing nothing.</p>
+<div class="demo-panel">
+<div class="demo-select-compare">
+<div>
+<p class="demo-select-compare__col-title">Native &lt;select&gt;</p>
+<div class="demo-select-compare__mock">Notifications</div>
+<div class="demo-select-compare__attrs">
+<span class="demo-select-compare__attr">role: automatic</span>
+<span class="demo-select-compare__attr">keyboard: automatic</span>
+<span class="demo-select-compare__attr">announcement: automatic</span>
+</div>
+<p class="demo-select-compare__count">0 ARIA attributes needed</p>
+</div>
+<div>
+<p class="demo-select-compare__col-title">Custom dropdown</p>
+<div class="demo-select-compare__mock">Notifications</div>
+<div class="demo-select-compare__attrs">
+<span class="demo-select-compare__attr demo-select-compare__attr--needed">role="combobox"</span>
+<span class="demo-select-compare__attr demo-select-compare__attr--needed">aria-expanded</span>
+<span class="demo-select-compare__attr demo-select-compare__attr--needed">aria-controls</span>
+<span class="demo-select-compare__attr demo-select-compare__attr--needed">role="listbox"</span>
+<span class="demo-select-compare__attr demo-select-compare__attr--needed">role="option"</span>
+<span class="demo-select-compare__attr demo-select-compare__attr--needed">aria-activedescendant</span>
+</div>
+<p class="demo-select-compare__count">6 ARIA attributes needed, all kept in sync by hand</p>
+</div>
+</div>
+</div>
+<p class="demo-caption">Same interaction, same visual result achievable either way. Only one of them requires ongoing maintenance to stay correct.</p>
+<h3>2.3 Live regions</h3>
+<p>Some interface changes need to be announced without moving the user's focus: a toast confirming a save, a validation summary appearing above a form, a loading state resolving. <code>aria-live=&quot;polite&quot;</code> on the container that receives that content tells screen readers to announce it once the user's current action finishes, without interrupting and without stealing focus. <code>aria-live=&quot;assertive&quot;</code> interrupts immediately: reserve it for things that block the task, like a session-timeout warning, not for routine confirmations.</p>
+<p>The mistake I see most often: a toast that renders with a CSS animation and reads perfectly to a sighted user, wired to nothing. No live region, no <code>role=&quot;status&quot;</code>. Visually it works exactly as designed. For a screen reader user, the confirmation never happened. The save may as well have failed silently.</p>
+<div class="demo-panel">
+<div class="demo-live">
+<div>
+<p class="demo-live__col-title">Visual only</p>
+<div class="demo-live__toast">✓ Changes saved</div>
+<span class="demo-live__badge demo-live__badge--silent">Not announced</span>
+</div>
+<div>
+<p class="demo-live__col-title">aria-live="polite"</p>
+<div class="demo-live__toast demo-live__toast--announced">✓ Changes saved</div>
+<span class="demo-live__badge demo-live__badge--live">Announced on save</span>
+</div>
+</div>
+</div>
+<p class="demo-caption">Identical toast. One exists for screen reader users, the other only exists on screen.</p>
+<h3>2.4 Disclosure and accordions</h3>
+<p><code>aria-expanded</code> on the trigger button, <code>aria-controls</code> pointing at the panel's id. Simple, cheap, and one of the most commonly skipped attributes on the web: the visual expand and collapse works perfectly, the announcement of that state to a screen reader is the part that gets left out under deadline.</p>
+<hr/><h2 id="misuse">Why ARIA misuse is worse than no ARIA at all</h2>
+<h3>3.1 The 34% stat, unpacked</h3>
+<p>WebAIM's Million report has tracked this for years: home pages with ARIA present carry meaningfully more detected accessibility errors, on average, than home pages with none. The reason is structural, not a coincidence of who happens to use ARIA. ARIA overrides native semantics unconditionally. Once <code>role=&quot;button&quot;</code> sits on an element, screen readers trust it completely, even if the underlying element is a link, an image, or plain text with a click handler taped on. A wrong or stale ARIA attribute does not just fail to help. It actively misinforms the one channel of information a screen reader user has for that element. That is structurally different from a missing <code>alt</code> attribute, which is merely silent. Silence prompts a screen reader to fall back to something else. A false statement does not.</p>
+<h3>3.2 The three failure patterns worth knowing by sight</h3>
+<p><strong>Redundant roles.</strong> <code>role=&quot;button&quot;</code> on an actual <code>&lt;button&gt;</code>. Harmless on its own, but a reliable signal that nobody checked the fundamentals before adding ARIA on top of them.</p>
+<p><strong>Conflicting or stale state.</strong> <code>aria-expanded=&quot;false&quot;</code> hardcoded in the markup and never updated by JavaScript when the panel actually opens. The user hears "collapsed" while looking at, or unable to see, a panel that is fully open.</p>
+<p><strong>aria-hidden on the wrong branch.</strong> <code>aria-hidden=&quot;true&quot;</code> applied to a container that still holds focusable children inside it. The content disappears from the accessibility tree, but a keyboard user can still tab into elements a screen reader user is told do not exist, an inconsistency between two ways of navigating the same page.</p>
+<hr/><h2 id="documenting">Documenting behavior so developers implement it right</h2>
+<h3>4.1 What to specify</h3>
+<p>Not attribute names. Behavior. For every interactive component, five questions cover almost every case: what triggers the state change, what the initial state is, where focus goes on open and on close, what the keyboard is expected to do (Escape, arrow keys, Tab boundaries), and what should be announced when the state changes, described in plain language rather than markup.</p>
+<p>A developer who receives "opens on click, focus moves to the dialog heading, Escape and a backdrop click both close it, focus returns to the trigger" can implement the correct ARIA without the designer ever writing an attribute name. A developer who receives only the visual mockup has to guess. Guessing under a deadline is where the 34% comes from.</p>
+<h3>4.2 Keep the notes attached to the component, not in a separate document</h3>
+<p>Behavior notes that live in a shared "interactions" document get skipped, because nobody opens a second file mid-build. Attach them directly to the frame or component in whatever tool the handoff happens through: a sticky note, a dev-mode annotation, a comment thread pinned to the component itself. The closer the documentation sits to the artifact a developer is already looking at, the higher the odds it survives the handoff intact.</p>
+<hr/><h2 id="testing">Testing what you shipped</h2>
+<h3>5.1 A two-minute check any designer can run</h3>
+<p>No screen reader license required. Chrome DevTools → Elements → the Accessibility pane shows the computed role, name, and state of any selected element in real time. Open a modal, select it in DevTools, confirm the role reads "dialog" and the name matches the heading you expect. On Mac, VoiceOver ships free with the OS (Cmd+F5 toggles it); walk your own component with it once before it ships. On Windows, NVDA is free to install. None of this replaces a full audit. All of it catches the failures in section 3 before a developer has to.</p>
+<h3>5.2 ARIA cannot fix a decision made upstream</h3>
+<p>The correct amount of ARIA on a well-chosen component is often close to zero: a native element already carries most of it. The ARIA required to patch a badly-chosen one keeps growing, and every attribute added is one more place for the implementation to drift from the design over time. <a href="/blog/accessibility-failures-are-design-decisions/">Accessibility failures are design decisions</a> covers the component-choice failures this compounds with: the wrong element chosen at the design stage, multiplied by every developer who has to work around it afterward. The fix in both cases is the same: the decision that matters happens before a single attribute gets written, in the file the designer controls.</p>
+<hr/><h2 id="sources">Sources</h2>
+<ul>
+<li>W3C Web Accessibility Initiative. <em>Accessible Rich Internet Applications (WAI-ARIA) 1.2.</em> <a href="https://www.w3.org/TR/wai-aria-1.2/" rel="noopener noreferrer" target="_blank">w3.org/TR/wai-aria-1.2</a></li>
+<li>W3C Web Accessibility Initiative. <em>ARIA Authoring Practices Guide (APG).</em> <a href="https://www.w3.org/WAI/ARIA/apg/" rel="noopener noreferrer" target="_blank">w3.org/WAI/ARIA/apg</a></li>
+<li>W3C Web Accessibility Initiative. <em>Using ARIA: the first rule of ARIA use.</em> <a href="https://www.w3.org/TR/using-aria/" rel="noopener noreferrer" target="_blank">w3.org/TR/using-aria</a></li>
+<li>WebAIM. <em>The WebAIM Million: The 2025 report on the accessibility of the top 1,000,000 home pages.</em> <a href="https://webaim.org/projects/million/" rel="noopener noreferrer" target="_blank">webaim.org/projects/million</a></li>
+<li>WebAIM. <em>Screen Reader User Survey #10 Results.</em> <a href="https://webaim.org/projects/screenreadersurvey10/" rel="noopener noreferrer" target="_blank">webaim.org/projects/screenreadersurvey10</a></li>
+<li>MDN Web Docs. <em>ARIA.</em> <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" rel="noopener noreferrer" target="_blank">developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA</a></li>
+</ul>
+    </div>
+  </div>
+</article>
+
+<section class="section cta" aria-labelledby="what-is-aria-newsletter-title">
+  <div class="container">
+    <h2 class="h-xl cta__title" id="what-is-aria-newsletter-title" data-reveal="words">Be the first to receive new articles</h2>
+    <form class="form form--newsletter" action="/contact.php" method="post" novalidate data-form="newsletter" data-cta-label="en_what-is-aria_newsletter"
+      data-msg-ok="You’re on the list. New articles land in your inbox." data-msg-error="Something went wrong. Try again in a moment, or email me directly." data-msg-sending="Sending…" data-msg-required="This field is required." data-msg-email="Enter a valid email address, like name@company.com.">
+      <input type="hidden" name="type" value="newsletter">
+      <input type="hidden" name="lang" value="en">
+      <div class="hp-field" aria-hidden="true"><label for="what-is-aria-newsletter-company">Company</label><input id="what-is-aria-newsletter-company" name="company" tabindex="-1" autocomplete="off"></div>
+
+        <div class="field-wrap">
+          <div class="field">
+            <input class="field__input" id="what-is-aria-newsletter-email" name="email" type="email" placeholder=" " autocomplete="email" required aria-describedby="what-is-aria-newsletter-email-error">
+            <label class="field__label" for="what-is-aria-newsletter-email">Email</label>
+          </div>
+          <span class="field__error" id="what-is-aria-newsletter-email-error" hidden></span>
+        </div>
+      <button class="btn btn--split" type="submit">Receive Newsletter<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3v18h-4V7H4V3h17Z" fill="currentColor"/><path d="M20.414 6.414 6.414 20.414H3.586v-2.828l14-14 2.828 2.828Z" fill="currentColor"/></svg></button>
+      <p class="form__consent">One email per new article. Unsubscribe anytime. See the <a href="/privacy-policy/">Privacy Policy</a>.</p>
+      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+  </div>
+</section>
+<nav class="next-post" aria-label="Next post">
+  <a class="next-post__link" href="/blog/contrast-aa-vs-aaa/">
+    <span class="container next-post__inner">
+      <span class="next-post__title">AA vs AAA: what these levels actually mean and why your disabled button is failing both</span>
+      <span class="next-post__label">Next post</span>
+    </span>
+  </a>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__top">
+      <nav aria-label="Footer">
+        <ul class="footer-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/work/">Work</a></li>
+          <li><a href="/blog/">Insights</a></li>
+          <li><a href="/resume/">Curriculum</a></li>
+        </ul>
+      </nav>
+      <ul class="socials" aria-label="Social profiles">
+        <li><a href="https://www.instagram.com/dhiegopires/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.25" fill="currentColor"/></svg></a></li>
+        <li><a href="https://github.com/Dhiegopires" rel="noopener" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.53.1.72-.23.72-.5v-1.85c-2.92.63-3.54-1.24-3.54-1.24-.48-1.22-1.17-1.54-1.17-1.54-.95-.65.08-.64.08-.64 1.05.08 1.6 1.08 1.6 1.08.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.66-1.4-2.33-.27-4.78-1.17-4.78-5.18 0-1.15.41-2.08 1.08-2.82-.1-.27-.47-1.34.1-2.79 0 0 .89-.28 2.9 1.08a10 10 0 0 1 5.27 0c2.01-1.36 2.9-1.08 2.9-1.08.57 1.45.21 2.52.1 2.79.68.74 1.08 1.67 1.08 2.82 0 4.02-2.45 4.9-4.79 5.17.38.32.71.96.71 1.94v2.87c0 .28.19.61.73.5A10.5 10.5 0 0 0 12 1.5Z"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M6.2 9.6h2.4V18H6.2zM7.4 5.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM10.4 9.6h2.3v1.15h.03c.32-.6 1.1-1.25 2.27-1.25 2.43 0 2.88 1.6 2.88 3.68V18h-2.4v-4.27c0-1.02-.02-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.26V18h-2.4z"/></svg></a></li>
+      </ul>
+    </div>
+    <a class="wordmark" href="/" aria-label="Dhiego Cristofolini, home" data-reveal="mask">
+      <img src="/assets/img/site/wordmark.svg" width="1748" height="201" alt="" loading="lazy">
+    </a>
+    <div class="site-footer__bottom">
+      <p>© 2026 Cristofolini. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms-of-use/">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="cursor" aria-hidden="true" data-cursor-el><span class="cursor__label">View</span></div>
+<button class="to-top" type="button" aria-label="Back to top" data-to-top>
+  <svg class="to-top__progress" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="to-top__ring" cx="32" cy="32" r="30" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" data-to-top-ring/></svg>
+  <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 </body>
 </html>

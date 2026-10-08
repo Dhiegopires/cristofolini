@@ -2,6 +2,10 @@
    case-study.css — Shared styles for all case study pages (DS v4)
    ========================================================================== */
 
+body.page-cs .footer::before {
+  content: none;
+}
+
 /* Ensure content layers above star canvas */
 .case-nav,
 .cta-section,
@@ -114,7 +118,7 @@
 }
 
 .cs-hero__left {
-  padding-top: calc(64px + var(--sp-16));
+  padding-top: calc(var(--nav-h) + var(--sp-16));
   padding-bottom: var(--sp-12);
   padding-inline: clamp(20px, 6vw, 80px);
   display: flex;
@@ -126,7 +130,11 @@
 .cs-hero__right {
   background: var(--bg1);
   overflow: hidden;
-  min-height: 320px;
+  /* Mesma proporção do card na home e na /work/: o mockup é desenhado uma
+     vez em 16:9 e aparece igual nos dois lugares. Sem isto a altura vinha
+     da coluna de texto ao lado e o corte mudava de case para case. */
+  aspect-ratio: 16 / 9;
+  align-self: start;
 }
 
 .cs-hero__right img {
@@ -240,7 +248,7 @@
 
 .cs-meta-value {
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--t1);
 }
 
@@ -326,6 +334,7 @@
   font-size: 12px;
   color: var(--t2);
   letter-spacing: .05em;
+  max-width: var(--measure);
 }
 
 figcaption.cs-caption { margin-top: var(--sp-2); }
@@ -492,13 +501,14 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 
 .cs-fear-card__title {
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: 900;
   color: var(--t1);
   line-height: 1.3;
 }
 
 .cs-fear-card__body {
   font-size: var(--text-base);
+  font-weight: 400;
   line-height: 1.6;
   color: var(--t2);
 }
@@ -852,4 +862,350 @@ figcaption.cs-caption { margin-top: var(--sp-2); }
 .cs-lightbox__close:hover {
   border-color: rgba(255, 255, 255, .6);
   color: var(--t1);
+}
+
+/* --------------------------------------------------------------------------
+   Figma MedMe cover — split hero + stat chips + next bar
+   Dump: assets/Medme.html. Other case studies keep .cs-hero.
+   -------------------------------------------------------------------------- */
+.page-cs {
+  --nav-h: 104px;
+}
+@media (max-width: 1199px) {
+  .page-cs { --hp-inset: 3rem; --nav-h: 96px; }
+}
+@media (max-width: 767px) {
+  .page-cs { --hp-inset: 1.25rem; --nav-h: 64px; }
+}
+
+.cs-cover {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--nav-h);
+}
+@media (min-width: 900px) {
+  .cs-cover {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.cs-cover__media {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 1.75;
+  overflow: hidden;
+  background: var(--bg1);
+}
+.cs-cover__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-cover__copy {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: var(--space-48);
+  padding: var(--space-48) var(--hp-inset) var(--hp-inset);
+}
+.cs-cover__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+.cs-cover__title {
+  font-family: var(--display);
+  font-size: var(--fs-display);
+  line-height: 0.987;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+.cs-cover__dek {
+  font-family: var(--sans);
+  font-size: var(--fs-24);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--t2);
+  max-width: 54.75rem;
+}
+.cs-cover__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cs-cover__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--t1) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--t1) 70%, transparent);
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 0.987;
+  letter-spacing: 0.01em;
+  color: var(--accent-text);
+}
+
+.cs-cover-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  padding: var(--space-24) var(--hp-inset) 0;
+}
+@media (min-width: 700px) {
+  .cs-cover-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+  .cs-cover-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.cs-cover-stat {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  background: var(--nav-chip);
+  overflow: hidden;
+}
+.cs-cover-stat__num {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2rem, 3.333vw, 4rem);
+  line-height: 1.215;
+  letter-spacing: 0.05em;
+  color: var(--t1);
+}
+.cs-cover-stat__label {
+  margin: 0;
+  padding: 8px 0;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: var(--fs-16);
+  line-height: 1.22;
+  letter-spacing: 0.05em;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--t1);
+}
+
+/* Figma Frame 19 (146:1001) — 1920×370
+   Side media strip via clip-path (no flex reflow = no glitch).
+   [media] [arrow + label] | [label + arrow] [media] */
+.cs-next {
+  --cs-next-media: clamp(8rem, 17.92vw, 21.5rem);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: clamp(12rem, 19.27vw, 23.125rem);
+  margin-top: var(--space-80);
+  background: var(--bg);
+  border-block: var(--rule-w) solid var(--rule);
+}
+.cs-next__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: inherit;
+  min-width: 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--t1);
+  background: var(--bg);
+  isolation: isolate;
+}
+.cs-next__link--prev {
+  justify-content: flex-start;
+  padding-left: var(--cs-next-media);
+  border-right: var(--rule-w) solid color-mix(in srgb, var(--t1) 28%, transparent);
+}
+.cs-next__link--next {
+  justify-content: flex-end;
+  padding-right: var(--cs-next-media);
+}
+.cs-next__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg1);
+  transition: clip-path .4s var(--ease-out);
+}
+.cs-next__link--prev .cs-next__media {
+  clip-path: inset(0 calc(100% - var(--cs-next-media)) 0 0);
+}
+.cs-next__link--next .cs-next__media {
+  clip-path: inset(0 0 0 calc(100% - var(--cs-next-media)));
+}
+.cs-next__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+  transition: transform .45s var(--ease-out);
+}
+.cs-next__body {
+  --cs-next-arrow: clamp(2rem, 2.9vw, 3.5rem);
+  --cs-next-gap: clamp(1.5rem, 2.5vw, 3rem);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+  padding-block: var(--space-32);
+  padding-inline: clamp(1.5rem, 2.5vw, 3rem);
+}
+.cs-next__link--next .cs-next__body {
+  align-items: flex-end;
+}
+.cs-next__row {
+  display: flex;
+  align-items: center;
+  gap: var(--cs-next-gap);
+  min-width: 0;
+}
+.cs-next__arrow {
+  flex-shrink: 0;
+  width: var(--cs-next-arrow);
+  height: var(--cs-next-arrow);
+  color: inherit;
+}
+.cs-next__link--prev .cs-next__arrow {
+  transform: rotate(-90deg);
+}
+.cs-next__label {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 4.479vw, 5.375rem);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: inherit;
+  white-space: nowrap;
+}
+.cs-next__title {
+  font-family: var(--sans);
+  font-size: clamp(0.875rem, 1.042vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t3);
+  transition: color .2s var(--ease-out);
+}
+.cs-next__link--prev .cs-next__title {
+  padding-left: calc(var(--cs-next-arrow) + var(--cs-next-gap));
+}
+.cs-next__link--next .cs-next__title {
+  padding-right: calc(var(--cs-next-arrow) + var(--cs-next-gap));
+  text-align: right;
+}
+.cs-next__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: color-mix(in srgb, var(--bg) 58%, transparent);
+  opacity: 0;
+  transition: opacity .35s var(--ease-out);
+  pointer-events: none;
+}
+.cs-next__link:hover .cs-next__media,
+.cs-next__link:focus-visible .cs-next__media,
+.cs-next__link--prev:hover .cs-next__media,
+.cs-next__link--prev:focus-visible .cs-next__media,
+.cs-next__link--next:hover .cs-next__media,
+.cs-next__link--next:focus-visible .cs-next__media {
+  clip-path: inset(0 0 0 0);
+}
+.cs-next__link:hover .cs-next__media img,
+.cs-next__link:focus-visible .cs-next__media img {
+  transform: scale(1);
+}
+.cs-next__link:hover::before,
+.cs-next__link:focus-visible::before {
+  opacity: 1;
+}
+.cs-next__link:hover,
+.cs-next__link:focus-visible {
+  color: var(--y);
+}
+.cs-next__link:hover .cs-next__title,
+.cs-next__link:focus-visible .cs-next__title {
+  color: var(--t1);
+}
+.cs-next__link:focus-visible {
+  outline: 2px solid var(--y);
+  outline-offset: -2px;
+}
+
+@media (max-width: 899px) {
+  .cs-next {
+    --cs-next-media: 0px;
+  }
+  .cs-next__link--prev,
+  .cs-next__link--next {
+    justify-content: center;
+    padding-inline: var(--space-24);
+  }
+  .cs-next__media {
+    clip-path: inset(0) !important;
+    opacity: 0;
+    transition: opacity .35s var(--ease-out);
+  }
+  .cs-next__link:hover .cs-next__media,
+  .cs-next__link:focus-visible .cs-next__media {
+    opacity: 1;
+  }
+  .cs-next__label {
+    font-size: clamp(2rem, 8vw, 3rem);
+    white-space: normal;
+  }
+  .cs-cover__dek { font-size: var(--fs-16); }
+}
+
+@media (max-width: 767px) {
+  .cs-next {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .cs-next__link {
+    min-height: 9rem;
+    padding-block: var(--space-32);
+  }
+  .cs-next__link--prev {
+    border-right: none;
+    border-bottom: var(--rule-w) solid color-mix(in srgb, var(--t1) 28%, transparent);
+  }
+  .cs-next__link--next .cs-next__body {
+    align-items: center;
+  }
+  .cs-next__link--prev .cs-next__title,
+  .cs-next__link--next .cs-next__title {
+    padding-inline: 0;
+    text-align: center;
+  }
+  .cs-next__media {
+    opacity: 0.4;
+  }
+  .cs-next__link::before {
+    opacity: 1;
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+  }
 }

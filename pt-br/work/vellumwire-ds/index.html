@@ -1,334 +1,429 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
-  <title>Vellumwire DS | Arquitetura de Tokens | Dhiego</title>
-  <meta name="description" content="Arquitetura de tokens de quatro camadas para o trabalho da Vellumwire: Core, Palette, Brand e Semantic. Re-temizar é só mudar uma camada.">
-  <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Vellumwire DS | Arquitetura de Tokens | Dhiego">
-  <meta property="og:description" content="Arquitetura de tokens de quatro camadas para o trabalho da Vellumwire: Core, Palette, Brand e Semantic. Re-temizar é só mudar uma camada.">
-  <meta property="og:image" content="https://cristofolini.site/pt-br/work/vellumwire-ds/img/hero.png">
-  <meta property="og:url" content="https://cristofolini.site/pt-br/work/vellumwire-ds/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vellumwire DS | Arquitetura de Tokens | Dhiego">
-  <meta name="twitter:description" content="Arquitetura de tokens de quatro camadas para o trabalho da Vellumwire: Core, Palette, Brand e Semantic. Re-temizar é só mudar uma camada.">
-  <meta name="twitter:image" content="https://cristofolini.site/pt-br/work/vellumwire-ds/img/hero.png">
-  <link rel="canonical" href="https://cristofolini.site/pt-br/work/vellumwire-ds/">
-  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire-ds/">
-  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/vellumwire-ds/">
-  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/vellumwire-ds/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Design System da Vellumwire",
-    "description": "Uma arquitetura de tokens de quatro camadas (Core, Palette, Brand, Semantic) construída para o trabalho da Vellumwire com clientes, refinada sob pressão de produção durante o projeto Instivo.",
-    "author": {
-      "@type": "Person",
-      "name": "Dhiego Cristofolini",
-      "url": "https://cristofolini.site/"
-    },
-    "dateCreated": "2025-01-01",
-    "url": "https://cristofolini.site/pt-br/work/vellumwire-ds",
-    "genre": "UX Case Study",
-    "keywords": "product design, design system, design tokens, ux, saas, case study"
-  }
-  </script>
-  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
-  <link href="../../../assets/css/case-study.css" rel="stylesheet">
-</head>
-<body>
+<html lang="pt-BR"><head>
+    <title>Vellumwire Design System | Quatro camadas de tokens | Dhiego Cristofolini</title>
+    <meta name="description" content="Case de design system: uma arquitetura de tokens em quatro camadas em que mudar de cliente mexe numa camada só, testada em produção na Instivo.">
+    <meta name="author" content="Dhiego Cristofolini">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://cristofolini.site/pt-br/work/vellumwire-ds/">
+    <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/vellumwire-ds/"><link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/vellumwire-ds/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vellumwire Design System | Quatro camadas de tokens | Dhiego Cristofolini">
+    <meta property="og:description" content="Case de design system: uma arquitetura de tokens em quatro camadas em que mudar de cliente mexe numa camada só, testada em produção na Instivo.">
+    <meta property="og:url" content="https://cristofolini.site/pt-br/work/vellumwire-ds/">
+    <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
 
-  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <!--  Title -->
+    
 
-  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+    <!-- Font Google -->
+    
+    
 
-  <nav class="nav" role="navigation" aria-label="Navegação principal">
-    <a href="../../" class="nav-logo" aria-label="Cristofolini | Início">
-      <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
-    </a>
-    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <ul class="nav-links" role="list">
-      <li><a href="../" aria-current="page">Trabalhos</a></li>
-          <li><a href="../../blog/">Insights</a></li>
-    </ul>
-    <a href="../../../work/vellumwire-ds/" class="nav-lang" hreflang="en" aria-label="Mudar para inglês">EN</a>
-    <a href="../../contact/" class="nav-cta">Contato</a>
-  </nav>
+    
+    
 
-  <main id="main-content" tabindex="-1">
+    <!-- custom styles (optional) -->
+    <link href="/assets/tpl/css/plugins.css?v=592309fc" rel="stylesheet">
+    <link href="/assets/tpl/css/style.css?v=a8d95a64" rel="stylesheet"><link href="/assets/tpl/css/brand.css?v=14efa40a" rel="stylesheet">
 
-    <section class="cs-hero">
-      <div class="cs-hero__left">
-        <div class="case-hero__tags">
-          <span class="tag">Product</span>
-          <span class="tag">Design System</span>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','G-M378PSJ10R');</script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script></head>
+
+
+<body class="hamburger-menu dsn-effect-scroll case-v2" data-dsn-mousemove="true" data-lang="pt"><a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <div class="preloader">
+        <div class="preloader-after"></div>
+        <div class="preloader-before"></div>
+        <div class="preloader-block">
+            <div class="title">Dhiego Cristofolini</div>
+            <div class="percent">0</div>
+            <div class="loading">loading...</div>
         </div>
-        <h1 class="cs-hero__title">Todo novo cliente começava do mesmo jeito: reconstruindo o que já existia.</h1>
-        <p class="cs-lead">Uma arquitetura de tokens para o trabalho da Vellumwire com clientes: quatro camadas, oito ramps de cor, e um processo de re-tematização que toca exatamente uma delas. Refinada sob pressão real durante o projeto Instivo, incluindo uma visão mobile que nunca fez parte do escopo original.</p>
-
-        <div class="cs-impact-grid">
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">4</p>
-            <p class="cs-impact-label">camadas · Core, Palette, Brand, Semantic · só uma muda por cliente</p>
-          </div>
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">8</p>
-            <p class="cs-impact-label">ramps de cor construídas antes de qualquer cliente existir</p>
-          </div>
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">1</p>
-            <p class="cs-impact-label">camada tocada para re-tematizar um projeto: Brand, nada mais</p>
-          </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
         </div>
+    </div>
 
-        <div class="cs-meta-grid">
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Função</p>
-            <p class="cs-meta-value">Product Designer</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Tipo</p>
-            <p class="cs-meta-value">Design system interno</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Usado em</p>
-            <p class="cs-meta-value">Instivo + trabalho com clientes</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Status</p>
-            <p class="cs-meta-value">Ativo · testado em produção</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Time</p>
-            <p class="cs-meta-value">Afonso, implementação e hospedagem</p>
-          </div>
+    <!-- Nav Bar -->
+    <div class="dsn-nav-bar">
+        <div class="site-header">
+            <div class="extend-container">
+                <div class="inner-header">
+                    <div class="main-logo">
+                        <a href="/pt-br/" aria-label="Dhiego Cristofolini, início">
+                            <img class="dark-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                            <img class="light-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                        </a>
+                    </div>
+                </div>
+                <nav class=" accent-menu main-navigation" aria-label="Menu principal"><ul><li><a href="/pt-br/">Início</a></li><li><a href="/pt-br/work/">Trabalhos</a></li><li><a href="/pt-br/blog/">Insights</a></li><li><a href="/pt-br/sobre/">Sobre</a></li><li><a href="/pt-br/curriculo/">Currículo</a></li><li><a href="/pt-br/contato/">Contato</a></li></ul></nav>
+            </div>
         </div>
-      </div>
-      <div class="cs-hero__right">
-        <img src="img/hero.webp" width="1064" height="738" alt="Paleta do design system da Vellumwire: sete ramps de cor completas do step 25 ao 950" loading="eager">
-      </div>
+        <div class="header-top header-top-hamburger">
+            <div class="header-container">
+                <div class="logo main-logo">
+                    <a href="/pt-br/" aria-label="Dhiego Cristofolini, início">
+                        <img class="dark-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                        <img class="light-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                    </a>
+                </div>
+
+                <div class="menu-icon" data-dsn="parallax" data-dsn-move="5" role="button" tabindex="0" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                    <div class="icon-m">
+                        <i class="menu-icon-close fas fa-times"></i>
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
+
+                    <div class="text-menu">
+                        <div class="text-button">Menu</div>
+                        <div class="text-open">Abrir</div>
+                        <div class="text-close">Fechar</div>
+                    </div>
+                </div>
+
+                <div class="nav" id="site-nav">
+                    <div class="inner">
+                        <div class="nav__content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="inner-content">
+                        <address class="v-middle"><span>Curitiba, Brazil · Remote</span><span><a href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></span><span><a href="/work/vellumwire-ds/" hreflang="en">Read in English</a></span></address>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Nav Bar -->
+
+    <main class="main-root" id="main-content">
+        <div id="dsn-scrollbar">
+            <header>
+                <div class="headefr-fexid" data-dsn-header="project">
+                    <div class="bg" id="dsn-hero-parallax-img" data-dsn-ajax="img">
+                        <div class="bg-image  cover-bg" data-overlay="2" data-image-src="/assets/img/case/vellumwire-ds/hero.webp"></div>
+                    </div>
+
+                    <div class="scroll" data-dsn-animate="ajax">
+                        <span class="background"></span>
+                        <span class="triangle"></span>
+                    </div>
+                    <div class="project-title" id="dsn-hero-parallax-title">
+
+                        <div class="title-text-header">
+                            <div class="cat">
+                                <span>Design system · Tokens</span>
+                            </div>
+                            <h1 class="title-text-header-inner"><span>Vellumwire DS</span></h1>
+                        </div>
+                        <div class="sub-text-header" data-dsn-animate="ajax"><h5>Uma camada muda por cliente. Nada mais.</h5></div>
+                    </div>
+
+                    
+                </div>
+            </header>
+
+            <div class="wrapper">
+                <div class="root-project">
+
+                    <div class="container intro-project section-margin">
+                        <div class="intro-text text-center">
+                            <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1" data-dsn-duration="170%" data-dsn-move="0%">System</div>
+                            <div class="inner">
+                                <h2 data-dsn-animate="text">Todo cliente novo começava refazendo o que já existia.</h2>
+                                <p data-dsn-animate="up">Cada projeto começava com uma biblioteca de componentes refeita do zero, mesmo quando a lógica não tinha mudado. O custo real aparecia no handoff: nomes novos para interpretar, espaçamentos para conferir, casos de borda sem documentação. Faltava uma camada entre componente e marca.</p>
+
+                                
+    <dl class="case-meta" data-dsn-animate="up">
+      <div><dt>Papel</dt><dd>Product Designer</dd></div><div><dt>Tipo</dt><dd>Design system interno</dd></div><div><dt>Usado em</dt><dd>Instivo e projetos de clientes</dd></div><div><dt>Time</dt><dd>Afonso, implementação e hospedagem</dd></div>
+    </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+
+                    
+
+                <section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">01</span>
+      <p class="cs-eyebrow">Arquitetura</p>
+      <h2 class="cs-title" data-dsn-animate="up">Quatro camadas, uma pode mudar.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">A estrutura fica fixa. As decisões do cliente moram na Brand, e os componentes só leem a Semantic.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-arch-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="555" src="/assets/img/case/vellumwire-ds/art-arch-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-arch-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-arch-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Camadas Core, Palette, Brand e Semantic, cada uma referenciando a de baixo" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
     </section>
-
-    <div class="cs-layout">
-
-      <aside class="cs-toc" aria-label="Section navigation">
-        <nav class="cs-toc__inner">
-          <a href="#s01" class="cs-toc__item">01 &nbsp;O problema</a>
-          <a href="#s02" class="cs-toc__item">02 &nbsp;A arquitetura</a>
-          <a href="#s03" class="cs-toc__item">03 &nbsp;Paleta</a>
-          <a href="#s04" class="cs-toc__item">04 &nbsp;Camada Brand</a>
-          <a href="#s05" class="cs-toc__item">05 &nbsp;Semantic</a>
-          <a href="#s06" class="cs-toc__item">06 &nbsp;Componentes</a>
-          <a href="#s07" class="cs-toc__item">07 &nbsp;Responsivo</a>
-          <a href="#s08" class="cs-toc__item">08 &nbsp;Onde foi usado</a>
-        </nav>
-      </aside>
-
-      <div class="cs-content">
-
-        <section id="s01" class="cs-section" aria-labelledby="s01-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">01</span>
-            <h2 class="cs-section__title" id="s01-title">Marca nova significava arquivo em branco, toda vez.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Componentes nunca foram o gargalo. O handoff era.</p>
-            <p>Cada projeto começava do mesmo jeito. Um novo cliente, uma nova marca, e uma biblioteca de componentes construída de novo a partir de um arquivo em branco. Botões, inputs, cards, o conjunto inteiro, recriado mesmo quando a lógica por trás não tinha mudado nada desde o último projeto.</p>
-            <p>A repetição não era o custo real. O custo real aparecia no handoff. Cada reconstrução significava uma nova rodada de decisões de nomenclatura para a engenharia interpretar, novos valores de espaçamento para checar contra o último projeto, novos edge cases que ninguém tinha documentado porque ninguém esperava precisar daquele componente de novo.</p>
-            <p>O problema não era uma biblioteca de componentes faltando. Era uma camada faltando entre componente e marca, algo que deixasse a estrutura fixa enquanto só as decisões voltadas ao cliente se moviam.</p>
-            <p>No terceiro cliente, o padrão já estava óbvio o suficiente para eu desenhar o sistema em torno dele.</p>
-          </div>
-        </section>
-
-        <section id="s02" class="cs-section" aria-labelledby="s02-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">02</span>
-            <h2 class="cs-section__title" id="s02-title">Quatro camadas, e só uma delas pode mudar por cliente.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Core, Palette, Brand e Semantic, cada uma com um único trabalho.</p>
-            <p>Eu desenhei o sistema para separar o que é estrutural do que é específico de cada cliente.</p>
-            <p><strong>Core</strong> guarda os fundamentos sem nenhum tema atrelado: a grade de espaçamento, a escala tipográfica, valores base de radius. Não muda entre clientes, e não é pra mudar.</p>
-            <p><strong>Palette</strong> guarda ramps de cor completas, construídas antes de qualquer marca ser atribuída. Uma ramp existe independente do que ela vai significar pra um cliente específico.</p>
-            <p><strong>Brand</strong> é onde vivem as decisões do cliente: qual ramp se torna primary, qual se torna neutral, qual se torna accent, e qual tipografia o projeto usa. Essa é a única camada que muda por cliente.</p>
-            <p><strong>Semantic</strong> é o que os componentes de fato leem. Um botão não sabe se o fundo dele é mint ou areia. Ele sabe que é <code>background.primary</code>. Semantic nunca referencia palette ou brand diretamente, e se divide em três dimensões independentes: cor (claro e escuro), tamanho (desktop, tablet, mobile) e tipografia (desktop, tablet, mobile).</p>
-            <p>Componentes são construídos exclusivamente a partir de tokens semantic. Nenhum valor hex puro, nenhuma referência direta à palette no código do componente, em lugar nenhum. Re-tematizar um projeto significa mudar a camada Brand e nada mais.</p>
-            <div class="cs-diagram cs-diagram--flush">
-              <img src="img/architecture.webp" width="1064" height="346" alt="Arquitetura de tokens: camadas Core, Palette, Brand e Semantic, cada uma com exemplos de nomes de token resolvendo para a camada abaixo">
-            </div>
-            <p class="cs-caption">Arquitetura de tokens &middot; quatro camadas, cada uma referenciando a de baixo</p>
-          </div>
-        </section>
-
-        <section id="s03" class="cs-section" aria-labelledby="s03-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">03</span>
-            <h2 class="cs-section__title" id="s03-title">Ramps de cor existem antes de qualquer cliente existir.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Duas do conjunto completo do sistema, mostradas para ilustrar o padrão.</p>
-            <p>A palette é construída independente das decisões de marca. Cada ramp vai do seu step mais claro ao mais escuro, estruturada do mesmo jeito independente do tom, de forma que atribuir uma ramp a um papel na camada Brand se torna um exercício de mapeamento em vez de um exercício de design.</p>
-            <p>O sistema completo hoje roda oito ramps. O que segue são duas delas, incluídas aqui só para demonstrar o padrão.</p>
-            <div class="cs-diagram cs-diagram--flush">
-              <img src="img/palette-2-of-8.webp" width="1064" height="192" alt="Duas das oito ramps de cor do sistema, Mint e Sky, cada uma indo do step 25 ao 950">
-            </div>
-            <p class="cs-caption">Mint e Sky &middot; 2 de 8 ramps da paleta completa</p>
-            <p>Construir ramps antes da atribuição de marca significa que um novo cliente raramente precisa de uma ramp nova. Na maior parte do tempo, o trabalho é escolher qual ramp existente ganha qual papel.</p>
-          </div>
-        </section>
-
-        <section id="s04" class="cs-section" aria-labelledby="s04-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">04</span>
-            <h2 class="cs-section__title" id="s04-title">Mesmo mecanismo, todo cliente: uma ramp atribuída a cada papel.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Sete papéis semânticos. Cada um decidido uma vez por projeto, na camada Brand, em nenhum outro lugar.</p>
-            <p>Essa é a camada que prova que o resto do sistema vale a complexidade dele.</p>
-            <p>Primary, accent, neutral, e quatro papéis de feedback, error, warning, success, info, são os únicos slots que existem. Cada um é uma única decisão: qual ramp da palette é atribuída a ele. Tome essa decisão uma vez por cliente, e todo componente abaixo já sabe o que desenhar sem ninguém tocar no componente em si.</p>
-            <div class="cs-diagram cs-diagram--flush">
-              <img src="img/brand-layer.webp" width="1064" height="564" alt="Camada Brand: sete papéis semânticos, Primary, Accent, Neutral, Error, Warning, Success, Info, cada um mapeado para uma ramp da palette">
-            </div>
-            <p class="cs-caption">Camada Brand &middot; sete papéis, cada um mapeado para uma ramp da palette</p>
-            <p>Uma demo real de troca de marca, o mesmo botão, card e input renderizados sob três marcas de clientes diferentes, segue esse mecanismo idêntico: três ramps diferentes caindo nos mesmos sete papéis, com zero mudanças no código do componente entre elas.</p>
-            <div class="cs-rejected">
-              <span class="cs-rejected__label">Abordagem rejeitada</span>
-              A primeira versão dessa demo usava nomes reais de clientes e valores hex reais, tirados direto de arquivos de produção. Eu cortei antes da primeira revisão. Um case de portfólio mostrando os tokens de marca reais de um cliente atual é um tipo de risco diferente de um render lento, e não valia a pena pra uma demonstração que funciona exatamente igual com rótulos fictícios.
-            </div>
-          </div>
-        </section>
-
-        <section id="s05" class="cs-section" aria-labelledby="s05-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">05</span>
-            <h2 class="cs-section__title" id="s05-title">Componentes nunca perguntam qual é a cor de algo. Eles perguntam qual papel ela representa.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Um olhar parcial sobre a camada de token que fica entre brand e componente.</p>
-            <p>Tokens semantic descrevem função. <code>border.error</code> significa a mesma coisa se a ramp por baixo é vermelha, laranja, ou algo que um cliente insiste ser "mais on-brand que vermelho". Um componente referenciando <code>border.error</code> não precisa saber qual ramp resolveu pra esse papel.</p>
-            <p>A tabela semantic completa cobre os modos claro e escuro, e vai bem além do que é útil mostrar aqui. Abaixo está uma visão parcial, modo escuro, seis tokens do conjunto completo.</p>
-            <div class="cs-diagram cs-diagram--flush">
-              <img src="img/semantic-tokens.webp" width="1045" height="460" alt="Tokens de cor semantic, modo escuro: background.page, background.surface, background.raised, background.sunken, foreground.neutral e foreground.primary, cada um resolvendo para um valor de cor da marca">
-            </div>
-            <p class="cs-caption">Cor semantic &middot; modo escuro, 6 do conjunto completo de tokens</p>
-            <p>Os nomes de token em produção são mais específicos do que o mostrado aqui. A estrutura é fiel. A nomenclatura exata não é reproduzida na íntegra.</p>
-          </div>
-        </section>
-
-        <section id="s06" class="cs-section" aria-labelledby="s06-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">06</span>
-            <h2 class="cs-section__title" id="s06-title">Botões, tags, inputs, cards. Construídos direto a partir de tokens.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Como a camada semantic se parece quando de fato renderiza alguma coisa.</p>
-            <p>Botões carregam variantes primary, secondary e destructive, cada uma puxando de tokens semantic de cor e tamanho em vez de valores fixos. Tags usam os mesmos pares de papel de fundo e texto que os botões, só numa escala diferente, o que mantém as cores de status consistentes pelo produto sem ninguém precisar lembrar qual vermelho é o vermelho certo.</p>
-            <p>Alguns componentes têm mais de uma versão estrutural, além de uma simples variante de estilo. Um botão que precisa disparar uma confirmação em múltiplas etapas se comporta diferente de um botão que envia um formulário, e essa diferença vive no próprio componente, separada de qualquer override de token. Tokens lidam com aparência. Eles nunca foram feitos pra lidar com comportamento, e o sistema não finge o contrário.</p>
-            <div class="cs-diagram cs-diagram--flush">
-              <img src="img/components.webp" width="1068" height="580" alt="Componentes construídos a partir de tokens semantic: variantes e estados de botão com anotações de token resolvido, estados de text field (default, focus, error, disabled), e badges de status">
-            </div>
-            <p class="cs-caption">Botões, text fields e badges &middot; construídos a partir de tokens semantic, não de valores puros</p>
-          </div>
-        </section>
-
-        <section id="s07" class="cs-section" aria-labelledby="s07-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">07</span>
-            <h2 class="cs-section__title" id="s07-title">Valores mobile existiam antes de um cliente pedir mobile.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Tokens semantic de tamanho e tipografia já resolvem por breakpoint.</p>
-            <p>Tamanho e tipografia semantic são divididos em desktop, tablet e mobile desde o início, independente de um projeto já ter lançado uma visão mobile ou não. Os valores existem mesmo que ninguém tenha olhado pra eles ainda.</p>
-            <p>Essa decisão foi testada de verdade durante o projeto Instivo, quando a equipe do armazém precisou de uma visão mobile de estoque que não tinha sido parte do escopo original. Nenhum sistema paralelo precisou ser construído. A camada semantic já tinha valores mobile definidos, então a nova visão consumiu os mesmos tokens que o produto desktop usava, só resolvidos contra um breakpoint diferente.</p>
-            <p>A mesma camada que torna a re-tematização possível também torna o redimensionamento possível. Um cliente perguntou recentemente sobre telas mais densas. Eu troquei a grade base de 8px para 4px num produto onde densidade de informação importava mais que respiro visual. Isso é uma mudança na camada Core sem nenhuma reescrita de componente necessária, o que é mais próximo do teste real de se a arquitetura se sustenta do que a demo de troca de marca é.</p>
-            <div class="cs-diagram cs-diagram--flush">
-              <img src="img/responsive-tokens.webp" width="1064" height="640" alt="Tokens de espaçamento e layout resolvidos por breakpoint: desktop com 12 colunas e gutter de 24px, tablet com 8 colunas e gutter de 16px, mobile com 4 colunas e gutter de 16px, fluido">
-            </div>
-            <p class="cs-caption">Espaçamento e grade &middot; resolvidos por breakpoint, de desktop a mobile</p>
-          </div>
-        </section>
-
-        <section id="s08" class="cs-section" aria-labelledby="s08-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">08</span>
-            <h2 class="cs-section__title" id="s08-title">Construído isoladamente. Testado em produção.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">O case do Instivo é onde esse sistema parou de ser uma teoria.</p>
-            <p>Essa arquitetura não foi lançada como algo finalizado e depois usada. Eu refinei essa arquitetura enquanto construía o Instivo, sob o tipo de pressão que pega as lacunas que uma folha em branco nunca pegaria.</p>
-            <p>A história completa daquele projeto, incluindo a visão mobile de estoque que se tornou o teste real da camada responsiva, está documentada separadamente.</p>
-            <p><a href="../instivo/" class="cs-link cs-link--accent">Leia o case do Instivo &rarr;</a></p>
-            <p>Eu lidero a arquitetura e as decisões de token em todo cliente que roda nesse sistema. O Afonso implementa e hospeda cada build, que é o que prova se uma camada se sustenta: não o diagrama, o site em produção.</p>
-          </div>
-        </section>
-
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">02</span>
+      <p class="cs-eyebrow">Paleta</p>
+      <h2 class="cs-title" data-dsn-animate="up">As rampas existem antes do cliente.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Toda rampa segue a mesma estrutura de 25 a 950, então dar uma marca a um cliente vira mapeamento, não design. Sete das oito rampas, uma por papel:</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-ramps-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="653" src="/assets/img/case/vellumwire-ds/art-ramps-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-ramps-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-ramps-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Sete rampas de cor de 25 a 950, cada uma mapeada para um papel da marca" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">03</span>
+      <p class="cs-eyebrow">Brand</p>
+      <h2 class="cs-title" data-dsn-animate="up">Os mesmos componentes, três marcas.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Um card, um botão, um campo e badges sob três marcas de cliente. Muda rampa, tipografia e raio; o código do componente não muda.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-swap-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="641" src="/assets/img/case/vellumwire-ds/art-swap-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-swap-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-swap-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Os mesmos componentes em três marcas fictícias" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="2000" height="1125" src="/assets/img/case/vellumwire-ds/ctx-phones.webp" srcset="/assets/img/case/vellumwire-ds/ctx-phones-1000.webp 1000w, /assets/img/case/vellumwire-ds/ctx-phones.webp 2000w" sizes="100vw" alt="Três celulares mostrando o mesmo app em três marcas diferentes" loading="lazy" decoding="async"></div>
+      <figcaption class="container">Northwind, Clearwater e Saffron: três produtos, nenhuma mudança nos componentes.</figcaption>
+    </figure>
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">04</span>
+      <p class="cs-eyebrow">Componentes</p>
+      <h2 class="cs-title" data-dsn-animate="up">Todo estado, em toda marca.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Botões, controles de formulário e feedback, cada um com suas variações e estados, gerados pelo mesmo código sob três camadas de marca.</p></div>
+      
+      
+      <div class="cs-artifacts">
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-buttons-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="619" src="/assets/img/case/vellumwire-ds/art-buttons-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-buttons-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-buttons-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Sete estados de botão em três marcas" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-forms-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="679" src="/assets/img/case/vellumwire-ds/art-forms-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-forms-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-forms-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Estados de campo, checkbox e toggle em três marcas" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-feedback-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="623" src="/assets/img/case/vellumwire-ds/art-feedback-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-feedback-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-feedback-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Badges de status, alerta, abas e avatares em três marcas" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure></div>
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">05</span>
+      <p class="cs-eyebrow">Semantic</p>
+      <h2 class="cs-title" data-dsn-animate="up">O componente pergunta o papel, não a cor.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">border.error significa a mesma coisa qualquer que seja a rampa do cliente. Uma visão parcial do conjunto no modo escuro:</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-semantic-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="445" src="/assets/img/case/vellumwire-ds/art-semantic-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-semantic-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-semantic-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Tokens semânticos de cor no modo escuro e os tokens de marca para onde resolvem" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">06</span>
+      <p class="cs-eyebrow">Responsivo</p>
+      <h2 class="cs-title" data-dsn-animate="up">O mobile existia antes de alguém pedir.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Tokens de tamanho e tipo resolvem por breakpoint desde o início. Quando a Instivo precisou de uma tela mobile de estoque no meio do projeto, ela usou os mesmos tokens.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/vellumwire-ds/art-responsive-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="666" src="/assets/img/case/vellumwire-ds/art-responsive-pt.webp" srcset="/assets/img/case/vellumwire-ds/art-responsive-pt-1000.webp 1000w, /assets/img/case/vellumwire-ds/art-responsive-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="O mesmo layout resolvido para desktop, tablet e mobile" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs cs--results">
+      <div class="container">
+        <div class="cs-head">
+    <div class="cs-head__main">
+      
+      <p class="cs-eyebrow">Em produção</p>
+      <h2 class="cs-title" data-dsn-animate="up">Testado onde pode quebrar: em builds reais.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Refinado sob pressão na Instivo, incluindo uma tela mobile que nunca esteve no escopo. O Afonso implementa e hospeda cada build, e é isso que prova que uma camada aguenta.</p></div>
+        <ul class="cs-stats cs-stats--results" data-dsn-animate="up"><li><strong>4</strong><span>camadas: Core, Palette, Brand, Semantic</span></li><li><strong>8</strong><span>rampas de cor prontas antes de qualquer cliente</span></li><li><strong>1</strong><span>camada alterada para mudar a marca de um projeto</span></li></ul>
+        
+        <div class="cs-links"><div class="link-custom"><a href="/pt-br/work/instivo/"><span>Ler o case da Instivo</span></a></div></div>
       </div>
-    </div>
+    </section></div>
 
-    <nav class="case-nav" aria-label="Navegação do case">
-      <a href="../" class="case-nav__back label">&larr; Todos os trabalhos</a>
-      <div class="case-nav__adjacent">
-        <a href="../vellumwire/" class="case-nav__item case-nav__item--prev">
-          <span class="label case-nav__direction">&larr; Anterior</span>
-          <span class="heading-sm case-nav__title">Vellumwire</span>
-        </a>
-        <a href="../fiter/" class="case-nav__item case-nav__item--next">
-          <span class="label case-nav__direction">Próximo &rarr;</span>
-          <span class="heading-sm case-nav__title">Fiter</span>
-        </a>
-      </div>
-    </nav>
+                <div class="next-project" data-dsn-footer="project">
+                    <div id="dsn-next-parallax-img" class="bg">
+                        <div class="bg-image cover-bg" data-overlay="4" data-image-src="/assets/img/cards/fiter.webp"></div>
+                    </div>
 
-    <a href="../../contact/" class="cta-section" aria-label="Ir para a página de contato | Vamos trabalhar juntos">
-      <p class="cta-section__eyebrow">Vamos conversar</p>
-      <p class="cta-section__headline">Aberto pra próxima posição.<br><em>Vamos conversar.</em></p>
-      <span class="cta-section__arrow" aria-hidden="true">&rarr;</span>
-    </a>
+                    <div id="dsn-next-parallax-title" class="project-title">
+                        <a href="/pt-br/work/fiter/" class="">
+                            <div class="title-text-header">
+                                <div class="title-text-header-inner">
+                                    <span>Fiter</span>
+                                </div>
+                            </div>
+                            <div class="sub-text-header">
+                                <h5>Próximo projeto</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-  </main>
+                <footer class="footer">
+                <div class="container">
+                    <div class="footer-links p-relative">
+                        <div class="row">
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block">
+                                    <div class="footer-logo">
+                                        <a href="/pt-br/" aria-label="Dhiego Cristofolini, início"><img src="/assets/img/site/logo.svg" alt="" width="51" height="32"></a>
+                                    </div>
 
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner container">
-      <div class="footer__brand">
-        <span class="footer__logo">Cristofolini</span>
-        <p class="footer__copy">© 2026 Dhiego Cristofolini. Baseado no Brasil.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Navegação do rodapé">
-        <a href="../../" class="footer__nav-link">Início</a>
-        <a href="../" class="footer__nav-link">Trabalhos</a>
-        <a href="../../contact/" class="footer__nav-link">Contato</a>
-        <a href="../../politica-de-privacidade/" class="footer__nav-link">Privacidade</a>
-        <div class="footer__socials">
-          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+                                    <div class="footer-social">
+
+                                        <ul><li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li><li><a href="https://behance.net/dhiegopires" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a></li><li><a href="https://www.instagram.com/dhiegopires/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="https://github.com/Dhiegopires" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li></ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-menu">
+                                    <h4 class="footer-title">Navegação</h4>
+                                    <nav>
+                                        <ul><li><a href="/pt-br/work/">Trabalhos</a></li><li><a href="/pt-br/blog/">Insights</a></li><li><a href="/pt-br/sobre/">Sobre</a></li><li><a href="/pt-br/curriculo/">Currículo</a></li><li><a href="/pt-br/contato/">Contato</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-contact">
+                                    <h4 class="footer-title">Contato</h4>
+                                    
+                                    
+                                    
+                                <p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="dhiegopiresc@gmail.com" href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></p><p><strong>Idioma</strong> <span>:</span> <a href="/work/vellumwire-ds/">English</a></p></div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="col-address">
+                                    <h4 class="footer-title">Onde</h4>
+
+                                    <p>Curitiba, Brazil<br>Remoto, qualquer fuso</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 2026 Cristofolini. Todos os direitos reservados.</p>
+                            <div class="copright-text over-hidden"><a href="/pt-br/politica-de-privacidade/">Política de Privacidade</a> · <a href="/pt-br/termos-de-uso/">Termos de Uso</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
         </div>
-      </nav>
-    </div>
-  </footer>
+    </main>
 
-  <script src="../../../assets/js/main.js" defer></script>
-</body>
-</html>
+    <!-- Wait Loader -->
+    <div class="wait-loader">
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <div class="loader-layer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- // Wait Loader -->
+
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+    <!-- End cursor -->
+
+    <!-- Optional JavaScript -->
+    <script src="/assets/tpl/js/jquery-3.1.1.min.js?v=042dd055"></script>
+    <script src="/assets/tpl/js/plugins.js?v=790b3aee"></script>
+    <script src="/assets/tpl/js/dsn-grid.js?v=0b65055c"></script>
+    <script src="/assets/tpl/js/custom.js?v=5a73715e"></script><script src="/assets/tpl/js/addons.js?v=753d91a5"></script>
+
+
+</body></html>

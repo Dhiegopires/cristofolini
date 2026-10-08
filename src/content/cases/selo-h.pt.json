@@ -1,0 +1,126 @@
+{
+ "seoTitle": "Selo H | Reconstrução da Certificação | Dhiego Cristofolini",
+ "description": "5x mais leads em 30 dias. Rejeição -40%. LCP 1.4s. Como reconstruí o seloh.org em uma semana, tão sério quanto a certificação. Via Vellumwire.",
+ "meta": [
+  {
+   "label": "Cliente",
+   "value": "Selo H"
+  },
+  {
+   "label": "Estúdio",
+   "value": "Vellumwire"
+  },
+  {
+   "label": "Ano",
+   "value": "2025"
+  },
+  {
+   "label": "Duração",
+   "value": "1 semana"
+  },
+  {
+   "label": "Papel",
+   "value": "Estratégia · UX/IA · Copy · Design Visual"
+  },
+  {
+   "label": "Site ao vivo",
+   "value": "<a href=\"https://seloh.org\" rel=\"noopener noreferrer\" target=\"_blank\">seloh.org →</a>"
+  },
+  {
+   "label": "Time",
+   "value": "Afonso, front-end e hospedagem"
+  }
+ ],
+ "stats": [],
+ "sections": [
+  {
+   "id": "s01",
+   "num": "01",
+   "title": "A situação",
+   "layout": "editorial",
+   "html": "<p>O Selo H é a primeira certificação brasileira de saúde mental ocupacional com padrão internacional. Fundamentada em NR-01, Lei 14.831/24, diretrizes da OMS e CID-11. Empresas como Alelo, Amil, Arcor, Claro e Cogna já estavam certificadas. O produto tinha credibilidade real e demanda real.</p>\n<p>O site não mostrava nenhum disso.</p>\n<blockquote class=\"cs-pullquote\">O domínio tinha vencido no GoDaddy. O custo de renovação chegou a R$800. O cliente precisava de um site novo, construído do zero, em uma semana, não para polimento visual, mas porque o processo de certificação em si passa pelo site. Sem ele, não havia canal para gerar leads nem documentar novos clientes.</blockquote>\n<p>O brief era preciso: tornar o site tão sério quanto a própria certificação.</p>"
+  },
+  {
+   "id": "s02",
+   "num": "02",
+   "title": "O diagnóstico",
+   "layout": "editorial",
+   "html": "<p>Antes de escrever uma linha de copy ou abrir um arquivo de design, auditei o que existia. Seis problemas se somavam.</p>\n<p>Nenhuma ação primária clara. Vários CTAs concorrentes diluíam a intenção, e não havia um caminho único e decisivo para a solicitação de certificação. A hierarquia de informação estava invertida: a prova de compliance legal, a lista de empresas certificadas e o processo de 4 etapas estavam enterrados ou sequenciados depois de conteúdo menos persuasivo, quando eram exatamente os motivos mais fortes para agir.</p>\n<p>O copy descrevia a certificação em vez de fazer o caso por ela. Sem urgência. Sem custo da inação. Sem prova de que algo disso era real. A performance trabalhava contra a confiança: LCP em torno de 4,8 segundos em um produto de compliance onde a primeira impressão é o argumento inteiro. Alelo, Amil, Arcor, Claro e Cogna estavam listadas, não destacadas. Presentes, mas fáceis de ignorar. A linguagem visual era inconsistente, genérica e não dava personalidade ao produto.</p>\n<blockquote class=\"cs-pullquote\">Uma pergunta moldou cada decisão que se seguiu: o que um diretor de RH orientado a compliance precisa acreditar antes de solicitar uma certificação? Essa resposta definiu a ordem das seções, a arquitetura de prova e o tom do copy.</blockquote>"
+  },
+  {
+   "id": "s03",
+   "num": "03",
+   "title": "Resultado antes do produto",
+   "layout": "editorial",
+   "html": "<p>Diretores de RH e jurídico não chegam a um site de certificação procurando funcionalidades. Chegam procurando permissão para agir: prova de que isso é real, seletivo e vale o processo interno de aprovação.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">Posicionamento antigo</p>\n<p class=\"cs-compare__text\">O hero abria com o que o produto era: uma certificação de saúde mental. Pedia ao visitante que se importasse antes de dar um motivo. Os tomadores de decisão precisavam ler bastante para encontrar o que a certificação faria por eles.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">Novo posicionamento</p>\n<p class=\"cs-compare__text\">O hero abre com o que o leitor já quer: prova de que a empresa cuida das pessoas. A certificação é o caminho. O resultado (conformidade legal, sinal de bem-estar, credibilidade reputacional) é o que o comprador realmente busca.</p>\n</div>\n</div>\n<p>Começar pelo produto pede ao visitante que se importe antes de ter um motivo. Começar pelo resultado encontra o visitante onde ele já está. O headline (\"Certifique sua empresa em saúde mental\") é o objetivo do comprador, não uma descrição do produto.</p>"
+  },
+  {
+   "id": "s04",
+   "num": "04",
+   "title": "Compliance acima da dobra",
+   "layout": "editorial",
+   "html": "<p>Para um diretor de RH ou jurídico, NR-01, Lei 14.831/24, diretrizes da OMS e CID-11 não são notas de rodapé. São o motivo principal para avançar. No site antigo, estavam enterrados.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">Letras miúdas</p>\n<p class=\"cs-compare__text\">As referências legais apareciam fundo na página, depois de copy e visuais que não abordavam compliance. Um comprador cauteloso que precisava de fundamentação legal tinha que rolar a tela para encontrar o que veio confirmar.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">Âncoras de credibilidade</p>\n<p class=\"cs-compare__text\">NR-01, Lei 14.831/24, diretrizes da OMS e CID-11 aparecem imediatamente abaixo do headline, visíveis no primeiro scroll sem nenhuma ação necessária. Funcionam como âncoras de credibilidade, não como letras miúdas.</p>\n</div>\n</div>\n<p>Em mercados orientados a compliance, o site faz parte do argumento de venda. Se a fundamentação legal não é imediatamente visível, compradores cautelosos se desqualificam antes de ler mais nada.</p>"
+  },
+  {
+   "id": "s05",
+   "num": "05",
+   "title": "Rigor como prova, não barreira",
+   "layout": "editorial",
+   "html": "<p>Um processo de certificação rigoroso com 4 etapas pode parecer burocrático e intimidador, ou pode parecer criterioso e valioso. O site antigo transmitia o primeiro.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">O que o processo antigo dizia</p>\n<p class=\"cs-compare__text\">Cada etapa listava o que aconteceria. Sem explicação do porquê de cada etapa existir ou do que ela protegia a empresa. Um processo de 4 etapas sem razão parece overhead, não valor.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">O que o novo processo diz</p>\n<p class=\"cs-compare__text\">Cada etapa afirma seu propósito específico: por que importa e o que entrega. O rigor se torna prova de qualidade em vez de barreira de entrada.</p>\n</div>\n</div>\n<p>A objeção real do comprador não é se a certificação é legítima. É se vale o esforço interno. Mostrar que cada etapa existe por uma razão responde isso diretamente.</p>"
+  },
+  {
+   "id": "s06",
+   "num": "06",
+   "title": "Prova social no fechamento",
+   "layout": "editorial",
+   "html": "<p>Alelo, Amil, Arcor, Claro e Cogna são os sinais mais fortes de que a certificação é real e seletiva. No site antigo, apareciam cedo demais, antes que o visitante tivesse contexto suficiente para entender o que representavam.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">Prova precoce demais</p>\n<p class=\"cs-compare__text\">Os logos das empresas apareciam no topo da página, antes do visitante entender a certificação, o processo ou a fundamentação legal. Listadas, não destacadas. Fáceis de ignorar sem perceber o que representavam.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">Prova no momento de decisão</p>\n<p class=\"cs-compare__text\">As empresas certificadas aparecem diretamente antes do formulário de contato: a última coisa que um prospect vê antes de decidir se age. Uma página de empresas certificadas também foi construída como diretório de prova consultável.</p>\n</div>\n</div>\n<p>A prova social funciona melhor no momento da decisão, não como afirmação introdutória. Mover a lista de empresas para o final a transforma em argumento de fechamento.</p>"
+  },
+  {
+   "id": "s07",
+   "num": "07",
+   "title": "Um CTA ao longo de todo o site",
+   "layout": "editorial",
+   "html": "<p>O site antigo oferecia múltiplos caminhos: newsletter, downloads, contatos alternativos. Cada um fragmentava a intenção e dava aos visitantes indecisos uma saída fácil.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">Múltiplos caminhos</p>\n<p class=\"cs-compare__text\">CTAs concorrentes ao longo da página. Um visitante que não sabia o que fazer tinha vários lugares para ir, nenhum deles em direção a uma solicitação de certificação. A opcionalidade dispersava a intenção que a página deveria construir.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">Um caminho</p>\n<p class=\"cs-compare__text\">\"Solicitar certificação\" é o único pedido da página, repetido consistentemente do hero ao footer. Sem caminhos alternativos. Cada seção aponta para uma decisão.</p>\n</div>\n</div>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush\">\n<img alt=\"Formulário de solicitação de certificação Selo H: captura de leads com um único caminho, sinais de confiança e layout responsivo em laptop e tablet\" decoding=\"async\" height=\"928\" loading=\"lazy\" src=\"/work/selo-h/img/mockup-2.webp\" width=\"1232\"/>\n</div>\n<figcaption class=\"cs-caption\">Formulário de solicitação · um pedido, um caminho, sinais de confiança presentes</figcaption>\n</figure>\n<p>Em uma compra de alta consideração, opcionalidade é inimiga da conversão. Um visitante que vê a mesma ação clara em cada posição de scroll sabe exatamente o que está decidindo.</p>"
+  },
+  {
+   "id": "s08",
+   "num": "08",
+   "title": "Performance do zero",
+   "layout": "editorial",
+   "html": "<p>Um LCP de 4,8 segundos em um produto orientado a compliance prejudica a confiança antes de uma palavra sequer ser lida. Em um mercado onde credibilidade é tudo, um site lento contradiz o próprio produto.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">Abordagem com template</p>\n<p class=\"cs-compare__text\">O site anterior usava um template genérico com overhead de CSS/JS de terceiros, scripts bloqueadores e sem controle da ordem de carregamento. Os problemas de performance estavam na arquitetura, não eram incidentais a ela.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">Reconstrução limpa</p>\n<p class=\"cs-compare__text\">Build limpo em HTML/CSS. Sem frameworks desnecessários, entrega de assets otimizada, imagens em WebP, HTML semântico ao longo de todo o site. Controle total sobre o que carrega, quando e em que ordem. LCP: 1,4s. Lighthouse: 100.</p>\n</div>\n</div>\n<p>Performance não é uma métrica técnica aqui. É uma primeira impressão. Uma plataforma de certificação que carrega em 1,4 segundos sinaliza o mesmo rigor que certifica.</p>"
+  },
+  {
+   "id": "s09",
+   "num": "09",
+   "title": "Resultados",
+   "layout": "editorial",
+   "html": "<p>Tudo abaixo foi medido nos primeiros 30 dias após o lançamento. Zero investimento em anúncios. Zero campanha de outreach. Apenas o site.</p>\n<div class=\"cs-benchmark-grid\">\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\"><span class=\"cs-accent\">5</span>×</p>\n<p class=\"cs-benchmark-desc\">Mais leads no primeiro mês vs. baseline pré-lançamento</p>\n<p class=\"cs-benchmark-source\">Medição 30 dias pós-lançamento</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\"><span class=\"cs-accent\">-40</span>%</p>\n<p class=\"cs-benchmark-desc\">Taxa de rejeição vs. baseline pré-lançamento</p>\n<p class=\"cs-benchmark-source\">Medição 30 dias pós-lançamento</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\"><span class=\"cs-accent\">+50</span>%</p>\n<p class=\"cs-benchmark-desc\">Taxa de conversão vs. baseline pré-lançamento</p>\n<p class=\"cs-benchmark-source\">Medição 30 dias pós-lançamento</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">1,4<span class=\"cs-accent\">s</span></p>\n<p class=\"cs-benchmark-desc\">LCP, reduzido de 4,8s no site original</p>\n<p class=\"cs-benchmark-source\">Medição de Core Web Vitals</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">2,3×</p>\n<p class=\"cs-benchmark-desc\">Aumento no tempo na página</p>\n<p class=\"cs-benchmark-source\">Medição 30 dias pós-lançamento</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">100</p>\n<p class=\"cs-benchmark-desc\">Pontuação no Lighthouse</p>\n<p class=\"cs-benchmark-source\">Auditoria Lighthouse pós-lançamento</p>\n</div>\n</div>\n<p>O que mudou e não é um número: o cliente saiu de um site que contradiz a credibilidade do próprio produto para um onde a linguagem visual e a autoridade da certificação estão alinhadas. Um comprador orientado a compliance que acessa o site agora vê rigor legal, empresas certificadas reconhecíveis e um caminho claro para frente, nessa ordem, no primeiro scroll.</p>"
+  },
+  {
+   "id": "s10",
+   "num": "10",
+   "title": "Reflexões",
+   "layout": "editorial",
+   "html": "<p><strong>Urgência produz clareza que prazos confortáveis não produzem.</strong> Uma semana com um deadline real forçou a mesma priorização que a restrição de duas semanas do Fiter forçou. Identifico o que importa mais, construo isso primeiro e corto o resto. Faria a escolha de prazo curto novamente.</p>\n<p><strong>Produtos de compliance são vendidos por prova, não por funcionalidades.</strong> NR-01, Lei 14.831/24, diretrizes da OMS e CID-11 fizeram mais trabalho de conversão do que qualquer decisão de layout. Mostrar fundamentação legal imediatamente é agora uma regra fixa em qualquer projeto de compliance que pego.</p>\n<p><strong>Logos reais de clientes são desperdiçados se não são sentidos.</strong> Alelo, Amil, Arcor, Claro e Cogna já estavam no site antigo. Mover para o momento de decisão transformou um detalhe listado em argumento de fechamento. A correção foi de posicionamento, não de conteúdo.</p>\n<p><strong>O que eu faria a seguir:</strong> rastreamento de eventos GA4 por seção para identificar exatamente onde a decisão de solicitação de certificação é tomada, um blog segmentando NR-01 e consultas de compliance em saúde mental no trabalho (baixa concorrência, intenção comercial direta), um teste A/B do headline do hero contra uma variante com framing de urgência e prazo, e uma página de empresas certificadas expandida com filtros por setor e porte de empresa.</p>\n<p><strong>Um prazo de uma semana só se sustenta se design e construção andam junto, não em sequência.</strong> O Afonso implementou e hospedou a reconstrução enquanto eu ainda finalizava as últimas seções. Essa sobreposição é o único motivo desse projeto ter saído em sete dias.</p>"
+  }
+ ],
+ "headline": "O produto tinha credibilidade. O site não mostrava.",
+ "dek": "O Selo H é a primeira certificação brasileira de saúde mental ocupacional com padrão internacional, fundamentada em NR-01, Lei 14.831/24, diretrizes da OMS e CID-11. Empresas como Alelo, Amil, Arcor, Claro e Cogna já estavam certificadas. Nada dessa credibilidade aparecia no site. Quando o domínio venceu no GoDaddy, tive uma semana para reconstruir tudo do zero.",
+ "tags": [
+  "Reconstrução Completa",
+  "Compliance",
+  "Landing Page"
+ ],
+ "heroImg": {
+  "src": "/work/selo-h/img/hero.webp",
+  "w": 906,
+  "h": 816,
+  "alt": "Plataforma de certificação Selo H após a reconstrução: hero escuro com selo animado, âncoras de compliance e CTA único",
+  "contain": false
+ },
+ "context": {
+  "eyebrow": "Antes e depois · mesma certificação, um site que finalmente comprova",
+  "media": "<div class=\"cs-diagram cs-diagram--flush aspect-16-9 cs-diagram--top\">\n<img alt=\"Selo H antes da reconstrução: hero genérico com foto de banco de imagens, múltiplos CTAs concorrentes, prova de compliance enterrada\" decoding=\"async\" height=\"844\" loading=\"lazy\" src=\"/work/selo-h/img/before.webp\" width=\"1440\"/>\n</div>",
+  "caption": ""
+ }
+}

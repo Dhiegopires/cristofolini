@@ -1,0 +1,113 @@
+{
+ "seoTitle": "NorthPay | UX de Onboarding Fintech | Dhiego Cristofolini",
+ "description": "Estudo de caso de fluxo de onboarding e KYC fintech. Configuração de conta, verificação e dashboard redesenhados para reduzir fricção e guiar a ativação.",
+ "meta": [
+  {
+   "label": "Função",
+   "value": "Product Designer"
+  },
+  {
+   "label": "Plataforma",
+   "value": "iOS · Android"
+  },
+  {
+   "label": "Tipo",
+   "value": "Projeto conceitual"
+  },
+  {
+   "label": "Duração",
+   "value": "8 semanas"
+  }
+ ],
+ "stats": [
+  {
+   "num": "0",
+   "label": "gates forçados de criação de conta · acesso como convidado com revelação progressiva"
+  },
+  {
+   "num": "1",
+   "label": "pergunta por tela · tipo de conta definido antes de qualquer campo de formulário aparecer"
+  },
+  {
+   "num": "6",
+   "label": "etapas visíveis desde a primeira tela · stepper persistente elimina a incerteza"
+  }
+ ],
+ "sections": [
+  {
+   "id": "s01",
+   "num": "01",
+   "title": "O conceito",
+   "layout": "split",
+   "html": "<p>NorthPay é um fluxo conceitual de onboarding fintech, da seleção do tipo de conta até a verificação KYC e a configuração de primeiro uso.</p>\n<blockquote class=\"cs-pullquote\">Todo campo em um formulário de onboarding fica entre o usuário e o produto. A sequência em que esses campos aparecem é uma decisão de design, não um requisito de compliance.</blockquote>\n<p>Onboarding é o ponto onde primeiras impressões, restrições regulatórias e taxas de conversão convergem na mesma sequência de telas.</p>\n<div class=\"cs-diagram\">\n<img alt=\"Mockups de onboarding da NorthPay mostrando telas de seleção de conta e verificação\" decoding=\"async\" height=\"1277\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/mockup.webp\" width=\"1920\"/>\n</div>"
+  },
+  {
+   "id": "s02",
+   "num": "02",
+   "title": "Problema &amp; contexto",
+   "layout": "editorial",
+   "html": "<p>Produtos financeiros precisam coletar informações sensíveis antes que os usuários vejam qualquer valor. Isso torna o onboarding a parte mais frágil do fluxo. As pessoas estão criando uma conta, compartilhando dados pessoais e esperando por verificação sem ainda saber se algo disso vale o tempo delas.</p>\n<div class=\"cs-fear-cards\">\n<div class=\"cs-fear-card\">\n<p class=\"cs-fear-card__label\">Usuário</p>\n<p class=\"cs-fear-card__title\">Por que isso é tão longo?</p>\n<p class=\"cs-fear-card__body\">Muitos campos de uma vez, nenhuma indicação de quantas etapas faltam, nenhum motivo visível para confiar no produto que está pedindo dados sensíveis.</p>\n</div>\n<div class=\"cs-fear-card\">\n<p class=\"cs-fear-card__label\">Negócio</p>\n<p class=\"cs-fear-card__title\">Onde eles estão abandonando?</p>\n<p class=\"cs-fear-card__body\">Criar conta antes de ver qualquer valor do produto é o maior ponto de abandono no onboarding. O KYC adiciona mais uma camada em cima disso.</p>\n</div>\n<div class=\"cs-fear-card\">\n<p class=\"cs-fear-card__label\">Compliance</p>\n<p class=\"cs-fear-card__title\">Precisamos de tudo isso</p>\n<p class=\"cs-fear-card__body\">Todo campo que parece excessivo para o usuário está ali porque a regulação exige; o ajuste está em como ele é apresentado.</p>\n</div>\n</div>\n<p>Formulários longos, requisitos pouco claros e feedback fraco travam a ativação antes mesmo do produto ser usado. Todo campo na sequência é exigido por regulação. Como essa sequência é apresentada é uma decisão de design.</p>\n<div class=\"cs-diagram\">\n<img alt=\"Diagrama de problema e contexto\" decoding=\"async\" height=\"591\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/problem-and-context.webp\" width=\"708\"/>\n</div>"
+  },
+  {
+   "id": "s03",
+   "num": "03",
+   "title": "Desafio de design",
+   "layout": "editorial",
+   "html": "<p>O desafio era estrutural: como coletar tudo que o compliance exige mantendo os usuários orientados em cada etapa. Um ponto final visível e um padrão fixo de uma pergunta por tela resolvem os dois.</p>\n<div class=\"cs-compare\">\n<div>\n<p class=\"cs-compare__label\">Abordagem padrão</p>\n<p class=\"cs-compare__text\">Mostrar tudo de uma vez. Todos os campos em uma tela, todas as etapas implícitas. O usuário não sabe quanto tempo isso vai levar até já estar no meio disso. É aí que ele desiste.</p>\n</div>\n<div>\n<p class=\"cs-compare__label\">Abordagem NorthPay</p>\n<p class=\"cs-compare__text\">Uma pergunta por vez. Contagem de etapas visível desde a primeira tela. Tipo de conta selecionado antes de qualquer formulário abrir. Cada próxima etapa é conquistada ao completar a atual.</p>\n</div>\n</div>\n<div class=\"cs-diagram\">\n<img alt=\"Diagrama do desafio de design, jornada completa de onboarding\" decoding=\"async\" height=\"661\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/design-challenge-diagram.webp\" width=\"708\"/>\n</div>\n<div class=\"cs-addresses\">\n<span class=\"cs-addresses__label\">Resolve</span>\n<span class=\"cs-addresses__metric\">19% de abandono por criação forçada de conta (Baymard, 2024) · estresse de decisão como principal motivo de abandono, antes da quantidade de campos</span>\n</div>"
+  },
+  {
+   "id": "s04",
+   "num": "04",
+   "title": "IA &amp; fluxo de usuário",
+   "layout": "editorial",
+   "html": "<p>A experiência de onboarding é dividida em um ponto de entrada público e um fluxo de produto protegido por login. Dentro do produto, uma sequência simples guia os usuários do tipo de conta até a verificação, com ramificação clara entre contas pessoais e empresariais.</p>\n<blockquote class=\"cs-pullquote\">Tipo de conta é a primeira decisão. Todo campo que vem depois depende dela. Colocá-la na primeira tela elimina o pior modo de falha: trocar o tipo no meio do formulário e perder todos os dados já preenchidos.</blockquote>\n<p>O fluxo tem três fases: seleção de conta, coleta de identidade e verificação. As três são visíveis no stepper desde a primeira etapa, então nenhuma fase é uma surpresa quando se abre.</p>\n<div class=\"cs-diagram\">\n<img alt=\"Fluxograma do fluxo de onboarding da NorthPay\" decoding=\"async\" height=\"574\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Fluxogram.webp\" width=\"1900\"/>\n</div>\n<div class=\"cs-diagram\">\n<img alt=\"Diagrama de arquitetura da informação\" decoding=\"async\" height=\"621\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Information-architecture.webp\" width=\"1906\"/>\n</div>"
+  },
+  {
+   "id": "s05",
+   "num": "05",
+   "title": "Wireframes &amp; decisões de UX",
+   "layout": "split",
+   "html": "<p>Wireframes de baixa fidelidade definiram a estrutura e a sequência antes de qualquer decisão visual. Um stepper persistente mostra aos usuários onde eles estão e o que falta. Campos agrupados mantêm cada tela focada em uma única etapa.</p>\n<div class=\"cs-rejected\">\n<span class=\"cs-rejected__label\">Abordagem rejeitada</span>\n              Um layout anterior colocava o seletor de tipo de conta na mesma tela dos primeiros campos de formulário. Usuários trocavam o tipo de conta no meio do formulário e perdiam tudo que tinham preenchido. Separar a decisão da coleta de dados não é uma preferência de UX. É um padrão de prevenção de perda de dados.\n            </div>\n<p>Uma pergunta por tela é mais lento de construir e mais rápido de completar. A complexidade percebida cai quando cada tela tem uma única função e a deixa óbvia.</p>\n<div class=\"cs-diagram\">\n<img alt=\"Wireframes da NorthPay mostrando a estrutura das etapas de onboarding\" decoding=\"async\" height=\"1500\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Wireframes.webp\" width=\"1500\"/>\n</div>"
+  },
+  {
+   "id": "s06",
+   "num": "06",
+   "title": "Interações e estados-chave",
+   "layout": "editorial",
+   "html": "<p>As interações que importam nesse fluxo são as que lidam com falha: erros inline nos campos, um estado de verificação pendente e um stepper que nunca esconde as etapas restantes.</p>\n<div class=\"cs-edge-cases\">\n<span class=\"cs-edge-cases__label\">Decisões de interação</span>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Validação inline</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Erros mostrados campo a campo conforme o usuário sai de cada input, não no envio. Corrige antecipadamente e evita frustração no final do formulário.</span>\n</div>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Visibilidade do stepper</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Contagem de etapas visível desde a tela 1. Os usuários sabem exatamente quanto falta antes de se comprometer com a próxima etapa.</span>\n</div>\n<div class=\"cs-edge-row\">\n<span class=\"cs-edge-condition\">Verificação pendente</span>\n<span class=\"cs-edge-arrow\">→</span>\n<span class=\"cs-edge-response\">Tela de status com prazo estimado e o que esperar a seguir. A espera é esperada, não um estado de erro.</span>\n</div>\n</div>\n<div class=\"cs-diagram-grid\">\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Interações e estados-chave\" decoding=\"async\" height=\"1500\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/interactions.webp\" width=\"1500\"/>\n</div>\n<figcaption class=\"cs-caption\">Interações · erro inline + stepper</figcaption>\n</figure>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Tela de escolha do tipo de conta\" decoding=\"async\" height=\"1138\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Choose-your-account-mockup.webp\" width=\"1920\"/>\n</div>\n<figcaption class=\"cs-caption\">Tipo de conta · primeira decisão, sem formulário</figcaption>\n</figure>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Tela de dados pessoais\" decoding=\"async\" height=\"1407\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Personal-details-mockup.webp\" width=\"1920\"/>\n</div>\n<figcaption class=\"cs-caption\">Dados pessoais · campos agrupados</figcaption>\n</figure>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Formulário de dados pessoais com erros de validação inline\" decoding=\"async\" height=\"1151\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Personal-details-feedbacks.webp\" width=\"1440\"/>\n</div>\n<figcaption class=\"cs-caption\">Validação inline · erros por campo ao sair</figcaption>\n</figure>\n</div>"
+  },
+  {
+   "id": "s07",
+   "num": "07",
+   "title": "Telas finais",
+   "layout": "editorial",
+   "html": "<p>A verificação confirma a conta. Os usuários chegam a um checklist de configuração que substitui um dashboard vazio por uma próxima ação clara, sem antecipar todas as opções de uma vez.</p>\n<div class=\"cs-benchmark-grid\">\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">19<span class=\"cs-accent\">%</span></p>\n<p class=\"cs-benchmark-desc\">Taxa de abandono por criação forçada de conta. Removida dos dois fluxos: entrada como convidado, gates de conta movidos para depois da primeira entrega de valor.</p>\n<p class=\"cs-benchmark-source\">Baymard, 2024</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">80<span class=\"cs-accent\">%</span></p>\n<p class=\"cs-benchmark-desc\">Abandono de checkout mobile resolvido com telas de pergunta única e progresso visível de 6 etapas</p>\n<p class=\"cs-benchmark-source\">Baymard, 2024</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">1</p>\n<p class=\"cs-benchmark-desc\">Decisão por tela. Tipo de conta definido antes de qualquer coleta de dados começar.</p>\n<p class=\"cs-benchmark-source\">Padrão de interação</p>\n</div>\n<div class=\"cs-benchmark-card\">\n<p class=\"cs-benchmark-num\">0</p>\n<p class=\"cs-benchmark-desc\">Troca de tipo no meio do formulário. A escolha de conta é travada antes do formulário abrir, evitando perda de dados.</p>\n<p class=\"cs-benchmark-source\">Decisão de UX</p>\n</div>\n</div>\n<div class=\"cs-diagram-grid\">\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Tela de dados da empresa\" decoding=\"async\" height=\"1741\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Business-details-mockup.webp\" width=\"1920\"/>\n</div>\n<figcaption class=\"cs-caption\">Dados da empresa · formulário ramificado</figcaption>\n</figure>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Tela de verificação de conta\" decoding=\"async\" height=\"1783\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Verify-your-account-mockup.webp\" width=\"1920\"/>\n</div>\n<figcaption class=\"cs-caption\">Verificação · estado pendente com prazo estimado</figcaption>\n</figure>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Primeiro dashboard da NorthPay, checklist de configuração e status da conta\" decoding=\"async\" height=\"1920\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/Dashboard-mockup.webp\" width=\"1814\"/>\n</div>\n<figcaption class=\"cs-caption\">Dashboard · checklist de configuração, primeira ação</figcaption>\n</figure>\n<figure>\n<div class=\"cs-diagram cs-diagram--flush aspect-16-10\">\n<img alt=\"Sistema de UI final da NorthPay\" decoding=\"async\" height=\"1500\" loading=\"lazy\" src=\"/assets/img/project/NorthPay/UI.webp\" width=\"1500\"/>\n</div>\n<figcaption class=\"cs-caption\">Sistema de UI · linguagem visual final</figcaption>\n</figure>\n</div>\n<div class=\"cs-trust-pills\">\n<span class=\"cs-trust-pill\">Revelação progressiva · uma pergunta por tela</span>\n<span class=\"cs-trust-pill\">Stepper persistente · visível desde a primeira etapa</span>\n<span class=\"cs-trust-pill\">Tipo de conta primeiro · campos de formulário depois</span>\n</div>"
+  },
+  {
+   "id": "s08",
+   "num": "08",
+   "title": "Reflexões",
+   "layout": "editorial",
+   "html": "<p><strong>Não desenhei para conclusão em múltiplas sessões.</strong> O stepper persistente funciona para uma única visita. No fintech real, o KYC pode se estender por dias: revisão manual de documentos, filas de verificação de identidade, checagens pendentes de registro empresarial. O fluxo precisa de um estado de salvar e retomar que eu não tratei.</p>\n<p><strong>As restrições de compliance foram simuladas.</strong> Por ser um conceito, eu controlei a sequência de campos por completo. Em um projeto real, as regulações de AML e KYC ditariam quais campos aparecem juntos e em qual ordem. Eu gostaria de mapear os requisitos legais antes de finalizar o padrão de uma pergunta por tela.</p>\n<p><strong>A abordagem rejeitada merecia um contra-argumento melhor.</strong> Meu wireframe do \"tipo de conta mais campos de formulário em uma única tela\" era obviamente ruim por design. Uma validação honesta construiria bem essa versão, não como um espantalho, e compararia os índices de usabilidade com a abordagem de uma pergunta por vez.</p>"
+  }
+ ],
+ "headline": "Onboarding como superfície de produto",
+ "dek": "Produtos financeiros precisam coletar informações sensíveis antes que os usuários vejam qualquer valor. Isso torna os primeiros passos da experiência a parte mais frágil do fluxo. Formulários longos, requisitos pouco claros e gates forçados de criação de conta podem matar a ativação antes mesmo do cadastro terminar.",
+ "tags": [
+  "Product",
+  "UI/UX",
+  "Fintech"
+ ],
+ "heroImg": {
+  "src": "/assets/img/project/NorthPay/thumbnail.webp",
+  "w": 1920,
+  "h": 1061,
+  "alt": "Interface de onboarding da NorthPay, telas de KYC fintech e configuração de conta",
+  "contain": false
+ },
+ "context": {
+  "eyebrow": "Estado atual · onboarding fintech padrão",
+  "media": "<div class=\"cs-diagram\">\n<svg aria-label=\"Fluxo padrão de onboarding fintech mostrando pontos de fricção\" role=\"img\" viewbox=\"0 0 780 100\" width=\"100%\">\n<defs>\n<marker id=\"arr-cs\" markerheight=\"6\" markerwidth=\"6\" orient=\"auto-start-reverse\" refx=\"8\" refy=\"5\" viewbox=\"0 0 10 10\">\n<path d=\"M2 1L8 5L2 9\" fill=\"none\" stroke=\"#7f2020\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"></path>\n</marker>\n</defs>\n<rect fill=\"#1d1c1a\" height=\"72\" rx=\"8\" stroke=\"#3a3530\" stroke-width=\"0.5\" width=\"140\" x=\"10\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#d0c8bc\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"80\" y=\"38\">Quer se cadastrar</text>\n<text dominant-baseline=\"central\" fill=\"#908684\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"80\" y=\"66\">Ainda não viu valor</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"151\" x2=\"163\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"140\" x=\"164\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"234\" y=\"38\">Forçado a se registrar</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"234\" y=\"66\">Antes de ver o produto</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"305\" x2=\"317\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"140\" x=\"318\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"388\" y=\"38\">Formulário longo</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"388\" y=\"66\">Todos os campos de uma vez</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"459\" x2=\"471\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"140\" x=\"472\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"542\" y=\"38\">Barreira de verificação</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"542\" y=\"66\">Nenhum progresso visível</text>\n<line marker-end=\"url(#arr-cs)\" stroke=\"#7f2020\" stroke-width=\"1\" x1=\"613\" x2=\"625\" y1=\"50\" y2=\"50\"></line>\n<rect fill=\"#2a1008\" height=\"72\" rx=\"8\" stroke=\"#7f2020\" stroke-width=\"0.5\" width=\"144\" x=\"626\" y=\"14\"></rect>\n<text dominant-baseline=\"central\" fill=\"#f87060\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"11\" font-weight=\"500\" text-anchor=\"middle\" x=\"698\" y=\"38\">Usuário abandona</text>\n<text dominant-baseline=\"central\" fill=\"#c56c5d\" font-family=\"'IBM Plex Mono',monospace\" font-size=\"10\" text-anchor=\"middle\" x=\"698\" y=\"66\">Antes da primeira função.</text>\n</svg>\n</div>",
+  "caption": "A experiência de onboarding é onde requisitos regulatórios e o momentum do usuário colidem. Tratar isso como uma simples entrega técnica ignora que cada ponto de fricção nesse fluxo é uma decisão de design."
+ }
+}

@@ -1,985 +1,466 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
-  <title>Meaple | Super-app de Eventos | Dhiego Cristofolini</title>
-  <meta name="description" content="Marketplace end-to-end para a economia fragmentada de eventos no Brasil: descoberta, ingressos e pagamento no evento em um produto, mais o motor Momentum.">
-  <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="Meaple | Super-app de Eventos | Dhiego Cristofolini">
-  <meta property="og:description" content="Marketplace end-to-end para a economia fragmentada de eventos no Brasil: descoberta, ingressos e pagamento no evento em um produto, mais o motor Momentum.">
-  <meta property="og:image" content="https://cristofolini.site/assets/img/project/meaple/og-image.webp">
-  <meta property="og:url" content="https://cristofolini.site/pt-br/work/meaple/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Meaple | Super-app de Eventos | Dhiego Cristofolini">
-  <meta name="twitter:description" content="Marketplace end-to-end para a economia fragmentada de eventos no Brasil: descoberta, ingressos e pagamento no evento em um produto, mais o motor Momentum.">
-  <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/meaple/og-image.webp">
-  <link rel="canonical" href="https://cristofolini.site/pt-br/work/meaple/">
-  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/meaple/">
-  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/meaple/">
-  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/meaple/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Meaple",
-    "description": "Super-app de marketplace que unifica descoberta de eventos, coordenação social, venda de ingressos e pagamento dentro do evento para a economia de baladas e eventos no Brasil.",
-    "author": {
-      "@type": "Person",
-      "name": "Dhiego Cristofolini",
-      "url": "https://cristofolini.site/"
-    },
-    "dateCreated": "2020-01-01",
-    "url": "https://cristofolini.site/pt-br/work/meaple",
-    "genre": "UX Case Study",
-    "keywords": "product design, ux, marketplace, mobile, fintech, events, branding, case study"
-  }
-  </script>
-  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
-  <link href="../../../assets/css/case-study.css" rel="stylesheet">
+<html lang="pt-BR"><head>
+    <title>Meaple | Eventos, social e pagamento num só app | Dhiego Cristofolini</title>
+    <meta name="description" content="Case de product design: o Meaple unificou descoberta de eventos, coordenação social, ingressos e pagamento dentro do evento no Brasil, e pivotou para web na pandemia.">
+    <meta name="author" content="Dhiego Cristofolini">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://cristofolini.site/pt-br/work/meaple/">
+    <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/meaple/"><link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/meaple/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Meaple | Eventos, social e pagamento num só app | Dhiego Cristofolini">
+    <meta property="og:description" content="Case de product design: o Meaple unificou descoberta de eventos, coordenação social, ingressos e pagamento dentro do evento no Brasil, e pivotou para web na pandemia.">
+    <meta property="og:url" content="https://cristofolini.site/pt-br/work/meaple/">
+    <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
 
-  <style>
-    /* Artefatos exclusivos do Meaple: tokens do site, layouts pontuais ainda não reutilizados em outro lugar. */
+    <!--  Title -->
+    
 
-    .cs-note {
-      border: 1px solid var(--b1);
-      border-radius: 8px;
-      padding: var(--sp-5) var(--sp-6);
-      background: var(--bg1);
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-2);
-    }
-    .cs-note__label {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--y);
-    }
-    .cs-note p { font-size: var(--text-base); line-height: 1.65; color: var(--t2); }
+    <!-- Font Google -->
+    
+    
 
-    .persona-timeline { list-style: none; display: grid; gap: 6px; margin: var(--sp-3) 0; }
-    .persona-timeline li { font-size: 13px; color: var(--t3); padding-left: 14px; position: relative; line-height: 1.4; }
-    .persona-timeline li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--b1); }
+    
+    
 
-    .cmatrix { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-    .cmatrix th, .cmatrix td { text-align: center; padding: 0; }
-    .cmatrix thead th {
-      font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
-      color: var(--t3); padding: 0 6px 14px; vertical-align: bottom; line-height: 1.25;
-    }
-    .cmatrix thead th:first-child { text-align: left; }
-    .cmatrix tbody th {
-      text-align: left; font-family: var(--sans); font-weight: 520; color: var(--t1); white-space: nowrap;
-      padding: 9px 16px 9px 4px; border-top: 1px solid var(--b0);
-    }
-    .cmatrix tbody td { border-top: 1px solid var(--b0); height: 44px; }
-    .cmatrix .dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; background: var(--bg2); box-shadow: inset 0 0 0 1px var(--b1); }
-    .cmatrix .dot.on { background: var(--y); box-shadow: 0 0 0 1px var(--y); }
-    .cmatrix tr.meaple th, .cmatrix tr.meaple td { border-top: 1.5px solid var(--y); background: rgba(243,176,46,.06); }
-    .cmatrix tr.meaple th { color: var(--y); font-weight: 700; font-family: var(--display); text-transform: uppercase; letter-spacing: .01em; }
-    @media (max-width: 560px) {
-      .cmatrix { font-size: 11.5px; }
-      .cmatrix thead th { font-size: 9px; padding: 0 2px 10px; }
-      .cmatrix tbody th { white-space: normal; font-size: 11.5px; padding: 8px 6px 8px 2px; line-height: 1.15; }
-      .cmatrix tbody td { height: 36px; }
-    }
+    <!-- custom styles (optional) -->
+    <link href="/assets/tpl/css/plugins.css?v=592309fc" rel="stylesheet">
+    <link href="/assets/tpl/css/style.css?v=a8d95a64" rel="stylesheet"><link href="/assets/tpl/css/brand.css?v=14efa40a" rel="stylesheet">
 
-    .scatter { position: relative; width: 100%; aspect-ratio: 1.35/1; max-width: 620px; margin-inline: auto; }
-    .scatter svg { width: 100%; height: 100%; overflow: visible; }
-    .sc-lab { font-family: var(--mono); font-size: 9px; fill: var(--t2); letter-spacing: .02em; }
-    .sc-axis { font-family: var(--mono); font-size: 10px; fill: var(--t3); letter-spacing: .1em; text-transform: uppercase; }
-    .scatter-legend { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-5); font-family: var(--mono); font-size: 11px; color: var(--t2); }
-    .scatter-legend span { display: flex; align-items: center; gap: 8px; }
-    .scatter-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .scatter-legend i.imp { background: var(--y); }
-    .scatter-legend i.override { background: #f87171; }
-    .scatter-legend i.base { background: var(--t2); }
-    .sc-lab { font-weight: 700; }
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','G-M378PSJ10R');</script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script></head>
 
-    .targets-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--b0); border: 1px solid var(--b0); border-radius: 8px; overflow: hidden; }
-    @media (min-width: 480px) { .targets-grid { grid-template-columns: repeat(2, 1fr); } }
 
-    .tier-relations { border: 1px dashed var(--b1); border-radius: 8px; padding: var(--sp-5); margin-top: var(--sp-5); }
-    .tier-relations__label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-bottom: var(--sp-3); }
-    .tier-relations ul { list-style: none; display: grid; gap: 8px; }
-    .tier-relations li { font-size: 13.5px; color: var(--t2); padding-left: 20px; position: relative; }
-    .tier-relations li::before { content: "→"; position: absolute; left: 0; color: var(--y); }
-    .tier-relations b { color: var(--t1); }
-
-    .momentum { display: grid; grid-template-columns: 1.3fr auto .9fr; gap: var(--sp-6); align-items: center; }
-    @media (max-width: 760px) { .momentum { grid-template-columns: 1fr; gap: var(--sp-4); } }
-    .mo-inputs { display: grid; gap: 8px; }
-    .mo-in { border: 1px solid var(--b0); border-radius: 8px; padding: 12px 16px; background: var(--bg1); font-size: 13.5px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-    .mo-in .sub { font-family: var(--mono); font-size: 10.5px; color: var(--t3); text-align: right; }
-    .mo-in.key { border-color: var(--y); background: rgba(243,176,46,.08); }
-    .mo-in.key .nm { color: var(--y); font-weight: 600; }
-    .mo-arrow { font-family: var(--mono); color: var(--y); font-size: 20px; text-align: center; }
-    @media (max-width: 760px) { .mo-arrow { transform: rotate(90deg); } }
-    .mo-out { border: 1px solid var(--y); border-radius: 8px; padding: var(--sp-6); background: rgba(243,176,46,.06); text-align: center; }
-    .mo-out .ot { font-family: var(--display); font-size: 20px; text-transform: uppercase; color: var(--t1); }
-    .mo-out .os { font-size: 12.5px; color: var(--t2); margin-top: 10px; line-height: 1.45; }
-
-    .scope-group { margin-bottom: var(--sp-4); }
-    .scope-group__label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--t3); margin-bottom: 8px; }
-    .scope-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .scope-chip { font-size: 12px; border: 1px solid var(--b1); border-radius: 100px; padding: 4px 11px; color: var(--t2); background: var(--bg); }
-    .scope-chip.against { border-color: var(--y); color: var(--y); background: rgba(243,176,46,.08); }
-    .scope-chip .why { font-family: var(--mono); font-size: 9.5px; opacity: .7; margin-left: 6px; }
-
-    .roadmap { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
-    @media (min-width: 560px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
-    .roadmap-month { border: 1px solid var(--b0); border-radius: 8px; background: var(--bg1); overflow: hidden; }
-    .roadmap-month__head { font-family: var(--display); font-size: 15px; text-transform: uppercase; padding: 12px 14px; border-bottom: 1px solid var(--b0); display: flex; justify-content: space-between; align-items: center; color: var(--t1); }
-    .roadmap-month__head span { font-family: var(--mono); font-size: 10px; color: var(--y); text-transform: none; }
-    .roadmap-month ul { list-style: none; padding: 10px 14px; display: grid; gap: 6px; }
-    .roadmap-month li { font-size: 12px; color: var(--t3); line-height: 1.3; padding-left: 12px; position: relative; }
-    .roadmap-month li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
-
-    .ctx-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
-    @media (min-width: 560px) { .ctx-grid { grid-template-columns: repeat(2, 1fr); } }
-    .ctx-card { border: 1px solid var(--b0); border-radius: 8px; padding: var(--sp-4); background: var(--bg1); }
-    .ctx-card .ci { margin-bottom: 12px; height: 24px; }
-    .ctx-card .ci svg { width: 22px; height: 22px; stroke: var(--y); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .ctx-card h4 { font-family: var(--display); font-size: 15px; text-transform: uppercase; margin-bottom: 6px; color: var(--t1); }
-    .ctx-card p { font-size: 12.5px; color: var(--t2); line-height: 1.45; margin: 0; }
-
-    .ladder { display: grid; gap: 6px; max-width: 560px; }
-    .rung { display: flex; align-items: center; gap: 14px; border: 1px solid var(--b0); border-radius: 8px; padding: 11px 16px; background: var(--bg1); }
-    .rung .rk { font-family: var(--mono); font-size: 12px; color: var(--y); width: 20px; }
-    .rung .rn { font-family: var(--display); font-size: 15px; text-transform: uppercase; color: var(--t1); }
-    .rung .rv { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--t3); }
-    .rung:first-child { border-color: var(--y); background: rgba(243,176,46,.06); }
-    .chain { margin-top: var(--sp-5); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px; color: var(--t2); }
-    .chain .step { border: 1px solid var(--b1); border-radius: 100px; padding: 6px 13px; }
-    .chain .arr { color: var(--y); }
-
-    .brand-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin-bottom: var(--sp-6); }
-    @media (max-width: 620px) { .brand-logos { grid-template-columns: 1fr; } }
-    .brand-logo-cell { border-radius: 8px; padding: 32px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-    .brand-logo-cell img { height: 46px; width: auto; }
-    .brand-logo-cell.light { background: #ededf1; }
-    .brand-logo-cell.dark { background: #1C1C38; }
-    .brand-logo-cell .lname { font-family: var(--sans); font-weight: 700; font-size: 20px; }
-    .brand-logo-cell.light .lname { color: #1C1C38; }
-    .brand-logo-cell.dark .lname { color: #fff; }
-    .brand-pal { display: flex; flex-wrap: wrap; gap: var(--sp-8); }
-    .brand-pal-group__label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-bottom: var(--sp-3); }
-    .brand-swatches { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
-    .brand-swatches span { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .brand-swatches i { width: 42px; height: 42px; border-radius: 50%; display: block; box-shadow: 0 0 0 1px var(--b1); }
-    .brand-swatches em { font-family: var(--mono); font-size: 10px; color: var(--t2); font-style: normal; }
-    .brand-swatches i.c-cyan   { background: #00C0FD; }
-    .brand-swatches i.c-blue   { background: #007CFF; }
-    .brand-swatches i.c-violet { background: #5500FA; }
-    .brand-swatches i.c-deep   { background: #310097; }
-    .brand-swatches i.c-white  { background: #FFFFFF; }
-    .brand-swatches i.c-navy   { background: #1C1C38; }
-
-    .u-mt-lead { margin-bottom: var(--sp-8); }
-    .u-title-tight { margin: .3em 0 .6em; }
-    .outcome-section { border-top: 1px solid var(--b0); padding-block: var(--sp-16); }
-    .outcome-title { margin: .2em 0 .5em; }
-    .outcome-trust { margin: var(--sp-6) 0; }
-    .outcome-quote { margin-bottom: var(--sp-8); }
-    .outcome-sources { max-width: 70ch; }
-    .outcome-body { max-width: 64ch; }
-
-    .cs-section__body ul.plain { list-style: none; display: grid; gap: 6px; margin: 0; }
-    .cs-section__body ul.plain li { font-size: var(--text-base); line-height: 1.6; color: var(--t2); padding-left: 16px; position: relative; }
-    .cs-section__body ul.plain li::before { content: ""; position: absolute; left: 0; top: 10px; width: 4px; height: 4px; border-radius: 50%; background: var(--y); }
-
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--sp-5); }
-    .gallery-thumb { border: none; background: none; padding: 0; cursor: pointer; display: flex; flex-direction: column; gap: 10px; text-align: center; font: inherit; }
-    .gallery-thumb img { width: 100%; height: auto; border-radius: 16px; background: #0d0d18; box-shadow: 0 0 0 1px var(--b1); transition: transform .2s; }
-    .gallery-thumb:hover img, .gallery-thumb:focus-visible img { transform: translateY(-4px); }
-    .gallery-thumb span { font-family: var(--mono); font-size: 11px; color: var(--t3); }
-    .cs-lightbox--gallery img { border-radius: 24px; }
-  </style>
-</head>
-<body>
-
-  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
-
-  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
-
-  <nav class="nav" role="navigation" aria-label="Navegação principal">
-    <a href="../../" class="nav-logo" aria-label="Cristofolini | Início">
-      <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
-    </a>
-    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <ul class="nav-links" role="list">
-      <li><a href="../" aria-current="page">Trabalhos</a></li>
-      <li><a href="../../blog/">Insights</a></li>
-    </ul>
-    <a href="../../../work/meaple/" class="nav-lang" hreflang="en" aria-label="Mudar para inglês">EN</a>
-    <a href="../../contact/" class="nav-cta">Contato</a>
-  </nav>
-
-  <main id="main-content" tabindex="-1">
-
-    <section class="cs-hero">
-      <div class="cs-hero__left">
-        <div class="case-hero__tags">
-          <span class="tag">Produto</span>
-          <span class="tag">UI/UX</span>
-          <span class="tag">Branding</span>
-          <span class="tag">End-to-end</span>
+<body class="hamburger-menu dsn-effect-scroll case-v2" data-dsn-mousemove="true" data-lang="pt"><a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <div class="preloader">
+        <div class="preloader-after"></div>
+        <div class="preloader-before"></div>
+        <div class="preloader-block">
+            <div class="title">Dhiego Cristofolini</div>
+            <div class="percent">0</div>
+            <div class="loading">loading...</div>
         </div>
-        <h1 class="cs-hero__title">Cinco apps para uma sexta-feira à noite</h1>
-        <p class="cs-lead">O Meaple se propôs a dominar a jornada completa de uma noite no Brasil (antes, durante e depois) em um único produto: descoberta, coordenação social, venda de ingressos e pagamento dentro do evento. O problema que ninguém tinha resolvido, no Brasil, em 2020.</p>
-
-        <div class="cs-impact-grid">
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">13</p>
-            <p class="cs-impact-label">concorrentes mapeados · nenhum dominava mais de duas camadas</p>
-          </div>
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">3</p>
-            <p class="cs-impact-label">níveis de conta com fronteiras rígidas de permissão</p>
-          </div>
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">5</p>
-            <p class="cs-impact-label">variáveis no algoritmo de ranqueamento Momentum</p>
-          </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
         </div>
-
-        <div class="cs-meta-grid">
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Função</p>
-            <p class="cs-meta-value">Design Lead</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Time</p>
-            <p class="cs-meta-value">Design solo + 2 devs</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Plataforma</p>
-            <p class="cs-meta-value">iOS 10+ · Android 4.4+</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Status</p>
-            <p class="cs-meta-value">No ar · MVP pausado em 2020</p>
-          </div>
-        </div>
-      </div>
-      <div class="cs-hero__right">
-        <img src="/assets/img/project/meaple/hero-cover.webp" width="1600" height="900" alt="Marca do Meaple, um M desenhado como uma borboleta, sobre gradiente ciano para violeta" loading="eager">
-      </div>
-    </section>
-
-    <section class="cs-current-state">
-      <div class="cs-container">
-        <p class="cs-eyebrow cs-eyebrow--muted">Cenário anterior · antes deste projeto, Brasil 2020</p>
-        <div class="cs-diagram">
-          <svg width="100%" viewBox="0 0 680 100" role="img" aria-label="Planejar uma noite exigia cinco apps desconectados">
-            <defs>
-              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M2 1L8 5L2 9" fill="none" stroke="var(--b1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </marker>
-            </defs>
-            <rect x="6"   y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
-            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="69"  y="38" text-anchor="middle" dominant-baseline="central">Sympla</text>
-            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="69"  y="66" text-anchor="middle" dominant-baseline="central">Só venda de ingresso</text>
-            <line x1="132" y1="50" x2="144" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="145" y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
-            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="208" y="38" text-anchor="middle" dominant-baseline="central">WhatsApp</text>
-            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="208" y="66" text-anchor="middle" dominant-baseline="central">Só logística</text>
-            <line x1="271" y1="50" x2="283" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="284" y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
-            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="347" y="38" text-anchor="middle" dominant-baseline="central">Facebook</text>
-            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="347" y="66" text-anchor="middle" dominant-baseline="central">Grafo social, sem eventos</text>
-            <line x1="410" y1="50" x2="422" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="423" y="14" width="126" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
-            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="486" y="38" text-anchor="middle" dominant-baseline="central">Instagram</text>
-            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="486" y="66" text-anchor="middle" dominant-baseline="central">Descoberta, sem ação</text>
-            <line x1="549" y1="50" x2="561" y2="50" stroke="var(--b1)" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="562" y="14" width="112" height="72" rx="8" fill="var(--bg1)" stroke="var(--b0)" stroke-width="0.5"/>
-            <text font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="var(--t1)" x="618" y="38" text-anchor="middle" dominant-baseline="central">PicPay</text>
-            <text font-family="IBM Plex Mono,monospace" font-size="10" fill="var(--t3)" x="618" y="66" text-anchor="middle" dominant-baseline="central">Dinheiro, sem contexto</text>
-          </svg>
-        </div>
-        <p class="cs-caption">Ninguém dominava a jornada completa de um evento. Seis plataformas para organizar uma festa de Halloween, segundo uma das produtoras entrevistadas.</p>
-      </div>
-    </section>
-
-    <div class="cs-layout">
-
-      <aside class="cs-toc" aria-label="Navegação de seções">
-        <nav class="cs-toc__inner">
-          <a href="#s01" class="cs-toc__item">01 &nbsp;O problema</a>
-          <a href="#s02" class="cs-toc__item">02 &nbsp;Pesquisa</a>
-          <a href="#s03" class="cs-toc__item">03 &nbsp;Realidade de negócio</a>
-          <a href="#s04" class="cs-toc__item">04 &nbsp;A decisão</a>
-          <a href="#s05" class="cs-toc__item">05 &nbsp;Arquitetura</a>
-          <a href="#s06" class="cs-toc__item">06 &nbsp;Momentum</a>
-          <a href="#s07" class="cs-toc__item">07 &nbsp;Priorização</a>
-          <a href="#s08" class="cs-toc__item">08 &nbsp;Restrições</a>
-          <a href="#s09" class="cs-toc__item">09 &nbsp;Retrospectiva</a>
-          <a href="#s10" class="cs-toc__item">10 &nbsp;Produto e marca</a>
-          <a href="#gallery" class="cs-toc__item">Galeria</a>
-          <a href="#s11" class="cs-toc__item">11 &nbsp;Resultado</a>
-        </nav>
-      </aside>
-
-      <div class="cs-content">
-
-        <section id="s01" class="cs-section" aria-labelledby="s01-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">01</span>
-            <h2 class="cs-section__title" id="s01-title">O problema que ninguém tinha resolvido</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Pedro, 21, passou uma sexta-feira inteira tentando encontrar algo para fazer: trocando mensagens durante a aula, ligando para dois amigos depois do jantar, rolando grupos de WhatsApp. Terminou a noite em casa, jogando video game. Letícia, 26, sabia que havia uma festa naquele fim de semana, uma amiga tinha comentado dias antes, mas os detalhes nunca chegaram: sem local, sem horário, sem jeito de descobrir. Fernanda, 28, organizava eventos como profissão e refazia a mesma engenharia toda vez: um evento no Facebook, um anúncio no Sympla, pagamento por depósito ou PicPay, e divulgação no Instagram, WhatsApp, Facebook, Snapchat, Twitter e Tumblr.</p>
-            <p>O time fundador da Ensight enxergou a lacuna. <strong>Ninguém dominava a jornada completa de um evento</strong> (antes, durante e depois) em um único produto. O Sympla vendia ingressos. O WhatsApp movia a logística. O Facebook tinha o grafo social, mas tinha abandonado eventos. O Instagram tinha descoberta, mas nenhum jeito de agir sobre ela. O PicPay movia dinheiro sem nenhuma conexão com o motivo daquele pagamento.</p>
-            <p>Entrei com a página em branco: sem briefing, sem wireframes, sem pesquisa prévia. Meu trabalho era definir o que o produto deveria ser antes de qualquer tela.</p>
-
-            <blockquote class="cs-pullquote">Três personas da pesquisa primária, cada uma com um dia-a-dia documentado. Usuários diferentes, a mesma fragmentação derrotando todos eles.</blockquote>
-
-            <div class="cs-fear-cards">
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">Pedro, 21</p>
-                <p class="cs-fear-card__title">Estudante na PUC · extrovertido</p>
-                <ul class="persona-timeline">
-                  <li>Celular a aula inteira tentando planejar a sexta</li>
-                  <li>Liga para dois amigos depois do jantar</li>
-                  <li>Termina a noite em casa, jogando</li>
-                </ul>
-                <p class="cs-fear-card__body"><strong>Dor:</strong> um dia inteiro de coordenação, zero resultado.</p>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">Letícia, 26</p>
-                <p class="cs-fear-card__title">Engenharia civil, UFPR · introvertida</p>
-                <ul class="persona-timeline">
-                  <li>Ônibus às 6h30, dia inteiro de estudo</li>
-                  <li>Namorado pergunta os planos do fim de semana</li>
-                  <li>A amiga que comentou sobre a festa nunca mandou os detalhes</li>
-                </ul>
-                <p class="cs-fear-card__body"><strong>Dor:</strong> a informação existe, só nunca chega até ela.</p>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">Fernanda, 28</p>
-                <p class="cs-fear-card__title">Influenciadora no Instagram · organizadora de eventos</p>
-                <ul class="persona-timeline">
-                  <li>Evento no Facebook + anúncio no Sympla</li>
-                  <li>Pagamento por depósito / PicPay</li>
-                  <li>Divulgação em seis plataformas diferentes</li>
-                </ul>
-                <p class="cs-fear-card__body"><strong>Dor:</strong> seis plataformas, uma festa.</p>
-              </div>
-            </div>
-
-            <p>13 produtos mapeados em quatro camadas funcionais: descoberta de evento, coordenação social, pagamento e localização. Nenhum produto isolado dominava mais de duas.</p>
-
-            <table class="cmatrix">
-              <thead><tr><th>Produto</th><th>Descoberta<br>de evento</th><th>Coordenação<br>social</th><th>Pagamento</th><th>Localização</th></tr></thead>
-              <tbody id="cmx"><!-- preenchido pelo script abaixo --></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="s02" class="cs-section" aria-labelledby="s02-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">02</span>
-            <h2 class="cs-section__title" id="s02-title">O que a pesquisa revelou</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Entrevistei usuários entre 19 e 30 anos (estudantes e jovens profissionais, o público-alvo do produto) além de criadores de eventos e donos de casas do lado da oferta. Três personas saíram desse trabalho, cada uma com uma jornada de dia-a-dia documentada.</p>
-            <p>Uma distinção moldou tudo depois dela: o que os usuários diziam, o que eles realmente precisavam, e o que eles não sabiam que precisavam.</p>
-            <div class="cs-fear-cards">
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">O que eles diziam</p>
-                <ul class="persona-timeline"><li>Busca de eventos mais fácil</li><li>Mais filtros de privacidade</li></ul>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">O que eles realmente precisavam</p>
-                <ul class="persona-timeline"><li>Interações mais precisas</li><li>Melhor categorização</li><li>Menos atrito entre eventos, encontros, grupos</li></ul>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">O que eles não sabiam que precisavam</p>
-                <ul class="persona-timeline"><li>Evento + social + chat, unificados</li><li>Pagamento dentro do app</li><li>Criação de evento pequeno em menos de um minuto</li><li>Atualizações precisas de evento</li></ul>
-              </div>
-            </div>
-            <p>Essa terceira coluna virou a tese do produto. Ninguém pedia unificação porque ninguém imaginava isso como possível. Todo usuário tinha construído um sistema pessoal de contorno em três a seis apps e aceitava o atrito como o custo de ter uma vida social.</p>
-            <p>A segunda descoberta moldou o lado da oferta: os criadores de eventos tinham um problema de confiança e logística, e descoberta tinha pouco a ver com isso. A rotina de seis plataformas da Fernanda existia porque nenhuma plataforma isolada era responsável pelo evento inteiro, e um comprador de ingresso de um produtor desconhecido estava fazendo uma aposta às cegas: sem histórico, sem avaliação, sem accountability em lugar nenhum.</p>
-          </div>
-        </section>
-
-        <section id="s03" class="cs-section" aria-labelledby="s03-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">03</span>
-            <h2 class="cs-section__title" id="s03-title">A realidade de negócio</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Antes da pandemia, o setor de eventos no Brasil movimentava aproximadamente <strong>R$250 bilhões/ano em eventos corporativos</strong> e R$17 bilhões em eventos sociais, empregava cerca de 6 milhões de pessoas, e representava em torno de 4,3% do PIB nacional, crescendo cerca de 6,5% ao ano <span class="dim">(Abrafesta via G1; Abeoc/Sebrae)</span>.</p>
-            <p>A Ensight definiu metas concretas antes de o design começar. Esses números significavam que o produto não podia ser uma rede social de queima lenta que monetiza anos depois. Precisava de receita transacional (venda de ingressos e consumo dentro do evento) desde cedo. Essa restrição decidiu a pergunta estratégica central antes mesmo de ela ser feita: qual lado do marketplace construir primeiro.</p>
-            <div class="targets-grid">
-              <div class="cs-impact-cell"><p class="cs-impact-num">150k</p><p class="cs-impact-label">Usuários ativos mensais</p></div>
-              <div class="cs-impact-cell"><p class="cs-impact-num">1,5M</p><p class="cs-impact-label">Downloads</p></div>
-              <div class="cs-impact-cell"><p class="cs-impact-num">R$2,00</p><p class="cs-impact-label">CAC por usuário</p></div>
-              <div class="cs-impact-cell"><p class="cs-impact-num">R$2,70</p><p class="cs-impact-label">Receita / usuário / mês</p></div>
-              <div class="cs-impact-cell"><p class="cs-impact-num">17</p><p class="cs-impact-label">Meses de horizonte</p></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="s04" class="cs-section" aria-labelledby="s04-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">04</span>
-            <h2 class="cs-section__title" id="s04-title">A decisão que eu quase errei</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Meu primeiro instinto foi construir o lado do consumidor primeiro: trazer usuários, deixar a descoberta boa, depois trazer produtores para a audiência. Isso está errado para um marketplace, e as metas de negócio deixaram isso obviamente errado. Um produtor sem audiência em uma plataforma nova não tem motivo para criar eventos ali. O produto morreria esperando uma audiência que nunca chegaria, queimando o orçamento de aquisição contra um teto de CAC de R$2,00.</p>
-            <blockquote class="cs-pullquote">Um produtor traz toda a audiência que já tem. Um consumidor traz só a si mesmo.</blockquote>
-            <p>O único caminho era dar aos produtores algo que valesse a pena migrar <em>antes</em> de a audiência existir: venda de ingressos, analytics de evento, infraestrutura de página, visibilidade profissional. Receita para produtores desde o dia um, mesmo com pouca gente.</p>
-            <div class="cs-note">
-              <p class="cs-note__label">A pesquisa concordou depois do fato</p>
-              <p>Em novembro de 2019, Lenny Rachitsky (que liderou o crescimento de oferta no Airbnb) publicou seu estudo sobre as maiores empresas de marketplace: cerca de 80% cresceram ativando a oferta primeiro (Lyft, Eventbrite, OpenTable, Thumbtack). Não tínhamos esse estudo em mãos quando a decisão foi tomada; as entrevistas com produtores nos levaram ao mesmo lugar.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="s05" class="cs-section" aria-labelledby="s05-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">05</span>
-            <h2 class="cs-section__title" id="s05-title">O sistema de contas em três níveis</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Eventos privados entre amigos, profissionais individuais, e as empresas que organizam eventos: três casos fundamentalmente diferentes.</p>
-            <div class="cs-rejected">
-              <span class="cs-rejected__label">O que eu abandonei</span>
-              Um sistema de dois níveis (pessoal / profissional) que colocava DJs, palestrantes, instrutores e produtoras sob o mesmo guarda-chuva. Isso confundia permissões e fazia a verificação parecer arbitrária: um DJ e um promotor de shows não têm quase nada em comum na plataforma.
-            </div>
-            <p>O que foi lançado: três tipos de conta com fronteiras rígidas. O modelo de parceria conectava os níveis: um clube de futebol organizando um show faz parceria com a produtora responsável pelo evento e lista os artistas como parceiros profissionais. Cada entidade mantém sua própria responsabilidade e visibilidade.</p>
-            <div class="cs-fear-cards">
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">só seguidores</p>
-                <p class="cs-fear-card__title">Pessoal</p>
-                <ul class="persona-timeline">
-                  <li>Eventos visíveis só para seguidores</li>
-                  <li>Sem presença em Explorar / Momentum</li>
-                  <li>Teto de movimentação de dinheiro</li>
-                  <li>Criável em menos de um minuto</li>
-                </ul>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">indivíduo verificado</p>
-                <p class="cs-fear-card__title">Profissional</p>
-                <ul class="persona-timeline">
-                  <li>DJs, palestrantes, instrutores</li>
-                  <li>Participam sem serem donos de eventos</li>
-                  <li>Listados como parceiros em eventos de empresas</li>
-                  <li>Visibilidade sem o peso de uma empresa</li>
-                </ul>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">organização verificada</p>
-                <p class="cs-fear-card__title">Empresa</p>
-                <ul class="persona-timeline">
-                  <li>Venda ilimitada de ingressos, categorias, tags</li>
-                  <li>Visibilidade em Momentum + Explorar</li>
-                  <li>Gestão de papéis, estatísticas de página</li>
-                  <li>Responsabilidade legal na verificação</li>
-                </ul>
-              </div>
-            </div>
-            <div class="tier-relations">
-              <p class="tier-relations__label">Relações</p>
-              <ul>
-                <li><b>Pessoal</b> cria <b>Empresa</b> (modelo de Páginas do Facebook)</li>
-                <li><b>Profissional</b> vira parceiro em eventos de <b>Empresa</b></li>
-                <li>Parceria <b>Empresa ↔ Empresa</b>, com verificação nos dois lados</li>
-                <li>Só <b>Empresa</b> chega ao Momentum</li>
-              </ul>
-            </div>
-            <p class="cs-caption">A mesma estrutura atendia webinars: uma empresa, vários palestrantes profissionais listados como colaboradores.</p>
-          </div>
-        </section>
-
-        <section id="s06" class="cs-section" aria-labelledby="s06-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">06</span>
-            <h2 class="cs-section__title" id="s06-title">Momentum: o motor de descoberta</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Em 2020, distância era o único sinal de ranqueamento que a maioria dos apps de evento usava. Uma rave e um concerto clássico à mesma distância pareciam igualmente relevantes para todo mundo. O Momentum ranqueava o feed de Explorar com base em cinco variáveis.</p>
-            <p><strong>Credibilidade do produtor era a variável que mais pesava e a que mais custou para desenhar.</strong> Combinava status de verificação, histórico de eventos, avaliações de eventos anteriores e recência de atividade. O objetivo: tornar a produção ruim cara. Uma conta nova, mesmo verificada, ranqueava abaixo de um produtor com dez eventos bem avaliados.</p>
-            <div class="momentum">
-              <div class="mo-inputs">
-                <div class="mo-in"><span class="nm">Correspondência de preferência</span><span class="sub">categorias + tags</span></div>
-                <div class="mo-in"><span class="nm">Distância</span><span class="sub">espacial</span></div>
-                <div class="mo-in"><span class="nm">Velocidade de engajamento</span><span class="sub">na página do evento</span></div>
-                <div class="mo-in key"><span class="nm">Credibilidade do produtor</span><span class="sub">verificado · histórico · avaliações · recência</span></div>
-                <div class="mo-in"><span class="nm">Grafo social</span><span class="sub">quem você segue, confirmado</span></div>
-              </div>
-              <div class="mo-arrow">→</div>
-              <div class="mo-out">
-                <div class="ot">Ranqueamento no Explorar</div>
-                <div class="os">Camada de mapa: tamanho do pino = volume de interação · um amigo próximo que ativou presença em tempo real aparece com uma cor de pino diferente</div>
-              </div>
-            </div>
-            <div class="cs-note">
-              <p class="cs-note__label">O que eu faria diferente</p>
-              <p>O peso entre as cinco variáveis nunca foi formalmente definido. As entradas foram desenhadas; a importância relativa entre elas, não. Essa especificação chegou à engenharia como uma questão em aberto. Hoje esse peso seria documentado com justificativa antes de qualquer desenvolvedor ver a tela.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="s07" class="cs-section" aria-labelledby="s07-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">07</span>
-            <h2 class="cs-section__title" id="s07-title">A pontuação mandou cortar. Lançamos mesmo assim.</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>A matriz de priorização pontuou 14 problemas por importância e viabilidade. A maioria das decisões seguiu as pontuações: o topo da tabela entrou no MVP central, e tudo que precisava de volume de usuários para fazer sentido (chat, feed de vídeo, localização em tempo real) foi adiado independentemente da qualidade.</p>
-            <p>O consumo dentro do evento, a <em>comanda</em> (o participante pede e paga dentro do app), pontuou <strong>1/1: a menor importância e a menor viabilidade entre as 14 linhas.</strong> Pela lógica do framework, nunca deveria ter sido construída. Foi lançada mesmo assim, como um recurso tardio do MVP, porque o modelo de negócio pesou mais do que a pontuação dos usuários. Os usuários não se importavam, e a matriz estava certa sobre isso. Mas os produtores se importavam, e a meta de R$2,70 de receita precisava de mais do que taxa de ingresso. <strong>A comanda nunca foi um recurso de usuário. Era uma ferramenta de aquisição do lado da oferta disfarçada de recurso de usuário.</strong></p>
-
-            <div class="cs-diagram">
-              <div class="scatter"><svg id="scatter" viewBox="0 0 620 460"></svg></div>
-              <div class="scatter-legend">
-                <span><i class="imp"></i> Maior importância (5)</span>
-                <span><i class="override"></i> Pontuou 1/1: lançado mesmo assim (comanda)</span>
-                <span><i class="base"></i> Lançado no MVP central</span>
-              </div>
-            </div>
-            <p class="cs-caption">A matriz era uma ferramenta, não uma regra fixa. O consumo dentro do evento pontuou o mais baixo nos dois eixos e foi lançado mesmo assim: o modelo de negócio se sobrepôs à pontuação.</p>
-
-            <div class="cs-note">
-              <p class="cs-note__label">O que isso me ensinou</p>
-              <p>Um framework de priorização mede o que você manda ele medir. O nosso media importância para o usuário e viabilidade de construção, sem nenhum eixo para valor estratégico ao modelo de negócio. Compensamos com uma exceção não documentada. Hoje eu construiria a dimensão de negócio dentro do próprio modelo de pontuação: uma exceção não documentada parece inconsistência para o time, mesmo quando é a decisão certa.</p>
-            </div>
-
-            <p>Tudo que precisava de usuários para funcionar foi adiado. Tudo que gerava dinheiro para produtores foi lançado, até mesmo, uma vez, contra a matriz.</p>
-            <div class="cs-compare">
-              <div>
-                <p class="cs-compare__label">Lançado</p>
-                <div class="scope-group">
-                  <p class="scope-group__label">Onboarding e conta</p>
-                  <div class="scope-chips">
-                    <span class="scope-chip">splash</span><span class="scope-chip">login</span><span class="scope-chip">criação de conta</span><span class="scope-chip">recuperação de senha</span><span class="scope-chip">assistente de cadastro</span><span class="scope-chip">config. de perfil</span><span class="scope-chip">ativação de conta business</span>
-                  </div>
-                </div>
-                <div class="scope-group">
-                  <p class="scope-group__label">Núcleo</p>
-                  <div class="scope-chips">
-                    <span class="scope-chip">sistema + página de evento</span><span class="scope-chip">página de empresa</span><span class="scope-chip">feed social</span><span class="scope-chip">categorias + tags</span><span class="scope-chip">busca: 5 escopos</span><span class="scope-chip">Momentum</span><span class="scope-chip">mapa + geolocalização</span><span class="scope-chip">convites: 7 tipos</span><span class="scope-chip">notificações</span><span class="scope-chip">fintech / ingressos</span>
-                    <span class="scope-chip against">comanda <span class="why">contra a matriz ↑</span></span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p class="cs-compare__label">Adiado</p>
-                <div class="scope-group">
-                  <p class="scope-group__label">Precisa de volume de usuários / conteúdo</p>
-                  <div class="scope-chips">
-                    <span class="scope-chip">Chega aí <span class="why">custo de infra de geo</span></span>
-                    <span class="scope-chip">chat + filtros de relação <span class="why">vazio sem volume</span></span>
-                    <span class="scope-chip">feed de vídeo <span class="why">precisa de escala de conteúdo</span></span>
-                    <span class="scope-chip">gamificação</span>
-                    <span class="scope-chip">streaming</span>
-                    <span class="scope-chip">eventos web</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p>Quatro meses do zero ao escopo de MVP, documentado antes da primeira tela.</p>
-            <div class="roadmap">
-              <div class="roadmap-month"><div class="roadmap-month__head">Dez<span>01</span></div><ul><li>splash</li><li>login</li><li>criação de conta</li><li>recuperação de senha</li><li>config. de perfil</li></ul></div>
-              <div class="roadmap-month"><div class="roadmap-month__head">Jan<span>02</span></div><ul><li>categorias + tags</li><li>assistente de cadastro</li><li>página de perfil</li><li>ativação business</li><li>página de empresa</li></ul></div>
-              <div class="roadmap-month"><div class="roadmap-month__head">Fev<span>03</span></div><ul><li>feed social</li><li>histórico de eventos</li><li>notificações</li><li>branding</li><li>Rolê</li></ul></div>
-              <div class="roadmap-month"><div class="roadmap-month__head">Mar<span>04</span></div><ul><li>Vaquinha (rateio em grupo)</li><li>definição de pagamento</li><li>Chega aí</li><li>eventos automáticos</li><li>métodos de interação</li></ul></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="s08" class="cs-section" aria-labelledby="s08-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">08</span>
-            <h2 class="cs-section__title" id="s08-title">Desenhando para o pior momento</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Alguém em um local barulhento, segurando um drink, com uma mão só, sendo interrompido: possivelmente estressado, possivelmente sem atenção total no momento, possivelmente com alguma limitação física. A pesquisa mapeou cinco estados de contexto, e todos apontavam para o mesmo usuário.</p>
-            <div class="ctx-grid">
-              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M9 11.5V6a1.8 1.8 0 0 1 3.6 0v5"/><path d="M12.6 8.5a1.8 1.8 0 0 1 3.6 0v5a5.5 5.5 0 0 1-5.5 5.5h-.6a5.5 5.5 0 0 1-4.6-2.7l-1.8-2.9a1.4 1.4 0 0 1 2.3-1.5l1 1.3"/></svg></div><h4>Físico</h4><p>Uma mão, possivelmente a esquerda, em movimento, fazendo outra coisa ao mesmo tempo.</p></div>
-              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M4 9v6h3.5L13 19V5L7.5 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg></div><h4>Ambiental</h4><p>Locais barulhentos, interrupção frequente, andando.</p></div>
-              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></svg></div><h4>Preferencial</h4><p>Visual em vez de texto, sem depender de áudio, passos mínimos.</p></div>
-              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8z"/></svg></div><h4>Emocional</h4><p>Alto estresse possível, urgência de pagamento ou de encontrar amigos, baixa tolerância a atrito.</p></div>
-              <div class="ctx-card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M12 3.5a3.5 3.5 0 0 0-3.5 3.5v.4A3 3 0 0 0 7 13.4V16a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-2.6a3 3 0 0 0-1.5-5.9V7A3.5 3.5 0 0 0 12 3.5z"/><path d="M12 3.5V19"/></svg></div><h4>Cognitivo</h4><p>Nativo digital, mas distraído; clareza para todos os níveis de escolaridade.</p></div>
-            </div>
-            <p>As restrições que saíram disso: conteúdo visual em vez de textual (o público-alvo não lê parágrafos em uma balada), áudio banido como canal de informação por completo, toda ação primária ao alcance de uma mão, interfaces recuperáveis de qualquer toque errado em uma única ação.</p>
-
-            <div class="cs-note">
-              <p class="cs-note__label">O que eu faria diferente</p>
-              <p>A ergonomia se sustentou: uso com uma mão, conteúdo visual em primeiro lugar, recuperação de interrupção. A acessibilidade formal, não. O design respondeu "pode ter limitações físicas" com bom instinto em vez de um padrão: sem auditoria WCAG, sem verificação de contraste, sem consideração de leitor de tela. Um app de evento vive em ambientes escuros com luzes piscando em telas médias, o que torna acessibilidade mais crítica ali, não menos. Hoje toda tela central passaria por WCAG 2.1 AA antes do handoff.</p>
-            </div>
-
-            <p>O peso da navegação seguiu prioridade documentada, não opinião, mapeado sobre a cadeia de valor do negócio.</p>
-            <div class="ladder">
-              <div class="rung"><span class="rk">01</span><span class="rn">Eventos</span><span class="rv">criação de conteúdo</span></div>
-              <div class="rung"><span class="rk">02</span><span class="rn">Feed</span></div>
-              <div class="rung"><span class="rk">03</span><span class="rn">Compartilhamento</span><span class="rv">→ transações</span></div>
-              <div class="rung"><span class="rk">04</span><span class="rn">Chat</span></div>
-              <div class="rung"><span class="rk">05</span><span class="rn">Pagamentos</span></div>
-              <div class="rung"><span class="rk">06</span><span class="rn">Página profissional</span></div>
-              <div class="rung"><span class="rk">07</span><span class="rn">FAQ</span></div>
-              <div class="rung"><span class="rk">08</span><span class="rn">Personalização de perfil</span></div>
-            </div>
-            <div class="chain">
-              <span class="step">criação de conteúdo</span><span class="arr">→</span>
-              <span class="step">compartilhamento</span><span class="arr">→</span>
-              <span class="step">transações</span><span class="arr">→</span>
-              <span class="step">engajamento</span><span class="arr">→</span>
-              <span class="step">cadastro básico</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="s09" class="cs-section" aria-labelledby="s09-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">09</span>
-            <h2 class="cs-section__title" id="s09-title">O que eu construiria diferente</h2>
-          </div>
-          <div class="cs-section__body">
-            <div class="cs-fear-cards">
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__title">Conectar metas a decisões, de forma explícita</p>
-                <p class="cs-fear-card__body">As metas moldaram as grandes decisões (oferta primeiro, a exceção da comanda), mas essa conexão vivia em conversa, não em documentos. Nenhum registro de decisão rastreava "estamos construindo X porque a meta Y exige isso". Quando veio pressão de escopo, o raciocínio só existia na memória.</p>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__title">Desenhar os estados de falha da parceria</p>
-                <p class="cs-fear-card__body">O caminho feliz foi desenhado. Ninguém desenhou o desacordo: um parceiro cancela, o outro se recusa, e aí? Divisão de receita quando os dois vendem ingresso? Status da parceria quando uma das partes perde a verificação? Esses são os momentos que decidem se o usuário confia na plataforma.</p>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__title">Transformar a matriz em um artefato assinado pelo time</p>
-                <p class="cs-fear-card__body">Os cortes estavam certos; o processo vivia só na minha cabeça. O time nunca tratou a matriz como o contrato compartilhado de escopo, então "e se voltarmos com o chat?" estava sempre a um argumento convincente de reabrir. Um artefato assinado responde com critérios, não com memória.</p>
-              </div>
-            </div>
-            <p>Esse foi também o projeto em que trabalhei como o único designer, reportando direto para os dois cofundadores e trabalhando diariamente com dois desenvolvedores traduzindo as especificações em produto. Essa proporção, um designer para um time fundador pequeno, foi o que me empurrou para handoffs detalhados o suficiente para construir sem precisar de uma conversa de retorno.</p>
-          </div>
-        </section>
-
-        <section id="s10" class="cs-section" aria-labelledby="s10-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">10</span>
-            <h2 class="cs-section__title" id="s10-title">Produto e marca, construídos em Curitiba</h2>
-          </div>
-          <div class="cs-section__body">
-            <p class="cs-section__subhead">Identidade construída junto com o produto, não aplicada depois: <em>"uma plataforma social completa focada em eventos de todos os tipos e tamanhos."</em></p>
-
-            <p><strong>Página de evento, o carro-chefe.</strong> Todos os campos da especificação em uma única rolagem: identidade e histórico do produtor com um botão de Seguir de um toque (a cadeia de confiança do §05), data e local com um minimapa espacial (a mesma camada que o Momentum ranqueia), tags mais contagem de confirmados/interessados e uma faixa de fotos de eventos recentes alimentando a credibilidade do produtor de volta no Momentum, e uma barra de compra dentro do app fixada ao alcance de uma mão, a receita do lado da oferta que justificou construir produtores primeiro.</p>
-            <div class="cs-screens cs-screens--2">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page.webp" width="402" height="874" alt="Página de evento, tema claro: Lofia Rooftop Party, produtor verificado com botão de seguir, minimapa, tags, confirmados/interessados, barra de compra" loading="lazy"></div>
-                <figcaption class="cs-caption">Página de evento · tema claro</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/event-page-dark.webp" width="402" height="874" alt="Página de evento, tema escuro, mesmo layout" loading="lazy"></div>
-                <figcaption class="cs-caption">Página de evento · tema escuro</figcaption>
-              </figure>
-            </div>
-
-            <p><strong>Explorar / Momentum.</strong> Uma linha de stories "chegando" mostra amigos já a caminho; filtros de clima (Hoje, Funk, Rooftop, Ao vivo) refinam o feed ranqueado abaixo; o card em destaque do Momentum carrega uma contagem ao vivo, "15 chegando", como prova social empilhada sobre o algoritmo. No mapa, o tamanho do pino ainda traduz volume de interação no espaço, um evento em alta ganha seu próprio selo, e um amigo convergindo para o mesmo pino mostra um "Encontrar" de um toque, fechando o ciclo entre descoberta e a turma realmente indo.</p>
-            <div class="cs-screens cs-screens--3">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-light.webp" width="402" height="874" alt="Feed de Explorar, tema claro: linha de stories chegando, filtros de clima, card do Momentum com contagem ao vivo" loading="lazy"></div>
-                <figcaption class="cs-caption">Explorar · tema claro</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-feed-dark.webp" width="402" height="874" alt="Feed de Explorar, tema escuro" loading="lazy"></div>
-                <figcaption class="cs-caption">Explorar · tema escuro</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/explore-map.webp" width="402" height="874" alt="Explorar por mapa: barra de busca, filtros de clima, selo de em alta, amigos chegando, card de encontrar com um toque" loading="lazy"></div>
-                <figcaption class="cs-caption">Explorar · mapa</figcaption>
-              </figure>
-            </div>
-
-            <p><strong>Bifurcação do onboarding.</strong> Duas portas, dois níveis de compromisso. O cadastro básico entrega um produto funcionando em segundos; a verificação libera a pilha comercial: páginas, venda ilimitada, categorias, analytics. Ninguém fica travado na porta, e quem traz eventos tem um motivo claro para se verificar: a aposta de oferta primeiro, codificada em uma tela.</p>
-            <div class="cs-screens cs-screens--1">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/onboarding-fork.webp" width="402" height="874" alt="Bifurcação de onboarding: conta básica vs. conta profissional verificada" loading="lazy"></div>
-                <figcaption class="cs-caption">Conta básica vs. conta verificada</figcaption>
-              </figure>
-            </div>
-
-            <p><strong>Checkout, e um QR code que já pode ser usado.</strong> Pix, cartão ou rateio com o grupo; pontos de fidelidade somam antes do toque; a confirmação já entrega um ingresso escaneável na mesma tela, sem mandar o usuário procurar por ele depois. Esse ingresso é uma de quatro abas em um único hub de evento, Ingresso, Pedidos, Comanda e Feed para a transmissão de fotos ao vivo do evento, que substituiu uma antiga aba "Carteira" no menu principal; a aba em si agora se chama Eventos. A comanda citada na tela de confirmação abre automaticamente no check-in, então os pedidos abaixo já estão rodando quando o QR é escaneado na porta.</p>
-            <div class="cs-screens cs-screens--3">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/checkout-review.webp" width="402" height="874" alt="Checkout: quantidade, cupom promocional, Pix / cartão / carteira digital / rateio, pontos de fidelidade" loading="lazy"></div>
-                <figcaption class="cs-caption">Checkout · escolher método</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/checkout-success.webp" width="402" height="874" alt="Pagamento aprovado: ingresso em QR code, código do ingresso, amigos já confirmados, comanda abre automaticamente" loading="lazy"></div>
-                <figcaption class="cs-caption">Pagamento aprovado</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/wallet-ticket.webp" width="402" height="874" alt="Aba Eventos, tela de Ingresso: QR code, detalhes do evento, sub-navegação Ingresso / Pedidos / Comanda / Feed" loading="lazy"></div>
-                <figcaption class="cs-caption">Ingresso · QR na porta</figcaption>
-              </figure>
-            </div>
-
-            <p><strong>Comanda: pedir e pagar dentro do evento.</strong> Pedidos e Comanda são mais duas abas nesse mesmo hub de evento. O cardápio ganha barra de busca, contagem por categoria e uma lista de "mais pedidos hoje" como prova social por cima do toque único para adicionar; escolher um item abre a base e os adicionais antes de cair na comanda. A comanda aberta mostra um total corrente contra um limite de gasto, seletor de gorjeta, rateio com o grupo em um toque, e uma linha do tempo do que foi pedido e quando. O consumo se acumula em uma comanda que o produtor consegue capturar em vez de perder para dinheiro e maquininha. Esse é o recurso 1/1 do §07: pontuou o mais baixo na matriz por usuários que não se importavam, lançado mesmo assim porque produtores se importavam.</p>
-            <div class="cs-screens cs-screens--3">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-menu.webp" width="402" height="874" alt="Aba Pedidos: busca no cardápio, contagem por categoria, mais pedidos hoje, toque para adicionar" loading="lazy"></div>
-                <figcaption class="cs-caption">Pedidos · cardápio</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-item.webp" width="402" height="874" alt="Detalhe do item: caipirinha, base e adicionais, adicionar à comanda" loading="lazy"></div>
-                <figcaption class="cs-caption">Pedidos · detalhe do item</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/comanda-tab.webp" width="402" height="874" alt="Comanda: total corrente contra um limite de gasto, seletor de gorjeta, rateio com o grupo, linha do tempo do pedido, pagar agora" loading="lazy"></div>
-                <figcaption class="cs-caption">Comanda · gorjeta, rateio e pagamento</figcaption>
-              </figure>
-            </div>
-
-            <p><strong>Quem vai, e o chat que leva você até lá.</strong> Busca mais três abas, Amigos, Seguidores, Todos, transformam uma lista estática de convidados em um jeito de encontrar gente já confirmada em vez de rolar por mil desconhecidos: uma resposta direta ao problema da Letícia no §01, a informação existia, só nunca chegava até ela. O chat leva isso adiante, direto na conversa: áudios, uma enquete ao vivo para "que horas a gente se encontra", e um card de evento compartilhado com botão de compra, para o grupo ir de "vamos?" a estar com ingresso na mão sem sair da conversa.</p>
-            <div class="cs-screens cs-screens--2">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/whos-going.webp" width="402" height="874" alt="Quem vai: barra de busca, abas Amigos / Seguidores / Todos, ações de mensagem e seguir" loading="lazy"></div>
-                <figcaption class="cs-caption">Quem vai · busca e abas</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder"><img src="/assets/img/project/meaple/chat.webp" width="402" height="874" alt="Chat do grupo: áudio, enquete ao vivo para horário de encontro, e card de evento compartilhado com botão de compra" loading="lazy"></div>
-                <figcaption class="cs-caption">Chat · enquete e evento compartilhado</figcaption>
-              </figure>
-            </div>
-
-            <figure class="cs-diagram cs-diagram--flush">
-              <div class="brand-logos">
-                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-gradient.webp" width="184" height="177" alt="Marca do Meaple, versão em gradiente"><span class="lname">meaple</span></div>
-                <div class="brand-logo-cell dark"><img src="/assets/img/project/meaple/brand-mark-white.webp" width="184" height="177" alt="Marca do Meaple, versão branca"><span class="lname">meaple</span></div>
-                <div class="brand-logo-cell light"><img src="/assets/img/project/meaple/brand-mark-dark.webp" width="184" height="177" alt="Marca do Meaple, versão escura"><span class="lname">meaple</span></div>
-              </div>
-              <div class="brand-pal">
-                <div class="brand-pal-group">
-                  <p class="brand-pal-group__label">Primárias</p>
-                  <div class="brand-swatches">
-                    <span><i class="c-cyan"></i><em>#00C0FD</em></span>
-                    <span><i class="c-blue"></i><em>#007CFF</em></span>
-                    <span><i class="c-violet"></i><em>#5500FA</em></span>
-                    <span><i class="c-deep"></i><em>#310097</em></span>
-                  </div>
-                </div>
-                <div class="brand-pal-group">
-                  <p class="brand-pal-group__label">Secundárias</p>
-                  <div class="brand-swatches">
-                    <span><i class="c-white"></i><em>#FFFFFF</em></span>
-                    <span><i class="c-navy"></i><em>#1C1C38</em></span>
-                  </div>
-                </div>
-              </div>
-            </figure>
-            <p class="cs-caption">A marca se lê como um <strong>"M"</strong> e uma borboleta ao mesmo tempo. O gradiente vai de ciano → azul → violeta → roxo profundo: um sistema com predominância de azul, não o "violeta/roxo" que o documento de marca antigo descrevia.</p>
-          </div>
-        </section>
-
-      </div>
     </div>
 
-    <section class="blk" id="gallery">
-      <div class="cs-container">
-        <p class="cs-eyebrow cs-eyebrow--muted">O app completo</p>
-        <h2 class="cs-section__title u-title-tight">25 telas, um único sistema de design</h2>
-        <p class="cs-lead u-mt-lead">Todo fluxo central, desenhado do zero: descoberta, o grafo social, transações e a comanda, mais o lado do produtor. Toque em qualquer tela para ampliar.</p>
-
-        <div class="gallery-grid" id="gallery-grid"></div>
-      </div>
-    </section>
-
-    <section id="s11" class="blk outcome-section">
-      <div class="cs-container">
-        <span class="cs-section__num">11</span>
-        <h2 class="cs-section__title outcome-title">O produto pausou por causa de uma pandemia global. O design estava funcionando.</h2>
-        <p class="tBD outcome-body">O Meaple lançou seu MVP e estava em uso ativo quando a COVID-19 tornou aglomerações ilegais e o mercado para o qual ele foi construído deixou de existir: <strong>350 mil eventos cancelados no Brasil em 2020</strong>, 98% do setor atingido, R$230 bilhões perdidos entre 2020 e 2021 <span class="dim">(Sebrae; Abrape)</span>. O desenvolvimento pausou. O Meaple está no ar hoje em <a class="cs-link cs-link--accent" href="https://meaple.com.br" target="_blank" rel="noopener noreferrer">meaple.com.br</a>, rodando eventos reais de produtores reais, incluindo nomes nacionais.</p>
-
-        <div class="cs-trust-pills outcome-trust">
-          <span class="cs-trust-pill">3 personas com jornadas</span><span class="cs-trust-pill">análise competitiva de 13 produtos</span><span class="cs-trust-pill">matriz de priorização de 14 problemas</span><span class="cs-trust-pill">framework diz/precisa/não-sabe-que-precisa</span><span class="cs-trust-pill">arquitetura de contas em 3 níveis</span><span class="cs-trust-pill">especificação do Momentum</span><span class="cs-trust-pill">IA completa</span><span class="cs-trust-pill">roadmap de 4 meses</span><span class="cs-trust-pill">~30 recursos desenhados</span><span class="cs-trust-pill">Android 4.4+ / iOS 10+</span><span class="cs-trust-pill">branding</span><span class="cs-trust-pill">protótipo clicável</span>
+    <!-- Nav Bar -->
+    <div class="dsn-nav-bar">
+        <div class="site-header">
+            <div class="extend-container">
+                <div class="inner-header">
+                    <div class="main-logo">
+                        <a href="/pt-br/" aria-label="Dhiego Cristofolini, início">
+                            <img class="dark-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                            <img class="light-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                        </a>
+                    </div>
+                </div>
+                <nav class=" accent-menu main-navigation" aria-label="Menu principal"><ul><li><a href="/pt-br/">Início</a></li><li><a href="/pt-br/work/">Trabalhos</a></li><li><a href="/pt-br/blog/">Insights</a></li><li><a href="/pt-br/sobre/">Sobre</a></li><li><a href="/pt-br/curriculo/">Currículo</a></li><li><a href="/pt-br/contato/">Contato</a></li></ul></nav>
+            </div>
         </div>
+        <div class="header-top header-top-hamburger">
+            <div class="header-container">
+                <div class="logo main-logo">
+                    <a href="/pt-br/" aria-label="Dhiego Cristofolini, início">
+                        <img class="dark-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                        <img class="light-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                    </a>
+                </div>
 
-        <p class="cs-pullquote outcome-quote">O produto pausou por causa de uma pandemia global. <strong>O design estava funcionando.</strong></p>
+                <div class="menu-icon" data-dsn="parallax" data-dsn-move="5" role="button" tabindex="0" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                    <div class="icon-m">
+                        <i class="menu-icon-close fas fa-times"></i>
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
 
-        <p class="cs-caption outcome-sources"><strong>Fontes:</strong> Abrafesta via G1 (2020): tamanho do setor e emprego pré-pandemia · Abeoc/Sebrae (2019): participação no PIB e taxa de crescimento · Lenny Rachitsky, "How to Kickstart and Scale a Marketplace Business" (nov. 2019): descoberta sobre oferta primeiro · Sebrae/Abrape (2020–2021): impacto da pandemia · Pesquisa primária: entrevistas com usuários e produtores, Ensight (2020).</p>
-      </div>
-    </section>
+                    <div class="text-menu">
+                        <div class="text-button">Menu</div>
+                        <div class="text-open">Abrir</div>
+                        <div class="text-close">Fechar</div>
+                    </div>
+                </div>
 
-    <nav class="case-nav" aria-label="Navegação do case">
-      <a href="../" class="case-nav__back label">← Todos os trabalhos</a>
-      <div class="case-nav__adjacent">
-        <a href="../instivo/" class="case-nav__item case-nav__item--prev">
-          <span class="label case-nav__direction">← Anterior</span>
-          <span class="heading-sm case-nav__title">Instivo</span>
-        </a>
-        <a href="../vellumwire/" class="case-nav__item case-nav__item--next">
-          <span class="label case-nav__direction">Próximo →</span>
-          <span class="heading-sm case-nav__title">Vellumwire</span>
-        </a>
-      </div>
-    </nav>
+                <div class="nav" id="site-nav">
+                    <div class="inner">
+                        <div class="nav__content">
 
-    <a href="../../contact/" class="cta-section" aria-label="Ir para a página de contato | Vamos trabalhar juntos">
-      <p class="cta-section__eyebrow">Vamos conversar</p>
-      <p class="cta-section__headline">Aberto pra próxima posição.<br><em>Vamos conversar.</em></p>
-      <span class="cta-section__arrow" aria-hidden="true">→</span>
-    </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="inner-content">
+                        <address class="v-middle"><span>Curitiba, Brazil · Remote</span><span><a href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></span><span><a href="/work/meaple/" hreflang="en">Read in English</a></span></address>
+                    </div>
 
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner container">
-      <div class="footer__brand">
-        <span class="footer__logo">Cristofolini</span>
-        <p class="footer__copy">© 2026 Dhiego Cristofolini. Baseado no Brasil.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Navegação do rodapé">
-        <a href="../../" class="footer__nav-link">Início</a>
-        <a href="../" class="footer__nav-link">Trabalhos</a>
-        <a href="../../contact/" class="footer__nav-link">Contato</a>
-        <a href="../../politica-de-privacidade/" class="footer__nav-link">Privacidade</a>
-        <div class="footer__socials">
-          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+                </div>
+            </div>
         </div>
-      </nav>
     </div>
-  </footer>
+    <!-- End Nav Bar -->
 
-  <div class="cs-lightbox cs-lightbox--gallery" id="lbox">
-    <button type="button" class="cs-lightbox__close" id="lbox-close" aria-label="Fechar pré-visualização da tela">✕</button>
-    <img class="cs-lightbox__img" id="lbox-img" src="" alt="">
-  </div>
+    <main class="main-root" id="main-content">
+        <div id="dsn-scrollbar">
+            <header>
+                <div class="headefr-fexid" data-dsn-header="project">
+                    <div class="bg" id="dsn-hero-parallax-img" data-dsn-ajax="img">
+                        <div class="bg-image  cover-bg" data-overlay="2" data-image-src="/assets/img/case/meaple/hero.webp"></div>
+                    </div>
 
-  <script>
-  /* A01: dados da matriz competitiva */
-  (function(){
-    var CMX=[
-      ["Sympla",["D"]],["Eventbrite",["D"]],["Facebook",["D","S"]],["WhatsApp",["S"]],
-      ["Yelp",["D","L"]],["Snapchat",["S","L"]],["PicPay",["P"]],["Venmo",["P"]],
-      ["Play Party",["D","S"]],["Hellofriend",["S"]],["Google Maps",["D","L"]],["Apple Maps",["L"]],
-      ["Promoters",["D"]]
-    ];
-    var COLS=["D","S","P","L"];
-    var tb=document.getElementById("cmx");
-    CMX.forEach(function(row){
-      var name=row[0], fills=row[1];
-      var tr=document.createElement("tr");
-      tr.innerHTML="<th>"+name+"</th>"+COLS.map(function(c){return '<td><span class="dot '+(fills.indexOf(c)>-1?"on":"")+'"></span></td>';}).join("");
-      tb.appendChild(tr);
-    });
-    var mr=document.createElement("tr"); mr.className="meaple";
-    mr.innerHTML="<th>Meaple</th>"+COLS.map(function(){return '<td><span class="dot on"></span></td>';}).join("");
-    tb.appendChild(mr);
-  })();
+                    <div class="scroll" data-dsn-animate="ajax">
+                        <span class="background"></span>
+                        <span class="triangle"></span>
+                    </div>
+                    <div class="project-title" id="dsn-hero-parallax-title">
 
-  /* A02: dispersão de prioridade */
-  (function(){
-    var PTS=[
-      ["Criação rápida de eventos pequenos",5,3,"max"],
-      ["Encontrar eventos",4,4,""],["Compartilhar eventos",4,4,""],["Gestão + segurança",4,4,""],
-      ["Comunicação pessoal",4,3,""],["Dificuldade de criar evento",3,4,""],
-      ["Compra de ingresso",3,3,""],["Personalização de conta",3,3,""],["Organização profissional",3,3,""],
-      ["Conectar com profissionais",3,2,""],["Compartilhar informação durante o evento",2,3,""],
-      ["Organização pessoal",2,3,""],["Encontrar memórias de eventos",1,3,""],
-      ["Consumo dentro do evento",1,1,"override"]
-    ];
-    var svg=document.getElementById("scatter");
-    var W=620,H=460,pad={l:60,r:26,t:22,b:52};
-    var x=function(v){return pad.l+((v-0.5)/5)*(W-pad.l-pad.r);};
-    var y=function(v){return H-pad.b-((v-0.5)/5)*(H-pad.t-pad.b);};
-    var s="";
-    for(var i=1;i<=5;i++){
-      s+='<line x1="'+x(i)+'" y1="'+pad.t+'" x2="'+x(i)+'" y2="'+(H-pad.b)+'" stroke="var(--b0)" stroke-width="1"/>';
-      s+='<line x1="'+pad.l+'" y1="'+y(i)+'" x2="'+(W-pad.r)+'" y2="'+y(i)+'" stroke="var(--b0)" stroke-width="1"/>';
-      s+='<text class="sc-axis" x="'+x(i)+'" y="'+(H-pad.b+20)+'" text-anchor="middle">'+i+'</text>';
-      s+='<text class="sc-axis" x="'+(pad.l-14)+'" y="'+(y(i)+4)+'" text-anchor="end">'+i+'</text>';
-    }
-    s+='<text class="sc-axis" x="'+(pad.l+(W-pad.l-pad.r)/2)+'" y="'+(H-6)+'" text-anchor="middle">viabilidade →</text>';
-    s+='<text class="sc-axis" transform="translate(16,'+(pad.t+(H-pad.t-pad.b)/2)+') rotate(-90)" text-anchor="middle">importância →</text>';
-    var groups={};
-    PTS.forEach(function(p,i){var k=p[1]+"-"+p[2];(groups[k]=groups[k]||[]).push(i);});
-    PTS.forEach(function(p,i){
-      var n=p[0],imp=p[1],via=p[2],flag=p[3];
-      var grp=groups[imp+"-"+via], idx=grp.indexOf(i), kn=grp.length;
-      var off=(idx-(kn-1)/2)*16;
-      var cx=x(via)+off, cy=y(imp);
-      var fill="var(--t2)", r=6, glow="";
-      if(flag==="override"){fill="#f87171";r=9;glow='<circle cx="'+cx+'" cy="'+cy+'" r="20" fill="none" stroke="#f87171" stroke-width="1" opacity=".5"/>';}
-      if(flag==="max"){fill="var(--y)";r=9;glow='<circle cx="'+cx+'" cy="'+cy+'" r="18" fill="none" stroke="var(--y)" stroke-width="1" opacity=".55"/>';}
-      s+='<g>'+glow+'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+fill+'"/>';
-      if(flag){
-        var anchor = via>=4?"end":"start";
-        var dx = via>=4? -14 : 14;
-        s+='<text class="sc-lab" x="'+(cx+dx)+'" y="'+(cy+3)+'" text-anchor="'+anchor+'" fill="'+fill+'">'+n+'</text>';
-      }
-      s+='</g>';
-    });
-    svg.innerHTML=s;
-  })();
+                        <div class="title-text-header">
+                            <div class="cat">
+                                <span>Social · Eventos · Product design</span>
+                            </div>
+                            <h1 class="title-text-header-inner"><span>Meaple</span></h1>
+                        </div>
+                        <div class="sub-text-header" data-dsn-animate="ajax"><h5>Cinco apps para uma sexta à noite</h5></div>
+                    </div>
 
-  /* Galeria completa do app + lightbox */
-  (function(){
-    var SCREENS=[
-      ["event-page","Página de evento · claro"],["event-page-dark","Página de evento · escuro"],
-      ["explore-feed-light","Explorar · claro"],["explore-feed-dark","Explorar · escuro"],["explore-map","Explorar · mapa"],
-      ["whos-going","Quem vai"],["story-pullup","Story · chegando"],
-      ["onboarding-fork","Bifurcação de onboarding"],["create-event","Criar evento"],
-      ["comanda-menu","Pedidos · cardápio"],["comanda-item","Pedidos · item"],["comanda-tab","Comanda · pagar"],
-      ["checkout-review","Checkout"],["checkout-success","Pagamento aprovado"],["wallet-ticket","Eventos · ingresso"],
-      ["calendar","Calendário"],["chat","Chat"],["social-feed","Feed social"],["people-discover","Pessoas · descobrir"],
-      ["follow-requests","Solicitações"],["notifications","Notificações"],
-      ["profile-user","Perfil · participante"],["profile-founder","Perfil · fundador"],
-      ["event-stream","Evento com transmissão"],["producer-dashboard","Painel do produtor"]
-    ];
-    var grid=document.getElementById("gallery-grid");
-    var frag=document.createDocumentFragment();
-    SCREENS.forEach(function(item){
-      var slug=item[0], label=item[1];
-      var btn=document.createElement("button");
-      btn.type="button";
-      btn.className="gallery-thumb";
-      btn.innerHTML='<img src="/assets/img/project/meaple/'+slug+'.webp" width="780" height="1696" alt="'+label+'" loading="lazy"><span>'+label+'</span>';
-      frag.appendChild(btn);
-    });
-    grid.appendChild(frag);
+                    
+                </div>
+            </header>
 
-    var lb=document.getElementById("lbox"), im=document.getElementById("lbox-img");
-    grid.querySelectorAll(".gallery-thumb").forEach(function(b){
-      b.addEventListener("click", function(){
-        var img=b.querySelector("img");
-        im.src=img.src; im.alt=img.alt;
-        lb.classList.add("is-open");
-      });
-    });
-    document.getElementById("lbox-close").addEventListener("click", function(){ lb.classList.remove("is-open"); im.src=""; });
-    lb.addEventListener("click", function(e){ if(e.target===lb){ lb.classList.remove("is-open"); im.src=""; } });
-    document.addEventListener("keydown", function(e){ if(e.key==="Escape"){ lb.classList.remove("is-open"); im.src=""; } });
-  })();
-  </script>
+            <div class="wrapper">
+                <div class="root-project">
 
-  <script src="../../../assets/js/main.js" defer></script>
-</body>
-</html>
+                    <div class="container intro-project section-margin">
+                        <div class="intro-text text-center">
+                            <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1" data-dsn-duration="170%" data-dsn-move="0%">Meaple</div>
+                            <div class="inner">
+                                <h2 data-dsn-animate="text">Um produto para a noite inteira.</h2>
+                                <p data-dsn-animate="up">A Ensight queria dominar a jornada completa de uma noite no Brasil, antes, durante e depois, num único produto: descoberta, coordenação social, venda de ingressos e pagamento dentro do evento. Entrei do zero, sem briefing, sem wireframe, sem pesquisa, e defini o que o produto deveria ser antes de qualquer tela.</p>
+
+                                
+    <dl class="case-meta" data-dsn-animate="up">
+      <div><dt>Papel</dt><dd>Design Lead</dd></div><div><dt>Time</dt><dd>Design solo, 2 devs, 2 co-fundadores</dd></div><div><dt>Cliente</dt><dd>Ensight · 2020</dd></div><div><dt>Plataforma</dt><dd>iOS 10+ · Android 4.4+, depois web</dd></div>
+    </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+
+                    
+
+                
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="2000" height="1125" src="/assets/img/case/meaple/ctx-rooftop.webp" srcset="/assets/img/case/meaple/ctx-rooftop-1000.webp 1000w, /assets/img/case/meaple/ctx-rooftop.webp 2000w" sizes="100vw" alt="Amigos num rooftop à noite vendo uma página de evento no Meaple" loading="lazy" decoding="async"></div>
+      <figcaption class="container">Sexta à noite, um app: aonde ir, quem vai e o ingresso.</figcaption>
+    </figure>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">01</span>
+      <p class="cs-eyebrow">O problema</p>
+      <h2 class="cs-title" data-dsn-animate="up">Cinco apps para uma sexta à noite.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">O Sympla vendia ingresso. O WhatsApp cuidava da logística. O Facebook tinha o grafo social, mas tinha abandonado os eventos. O Instagram tinha descoberta sem como agir. O PicPay movia dinheiro sem saber para quê.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/meaple/art-competitors-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="1115" src="/assets/img/case/meaple/art-competitors-pt.webp" srcset="/assets/img/case/meaple/art-competitors-pt-1000.webp 1000w, /assets/img/case/meaple/art-competitors-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Mapa competitivo de 13 produtos em descoberta, coordenação social, pagamento e localização" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">02</span>
+      <p class="cs-eyebrow">Pesquisa</p>
+      <h2 class="cs-title" data-dsn-animate="up">Pessoas diferentes, a mesma fragmentação.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Entrevistei usuários de 19 a 30 anos, criadores de eventos e donos de casas. Ninguém pedia um app só, porque ninguém imaginava que fosse possível. Essa terceira coluna virou a tese do produto.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/meaple/art-research-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="743" src="/assets/img/case/meaple/art-research-pt.webp" srcset="/assets/img/case/meaple/art-research-pt-1000.webp 1000w, /assets/img/case/meaple/art-research-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Três personas com seus dias, e o que os usuários diziam, precisavam e não sabiam que precisavam" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs cs--split">
+        <div class="container cs-split">
+          <div class="cs-split__copy">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">03</span>
+      <p class="cs-eyebrow">Negócio</p>
+      <h2 class="cs-title" data-dsn-animate="up">Receita desde o primeiro dia, ou nada.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Antes da pandemia, eventos movimentavam cerca de R$250 bilhões por ano no Brasil, perto de 4,3% do PIB (Abrafesta; Abeoc/Sebrae). A Ensight definiu as metas antes do design começar, e elas descartavam uma rede social de queima lenta.</p></div>
+          <div class="cs-split__media"><ul class="cs-stats cs-stats--grid" data-dsn-animate="up"><li><strong>150 mil</strong><span>usuários ativos por mês</span></li><li><strong>1,5 mi</strong><span>downloads</span></li><li><strong>R$2,00</strong><span>teto de CAC por usuário</span></li><li><strong>R$2,70</strong><span>de receita por usuário por mês</span></li></ul></div>
+        </div>
+        
+        
+      </section>
+<section class="cs cs--split">
+        <div class="container cs-split">
+          <div class="cs-split__copy">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">04</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">Produtores primeiro.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Meu primeiro instinto foi começar pelo consumidor. Isso está errado num marketplace: um produtor traz toda a audiência dele, um consumidor traz só a si mesmo. Os produtores ganharam venda de ingresso, analytics e página antes de a audiência existir.</p></div>
+          <div class="cs-split__media"><figure class="cs-fig"><img width="1728" height="2304" src="/assets/img/case/meaple/ctx-producer.webp" srcset="/assets/img/case/meaple/ctx-producer-1000.webp 1000w, /assets/img/case/meaple/ctx-producer.webp 2000w" sizes="(min-width: 992px) 50vw, 100vw" alt="Um produtor numa casa vazia antes de abrir as portas, vendo as vendas no painel do Meaple" loading="lazy" decoding="async"><figcaption>O painel do produtor: vendas, receita e os números da noite antes de abrir as portas.</figcaption></figure></div>
+        </div>
+        
+        
+      </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">05</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">Três contas, fronteiras rígidas.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Amigos, profissionais individuais e empresas precisam de permissões diferentes. Um modelo de dois níveis confundia tudo, então saiu.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/meaple/art-accounts-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="592" src="/assets/img/case/meaple/art-accounts-pt.webp" srcset="/assets/img/case/meaple/art-accounts-pt-1000.webp 1000w, /assets/img/case/meaple/art-accounts-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Os níveis de conta Pessoal, Profissional e Empresa e como se relacionam" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">06</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">Momentum: descoberta que ranqueia confiança.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">O Momentum ranqueava o Explorar com cinco variáveis. A credibilidade do produtor pesava mais: uma conta nova ficava abaixo de um produtor com dez eventos bem avaliados.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/meaple/art-momentum-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="569" src="/assets/img/case/meaple/art-momentum-pt.webp" srcset="/assets/img/case/meaple/art-momentum-pt-1000.webp 1000w, /assets/img/case/meaple/art-momentum-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="As cinco variáveis do Momentum alimentando o ranking do Explorar" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="2000" height="1125" src="/assets/img/case/meaple/board-journey.webp" srcset="/assets/img/case/meaple/board-journey-1000.webp 1000w, /assets/img/case/meaple/board-journey.webp 2000w" sizes="100vw" alt="Cinco telas do Meaple em ordem: Explorar, página do evento, checkout, ingresso e comanda" loading="lazy" decoding="async"></div>
+      <figcaption class="container">Uma jornada: descobrir, decidir, pagar, entrar, pedir no bar.</figcaption>
+    </figure>
+      
+      
+    </section>
+<section class="cs cs--split cs--reverse">
+        <div class="container cs-split">
+          <div class="cs-split__copy">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">07</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">A comanda veio depois.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Pedir e pagar no bar pelo app não estava no escopo inicial. Entrou depois, ainda no MVP: consumo que o produtor podia capturar em vez de perder para dinheiro e maquininha.</p></div>
+          <div class="cs-split__media"><div class="cs-stack"><figure class="cs-fig"><img width="1728" height="2304" src="/assets/img/case/meaple/ctx-bar.webp" srcset="/assets/img/case/meaple/ctx-bar-1000.webp 1000w, /assets/img/case/meaple/ctx-bar.webp 2000w" sizes="(min-width: 992px) 30vw, 100vw" alt="A comanda do Meaple aberta no balcão do bar ao lado de uma caipirinha" loading="lazy" decoding="async"><figcaption>A comanda: total corrente, gorjeta e divisão com a galera.</figcaption></figure><figure class="cs-fig"><img width="1728" height="2304" src="/assets/img/case/meaple/ctx-crowd.webp" srcset="/assets/img/case/meaple/ctx-crowd-1000.webp 1000w, /assets/img/case/meaple/ctx-crowd.webp 2000w" sizes="(min-width: 992px) 30vw, 100vw" alt="Um ingresso QR do Meaple erguido no meio do público de um show" loading="lazy" decoding="async"><figcaption>O ingresso: QR pronto na porta.</figcaption></figure></div></div>
+        </div>
+        
+        
+      </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">08</span>
+      <p class="cs-eyebrow">Design</p>
+      <h2 class="cs-title" data-dsn-animate="up">Desenhado para o pior momento.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Lugar barulhento, uma mão, um drink, interrupções. Toda regra da interface veio desse usuário.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/meaple/art-context-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="418" src="/assets/img/case/meaple/art-context-pt.webp" srcset="/assets/img/case/meaple/art-context-pt-1000.webp 1000w, /assets/img/case/meaple/art-context-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Cinco estados de contexto e as regras de interface que vieram deles" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs cs--boards">
+        <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">09</span>
+      <p class="cs-eyebrow">Design system</p>
+      <h2 class="cs-title" data-dsn-animate="up">25 telas, um sistema.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Descoberta, grafo social, transações, comanda e o lado do produtor, desenhados de ponta a ponta junto com a marca.</p></div>
+        <div class="cs-boards">
+      <figure class="cs-board">
+        <figcaption class="container"><span class="cs-board__label">Descobrir</span><span>Mapa, Momentum, páginas de evento e quem vai</span></figcaption>
+        <div class="cs-board__img"><img width="2000" height="1125" src="/assets/img/case/meaple/board-discover.webp" srcset="/assets/img/case/meaple/board-discover-1000.webp 1000w, /assets/img/case/meaple/board-discover.webp 2000w" sizes="100vw" alt="Cinco telas de descoberta do Meaple: mapa, Momentum, página de evento, evento ao vivo e quem vai" loading="lazy" decoding="async"></div>
+      </figure>
+      <figure class="cs-board">
+        <figcaption class="container"><span class="cs-board__label">Social</span><span>Stories, feed, chat do grupo, pessoas e perfis</span></figcaption>
+        <div class="cs-board__img"><img width="2000" height="1125" src="/assets/img/case/meaple/board-social.webp" srcset="/assets/img/case/meaple/board-social-1000.webp 1000w, /assets/img/case/meaple/board-social.webp 2000w" sizes="100vw" alt="Cinco telas sociais do Meaple: story, feed, chat, pessoas e perfil" loading="lazy" decoding="async"></div>
+      </figure>
+      <figure class="cs-board">
+        <figcaption class="container"><span class="cs-board__label">Pedir e pagar</span><span>Cardápio, item, comanda, pagamento e calendário</span></figcaption>
+        <div class="cs-board__img"><img width="2000" height="1125" src="/assets/img/case/meaple/board-pay.webp" srcset="/assets/img/case/meaple/board-pay-1000.webp 1000w, /assets/img/case/meaple/board-pay.webp 2000w" sizes="100vw" alt="Cinco telas de transação do Meaple: cardápio, item, comanda, pagamento aprovado e calendário" loading="lazy" decoding="async"></div>
+      </figure>
+      <figure class="cs-board">
+        <figcaption class="container"><span class="cs-board__label">Produtor</span><span>Bifurcação do onboarding, criação de evento, painel, solicitações</span></figcaption>
+        <div class="cs-board__img"><img width="2000" height="1125" src="/assets/img/case/meaple/board-producer.webp" srcset="/assets/img/case/meaple/board-producer-1000.webp 1000w, /assets/img/case/meaple/board-producer.webp 2000w" sizes="100vw" alt="Cinco telas do produtor no Meaple: onboarding, criar evento, painel, solicitações e perfil" loading="lazy" decoding="async"></div>
+      </figure></div>
+      </section>
+<section class="cs cs--results">
+      <div class="container">
+        <div class="cs-head">
+    <div class="cs-head__main">
+      
+      <p class="cs-eyebrow">Desfecho</p>
+      <h2 class="cs-title" data-dsn-animate="up">A pandemia fechou o mercado. O Meaple pivotou para web.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">O Meaple nasceu como app. Quando a COVID-19 tornou aglomerações ilegais, pivotou para um site para começar a gerar receita, com o plano de voltar a ser app. Está no ar em meaple.com.br.</p></div>
+        <ul class="cs-stats cs-stats--results" data-dsn-animate="up"><li><strong>350 mil</strong><span>eventos cancelados no Brasil em 2020</span></li><li><strong>98%</strong><span>do setor de eventos atingido</span></li><li><strong>R$230 bi</strong><span>perdidos entre 2020 e 2021</span></li></ul>
+        <p class="cs-source">Fontes: Sebrae; Abrape; Abrafesta via G1; Abeoc/Sebrae.</p>
+        <div class="cs-links"><div class="link-custom"><a href="https://meaple.com.br" target="_blank" rel="noopener"><span>meaple.com.br</span></a></div><div class="link-custom"><a href="/work/meaple/documentation/"><span>Documentação do produto</span></a></div></div>
+      </div>
+    </section></div>
+
+                <div class="next-project" data-dsn-footer="project">
+                    <div id="dsn-next-parallax-img" class="bg">
+                        <div class="bg-image cover-bg" data-overlay="4" data-image-src="/assets/img/cards/selo-h.webp"></div>
+                    </div>
+
+                    <div id="dsn-next-parallax-title" class="project-title">
+                        <a href="/pt-br/work/selo-h/" class="">
+                            <div class="title-text-header">
+                                <div class="title-text-header-inner">
+                                    <span>Selo H</span>
+                                </div>
+                            </div>
+                            <div class="sub-text-header">
+                                <h5>Próximo projeto</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                <div class="container">
+                    <div class="footer-links p-relative">
+                        <div class="row">
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block">
+                                    <div class="footer-logo">
+                                        <a href="/pt-br/" aria-label="Dhiego Cristofolini, início"><img src="/assets/img/site/logo.svg" alt="" width="51" height="32"></a>
+                                    </div>
+
+                                    <div class="footer-social">
+
+                                        <ul><li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li><li><a href="https://behance.net/dhiegopires" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a></li><li><a href="https://www.instagram.com/dhiegopires/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="https://github.com/Dhiegopires" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li></ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-menu">
+                                    <h4 class="footer-title">Navegação</h4>
+                                    <nav>
+                                        <ul><li><a href="/pt-br/work/">Trabalhos</a></li><li><a href="/pt-br/blog/">Insights</a></li><li><a href="/pt-br/sobre/">Sobre</a></li><li><a href="/pt-br/curriculo/">Currículo</a></li><li><a href="/pt-br/contato/">Contato</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-contact">
+                                    <h4 class="footer-title">Contato</h4>
+                                    
+                                    
+                                    
+                                <p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="dhiegopiresc@gmail.com" href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></p><p><strong>Idioma</strong> <span>:</span> <a href="/work/meaple/">English</a></p></div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="col-address">
+                                    <h4 class="footer-title">Onde</h4>
+
+                                    <p>Curitiba, Brazil<br>Remoto, qualquer fuso</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 2026 Cristofolini. Todos os direitos reservados.</p>
+                            <div class="copright-text over-hidden"><a href="/pt-br/politica-de-privacidade/">Política de Privacidade</a> · <a href="/pt-br/termos-de-uso/">Termos de Uso</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- Wait Loader -->
+    <div class="wait-loader">
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <div class="loader-layer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- // Wait Loader -->
+
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+    <!-- End cursor -->
+
+    <!-- Optional JavaScript -->
+    <script src="/assets/tpl/js/jquery-3.1.1.min.js?v=042dd055"></script>
+    <script src="/assets/tpl/js/plugins.js?v=790b3aee"></script>
+    <script src="/assets/tpl/js/dsn-grid.js?v=0b65055c"></script>
+    <script src="/assets/tpl/js/custom.js?v=5a73715e"></script><script src="/assets/tpl/js/addons.js?v=753d91a5"></script>
+
+
+</body></html>

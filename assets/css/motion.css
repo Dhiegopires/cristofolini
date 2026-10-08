@@ -1,0 +1,142 @@
+/* Motion — site. GSAP + Lenis. Content stays visible if JS never runs. */
+
+html.has-motion .hp-hero__role {
+  clip-path: inset(100% 0 0 0);
+}
+html.has-motion .hp-hero__arrows {
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 12%, 0);
+}
+html.has-motion .hp-hero__portrait {
+  transform: scale(1.14);
+  transform-origin: 50% 0;
+}
+html.has-motion .hp-hero__wordmark {
+  clip-path: inset(0 0 0 100%);
+}
+html.has-motion .hp-hero__ticker {
+  clip-path: inset(0 0 100% 0);
+}
+
+/* Listing heroes animate via GSAP fromTo — no CSS pre-hide (avoids blank flash). */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: var(--y);
+  pointer-events: none;
+}
+
+.cursor,
+.cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  pointer-events: none;
+  will-change: transform;
+}
+.cursor {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--y);
+  mix-blend-mode: difference;
+  transition: width .28s var(--ease-out), height .28s var(--ease-out), margin .28s var(--ease-out), border-radius .28s var(--ease-out), background .28s var(--ease-out);
+}
+.cursor.is-work {
+  width: 106px;
+  height: 106px;
+  margin: -53px 0 0 -53px;
+  border-radius: 0;
+  /* White SVG mark must stay visible on photos — difference blend kills it. */
+  mix-blend-mode: normal;
+  background: var(--card-hover) center / contain no-repeat;
+}
+
+/* Cards stay clipped until GSAP opens them (listing + home work). */
+html.has-card-mask .work-card__image img,
+html.has-card-mask .post-card__img img {
+  clip-path: inset(100% 0% 0% 0%);
+  transform: scale(1.12);
+  transform-origin: 50% 50%;
+}
+html.has-card-mask .work-card__title,
+html.has-card-mask .work-card__desc,
+html.has-card-mask .post-card__title {
+  clip-path: inset(100% 0 0 0);
+}
+.cursor.is-acc {
+  width: 280px;
+  height: 115px;
+  margin: -58px 0 0 -140px;
+  border-radius: 0;
+  mix-blend-mode: normal;
+  background: var(--cursor-img, none) center / cover no-repeat;
+}
+.cursor__ring {
+  z-index: 10000;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--y);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: width .35s var(--ease-out), height .35s var(--ease-out), margin .35s var(--ease-out), background .35s var(--ease-out), border-color .35s var(--ease-out), opacity .2s var(--ease-out);
+}
+.cursor__ring.is-grow {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  background: transparent;
+  border-color: var(--y);
+}
+.cursor__ring.is-hide {
+  opacity: 0;
+}
+
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+html.has-cursor input,
+html.has-cursor textarea,
+html.has-cursor select,
+html.has-cursor input *,
+html.has-cursor textarea * {
+  cursor: text !important;
+}
+
+html.has-cursor .page-home .work-card__image img,
+html.has-cursor .page-work .work-card__image img,
+html.has-cursor .page-blog .post-card__img img {
+  transition: none;
+}
+
+html.lenis, html.lenis body { height: auto; }
+html.lenis.lenis-smooth { scroll-behavior: auto; }
+
+@media (hover: none), (pointer: coarse) {
+  .cursor,
+  .cursor__ring,
+  .scroll-progress { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-motion .hp-hero__role,
+  html.has-motion .hp-hero__wordmark,
+  html.has-motion .hp-hero__arrows,
+  html.has-motion .hp-hero__ticker { clip-path: none; }
+  html.has-motion .hp-hero__arrows { transform: none; }
+  html.has-motion .hp-hero__portrait { transform: none; }
+  .cursor,
+  .cursor__ring,
+  .scroll-progress { display: none; }
+}

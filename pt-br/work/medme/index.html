@@ -1,570 +1,394 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
-    gtag('js', new Date());
-    gtag('config', 'G-M378PSJ10R');
-  </script>
-  <title>MedMe | Design para Saúde Domiciliar | Dhiego Cristofolini</title>
-  <meta name="description" content="Estudo de caso de design de produto para o MedMe, saúde domiciliar sob demanda com agendamento, verificação de identidade e pagamento em garantia.">
-  <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Dhiego Cristofolini">
-  <meta property="og:title" content="MedMe | Design para Saúde Domiciliar | Dhiego Cristofolini">
-  <meta property="og:description" content="Estudo de caso de design de produto para o MedMe, saúde domiciliar sob demanda com agendamento, verificação de identidade e pagamento em garantia.">
-  <meta property="og:image" content="https://cristofolini.site/assets/img/project/medme/thumbnail.png">
-  <meta property="og:url" content="https://cristofolini.site/pt-br/work/medme/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MedMe | Design para Saúde Domiciliar | Dhiego Cristofolini">
-  <meta name="twitter:description" content="Estudo de caso de design de produto para o MedMe, saúde domiciliar sob demanda com agendamento, verificação de identidade e pagamento em garantia.">
-  <meta name="twitter:image" content="https://cristofolini.site/assets/img/project/medme/thumbnail.png">
-  <link rel="canonical" href="https://cristofolini.site/pt-br/work/medme/">
-  <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/medme/">
-  <link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/medme/">
-  <link rel="alternate" hreflang="x-default" href="https://cristofolini.site/work/medme/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "MedMe",
-    "description": "Plataforma de saúde domiciliar sob demanda com agendamento, verificação de identidade e pagamento em garantia.",
-    "author": {
-      "@type": "Person",
-      "name": "Dhiego Cristofolini",
-      "url": "https://cristofolini.site/"
-    },
-    "dateCreated": "2024-01-01",
-    "url": "https://cristofolini.site/pt-br/work/medme",
-    "genre": "UX Case Study",
-    "keywords": "product design, ux, healthcare, mobile, fintech, case study"
-  }
-  </script>
-  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../../../assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link href="../../../assets/css/globals.css?v=3" rel="stylesheet">
-  <link href="../../../assets/css/case-study.css" rel="stylesheet">
-</head>
-<body>
+<html lang="pt-BR"><head>
+    <title>MedMe | Consultas e exames domiciliares | Dhiego Cristofolini</title>
+    <meta name="description" content="Case de product design: agendamento de consultas e exames em casa ou na clínica, com visitas verificadas por token e pagamento retido pela MedMe até o fim do serviço.">
+    <meta name="author" content="Dhiego Cristofolini">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://cristofolini.site/pt-br/work/medme/">
+    <link rel="alternate" hreflang="en" href="https://cristofolini.site/work/medme/"><link rel="alternate" hreflang="pt-BR" href="https://cristofolini.site/pt-br/work/medme/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MedMe | Consultas e exames domiciliares | Dhiego Cristofolini">
+    <meta property="og:description" content="Case de product design: agendamento de consultas e exames em casa ou na clínica, com visitas verificadas por token e pagamento retido pela MedMe até o fim do serviço.">
+    <meta property="og:url" content="https://cristofolini.site/pt-br/work/medme/">
+    <meta property="og:image" content="https://cristofolini.site/assets/img/og-default.jpg">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
 
-  <noscript><style>.sr, .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <!--  Title -->
+    
 
-  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+    <!-- Font Google -->
+    
+    
 
-  <nav class="nav" role="navigation" aria-label="Navegação principal">
-    <a href="../../" class="nav-logo" aria-label="Cristofolini | Início">
-      <img src="../../../assets/img/Cristofolini-logo-2.svg" alt="Cristofolini" width="44" height="26">
-    </a>
-    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <svg aria-hidden="true" class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <ul class="nav-links" role="list">
-      <li><a href="../" aria-current="page">Trabalhos</a></li>
-          <li><a href="../../blog/">Insights</a></li>
-    </ul>
-    <a href="../../../work/medme/" class="nav-lang" hreflang="en" aria-label="Mudar para inglês">EN</a>
-    <a href="../../contact/" class="nav-cta">Contato</a>
-  </nav>
+    
+    
 
-  <main id="main-content" tabindex="-1">
+    <!-- custom styles (optional) -->
+    <link href="/assets/tpl/css/plugins.css?v=592309fc" rel="stylesheet">
+    <link href="/assets/tpl/css/style.css?v=a8d95a64" rel="stylesheet"><link href="/assets/tpl/css/brand.css?v=14efa40a" rel="stylesheet">
 
-    <section class="cs-hero">
-      <div class="cs-hero__left">
-        <div class="case-hero__tags">
-          <span class="tag">Produto</span>
-          <span class="tag">UI/UX</span>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','G-M378PSJ10R');</script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M378PSJ10R"></script></head>
+
+
+<body class="hamburger-menu dsn-effect-scroll case-v2" data-dsn-mousemove="true" data-lang="pt"><a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <div class="preloader">
+        <div class="preloader-after"></div>
+        <div class="preloader-before"></div>
+        <div class="preloader-block">
+            <div class="title">Dhiego Cristofolini</div>
+            <div class="percent">0</div>
+            <div class="loading">loading...</div>
         </div>
-        <h1 class="cs-hero__title">Desenhando a camada de confiança para a saúde domiciliar</h1>
-        <p class="cs-lead">Saúde domiciliar não tem falta de demanda. O que falta é infraestrutura de confiança: identidade verificada antes de qualquer pessoa entrar em uma casa, pagamento retido até a confirmação do serviço, e responsabilidade documentada para as três partes da transação, simultaneamente.</p>
-
-        <div class="cs-impact-grid">
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num"><span class="cs-accent">+</span>35<span class="cs-accent">%</span></p>
-            <p class="cs-impact-label">conversão projetada no checkout</p>
-          </div>
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">0</p>
-            <p class="cs-impact-label">pagamentos liberados sem confirmação de serviço</p>
-          </div>
-          <div class="cs-impact-cell">
-            <p class="cs-impact-num">3</p>
-            <p class="cs-impact-label">tokens de confiança · cadeia de custódia do agendamento ao pagamento</p>
-          </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
         </div>
-
-        <div class="cs-meta-grid">
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Função</p>
-            <p class="cs-meta-value">Product Designer</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Plataforma</p>
-            <p class="cs-meta-value">iOS · Android</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Usuários</p>
-            <p class="cs-meta-value">3 simultâneos</p>
-          </div>
-          <div class="cs-meta-cell">
-            <p class="cs-meta-label">Status</p>
-            <p class="cs-meta-value">Reconstrução de portfólio · NDA</p>
-          </div>
-        </div>
-      </div>
-      <div class="cs-hero__right">
-        <img src="/work/medme/Mockup-hero.webp" width="1920" height="1076" alt="Telas do app MedMe" loading="eager">
-      </div>
-    </section>
-
-    <section class="cs-current-state">
-      <div class="cs-container">
-        <p class="cs-eyebrow cs-eyebrow--muted">Estado atual · antes deste projeto</p>
-        <div class="cs-diagram">
-          <svg width="100%" viewBox="0 0 680 100" role="img" aria-label="Fluxo do estado atual antes do MedMe">
-            <defs>
-              <marker id="arr-cs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M2 1L8 5L2 9" fill="none" stroke="#7f2020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </marker>
-            </defs>
-            <rect x="10"  y="14" width="118" height="72" rx="8" fill="#1d1c1a" stroke="#3a3530" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#d0c8bc" x="69"  y="38" text-anchor="middle" dominant-baseline="central">Quer visita domiciliar</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#908684" x="69"  y="66" text-anchor="middle" dominant-baseline="central">Nenhuma plataforma existe</text>
-            <line x1="129" y1="50" x2="141" y2="50" stroke="#3a3530" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="142" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="201" y="38" text-anchor="middle" dominant-baseline="central">Pesquisa no Google ou pergunta</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="201" y="66" text-anchor="middle" dominant-baseline="central">Sem filtro, sem confiança</text>
-            <line x1="261" y1="50" x2="273" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="274" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="333" y="38" text-anchor="middle" dominant-baseline="central">Liga / WhatsApp</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="333" y="66" text-anchor="middle" dominant-baseline="central">Sem registro, sem auditoria</text>
-            <line x1="393" y1="50" x2="405" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="406" y="14" width="118" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="465" y="38" text-anchor="middle" dominant-baseline="central">Recebe um orçamento</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="465" y="66" text-anchor="middle" dominant-baseline="central">Sem garantia de retenção</text>
-            <line x1="525" y1="50" x2="537" y2="50" stroke="#7f2020" stroke-width="1" marker-end="url(#arr-cs)"/>
-            <rect x="538" y="14" width="132" height="72" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-            <text font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="500" fill="#f87060" x="604" y="38" text-anchor="middle" dominant-baseline="central">Chega sem verificação</text>
-            <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="604" y="66" text-anchor="middle" dominant-baseline="central">Sem checagem de licença.</text>
-          </svg>
-        </div>
-        <p class="cs-caption">O produto sob demanda não existia. O ecommerce existia para produtos, mas não para serviços profissionais em domicílio.</p>
-      </div>
-    </section>
-
-    <div class="cs-layout">
-
-      <aside class="cs-toc" aria-label="Section navigation">
-        <nav class="cs-toc__inner">
-          <a href="#s01" class="cs-toc__item">01 &nbsp;O problema</a>
-          <a href="#s02" class="cs-toc__item">02 &nbsp;Três usuários</a>
-          <a href="#s03" class="cs-toc__item">03 &nbsp;Agendamento</a>
-          <a href="#s04" class="cs-toc__item">04 &nbsp;Pareamento</a>
-          <a href="#s05" class="cs-toc__item">05 &nbsp;Lógica de tempo</a>
-          <a href="#s06" class="cs-toc__item">06 &nbsp;Sistema de tokens</a>
-          <a href="#s07" class="cs-toc__item">07 &nbsp;Checkout</a>
-          <a href="#s08" class="cs-toc__item">08 &nbsp;Resultado</a>
-        </nav>
-      </aside>
-
-      <div class="cs-content">
-
-        <section id="s01" class="cs-section" aria-labelledby="s01-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">01</span>
-            <h2 class="cs-section__title" id="s01-title">O problema</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>A real restrição da saúde domiciliar é a confiança. O atrito é só o sintoma visível, e a causa raiz vai mais profundo.</p>
-            <blockquote class="cs-pullquote">Um paciente abre a porta da própria casa para um estranho. Isso não é uma entrega de comida. É alguém tocando seu corpo, colhendo seu sangue, vacinando seu filho.</blockquote>
-            <p>O MedMe já tinha um ecommerce farmacêutico funcionando. O que não existia era um produto sob demanda com identidade profissional verificada, proteção de pagamento e responsabilidade cobrindo os três lados da transação simultaneamente: paciente, profissional e clínica.</p>
-            <p>As telas originais ficaram com a empresa. Tudo aqui é uma reconstrução do zero para o portfólio.</p>
-          </div>
-        </section>
-
-        <section id="s02" class="cs-section" aria-labelledby="s02-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">02</span>
-            <h2 class="cs-section__title" id="s02-title">Três usuários, três medos</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Três atores estão ativos simultaneamente em cada atendimento. Cada um tem um conjunto diferente de preocupações. Desenhar para um sem considerar os outros produz um sistema que falha nas costuras.</p>
-            <div class="cs-fear-cards">
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">Paciente</p>
-                <p class="cs-fear-card__title">Identidade e dinheiro</p>
-                <p class="cs-fear-card__body">Essa pessoa é mesmo quem diz ser? E se o serviço não acontecer? Quem retém meu pagamento até que aconteça?</p>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">Profissional</p>
-                <p class="cs-fear-card__title">Equipamento e cobertura</p>
-                <p class="cs-fear-card__body">O material vai estar pronto na clínica? Estou legalmente coberto se algo der errado na casa do paciente?</p>
-              </div>
-              <div class="cs-fear-card">
-                <p class="cs-fear-card__label">Clínica</p>
-                <p class="cs-fear-card__title">Qualidade e reputação</p>
-                <p class="cs-fear-card__body">Alguém representa minha marca na casa de um estranho. Eu não posso estar lá. Preciso de responsabilidade documentada.</p>
-              </div>
-            </div>
-            <p>Cada decisão de design neste produto responde a pelo menos um desses medos. O sistema de tokens e a lógica de pareamento endereçam os três simultaneamente: foi aí que a maior parte da complexidade pousou.</p>
-            <div class="cs-diagram">
-              <img src="img/medme_user_flow.svg" width="1028" height="766" alt="Fluxo completo do usuário: paciente, profissional e clínica em 8 etapas da seleção do serviço ao pagamento">
-            </div>
-          </div>
-        </section>
-
-        <section id="s03" class="cs-section" aria-labelledby="s03-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">03</span>
-            <h2 class="cs-section__title" id="s03-title">A decisão de agendamento</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Apps de agendamento de saúde costumam mostrar todas as unidades antes de checar disponibilidade. Você escolhe uma com base em distância ou reconhecimento de nome. Depois procura um horário e descobre que o slot que você queria já foi. Você volta. Escolhe outra unidade. Tenta de novo.</p>
-            <p>A arquitetura de informação é o que está quebrado aqui, e é a falha estrutural por trás da maior parte do abandono de agendamento na saúde digital.</p>
-            <p>27% dos pacientes trocaram de prestador especificamente por atrito digital (McKinsey, 2025). Eles não abandonaram o processo. Foram para um concorrente.</p>
-            <blockquote class="cs-pullquote">O MedMe inverte isso: o paciente escolhe quando, e o sistema mostra apenas o que está disponível naquele horário exato.</blockquote>
-            <p>O paciente escolhe quando quer o serviço. O sistema só mostra clínicas com disponibilidade confirmada naquele horário específico. Slots que não podem ser cumpridos não existem na interface. Nunca são oferecidos.</p>
-            <div class="cs-diagram">
-              <svg width="100%" viewBox="0 0 680 420" role="img" aria-label="Comparação de IA de agendamento: modelo padrão vs MedMe">
-                <defs>
-                  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M2 1L8 5L2 9" fill="none" stroke="#474440" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </marker>
-                </defs>
-                <text font-family="'DM Sans',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="170" y="24" text-anchor="middle">Modelo padrão</text>
-                <text font-family="'DM Sans',sans-serif" font-weight="600" font-size="13" fill="#f0ebe0" x="510" y="24" text-anchor="middle">MedMe</text>
-                <line x1="340" y1="12" x2="340" y2="400" stroke="#2a2825" stroke-width="0.5" stroke-dasharray="4 4"/>
-                <rect x="60"  y="40"  width="220" height="40" rx="8" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#f0ebe0" x="170" y="60" text-anchor="middle" dominant-baseline="central">Navega por todas as unidades</text>
-                <line x1="170" y1="80" x2="170" y2="100" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="60"  y="102" width="220" height="40" rx="8" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#f0ebe0" x="170" y="122" text-anchor="middle" dominant-baseline="central">Seleciona unidade</text>
-                <line x1="170" y1="142" x2="170" y2="162" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="60"  y="164" width="220" height="40" rx="8" fill="#1a1815" stroke="#2a2825" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#f0ebe0" x="170" y="184" text-anchor="middle" dominant-baseline="central">Seleciona horário</text>
-                <line x1="170" y1="204" x2="170" y2="224" stroke="#474440" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="60"  y="226" width="220" height="52" rx="8" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#f87060" x="170" y="245" text-anchor="middle" dominant-baseline="central">Horário indisponível</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#c56c5d" x="170" y="264" text-anchor="middle" dominant-baseline="central">Volta · escolhe outra unidade</text>
-                <path d="M60 252 Q22 252 22 122 L60 122" fill="none" stroke="#f87060" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
-                <rect x="90"  y="302" width="160" height="28" rx="14" fill="#2a1008" stroke="#7f2020" stroke-width="0.5"/>
-                <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#f87060" x="170" y="316" text-anchor="middle" dominant-baseline="central">Ciclo de frustração</text>
-                <rect x="400" y="40"  width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="60" text-anchor="middle" dominant-baseline="central">Seleciona tipo de serviço</text>
-                <line x1="510" y1="80" x2="510" y2="100" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="400" y="102" width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="122" text-anchor="middle" dominant-baseline="central">Seleciona horário desejado</text>
-                <line x1="510" y1="142" x2="510" y2="162" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="400" y="164" width="220" height="52" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="181" text-anchor="middle" dominant-baseline="central">Vê unidades confirmadas</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6ee7b7" x="510" y="200" text-anchor="middle" dominant-baseline="central">Disponíveis apenas nesse horário</text>
-                <line x1="510" y1="216" x2="510" y2="236" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="400" y="238" width="220" height="40" rx="8" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'DM Sans',sans-serif" font-weight="500" font-size="12" fill="#4ade80" x="510" y="258" text-anchor="middle" dominant-baseline="central">Seleciona unidade</text>
-                <line x1="510" y1="278" x2="510" y2="298" stroke="#1a5025" stroke-width="1" marker-end="url(#arr)"/>
-                <rect x="430" y="300" width="160" height="28" rx="14" fill="#0a1a0e" stroke="#1a5025" stroke-width="0.5"/>
-                <text font-family="'IBM Plex Mono',monospace" font-size="11" fill="#4ade80" x="510" y="314" text-anchor="middle" dominant-baseline="central">Confirmado · sem ciclo</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="170" y="370" text-anchor="middle">Unidade exibida independente da disponibilidade</text>
-                <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#474440" x="510" y="370" text-anchor="middle">Unidades filtradas apenas por horários confirmados</text>
-              </svg>
-            </div>
-            <p>Antes de escolher o horário, o paciente escolhe o tipo de atendimento: domiciliar ou na clínica. Esse único toggle filtra tudo o que vem depois: quais clínicas aparecem, quais listas de equipamento se aplicam, o que o cartão do profissional mostra. Atendimentos domiciliares carregam o protocolo completo de tokens. Atendimentos na clínica usam um check-in simplificado. A IA de agendamento é a mesma nos dois casos.</p>
-            <p>A própria seleção de horário se divide em três subetapas: seletor de mês, depois dia, depois horários disponíveis. Cada etapa reduz o espaço de escolha antes que a próxima se abra. O paciente nunca enfrenta uma grade com todos os horários abertos. Ele chega a uma lista curta e filtrada para o dia específico que já escolheu.</p>
-            <div class="cs-rejected">
-              <span class="cs-rejected__label">Abordagem rejeitada</span>
-              Consideramos inverter apenas uma etapa: mostrar todas as unidades, mas filtrar o seletor de horário por unidade. Rejeitada: isso ainda exige que o usuário escolha uma unidade antes de saber a disponibilidade. O ciclo de frustração persiste, só um clique depois.
-            </div>
-            <div class="cs-screens cs-screens--5">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/schedule-month.webp" width="390" height="844" alt="Seletor de mês, etapa 1 de 3" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Seletor de mês · etapa 1 de 3</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/schedule-day.webp" width="390" height="844" alt="Seletor de dia, etapa 2 de 3" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Seletor de dia · etapa 2 de 3</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/schedule-time.webp" width="390" height="844" alt="Seletor de horário com apenas slots confirmados" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Seletor de horário · apenas slots confirmados</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/schedule-completed.webp" width="390" height="844" alt="Agendamento completo, horário selecionado e botão continuar desbloqueado" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Horário selecionado · continuar desbloqueado</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/Select Unit.webp" width="390" height="844" alt="Lista de unidades filtrada pelo horário selecionado" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Lista de unidades · filtrada pelo horário selecionado</figcaption>
-              </figure>
-            </div>
-            <div class="cs-addresses">
-              <span class="cs-addresses__label">Resolve</span>
-              <span class="cs-addresses__metric">troca de prestador motivada por atrito digital, não por qualidade clínica (McKinsey, 2025)</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="s04" class="cs-section" aria-labelledby="s04-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">04</span>
-            <h2 class="cs-section__title" id="s04-title">Pareamento com competência regulatória</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>A clínica escolhe o profissional, não o paciente: o único modelo que se sustenta dado como a responsabilidade legal realmente funciona na saúde.</p>
-            <p>A certificação e a reputação da clínica são o que o paciente está confiando ao agendar. Se a clínica designa o profissional, a responsabilidade fica em um só lugar. Se o paciente escolhe, a responsabilidade se fragmenta e ninguém é dono do resultado.</p>
-            <div class="cs-compare">
-              <div>
-                <p class="cs-compare__label">Modelo padrão</p>
-                <p class="cs-compare__text">O paciente navega por uma lista de profissionais. Escolhe um. A responsabilidade é difusa: a plataforma, o profissional e a clínica compartilham responsabilidade parcial sem uma cadeia clara.</p>
-              </div>
-              <div>
-                <p class="cs-compare__label">MedMe</p>
-                <p class="cs-compare__text">A clínica recebe o agendamento. Designa o profissional internamente. O paciente vê as credenciais após a designação. A clínica é dona do resultado. A responsabilidade é clara, a confiança é verificável.</p>
-              </div>
-            </div>
-            <div class="cs-diagram">
-              <img src="img/medme_information_architecture.svg" width="900" height="520" alt="Arquitetura de informação: lógica de filtro orientada por serviço e overflow de pool">
-            </div>
-            <p>Quando uma clínica não tem profissional disponível, um pool pré-aprovado de profissionais terceirizados preenche a lacuna. Mesmas certificações: clínicas registradas na ANVISA, profissionais licenciados pelo CRBM. Mesma triagem. Para o paciente, o cartão parece idêntico. Para a clínica, a designação via pool é sinalizada no painel operacional. A resposta nunca é "indisponível".</p>
-            <p>Depois do atendimento, os três atores se avaliam mutuamente. O paciente avalia o profissional. O profissional avalia o paciente. A clínica avalia a execução do profissional. Uma avaliação de três lados cria responsabilidade em cada ponto da cadeia, incluindo a avaliação final que o paciente deixa.</p>
-            <p>Uma coisa que isso não resolve totalmente: quando um profissional do pool entrega o serviço em vez da própria equipe da clínica, a clínica está avaliando alguém que não contratou. Se os operadores se engajam com esse feedback da mesma forma para designações via pool e para a própria equipe foi uma questão que ficou aberta.</p>
-          </div>
-        </section>
-
-        <section id="s05" class="cs-section" aria-labelledby="s05-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">05</span>
-            <h2 class="cs-section__title" id="s05-title">A lógica de tempo</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Todo horário mostrado ao paciente já inclui 60 minutos de antecedência embutidos: a janela que o profissional precisa para buscar equipamento na clínica antes de se deslocar. Se essa janela colapsa por causa de um agendamento de última hora ou uma confirmação tardia, o slot desaparece do seletor antes mesmo de ser oferecido. O paciente nunca vê um horário indisponível.</p>
-            <p>Mostrar um horário que não pode ser cumprido é pior do que não mostrar nenhum horário. Um agendamento confirmado seguido de cancelamento destrói a confiança mais rápido do que simplesmente mostrar o horário como indisponível.</p>
-            <div class="cs-edge-cases">
-              <span class="cs-edge-cases__label">Casos extremos</span>
-              <div class="cs-edge-row">
-                <span class="cs-edge-condition">Profissional atrasado (&gt;10 min)</span>
-                <span class="cs-edge-arrow">→</span>
-                <span class="cs-edge-response">Paciente notificado. Horário estendido ou cancelamento com reembolso total.</span>
-              </div>
-              <div class="cs-edge-row">
-                <span class="cs-edge-condition">Equipamento não retirado até T-45min</span>
-                <span class="cs-edge-arrow">→</span>
-                <span class="cs-edge-response">Clínica alertada. Horário sinalizado em risco. Designação via pool ativada.</span>
-              </div>
-              <div class="cs-edge-row">
-                <span class="cs-edge-condition">Agendamento de última hora (&lt;1h de antecedência)</span>
-                <span class="cs-edge-arrow">→</span>
-                <span class="cs-edge-response">Horário não oferecido. Removido do seletor antes que o paciente o veja.</span>
-              </div>
-            </div>
-            <div class="cs-screens cs-screens--2">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional.webp" width="780" height="1688" alt="Estado de espera com profissional a caminho, credenciais visíveis, linha do tempo de status" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Estado de espera · profissional a caminho, credenciais visíveis, linha do tempo de status</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-expanded.webp" width="390" height="844" alt="Credenciais expandidas, cartão completo do profissional com detalhes de licença" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Credenciais expandidas · cartão completo do profissional</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section id="s06" class="cs-section" aria-labelledby="s06-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">06</span>
-            <h2 class="cs-section__title" id="s06-title">O sistema de tokens</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>Três tokens, cada um resolvendo um problema de forma independente, se conectam numa cadeia que paciente, profissional e clínica usam do agendamento até a liberação do pagamento.</p>
-            <div class="cs-diagram">
-              <img src="img/medme_token_system_diagram.svg" width="880" height="300" alt="Sistema de tokens: cadeia de custódia em três fases">
-            </div>
-            <div class="cs-diagram">
-              <img src="img/medme_token_chain_custody.svg" width="680" height="638" alt="Sistema de tokens: cadeia de custódia em três fases com fluxos bilaterais">
-            </div>
-            <p>O check-in bilateral remete a um padrão que já existe em serviços que os pacientes usam diariamente: o PIN bilateral do Uber, a verificação de identidade do Airbnb. A diferença é o contexto: aqui é uma casa particular e um procedimento médico.</p>
-            <div class="cs-rejected">
-              <span class="cs-rejected__label">Abordagem rejeitada</span>
-              Consideramos um único token passado da clínica ao paciente no agendamento, usado pelo profissional na chegada. A pergunta que matou essa ideia: como o paciente sabe que a pessoa na porta é a mesma cujas credenciais ele recebeu? Um token unilateral protege o sistema, mas não dá ao paciente nada com que verificar.
-            </div>
-            <div class="cs-screens cs-screens--3">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/token-swap-base.webp" width="390" height="844" alt="Token 2 em estado vazio, aguardando os dois códigos" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Vazio · aguardando os dois códigos</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-error.webp" width="390" height="844" alt="Token 2 em estado de erro, código incorreto inserido" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Erro · código incorreto inserido</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/waiting-for-professional-completed.webp" width="390" height="844" alt="Token 2 confirmado, ambas as partes verificadas" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Confirmado · ambas as partes verificadas</figcaption>
-              </figure>
-            </div>
-            <div class="cs-addresses">
-              <span class="cs-addresses__label">Resolve</span>
-              <span class="cs-addresses__metric">lacuna de verificação de identidade + proteção de pagamento (sem liberação sem confirmação do serviço)</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="s07" class="cs-section" aria-labelledby="s07-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">07</span>
-            <h2 class="cs-section__title" id="s07-title">Checkout e pagamento</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>O abandono de checkout na saúde atinge o pico no momento em que o usuário percebe quantas etapas ainda restam. Um indicador de progresso persistente de 6 etapas torna o ponto final visível desde a primeira tela. O formulário se divide em três subetapas que abrem sequencialmente, cada uma se desbloqueando apenas quando a atual é válida. Menos campos visíveis ao mesmo tempo, sem nenhuma informação de fato escondida. A redução para 12-14 campos segue o benchmark da Baymard para a quantidade de campos a partir da qual o abandono cai de forma significativa.</p>
-            <p>O pagamento multimétodo permite que o paciente divida o total entre o saldo MedMe e um segundo método: Pix ou cartão. O campo de cupom fica na mesma tela da seleção de método de pagamento. Inserir um código atualiza o total imediatamente, antes de confirmar um método. Uma barra visual de divisão mostra quanto cada método cobre. Sem cálculo mental.</p>
-            <p>57% dos pacientes dizem que a transparência de preço influencia onde buscam atendimento (McKinsey, 2025). A nota de garantia na confirmação mostra ao paciente o que está pagando, para quem, e que o dinheiro fica retido até a confirmação do Token 3. Abaixo disso, o protocolo de tokens é reafirmado em linguagem simples: "Vita Clinic designa um profissional", "Credenciais enviadas para revisão", "Faça o check-in digital no dia". A visibilidade do preço é um critério de seleção antes mesmo de o paciente agendar.</p>
-            <div class="cs-screens cs-screens--4">
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/Review.webp" width="390" height="844" alt="Checkout com indicador de progresso de 6 etapas e revisão do pedido" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Checkout · indicador de progresso de 6 etapas</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/payment-base.webp" width="390" height="992" alt="Tela de pagamento com saldo MedMe e seletor de método" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Pagamento · divisão de saldo + seletor de método</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/payment-selected.webp" width="390" height="844" alt="Pagamento com saldo MedMe ativo e método de pagamento selecionado para o valor restante" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Pagamento · método selecionado, total dividido</figcaption>
-              </figure>
-              <figure class="cs-screen-wrap">
-                <div class="cs-screen-placeholder">
-                  <img src="img/confirm.webp" width="430" height="932" alt="Tela de confirmação com nota de garantia e resumo do protocolo de tokens" loading="lazy">
-                </div>
-                <figcaption class="cs-caption">Confirmação · nota de garantia + protocolo de tokens</figcaption>
-              </figure>
-            </div>
-            <div class="cs-addresses">
-              <span class="cs-addresses__label">Resolve</span>
-              <span class="cs-addresses__metric">abandono por estresse de decisão · abandono de checkout mobile · custo oculto como fator nº 1 de saída (Accenture 2024 · Baymard 2024 · McKinsey 2025)</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="s08" class="cs-section" aria-labelledby="s08-title">
-          <div class="cs-section__header">
-            <span class="cs-section__num">08</span>
-            <h2 class="cs-section__title" id="s08-title">Resultado</h2>
-          </div>
-          <div class="cs-section__body">
-            <p>O produto sob demanda não existia antes deste projeto. Os números abaixo são fundamentados em performance real do início: um aumento medido de +6% na conversão de checkout no primeiro mês pós-lançamento, com a tendência projetando +35% se sustentada.</p>
-            <div class="cs-benchmark-grid">
-              <div class="cs-benchmark-card">
-                <p class="cs-benchmark-num"><span class="cs-accent">+</span>35<span class="cs-accent">%</span></p>
-                <p class="cs-benchmark-desc">Conversão projetada de checkout (medido +6% no primeiro mês, tendência se sustentada): redução de formulário para 12-14 campos + revelação progressiva</p>
-                <p class="cs-benchmark-source">Baymard, 2026 (benchmark usado para embasar a decisão de design, não a fonte do número)</p>
-              </div>
-              <div class="cs-benchmark-card">
-                <p class="cs-benchmark-num">60<span class="cs-accent">%</span></p>
-                <p class="cs-benchmark-desc">Pacientes que relatam atrito no agendamento digital, endereçado pela IA orientada por horário</p>
-                <p class="cs-benchmark-source">McKinsey, 2025</p>
-              </div>
-              <div class="cs-benchmark-card">
-                <p class="cs-benchmark-num">74<span class="cs-accent">%</span></p>
-                <p class="cs-benchmark-desc">Usuários que abandonam por estresse de decisão, mitigado pelo indicador de progresso de 6 etapas</p>
-                <p class="cs-benchmark-source">Accenture, 2024</p>
-              </div>
-              <div class="cs-benchmark-card">
-                <p class="cs-benchmark-num">19<span class="cs-accent">%</span></p>
-                <p class="cs-benchmark-desc">Abandono por criação obrigatória de conta, removido de ambos os fluxos</p>
-                <p class="cs-benchmark-source">Baymard, 2024</p>
-              </div>
-            </div>
-            <p>Três padrões de confiança de serviços que os pacientes já usam, adaptados para o contexto médico:</p>
-            <div class="cs-trust-pills">
-              <span class="cs-trust-pill">Airbnb · verificação de identidade</span>
-              <span class="cs-trust-pill">Uber · PIN bilateral</span>
-              <span class="cs-trust-pill">TaskRabbit · Happiness Pledge</span>
-            </div>
-            <p>Custo oculto é o principal fator de saída no ecommerce (McKinsey, 2025). A garantia torna a estrutura de custo transparente: o paciente sabe exatamente o que está pagando, para quem, e quando é liberado.</p>
-            <p>Esse também foi o projeto em que atuei como único designer dentro de um time in-house maior: conversa diária com o PM sobre fluxos e regras de negócio, e tanto quanto isso com os desenvolvedores front-end traduzindo as specs em produto. Essa proporção, um designer pra vários engenheiros, foi o que me empurrou a fazer handoffs detalhados o suficiente pra construir a partir deles sem precisar de uma conversa de acompanhamento.</p>
-          </div>
-        </section>
-
-      </div>
     </div>
 
-    <nav class="case-nav" aria-label="Navegação do case">
-      <a href="../" class="case-nav__back label">← Todos os trabalhos</a>
-      <div class="case-nav__adjacent">
-        <a href="../northpay/" class="case-nav__item case-nav__item--prev">
-          <span class="label case-nav__direction">← Anterior</span>
-          <span class="heading-sm case-nav__title">NorthPay</span>
-        </a>
-        <a href="../instivo/" class="case-nav__item case-nav__item--next">
-          <span class="label case-nav__direction">Próximo →</span>
-          <span class="heading-sm case-nav__title">Instivo</span>
-        </a>
-      </div>
-    </nav>
-
-    <a href="../../contact/" class="cta-section" aria-label="Ir para a página de contato | Vamos trabalhar juntos">
-      <p class="cta-section__eyebrow">Vamos conversar</p>
-      <p class="cta-section__headline">Aberto pra próxima posição.<br><em>Vamos conversar.</em></p>
-      <span class="cta-section__arrow" aria-hidden="true">→</span>
-    </a>
-
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner container">
-      <div class="footer__brand">
-        <span class="footer__logo">Cristofolini</span>
-        <p class="footer__copy">© 2026 Dhiego Cristofolini. Baseado no Brasil.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Navegação do rodapé">
-        <a href="../../" class="footer__nav-link">Início</a>
-        <a href="../" class="footer__nav-link">Trabalhos</a>
-        <a href="../../contact/" class="footer__nav-link">Contato</a>
-        <a href="../../politica-de-privacidade/" class="footer__nav-link">Privacidade</a>
-        <div class="footer__socials">
-          <a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" class="footer__nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.behance.net/dhiegopires" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Behance</a>
+    <!-- Nav Bar -->
+    <div class="dsn-nav-bar">
+        <div class="site-header">
+            <div class="extend-container">
+                <div class="inner-header">
+                    <div class="main-logo">
+                        <a href="/pt-br/" aria-label="Dhiego Cristofolini, início">
+                            <img class="dark-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                            <img class="light-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                        </a>
+                    </div>
+                </div>
+                <nav class=" accent-menu main-navigation" aria-label="Menu principal"><ul><li><a href="/pt-br/">Início</a></li><li><a href="/pt-br/work/">Trabalhos</a></li><li><a href="/pt-br/blog/">Insights</a></li><li><a href="/pt-br/sobre/">Sobre</a></li><li><a href="/pt-br/curriculo/">Currículo</a></li><li><a href="/pt-br/contato/">Contato</a></li></ul></nav>
+            </div>
         </div>
-      </nav>
-    </div>
-  </footer>
+        <div class="header-top header-top-hamburger">
+            <div class="header-container">
+                <div class="logo main-logo">
+                    <a href="/pt-br/" aria-label="Dhiego Cristofolini, início">
+                        <img class="dark-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                        <img class="light-logo" src="/assets/img/site/logo.svg" alt="" width="51" height="32">
+                    </a>
+                </div>
 
-  <script src="../../../assets/js/main.js" defer></script>
-</body>
-</html>
+                <div class="menu-icon" data-dsn="parallax" data-dsn-move="5" role="button" tabindex="0" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                    <div class="icon-m">
+                        <i class="menu-icon-close fas fa-times"></i>
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
+
+                    <div class="text-menu">
+                        <div class="text-button">Menu</div>
+                        <div class="text-open">Abrir</div>
+                        <div class="text-close">Fechar</div>
+                    </div>
+                </div>
+
+                <div class="nav" id="site-nav">
+                    <div class="inner">
+                        <div class="nav__content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="inner-content">
+                        <address class="v-middle"><span>Curitiba, Brazil · Remote</span><span><a href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></span><span><a href="/work/medme/" hreflang="en">Read in English</a></span></address>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Nav Bar -->
+
+    <main class="main-root" id="main-content">
+        <div id="dsn-scrollbar">
+            <header>
+                <div class="headefr-fexid" data-dsn-header="project">
+                    <div class="bg" id="dsn-hero-parallax-img" data-dsn-ajax="img">
+                        <div class="bg-image  cover-bg" data-overlay="2" data-image-src="/assets/img/case/medme/hero.webp"></div>
+                    </div>
+
+                    <div class="scroll" data-dsn-animate="ajax">
+                        <span class="background"></span>
+                        <span class="triangle"></span>
+                    </div>
+                    <div class="project-title" id="dsn-hero-parallax-title">
+
+                        <div class="title-text-header">
+                            <div class="cat">
+                                <span>Healthtech · Product design</span>
+                            </div>
+                            <h1 class="title-text-header-inner"><span>MedMe</span></h1>
+                        </div>
+                        <div class="sub-text-header" data-dsn-animate="ajax"><h5>Consultas e exames domiciliares</h5></div>
+                    </div>
+
+                    
+                </div>
+            </header>
+
+            <div class="wrapper">
+                <div class="root-project">
+
+                    <div class="container intro-project section-margin">
+                        <div class="intro-text text-center">
+                            <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1" data-dsn-duration="170%" data-dsn-move="0%">MedMe</div>
+                            <div class="inner">
+                                <h2 data-dsn-animate="text">Ecommerce para clínicas. Agendamento para pessoas.</h2>
+                                <p data-dsn-animate="up">A MedMe é um ecommerce para clínicas, de Curitiba: delivery de remédios, campanhas de saúde e vacinação, serviços de parceiros como teste de visão e distribuição de estoque para clínicas no Paraná. Participei da reestruturação do ecommerce e liderei o design do que me trouxe para a MedMe: o agendamento de consultas e exames, em casa ou na clínica.</p>
+
+                                
+    <dl class="case-meta" data-dsn-animate="up">
+      <div><dt>Papel</dt><dd>Senior Product Designer (contrato)</dd></div><div><dt>Período</dt><dd>Jan – Ago 2025</dd></div><div><dt>Escopo</dt><dd>Agendamento, visitas em casa, pagamento, reestruturação do ecommerce</dd></div><div><dt>Pesquisa</dt><dd>Entrevistas e testes de usabilidade com pacientes e profissionais</dd></div>
+    </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+
+                    
+
+                
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="2000" height="1125" src="/assets/img/case/medme/ctx-sofa.webp" srcset="/assets/img/case/medme/ctx-sofa-1000.webp 1000w, /assets/img/case/medme/ctx-sofa.webp 2000w" sizes="100vw" alt="Uma paciente no sofá agendando exames no app da MedMe" loading="lazy" decoding="async"></div>
+      <figcaption class="container">Exames e consultas agendados do sofá, feitos em casa ou na clínica.</figcaption>
+    </figure>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">01</span>
+      <p class="cs-eyebrow">O problema</p>
+      <h2 class="cs-title" data-dsn-animate="up">Agendar era trabalho do paciente.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Nos concorrentes, a pessoa escolhia a clínica antes de saber se ela fazia tudo o que precisava. Qualquer desencontro significava recomeçar no site de outra clínica, com cadastro novo e nome de exame digitado à mão.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/medme/art-audit-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="793" src="/assets/img/case/medme/art-audit-pt.webp" srcset="/assets/img/case/medme/art-audit-pt-1000.webp 1000w, /assets/img/case/medme/art-audit-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Auditoria comparando a ordem de agendamento dos concorrentes com o fluxo invertido da MedMe" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">02</span>
+      <p class="cs-eyebrow">Pesquisa</p>
+      <h2 class="cs-title" data-dsn-animate="up">Mais de dez conversas, um padrão.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Entrevistei mais de dez pessoas do público-alvo e testei os fluxos com pacientes e profissionais de saúde. O atrito nunca era uma tela: era a ordem das decisões.</p></div>
+      
+      
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">03</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">Primeiro os exames. Depois o horário. Por último a clínica.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">O paciente escolhe casa ou clínica e escaneia ou escolhe os exames. Só então aparecem os horários, e só as clínicas que fazem todos os serviços naquele horário, com preço.</p></div>
+      
+      
+      
+      
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="2000" height="1125" src="/assets/img/case/medme/board-booking.webp" srcset="/assets/img/case/medme/board-booking-1000.webp 1000w, /assets/img/case/medme/board-booking.webp 2000w" sizes="100vw" alt="As cinco telas do agendamento em sequência: horário, unidade, revisão, pagamento, confirmação" loading="lazy" decoding="async"></div>
+      
+    </figure>
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">04</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">Confiança antes de conveniência.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Um profissional na porta de um desconhecido não é uma entrega. Antes de qualquer coisa ir ao ar, cada pergunta que podia quebrar uma visita precisava de uma resposta dentro do produto.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/medme/art-risk-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="1004" src="/assets/img/case/medme/art-risk-pt.webp" srcset="/assets/img/case/medme/art-risk-pt-1000.webp 1000w, /assets/img/case/medme/art-risk-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Mapa de riscos ligando sete perguntas ao mecanismo que responde cada uma" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      
+      
+    </section>
+<section class="cs">
+      <div class="container cs-head">
+    <div class="cs-head__main">
+      <span class="cs-num" aria-hidden="true">05</span>
+      <p class="cs-eyebrow">Decisão</p>
+      <h2 class="cs-title" data-dsn-animate="up">Um token em cada passagem.</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Clínica e profissional trocam tokens antes de o material e o endereço serem liberados. Cliente e profissional trocam códigos na porta. O cliente confirma o fim, e só então a MedMe libera o pagamento que reteve.</p></div>
+      
+      
+    <figure class="cs-artifact container">
+      <a class="cs-artifact__frame" href="/assets/img/case/medme/art-blueprint-pt.webp" target="_blank" rel="noopener">
+        <img width="2000" height="845" src="/assets/img/case/medme/art-blueprint-pt.webp" srcset="/assets/img/case/medme/art-blueprint-pt-1000.webp 1000w, /assets/img/case/medme/art-blueprint-pt.webp 2000w" sizes="(min-width: 1200px) 1140px, 100vw" alt="Service blueprint de uma visita em casa entre cliente, MedMe, clínica e profissional" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Abrir em tamanho real</figcaption>
+    </figure>
+      
+      
+      <div class="cs-pair container"><figure class="cs-fig"><img width="1728" height="2304" src="/assets/img/case/medme/ctx-door.webp" srcset="/assets/img/case/medme/ctx-door-1000.webp 1000w, /assets/img/case/medme/ctx-door.webp 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="Uma paciente na porta confere o código da profissional no app da MedMe" loading="lazy" decoding="async"><figcaption>Na porta: a visita só começa se os códigos baterem.</figcaption></figure><figure class="cs-fig"><img width="1728" height="2304" src="/assets/img/case/medme/ctx-kitchen.webp" srcset="/assets/img/case/medme/ctx-kitchen-1000.webp 1000w, /assets/img/case/medme/ctx-kitchen.webp 2000w" sizes="(min-width: 768px) 50vw, 100vw" alt="O app da MedMe no balcão da cozinha mostrando a profissional a caminho" loading="lazy" decoding="async"><figcaption>Na espera: status ao vivo e como se preparar.</figcaption></figure></div>
+      
+    <figure class="cs-wide">
+      <div class="cs-wide__img"><img width="2000" height="1125" src="/assets/img/case/medme/ctx-hands.webp" srcset="/assets/img/case/medme/ctx-hands-1000.webp 1000w, /assets/img/case/medme/ctx-hands.webp 2000w" sizes="100vw" alt="Uma profissional de luva e uma paciente, cada uma digitando o código da outra" loading="lazy" decoding="async"></div>
+      <figcaption class="container">Cada lado mostra o seu código e digita o do outro.</figcaption>
+    </figure>
+    </section>
+<section class="cs cs--results">
+      <div class="container">
+        <div class="cs-head">
+    <div class="cs-head__main">
+      
+      <p class="cs-eyebrow">Resultados</p>
+      <h2 class="cs-title" data-dsn-animate="up">Mais rápido para agendar. Mais seguro para receber.</h2>
+    </div></div>
+        <ul class="cs-stats cs-stats--results" data-dsn-animate="up"><li><strong>+48%</strong><span>de velocidade no agendamento</span></li><li><strong>+6%</strong><span>de conversão no checkout, medido no primeiro mês</span></li><li><strong>12–14</strong><span>campos no checkout, antes eram mais de 20, com revelação progressiva</span></li><li><strong>+10</strong><span>pessoas do público-alvo entrevistadas</span></li><li><strong>3</strong><span>níveis de custódia de pagamento e segurança</span></li><li><strong>+4</strong><span>APIs usadas e documentadas</span></li></ul>
+        
+        
+      </div>
+    </section></div>
+
+                <div class="next-project" data-dsn-footer="project">
+                    <div id="dsn-next-parallax-img" class="bg">
+                        <div class="bg-image cover-bg" data-overlay="4" data-image-src="/assets/img/cards/instivo.webp"></div>
+                    </div>
+
+                    <div id="dsn-next-parallax-title" class="project-title">
+                        <a href="/pt-br/work/instivo/" class="">
+                            <div class="title-text-header">
+                                <div class="title-text-header-inner">
+                                    <span>Instivo</span>
+                                </div>
+                            </div>
+                            <div class="sub-text-header">
+                                <h5>Próximo projeto</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                <div class="container">
+                    <div class="footer-links p-relative">
+                        <div class="row">
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block">
+                                    <div class="footer-logo">
+                                        <a href="/pt-br/" aria-label="Dhiego Cristofolini, início"><img src="/assets/img/site/logo.svg" alt="" width="51" height="32"></a>
+                                    </div>
+
+                                    <div class="footer-social">
+
+                                        <ul><li><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li><li><a href="https://behance.net/dhiegopires" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a></li><li><a href="https://www.instagram.com/dhiegopires/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="https://github.com/Dhiegopires" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li></ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-menu">
+                                    <h4 class="footer-title">Navegação</h4>
+                                    <nav>
+                                        <ul><li><a href="/pt-br/work/">Trabalhos</a></li><li><a href="/pt-br/blog/">Insights</a></li><li><a href="/pt-br/sobre/">Sobre</a></li><li><a href="/pt-br/curriculo/">Currículo</a></li><li><a href="/pt-br/contato/">Contato</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="footer-block col-contact">
+                                    <h4 class="footer-title">Contato</h4>
+                                    
+                                    
+                                    
+                                <p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="dhiegopiresc@gmail.com" href="mailto:dhiegopiresc@gmail.com">dhiegopiresc@gmail.com</a></p><p><strong>Idioma</strong> <span>:</span> <a href="/work/medme/">English</a></p></div>
+                            </div>
+
+                            <div class="col-md-3 dsn-col-footer">
+                                <div class="col-address">
+                                    <h4 class="footer-title">Onde</h4>
+
+                                    <p>Curitiba, Brazil<br>Remoto, qualquer fuso</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 2026 Cristofolini. Todos os direitos reservados.</p>
+                            <div class="copright-text over-hidden"><a href="/pt-br/politica-de-privacidade/">Política de Privacidade</a> · <a href="/pt-br/termos-de-uso/">Termos de Uso</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- Wait Loader -->
+    <div class="wait-loader">
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <div class="loader-layer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- // Wait Loader -->
+
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+    <!-- End cursor -->
+
+    <!-- Optional JavaScript -->
+    <script src="/assets/tpl/js/jquery-3.1.1.min.js?v=042dd055"></script>
+    <script src="/assets/tpl/js/plugins.js?v=790b3aee"></script>
+    <script src="/assets/tpl/js/dsn-grid.js?v=0b65055c"></script>
+    <script src="/assets/tpl/js/custom.js?v=5a73715e"></script><script src="/assets/tpl/js/addons.js?v=753d91a5"></script>
+
+
+</body></html>
