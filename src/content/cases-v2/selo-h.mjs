@@ -1,5 +1,5 @@
 // Selo H case. Source: the existing case content (Dhiego's) and the résumé
-// (+50% conversion). Screens captured from the live site seloh.org; scenes
+// (+65% conversion). Screens captured from the live site seloh.org; scenes
 // generated in Magnific (Seedream 5 Pro) with the real screens composited in.
 export default {
   slug: 'selo-h',
@@ -53,7 +53,7 @@ export default {
       title: 'Measured in the first 30 days. No ads, no outreach.',
       stats: [
         ['5×', 'more leads than the pre-launch baseline'],
-        ['+50%', 'conversion rate'],
+        ['+65%', 'conversion rate'],
         ['−40%', 'bounce rate'],
         ['2.3×', 'time on page'],
         ['1.4 s', 'LCP, down from 4.8 s'],
@@ -111,7 +111,7 @@ export default {
       title: 'Medidos nos primeiros 30 dias. Sem anúncio, sem prospecção.',
       stats: [
         ['5×', 'mais leads que a linha de base anterior'],
-        ['+50%', 'de taxa de conversão'],
+        ['+65%', 'de taxa de conversão'],
         ['−40%', 'de taxa de rejeição'],
         ['2,3×', 'de tempo na página'],
         ['1,4 s', 'de LCP, antes 4,8 s'],
