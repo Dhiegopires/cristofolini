@@ -54,7 +54,7 @@ export const homePage = (lang) => {
   intro.find('h2').html(`${t.hello.title[0]} <br> ${t.hello.title[1]}`);
   intro.find('.intro-content-text > p').first().text(t.hello.p.join(' '));
   intro.find('h6').text('Dhiego Cristofolini');
-  intro.find('small').text('Senior Product Designer');
+  intro.find('small').text(pt ? 'Product Designer Sênior' : 'Senior Product Designer');
   intro.find('.numb-ex .word').text('7');
   intro.find('.exper h4').html(pt ? 'ANOS DE <br> DESIGN DE PRODUTO' : 'YEARS OF <br> PRODUCT DESIGN');
   intro.find('.background-mask img').attr({ src: '/assets/img/site/hello.webp', alt: t.hello.alt, width: 640, height: 640, loading: 'lazy', decoding: 'async' });

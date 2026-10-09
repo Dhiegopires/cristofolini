@@ -1,5 +1,5 @@
 {
- "title": "Design tokens vs. hardcoded values: the audit that actually finds what's leaking through",
+ "title": "Design tokens vs. hardcoded values: the audit that finds the leaks",
  "seoTitle": "Design tokens vs. hardcoded values | Dhiego",
  "description": "Where hardcoded hex and pixel values hide in a codebase with a token file, the grep commands that find them, and how to make the audit a permanent gate.",
  "tag": "Design Systems",

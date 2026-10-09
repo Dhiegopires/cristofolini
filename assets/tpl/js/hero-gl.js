@@ -7,6 +7,16 @@
 (function () {
   var canvas = document.querySelector('[data-hero-gl]');
   if (!canvas) return;
+  // Start after the page has loaded and the main thread is idle, so shader
+  // compilation never competes with the first paint.
+  var go = function () {
+    if (window.requestIdleCallback) requestIdleCallback(init, { timeout: 1500 });
+    else setTimeout(init, 200);
+  };
+  if (document.readyState === 'complete') go();
+  else window.addEventListener('load', go);
+
+  function init() {
   var gl = canvas.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'low-power' });
   if (!gl || !gl.getExtension('OES_standard_derivatives')) return;
 
@@ -76,7 +86,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var coarse = window.matchMedia('(pointer: coarse)').matches;
   // Render scale: the field is soft, so a fraction of the CSS size upscales cleanly.
-  var scale = coarse ? 0.6 : 0.7;
+  var scale = coarse ? 0.45 : 0.7;
 
   function resize() {
     var w = Math.max(1, Math.round(canvas.clientWidth * scale));
@@ -151,4 +161,5 @@
 
   canvas.classList.add('is-ready');
   loop();
+  }
 })();

@@ -34,7 +34,7 @@ const callout = ($, { href, small, big }) => {
 };
 
 /* ---------- Generic shell from contact.html ---------- */
-export const shellPage = ({ lang, title, description, path, alt, eyebrow, h1, lead, body, up, bodyClass = '', noindex = false, ld = [], image }) => {
+export const shellPage = ({ lang, title, description, path, alt, eyebrow, h1, h1Hidden, lead, body, up, bodyClass = '', noindex = false, ld = [], image }) => {
   const $ = loadTemplate('contact.html');
   footerFromIndex($);
   fillChrome($, { lang, title, description, path, alt });
@@ -47,6 +47,10 @@ export const shellPage = ({ lang, title, description, path, alt, eyebrow, h1, le
   hero.find('h5').text(eyebrow || '');
   if (!eyebrow) hero.find('h5').remove();
   hero.find('h1').text(h1);
+  if (h1Hidden) {
+    hero.find('h1').prepend(`<span class="visually-hidden">${esc(h1Hidden)} </span>`);
+    hero.find('h5').attr('aria-hidden', 'true');
+  }
   if (lead) hero.append(`<p>${esc(lead)}</p>`);
   hero.closest('.col-lg-6').removeClass('col-lg-6').addClass('col-lg-9');
   $('.root-contact').replaceWith(`<div class="root-content container section-margin"><div class="content-body">${body}</div></div>`);
@@ -251,7 +255,7 @@ export const resumePage2 = (lang) => {
     .replace(/<h1 class="resume-header__name">([\s\S]*?)<\/h1>/, '<p class="resume-header__name">$1</p>');
   return shellPage({
     lang, title: d.seoTitle, description: d.description, path: ROUTES[lang].resume, alt: ROUTES[other(lang)].resume,
-    eyebrow: pt ? 'Currículo' : 'Résumé', h1: 'Dhiego Cristofolini', lead: pt ? 'Senior Product Designer · Curitiba, Brasil · Remoto' : 'Senior Product Designer · Curitiba, Brazil · Remote',
+    eyebrow: pt ? 'Currículo' : 'Résumé', h1: 'Dhiego Cristofolini', h1Hidden: pt ? 'Currículo:' : 'Résumé:', lead: pt ? 'Senior Product Designer · Curitiba, Brasil · Remoto' : 'Senior Product Designer · Curitiba, Brazil · Remote',
     body: actions + htmlBody, bodyClass: 'page-resume',
     ld: [{ '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: 'Dhiego Cristofolini', jobTitle: 'Senior Product Designer', url: SITE.url + '/' } }],
     up: { href: ROUTES[lang].contact, small: pt ? 'Vamos conversar' : 'Let’s talk', big: pt ? 'Entre em contato' : 'Get in touch' },

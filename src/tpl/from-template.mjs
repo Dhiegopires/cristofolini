@@ -89,7 +89,7 @@ export const fillChrome = ($, { lang, title, description, path, alt, image = '/a
   $('.menu-icon .text-open').text(t.open);
   $('.menu-icon .text-close').text(t.close);
   $('.header-top .nav').attr('id', 'site-nav');
-  $('.nav-content address').html(`<span>Curitiba, Brazil · Remote</span><span><a href="mailto:${SITE.email}">${SITE.email}</a></span><span><a href="${alt || ROUTES[other].home}" hreflang="${other === 'pt' ? 'pt-BR' : 'en'}">${t.switchLang}</a></span>`);
+  $('.nav-content address').html(`<span>${lang === 'pt' ? 'Curitiba, Brasil · Remoto' : 'Curitiba, Brazil · Remote'}</span><span><a href="mailto:${SITE.email}">${SITE.email}</a></span><span><a href="${alt || ROUTES[other].home}" hreflang="${other === 'pt' ? 'pt-BR' : 'en'}">${t.switchLang}</a></span>`);
 
   // Footer: template columns, our info
   const footer = $('footer.footer');
@@ -111,7 +111,7 @@ export const fillChrome = ($, { lang, title, description, path, alt, image = '/a
   footer.find('.col-contact').find('p').remove();
   footer.find('.col-contact').append(`<p><strong>E</strong> <span>:</span> <a class="link-hover" data-hover-text="${SITE.email}" href="mailto:${SITE.email}">${SITE.email}</a></p><p><strong>${lang === 'pt' ? 'Idioma' : 'Lang'}</strong> <span>:</span> <a href="${alt || ROUTES[other].home}">${other === 'pt' ? 'Português' : 'English'}</a></p>`);
   footer.find('.col-address .footer-title').text(lang === 'pt' ? 'Onde' : 'Based in');
-  footer.find('.col-address p').html(`Curitiba, Brazil<br>${lang === 'pt' ? 'Remoto, qualquer fuso' : 'Remote, any time zone'}`);
+  footer.find('.col-address p').html(`${lang === 'pt' ? 'Curitiba, Brasil' : 'Curitiba, Brazil'}<br>${lang === 'pt' ? 'Remoto, qualquer fuso' : 'Remote, any time zone'}`);
   footer.find('.copyright p').first().text(t.rights);
   footer.find('.copright-text').html(`<a href="${r.privacy}">${t.privacy}</a> · <a href="${r.terms}">${t.terms}</a>`);
 
@@ -148,7 +148,24 @@ const bust = ($) => {
   });
 };
 
+// The template uses h4-h6 for labels (card category, hero subtitle, intro
+// signature, years label): keep the look, drop the heading semantics so the
+// outline goes h1 > h2 > h3 without skips. Footer column titles are real
+// section labels, announced as level 2.
+const headingSemantics = ($) => {
+  $('h5.cat, .sub-text-header h5, .intro-about h6, .exper h4, .services-item h4').attr('role', 'none');
+  $('footer .footer-title').attr('aria-level', '2');
+  // Card and tile titles sit one level under their section heading.
+  $('.our-work .item-info h4, .brand-client .logo-box .entry h5').attr('aria-level', '3');
+  $('.projects-list .item-info h4').attr('aria-level', '2');
+  // Contact page: the two column titles are sections of the page (h2),
+  // the direct-contact line belongs to the first.
+  $('.box-info-contact > h3, .form-box > h3').attr('aria-level', '2');
+  $('.box-info-contact > h5').attr('aria-level', '3');
+};
+
 export const html = ($) => {
+  headingSemantics($);
   bust($);
   return '<!DOCTYPE html>\n' + $.html().replace(/^<!DOCTYPE html>\s*/i, '');
 };

@@ -1,5 +1,5 @@
 {
- "title": "Tokens de design vs. valores hardcoded: a auditoria que realmente encontra o que está vazando",
+ "title": "Tokens vs. valores hardcoded: a auditoria que encontra o vazamento",
  "seoTitle": "Tokens de design vs. valores hardcoded | Dhiego",
  "description": "Onde hex e pixels hardcoded se escondem num código com tokens, os comandos grep que acham isso, e como virar a auditoria num bloqueio permanente.",
  "tag": "Design Systems",

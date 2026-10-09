@@ -123,11 +123,15 @@
         } );
 
 
-        wind.on( "load", function () {
-
+        // Reveal on load, but never hold the page longer than 1.2s
+        // (slow images or analytics should not delay the first paint).
+        var revealed = false;
+        function reveal() {
+            if ( revealed ) return;
+            revealed = true;
             clearInterval( timer );
 
-            TweenMax.fromTo( preloader_progress, .5, { width : "95%" }, {
+            TweenMax.fromTo( preloader_progress, .25, { width : "95%" }, {
                 width : "100%",
                 onUpdate : function () {
                     var f = preloader_progress.width() / preloader_progress.parent().width() * 100;
@@ -135,20 +139,22 @@
 
                 },
                 onComplete : function () {
-                    TweenMax.to( preloader_bar, .5, { left : "100%" } );
-                    TweenMax.to( progress_title, 1, { autoAlpha : 0, y : -100 } );
-                    TweenMax.to( progress_loading, 1, { autoAlpha : 0, y : 100 } );
-                    TweenMax.to( progress_number, 1, { autoAlpha : 0 } );
+                    TweenMax.to( preloader_bar, .3, { left : "100%" } );
+                    TweenMax.to( progress_title, .5, { autoAlpha : 0, y : -100 } );
+                    TweenMax.to( progress_loading, .5, { autoAlpha : 0, y : 100 } );
+                    TweenMax.to( progress_number, .5, { autoAlpha : 0 } );
 
-                    TweenMax.to( preloader_before, 1, { y : "-100%", delay : .7 } );
-                    TweenMax.to( preloader_after, 1, {
-                        y : "100%", delay : .7, onComplete : function () {
+                    TweenMax.to( preloader_before, .6, { y : "-100%", delay : .3 } );
+                    TweenMax.to( preloader_after, .6, {
+                        y : "100%", delay : .3, onComplete : function () {
                             preloader.addClass( "hidden" );
                         },
                     } );
                 },
             } );
-        } );
+        }
+        wind.on( "load", reveal );
+        setTimeout( reveal, 1200 );
 
 
     }

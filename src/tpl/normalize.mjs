@@ -5,6 +5,8 @@ export const normalizeBody = (html) =>
     .replace(/font-family="'DM Sans',sans-serif"/g, 'font-family="Geist, sans-serif"')
     .replace(/font-family="'?IBM Plex Mono'?,monospace"/g, `font-family="'Geist Mono', monospace"`)
     .replace(/<img(?![^>]*\bdecoding=)/g, '<img decoding="async"')
+    // Demo inputs are static examples with no visible label of their own
+    .replace(/<input (?![^>]*aria-label)([^>]*class="demo-field-states__input)/g, '<input aria-label="Email" $1')
     .replace(/<code([^>]*)>([\s\S]*?)<\/code>/g, (m, a, b) => `<code${a}>${b.replace(/"/g, '&quot;')}</code>`)
     // Markdown-style inline code (one article uses it): escape and wrap, so
     // samples like <main> show as text instead of becoming real elements.

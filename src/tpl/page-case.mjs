@@ -43,8 +43,10 @@ export const casePageV2 = (spec, lang) => {
   const hero = $('.headefr-fexid').first();
   hero.find('.bg-image').attr('data-image-src', spec.hero.src).attr('data-overlay', '2');
   hero.find('.cat span').text(c.cat);
-  hero.find('.title-text-header-inner').replaceWith(`<h1 class="title-text-header-inner"><span>${esc(c.title)}</span></h1>`);
-  hero.find('.sub-text-header').html(`<h5>${esc(c.sub)}</h5>`);
+  // H1 carries the localized subtitle (hidden; it is shown just below), so
+  // the EN and PT pages never share an identical H1.
+  hero.find('.title-text-header-inner').replaceWith(`<h1 class="title-text-header-inner"><span>${esc(c.title)}</span><span class="visually-hidden">: ${esc(c.sub)}</span></h1>`);
+  hero.find('.sub-text-header').html(`<h5 aria-hidden="true">${esc(c.sub)}</h5>`);
   hero.find('.project-page__inner').remove();
 
   /* Intro + project facts */

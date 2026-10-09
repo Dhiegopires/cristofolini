@@ -93,7 +93,7 @@
   padding: 1rem 1.25rem;
   background: var(--c-surface-note);
   border: 1px solid var(--c-line-note);
-  font-size: 0.9375rem;
+  font-size: 16px;
   color: var(--c-note-text);
 }
 
@@ -169,6 +169,7 @@
   --c-hero-1: #17120a;
   --c-hero-glow: rgba(252, 192, 0, 0.16);
   --c-hero-shade: rgba(0, 0, 0, 0.7);
+  --c-hero-shade-strong: rgba(0, 0, 0, 0.86);
   --c-text-soft: rgba(255, 255, 255, 0.84);
   --c-text-halo: rgba(0, 0, 0, 0.85);
   --c-pill-line: rgba(255, 255, 255, 0.28);
@@ -332,7 +333,7 @@
   flex-wrap: wrap;
   gap: 4px 14px;
   margin: 0 0 14px;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--c-news-muted);
@@ -375,7 +376,7 @@
 .our-news .item-new .news-read {
   margin-top: auto;
   padding-top: 24px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -451,7 +452,7 @@
 }
 .form-box .help-block {
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--c-error);
 }
 .form-box .has-error input,
@@ -484,7 +485,7 @@
   border-radius: 40px;
   background: var(--c-accent);
   color: var(--c-on-accent);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -557,7 +558,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, var(--c-text-halo) 0%, var(--c-hero-shade) 45%, var(--c-hero-shade) 100%);
+  background: linear-gradient(0deg, var(--c-text-halo) 0%, var(--c-hero-shade-strong) 60%, var(--c-hero-shade) 100%);
   pointer-events: none;
 }
 @media only screen and (min-width: 768px) {
@@ -655,7 +656,7 @@
 }
 .case-meta dt {
   margin-bottom: 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -663,7 +664,7 @@
 }
 .case-meta dd {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--c-text-soft);
 }
@@ -707,7 +708,7 @@
 }
 .cs-eyebrow {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -776,7 +777,7 @@
 .cs-fig figcaption,
 .cs-artifact figcaption {
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--c-text-soft);
 }
@@ -822,7 +823,11 @@
 /* Split section */
 .cs-split {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 48px;
+}
+.cs-split > * {
+  min-width: 0;
 }
 .cs-split__copy .cs-text {
   margin-top: 28px;
@@ -890,12 +895,18 @@
 .cs-stats span {
   display: block;
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--c-text-soft);
 }
 .cs-stats--grid {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.cs-stats--grid li {
+  padding: 28px 20px;
+}
+.cs-stats--grid strong {
+  font-size: 34px;
 }
 @media only screen and (min-width: 992px) {
   .cs-stats {
@@ -929,11 +940,11 @@
   align-items: baseline;
   gap: 8px 20px;
   margin-bottom: 24px;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--c-text-soft);
 }
 .cs-board__label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -946,7 +957,7 @@
 }
 .cs-source {
   margin: 20px 0 0;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--c-news-muted);
 }
 .cs-links {
@@ -1224,7 +1235,7 @@
 .newsletter label {
   display: block;
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--c-text-soft);
@@ -1277,7 +1288,7 @@
 }
 .newsletter .help-block {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--c-error);
 }
 .newsletter .help-block:empty,
@@ -1293,7 +1304,7 @@
 }
 .newsletter__legal {
   margin: 16px 0 0;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--c-prose-muted);
 }
 .newsletter__legal a {
@@ -1352,7 +1363,7 @@
   border-radius: 40px;
   background: transparent;
   color: var(--c-heading);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
@@ -1404,7 +1415,7 @@
 }
 .form-box .form-legal {
   margin: 20px 0 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--c-prose-muted);
 }
@@ -1415,4 +1426,104 @@
 }
 .form-box .form-legal a:hover {
   color: var(--c-accent-hi);
+}
+
+/* --------------------------------------------------------------------------
+   Readability floor (methodology 6.6): running text never under 16px,
+   uppercase micro-labels never under 14px. The template sets html/body to
+   15px and its labels, footer and meta lines to 11-13px.
+-------------------------------------------------------------------------- */
+html,
+body {
+  font-size: 16px;
+}
+p,
+.services-item p,
+.box-info-contact h5,
+.box-info-contact p,
+.box-info-contact ul li a,
+.form-box label,
+.client-see .label .cell,
+.brand-client .wapper-client .logo-box .entry h5,
+.brand-client .wapper-client .logo-box .entry p,
+.brand-client .wapper-client .logo-box .entry a,
+.project-title .sub-text-header h5,
+.next-project .sub-text-header h5,
+.contact-up .c-wapp .career,
+.header-single-post .post-info,
+.header-single-post .post-info .blog-post-date,
+.header-single-post .post-info .blog-post-cat,
+.root-blog .post-info-top span,
+.root-blog .post-info-top time {
+  font-size: 16px;
+}
+.footer .footer-links .footer-block.col-menu ul li,
+.footer .footer-links .footer-block.col-menu ul li a,
+.footer .footer-links .footer-block.col-contact p,
+.footer .footer-links .footer-block p,
+.footer .copyright,
+.footer .copyright p,
+.footer .copyright .copright-text,
+.footer .copyright .copright-text a,
+.one-title .title-sub,
+.title-text-header .cat span,
+.item-info .cat,
+.item-info span span,
+.link-custom a span,
+.box-info-contact ul li span {
+  font-size: 14px;
+}
+/* Same floor where the template's selectors are more specific */
+.headefr-fexid .project-title .sub-text-header h5,
+.contact-up .c-wapp a .career,
+.header-single-post .inner-box .post-info .dsn-link,
+.header-single-post .inner-box .post-info span,
+.header-single-post .inner-box .post-info time,
+.footer .copyright .copright-text,
+.footer .copyright .copright-text a,
+.cookie-note button {
+  font-size: 16px;
+}
+.footer .footer-links .footer-block p a,
+.one-title .title-sub-container .title-sub,
+.headefr-fexid .project-title .title-text-header .cat span,
+.work-under-header .work-item .item-info .cat,
+.work-under-header .work-item .item-info span,
+.root-work .projects-list .item a .item-info .cat,
+.root-work .projects-list .item a .item-info span {
+  font-size: 14px;
+}
+
+/* Text for assistive tech and crawlers only */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Footer contact lines: the email is one long word; with the template's
+   2px tracking at 14px it ran into the next column. */
+.footer .footer-links .footer-block p,
+.footer .footer-links .footer-block p a {
+  letter-spacing: 0.5px;
+  overflow-wrap: anywhere;
+}
+.footer .footer-links .footer-block.col-contact p a.link-hover {
+  text-transform: none;
+  font-size: 16px;
+}
+/* Pill links: 4px tracking at 14px makes long labels ("Documentação do
+   produto") wider than a phone; tighter on small screens. */
+.link-custom a span {
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .link-custom a span {
+    letter-spacing: 4px;
+  }
 }
