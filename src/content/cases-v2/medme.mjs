@@ -60,7 +60,7 @@ export default {
       title: 'Faster to book. Safer to receive.',
       text: 'The checkout figures come from the ecommerce restructure: progressive disclosure and fewer fields, measured in the first month after launch.',
       stats: [
-        ['+48%', 'faster booking'],
+        ['+48%', 'faster booking in usability tests'],
         ['+6%', 'checkout conversion, measured in the first month'],
         ['12–14', 'checkout fields, down from 20+, with progressive disclosure'],
         ['+10', 'target users interviewed'],
@@ -123,7 +123,7 @@ export default {
       title: 'Mais rápido para agendar. Mais seguro para receber.',
       text: 'Os números do checkout vêm da reestruturação do ecommerce: revelação progressiva e menos campos, medidos no primeiro mês após o lançamento.',
       stats: [
-        ['+48%', 'de velocidade no agendamento'],
+        ['+48%', 'de velocidade no agendamento, em testes de usabilidade'],
         ['+6%', 'de conversão no checkout, medido no primeiro mês'],
         ['12–14', 'campos no checkout, antes eram mais de 20, com revelação progressiva'],
         ['+10', 'pessoas do público-alvo entrevistadas'],

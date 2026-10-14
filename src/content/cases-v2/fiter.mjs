@@ -36,7 +36,11 @@ export default {
         type: 'section', num: '02', sub: 'Decision', title: 'Two buyers, two paths.',
         text: 'An HR director and a university dean search for different things. One page can’t rank for both, so each ecosystem got its own pages, intent and CTA inside the same domain.',
         artifact: { img: 'art-journeys', alt: 'HR and Education buyer journeys from search to conversion' },
-        wide: { img: 'ctx-library', alt: 'Fiter’s engagement dashboard on a laptop in a university library', caption: 'The Education path: built for a different buyer, on the same domain authority.' },
+        pairEven: true,
+        pair: [
+          { img: 'ctx-hr', alt: 'An HR director at night with the Fiter HR page open on her laptop', caption: 'The HR path: climate and turnover, for a people manager.' },
+          { img: 'ctx-library', alt: 'Fiter’s engagement dashboard on a laptop in a university library', caption: 'The Education path: a different buyer, the same domain authority.' },
+        ],
       },
       {
         type: 'section', num: '03', sub: 'Architecture', title: 'Sixteen pages, three clusters.',
@@ -98,7 +102,11 @@ export default {
         type: 'section', num: '02', sub: 'Decisão', title: 'Dois compradores, dois caminhos.',
         text: 'Um diretor de RH e um gestor acadêmico buscam coisas diferentes. Uma página não ranqueia para os dois, então cada ecossistema ganhou suas páginas, intenção e CTA, dentro do mesmo domínio.',
         artifact: { img: 'art-journeys', alt: 'Jornadas de compra de RH e Educação, da busca à conversão' },
-        wide: { img: 'ctx-library', alt: 'O painel de engajamento da Fiter num notebook numa biblioteca universitária', caption: 'O caminho de Educação: feito para outro comprador, com a mesma autoridade de domínio.' },
+        pairEven: true,
+        pair: [
+          { img: 'ctx-hr', alt: 'Uma diretora de RH à noite com a página de RH da Fiter aberta no notebook', caption: 'O caminho de RH: clima e turnover, para quem gere pessoas.' },
+          { img: 'ctx-library', alt: 'O painel de engajamento da Fiter num notebook numa biblioteca universitária', caption: 'O caminho de Educação: outro comprador, a mesma autoridade de domínio.' },
+        ],
       },
       {
         type: 'section', num: '03', sub: 'Arquitetura', title: 'Dezesseis páginas, três grupos.',

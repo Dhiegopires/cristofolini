@@ -36,6 +36,7 @@ export default {
         type: 'section', num: '03', sub: 'Decision', title: 'Outcome first, proof where it decides.',
         text: 'The hero leads with what the buyer wants, legal anchors sit right under it, each step explains why it exists, and certified companies close the page right before the form.',
         artifact: { img: 'art-sequence', alt: 'Section order before and after the redesign' },
+        wide: { img: 'ctx-phones', alt: 'Three phones on a conference table showing the Selo H hero, its legal anchors and the request form', caption: 'Hero, legal anchors, request form: the same order on the phone.' },
       },
       {
         type: 'section', layout: 'split', num: '04', sub: 'Decision', title: 'One action, from hero to footer.',
@@ -51,8 +52,9 @@ export default {
     results: {
       sub: 'Results',
       title: 'Measured in the first 30 days. No ads, no outreach.',
+      text: 'Compared against the old site’s own analytics, before the domain lapsed.',
       stats: [
-        ['5×', 'more leads than the pre-launch baseline'],
+        ['5×', 'more leads than the old site'],
         ['+65%', 'conversion rate'],
         ['−40%', 'bounce rate'],
         ['2.3×', 'time on page'],
@@ -94,6 +96,7 @@ export default {
         type: 'section', num: '03', sub: 'Decisão', title: 'Primeiro o resultado, prova onde se decide.',
         text: 'O hero abre com o que o comprador quer, as âncoras legais ficam logo abaixo, cada passo explica por que existe, e as empresas certificadas fecham a página logo antes do formulário.',
         artifact: { img: 'art-sequence', alt: 'Ordem das seções antes e depois do redesign' },
+        wide: { img: 'ctx-phones', alt: 'Três celulares numa mesa de reunião mostrando o hero do Selo H, as âncoras legais e o formulário de pedido', caption: 'Hero, âncoras legais, formulário: a mesma ordem no celular.' },
       },
       {
         type: 'section', layout: 'split', num: '04', sub: 'Decisão', title: 'Uma ação, do hero ao rodapé.',
@@ -109,8 +112,9 @@ export default {
     results: {
       sub: 'Resultados',
       title: 'Medidos nos primeiros 30 dias. Sem anúncio, sem prospecção.',
+      text: 'Comparados com o analytics do próprio site antigo, antes de o domínio expirar.',
       stats: [
-        ['5×', 'mais leads que a linha de base anterior'],
+        ['5×', 'mais leads que o site antigo'],
         ['+65%', 'de taxa de conversão'],
         ['−40%', 'de taxa de rejeição'],
         ['2,3×', 'de tempo na página'],

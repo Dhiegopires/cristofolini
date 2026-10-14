@@ -22,7 +22,7 @@ export default {
     meta: [
       ['Role', 'Design Lead'],
       ['Team', 'Solo design, 2 engineers, 2 co-founders'],
-      ['Client', 'Ensight · 2020'],
+      ['Client', 'Ensight · 2019–2021'],
       ['Platform', 'iOS 10+ · Android 4.4+, then web'],
     ],
     blocks: [
@@ -117,7 +117,7 @@ export default {
     meta: [
       ['Papel', 'Design Lead'],
       ['Time', 'Design solo, 2 devs, 2 co-fundadores'],
-      ['Cliente', 'Ensight · 2020'],
+      ['Cliente', 'Ensight · 2019–2021'],
       ['Plataforma', 'iOS 10+ · Android 4.4+, depois web'],
     ],
     blocks: [

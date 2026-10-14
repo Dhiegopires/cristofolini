@@ -37,7 +37,7 @@ export default {
       },
       {
         type: 'section', num: '03', sub: 'Wireframes', title: 'One job per screen.',
-        text: 'Low fidelity locked structure and order first. A rejected version put the account toggle next to the first fields; people switched type and lost their data. Separating the decision from the data is a data-loss prevention pattern, not a preference.',
+        text: 'Low fidelity locked structure and order first. A rejected version put the account toggle next to the first fields; switching type there would wipe everything already typed. Separating the decision from the data is a data-loss prevention pattern, not a preference.',
         layout: 'split', portrait: { img: 'wireframes', alt: 'Low-fidelity wireframes of the onboarding steps' },
       },
       {
@@ -114,7 +114,7 @@ export default {
       },
       {
         type: 'section', num: '03', sub: 'Wireframes', title: 'Uma tarefa por tela.',
-        text: 'A baixa fidelidade travou estrutura e ordem primeiro. Uma versão descartada colocava a escolha de conta ao lado dos primeiros campos; as pessoas trocavam de tipo e perdiam os dados. Separar a decisão dos dados é um padrão contra perda de dados, não preferência.',
+        text: 'A baixa fidelidade travou estrutura e ordem primeiro. Uma versão descartada colocava a escolha de conta ao lado dos primeiros campos; trocar de tipo ali apagaria tudo o que já foi digitado. Separar a decisão dos dados é um padrão contra perda de dados, não preferência.',
         layout: 'split', portrait: { img: 'wireframes', alt: 'Wireframes de baixa fidelidade das etapas do onboarding' },
       },
       {
