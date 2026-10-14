@@ -54,6 +54,11 @@ export default {
         ],
         wide2: { img: 'ctx-hands', alt: 'A gloved professional and a patient each holding a phone, each entering the other’s code', caption: 'Each side shows its own code and enters the other’s.' },
       },
+      {
+        type: 'section', num: '06', sub: 'Decision', title: 'Show the total. Hide the rest.',
+        text: 'Payment opens with one number, two switches, one coupon field and three ways to pay. The breakdown, what the balance covers and the CPF field open only when someone asks for them.',
+        artifact: { img: 'art-disclosure', alt: 'The MedMe payment step closed and open: total, balance switch, coupon and CPF, and the breakdown each one reveals on request' },
+      },
     ],
     results: {
       sub: 'Results',
@@ -116,6 +121,11 @@ export default {
           { img: 'ctx-kitchen', alt: 'O app da MedMe no balcão da cozinha mostrando a profissional a caminho', caption: 'Na espera: status ao vivo e como se preparar.' },
         ],
         wide2: { img: 'ctx-hands', alt: 'Uma profissional de luva e uma paciente, cada uma digitando o código da outra', caption: 'Cada lado mostra o seu código e digita o do outro.' },
+      },
+      {
+        type: 'section', num: '06', sub: 'Decisão', title: 'Mostrar o total. Esconder o resto.',
+        text: 'O pagamento abre com um número, duas chaves, um campo de cupom e três formas de pagar. O detalhamento, o que o saldo cobre e o campo de CPF só abrem quando a pessoa pede.',
+        artifact: { img: 'art-disclosure', alt: 'A etapa de pagamento da MedMe fechada e aberta: total, chave de saldo, cupom e CPF, e o detalhe que cada um revela quando pedido' },
       },
     ],
     results: {
