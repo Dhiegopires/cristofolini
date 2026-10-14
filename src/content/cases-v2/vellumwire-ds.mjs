@@ -18,7 +18,7 @@ export default {
     meta: [
       ['Role', 'Product Designer'],
       ['Type', 'Internal design system'],
-      ['Used in', 'Instivo and client work'],
+      ['Origin', 'Instivo, 2023; now the base of every Vellumwire build'],
       ['Team', 'Afonso, implementation and hosting'],
     ],
     blocks: [
@@ -61,7 +61,7 @@ export default {
     results: {
       sub: 'In production',
       title: 'Tested where it can break: real builds.',
-      text: 'Refined under pressure on Instivo, including a mobile view that was never in scope. Afonso implements and hosts each build, which is what proves a layer holds.',
+      text: 'The architecture started on Instivo in 2023, where it absorbed a mobile view that was never in scope. It became the base of every Vellumwire build, which Afonso implements and hosts: that is what proves a layer holds.',
       stats: [
         ['4', 'layers: Core, Palette, Brand, Semantic'],
         ['8', 'color ramps built before any client'],
@@ -84,7 +84,7 @@ export default {
     meta: [
       ['Papel', 'Product Designer'],
       ['Tipo', 'Design system interno'],
-      ['Usado em', 'Instivo e projetos de clientes'],
+      ['Origem', 'Instivo, 2023; hoje a base de todo build da Vellumwire'],
       ['Time', 'Afonso, implementação e hospedagem'],
     ],
     blocks: [
@@ -127,7 +127,7 @@ export default {
     results: {
       sub: 'Em produção',
       title: 'Testado onde pode quebrar: em builds reais.',
-      text: 'Refinado sob pressão na Instivo, incluindo uma tela mobile que nunca esteve no escopo. O Afonso implementa e hospeda cada build, e é isso que prova que uma camada aguenta.',
+      text: 'A arquitetura começou na Instivo em 2023, onde absorveu uma tela mobile que nunca esteve no escopo. Virou a base de todo build da Vellumwire, que o Afonso implementa e hospeda: é isso que prova que uma camada aguenta.',
       stats: [
         ['4', 'camadas: Core, Palette, Brand, Semantic'],
         ['8', 'rampas de cor prontas antes de qualquer cliente'],

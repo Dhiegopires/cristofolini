@@ -58,12 +58,13 @@ export default {
     results: {
       sub: 'Results',
       title: 'Faster to book. Safer to receive.',
+      text: 'The checkout figures come from the ecommerce restructure: progressive disclosure and fewer fields, measured in the first month after launch.',
       stats: [
         ['+48%', 'faster booking'],
         ['+6%', 'checkout conversion, measured in the first month'],
         ['12–14', 'checkout fields, down from 20+, with progressive disclosure'],
         ['+10', 'target users interviewed'],
-        ['3', 'levels of payment custody and security'],
+        ['3', 'verified handoffs before the held payment is released'],
         ['+4', 'APIs used and documented'],
       ],
     },
@@ -120,12 +121,13 @@ export default {
     results: {
       sub: 'Resultados',
       title: 'Mais rápido para agendar. Mais seguro para receber.',
+      text: 'Os números do checkout vêm da reestruturação do ecommerce: revelação progressiva e menos campos, medidos no primeiro mês após o lançamento.',
       stats: [
         ['+48%', 'de velocidade no agendamento'],
         ['+6%', 'de conversão no checkout, medido no primeiro mês'],
         ['12–14', 'campos no checkout, antes eram mais de 20, com revelação progressiva'],
         ['+10', 'pessoas do público-alvo entrevistadas'],
-        ['3', 'níveis de custódia de pagamento e segurança'],
+        ['3', 'passagens verificadas antes de liberar o pagamento retido'],
         ['+4', 'APIs usadas e documentadas'],
       ],
     },

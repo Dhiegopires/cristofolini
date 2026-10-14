@@ -4,8 +4,7 @@
 // and the existing case content where it agrees with it. Screens from Figma
 // file lea2M353Oe9r6wjVSSfupp (Data workspace flow); scenes generated in
 // Magnific (Seedream 5 Pro) with the real screens composited in.
-// TO CONFIRM with Dhiego: the old case called ~70% / 5x projections from
-// benchmarks; the résumé says they were measured in usability tests.
+// ~70% / 5x: measured in usability tests (confirmed by Dhiego, Oct 2026).
 export default {
   slug: 'instivo',
   hero: { src: '/assets/img/case/instivo/hero.webp' },
@@ -29,7 +28,7 @@ export default {
     blocks: [
       {
         type: 'section', num: '01', sub: 'The problem', title: 'Six tools, and nobody in charge.',
-        text: 'Employee records lived in spreadsheets, supplier orders went by phone and stock was counted by hand. A product dropping below 50 units triggered nothing: someone had to notice, call and follow up.',
+        text: 'Employee records lived in spreadsheets, supplier orders went by phone and stock was counted by hand, across six tools that never talked to each other. A product dropping below 50 units triggered nothing: someone had to notice, call and follow up.',
         wide: { img: 'ctx-stockroom', alt: 'A store manager in a pharmacy stockroom with Instivo’s stock overview open on a laptop', caption: 'Stock status resolved by rules, not by someone remembering to count.' },
       },
       {
@@ -76,7 +75,7 @@ export default {
     results: {
       sub: 'Results',
       title: 'Faster to configure. Faster to open a unit.',
-      text: 'Measured in usability testing with real users. Managers changed rules, categories and thresholds themselves, without filing IT requests.',
+      text: 'Measured in usability testing with real users. In the test tasks, managers changed rules, categories and thresholds on their own, with no help from IT.',
       stats: [
         ['~70%', 'less configuration time'],
         ['5×', 'faster new-unit onboarding'],
@@ -104,7 +103,7 @@ export default {
     blocks: [
       {
         type: 'section', num: '01', sub: 'O problema', title: 'Seis ferramentas, e ninguém no comando.',
-        text: 'Cadastro de funcionários em planilha, pedido a fornecedor por telefone e estoque contado à mão. Um produto abaixo de 50 unidades não disparava nada: alguém tinha que perceber, ligar e cobrar.',
+        text: 'Cadastro de funcionários em planilha, pedido a fornecedor por telefone e estoque contado à mão, em seis ferramentas que não conversavam. Um produto abaixo de 50 unidades não disparava nada: alguém tinha que perceber, ligar e cobrar.',
         wide: { img: 'ctx-stockroom', alt: 'Um gestor no estoque de uma farmácia com a visão de estoque da Instivo aberta no notebook', caption: 'Status de estoque resolvido por regras, não por alguém lembrar de contar.' },
       },
       {
@@ -151,7 +150,7 @@ export default {
     results: {
       sub: 'Resultados',
       title: 'Mais rápido para configurar. Mais rápido para abrir uma unidade.',
-      text: 'Medido em testes de usabilidade com usuários reais. Gestores mudavam regras, categorias e limites sozinhos, sem abrir chamado para a TI.',
+      text: 'Medido em testes de usabilidade com usuários reais. Nas tarefas do teste, gestores mudaram regras, categorias e limites sozinhos, sem ajuda da TI.',
       stats: [
         ['~70%', 'menos tempo de configuração'],
         ['5×', 'mais rápido para abrir uma nova unidade'],

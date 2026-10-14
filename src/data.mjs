@@ -65,8 +65,8 @@ export const CASES = [
     filters: ['uiux', 'design-system'],
     cat: { en: 'Product Design', pt: 'Design de Produto' },
     desc: {
-      en: 'Regulated checkout flow, redesigned from zero. +6% measured conversion lift.',
-      pt: 'Fluxo de checkout regulado, redesenhado do zero. +6% de conversão medida.',
+      en: 'Home appointments and exams, booked exams-first and verified by token at the door. +6% measured checkout lift.',
+      pt: 'Consultas e exames em casa, agendados a partir dos exames e verificados por token na porta. +6% de conversão medida no checkout.',
     },
     img: card('medme', 1600, 1200),
     alt: { en: 'MedMe app screens on two phones', pt: 'Telas do app MedMe em dois celulares' },
@@ -78,8 +78,8 @@ export const CASES = [
     filters: ['uiux', 'design-system'],
     cat: { en: 'Product Design', pt: 'Design de Produto' },
     desc: {
-      en: 'Business rules for 50+ retail units, turned into one config flow. 70% faster setup.',
-      pt: 'Regras de negócio de 50+ unidades de varejo em um único fluxo de configuração. Setup 70% mais rápido.',
+      en: 'Business rules of a multi-unit retail SaaS, turned into one workspace and rule engine. ~70% less setup time in testing.',
+      pt: 'Regras de negócio de um SaaS de varejo multiunidade num só workspace e motor de regras. ~70% menos tempo de configuração nos testes.',
     },
     img: card('instivo', 1600, 1200),
     alt: { en: 'Instivo rules dashboard on a laptop', pt: 'Painel de regras do Instivo em um notebook' },

@@ -25,16 +25,15 @@ export default {
         type: 'section', num: '01', sub: 'Problem', title: 'Three parties, one fragile sequence.',
         text: 'Users ask why it takes so long. The business asks where people drop. Compliance needs every field. The fix is not fewer fields, it is how they are presented.',
         stats: [
-          ['19%', 'abandon when forced to create an account before seeing value (Baymard, 2024)'],
+          ['18%', 'of US shoppers who abandoned a checkout blame forced account creation (Baymard)'],
           ['3', 'phases: account type, identity, verification'],
           ['6', 'steps, all visible from the first screen'],
         ],
       },
       {
-        type: 'section', num: '02', sub: 'Flow & IA', title: 'Account type first. Every field after depends on it.',
+        type: 'section', num: '02', sub: 'Flow', title: 'Account type first. Every field after depends on it.',
         text: 'Choosing the account type before any form opens removes the worst failure: switching type mid-form and losing everything already typed.',
-        wide: { img: 'flow', alt: 'Onboarding flowchart with personal and business branches', caption: 'User flow: one entry, two branches, one verification step.' },
-        wide2: { img: 'ia', alt: 'Information architecture of the onboarding and dashboard', caption: 'Information architecture: public entry, gated product flow.' },
+        artifact: { img: 'art-flow', alt: 'Onboarding flow in three phases: account type (freelancer or business), identity with field-by-field validation, and verification ending in a setup checklist' },
       },
       {
         type: 'section', num: '03', sub: 'Wireframes', title: 'One job per screen.',
@@ -74,11 +73,11 @@ export default {
       title: 'Designed against the known drop-off points.',
       text: 'A concept, not a shipped product: no live metrics. What it does measure is structure, each decision mapped to a documented cause of abandonment.',
       stats: [
-        ['0', 'account gates before first value'],
+        ['1', 'decision before the first field'],
         ['1', 'question per screen'],
         ['6', 'steps visible from screen one'],
       ],
-      source: 'Benchmarks: Baymard Institute, 2024.',
+      source: 'Benchmark: Baymard Institute, checkout abandonment research.',
     },
   },
   pt: {
@@ -103,16 +102,15 @@ export default {
         type: 'section', num: '01', sub: 'Problema', title: 'Três partes, uma sequência frágil.',
         text: 'O usuário pergunta por que demora tanto. O negócio pergunta onde as pessoas desistem. O compliance precisa de todos os campos. A solução não é ter menos campos, é como eles são apresentados.',
         stats: [
-          ['19%', 'desistem quando obrigados a criar conta antes de ver valor (Baymard, 2024)'],
+          ['18%', 'de quem abandonou um checkout nos EUA culpa a criação de conta obrigatória (Baymard)'],
           ['3', 'fases: tipo de conta, identidade, verificação'],
           ['6', 'etapas, todas visíveis desde a primeira tela'],
         ],
       },
       {
-        type: 'section', num: '02', sub: 'Fluxo e AI', title: 'Tipo de conta primeiro. Todo campo depois depende dele.',
+        type: 'section', num: '02', sub: 'Fluxo', title: 'Tipo de conta primeiro. Todo campo depois depende dele.',
         text: 'Escolher o tipo de conta antes de abrir qualquer formulário elimina a pior falha: trocar de tipo no meio do cadastro e perder tudo o que já foi digitado.',
-        wide: { img: 'flow', alt: 'Fluxograma do onboarding com ramos pessoal e empresa', caption: 'Fluxo: uma entrada, dois ramos, uma etapa de verificação.' },
-        wide2: { img: 'ia', alt: 'Arquitetura de informação do onboarding e do dashboard', caption: 'Arquitetura de informação: entrada pública, fluxo do produto protegido.' },
+        artifact: { img: 'art-flow', alt: 'Fluxo do onboarding em três fases: tipo de conta (freelancer ou empresa), identidade com validação campo a campo e verificação terminando num checklist de configuração' },
       },
       {
         type: 'section', num: '03', sub: 'Wireframes', title: 'Uma tarefa por tela.',
@@ -152,11 +150,11 @@ export default {
       title: 'Desenhado contra os pontos de abandono conhecidos.',
       text: 'Um conceito, não um produto lançado: sem métricas reais. O que ele mede é estrutura, cada decisão ligada a uma causa documentada de abandono.',
       stats: [
-        ['0', 'barreiras de cadastro antes do primeiro valor'],
+        ['1', 'decisão antes do primeiro campo'],
         ['1', 'pergunta por tela'],
         ['6', 'etapas visíveis desde a primeira tela'],
       ],
-      source: 'Referências: Baymard Institute, 2024.',
+      source: 'Referência: Baymard Institute, pesquisa de abandono de checkout.',
     },
   },
 };

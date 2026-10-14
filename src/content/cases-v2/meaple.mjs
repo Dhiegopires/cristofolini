@@ -39,12 +39,12 @@ export default {
       },
       {
         type: 'section', layout: 'split', num: '03', sub: 'Business', title: 'Revenue from day one, or no product.',
-        text: 'Before the pandemic, events moved around R$250 billion a year in Brazil, about 4.3% of GDP (Abrafesta; Abeoc/Sebrae). Ensight set the targets before design started, and they ruled out a slow-burn social network.',
+        text: 'In the last full study of the sector (Abeoc/Sebrae, 2013), events moved R$209 billion a year in Brazil, 4.3% of GDP. Ensight set these targets before design started, and they ruled out a slow-burn social network.',
         stats: [
-          ['150k', 'monthly active users'],
-          ['1.5M', 'downloads'],
+          ['150k', 'monthly active users, target'],
+          ['1.5M', 'downloads, target'],
           ['R$2.00', 'CAC ceiling per user'],
-          ['R$2.70', 'revenue per user per month'],
+          ['R$2.70', 'revenue per user per month, target'],
         ],
       },
       {
@@ -93,10 +93,10 @@ export default {
       text: 'Meaple launched as an app. When COVID-19 made gatherings illegal, it pivoted to a website to start earning, with the plan to return as an app. It is live at meaple.com.br.',
       stats: [
         ['350k', 'events canceled in Brazil in 2020'],
-        ['98%', 'of the events sector hit'],
+        ['98%', 'of event companies hit, April 2020'],
         ['R$230B', 'lost across 2020 and 2021'],
       ],
-      source: 'Sources: Sebrae; Abrape; Abrafesta via G1; Abeoc/Sebrae.',
+      source: 'Sources: Abrape (events canceled; R$90B lost in 2020 and R$140B in 2021); Sebrae, Abeoc and Ubrafe survey, April 2020.',
       links: [
         ['https://meaple.com.br', 'meaple.com.br'],
         ['/work/meaple/documentation/', 'Product documentation'],
@@ -134,12 +134,12 @@ export default {
       },
       {
         type: 'section', layout: 'split', num: '03', sub: 'Negócio', title: 'Receita desde o primeiro dia, ou nada.',
-        text: 'Antes da pandemia, eventos movimentavam cerca de R$250 bilhões por ano no Brasil, perto de 4,3% do PIB (Abrafesta; Abeoc/Sebrae). A Ensight definiu as metas antes do design começar, e elas descartavam uma rede social de queima lenta.',
+        text: 'No último estudo completo do setor (Abeoc/Sebrae, 2013), eventos movimentavam R$209 bilhões por ano no Brasil, 4,3% do PIB. A Ensight definiu estas metas antes do design começar, e elas descartavam uma rede social de queima lenta.',
         stats: [
-          ['150 mil', 'usuários ativos por mês'],
-          ['1,5 mi', 'downloads'],
+          ['150 mil', 'usuários ativos por mês, meta'],
+          ['1,5 mi', 'downloads, meta'],
           ['R$2,00', 'teto de CAC por usuário'],
-          ['R$2,70', 'de receita por usuário por mês'],
+          ['R$2,70', 'de receita por usuário por mês, meta'],
         ],
       },
       {
@@ -188,10 +188,10 @@ export default {
       text: 'O Meaple nasceu como app. Quando a COVID-19 tornou aglomerações ilegais, pivotou para um site para começar a gerar receita, com o plano de voltar a ser app. Está no ar em meaple.com.br.',
       stats: [
         ['350 mil', 'eventos cancelados no Brasil em 2020'],
-        ['98%', 'do setor de eventos atingido'],
+        ['98%', 'das empresas de eventos atingidas, abril de 2020'],
         ['R$230 bi', 'perdidos entre 2020 e 2021'],
       ],
-      source: 'Fontes: Sebrae; Abrape; Abrafesta via G1; Abeoc/Sebrae.',
+      source: 'Fontes: Abrape (eventos cancelados; R$90 bi perdidos em 2020 e R$140 bi em 2021); pesquisa Sebrae, Abeoc e Ubrafe, abril de 2020.',
       links: [
         ['https://meaple.com.br', 'meaple.com.br'],
         ['/work/meaple/documentation/', 'Documentação do produto'],
