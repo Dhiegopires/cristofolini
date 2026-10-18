@@ -116,7 +116,7 @@ export default {
       'A Ensight queria dominar a jornada completa de uma noite no Brasil, antes, durante e depois, num único produto: descoberta, coordenação social, venda de ingressos e pagamento dentro do evento. Entrei do zero, sem briefing, sem wireframe, sem pesquisa, e defini o que o produto deveria ser antes de qualquer tela.',
     meta: [
       ['Papel', 'Design Lead'],
-      ['Time', 'Design solo, 2 devs, 2 co-fundadores'],
+      ['Time', 'Design solo, 2 devs, 2 cofundadores'],
       ['Cliente', 'Ensight · 2019–2021'],
       ['Plataforma', 'iOS 10+ · Android 4.4+, depois web'],
     ],

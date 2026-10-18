@@ -118,7 +118,7 @@ export const CASES = [
     filters: ['design-system'],
     cat: { en: 'Design System', pt: 'Design System' },
     desc: {
-      en: 'Four token layers, eight colour ramps, and a re-theming process that touches exactly one of them.',
+      en: 'Four token layers, eight color ramps, and a re-theming process that touches exactly one of them.',
       pt: 'Quatro camadas de token, oito escalas de cor e um processo de retematização que toca exatamente uma delas.',
     },
     img: card('vellumwire-ds', 1600, 1200),
