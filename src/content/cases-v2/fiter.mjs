@@ -54,7 +54,7 @@ export default {
       },
       {
         type: 'section', num: '05', sub: 'Outcome', title: 'From 22 to 100, in every category.',
-        text: 'Every category rebuilt from near zero, inside the same two weeks, with GA4 and Search Console live from launch day.',
+        text: 'Every category rebuilt from near zero, inside the same two weeks, with GA4 and Search Console live from launch day. Scores measured at launch.',
         artifact: { img: 'art-seo', alt: 'SEO audit per category before and after, 22 to 100' },
       },
     ],
@@ -62,7 +62,7 @@ export default {
       sub: 'Results',
       title: 'A site that counts what it earns.',
       stats: [
-        ['22 → 100', 'SEO score, all 7 categories'],
+        ['22 → 100', 'SEO score at launch, all 7 categories'],
         ['1 → 16', 'pages fully structured'],
         ['0 → 16', 'pages with schema markup'],
         ['3', 'leads attributed in the first weeks; the old site tracked none'],
@@ -120,7 +120,7 @@ export default {
       },
       {
         type: 'section', num: '05', sub: 'Resultado', title: 'De 22 para 100, em todas as categorias.',
-        text: 'Cada categoria refeita quase do zero, nas mesmas duas semanas, com GA4 e Search Console ativos desde o dia do lançamento.',
+        text: 'Cada categoria refeita quase do zero, nas mesmas duas semanas, com GA4 e Search Console ativos desde o dia do lançamento. Notas medidas no lançamento.',
         artifact: { img: 'art-seo', alt: 'Auditoria de SEO por categoria antes e depois, de 22 para 100' },
       },
     ],
@@ -128,7 +128,7 @@ export default {
       sub: 'Resultados',
       title: 'Um site que mede o que conquista.',
       stats: [
-        ['22 → 100', 'nota de SEO, nas 7 categorias'],
+        ['22 → 100', 'nota de SEO no lançamento, nas 7 categorias'],
         ['1 → 16', 'páginas estruturadas'],
         ['0 → 16', 'páginas com schema'],
         ['3', 'leads atribuídos nas primeiras semanas; o site antigo não media nenhum'],
