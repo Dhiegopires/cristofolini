@@ -122,7 +122,7 @@ export const CASES = [
       pt: 'Quatro camadas de token, oito escalas de cor e um processo de retematização que toca exatamente uma delas.',
     },
     img: card('vellumwire-ds', 1600, 1200),
-    alt: { en: 'Vellumwire design system colour palette', pt: 'Paleta de cores do design system Vellumwire' },
+    alt: { en: 'Vellumwire design system color palette', pt: 'Paleta de cores do design system Vellumwire' },
   },
   {
     slug: 'fiter',
