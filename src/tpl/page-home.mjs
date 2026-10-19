@@ -96,7 +96,7 @@ export const homePage = (lang) => {
     it.find('img').attr({ src: c.img.src, srcset: c.img.srcset, sizes: '(min-width: 992px) 40vw, 85vw', width: c.img.w, height: c.img.h, alt: c.alt ? c.alt[lang] : c.title, loading: 'lazy', decoding: 'async' });
     it.find('.item-info a').attr('href', r.case(c.slug)).removeClass('effect-ajax');
     it.find('.cat').text(c.cat[lang]);
-    it.find('h4').text(c.title);
+    it.find('h4').text(c.title).after(`<p class="item-result">${esc(c.result[lang])}</p>`);
     it.find('.item-info a > span > span').text(pt ? 'Ver projeto' : 'View Project');
     // Whole card opens the case. The text link stays the one link assistive
     // tech and Tab see; this cover link is pointer-only.

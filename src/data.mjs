@@ -57,6 +57,7 @@ const card = (slug, w, h) => ({
 });
 
 // Order = Work page order. `home` = position in the Home carousel.
+// `result` = the one-line outcome on the card; figures must match the case.
 export const CASES = [
   {
     slug: 'medme',
@@ -64,9 +65,9 @@ export const CASES = [
     home: 1,
     filters: ['uiux', 'design-system'],
     cat: { en: 'Product Design', pt: 'Design de Produto' },
-    desc: {
-      en: 'Home appointments and exams, booked exams-first and verified by token at the door. +6% measured checkout lift.',
-      pt: 'Consultas e exames em casa, agendados a partir dos exames e verificados por token na porta. +6% de conversão medida no checkout.',
+    result: {
+      en: '+6% checkout conversion in month one',
+      pt: '+6% de conversão no checkout no 1º mês',
     },
     img: card('medme', 1600, 1200),
     alt: { en: 'MedMe app screens on two phones', pt: 'Telas do app MedMe em dois celulares' },
@@ -77,9 +78,9 @@ export const CASES = [
     home: 2,
     filters: ['uiux', 'design-system'],
     cat: { en: 'Product Design', pt: 'Design de Produto' },
-    desc: {
-      en: 'Business rules of a multi-unit retail SaaS, turned into one workspace and rule engine. ~70% less setup time in testing.',
-      pt: 'Regras de negócio de um SaaS de varejo multiunidade num só workspace e motor de regras. ~70% menos tempo de configuração nos testes.',
+    result: {
+      en: '~70% less setup time in usability tests',
+      pt: '~70% menos tempo de configuração nos testes',
     },
     img: card('instivo', 1600, 1200),
     alt: { en: 'Instivo rules dashboard on a laptop', pt: 'Painel de regras do Instivo em um notebook' },
@@ -90,9 +91,9 @@ export const CASES = [
     home: 5,
     filters: ['uiux', 'web'],
     cat: { en: 'Web Design', pt: 'Web Design' },
-    desc: {
-      en: '~1,000 organic sessions a week with no paid ads. A full sales cycle compressed into a single visit.',
-      pt: '~1.000 sessões orgânicas por semana sem anúncios pagos. Um ciclo de vendas inteiro em uma única visita.',
+    result: {
+      en: '~1,000 organic sessions a week, no ads',
+      pt: '~1.000 sessões orgânicas por semana, sem anúncios',
     },
     img: card('vellumwire', 1600, 1200),
     alt: { en: 'Vellumwire website on a laptop', pt: 'Site da Vellumwire em um notebook' },
@@ -103,9 +104,9 @@ export const CASES = [
     home: 3,
     filters: ['uiux', 'branding'],
     cat: { en: 'Product Design · Branding', pt: 'Design de Produto · Branding' },
-    desc: {
-      en: '13 competitors mapped, none owned more than two layers of the journey. Discovery, ticketing and in-event payment as one product.',
-      pt: '13 concorrentes mapeados, nenhum cobria mais de duas camadas da jornada. Descoberta, ingressos e pagamento no evento como um produto só.',
+    result: {
+      en: 'Research to MVP, 13 competitors mapped',
+      pt: 'Da pesquisa ao MVP, 13 concorrentes mapeados',
     },
     img: card('meaple', 1600, 1200),
     cover: { src: '/assets/img/cards/meaple-cover.webp', w: 1376, h: 768 },
@@ -117,9 +118,9 @@ export const CASES = [
     home: 6,
     filters: ['design-system'],
     cat: { en: 'Design System', pt: 'Design System' },
-    desc: {
-      en: 'Four token layers, eight color ramps, and a re-theming process that touches exactly one of them.',
-      pt: 'Quatro camadas de token, oito escalas de cor e um processo de retematização que toca exatamente uma delas.',
+    result: {
+      en: 'Re-theming a client touches one token layer',
+      pt: 'Retematizar um cliente mexe em uma camada de token',
     },
     img: card('vellumwire-ds', 1600, 1200),
     alt: { en: 'Vellumwire design system color palette', pt: 'Paleta de cores do design system Vellumwire' },
@@ -130,9 +131,9 @@ export const CASES = [
     home: 7,
     filters: ['uiux', 'web'],
     cat: { en: 'Web Design · SEO', pt: 'Web Design · SEO' },
-    desc: {
-      en: 'SEO score 22 to 100 in two weeks. 16 structured pages across two buyer ecosystems.',
-      pt: 'Score de SEO de 22 para 100 em duas semanas. 16 páginas estruturadas em dois ecossistemas de compra.',
+    result: {
+      en: 'SEO score from 22 to 100 in two weeks',
+      pt: 'Score de SEO de 22 para 100 em duas semanas',
     },
     img: card('fiter', 1600, 1200),
     alt: { en: 'Fiter website homepage', pt: 'Página inicial do site da Fiter' },
@@ -143,9 +144,9 @@ export const CASES = [
     home: 8,
     filters: ['uiux'],
     cat: { en: 'Product Concept', pt: 'Conceito de Produto' },
-    desc: {
-      en: 'A fintech onboarding and verification concept focused on reducing friction.',
-      pt: 'Um conceito de onboarding e verificação fintech focado em reduzir atrito.',
+    result: {
+      en: 'Concept: KYC onboarding in six visible steps',
+      pt: 'Conceito: onboarding KYC em seis etapas visíveis',
     },
     img: card('northpay', 1600, 1200),
     alt: { en: 'NorthPay dashboard on laptop and tablet', pt: 'Painel NorthPay em notebook e tablet' },
@@ -156,9 +157,9 @@ export const CASES = [
     home: 4,
     filters: ['uiux', 'web'],
     cat: { en: 'Web Design · CRO', pt: 'Web Design · CRO' },
-    desc: {
-      en: '5x more leads in 30 days. Bounce rate -40%. LCP 1.4s, rebuilt in one week.',
-      pt: '5x mais leads em 30 dias. Taxa de rejeição -40%. LCP 1,4s, reconstruído em uma semana.',
+    result: {
+      en: '5× more leads in the first 30 days',
+      pt: '5× mais leads nos primeiros 30 dias',
     },
     img: card('selo-h', 1600, 1200),
     alt: { en: 'Selo H website on an iMac', pt: 'Site do Selo H em um iMac' },

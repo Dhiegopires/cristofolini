@@ -581,6 +581,18 @@
   background-color: var(--c-hero-shade);
 }
 
+/* Case cards (Work page, Home slider): one outcome line under the title,
+   so the result is scannable before opening the case. */
+.item-info .item-result {
+  margin: 8px 0 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--c-white);
+  text-shadow: 0 1px 8px var(--c-black);
+  text-wrap: balance;
+}
+
 /* Section header with slider controls (Work, Insights) */
 .section-head {
   display: flex;

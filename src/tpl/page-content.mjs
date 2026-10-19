@@ -94,6 +94,7 @@ export const workListPage = (lang) => {
           <div class="item-info">
             <h5 class="cat">${esc(c.cat[lang])}</h5>
             <h4>${esc(c.title)}</h4>
+            <p class="item-result">${esc(c.result[lang])}</p>
             <span><span>${pt ? 'Ver projeto' : 'View project'}</span></span>
           </div>
         </a>
