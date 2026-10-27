@@ -14,9 +14,9 @@ export default {
       'Product design case: Meaple unified event discovery, social plans, tickets and in-event payment in Brazil, then pivoted to web in the pandemic.',
     cat: 'Social · Events · Product design',
     title: 'Meaple',
-    sub: 'Five apps for one Friday night',
+    sub: 'An events app for nights out in Brazil',
     cover: 'Meaple',
-    introTitle: 'One product for the whole night out.',
+    introTitle: 'Starting a product with no brief and no research',
     intro:
       'Ensight set out to own the full journey of a night out in Brazil, before, during and after, in one product: discovery, social coordination, ticket sales and payment inside the event. I joined with a blank slate, no brief, no wireframes, no research, and defined what the product should be before anyone touched a screen.',
     meta: [
@@ -29,16 +29,16 @@ export default {
       { type: 'wide', img: 'ctx-rooftop', alt: 'Friends on a rooftop at night checking an event page on Meaple', caption: 'Friday night, one app: where to go, who is going, and the ticket.' },
       {
         type: 'section', num: '01', sub: 'The problem', title: 'Five apps for one Friday night.',
-        text: 'Sympla sold tickets. WhatsApp moved logistics. Facebook had the social graph but had abandoned events. Instagram had discovery with no way to act. PicPay moved money with no idea what it was for.',
+        text: 'Sympla sold the tickets and WhatsApp handled the logistics. Facebook had the social graph but had given up on events, Instagram had discovery with nothing to act on, and PicPay moved the money without knowing what it was for.',
         artifact: { img: 'art-competitors', alt: 'Competitive map of 13 products across event discovery, social coordination, payment and location' },
       },
       {
-        type: 'section', num: '02', sub: 'Research', title: 'Different people, the same fragmentation.',
+        type: 'section', num: '02', sub: 'Research', title: 'What users, producers and venue owners told me',
         text: 'I interviewed users between 19 and 30, event creators and venue owners. Nobody asked for one app, because nobody imagined it possible. That third column became the product thesis.',
         artifact: { img: 'art-research', alt: 'Three personas with their days, and what users said, needed and did not know they needed' },
       },
       {
-        type: 'section', layout: 'split', num: '03', sub: 'Business', title: 'Revenue from day one, or no product.',
+        type: 'section', layout: 'split', num: '03', sub: 'Business', title: 'The business targets came before the design',
         text: 'In the last full study of the sector (Abeoc/Sebrae, 2013), events moved R$209 billion a year in Brazil, 4.3% of GDP. Ensight set these targets before design started, and they ruled out a slow-burn social network.',
         stats: [
           ['150k', 'monthly active users, target'],
@@ -48,17 +48,17 @@ export default {
         ],
       },
       {
-        type: 'section', layout: 'split', num: '04', sub: 'Decision', title: 'Producers first.',
-        text: 'My first instinct was consumers first. That is wrong for a marketplace: one producer brings their whole audience, one consumer brings only themselves. Producers got ticket sales, analytics and a page before the audience existed.',
-        portrait: { img: 'ctx-producer', alt: 'A producer in an empty venue before doors open, checking ticket sales on the Meaple dashboard', caption: 'The producer dashboard: sales, revenue and tonight’s numbers before doors open.' },
+        type: 'section', layout: 'split', num: '04', sub: 'Decision', title: 'I started with consumers and switched to producers',
+        text: 'My first instinct was to start with consumers. In a marketplace that is backwards: one producer brings their whole audience, one consumer brings only themselves. Producers got ticket sales, analytics and a page before the audience existed.',
+        portrait: { img: 'ctx-producer', alt: 'A producer in an empty venue before doors open, checking ticket sales on the Meaple dashboard', caption: 'The producer dashboard: sales, revenue and tonight\'s numbers before doors open.' },
       },
       {
-        type: 'section', num: '05', sub: 'Decision', title: 'Three accounts, hard boundaries.',
-        text: 'Friends, individual professionals and companies need different permissions. A two-tier model confused them, so it went.',
+        type: 'section', num: '05', sub: 'Decision', title: 'Three account types',
+        text: 'Friends, individual professionals and companies need different permissions. The first model had two tiers, people got confused, and it was replaced.',
         artifact: { img: 'art-accounts', alt: 'Personal, Professional and Company account tiers and how they relate' },
       },
       {
-        type: 'section', num: '06', sub: 'Decision', title: 'Momentum: discovery that ranks trust.',
+        type: 'section', num: '06', sub: 'Decision', title: 'Momentum, the ranking behind Explore',
         text: 'Momentum ranked the Explore feed on five inputs. Producer credibility weighed most: a new account ranked below a producer with ten well-rated events.',
         artifact: { img: 'art-momentum', alt: 'The five Momentum inputs feeding the Explore ranking' },
         wide: { img: 'board-journey', alt: 'Five Meaple screens in order: Explore, event page, checkout, ticket and bar tab', caption: 'One journey: discover, decide, pay, get in, order at the bar.' },
@@ -72,12 +72,12 @@ export default {
         ],
       },
       {
-        type: 'section', num: '08', sub: 'Design', title: 'Designed for the worst moment.',
-        text: 'A loud venue, one hand, a drink, interruptions. Every rule of the interface came from that user.',
+        type: 'section', num: '08', sub: 'Design', title: 'Designing for a loud bar and one free hand',
+        text: 'The interface rules came from the moment the app gets used: a loud venue, a drink in one hand, someone interrupting every few seconds.',
         artifact: { img: 'art-context', alt: 'Five context states and the interface rules that came from them' },
       },
       {
-        type: 'boards', num: '09', sub: 'Design system', title: '25 screens, one system.',
+        type: 'boards', num: '09', sub: 'Design system', title: '25 screens from the same system',
         text: 'Discovery, the social graph, transactions, the comanda and the producer side, designed end to end with the brand.',
         items: [
           { label: 'Discover', img: 'board-discover', caption: 'Map, Momentum, event pages and who is going', alt: 'Five Meaple discovery screens: map, Momentum feed, event page, live event and who is going' },
@@ -109,9 +109,9 @@ export default {
       'Case de product design: o Meaple unificou descoberta de eventos, rolês com amigos, ingressos e pagamento no evento, e pivotou para web na pandemia.',
     cat: 'Social · Eventos · Product design',
     title: 'Meaple',
-    sub: 'Cinco apps para uma sexta à noite',
+    sub: 'Um app de eventos para a noite no Brasil',
     cover: 'Meaple',
-    introTitle: 'Um produto para a noite inteira.',
+    introTitle: 'Começar um produto sem briefing e sem pesquisa',
     intro:
       'A Ensight queria dominar a jornada completa de uma noite no Brasil, antes, durante e depois, num único produto: descoberta, coordenação social, venda de ingressos e pagamento dentro do evento. Entrei do zero, sem briefing, sem wireframe, sem pesquisa, e defini o que o produto deveria ser antes de qualquer tela.',
     meta: [
@@ -124,16 +124,16 @@ export default {
       { type: 'wide', img: 'ctx-rooftop', alt: 'Amigos num rooftop à noite vendo uma página de evento no Meaple', caption: 'Sexta à noite, um app: aonde ir, quem vai e o ingresso.' },
       {
         type: 'section', num: '01', sub: 'O problema', title: 'Cinco apps para uma sexta à noite.',
-        text: 'O Sympla vendia ingresso. O WhatsApp cuidava da logística. O Facebook tinha o grafo social, mas tinha abandonado os eventos. O Instagram tinha descoberta sem como agir. O PicPay movia dinheiro sem saber para quê.',
+        text: 'O Sympla vendia o ingresso e o WhatsApp cuidava da logística. O Facebook tinha o grafo social mas tinha largado os eventos, o Instagram tinha descoberta sem como agir, e o PicPay movia o dinheiro sem saber para quê.',
         artifact: { img: 'art-competitors', alt: 'Mapa competitivo de 13 produtos em descoberta, coordenação social, pagamento e localização' },
       },
       {
-        type: 'section', num: '02', sub: 'Pesquisa', title: 'Pessoas diferentes, a mesma fragmentação.',
+        type: 'section', num: '02', sub: 'Pesquisa', title: 'O que usuários, produtores e donos de casa me disseram',
         text: 'Entrevistei usuários de 19 a 30 anos, criadores de eventos e donos de casas. Ninguém pedia um app só, porque ninguém imaginava que fosse possível. Essa terceira coluna virou a tese do produto.',
         artifact: { img: 'art-research', alt: 'Três personas com seus dias, e o que os usuários diziam, precisavam e não sabiam que precisavam' },
       },
       {
-        type: 'section', layout: 'split', num: '03', sub: 'Negócio', title: 'Receita desde o primeiro dia, ou nada.',
+        type: 'section', layout: 'split', num: '03', sub: 'Negócio', title: 'As metas de negócio vieram antes do design',
         text: 'No último estudo completo do setor (Abeoc/Sebrae, 2013), eventos movimentavam R$209 bilhões por ano no Brasil, 4,3% do PIB. A Ensight definiu estas metas antes do design começar, e elas descartavam uma rede social de queima lenta.',
         stats: [
           ['150 mil', 'usuários ativos por mês, meta'],
@@ -143,17 +143,17 @@ export default {
         ],
       },
       {
-        type: 'section', layout: 'split', num: '04', sub: 'Decisão', title: 'Produtores primeiro.',
-        text: 'Meu primeiro instinto foi começar pelo consumidor. Isso está errado num marketplace: um produtor traz toda a audiência dele, um consumidor traz só a si mesmo. Os produtores ganharam venda de ingresso, analytics e página antes de a audiência existir.',
+        type: 'section', layout: 'split', num: '04', sub: 'Decisão', title: 'Comecei pelo consumidor e mudei para o produtor',
+        text: 'Meu primeiro instinto foi começar pelo consumidor. Num marketplace isso é ao contrário: um produtor traz toda a audiência dele, um consumidor traz só a si mesmo. Os produtores ganharam venda de ingresso, analytics e página antes de a audiência existir.',
         portrait: { img: 'ctx-producer', alt: 'Um produtor numa casa vazia antes de abrir as portas, vendo as vendas no painel do Meaple', caption: 'O painel do produtor: vendas, receita e os números da noite antes de abrir as portas.' },
       },
       {
-        type: 'section', num: '05', sub: 'Decisão', title: 'Três contas, fronteiras rígidas.',
-        text: 'Amigos, profissionais individuais e empresas precisam de permissões diferentes. Um modelo de dois níveis confundia tudo, então saiu.',
+        type: 'section', num: '05', sub: 'Decisão', title: 'Três tipos de conta',
+        text: 'Amigos, profissionais individuais e empresas precisam de permissões diferentes. O primeiro modelo tinha dois níveis, as pessoas se confundiram, e ele foi substituído.',
         artifact: { img: 'art-accounts', alt: 'Os níveis de conta Pessoal, Profissional e Empresa e como se relacionam' },
       },
       {
-        type: 'section', num: '06', sub: 'Decisão', title: 'Momentum: descoberta que ranqueia confiança.',
+        type: 'section', num: '06', sub: 'Decisão', title: 'Momentum, o ranking por trás do Explorar',
         text: 'O Momentum ranqueava o Explorar com cinco variáveis. A credibilidade do produtor pesava mais: uma conta nova ficava abaixo de um produtor com dez eventos bem avaliados.',
         artifact: { img: 'art-momentum', alt: 'As cinco variáveis do Momentum alimentando o ranking do Explorar' },
         wide: { img: 'board-journey', alt: 'Cinco telas do Meaple em ordem: Explorar, página do evento, checkout, ingresso e comanda', caption: 'Uma jornada: descobrir, decidir, pagar, entrar, pedir no bar.' },
@@ -167,12 +167,12 @@ export default {
         ],
       },
       {
-        type: 'section', num: '08', sub: 'Design', title: 'Desenhado para o pior momento.',
-        text: 'Lugar barulhento, uma mão, um drink, interrupções. Toda regra da interface veio desse usuário.',
+        type: 'section', num: '08', sub: 'Design', title: 'Desenhando para um bar barulhento e uma mão livre',
+        text: 'As regras da interface vieram do momento em que o app é usado: lugar barulhento, um drink numa mão, alguém interrompendo a cada poucos segundos.',
         artifact: { img: 'art-context', alt: 'Cinco estados de contexto e as regras de interface que vieram deles' },
       },
       {
-        type: 'boards', num: '09', sub: 'Design system', title: '25 telas, um sistema.',
+        type: 'boards', num: '09', sub: 'Design system', title: '25 telas do mesmo sistema',
         text: 'Descoberta, grafo social, transações, comanda e o lado do produtor, desenhados de ponta a ponta junto com a marca.',
         items: [
           { label: 'Descobrir', img: 'board-discover', caption: 'Mapa, Momentum, páginas de evento e quem vai', alt: 'Cinco telas de descoberta do Meaple: mapa, Momentum, página de evento, evento ao vivo e quem vai' },

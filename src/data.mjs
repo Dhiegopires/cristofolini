@@ -206,7 +206,7 @@ export const TESTIMONIALS = [
     avatar: '/assets/img/site/avatar-vencato.webp',
     role: { en: 'CEO at Meaple, formerly Ensight', pt: 'CEO da Meaple, antes na Ensight' },
     quote: {
-      en: 'Dhiego’s work was exceptional from research all the way to visual design. He understood the product, not just the screens, and his illustrations fit every app we built, in whatever style it needed.',
+      en: 'Dhiego\'s work was exceptional from research all the way to visual design. He understood the product, not just the screens, and his illustrations fit every app we built, in whatever style it needed.',
       pt: 'O trabalho do Dhiego era excepcional, da pesquisa ao design visual. Ele entendia o produto, não só as telas, e as ilustrações dele se encaixavam em cada app que construímos, no estilo que cada um pedia.',
     },
   },

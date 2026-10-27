@@ -9,9 +9,9 @@ export default {
       'Fintech onboarding and KYC concept: account type first, one question per screen and a stepper visible from step one.',
     cat: 'Product concept · Fintech',
     title: 'NorthPay',
-    sub: 'Onboarding as a product surface.',
+    sub: 'Fintech onboarding and KYC concept',
     cover: 'Onboard',
-    introTitle: 'Every field sits between the user and the product.',
+    introTitle: 'Onboarding for a fintech account',
     intro:
       'Financial products have to collect sensitive data before anyone sees value, which makes onboarding the most fragile part of the flow. Every field is there because regulation requires it. The order those fields appear in is a design decision.',
     meta: [
@@ -22,8 +22,8 @@ export default {
     ],
     blocks: [
       {
-        type: 'section', num: '01', sub: 'Problem', title: 'Three parties, one fragile sequence.',
-        text: 'Users ask why it takes so long. The business asks where people drop. Compliance needs every field. The fix is not fewer fields, it is how they are presented.',
+        type: 'section', num: '01', sub: 'Problem', title: 'Users, the business and compliance want different things',
+        text: 'Users want to know why it takes so long, the business wants to know where people drop, and compliance needs every field. Cutting fields was off the table, so the work went into how they are presented.',
         stats: [
           ['18%', 'of US shoppers who abandoned a checkout blame forced account creation (Baymard)'],
           ['3', 'phases: account type, identity, verification'],
@@ -31,17 +31,17 @@ export default {
         ],
       },
       {
-        type: 'section', num: '02', sub: 'Flow', title: 'Account type first. Every field after depends on it.',
+        type: 'section', num: '02', sub: 'Flow', title: 'Choosing the account type before any form',
         text: 'Choosing the account type before any form opens removes the worst failure: switching type mid-form and losing everything already typed.',
         artifact: { img: 'art-flow', alt: 'Onboarding flow in three phases: account type (freelancer or business), identity with field-by-field validation, and verification ending in a setup checklist' },
       },
       {
         type: 'section', num: '03', sub: 'Wireframes', title: 'One job per screen.',
-        text: 'Low fidelity locked structure and order first. A rejected version put the account toggle next to the first fields; switching type there would wipe everything already typed. Separating the decision from the data is a data-loss prevention pattern, not a preference.',
+        text: 'Low fidelity locked structure and order first. A rejected version put the account toggle next to the first fields; switching type there would wipe everything already typed. Keeping the decision on its own screen prevents that loss.',
         layout: 'split', portrait: { img: 'wireframes', alt: 'Low-fidelity wireframes of the onboarding steps' },
       },
       {
-        type: 'section', num: '04', sub: 'Key screens', title: 'A decision, then a form.',
+        type: 'section', num: '04', sub: 'Key screens', title: 'The first screen asks one question',
         text: 'The first screen asks one thing. Personal details come grouped, with the stepper always showing what is left.',
         pair: [
           { img: 'choose', alt: 'Choose your account screen with business and freelancer options' },
@@ -50,8 +50,8 @@ export default {
         pairEven: true,
       },
       {
-        type: 'section', num: '05', sub: 'States', title: 'Designed for the moments that fail.',
-        text: 'Errors appear field by field as people leave each input, not on submit. Verification has a pending state with a timeline, so waiting reads as expected, not broken.',
+        type: 'section', num: '05', sub: 'States', title: 'Errors and waiting',
+        text: 'Errors appear field by field as people leave each input, instead of all at once on submit. Verification has a pending state with a timeline, so people can tell the wait is normal.',
         pair: [
           { img: 'errors', alt: 'Personal details form showing inline validation errors' },
           { img: 'verify', alt: 'Verify your account screen with pending document review' },
@@ -71,7 +71,7 @@ export default {
     results: {
       sub: 'Outcome',
       title: 'Designed against the known drop-off points.',
-      text: 'A concept, not a shipped product: no live metrics. What it does measure is structure, each decision mapped to a documented cause of abandonment.',
+      text: 'This concept never shipped, so there are no live metrics. Each decision is mapped to a documented cause of abandonment instead.',
       stats: [
         ['1', 'decision before the first field'],
         ['1', 'question per screen'],
@@ -86,9 +86,9 @@ export default {
       'Conceito de onboarding e KYC fintech: tipo de conta primeiro, uma pergunta por tela e um stepper visível desde o primeiro passo.',
     cat: 'Conceito de produto · Fintech',
     title: 'NorthPay',
-    sub: 'Onboarding como superfície de produto.',
+    sub: 'Conceito de onboarding e KYC fintech',
     cover: 'Onboard',
-    introTitle: 'Todo campo fica entre o usuário e o produto.',
+    introTitle: 'Onboarding de uma conta fintech',
     intro:
       'Produtos financeiros precisam coletar dados sensíveis antes de alguém ver valor, o que faz do onboarding a parte mais frágil do fluxo. Todo campo está ali porque a regulação exige. A ordem em que esses campos aparecem é decisão de design.',
     meta: [
@@ -99,8 +99,8 @@ export default {
     ],
     blocks: [
       {
-        type: 'section', num: '01', sub: 'Problema', title: 'Três partes, uma sequência frágil.',
-        text: 'O usuário pergunta por que demora tanto. O negócio pergunta onde as pessoas desistem. O compliance precisa de todos os campos. A solução não é ter menos campos, é como eles são apresentados.',
+        type: 'section', num: '01', sub: 'Problema', title: 'Usuário, negócio e compliance querem coisas diferentes',
+        text: 'O usuário quer saber por que demora tanto, o negócio quer saber onde as pessoas desistem, e o compliance precisa de todos os campos. Cortar campo não era opção, então o trabalho foi em como eles são apresentados.',
         stats: [
           ['18%', 'de quem abandonou um checkout nos EUA culpa a criação de conta obrigatória (Baymard)'],
           ['3', 'fases: tipo de conta, identidade, verificação'],
@@ -108,17 +108,17 @@ export default {
         ],
       },
       {
-        type: 'section', num: '02', sub: 'Fluxo', title: 'Tipo de conta primeiro. Todo campo depois depende dele.',
+        type: 'section', num: '02', sub: 'Fluxo', title: 'Escolher o tipo de conta antes de qualquer formulário',
         text: 'Escolher o tipo de conta antes de abrir qualquer formulário elimina a pior falha: trocar de tipo no meio do cadastro e perder tudo o que já foi digitado.',
         artifact: { img: 'art-flow', alt: 'Fluxo do onboarding em três fases: tipo de conta (freelancer ou empresa), identidade com validação campo a campo e verificação terminando num checklist de configuração' },
       },
       {
         type: 'section', num: '03', sub: 'Wireframes', title: 'Uma tarefa por tela.',
-        text: 'A baixa fidelidade travou estrutura e ordem primeiro. Uma versão descartada colocava a escolha de conta ao lado dos primeiros campos; trocar de tipo ali apagaria tudo o que já foi digitado. Separar a decisão dos dados é um padrão contra perda de dados, não preferência.',
+        text: 'A baixa fidelidade travou estrutura e ordem primeiro. Uma versão descartada colocava a escolha de conta ao lado dos primeiros campos; trocar de tipo ali apagaria tudo o que já foi digitado. Deixar a decisão numa tela própria evita essa perda.',
         layout: 'split', portrait: { img: 'wireframes', alt: 'Wireframes de baixa fidelidade das etapas do onboarding' },
       },
       {
-        type: 'section', num: '04', sub: 'Telas-chave', title: 'Uma decisão, depois um formulário.',
+        type: 'section', num: '04', sub: 'Telas-chave', title: 'A primeira tela faz uma pergunta só',
         text: 'A primeira tela pergunta uma coisa só. Os dados pessoais vêm agrupados, com o stepper sempre mostrando o que falta.',
         pair: [
           { img: 'choose', alt: 'Tela de escolha de conta com opções empresa e autônomo' },
@@ -127,8 +127,8 @@ export default {
         pairEven: true,
       },
       {
-        type: 'section', num: '05', sub: 'Estados', title: 'Desenhado para os momentos que falham.',
-        text: 'Os erros aparecem campo a campo quando a pessoa sai de cada input, não no envio. A verificação tem um estado pendente com prazo, então esperar parece previsto, não quebrado.',
+        type: 'section', num: '05', sub: 'Estados', title: 'Erros e espera',
+        text: 'Os erros aparecem campo a campo quando a pessoa sai de cada input, em vez de todos juntos no envio. A verificação tem um estado pendente com prazo, para a pessoa saber que a espera é normal.',
         pair: [
           { img: 'errors', alt: 'Formulário de dados pessoais mostrando erros de validação inline' },
           { img: 'verify', alt: 'Tela de verificação de conta com análise de documento pendente' },
@@ -148,7 +148,7 @@ export default {
     results: {
       sub: 'Resultado',
       title: 'Desenhado contra os pontos de abandono conhecidos.',
-      text: 'Um conceito, não um produto lançado: sem métricas reais. O que ele mede é estrutura, cada decisão ligada a uma causa documentada de abandono.',
+      text: 'Este conceito não foi lançado, então não tem métricas reais. Cada decisão está ligada a uma causa documentada de abandono.',
       stats: [
         ['1', 'decisão antes do primeiro campo'],
         ['1', 'pergunta por tela'],

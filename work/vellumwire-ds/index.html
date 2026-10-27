@@ -120,9 +120,9 @@
                             <div class="cat">
                                 <span>Design system · Tokens</span>
                             </div>
-                            <h1 class="title-text-header-inner"><span>Vellumwire DS</span><span class="visually-hidden">: One layer changes per client. Nothing else.</span></h1>
+                            <h1 class="title-text-header-inner"><span>Vellumwire DS</span><span class="visually-hidden">: A token system where each client changes one layer</span></h1>
                         </div>
-                        <div class="sub-text-header" data-dsn-animate="ajax"><h5 aria-hidden="true" role="none">One layer changes per client. Nothing else.</h5></div>
+                        <div class="sub-text-header" data-dsn-animate="ajax"><h5 aria-hidden="true" role="none">A token system where each client changes one layer</h5></div>
                     </div>
 
                     
@@ -137,7 +137,7 @@
                             <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1" data-dsn-duration="170%" data-dsn-move="0%">System</div>
                             <div class="inner">
                                 <h2 data-dsn-animate="text">Every new client started by rebuilding what already existed.</h2>
-                                <p data-dsn-animate="up">Each project began with a component library rebuilt from a blank file, even when the logic hadn’t changed. The real cost showed up at handoff: new names to interpret, new spacing to check, undocumented edge cases. What was missing was a layer between component and brand.</p>
+                                <p data-dsn-animate="up">Each project began with a component library rebuilt from a blank file, even when the logic hadn't changed. The real cost showed up at handoff: new names to interpret, new spacing to check, undocumented edge cases. What was missing was a layer between component and brand.</p>
 
                                 
     <dl class="case-meta" data-dsn-animate="up">
@@ -163,7 +163,7 @@
     <div class="cs-head__main">
       <span class="cs-num" aria-hidden="true">01</span>
       <p class="cs-eyebrow">Architecture</p>
-      <h2 class="cs-title" data-dsn-animate="up">Four layers, one allowed to change.</h2>
+      <h2 class="cs-title" data-dsn-animate="up">Core, Palette, Brand and Semantic</h2>
     </div><p class="cs-text" data-dsn-animate="up">Structure stays fixed. Client decisions live in Brand, and components only read Semantic.</p></div>
       
       
@@ -183,8 +183,8 @@
     <div class="cs-head__main">
       <span class="cs-num" aria-hidden="true">02</span>
       <p class="cs-eyebrow">Palette</p>
-      <h2 class="cs-title" data-dsn-animate="up">Ramps exist before any client does.</h2>
-    </div><p class="cs-text" data-dsn-animate="up">Every ramp follows the same 25 to 950 structure, so giving a client a brand is a mapping exercise, not a design exercise. Seven of the eight ramps, one per role:</p></div>
+      <h2 class="cs-title" data-dsn-animate="up">Color ramps built ahead of any client</h2>
+    </div><p class="cs-text" data-dsn-animate="up">Every ramp follows the same 25 to 950 structure, so branding a client means mapping its colors onto ramps that already exist. Seven of the eight ramps, one per role:</p></div>
       
       
     <figure class="cs-artifact container">
@@ -203,8 +203,8 @@
     <div class="cs-head__main">
       <span class="cs-num" aria-hidden="true">03</span>
       <p class="cs-eyebrow">Brand</p>
-      <h2 class="cs-title" data-dsn-animate="up">Same components, three brands.</h2>
-    </div><p class="cs-text" data-dsn-animate="up">A card, a button, an input and badges under three client brands. Ramp, typeface and radius change; component code doesn’t.</p></div>
+      <h2 class="cs-title" data-dsn-animate="up">The same components under three brands</h2>
+    </div><p class="cs-text" data-dsn-animate="up">A card, a button, an input and badges under three client brands. Ramp, typeface and radius change, and the component code stays the same.</p></div>
       
       
     <figure class="cs-artifact container">
@@ -227,7 +227,7 @@
     <div class="cs-head__main">
       <span class="cs-num" aria-hidden="true">04</span>
       <p class="cs-eyebrow">Components</p>
-      <h2 class="cs-title" data-dsn-animate="up">Every state, in every brand.</h2>
+      <h2 class="cs-title" data-dsn-animate="up">Component states</h2>
     </div><p class="cs-text" data-dsn-animate="up">Buttons, form controls and feedback, each with its variants and states, rendered from the same code under three brand layers.</p></div>
       
       
@@ -259,7 +259,7 @@
     <div class="cs-head__main">
       <span class="cs-num" aria-hidden="true">05</span>
       <p class="cs-eyebrow">Semantic</p>
-      <h2 class="cs-title" data-dsn-animate="up">Components ask what role, not what color.</h2>
+      <h2 class="cs-title" data-dsn-animate="up">Components use role names like border.error</h2>
     </div><p class="cs-text" data-dsn-animate="up">border.error means the same thing whatever ramp a client picks. A partial view of the dark mode set:</p></div>
       
       
@@ -279,7 +279,7 @@
     <div class="cs-head__main">
       <span class="cs-num" aria-hidden="true">06</span>
       <p class="cs-eyebrow">Responsive</p>
-      <h2 class="cs-title" data-dsn-animate="up">Mobile existed before anyone asked.</h2>
+      <h2 class="cs-title" data-dsn-animate="up">Breakpoints were in the tokens from the start</h2>
     </div><p class="cs-text" data-dsn-animate="up">Size and type tokens resolve per breakpoint from the start. When Instivo needed a mobile stock view mid-project, it consumed the same tokens.</p></div>
       
       
@@ -300,8 +300,8 @@
     <div class="cs-head__main">
       
       <p class="cs-eyebrow">In production</p>
-      <h2 class="cs-title" data-dsn-animate="up">Tested where it can break: real builds.</h2>
-    </div><p class="cs-text" data-dsn-animate="up">The architecture started on Instivo in 2023, where it absorbed a mobile view that was never in scope. It became the base of every Vellumwire build, which Afonso implements and hosts: that is what proves a layer holds.</p></div>
+      <h2 class="cs-title" data-dsn-animate="up">In production since 2023</h2>
+    </div><p class="cs-text" data-dsn-animate="up">The architecture started on Instivo in 2023, where it absorbed a mobile view that was never in scope. It is now the base of every Vellumwire build, which Afonso implements and hosts.</p></div>
         <ul class="cs-stats cs-stats--results" data-dsn-animate="up"><li><strong>4</strong><span>layers: Core, Palette, Brand, Semantic</span></li><li><strong>8</strong><span>color ramps built before any client</span></li><li><strong>1</strong><span>layer touched to re-theme a project</span></li></ul>
         
         <div class="cs-links"><div class="link-custom"><a href="/work/instivo/"><span>Read the Instivo case</span></a></div></div>

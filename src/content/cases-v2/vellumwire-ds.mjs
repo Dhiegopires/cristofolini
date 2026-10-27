@@ -10,11 +10,11 @@ export default {
       'Design system case: a four-layer token architecture where re-theming a client touches one layer, tested in production on Instivo.',
     cat: 'Design system · Tokens',
     title: 'Vellumwire DS',
-    sub: 'One layer changes per client. Nothing else.',
+    sub: 'A token system where each client changes one layer',
     cover: 'System',
     introTitle: 'Every new client started by rebuilding what already existed.',
     intro:
-      'Each project began with a component library rebuilt from a blank file, even when the logic hadn’t changed. The real cost showed up at handoff: new names to interpret, new spacing to check, undocumented edge cases. What was missing was a layer between component and brand.',
+      'Each project began with a component library rebuilt from a blank file, even when the logic hadn\'t changed. The real cost showed up at handoff: new names to interpret, new spacing to check, undocumented edge cases. What was missing was a layer between component and brand.',
     meta: [
       ['Role', 'Product Designer'],
       ['Type', 'Internal design system'],
@@ -23,23 +23,23 @@ export default {
     ],
     blocks: [
       {
-        type: 'section', num: '01', sub: 'Architecture', title: 'Four layers, one allowed to change.',
+        type: 'section', num: '01', sub: 'Architecture', title: 'Core, Palette, Brand and Semantic',
         text: 'Structure stays fixed. Client decisions live in Brand, and components only read Semantic.',
         artifact: { img: 'art-arch', alt: 'Core, Palette, Brand and Semantic layers, each referencing the one below' },
       },
       {
-        type: 'section', num: '02', sub: 'Palette', title: 'Ramps exist before any client does.',
-        text: 'Every ramp follows the same 25 to 950 structure, so giving a client a brand is a mapping exercise, not a design exercise. Seven of the eight ramps, one per role:',
+        type: 'section', num: '02', sub: 'Palette', title: 'Color ramps built ahead of any client',
+        text: 'Every ramp follows the same 25 to 950 structure, so branding a client means mapping its colors onto ramps that already exist. Seven of the eight ramps, one per role:',
         artifact: { img: 'art-ramps', alt: 'Seven color ramps from 25 to 950, each mapped to a brand role' },
       },
       {
-        type: 'section', num: '03', sub: 'Brand', title: 'Same components, three brands.',
-        text: 'A card, a button, an input and badges under three client brands. Ramp, typeface and radius change; component code doesn’t.',
+        type: 'section', num: '03', sub: 'Brand', title: 'The same components under three brands',
+        text: 'A card, a button, an input and badges under three client brands. Ramp, typeface and radius change, and the component code stays the same.',
         artifact: { img: 'art-swap', alt: 'The same components rendered under three fictional brands' },
         wide: { img: 'ctx-phones', alt: 'Three phones showing the same app in three different brands', caption: 'Northwind, Clearwater and Saffron: three products, zero component changes.' },
       },
       {
-        type: 'section', num: '04', sub: 'Components', title: 'Every state, in every brand.',
+        type: 'section', num: '04', sub: 'Components', title: 'Component states',
         text: 'Buttons, form controls and feedback, each with its variants and states, rendered from the same code under three brand layers.',
         artifacts: [
           { img: 'art-buttons', alt: 'Seven button states in three brands' },
@@ -48,20 +48,20 @@ export default {
         ],
       },
       {
-        type: 'section', num: '05', sub: 'Semantic', title: 'Components ask what role, not what color.',
+        type: 'section', num: '05', sub: 'Semantic', title: 'Components use role names like border.error',
         text: 'border.error means the same thing whatever ramp a client picks. A partial view of the dark mode set:',
         artifact: { img: 'art-semantic', alt: 'Semantic color tokens in dark mode and the brand tokens they resolve to' },
       },
       {
-        type: 'section', num: '06', sub: 'Responsive', title: 'Mobile existed before anyone asked.',
+        type: 'section', num: '06', sub: 'Responsive', title: 'Breakpoints were in the tokens from the start',
         text: 'Size and type tokens resolve per breakpoint from the start. When Instivo needed a mobile stock view mid-project, it consumed the same tokens.',
         artifact: { img: 'art-responsive', alt: 'The same layout resolved for desktop, tablet and mobile' },
       },
     ],
     results: {
       sub: 'In production',
-      title: 'Tested where it can break: real builds.',
-      text: 'The architecture started on Instivo in 2023, where it absorbed a mobile view that was never in scope. It became the base of every Vellumwire build, which Afonso implements and hosts: that is what proves a layer holds.',
+      title: 'In production since 2023',
+      text: 'The architecture started on Instivo in 2023, where it absorbed a mobile view that was never in scope. It is now the base of every Vellumwire build, which Afonso implements and hosts.',
       stats: [
         ['4', 'layers: Core, Palette, Brand, Semantic'],
         ['8', 'color ramps built before any client'],
@@ -76,7 +76,7 @@ export default {
       'Case de design system: uma arquitetura de tokens em quatro camadas em que mudar de cliente mexe numa camada só, testada em produção na Instivo.',
     cat: 'Design system · Tokens',
     title: 'Vellumwire DS',
-    sub: 'Uma camada muda por cliente. Nada mais.',
+    sub: 'Um sistema de tokens em que cada cliente muda uma camada',
     cover: 'System',
     introTitle: 'Todo cliente novo começava refazendo o que já existia.',
     intro:
@@ -89,23 +89,23 @@ export default {
     ],
     blocks: [
       {
-        type: 'section', num: '01', sub: 'Arquitetura', title: 'Quatro camadas, uma pode mudar.',
+        type: 'section', num: '01', sub: 'Arquitetura', title: 'Core, Palette, Brand e Semantic',
         text: 'A estrutura fica fixa. As decisões do cliente moram na Brand, e os componentes só leem a Semantic.',
         artifact: { img: 'art-arch', alt: 'Camadas Core, Palette, Brand e Semantic, cada uma referenciando a de baixo' },
       },
       {
-        type: 'section', num: '02', sub: 'Paleta', title: 'As rampas existem antes do cliente.',
-        text: 'Toda rampa segue a mesma estrutura de 25 a 950, então dar uma marca a um cliente vira mapeamento, não design. Sete das oito rampas, uma por papel:',
+        type: 'section', num: '02', sub: 'Paleta', title: 'Rampas de cor prontas antes de qualquer cliente',
+        text: 'Toda rampa segue a mesma estrutura de 25 a 950, então dar a marca de um cliente é mapear as cores dele em rampas que já existem. Sete das oito rampas, uma por papel:',
         artifact: { img: 'art-ramps', alt: 'Sete rampas de cor de 25 a 950, cada uma mapeada para um papel da marca' },
       },
       {
-        type: 'section', num: '03', sub: 'Brand', title: 'Os mesmos componentes, três marcas.',
-        text: 'Um card, um botão, um campo e badges sob três marcas de cliente. Muda rampa, tipografia e raio; o código do componente não muda.',
+        type: 'section', num: '03', sub: 'Brand', title: 'Os mesmos componentes em três marcas',
+        text: 'Um card, um botão, um campo e badges sob três marcas de cliente. Mudam rampa, tipografia e raio, e o código do componente continua o mesmo.',
         artifact: { img: 'art-swap', alt: 'Os mesmos componentes em três marcas fictícias' },
         wide: { img: 'ctx-phones', alt: 'Três celulares mostrando o mesmo app em três marcas diferentes', caption: 'Northwind, Clearwater e Saffron: três produtos, nenhuma mudança nos componentes.' },
       },
       {
-        type: 'section', num: '04', sub: 'Componentes', title: 'Todo estado, em toda marca.',
+        type: 'section', num: '04', sub: 'Componentes', title: 'Estados dos componentes',
         text: 'Botões, controles de formulário e feedback, cada um com suas variações e estados, gerados pelo mesmo código sob três camadas de marca.',
         artifacts: [
           { img: 'art-buttons', alt: 'Sete estados de botão em três marcas' },
@@ -114,20 +114,20 @@ export default {
         ],
       },
       {
-        type: 'section', num: '05', sub: 'Semantic', title: 'O componente pergunta o papel, não a cor.',
+        type: 'section', num: '05', sub: 'Semantic', title: 'Componentes usam nomes de papel, como border.error',
         text: 'border.error significa a mesma coisa qualquer que seja a rampa do cliente. Uma visão parcial do conjunto no modo escuro:',
         artifact: { img: 'art-semantic', alt: 'Tokens semânticos de cor no modo escuro e os tokens de marca para onde resolvem' },
       },
       {
-        type: 'section', num: '06', sub: 'Responsivo', title: 'O mobile existia antes de alguém pedir.',
+        type: 'section', num: '06', sub: 'Responsivo', title: 'Os breakpoints estavam nos tokens desde o início',
         text: 'Tokens de tamanho e tipo resolvem por breakpoint desde o início. Quando a Instivo precisou de uma tela mobile de estoque no meio do projeto, ela usou os mesmos tokens.',
         artifact: { img: 'art-responsive', alt: 'O mesmo layout resolvido para desktop, tablet e mobile' },
       },
     ],
     results: {
       sub: 'Em produção',
-      title: 'Testado onde pode quebrar: em builds reais.',
-      text: 'A arquitetura começou na Instivo em 2023, onde absorveu uma tela mobile que nunca esteve no escopo. Virou a base de todo build da Vellumwire, que o Afonso implementa e hospeda: é isso que prova que uma camada aguenta.',
+      title: 'Em produção desde 2023',
+      text: 'A arquitetura começou na Instivo em 2023, onde absorveu uma tela mobile que nunca esteve no escopo. Hoje é a base de todo build da Vellumwire, que o Afonso implementa e hospeda.',
       stats: [
         ['4', 'camadas: Core, Palette, Brand, Semantic'],
         ['8', 'rampas de cor prontas antes de qualquer cliente'],

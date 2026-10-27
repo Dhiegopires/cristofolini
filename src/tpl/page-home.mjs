@@ -112,7 +112,7 @@ export const homePage = (lang) => {
   const qs = cs.find('.slick-slider').empty();
   TESTIMONIALS.forEach((q) => {
     const it = qTpl.clone();
-    it.find('.quote p').text(`“${q.quote[lang]}”`);
+    it.find('.quote p').text(`"${q.quote[lang]}"`);
     it.find('.avatar img').attr({ src: q.avatar, alt: q.name, ...dims(q.avatar) });
     it.find('.label .cell').text(`- ${q.name}, ${q.role[lang]}`);
     qs.append(it);

@@ -7,12 +7,12 @@ export default {
   en: {
     seoTitle: 'Vellumwire | Studio site that converts | Dhiego Cristofolini',
     description:
-      'Product design case: Vellumwire’s own site, built to take a skeptical small-business owner from search to a booked diagnosis without a sales call.',
+      'Product design case: Vellumwire\'s own site, built to take a skeptical small-business owner from search to a booked diagnosis without a sales call.',
     cat: 'Own studio · Positioning · Website',
     title: 'Vellumwire',
-    sub: 'A studio site that closes before the call',
+    sub: 'Our own site, built to sell without a sales call',
     cover: 'Vellumwire',
-    introTitle: 'The studio was its own first client.',
+    introTitle: 'Designing the site for our own business',
     intro:
       'Vellumwire is the web design studio I run with Afonso, for service businesses that need more inbound leads. There was no site, no positioning and no portfolio yet. The site had to earn trust from people burned by agencies before, and do the selling on its own.',
     meta: [
@@ -28,13 +28,13 @@ export default {
         wide: { img: 'ctx-studio', alt: 'The Vellumwire site on a monitor and a laptop in a dark studio', caption: 'The problem first: where service sites lose customers.' },
       },
       {
-        type: 'section', num: '02', sub: 'Decision', title: 'The page sells like a good salesperson.',
+        type: 'section', num: '02', sub: 'Decision', title: 'Sections follow the questions a buyer asks',
         text: 'Each section answers the next question a prospect would ask on a call. By the final CTA, the problem is confirmed, the price is known and the objections are answered.',
         artifact: { img: 'art-path', alt: 'The seven-step decision path of the Vellumwire homepage' },
         wide: { img: 'ctx-phones', alt: 'Three phones showing the Vellumwire hero, pricing and the free diagnosis offer', caption: 'Problem, price, next step: each screen answers the next question.' },
       },
       {
-        type: 'section', layout: 'split', reverse: true, num: '03', sub: 'Decision', title: 'A 15-minute ask, not a quote.',
+        type: 'section', layout: 'split', reverse: true, num: '03', sub: 'Decision', title: 'A free 15-minute diagnosis as the main CTA',
         text: 'The main CTA is a free 15-minute diagnosis on a live screen-share. The prospect keeps the fix list whether they hire the studio or not, and the session shows expertise before any proposal.',
         portrait: { img: 'ctx-workshop', alt: 'A small business owner in a workshop looking at the Vellumwire site on his phone', caption: 'Built for the owner who suspects the site is costing him calls.' },
       },
@@ -47,7 +47,7 @@ export default {
     ],
     results: {
       sub: 'Results',
-      title: 'Found by search, closed by the page.',
+      title: 'Results with no ad spend',
       text: 'A cold prospect can go from a search to a booked diagnosis without a single touchpoint from the studio.',
       stats: [
         ['~1k', 'organic sessions per week'],
@@ -64,9 +64,9 @@ export default {
       'Case de product design: o site da Vellumwire, feito para levar um dono de negócio desconfiado da busca a um diagnóstico agendado, sem ligação de vendas.',
     cat: 'Estúdio próprio · Posicionamento · Site',
     title: 'Vellumwire',
-    sub: 'Um site de estúdio que fecha antes da ligação',
+    sub: 'Nosso próprio site, feito para vender sem ligação de vendas',
     cover: 'Vellumwire',
-    introTitle: 'O estúdio foi o próprio primeiro cliente.',
+    introTitle: 'Desenhando o site do nosso próprio negócio',
     intro:
       'A Vellumwire é o estúdio de web design que toco com o Afonso, para negócios de serviço que precisam de mais leads. Não havia site, posicionamento nem portfólio. O site tinha que ganhar a confiança de quem já se queimou com agência e vender sozinho.',
     meta: [
@@ -82,13 +82,13 @@ export default {
         wide: { img: 'ctx-studio', alt: 'O site da Vellumwire num monitor e num notebook num estúdio escuro', caption: 'O problema primeiro: onde sites de serviço perdem clientes.' },
       },
       {
-        type: 'section', num: '02', sub: 'Decisão', title: 'A página vende como um bom vendedor.',
+        type: 'section', num: '02', sub: 'Decisão', title: 'As seções seguem as perguntas de quem compra',
         text: 'Cada seção responde a próxima pergunta que o cliente faria numa ligação. No CTA final, o problema já foi confirmado, o preço é conhecido e as objeções foram respondidas.',
         artifact: { img: 'art-path', alt: 'O caminho de decisão em sete etapas da home da Vellumwire' },
         wide: { img: 'ctx-phones', alt: 'Três celulares mostrando o hero da Vellumwire, os preços e a oferta de diagnóstico gratuito', caption: 'Problema, preço, próximo passo: cada tela responde a pergunta seguinte.' },
       },
       {
-        type: 'section', layout: 'split', reverse: true, num: '03', sub: 'Decisão', title: 'Um pedido de 15 minutos, não um orçamento.',
+        type: 'section', layout: 'split', reverse: true, num: '03', sub: 'Decisão', title: 'Um diagnóstico gratuito de 15 minutos como CTA principal',
         text: 'O CTA principal é um diagnóstico gratuito de 15 minutos, com tela compartilhada. O cliente fica com a lista de correções contratando ou não, e a sessão mostra competência antes de qualquer proposta.',
         portrait: { img: 'ctx-workshop', alt: 'Um dono de negócio numa oficina vendo o site da Vellumwire no celular', caption: 'Feito para o dono que desconfia que o site está custando ligações.' },
       },
@@ -101,7 +101,7 @@ export default {
     ],
     results: {
       sub: 'Resultados',
-      title: 'Achado pela busca, fechado pela página.',
+      title: 'Resultados sem gastar com anúncio',
       text: 'Um cliente frio vai da busca a um diagnóstico agendado sem nenhum contato do estúdio.',
       stats: [
         ['~1 mil', 'sessões orgânicas por semana'],

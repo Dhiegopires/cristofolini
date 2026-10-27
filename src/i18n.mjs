@@ -52,10 +52,10 @@ export const T = {
       { num: '70%', label: 'Faster pipeline' },
     ],
     hello: {
-      title: ['Hello,', 'I’m Dhiego'],
+      title: ['Hello,', 'I\'m Dhiego'],
       p: [
-        'Product Designer with 7+ years building products from discovery to production-ready UI with front-end work.',
-        'Specialized in advanced design token architecture for scalable design systems, in translating business rules and regulated flows into simple, secure experiences with conversion-driven UX.',
+        'Product Designer with 7+ years on SaaS, healthtech and B2B products, and enough front-end to build some of them myself.',
+        'Most of my work is design token architecture, and turning business rules and regulated flows (identity checks, payments held until a service is done) into screens people can get through.',
       ],
       alt: 'Dhiego looking down at his phone, yellow duotone portrait',
       more: 'More about me',
@@ -68,11 +68,11 @@ export const T = {
       ['Turn research', 'into something that ships'],
       ['Hand off work', 'devs build without guessing'],
     ],
-    companies: { title: 'Companies I’ve worked with', pause: 'Pause', play: 'Play', more: (n) => `About ${n}`, less: (n) => `Hide ${n} details` },
+    companies: { title: 'Companies I\'ve worked with', pause: 'Pause', play: 'Play', more: (n) => `About ${n}`, less: (n) => `Hide ${n} details` },
     homeInsights: { title: 'Insights', cta: 'See all Insights', carousel: 'Latest articles' },
     testimonials: { title: ['What they', 'say about me'] },
     contact: {
-      title: 'Tell me what’s on your mind',
+      title: 'Tell me what\'s on your mind',
       name: 'Name',
       email: 'Email',
       message: 'Message',
@@ -88,7 +88,7 @@ export const T = {
       title: 'Be the first to receive new articles',
       email: 'Email',
       submit: 'Receive Newsletter',
-      ok: 'You’re on the list. New articles land in your inbox.',
+      ok: 'You\'re on the list. New articles land in your inbox.',
       consent: 'One email per new article. Unsubscribe anytime. See the',
     },
     cookie: {
@@ -154,8 +154,8 @@ export const T = {
     hello: {
       title: ['Olá,', 'eu sou o Dhiego'],
       p: [
-        'Product Designer com mais de 7 anos construindo produtos, da descoberta à interface pronta para produção, com trabalho de front-end.',
-        'Especializado em arquitetura avançada de design tokens para design systems escaláveis, em traduzir regras de negócio e fluxos regulados em experiências simples e seguras, com UX orientado a conversão.',
+        'Product Designer com mais de 7 anos em produtos SaaS, healthtech e B2B, e front-end suficiente para construir alguns deles eu mesmo.',
+        'A maior parte do meu trabalho é arquitetura de design tokens, e transformar regra de negócio e fluxo regulado (verificação de identidade, pagamento retido até o fim do serviço) em telas que a pessoa consegue terminar.',
       ],
       alt: 'Dhiego olhando para o celular, retrato em duotone amarelo',
       more: 'Mais sobre mim',
