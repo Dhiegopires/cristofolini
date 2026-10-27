@@ -6,7 +6,7 @@ export const SITE = {
   socials: [
     { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/dhiegopires/' },
     { id: 'github', label: 'GitHub', href: 'https://github.com/Dhiegopires' },
-    { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dhiego-cristofolini-77b964150/' },
+    { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dhiego-cristofolini/' },
   ],
   behance: 'https://behance.net/dhiegopires',
 };
@@ -182,10 +182,11 @@ export const POSTS = [
 
 export const postUrl = (p, lang) => (lang === 'pt' ? `/pt-br/blog/${p.pt}/` : `/blog/${p.slug}/`);
 
-// Companies Dhiego worked at or for, product and web work only (nine fill
-// the 3-column grid). Roles/periods from the résumé or from Dhiego directly.
+// Companies Dhiego worked at or for. Roles/periods from the résumé or from
+// Dhiego directly; entries without a role show the name only.
 export const COMPANIES = [
   { id: 'medme', name: 'MedMe Saúde', logo: 'medme', role: { en: 'Senior Product Designer', pt: 'Senior Product Designer' }, period: '2025' },
+  { id: 'play9', name: 'Play9', logo: 'play9', role: { en: 'Web design & 2D art', pt: 'Web design e arte 2D' } },
   { id: 'selo-h', name: 'Selo H', logo: 'selo-h', role: { en: 'Landing page & form flow redesign', pt: 'Redesign de landing page e formulário' }, period: '2025' },
   { id: 'abgi', name: 'ABGI', logo: 'abgi', role: { en: 'WordPress site, end to end', pt: 'Site WordPress, de ponta a ponta' }, period: '2024' },
   { id: 'instivo', name: 'Instivo', logo: 'instivo', role: { en: 'Product Designer', pt: 'Product Designer' }, period: '2023' },
@@ -194,6 +195,8 @@ export const COMPANIES = [
   { id: 'ensight', name: 'Ensight', logo: 'ensight', role: { en: 'Product Designer', pt: 'Product Designer' }, period: '2019–2021' },
   { id: 'meaple', name: 'Meaple', logo: 'meaple', role: { en: 'Product design, research to MVP', pt: 'Design de produto, da pesquisa ao MVP' }, period: '2019–2021' },
   { id: 'facto', name: 'Facto', logo: 'facto', role: { en: 'Product design, research to MVP', pt: 'Design de produto, da pesquisa ao MVP' }, period: '2019–2021' },
+  { id: 'cebrac', name: 'CEBRAC', logo: 'cebrac', role: { en: 'Teacher & graphic designer', pt: 'Professor e designer gráfico' } },
+  { id: 'lovefit', name: 'Lovefit', logo: 'lovefit', role: { en: 'Branding & marketing', pt: 'Branding e marketing' } },
 ];
 
 // Paraphrased from what each person said while working together.

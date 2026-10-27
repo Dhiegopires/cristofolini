@@ -99,7 +99,7 @@ export const fillChrome = ($, { lang, title, description, path, alt, image = '/a
   footer.find('.footer-logo img').attr('src', '/assets/img/site/logo.svg').attr('alt', t.logoLabel).attr('width', '51').attr('height', '32');
   footer.find('.footer-social ul').html(
     [
-      ['https://www.linkedin.com/in/dhiego-cristofolini-77b964150/', 'fa-linkedin-in', 'LinkedIn'],
+      ['https://www.linkedin.com/in/dhiego-cristofolini/', 'fa-linkedin-in', 'LinkedIn'],
       [SITE.behance, 'fa-behance', 'Behance'],
       ['https://www.instagram.com/dhiegopires/', 'fa-instagram', 'Instagram'],
       ['https://github.com/Dhiegopires', 'fa-github', 'GitHub'],

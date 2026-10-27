@@ -90,7 +90,7 @@ export const contactPage = (lang) => {
   info.find('ul').html(`
     <li><span>${c.email}</span><a href="mailto:${SITE.email}">${SITE.email}</a></li>
     <li><span>${c.based}</span><p class="contact-plain">${c.basedVal}</p></li>
-    <li><span>${c.elsewhere}</span><a href="https://www.linkedin.com/in/dhiego-cristofolini-77b964150/" target="_blank" rel="noopener">LinkedIn</a></li>`);
+    <li><span>${c.elsewhere}</span><a href="https://www.linkedin.com/in/dhiego-cristofolini/" target="_blank" rel="noopener">LinkedIn</a></li>`);
 
   const box = $('.form-box');
   box.find('h3').text(c.formTitle);
