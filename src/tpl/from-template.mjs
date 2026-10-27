@@ -64,8 +64,11 @@ export const fillChrome = ($, { lang, title, description, path, alt, image = '/a
   // (scripts/assets.mjs builds it).
   head.find('link[href="assets/css/plugins.css"]').remove();
   head.find('link[href="assets/css/style.css"]').attr('href', '/assets/tpl/css/site.min.css');
+  // Analytics counts by default (LGPD legitimate interest); EEA, UK and
+  // Switzerland stay opt-in. A stored banner choice applies before the first hit.
+  const optIn = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'];
   head.append(`
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied'});gtag('js',new Date());gtag('config','${SITE.gaId}');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',region:${JSON.stringify(optIn)}});gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied'});try{var c=localStorage.getItem('cookie-consent');if(c==='granted'||c==='denied')gtag('consent','update',{analytics_storage:c});}catch(e){}gtag('js',new Date());gtag('config','${SITE.gaId}');</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}"></script>`);
 
   // Template body classes (smooth scroll + cursor) stay; page-to-page ajax

@@ -142,9 +142,9 @@
   var KEY = 'cookie-consent';
   var stored = null;
   try { stored = localStorage.getItem(KEY); } catch (e) {}
-  var grant = function () { if (typeof window.gtag === 'function') window.gtag('consent', 'update', { analytics_storage: 'granted' }); };
-  if (stored === 'granted') { grant(); return; }
-  if (stored === 'denied') return;
+  // The head script already applied a stored choice before the first hit.
+  if (stored === 'granted' || stored === 'denied') return;
+  var set = function (v) { if (typeof window.gtag === 'function') window.gtag('consent', 'update', { analytics_storage: v }); };
   var pt = body.getAttribute('data-lang') === 'pt';
   var box = document.createElement('div');
   box.className = 'cookie-note';
@@ -157,7 +157,7 @@
     var v = e.target.getAttribute && e.target.getAttribute('data-v');
     if (!v) return;
     try { localStorage.setItem(KEY, v); } catch (err) {}
-    if (v === 'granted') grant();
+    set(v);
     box.remove();
   });
   body.appendChild(box);
