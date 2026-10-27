@@ -73,7 +73,9 @@ export const fillChrome = ($, { lang, title, description, path, alt, image = '/a
   $('body').removeClass('dsn-ajax').attr('data-lang', lang);
   $('body').prepend(`<a href="#main-content" class="skip-link">${t.skip}</a>`);
 
-  $('.preloader .title').text('Dhiego Cristofolini');
+  // No loading screen and no custom cursor: the first thing a visitor sees
+  // is the page, and the pointer never covers the work.
+  $('.preloader, .cursor').remove();
 
   // Header: logo, links (template copies .site-header nav > ul into the menu)
   $('.main-logo a, .logo a').attr('href', r.home).removeAttr('aria-label');

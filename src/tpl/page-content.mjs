@@ -100,7 +100,7 @@ export const workListPage = (lang) => {
         </a>
       </div>`);
   });
-  callout($, { href: r.contact, small: pt ? 'Vamos conversar' : 'Let’s talk', big: pt ? 'Tem um projeto em mente?' : 'Have a project in mind?' });
+  callout($, { href: r.contact, small: pt ? 'Vamos conversar' : 'Let’s talk', big: pt ? 'Contratando um product designer?' : 'Hiring a product designer?' });
   return html($);
 };
 
@@ -153,7 +153,7 @@ export const blogListPage = (lang) => {
       </article>`);
   });
   root.append(newsletterForm(lang));
-  callout($, { href: r.contact, small: pt ? 'Vamos conversar' : 'Let’s talk', big: pt ? 'Tem um projeto em mente?' : 'Have a project in mind?' });
+  callout($, { href: r.contact, small: pt ? 'Vamos conversar' : 'Let’s talk', big: pt ? 'Contratando um product designer?' : 'Hiring a product designer?' });
   return html($);
 };
 

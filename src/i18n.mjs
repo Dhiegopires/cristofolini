@@ -69,19 +69,6 @@ export const T = {
       ['Hand off work', 'devs build without guessing'],
     ],
     companies: { title: 'Companies I’ve worked with', pause: 'Pause', play: 'Play', more: (n) => `About ${n}`, less: (n) => `Hide ${n} details` },
-    services: {
-      title: ['UI/UX design for clients', 'who care about '],
-      accent: 'conversion',
-      items: [
-        ['Interface Design', 'High-fidelity UI for web and mobile, built on token-based design systems. From wireframe to production-ready screens, with attention to every state: empty, error, loading, success.'],
-        ['UX Research & Strategy', 'User interviews, usability testing, and journey mapping that inform decisions instead of validating ones already made.'],
-        ['Design Systems', 'Four-layer token architecture (Core, Palette, Brand, Semantic) that scales without rewriting components when a client re-themes.'],
-        ['Brand Identity', 'Visual identity built to hold up in production. Typography, color, and component logic that survive contact with real screens.'],
-        ['Interaction Design', 'Microinteractions and transitions that clarify state instead of decorating it.'],
-        ['2D Art', 'Illustration and iconography built alongside the product, used in onboarding, empty states, and brand moments.'],
-        ['AI Workflow', 'A documented methodology, step by step from briefing to launch, that any AI model follows as a build contract. Decisions get locked before production starts, and automated checks catch what review would miss, so speed never costs quality.'],
-      ],
-    },
     homeInsights: { title: 'Insights', cta: 'See all Insights', carousel: 'Latest articles' },
     testimonials: { title: ['What they', 'say about me'] },
     contact: {
@@ -182,19 +169,6 @@ export const T = {
       ['Handoff que', 'o dev constrói sem adivinhar'],
     ],
     companies: { title: 'Empresas com quem trabalhei', pause: 'Pausar', play: 'Retomar', more: (n) => `Sobre ${n}`, less: (n) => `Ocultar detalhes de ${n}` },
-    services: {
-      title: ['UI/UX para clientes', 'que se importam com '],
-      accent: 'conversão',
-      items: [
-        ['Interface Design', 'Interfaces de alta fidelidade para web e mobile, construídas sobre design systems baseados em tokens. Do wireframe à tela pronta para produção, com atenção a cada estado: vazio, erro, carregando, sucesso.'],
-        ['Pesquisa & Estratégia de UX', 'Entrevistas com usuários, testes de usabilidade e mapas de jornada que informam decisões em vez de validar as já tomadas.'],
-        ['Design Systems', 'Arquitetura de tokens em quatro camadas (Core, Palette, Brand, Semantic) que escala sem reescrever componentes quando o cliente retematiza.'],
-        ['Identidade de Marca', 'Identidade visual construída para aguentar produção. Tipografia, cor e lógica de componente que sobrevivem ao contato com telas reais.'],
-        ['Design de Interação', 'Microinterações e transições que esclarecem estado em vez de decorá-lo.'],
-        ['Arte 2D', 'Ilustração e iconografia construídas junto com o produto, usadas em onboarding, estados vazios e momentos de marca.'],
-        ['Fluxo com IA', 'Uma metodologia documentada, passo a passo do briefing ao lançamento, que qualquer modelo de IA segue como contrato de construção. As decisões são travadas antes da produção começar e checagens automáticas pegam o que a revisão deixaria passar, então velocidade nunca custa qualidade.'],
-      ],
-    },
     homeInsights: { title: 'Insights', cta: 'Ver todos os insights', carousel: 'Artigos recentes' },
     testimonials: { title: ['O que dizem', 'sobre mim'] },
     contact: {

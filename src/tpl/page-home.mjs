@@ -1,5 +1,5 @@
 // Home = src/tpl/html/index.html with Dhiego's content.
-import { ROUTES, CASES, POSTS, TESTIMONIALS, COMPANIES, postUrl } from '../data.mjs';
+import { ROUTES, CASES, FEATURED, POSTS, TESTIMONIALS, COMPANIES, postUrl } from '../data.mjs';
 import { T } from '../i18n.mjs';
 import { postMeta } from '../content.mjs';
 import { loadTemplate, fillChrome, html, esc } from './from-template.mjs';
@@ -41,6 +41,7 @@ export const homePage = (lang) => {
     <p class="hero-lead">${esc(pt
       ? 'Mais de 7 anos desenhando SaaS B2B e B2B2C. UX orientado a conversão, design systems e fluxos complexos, da pesquisa à interface pronta para produção.'
       : '7+ years designing B2B and B2B2C SaaS. Conversion-driven UX, design systems and complex product flows, from research to production-ready UI.')}</p>
+    <p class="hero-status">${pt ? 'Aberto a vagas de Product Designer Sênior · Remoto' : 'Open to Senior Product Designer roles · Remote'}</p>
     <div class="hero-ctas">
       <div class="link-custom link-custom--accent"><a href="#work" class="image-zoom" data-dsn="parallax"><span>${pt ? 'Ver trabalhos' : 'View work'}</span></a></div>
       <div class="link-custom"><a href="${r.resume}" class="image-zoom" data-dsn="parallax"><span>${pt ? 'Currículo' : 'Résumé'}</span></a></div>
@@ -59,21 +60,8 @@ export const homePage = (lang) => {
   intro.find('.exper h4').html(pt ? 'ANOS DE <br> DESIGN DE PRODUTO' : 'YEARS OF <br> PRODUCT DESIGN');
   intro.find('.background-mask img').attr({ src: '/assets/img/site/hello.webp', alt: t.hello.alt, width: 640, height: 640, loading: 'lazy', decoding: 'async' });
 
-  /* Services: about.html's text grid (rule, title, copy). No icons, so
-     every service stands on its own words instead of repeated artwork. */
-  const ab = loadTemplate('about.html');
-  const svc = ab('.our-services').first();
-  svc.find('.title-sub').text(pt ? 'Serviços' : 'Services');
-  svc.find('.title-main').text(`${t.services.title[0]} ${t.services.title[1]}${t.services.accent}`);
-  const sTpl = svc.find('.row .col-md-6').first().clone();
-  const sRow = svc.find('.row').empty();
-  t.services.items.forEach(([name, desc]) => {
-    const col = sTpl.clone();
-    col.find('.subtitle').text(name);
-    col.find('p').text(desc);
-    sRow.append(col);
-  });
-  $('.our-services-2').replaceWith(ab.html(svc));
+  /* No services section: the home talks to hiring teams, not clients. */
+  $('.our-services-2').remove();
 
   // Prev/next for the template sliders (they ship with arrows: false);
   // addons.js drives them through the slick API.
@@ -83,26 +71,39 @@ export const homePage = (lang) => {
       <button type="button" class="slider-btn" data-slick-dir="next" aria-label="${pt ? `${what}: próximo` : `Next ${what}`}"><i class="fas fa-angle-right" aria-hidden="true"></i></button>
     </div>`;
 
-  /* Work slider */
-  const work = $('.our-work');
-  work.attr('id', 'work');
-  work.find('.title-sub').text(pt ? 'Trabalhos' : 'Work');
-  work.find('.title-main').text(pt ? 'Trabalhos selecionados' : 'Selected work');
-  work.find('.one-title').first().wrap('<div class="section-head"></div>').after(sliderNav(pt ? 'Projeto' : 'project'));
-  const itemTpl = work.find('.work-item').first().clone();
-  const slider = work.find('.slick-slider').empty();
-  cases.forEach((c) => {
-    const it = itemTpl.clone();
-    it.find('img').attr({ src: c.img.src, srcset: c.img.srcset, sizes: '(min-width: 992px) 40vw, 85vw', width: c.img.w, height: c.img.h, alt: c.alt ? c.alt[lang] : c.title, loading: 'lazy', decoding: 'async' });
-    it.find('.item-info a').attr('href', r.case(c.slug)).removeClass('effect-ajax');
-    it.find('.cat').text(c.cat[lang]);
-    it.find('h4').text(c.title).after(`<p class="item-result">${esc(c.result[lang])}</p>`);
-    it.find('.item-info a > span > span').text(pt ? 'Ver projeto' : 'View Project');
-    // Whole card opens the case. The text link stays the one link assistive
-    // tech and Tab see; this cover link is pointer-only.
-    it.append(`<a class="card-cover-link" href="${r.case(c.slug)}" tabindex="-1" aria-hidden="true"></a>`);
-    slider.append(it);
-  });
+  /* Work: the Work page's two-column grid (same markup, same isotope
+     layout), featured product cases only, all visible without a carousel. */
+  const cards = cases
+    .slice(0, FEATURED)
+    .map(
+      (c) => `
+      <div class="item">
+        <a href="${r.case(c.slug)}" data-dsn-grid="move-up">
+          <img class="has-top-bottom" src="${c.img.src}" srcset="${c.img.srcset}" sizes="(min-width: 768px) 45vw, 100vw" width="${c.img.w}" height="${c.img.h}" alt="${esc(c.alt ? c.alt[lang] : c.title)}" loading="lazy" decoding="async">
+          <div class="item-border"></div>
+          <div class="item-info">
+            <h5 class="cat">${esc(c.cat[lang])}</h5>
+            <h4>${esc(c.title)}</h4>
+            <p class="item-result">${esc(c.result[lang])}</p>
+            <span><span>${pt ? 'Ver projeto' : 'View project'}</span></span>
+          </div>
+        </a>
+      </div>`,
+    )
+    .join('');
+  $('.our-work').replaceWith(`
+    <section class="our-work root-work home-work section-margin" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div class="one-title">
+            <div class="title-sub-container"><p class="title-sub">${pt ? 'Trabalhos' : 'Work'}</p></div>
+            <h2 class="title-main">${pt ? 'Trabalhos selecionados' : 'Selected work'}</h2>
+          </div>
+          <div class="link-custom"><a href="${r.work}" class="image-zoom" data-dsn="parallax"><span>${pt ? 'Todos os trabalhos' : 'All work'}</span></a></div>
+        </div>
+        <div class="projects-list gallery">${cards}</div>
+      </div>
+    </section>`);
 
   /* Testimonials */
   const cs = $('.client-see');
@@ -170,7 +171,7 @@ export const homePage = (lang) => {
   cu.find('.hiring').text(pt ? 'Vamos conversar' : "Let's talk");
   cu.find('.career').text(t.contact.title);
 
-  const order = ['.our-work', '.intro-about', '.brand-client', '.our-services', '.our-news', '.client-see', '.contact-up'];
+  const order = ['.our-work', '.intro-about', '.client-see', '.brand-client', '.our-news', '.contact-up'];
   const wrapper = $('.wrapper');
   order.forEach((sel) => wrapper.append($(sel).first()));
   wrapper.append(wrapper.children('footer'));

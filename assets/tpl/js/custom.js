@@ -105,6 +105,7 @@
      */
     function preloader() {
         var preloader = $( ".preloader" );
+        if ( preloader.length < 1 ) return;
         var preloader_block = preloader.find( ".preloader-block" );
         var progress_number = preloader_block.find( ".percent" );
         var progress_title = preloader_block.find( ".title" );
@@ -1614,6 +1615,7 @@
      */
     function mouseCirMove( $off ) {
         const $elemnet = ".cursor";
+        if ( $( $elemnet ).length < 1 ) return;
         if ( effectScroller().isMobiles() ) {
             // $elemnet.css('display' , 'none');
             return;

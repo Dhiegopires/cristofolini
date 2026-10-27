@@ -224,6 +224,18 @@
   color: var(--c-text-soft);
   text-shadow: 0 1px 14px var(--c-text-halo);
 }
+/* Availability line: tells a hiring team in one glance that this is a
+   candidate, not a studio taking clients. */
+.hero-home .hero-status {
+  margin: 16px auto 0;
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--c-accent);
+  text-shadow: 0 1px 14px var(--c-text-halo);
+}
 .hero-home .hero-ctas {
   display: flex;
   flex-wrap: wrap;
@@ -606,6 +618,9 @@
 }
 .our-work .section-head {
   margin-bottom: 50px;
+}
+.home-work .section-head .link-custom {
+  margin-top: 0;
 }
 .head-actions {
   display: flex;
